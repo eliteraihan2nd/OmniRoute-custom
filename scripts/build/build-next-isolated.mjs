@@ -96,7 +96,16 @@ function runNextBuild() {
     const nextBin = path.join(projectRoot, "node_modules", "next", "dist", "bin", "next");
     const buildEnv = resolveNextBuildEnv(process.env);
     ensureWindowsBuildProfileDirs(buildEnv);
-    const child = spawn(process.execPath, [nextBin, "build", resolveNextBuildBundlerFlag()], {
+    const buildArgs = [nextBin, "build", resolveNextBuildBundlerFlag()];
+    // OMNIROUTE_DEBUG_MEMORY=1 prints continuous heap/GC stats during the build
+    // (Next.js --experimental-debug-memory-usage). Intended for the Webpack
+    // build-worker-OFF path (this repo has a custom webpack() config, so the
+    // worker is disabled) — exactly the memory-sensitive case. Toggle via the
+    // env var; no source edit needed to flip it. Default off.
+    if (process.env.OMNIROUTE_DEBUG_MEMORY === "1") {
+      buildArgs.push("--experimental-debug-memory-usage");
+    }
+    const child = spawn(process.execPath, buildArgs, {
       cwd: projectRoot,
       stdio: "inherit",
       env: buildEnv,

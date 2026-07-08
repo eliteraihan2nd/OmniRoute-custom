@@ -181,6 +181,13 @@ const nextConfig = {
     // can legitimately hold non-streaming chat requests open for minutes while an
     // upstream provider finishes, so reuse the existing request-timeout knobs.
     proxyTimeout: readTimeoutMs(process.env.REQUEST_TIMEOUT_MS, process.env.FETCH_TIMEOUT_MS),
+    // Next.js official memory lever (Next.js Memory Usage guide): changes Webpack
+    // behavior to reduce peak memory at build time. Low-risk, ~slight slower
+    // compile. Added so the production build fits GitHub's 8 GB ubuntu-latest
+    // runner without a larger runner. This repo ships a custom webpack() config
+    // (splitChunks), which disables Next's separate Webpack build worker — so the
+    // build runs as one process and is memory-sensitive; this flag compensates.
+    webpackMemoryOptimizations: true,
     // PR-2 of diegosouzapw/OmniRoute#3932: tree-shake barrel re-exports so
     // route bundles don't pull in 14 locale files, every lucide-react icon,
     // or the full date-fns surface when only one helper is used.

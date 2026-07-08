@@ -1,0 +1,155 @@
+# ──────────────────────────────────────────────────────────────────────
+#  Custom OmniRoute image → public GHCR
+#
+#  Builds deploy/Dockerfile (runner-base) and pushes to
+#  ghcr.io/eliteraihan2nd/omniroute-custom:custom  (public package).
+#
+#  Adapted from the upstream fork-publish workflow that was removed in
+#  5494f92a (build-fork.yml). Retargeted to this repo's custom deploy
+#  Dockerfile and a single floating :custom tag — no version/release
+#  machinery, no Docker Hub, no Trivy gate (public personal image).
+#
+#  Triggers:
+#    - push to branch `custom`
+#    - manual workflow_dispatch
+#
+#  Jobs:
+#    - lint: cheap pre-publish gate (lint + core typecheck) on ubuntu-latest.
+#      The build job `needs: lint`, so a broken commit fails before the
+#      ~8 GB image build runs.
+#    - build: build + push to GHCR.
+#
+#  Auth: pushes using GITHUB_TOKEN (packages: write granted at job level).
+#        Dokploy pulls using a CLASSIC PAT with `read:packages` only
+#        (set in Dokploy → Registry → GHCR). No repo scope needed.
+#
+#  Visibility: GHCR creates the package PRIVATE by default. The Packages
+#  REST `PATCH .../visibility` and GraphQL `setPackageVisibility` are NOT
+#  served for USER-namespaced container packages (both 404 even for the owner
+#  with write:packages). So visibility is set ONCE, MANUALLY, in the GitHub
+#  UI: repo → Packages → omniroute-custom → Settings → Change visibility →
+#  Public. It is package-level and persists across all later pushes. The
+#  PKG_PAT secret / auto-flip step was removed for this reason.
+# ──────────────────────────────────────────────────────────────────────
+
+name: Build & Publish Custom Image
+
+on:
+  push:
+    branches:
+      - custom
+  workflow_dispatch:
+
+# Least-privilege default: read-only at top level; the build job grants
+# packages: write itself (Scorecard TokenPermissions).
+permissions:
+  contents: read
+
+env:
+  IMAGE_NAME: ghcr.io/eliteraihan2nd/omniroute-custom
+
+# Pre-publish sanity gate: lint + core typecheck on a cheap runner, so a
+# broken commit fails FAST (minutes) instead of only when the full ~8 GB
+# image build runs. The build job waits on this; if lint fails, the image
+# is never built or pushed.
+jobs:
+  lint:
+    name: Lint + Typecheck (custom)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Node runtime check
+        run: npm run check:node-runtime
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Core typecheck
+        run: npm run typecheck:core
+
+  build:
+    name: Build and Push (linux/amd64)
+    needs: lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=custom
+            type=sha,prefix=sha-
+          labels: |
+            org.opencontainers.image.title=omniroute-custom
+            org.opencontainers.image.description=Unified AI proxy/router — custom fork image
+            org.opencontainers.image.url=https://github.com/eliteraihan2nd/OmniRoute-custom
+            org.opencontainers.image.source=https://github.com/eliteraihan2nd/OmniRoute-custom
+            org.opencontainers.image.licenses=MIT
+
+      - name: Build and push
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: deploy/Dockerfile
+          target: runner-base
+          platforms: linux/amd64
+          push: true
+          # Memory plan for GitHub's ubuntu-latest private runner (~8 GB RAM):
+          #  - jobs=1 → serial better-sqlite3 native compile (no parallel g++ spike)
+          #  - Turbopack off → single-thread webpack (no per-core Rust workers)
+          #  - webpackMemoryOptimizations:true in next.config.mjs lowers the peak
+          #  - 6144 MB V8 heap: the v3.8.46 webpack production pass needs >4 GB.
+          #    6144 + ~1 GB overhead ≈ 7 GB, under the 8 GB runner cap.
+          #    (The earlier 4096 run OOMed at ~3.8 GB old-space — a real V8 heap
+          #    ceiling hit, confirmed by the FATAL ERROR line, not a runner OOM.)
+          # Knobs documented in deploy/Dockerfile (lines 48-90).
+          build-args: |
+            OMNIROUTE_BUILD_JOBS=1
+            OMNIROUTE_USE_TURBOPACK=0
+            OMNIROUTE_BUILD_MEMORY_MB=6144
+            # First run self-diagnoses peak heap (Next.js --experimental-debug-memory-usage).
+            # Flip to 0 / omit after confirming the build fits the 8 GB runner — no source edit.
+            OMNIROUTE_DEBUG_MEMORY=1
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # NOTE: no auto-redeploy step. Trigger the Dokploy deploy manually
+      # after the workflow completes, OR set up a Dokploy AutoDeploy
+      # webhook and add a curl POST here if you later want automatic pulls.

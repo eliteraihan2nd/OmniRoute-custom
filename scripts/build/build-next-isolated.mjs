@@ -151,6 +151,9 @@ function runNextBuild() {
           bundlerFlag,
         ]
       : [nextBin, "build", bundlerFlag];
+    if (process.env.OMNIROUTE_DEBUG_MEMORY === "1") {
+      nextArgs.push("--experimental-debug-memory-usage");
+    }
     const child = spawn(process.execPath, nextArgs, {
       cwd: projectRoot,
       stdio: "inherit",

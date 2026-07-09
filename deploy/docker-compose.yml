@@ -1,0 +1,52 @@
+name: ${COMPOSE_PROJECT_NAME:-omniroute}
+
+services:
+  omniroute:
+    # Pull-only: image is built + published to GHCR by
+    # .github/workflows/build-publish.yml (or deploy/build-and-push.sh).
+    # The host no longer builds — `docker compose up` just pulls.
+    # Public GHCR image → pulls WITHOUT auth (anyone can pull). The Dokploy
+    # Registry credential (classic PAT, read:packages) is optional but kept
+    # for robustness. Locally: `docker login ghcr.io` once if pulling private.
+    image: ghcr.io/eliteraihan2nd/omniroute-custom:custom
+    pull_policy: always
+    restart: unless-stopped
+    stop_grace_period: 40s
+    env_file:
+      - ${OMNIROUTE_ENV_FILE:-.env}
+    environment: []
+    expose:
+      - "20128"
+      - "20130"
+    volumes:
+      - omniroute-data:/app/data
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "healthcheck.mjs"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  redis:
+    image: redis:7.4-alpine
+    restart: unless-stopped
+    command: redis-server --save 60 1 --loglevel warning
+    expose:
+      - "6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  omniroute-data:
+    name: ${OMNIROUTE_DATA_VOLUME:-omniroute-data}
+  redis-data:
+    name: ${OMNIROUTE_REDIS_VOLUME:-omniroute-redis-data}

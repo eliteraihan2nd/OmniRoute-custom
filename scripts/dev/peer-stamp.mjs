@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import net from "node:net";
 
 /**
  * Trusted peer-IP stamping for the custom Node HTTP servers.
@@ -41,6 +42,53 @@ export function ensurePeerStampToken() {
   return process.env.OMNIROUTE_PEER_STAMP_TOKEN;
 }
 
+/** Cache for parsed trusted proxy CIDRs to avoid redundant calculation. */
+let _trustedCidrsCache = null;
+
+/**
+ * Parses and returns the trusted CIDRs defined in environment variables.
+ * Absent or invalid entries are skipped fail-closed.
+ */
+function loadTrustedProxyCidrs() {
+  if (_trustedCidrsCache) return _trustedCidrsCache;
+  const raw = process.env.OMNIROUTE_TRUSTED_PROXY_CIDRS;
+  const out = [];
+  if (raw) {
+    for (const entry of raw.split(",")) {
+      const cidr = entry.trim();
+      if (!cidr) continue;
+      try {
+        const [addr, bitsStr] = cidr.split("/");
+        const bits = bitsStr !== undefined ? Number(bitsStr) : 32;
+        if (!net.isIP(addr)) continue;
+        const ip = ipToBigInt(addr);
+        const mask = bits >= 0 && bits <= 32 ? (BigInt(0xffffffff) << BigInt(32 - bits)) & BigInt(0xffffffff) : BigInt(0);
+        out.push({ base: ip & mask, mask });
+      } catch {
+        // skip malformed entry fail-closed
+      }
+    }
+  }
+  _trustedCidrsCache = out;
+  return out;
+}
+
+/** Converts an IPv4 address string into a BigInt representation. */
+function ipToBigInt(addr) {
+  const parts = addr.split(".").map((p) => Number(p));
+  return (BigInt(parts[0]) << BigInt(24)) | (BigInt(parts[1]) << BigInt(16)) | (BigInt(parts[2]) << BigInt(8)) | BigInt(parts[3]);
+}
+
+/** Evaluates whether the TCP peer socket matches a configured trusted-proxy CIDR range. */
+function isTrustedProxyPeer(peerIp) {
+  if (!net.isIP(peerIp)) return false;
+  const ip = ipToBigInt(peerIp);
+  for (const { base, mask } of loadTrustedProxyCidrs()) {
+    if ((ip & mask) === base) return true;
+  }
+  return false;
+}
+
 /** Strip any client-supplied PEER_IP_HEADER + VIA_PROXY_HEADER and stamp the
  *  real TCP peer IP plus a token-protected via-proxy marker. Never throws — a
  *  stamping failure must not block a request (it degrades to "locality
@@ -55,11 +103,15 @@ export function stampPeerIp(req) {
     if (ip) {
       const token = ensurePeerStampToken();
       req.headers[PEER_IP_HEADER] = `${token}|${ip}`;
-      // Forwarding headers present = request arrived via a reverse proxy; the
-      // loopback socket is the proxy hop, not the end-user, so it must not be
-      // trusted as local. Token-prefix the marker so a remote caller cannot
-      // forge it (or its absence) on a non-proxied request.
-      const viaProxy = !!(req.headers["x-forwarded-for"] || req.headers["x-real-ip"]);
+      // Forwarding headers present = request arrived via a reverse proxy.
+      // Normally the loopback/LAN socket is then the proxy hop, not the
+      // end-user, so we must not trust it as local (token-prefix the marker so
+      // a remote caller cannot forge it). EXCEPTION: when the real TCP peer is
+      // itself inside OMNIROUTE_TRUSTED_PROXY_CIDRS (e.g. an in-network Traefik
+      // / Docker gateway like 172.x.x.1) the peer is already a vetted trust
+      // boundary — the LAN locality should be honored rather than downgraded.
+      const rawViaProxy = !!(req.headers["x-forwarded-for"] || req.headers["x-real-ip"]);
+      const viaProxy = rawViaProxy && !isTrustedProxyPeer(ip);
       req.headers[VIA_PROXY_HEADER] = `${token}|${viaProxy ? "1" : "0"}`;
     }
   } catch {

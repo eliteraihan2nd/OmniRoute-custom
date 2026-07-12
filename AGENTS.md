@@ -1,6 +1,6 @@
-# omniroute — Agent Guidelines
+# omniroute — Agent Knowledge Base
 
-## Project
+**Generated:** 2026-07-13 · **Commit:** 138c42ba1 · **Branch:** custom
 
 Unified AI proxy/router — route any LLM through one endpoint. Multi-provider support
 with **290 provider entries** (OpenAI, Anthropic, Gemini, DeepSeek, Groq, xAI, Mistral, Fireworks,
@@ -13,109 +13,108 @@ with **MCP Server** (104 tools), **A2A v0.3 Protocol**, and **Electron desktop a
 > DB modules 95 · DB migrations 110 · base tables 17 · search providers 11 ·
 > i18n locales 42. **Refresh with `npm run check:docs-all`.**
 
-## Doc Accuracy Discipline (read before writing any doc)
+> Live counts are computed by scripts, not memorized. Refresh before documenting: `npm run check:docs-all`. Current verified snapshot: providers 237 · MCP tools 94 · MCP scopes 30 · A2A skills 6 · open-sse services 142 (top-level) · routing strategies 17 · auto-combo scoring factors 12 · DB modules 96 · DB migrations 115 (highest `#117`) · base tables 17 · i18n locales 42.
 
-> **If `grep -rn "name" src/ open-sse/ bin/` returns nothing, the name does not exist. Do not document it.**
+## STRUCTURE
 
-The recurring failure mode in AI-generated docs is _plausible-but-unverified specifics_.
-Every claim in a `.md` file under `docs/` should be verifiable against the source.
-
-**Rules (enforced by `npm run check:fabricated-docs`):**
-
-1. **Never state an API name, endpoint, path, CLI command, or env var without grepping for it first.**
-   ```bash
-   grep -rn "theName" src/ open-sse/ bin/
-   # 0 hits → do not document
-   ```
-2. **Never write a line count, file size, migration count, provider count, or strategy count from memory.**
-   ```bash
-   wc -l <file>           # exact line count
-   ls <dir>/*.ts | wc -l  # file count
-   ```
-3. **Every code example should be copy-pasted from real usage or actually run** — not synthesized.
-   Link to a real call site (`path:line`) instead of inventing a signature.
-4. **Prefer citing real source (`file.ts:line`) over paraphrasing behavior** — verifiable and self-correcting.
-5. **A shorter doc that is 100% accurate beats a comprehensive one with fabrications.**
-   Wrong docs cost more than missing docs, because people trust and act on them.
-
-The script `scripts/check/check-fabricated-docs.mjs` extracts every route path, env var, hook
-name, function name, and file reference from `docs/**/*.md` and verifies each one against the
-codebase. Run it locally before pushing docs; it runs in CI via `npm run check:docs-all`.
-
-## Stack
-
-- **Runtime**: Next.js 16 (App Router), Node.js `>=22.0.0 <23 || >=24.0.0 <27`, ES Modules (`"type": "module"`)
-- **Language**: TypeScript 6.0 (`src/`) + JavaScript (`open-sse/`, `electron/`)
-- **Database**: better-sqlite3 (SQLite) — `DATA_DIR` configurable, default `~/.omniroute/`
-- **Streaming**: SSE via `open-sse` internal workspace package
-- **Styling**: Tailwind CSS v4
-- **i18n**: next-intl with 42 locales (`src/i18n/messages/`) — refresh with `ls src/i18n/messages/*.json | wc -l`
-- **Desktop**: Electron (cross-platform: Windows, macOS, Linux)
-- **Schemas**: Zod v4 for all API / MCP input validation
-
----
-
-## Build, Lint, and Test Commands
-
-| Command                             | Description                                                        |
-| ----------------------------------- | ------------------------------------------------------------------ |
-| `npm run dev`                       | Start Next.js dev server                                           |
-| `npm run build`                     | Production build: `next build` → `.build/next/` + assemble `dist/` |
-| `npm run build:release`             | Clean rebuild + HEAD sentinel (`dist/BUILD_SHA`) — use for deploy  |
-| `npm run start`                     | Run production build                                               |
-| `npm run build:cli`                 | Build CLI package                                                  |
-| `npm run lint`                      | ESLint on all source files                                         |
-| `npm run typecheck:core`            | TypeScript core type checking                                      |
-| `npm run typecheck:noimplicit:core` | Strict checking (no implicit any)                                  |
-| `npm run check`                     | Run lint + test                                                    |
-| `npm run check:cycles`              | Check for circular dependencies                                    |
-| `npm run electron:dev`              | Run Electron app in dev mode                                       |
-| `npm run electron:build`            | Build Electron app for current OS                                  |
-
-**Build output layout:**
-
-| Directory | Purpose                                            | Gitignored |
-| --------- | -------------------------------------------------- | ---------- |
-| `src/`    | Application source (TypeScript / TSX)              | No         |
-| `.build/` | Build intermediates (`distDir = .build/next`)      | Yes        |
-| `dist/`   | Shippable bundle assembled by `assembleStandalone` | Yes        |
-
-The pipeline is a single `next build` pass — intermediates land in `.build/next/`, the
-assembled bundle in `dist/`. VPS deploys rsync `dist/` into the remote
-`/usr/lib/node_modules/omniroute/app/` directory (VPS image path is unchanged).
-
-### Running Tests
-
-```bash
-# All tests (unit + vitest + ecosystem + e2e)
-npm run test:all
-
-# Single test file (Node.js native test runner — most tests use this)
-node --import tsx/esm --test tests/unit/your-file.test.ts
-node --import tsx/esm --test tests/unit/plan3-p0.test.ts
-node --import tsx/esm --test tests/unit/fixes-p1.test.ts
-node --import tsx/esm --test tests/unit/security-fase01.test.ts
-
-# Integration tests
-node --import tsx/esm --test tests/integration/*.test.ts
-
-# Vitest (MCP server, autoCombo)
-npm run test:vitest
-
-# E2E with Playwright
-npm run test:e2e
-
-# Protocol clients E2E (MCP transports, A2A)
-npm run test:protocols:e2e
-
-# Ecosystem compatibility tests
-npm run test:ecosystem
-
-# Coverage (see CONTRIBUTING.md)
-npm run test:coverage
+```
+OmniRoute/
+├── src/                      # App Router source (TS/TSX)
+│   ├── app/api/v1/           # API routes → delegate to open-sse (569 route.ts files)
+│   ├── app/(dashboard)/      # Dashboard UI (route groups, not folders)
+│   ├── lib/db/               # SQLite persistence: 96 domain modules + migrations/
+│   ├── lib/a2a/              # A2A v0.3 server (JSON-RPC, task manager)
+│   ├── lib/                  # memory, skills, guardrails, cloudAgent, webhook, compliance
+│   ├── domain/               # Policy engine (combo resolver, cost rules, fallback)
+│   ├── shared/constants/     # providers.ts, routingStrategies.ts, upstreamHeaders.ts
+│   ├── middleware/           # promptInjectionGuard
+│   └── sse/                  # Legacy SSE service layer (pre-dates open-sse/)
+├── open-sse/                 # Core streaming engine (JS, ESM workspace)
+│   ├── handlers/             # chatCore, imageGeneration, embeddings, ...
+│   ├── executors/            # per-provider request executors
+│   ├── translator/           # format translation (OpenAI↔Anthropic↔Gemini)
+│   ├── services/             # 142 routing/resilience/account services
+│   ├── mcp-server/           # MCP server (stdio / SSE / Streamable HTTP)
+│   ├── transformer/          # Responses API ↔ Chat Completions
+│   └── config/               # providerRegistry.ts
+├── electron/                 # Electron main + preload
+├── docs/                     # Deep-dive guides (accuracy-enforced, see below)
+├── db/migrations/            # (deprecated path) migrations now live in src/lib/db/migrations/
+├── bin/                      # CLI entry
+└── @omniroute/               # internal workspace packages (opencode-plugin, etc.)
 ```
 
-**For authoritative coverage requirements, test execution, and PR gates, see [`CONTRIBUTING.md`](CONTRIBUTING.md#running-tests).**
+## WHERE TO LOOK
+
+| Task | Location |
+|------|----------|
+| Add/modify a provider | `src/shared/constants/providers.ts` + `open-sse/executors/` + `open-sse/config/providerRegistry.ts` |
+| Change routing logic | `open-sse/services/combo.ts`, `src/domain/comboResolver.ts` |
+| DB schema change | `src/lib/db/migrations/<NNN>_*.sql` + new `src/lib/db/*.ts` module |
+| New API endpoint | `src/app/api/v1/.../route.ts` (handler in `open-sse/handlers/`) |
+| MCP tool | `open-sse/mcp-server/` (schemas/tools.ts + a module set) |
+| Authz decision | `src/server/authz/` (classify → policies → enforce) |
+| Security behavior | `src/lib/guardrails/`, `open-sse/utils/publicCreds.ts`, `open-sse/utils/error.ts` |
+
+## CODE MAP (centrality)
+
+| Symbol | Type | Location | Role |
+|--------|------|----------|------|
+| `handleChatCore` | fn | `open-sse/handlers/chatCore.ts` | Core chat pipeline entry |
+| `handleComboChat` / `resolveComboTargets` | fn | `open-sse/services/combo.ts` | Combo routing engine |
+| `getExecutor` | fn | `open-sse/executors/index.ts` | Provider executor factory |
+| `translateRequest` | fn | `open-sse/translator/index.ts` | API-format translation |
+| `getDbInstance` | fn | `src/lib/db/core.ts` | SQLite singleton (WAL) |
+| `createMcpServer` / `startMcpStdio` | fn | `open-sse/mcp-server/index.ts` | MCP server entry |
+| `taskManager` | class | `src/lib/a2a/taskManager.ts` | A2A task lifecycle |
+
+## CONVENTIONS (deviations from standard)
+
+- **Two package roots**: `src/` is TypeScript; `open-sse/` + `electron/` are JavaScript ESM. Path aliases: `@/*` → `src/`, `@omniroute/open-sse` → `open-sse/`.
+- **DB access is centralized**: all persistence goes through `src/lib/db/` modules. No raw SQL in routes. `localDb.ts` is re-export only — never add logic.
+- **Migrations live in `src/lib/db/migrations/`** as idempotent SQL files (`001_*.sql`…`117_*.sql`), applied by `migrationRunner.ts`.
+- **Zod validation at module load**: `src/shared/constants/providers.ts` validates the 237-entry catalog via `providerSchema` on import (fail-fast).
+- **API route pattern**: `route.ts` → CORS preflight → Zod body validation → optional auth (`extractApiKey`/`isValidApiKey`) → policy enforce → delegate to `open-sse/handlers/`. No global Next middleware.
+- **Formatting**: Prettier (2-space, double-quote, 100-char, es5 trailing commas) via lint-staged. ESLint security rules (`no-eval`, `no-implied-eval`, `no-new-func`) are errors everywhere.
+- **Docs are accuracy-enforced** (see below). Do not state any API name, path, env var, or count without grepping first.
+
+## ANTI-PATTERNS (THIS PROJECT)
+
+- **Never** commit secrets/API keys. Use `resolvePublicCred()` for public OAuth identifiers — never string literals.
+- **Never** put raw `err.stack`/`err.message` in responses — use `buildErrorBody()` / `sanitizeErrorMessage()` from `open-sse/utils/error.ts`.
+- **Never** suppress type errors with `as any` / `@ts-ignore` / `@ts-expect-error` (warn in `open-sse/`+`tests/`, error elsewhere).
+- **Never** make PII redaction default-on — opt-in via `PII_REDACTION_ENABLED` / `PII_RESPONSE_SANITIZATION` (both default `false`). Fail-open guardrails.
+- **Never** close a contributor's PR after using their code — merge via GitHub for credit.
+- **Never** document unverified specifics — see DOC ACCURACY below.
+
+## DOC ACCURACY DISCIPLINE
+
+`npm run check:fabricated-docs` extracts every route path/env/function/CLI from `docs/**` and verifies against source. Rules:
+
+1. Any name/endpoint/env/CLI must `grep -rn "name" src/ open-sse/ bin/` → 0 hits means do not document.
+2. Counts/line counts/sizes must be measured (`wc -l`, `ls | wc -l`), never from memory.
+3. Code examples must be copy-pasted from real usage or run; link `file:line`, don't invent signatures.
+4. Prefer citing real source over paraphrasing.
+
+## FORK / UPSTREAM WORKFLOW
+
+Mirror of `diegosouzapw/OmniRoute`. Fork-only operational changes (GHCR publish, deploy) stay off upstream PRs. For upstream PRs, branch from `upstream/main`. See `docs/architecture/cluster-decisions.md` and AGENTS.md fork rules. Build/publish flows to GHCR `ghcr.io/eliteraihan2nd/omniroute-custom:custom`.
+
+## COMMANDS
+
+```bash
+npm run dev            # Next.js dev server
+npm run build          # next build → .build/next → assembleStandalone → dist/
+npm run typecheck:core # TS type-check (src)
+npm run lint           # ESLint (prettier via lint-staged)
+npm run check:docs-all # refresh live doc counts
+node --import tsx/esm --test tests/unit/<file>.test.ts   # single unit test
+npm run test:vitest    # MCP/autoCombo vitest suites
+npm run test:e2e       # Playwright e2e
+npm run electron:dev   # Electron app in dev
+```
+
+## NOTES
 
 ---
 
@@ -564,37 +563,9 @@ For any non-trivial change, read the matching deep-dive first:
 
 ---
 
-## Fork / Upstream Workflow
+## NOTES
 
-This repository is a fork of `diegosouzapw/OmniRoute`. Keep fork-only operational
-changes (for example GHCR image publishing, personal deployment workflows, or local
-automation) out of upstream contribution PRs.
-
-When preparing a PR for upstream, always start the work branch from the upstream
-**default branch** — the active `release/vX.Y.Z` line (today `release/v3.8.49`).
-Never branch from `main`: `main` only receives release squash-merges, so a branch
-cut there is weeks behind and produces conflict-heavy PRs
-(see `CONTRIBUTING.md` and `docs/ops/BRANCHING_MODEL.md`):
-
-```bash
-git fetch upstream
-# the default branch is the active release line, e.g. release/v3.8.49
-git switch -c <branch-name> upstream/release/vX.Y.Z
-```
-
-Only cherry-pick or reapply the changes intended for the upstream PR.
-
----
-
-## Review Focus
-
-- **DB ops** go through `src/lib/db/` modules, never raw SQL in routes
-- **Provider requests** flow through `open-sse/handlers/`
-- **MCP/A2A pages** are tabs inside `/dashboard/endpoint`, not standalone routes
-- **No memory leaks** in SSE streams (abort signals, cleanup)
-- **Rate limit headers** must be parsed correctly
-- All API inputs validated with **Zod schemas**
-- **Provider constants** validated at module load via Zod (`src/shared/validation/providerSchema.ts`)
-- **Pricing data** syncs from LiteLLM via `src/lib/pricingSync.ts`
-- **Memory/Skills** are cross-cutting: affect MCP tools, request pipeline, and A2A skills
-- **⛔ NEVER close a contributor's PR** after using their code — always merge via GitHub so they get credit. See `.agents/workflows/review-prs.md` for full policy.
+- `src/sse/` is a legacy service layer predating `open-sse/`. Prefer `open-sse/` for new work; don't migrate blindly.
+- `db/migrations/` at repo root is a stale path — the live migrations are under `src/lib/db/migrations/`.
+- Deployment config in `docker-compose.yml` + `Dockerfile`; VPS rsyncs `dist/` into the image's app dir.
+- `REQUIRE_API_KEY` env toggles route auth. Prompt-injection guard is unique to chat completions.

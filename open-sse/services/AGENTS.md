@@ -1,10 +1,25 @@
-# open-sse/services/ — Routing Engine & Cross-Cutting Services
+# open-sse/services — Agent Knowledge Base
 
-**Purpose**: 134 service modules (top-level) powering request routing, rate limiting, quota management, token refresh, fallback strategies, and runtime state. The combo routing engine (`combo.ts`) is the core; supporting services handle resilience, accounting, and decision-making.
+## OVERVIEW
+142 top-level routing/resilience/account services — the decision layer of the streaming engine. Pure logic, no HTTP. Consumed by handlers and executors.
 
-Live count: `ls open-sse/services/*.ts | wc -l` (currently 134). More including sub-dirs like `autoCombo/` and `compression/`.
+## WHERE TO LOOK
+| Task | Location |
+|------|----------|
+| Combo routing / target selection | `combo.ts` (`handleComboChat`, `resolveComboTargets`) |
+| Provider account selection | `providerAccountService.ts`, `accountService.ts` |
+| Load balancing / strategy | `weightedRoundRobin.ts`, `p2c.ts`, `loadBalancer.ts` |
+| Fallback / retry / circuit | `fallback.ts`, `retry.ts`, `circuitBreaker.ts` |
+| Cost / quota | `costService.ts`, `quotaService.ts` |
+| Cache | `cacheService.ts`, `responseCache.ts` |
+| Rate limit | `rateLimitService.ts` |
+| Health / key validation | `healthCheck.ts`, `keyValidationService.ts` |
+| Telemetry / logging | `telemetry.ts`, `logger.ts` |
 
----
+## CONVENTIONS
+- Each service is a module of exported functions/classes; state lives in SQLite (`src/lib/db`) or in-memory maps, never module globals that drift.
+- Services are ES modules (`import`/`export`), no TypeScript types (open-sse is JS).
+- `getExecutor` (executors/index.ts) is the bridge from services → per-provider executors.
 
 ## Combo Routing Engine
 

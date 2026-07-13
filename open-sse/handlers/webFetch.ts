@@ -27,6 +27,7 @@ import { nimbleFetch } from "../executors/nimble-fetch.ts";
 import { anysearchFetch } from "../executors/anysearch-fetch.ts";
 import { parallelFetch } from "../executors/parallel-fetch.ts";
 import { keenableFetch } from "../executors/keenable-fetch.ts";
+import { exaFetch } from "../executors/exa-fetch.ts";
 import type { WebFetchProviderId } from "../config/webFetchProviders.ts";
 export { WEB_FETCH_PROVIDERS, type WebFetchProviderId } from "../config/webFetchProviders.ts";
 
@@ -40,6 +41,7 @@ export interface WebFetchRequest {
     | "tavily-search"
     | "tinyfish"
     | "context7"
+    | "exa-search"
     | "nimble-search"
     | "anysearch-search"
     | "parallel-search"
@@ -131,6 +133,15 @@ export async function handleWebFetch(
 
       case "tavily-search":
         return await tavilyFetch({
+          url: req.url,
+          format,
+          depth: req.depth ?? 0,
+          includeMetadata,
+          credentials,
+        });
+
+      case "exa-search":
+        return await exaFetch({
           url: req.url,
           format,
           includeMetadata,

@@ -752,6 +752,7 @@ export const v1WebFetchSchema = z
         "tavily-search",
         "tinyfish",
         "context7",
+        "exa-search",
         "nimble-search",
         "anysearch-search",
         "parallel-search",

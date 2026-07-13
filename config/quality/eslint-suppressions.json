@@ -232,7 +232,7 @@
   },
   "open-sse/handlers/search.ts": {
     "@typescript-eslint/no-explicit-any": {
-      "count": 33
+      "count": 36
     },
     "@typescript-eslint/no-unused-vars": {
       "count": 1
@@ -5280,6 +5280,11 @@
   "tests/unit/webhook-abort-timer-cleanup.test.ts": {
     "@typescript-eslint/no-explicit-any": {
       "count": 5
+    }
+  },
+  "tests/unit/serper-pagination.test.ts": {
+    "@typescript-eslint/no-explicit-any": {
+      "count": 10
     }
   },
   "tests/unit/xiaomi-providers-registry.test.ts": {

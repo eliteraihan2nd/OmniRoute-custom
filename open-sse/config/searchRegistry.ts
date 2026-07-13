@@ -47,7 +47,7 @@ export const SEARCH_PROVIDERS: Record<string, SearchProviderConfig> = {
     freeMonthlyQuota: 2500,
     searchTypes: ["web", "news"],
     defaultMaxResults: 5,
-    maxMaxResults: 100,
+    maxMaxResults: 50,
     timeoutMs: 10_000,
     cacheTTLMs: 5 * 60 * 1000,
   },

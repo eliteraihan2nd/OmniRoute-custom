@@ -362,10 +362,18 @@ interface SearchRequestParams {
 
 function buildSerperRequest(
   config: SearchProviderConfig,
-  params: SearchRequestParams
+  params: SearchRequestParams,
+  opts?: { num?: number; page?: number }
 ): { url: string; init: RequestInit } {
   const endpoint = params.searchType === "news" ? "/news" : "/search";
-  const body: Record<string, unknown> = { q: params.query, num: params.maxResults };
+  const body: Record<string, unknown> = {
+    q: params.query,
+    num: opts?.num ?? params.maxResults,
+    // Serper's `num` only returns ≤10 organic results per page; pagination via
+    // `page` is the only way to exceed 10. autocorrect:false keeps `num` honest.
+    autocorrect: false,
+  };
+  if (opts?.page && opts.page > 1) body.page = opts.page;
   if (params.country) body.gl = params.country.toLowerCase();
   if (params.language) body.hl = params.language;
   return {
@@ -1517,6 +1525,159 @@ export async function handleSearch(options: SearchHandlerOptions): Promise<Searc
 }
 
 /**
+ * Serper (Google SERP) search — paginated.
+ *
+ * Serper returns at most 10 organic results per request; `num` alone never
+ * exceeds 10 (verified against the live API). To honor `maxResults > 10` we
+ * fan out across `ceil(maxResults / 10)` pages (num=10 each) and merge.
+ *
+ * Behavior:
+ * - Inter-page delay (SERPER_PAGE_DELAY_MS) so a burst of page requests doesn't
+ *   trip rate limits.
+ * - On a non-2xx for any page > 1 we keep the partial results collected so far
+ *   (best-effort), rather than discarding the whole call.
+ * - Per-page `autocorrect:false` keeps `num` honest.
+ * - `queries_used` reflects the number of pages actually fetched (cost accrues
+ *   per page, not per logical search).
+ */
+const SERPER_PAGE_SIZE = 10;
+const SERPER_PAGE_DELAY_MS = 150;
+
+async function executeSerperSearch(
+  config: SearchProviderConfig,
+  params: Omit<SearchRequestParams, "token">,
+  token: string,
+  providerSpecificData: Record<string, unknown> | undefined,
+  startTime: number,
+  globalStartTime: number,
+  log?: any
+): Promise<SearchHandlerResult> {
+  const { query, searchType, maxResults } = params;
+  const now = new Date().toISOString();
+
+  const remainingGlobal = GLOBAL_TIMEOUT_MS - (Date.now() - globalStartTime);
+  const timeout = Math.min(config.timeoutMs, Math.max(remainingGlobal, 1000));
+
+  const pageCount = Math.max(1, Math.ceil(maxResults / SERPER_PAGE_SIZE));
+  const merged: SearchResult[] = [];
+  const seen = new Set<string>();
+  let pagesFetched = 0;
+  // Collect partial errors (e.g. a later page 429) so callers/observers see them.
+  const errors: Array<{ provider: string; code: string; message: string }> = [];
+
+  if (log) {
+    log.info(
+      "SEARCH",
+      `${config.id} | query: "${query.slice(0, 80)}" | type: ${searchType} | pages: ${pageCount}`
+    );
+  }
+
+  for (let page = 1; page <= pageCount; page++) {
+    if (page > 1) {
+      await new Promise((r) => setTimeout(r, SERPER_PAGE_DELAY_MS));
+    }
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    try {
+      const { url, init } = buildSerperRequest(
+        config,
+        { ...params, token, providerSpecificData },
+        { num: SERPER_PAGE_SIZE, page }
+      );
+      const response = await fetch(url, { ...init, signal: controller.signal });
+      clearTimeout(timer);
+
+      if (!response.ok) {
+        const errorText = await response.text().catch(() => "");
+        if (log) {
+          log.error(
+            "SEARCH",
+            `${config.id} page ${page} error ${response.status}: ${errorText.slice(0, 200)}`
+          );
+        }
+        errors.push({
+          provider: config.id,
+          code: String(response.status),
+          message: errorText.slice(0, 200),
+        });
+        // Best-effort: keep partial results from earlier pages, stop paging.
+        break;
+      }
+
+      const data = await response.json();
+      const normalized = normalizeSerperResponse(data, query, searchType);
+      for (const item of normalized.results) {
+        const key = item.url || `${item.title}|${item.snippet}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        merged.push(item);
+      }
+      pagesFetched++;
+    } catch (err: any) {
+      clearTimeout(timer);
+      const isTimeout = err?.name === "AbortError";
+      if (log) {
+        log.error(
+          "SEARCH",
+          `${config.id} page ${page} ${isTimeout ? "timeout" : "fetch error"}: ${err?.message}`
+        );
+      }
+      errors.push({
+        provider: config.id,
+        code: isTimeout ? "504" : "502",
+        message: String(err?.message || "").slice(0, 200),
+      });
+      // Partial results from earlier pages are still returned.
+      break;
+    }
+  }
+
+  // Re-number position + citation.rank by merged ordinal. normalizeSerperResponse
+  // numbers each page's results 1..10 independently, so without this every page
+  // would reset to <=10 and the merged list would carry duplicate ordinals.
+  for (let i = 0; i < merged.length; i++) {
+    merged[i].position = i + 1;
+    merged[i].citation = { ...merged[i].citation, rank: i + 1 };
+  }
+
+  const results = merged.slice(0, maxResults);
+  const duration = Date.now() - startTime;
+
+  saveCallLog({
+    method: config.method,
+    path: "/v1/search",
+    status: 200,
+    model: config.id,
+    provider: config.id,
+    duration,
+    requestType: "search",
+    tokens: { prompt_tokens: 0, completion_tokens: 0 },
+    requestBody: { query: query.slice(0, 200), search_type: searchType, max_results: maxResults },
+    responseBody: { results_count: results.length, cached: false },
+  }).catch(() => {
+    /* non-critical — logging must not block search response */
+  });
+
+  return {
+    success: true,
+    data: {
+      provider: config.id,
+      query,
+      results,
+      answer: null,
+      usage: { queries_used: pagesFetched, search_cost_usd: config.costPerQuery * pagesFetched },
+      metrics: {
+        response_time_ms: duration,
+        upstream_latency_ms: duration,
+        total_results_available: results.length,
+      },
+      errors,
+    },
+  };
+}
+
+/**
  * Free DuckDuckGo lite provider — no API key, HTML scraping (free-claude-code port).
  * Dedicated path because the lite endpoint returns HTML, not the JSON the generic
  * tryProvider() flow expects. See open-sse/services/freeWebSearch.ts.
@@ -1647,6 +1808,18 @@ async function tryProvider(
 
   if (config.id === "zai-search" && token) {
     return tryZaiMCPProvider(
+      config,
+      params,
+      token,
+      providerSpecificData,
+      startTime,
+      globalStartTime,
+      log
+    );
+  }
+
+  if (config.id === "serper-search" && token) {
+    return executeSerperSearch(
       config,
       params,
       token,

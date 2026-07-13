@@ -1035,6 +1035,29 @@ export async function getProviderCredentials(
       return await maybeSyntheticNoAuthFallback(resolvedId, excludedForNoAuth);
     }
 
+    // Embedded services (e.g. 9router) are not provider_connections and carry
+    // no DB credential row — they authenticate with a supervisor-managed API key
+    // that the executor injects itself (getOrCreateApiKey(tool)). They still must
+    // pass this gate so the pipeline reaches the executor. Return synthetic
+    // credentials (no real secret) and let the executor override the key.
+    // Honors the Security-tab "Blocked Providers" chip as the kill-switch and
+    // respects exclusion so combo fallback cannot re-select it in a loop.
+    const embeddedDef = getProviderById(resolvedId) as
+      { isEmbeddedService?: boolean; embedded?: boolean } | undefined;
+    if (embeddedDef?.isEmbeddedService || embeddedDef?.embedded) {
+      const settings = await getSettings();
+      const blocked = Array.isArray((settings as Record<string, unknown>).blockedProviders)
+        ? ((settings as Record<string, unknown>).blockedProviders as unknown[])
+        : [];
+      if (blocked.includes(resolvedId)) return null;
+      const excludedForEmbedded = normalizeExcludedConnectionIds(
+        excludeConnectionId,
+        options.excludeConnectionIds
+      );
+      if (excludedForEmbedded.has(SYNTHETIC_NOAUTH_CONNECTION_ID)) return null;
+      return buildSyntheticNoAuthCredentials();
+    }
+
     const allowSuppressedConnections = options.allowSuppressedConnections === true;
     const allowRateLimitedConnections =
       allowSuppressedConnections || options.allowRateLimitedConnections === true;

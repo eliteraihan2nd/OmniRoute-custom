@@ -34,6 +34,8 @@ import {
   isPaidTierAutoId,
 } from "@omniroute/open-sse/services/autoCombo/builtinCatalog";
 import { getAllSyncedAvailableModels, type SyncedAvailableModel } from "@/lib/db/models";
+import { getServiceModels } from "@/lib/db/serviceModels";
+import { isServiceExposed } from "@/lib/services/serviceExposure";
 import { getModelCatalogCacheVersion } from "@/lib/db/readCache";
 import { getCompatibleFallbackModels } from "@/lib/providers/managedAvailableModels";
 import { providerUsesCuratedModelsOnly } from "@/lib/providers/modelListingCapability";
@@ -912,6 +914,32 @@ async function buildUnifiedModelsResponseCore(
       }
     } catch (err) {
       console.error("[catalog] Error fetching synced provider models:", err);
+    }
+
+    // Embedded services (9Router): when exposed (providerExpose flag + running
+    // supervisor + not blocked), advertise the synced models. Stored ids already
+    // carry the "9router/" prefix, which matches the routing prefix the executor
+    // strips. Gating via isServiceExposed keeps the Security tab "Blocked
+    // Providers" chip and a dead service as effective suppressors.
+    if (isServiceExposed("9router", settings)) {
+      try {
+        for (const sm of getServiceModels("9router")) {
+          if (sm.available === false) continue;
+          const modelId = typeof sm.id === "string" ? sm.id : "";
+          if (!modelId || models.some((existing) => existing.id === modelId)) continue;
+          models.push({
+            id: modelId,
+            object: "model",
+            created: timestamp,
+            owned_by: "9router",
+            permission: [],
+            root: modelId,
+            parent: null,
+          });
+        }
+      } catch (err) {
+        console.error("[catalog] Error fetching 9router service models:", err);
+      }
     }
 
     if (

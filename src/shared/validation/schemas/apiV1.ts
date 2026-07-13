@@ -723,6 +723,7 @@ export const v1WebFetchSchema = z.object({
       "jina-reader",
       "tavily-search",
       "tinyfish",
+      "exa-search",
       "context7",
       "nimble-search",
       "anysearch-search",

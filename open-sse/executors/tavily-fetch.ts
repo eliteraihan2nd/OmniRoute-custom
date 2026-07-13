@@ -17,6 +17,7 @@ const TAVILY_TIMEOUT_MS = 30_000;
 interface TavilyFetchOptions {
   url: string;
   format: WebFetchFormat;
+  depth: 0 | 1 | 2;
   includeMetadata: boolean;
   credentials: WebFetchCredentials;
 }
@@ -26,17 +27,24 @@ interface TavilyFetchOptions {
  * Tavily Extract returns the raw content of a given URL.
  */
 export async function tavilyFetch(opts: TavilyFetchOptions): Promise<WebFetchResult> {
-  const { url, includeMetadata, credentials } = opts;
+  const { url, depth, includeMetadata, credentials } = opts;
 
   if (!credentials.apiKey) {
     const body = buildErrorBody(401, "Tavily API key required");
     return { success: false, status: 401, error: body.error.message };
   }
 
+  // OmniRoute's `depth` (0|1|2) is Firecrawl's crawl-recursion depth, but Tavily's
+  // /extract has no recursion — its `extract_depth` ("basic"|"advanced") only trades
+  // extraction fidelity (and 2x credits) for harder pages. Reuse the same field:
+  // depth >= 1 selects Tavily "advanced" extraction. Verified live: all keys accept
+  // "advanced" (HTTP 200); it is a credit-cost difference, not a plan gate.
+  const extractDepth = depth >= 1 ? "advanced" : "basic";
+
   const requestBody: Record<string, unknown> = {
     api_key: credentials.apiKey,
     urls: [url],
-    extract_depth: "basic",
+    extract_depth: extractDepth,
   };
 
   const controller = new AbortController();

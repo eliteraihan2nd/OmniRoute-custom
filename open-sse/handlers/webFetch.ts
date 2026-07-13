@@ -24,6 +24,7 @@ import { tavilyFetch } from "../executors/tavily-fetch.ts";
 import { tinyfishFetch } from "../executors/tinyfish-fetch.ts";
 import { nimbleFetch } from "../executors/nimble-fetch.ts";
 import { anysearchFetch } from "../executors/anysearch-fetch.ts";
+import { exaFetch } from "../executors/exa-fetch.ts";
 
 export type WebFetchFormat = "markdown" | "html" | "links" | "screenshot";
 
@@ -35,6 +36,7 @@ export interface WebFetchRequest {
     | "tavily-search"
     | "tinyfish"
     | "context7"
+    | "exa-search"
     | "nimble-search"
     | "anysearch-search";
   format?: WebFetchFormat;
@@ -73,6 +75,7 @@ export const WEB_FETCH_PROVIDERS = Object.freeze([
   "anysearch-search",
   "context7",
   "nimble-search",
+  "exa-search",
 ] as const);
 // Derived from the array — adding a provider to WEB_FETCH_PROVIDERS
 // automatically widens the union; they cannot drift apart.
@@ -137,6 +140,15 @@ export async function handleWebFetch(
 
       case "tavily-search":
         return await tavilyFetch({
+          url: req.url,
+          format,
+          depth: req.depth ?? 0,
+          includeMetadata,
+          credentials,
+        });
+
+      case "exa-search":
+        return await exaFetch({
           url: req.url,
           format,
           includeMetadata,

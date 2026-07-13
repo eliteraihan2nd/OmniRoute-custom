@@ -19,6 +19,8 @@ import {
   isClaudeCodeCompatibleProvider,
   isOpenAICompatibleProvider,
 } from "@/shared/constants/providers";
+import { getServiceModels } from "@/lib/db/serviceModels";
+import { isServiceExposed } from "@/lib/services/serviceExposure";
 import type { RegistryModel } from "@omniroute/open-sse/config/providerRegistry.ts";
 import { appendSyncedEffortVariants } from "@omniroute/open-sse/utils/syncedEffortVariants";
 
@@ -797,6 +799,59 @@ export async function getComboBuilderOptions(): Promise<ComboBuilderOptionsPaylo
       connections: [],
       models: Array.from(modelMap.values()).sort(compareModels),
     });
+  }
+
+  // Embedded services (9Router) are not in provider_connections and have no
+  // no-auth entry. When exposed (providerExpose flag + running supervisor +
+  // not blocked), surface their synced models so the combo builder can select
+  // them. Gating lives in isServiceExposed so the Security tab "Blocked
+  // Providers" chip and a dead service both suppress exposure.
+  if (isServiceExposed("9router", settings)) {
+    const serviceModels = getServiceModels("9router").filter((m) => m.available !== false);
+    if (serviceModels.length > 0) {
+      const providerId = "9router";
+      const providerVisual = getProviderVisual(providerId, null);
+      const modelMap = new Map<string, ComboBuilderModelOption>();
+      for (const sm of serviceModels) {
+        const modelId = toStringOrNull(sm.id);
+        if (!modelId) continue;
+        // Stored id already carries the "9router/" prefix; the resolver matches
+        // the prefix, so keep qualifiedModel fully qualified and id bare.
+        const bareId = modelId.startsWith(`${providerId}/`)
+          ? modelId.slice(providerId.length + 1)
+          : modelId;
+        if (getModelIsHidden(providerId, bareId)) continue;
+        const resolved = getResolvedModelCapabilities({ provider: providerId, model: bareId });
+        addModelOption(modelMap, providerId, {
+          id: bareId,
+          name: toStringOrNull(sm.name) || bareId,
+          source: "imported",
+          supportedEndpoints: toStringArray((sm as JsonRecord).supportedEndpoints),
+          contextLength:
+            toNumberOrNull((sm as JsonRecord).inputTokenLimit) ?? resolved.contextWindow,
+          outputTokenLimit: resolved.maxOutputTokens,
+          supportsThinking: resolved.supportsThinking ?? undefined,
+        });
+      }
+      if (modelMap.size > 0) {
+        providers.push({
+          providerId,
+          providerType: providerVisual.providerType,
+          displayName: providerEntryName(providerId) || getProviderDisplayName(providerId, null) || providerId,
+          alias: providerVisual.alias,
+          prefix: null,
+          icon: providerVisual.icon,
+          color: providerVisual.color,
+          source: providerVisual.source,
+          acceptsArbitraryModel: false,
+          connectionCount: 0,
+          activeConnectionCount: 0,
+          modelCount: modelMap.size,
+          connections: [],
+          models: Array.from(modelMap.values()).sort(compareModels),
+        });
+      }
+    }
   }
 
   const comboRefs = (combos as JsonRecord[])

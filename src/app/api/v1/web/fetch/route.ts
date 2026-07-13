@@ -42,7 +42,13 @@ const CORS_HEADERS = {
   "Access-Control-Allow-Headers": "*",
 };
 
-const WEB_FETCH_PROVIDERS = ["firecrawl", "jina-reader", "tavily-search", "tinyfish"] as const;
+const WEB_FETCH_PROVIDERS = [
+  "firecrawl",
+  "jina-reader",
+  "tavily-search",
+  "tinyfish",
+  "exa-search",
+] as const;
 type WebFetchProviderId = (typeof WEB_FETCH_PROVIDERS)[number];
 
 // Providers whose free/low tiers surface quota exhaustion as 402/403 instead

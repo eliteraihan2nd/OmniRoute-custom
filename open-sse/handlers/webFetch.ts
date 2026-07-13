@@ -20,12 +20,13 @@ import { firecrawlFetch } from "../executors/firecrawl-fetch.ts";
 import { jinaReaderFetch } from "../executors/jina-reader-fetch.ts";
 import { tavilyFetch } from "../executors/tavily-fetch.ts";
 import { tinyfishFetch } from "../executors/tinyfish-fetch.ts";
+import { exaFetch } from "../executors/exa-fetch.ts";
 
 export type WebFetchFormat = "markdown" | "html" | "links" | "screenshot";
 
 export interface WebFetchRequest {
   url: string;
-  provider?: "firecrawl" | "jina-reader" | "tavily-search" | "tinyfish";
+  provider?: "firecrawl" | "jina-reader" | "tavily-search" | "tinyfish" | "exa-search";
   format?: WebFetchFormat;
   depth?: 0 | 1 | 2;
   wait_for_selector?: string;
@@ -52,7 +53,13 @@ export interface WebFetchCredentials {
   apiKey?: string;
 }
 
-const WEB_FETCH_PROVIDERS = ["firecrawl", "jina-reader", "tavily-search", "tinyfish"] as const;
+const WEB_FETCH_PROVIDERS = [
+  "firecrawl",
+  "jina-reader",
+  "tavily-search",
+  "tinyfish",
+  "exa-search",
+] as const;
 type WebFetchProviderId = (typeof WEB_FETCH_PROVIDERS)[number];
 
 /**
@@ -94,6 +101,15 @@ export async function handleWebFetch(
 
       case "tavily-search":
         return await tavilyFetch({
+          url: req.url,
+          format,
+          depth: req.depth ?? 0,
+          includeMetadata,
+          credentials,
+        });
+
+      case "exa-search":
+        return await exaFetch({
           url: req.url,
           format,
           includeMetadata,

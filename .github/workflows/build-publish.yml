@@ -10,8 +10,8 @@
 #  machinery, no Docker Hub, no Trivy gate (public personal image).
 #
 #  Triggers:
-#    - push to branch `custom`
-#    - manual workflow_dispatch
+#    - manual workflow_dispatch (build-on-demand; no auto-build on push so
+#      private-repo Actions minutes are only spent when an image is needed)
 #
 #  Jobs:
 #    - lint: cheap pre-publish gate (lint + core typecheck) on ubuntu-latest.
@@ -35,9 +35,6 @@
 name: Build & Publish Custom Image
 
 on:
-  push:
-    branches:
-      - custom
   workflow_dispatch:
 
 # Least-privilege default: read-only at top level; the build job grants
@@ -84,6 +81,7 @@ jobs:
     name: Build and Push (linux/amd64)
     needs: lint
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     permissions:
       contents: read
       packages: write
@@ -147,8 +145,13 @@ jobs:
             OMNIROUTE_DEBUG_MEMORY=1
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # Cache strategy: type=inline embeds the build cache inside the
+          # pushed image itself — there is NO separate cache-service export
+          # step, so the "exporting to GitHub Actions Cache" hang (seen on
+          # type=gha,mode=max after the v3.8.49 layer churn) cannot occur.
+          # Next run pulls cache from the previous :custom image.
+          cache-from: type=registry,ref=${{ env.IMAGE_NAME }}:custom
+          cache-to: type=inline
 
       # NOTE: no auto-redeploy step. Trigger the Dokploy deploy manually
       # after the workflow completes, OR set up a Dokploy AutoDeploy

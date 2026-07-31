@@ -145,6 +145,13 @@ ENV OMNIROUTE_MIGRATIONS_DIR=/app/migrations
 # it explicitly. The HEALTHCHECK CMD references it as `node healthcheck.mjs`.
 COPY --from=builder /app/scripts/dev/healthcheck.mjs ./healthcheck.mjs
 
+# Qoder CLI (qoder PAT provider): global npm install. The runtime resolves it
+# via /usr/local/bin (cliRuntime getKnownToolPaths -> /usr/local/bin/qodercli),
+# so no CLI_QODER_BIN override is needed. Must run as root before USER node —
+# npm's global prefix is root-owned /usr/local.
+RUN --mount=type=cache,id=npm-cache,target=/root/.npm \
+  npm install -g --no-audit --no-fund @qoder-ai/qodercli
+
 # Hand /app over to the baked-in `node` non-root user (UID/GID 1000) so the
 # runtime process never holds root privileges. The chown happens after all
 # COPYs so it covers files originally owned by root in the builder stage.

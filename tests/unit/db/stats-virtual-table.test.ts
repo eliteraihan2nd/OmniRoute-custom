@@ -7,7 +7,8 @@ import { getDatabaseStats } from "../../../src/lib/db/stats.ts";
 function createAdapter(
   virtualTableError = "no such module: vec0",
   regularRow: { count: number } | undefined = { count: 3 },
-  returnUndefinedRegularRow = false
+  returnUndefinedRegularRow = false,
+  dbstatError?: string
 ): SqliteAdapter {
   return {
     driver: "better-sqlite3",
@@ -28,6 +29,9 @@ function createAdapter(
         throw new Error(virtualTableError);
       }
       if (sql.includes("FROM dbstat")) {
+        if (dbstatError) {
+          throw new Error(dbstatError);
+        }
         return { get: () => ({ size: 1024 }) } as never;
       }
       if (sql.includes("FROM sqlite_master WHERE type='index'")) {
@@ -52,6 +56,17 @@ test("database stats tolerate virtual tables whose module is unavailable", () =>
   assert.deepEqual(stats.tables, [
     { name: "regular", rowCount: 3, size: 1024 },
     { name: "vec_memories", rowCount: 0, size: 1024 },
+  ]);
+});
+
+test("database stats fall back to 0 size when dbstat vtab is missing (sql.js)", () => {
+  const stats = getDatabaseStats(
+    createAdapter("no such module: vec0", { count: 3 }, false, "no such table: dbstat")
+  );
+
+  assert.deepEqual(stats.tables, [
+    { name: "regular", rowCount: 3, size: 0 },
+    { name: "vec_memories", rowCount: 0, size: 0 },
   ]);
 });
 

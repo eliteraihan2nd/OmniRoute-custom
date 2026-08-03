@@ -50,9 +50,19 @@ export function getDatabaseStats(db: SqliteAdapter = getDbInstance()): DatabaseS
       // Optional virtual-table modules may be unavailable on this connection.
     }
 
-    const tableSize = db
-      .prepare(`SELECT SUM(pgsize) as size FROM dbstat WHERE name = ?`)
-      .get(table.name) as { size: number | null };
+    let tableSize: { size: number | null } | undefined;
+    try {
+      tableSize = db
+        .prepare(`SELECT SUM(pgsize) as size FROM dbstat WHERE name = ?`)
+        .get(table.name) as { size: number | null };
+    } catch (error) {
+      if (!(error instanceof Error) || !error.message.startsWith("no such table: dbstat")) {
+        throw error;
+      }
+      // dbstat is a virtual table compiled into better-sqlite3/node:sqlite
+      // builds; the sql.js WASM build omits it. Fall back to 0 rather than
+      // failing the entire database-stats read.
+    }
 
     return {
       name: table.name,

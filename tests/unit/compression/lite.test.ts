@@ -384,4 +384,43 @@ describe("applyLiteCompression", () => {
     const result = applyLiteCompression(body);
     assert.equal(result.compressed, false);
   });
+
+  it("does not truncate tool results by default", () => {
+    const longContent = "x".repeat(3000);
+    const body = { messages: [{ role: "tool", content: longContent }] };
+    const result = applyLiteCompression(body);
+    assert.equal(result.compressed, false);
+    const messages = result.body.messages as typeof body.messages;
+    assert.equal(messages[0].content, longContent);
+    assert.ok(!longContent.includes("[truncated]"));
+  });
+
+  it("truncates tool results when truncateToolResults option is set", () => {
+    const longContent = "x".repeat(3000);
+    const body = { messages: [{ role: "tool", content: longContent }] };
+    const result = applyLiteCompression(body, { truncateToolResults: true });
+    assert.equal(result.compressed, true);
+    const messages = result.body.messages as typeof body.messages;
+    const content = messages[0].content as string;
+    assert.ok(content.length < longContent.length);
+    assert.ok(content.includes("[truncated]"));
+    assert.ok(result.stats!.techniquesUsed.includes("tool-compress"));
+  });
+
+  it("truncates tool results when OMNIROUTE_LITE_TRUNCATE_TOOL_RESULTS=1 is set", () => {
+    const prev = process.env.OMNIROUTE_LITE_TRUNCATE_TOOL_RESULTS;
+    process.env.OMNIROUTE_LITE_TRUNCATE_TOOL_RESULTS = "1";
+    try {
+      const longContent = "x".repeat(3000);
+      const body = { messages: [{ role: "tool", content: longContent }] };
+      const result = applyLiteCompression(body);
+      assert.equal(result.compressed, true);
+      const messages = result.body.messages as typeof body.messages;
+      const content = messages[0].content as string;
+      assert.ok(content.includes("[truncated]"));
+    } finally {
+      if (prev === undefined) delete process.env.OMNIROUTE_LITE_TRUNCATE_TOOL_RESULTS;
+      else process.env.OMNIROUTE_LITE_TRUNCATE_TOOL_RESULTS = prev;
+    }
+  });
 });

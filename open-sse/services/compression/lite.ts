@@ -17,6 +17,8 @@ interface LiteCompressionOptions {
   model?: string;
   supportsVision?: boolean | null;
   preserveSystemPrompt?: boolean;
+  /** Opt-in 2000-char tool truncation (default off; env: OMNIROUTE_LITE_TRUNCATE_TOOL_RESULTS=1). */
+  truncateToolResults?: boolean;
 }
 
 function trimTrailingHorizontalWhitespace(line: string): string {
@@ -166,6 +168,12 @@ export function compressToolResults(body: ChatBody): {
   return { body: { ...body, messages }, applied };
 }
 
+function shouldTruncateToolResults(options?: LiteCompressionOptions): boolean {
+  if (options?.truncateToolResults !== undefined) return options.truncateToolResults;
+  const env = process.env.OMNIROUTE_LITE_TRUNCATE_TOOL_RESULTS;
+  return env === "1" || env === "true";
+}
+
 export function removeRedundantContent(
   body: ChatBody,
   options: LiteCompressionOptions = {}
@@ -253,7 +261,9 @@ export function applyLiteCompression(
   current = r2.body;
   if (r2.applied) techniquesApplied.push("system-dedup");
 
-  const r3 = compressToolResults(current);
+  const r3 = shouldTruncateToolResults(options)
+    ? compressToolResults(current)
+    : { body: current, applied: false };
   current = r3.body;
   if (r3.applied) techniquesApplied.push("tool-compress");
 

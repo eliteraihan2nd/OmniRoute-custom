@@ -13,16 +13,6 @@ jobs:
     name: Fast Production Build
     runs-on: ubuntu-latest
     steps:
-      - name: Expand Virtual Memory (Native 10GB Swap)
-        run: |
-          sudo swapoff -a || true
-          sudo rm -f /mnt/swapfile /swapfile
-          sudo fallocate -l 10G /mnt/swapfile || sudo dd if=/dev/zero of=/mnt/swapfile bs=1M count=10240
-          sudo chmod 600 /mnt/swapfile
-          sudo mkswap /mnt/swapfile
-          sudo swapon /mnt/swapfile
-          free -h
-
       - name: Checkout repository
         uses: actions/checkout@v7
         with:

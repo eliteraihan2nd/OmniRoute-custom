@@ -3,9 +3,9 @@ import assert from "node:assert/strict";
 
 import { tavilyFetch } from "../../open-sse/executors/tavily-fetch.ts";
 
-function mockTavily(body: Record<string, unknown>) {
+function mockTavily(_body: Record<string, unknown>) {
   const originalFetch = globalThis.fetch;
-  globalThis.fetch = async (input: RequestInfo | URL, init?: RequestInit) => {
+  globalThis.fetch = async (_input: RequestInfo | URL, init?: RequestInit) => {
     const parsed = JSON.parse(init!.body as string) as Record<string, unknown>;
     // expose what the executor sent so assertions can inspect it
     (globalThis as Record<string, unknown>).__tavilyLastBody = parsed;

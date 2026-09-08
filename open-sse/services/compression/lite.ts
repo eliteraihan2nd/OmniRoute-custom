@@ -20,6 +20,7 @@ interface LiteCompressionOptions {
   preserveSystemPrompt?: boolean;
   compressToolResults?: boolean;
   preserveToolWhitespace?: boolean;
+  truncateToolResults?: boolean;
   maxToolLength?: number;
 }
 
@@ -305,6 +306,7 @@ export function compressToolResults(
 }
 
 function shouldTruncateToolResults(options?: LiteCompressionOptions): boolean {
+  if (options?.truncateToolResults !== undefined) return options.truncateToolResults;
   if (options?.compressToolResults !== undefined) return options.compressToolResults;
   const env = process.env.OMNIROUTE_LITE_TRUNCATE_TOOL_RESULTS;
   return env === "1" || env === "true";

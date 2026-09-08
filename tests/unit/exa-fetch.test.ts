@@ -7,7 +7,7 @@ import { exaFetch } from "../../open-sse/executors/exa-fetch.ts";
 
 test("exaFetch returns content from a successful Exa /contents response", async () => {
   const originalFetch = globalThis.fetch;
-  globalThis.fetch = async (input: RequestInfo | URL, init?: RequestInit) => {
+  globalThis.fetch = async (_input: RequestInfo | URL, init?: RequestInit) => {
     assert.equal(init.headers["x-api-key"], "exa-key");
     assert.equal(JSON.parse(init.body).urls[0], "https://example.com");
     return new Response(

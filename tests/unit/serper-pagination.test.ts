@@ -16,15 +16,13 @@ function serperPage(urls: string[], page: number) {
 
 function makeFetch(pages: Array<string[]>) {
   // pages[k] = urls returned for page k+1
-  let call = 0;
-  return async (input: RequestInfo | URL, init?: RequestInit) => {
+  return async (_input: RequestInfo | URL, init?: RequestInit) => {
     const body = JSON.parse((init?.body as string) || "{}");
     const page = typeof body.page === "number" ? body.page : 1;
     const idx = page - 1;
     assert.equal(body.autocorrect, false, "Serper requests must disable autocorrect");
     assert.equal(body.num, 10, "Serper requests must ask for num=10 per page");
     const urls = pages[idx] ?? [];
-    call++;
     return new Response(JSON.stringify(serperPage(urls, page)), {
       status: 200,
       headers: { "content-type": "application/json" },
@@ -119,7 +117,7 @@ test("serper returns partial results when a later page 429s", async () => {
     Array.from({ length: 10 }, (_, i) => `https://b.com/${i}`),
     Array.from({ length: 10 }, (_, i) => `https://c.com/${i}`),
   ];
-  globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+  globalThis.fetch = (async (_input: RequestInfo | URL, init?: RequestInit) => {
     const body = JSON.parse((init?.body as string) || "{}");
     const page = typeof body.page === "number" ? body.page : 1;
     if (page === 2) {
@@ -147,7 +145,7 @@ test("serper with maxResults <= 10 uses a single page", async () => {
   const originalFetch = globalThis.fetch;
   const pages = [Array.from({ length: 8 }, (_, i) => `https://a.com/${i}`)]; // only 1 page available
   let calls = 0;
-  globalThis.fetch = (async (input: RequestInfo | URL, init?: RequestInit) => {
+  globalThis.fetch = (async (_input: RequestInfo | URL, init?: RequestInit) => {
     calls++;
     const body = JSON.parse((init?.body as string) || "{}");
     assert.equal(body.page, undefined, "no page param for single-page request");

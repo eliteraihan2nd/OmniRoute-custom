@@ -311,13 +311,13 @@ describe("applyLiteCompression", () => {
     assert.ok(result.stats.savingsPercent > 0);
   });
 
-  it("keeps proactive tool-result truncation enabled when Lite detail config is missing", () => {
+  it("keeps proactive tool-result truncation DISABLED by default when Lite detail config is missing (custom fork opt-in)", () => {
     const toolContent = `${"word ".repeat(500)}TAIL`;
     const result = applyCompression({ messages: [{ role: "tool", content: toolContent }] }, "lite");
     const messages = result.body.messages as Array<{ content: string }>;
 
-    assert.match(messages[0].content, /\.\.\.\[truncated\]$/);
-    assert.ok(messages[0].content.length < toolContent.length);
+    assert.ok(!messages[0].content.includes("...[truncated]"));
+    assert.equal(messages[0].content, toolContent);
   });
 
   it("can disable only proactive tool-result truncation while other Lite transforms still apply", () => {

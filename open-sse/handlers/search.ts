@@ -1,4 +1,3 @@
-import { randomUUID } from "crypto";
 /**
  * Search Handler
  *
@@ -1553,7 +1552,6 @@ async function executeSerperSearch(
   log?: any
 ): Promise<SearchHandlerResult> {
   const { query, searchType, maxResults } = params;
-  const now = new Date().toISOString();
 
   const remainingGlobal = GLOBAL_TIMEOUT_MS - (Date.now() - globalStartTime);
   const timeout = Math.min(config.timeoutMs, Math.max(remainingGlobal, 1000));

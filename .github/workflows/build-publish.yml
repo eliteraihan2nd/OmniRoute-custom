@@ -140,19 +140,27 @@ jobs:
           target: runner-base
           platforms: linux/amd64
           push: true
-          # No build-args: deploy/Dockerfile now mirrors upstream v3.8.51's
-          # defaults, which are already tuned for a 16 GB runner —
-          #   OMNIROUTE_USE_TURBOPACK=0     webpack, no per-core Rust workers
-          #   OMNIROUTE_BUILD_MEMORY_MB=6144 V8 heap ceiling
-          #   OMNIROUTE_BUILD_WORKERS=2      CIRCLE_NODE_TOTAL=2 → 1 page-data
-          #                                    worker; upstream measured ~4.5 GB
-          #                                    real RSS per process (#7518), so
-          #                                    2 processes × 4.5 GB fits a 16 GB box
-          # The previous run OOMed because OMNIROUTE_BUILD_WORKERS was absent
-          # and Next spawned os.cpus().length-1 workers, each inheriting the
-          # 6144 MB ceiling. Knobs documented in deploy/Dockerfile.
-          # NOTE: never put `#` comments inside build-args — Docker treats each
-          # line as a literal `--build-arg` value.
+          # Memory plan — mirrors upstream v3.8.51's docker-publish.yml, which
+          # publishes with 12288 and NOT the Dockerfile's 6144 default:
+          #   OMNIROUTE_USE_TURBOPACK=0     webpack (Docker escape hatch; the
+          #                                 v3.8.27 Turbopack panic still bites
+          #                                 on long cold builds)
+          #   OMNIROUTE_BUILD_MEMORY_MB=12288 V8 heap for the production pass
+          #
+          # Measured, not guessed: on this tree the webpack pass peaks at
+          # ~10.3 GB RSS (measured locally with /usr/bin/time -v, 2026-09-30).
+          # At the 6144 default the build died at ~4.5 min with "FATAL ERROR:
+          # Ineffective mark-compacts near heap limit" during "Creating an
+          # optimized production build" (runs 36689547185, 36694208927).
+          # 12288 leaves room for that peak plus buildkit/page-cache on the
+          # 15.6 GB runner. OMNIROUTE_BUILD_WORKERS stays at its Dockerfile
+          # default of 2 (CIRCLE_NODE_TOTAL=2 → 1 page-data worker).
+          #
+          # NOTE: never put `#` comments inside build-args — Docker passes each
+          # line through as a literal `--build-arg` value.
+          build-args: |
+            OMNIROUTE_USE_TURBOPACK=0
+            OMNIROUTE_BUILD_MEMORY_MB=12288
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           # Cache strategy: type=inline embeds the build cache inside the

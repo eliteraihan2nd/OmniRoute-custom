@@ -140,23 +140,19 @@ jobs:
           target: runner-base
           platforms: linux/amd64
           push: true
-          # Memory plan (tuned for the 8 GB private-runner era; kept — these
-          # conservative knobs also pass on the 16 GB public-repo runner):
-          #  - jobs=1 → serial better-sqlite3 native compile (no parallel g++ spike)
-          #  - Turbopack off → single-thread webpack (no per-core Rust workers)
-          #  - webpackMemoryOptimizations:true in next.config.mjs lowers the peak
-          #  - 6144 MB V8 heap: the v3.8.46 webpack production pass needs >4 GB.
-          #    6144 + ~1 GB overhead ≈ 7 GB, under the 8 GB runner cap.
-          #    (The earlier 4096 run OOMed at ~3.8 GB old-space — a real V8 heap
-          #    ceiling hit, confirmed by the FATAL ERROR line, not a runner OOM.)
-          # Knobs documented in deploy/Dockerfile (lines 48-90).
-          build-args: |
-            OMNIROUTE_BUILD_JOBS=1
-            OMNIROUTE_USE_TURBOPACK=0
-            OMNIROUTE_BUILD_MEMORY_MB=6144
-            # First run self-diagnoses peak heap (Next.js --experimental-debug-memory-usage).
-            # Flip to 0 / omit after confirming the build fits the 8 GB runner — no source edit.
-            OMNIROUTE_DEBUG_MEMORY=1
+          # No build-args: deploy/Dockerfile now mirrors upstream v3.8.51's
+          # defaults, which are already tuned for a 16 GB runner —
+          #   OMNIROUTE_USE_TURBOPACK=0     webpack, no per-core Rust workers
+          #   OMNIROUTE_BUILD_MEMORY_MB=6144 V8 heap ceiling
+          #   OMNIROUTE_BUILD_WORKERS=2      CIRCLE_NODE_TOTAL=2 → 1 page-data
+          #                                    worker; upstream measured ~4.5 GB
+          #                                    real RSS per process (#7518), so
+          #                                    2 processes × 4.5 GB fits a 16 GB box
+          # The previous run OOMed because OMNIROUTE_BUILD_WORKERS was absent
+          # and Next spawned os.cpus().length-1 workers, each inheriting the
+          # 6144 MB ceiling. Knobs documented in deploy/Dockerfile.
+          # NOTE: never put `#` comments inside build-args — Docker treats each
+          # line as a literal `--build-arg` value.
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           # Cache strategy: type=inline embeds the build cache inside the

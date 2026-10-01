@@ -14,51 +14,61 @@ to GitHub Container Registry (GHCR). The deploy host (Dokploy or plain Docker)
 
 ## How the image gets published
 
-`.github/workflows/build-publish.yml` runs on every push to the `custom`
-branch (and via manual `workflow_dispatch`). It:
+**A push to `custom` builds nothing by itself.** Since upstream v3.8.51
+(#11946), `Build App` is `workflow_dispatch`-only — the hosted runner can no
+longer build this tree on every push. So the chain is:
 
-1. Checks out the repo.
-2. Builds `deploy/Dockerfile` (`target: runner-base`, `linux/amd64`).
-3. Pushes `ghcr.io/eliteraihan2nd/omniroute-custom:custom` + `:sha-<sha>` using
-   `GITHUB_TOKEN` (job has `packages: write`).
-4. Flips the package **public** via the Packages REST API (see secrets below).
+1. Dispatch **Build App** by hand (Actions → "Build App" → Run workflow,
+   branch `custom`).
+2. On green, `build-publish.yml` fires automatically via `workflow_run`
+   (it watches "Build App" completions on `custom`).
+3. It builds `deploy/Dockerfile` (`target: runner-base`, `linux/amd64`)
+   and pushes `ghcr.io/eliteraihan2nd/omniroute-custom:custom` +
+   `:sha-<sha>` using `GITHUB_TOKEN` (job has `packages: write`).
+4. Package visibility stays as set once in the GitHub UI (see secrets below).
+
+You can also fire step 2 directly via its `workflow_dispatch` (uses the
+`Build App` head SHA when chained, your current HEAD when dispatched).
 
 ### Build memory knobs
 
-The workflow passes **no** `build-args`. `Dockerfile` now carries upstream
-v3.8.51's defaults, which are already tuned for a 16 GB runner:
+The workflow pins two build-args, mirroring upstream v3.8.51's own
+`docker-publish.yml` (which publishes with 12288, NOT the Dockerfile's
+6144 default):
 
 ```
 OMNIROUTE_USE_TURBOPACK=0      # webpack, no per-core Rust compile workers
-OMNIROUTE_BUILD_MEMORY_MB=6144 # V8 heap ceiling for the production pass
-OMNIROUTE_BUILD_WORKERS=2      # CIRCLE_NODE_TOTAL=2 → 1 page-data worker
+OMNIROUTE_BUILD_MEMORY_MB=12288 # V8 heap ceiling for the production pass
 ```
 
-The worker cap is the one that matters. Upstream measured real per-process RSS
-at ~4.5 GB (issue #7518) — independent of the `NODE_OPTIONS` ceiling, because it
-applies to the parent process too. Every page-data worker inherits that
-ceiling, so without the cap Next spawns `os.cpus().length - 1` workers and the
-host is exhausted: 1 worker = 2 processes × 4.5 GB = 9 GB fits a 16 GB runner.
+The heap ceiling is the one that matters. The webpack optimization
+pass ("Creating an optimized production build") peaks at ~10.3 GB RSS
+on this tree (measured locally, 2026-09-30). At the 6144 default the
+build dies ~4.5 min in with "FATAL ERROR: Ineffective mark-compacts
+near heap limit" (runs 36689547185, 36694208927). 12288 leaves room
+for that peak plus buildkit/page-cache on the 15.6 GB runner.
 
-> Note: `OMNIROUTE_USE_TURBOPACK` must be an `ARG` in the Dockerfile or the
-> build-arg is silently ignored. It is declared as `ARG`+`ENV` in `Dockerfile`.
->
-> Never put `#` comment lines inside a workflow `build-args:` block — Docker
-> passes each line through as a literal `--build-arg` value.
+`OMNIROUTE_BUILD_WORKERS` is left at its Dockerfile default of 2
+(CIRCLE_NODE_TOTAL=2 → 1 page-data worker); every page-data worker
+inherits the heap ceiling per-process.
 
-## Required secrets
+> Never put `#` comment lines inside a workflow `build-args:` block —
+> Docker passes each line through as a literal `--build-arg` value.
 
-Set in **repo → Settings → Secrets and variables → Actions**:
+## Secrets
 
-| Secret    | Scope                                  | Used for                                                                                         |
-| --------- | -------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `PKG_PAT` | classic PAT, **`write:packages`** only | Flips the GHCR package to public after push. Fine-grained PATs do NOT work for the Packages API. |
+**None.** The push uses `GITHUB_TOKEN` (auto-provided; the build
+job grants itself `packages: write`).
 
-The push itself uses `GITHUB_TOKEN` (auto-provided, no secret needed).
+Package visibility is set **once, manually** in the GitHub UI:
+repo → Packages → `omniroute-custom` → Settings → Change
+visibility → **Public**. The Packages REST/GraphQL visibility
+endpoints are not served for user-namespaced container packages
+(they 404 even for the owner with `write:packages`), so there is
+no CI step that can flip it — and once public it stays public
+across all later pushes.
 
-> If `PKG_PAT` is unset, the visibility step **skips cleanly** and the package
-> stays private. The image is still published; it just won't be world-pullable.
-> (Once public, it stays public on later pushes — the step is idempotent.)
+(The old `PKG_PAT` auto-flip secret was removed for this reason.)
 
 ## Deploying on Dokploy (Compose mode)
 
@@ -68,9 +78,10 @@ The push itself uses `GITHUB_TOKEN` (auto-provided, no secret needed).
 4. **Registry (GHCR):** Dokploy → Core → Registry → GHCR:
    - Registry URL: `ghcr.io`
    - Username: `eliteraihan2nd`
-   - Password: a **classic PAT with `read:packages`** (pull-only; separate from
-     the `write:packages` `PKG_PAT` used by CI). This writes `~/.docker/config.json`
-     so the compose pull authenticates.
+   - Password: a **classic PAT with `read:packages`**
+     (pull-only). This writes `~/.docker/config.json`
+     so the compose pull authenticates. Optional — the
+     package is public, so pulls work without auth.
    - Click **Test**.
 5. **Env:** Manage all env vars in the **Dokploy UI**. Dokploy overwrites the
    repo's `deploy/.env` on deploy, so don't rely on that file for secrets.

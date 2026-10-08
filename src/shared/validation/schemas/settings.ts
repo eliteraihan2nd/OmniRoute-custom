@@ -42,6 +42,8 @@ export const requestQueueSettingsSchema = z
     requestsPerMinute: z.number().int().min(1).optional(),
     minTimeBetweenRequestsMs: z.number().int().min(0).optional(),
     concurrentRequests: z.number().int().min(1).optional(),
+    // Whole-process upstream concurrency cap. Zero disables the global gate.
+    globalConcurrentRequests: z.number().int().min(0).max(100_000).optional(),
     // 0 is an explicit "disable the queue-wait budget" sentinel (see
     // src/lib/resilience/settings/normalize.ts maxWaitMs) — do not clamp it up to 1.
     maxWaitMs: z.number().int().min(0).optional(),

@@ -6,14 +6,20 @@
 #
 #  Adapted from the upstream fork-publish workflow that was removed in
 #  5494f92a (build-fork.yml). Retargeted to this repo's custom deploy
-#  Dockerfile and a single floating :custom tag — no version/release
-#  machinery, no Docker Hub, no Trivy gate (public personal image).
+#  Dockerfile — no Docker Hub, no Trivy gate (public personal image).
+#
+#  Tags: :custom (floating — what the Dokploy stack follows), :v<package.json
+#  version> (immutable, one per upstream point — pin a deploy to THIS), and
+#  :sha-<sha> (same commit, discoverable).
 #
 #  Triggers:
-#    - workflow_run: fires automatically after the upstream "Build App"
-#      workflow completes GREEN on the `custom` branch (conclusion gate on
-#      the lint job). A failed Build App never reaches the image build.
-#    - manual workflow_dispatch (build-on-demand escape hatch).
+#    - push to `custom`: the branch is the deployable artifact's source of truth.
+#    - manual workflow_dispatch (rebuild the same commit).
+#
+#  Do NOT re-add a `workflow_run: ["Build App"]` trigger. `.github/workflows/
+#  build.yml` is `workflow_dispatch`-only since upstream #11946 (the hosted
+#  runner cannot build this tree), so that chain never fired from a push and
+#  every publish needed a hand-dispatched Build App run first.
 #
 #  Jobs:
 #    - lint: cheap pre-publish gate (lint + core typecheck) on ubuntu-latest.
@@ -37,12 +43,9 @@
 name: Build & Publish Custom Image
 
 on:
-  workflow_dispatch:
-  workflow_run:
-    # Chain: push → Build App (upstream verbatim) → GREEN → publish here.
-    workflows: ["Build App"]
-    types: [completed]
+  push:
     branches: [custom]
+  workflow_dispatch:
 
 # One publish per ref: the floating :custom tag only ever needs the newest build,
 # and a push storm used to fan out concurrent ~8 GB image builds (upstream #11976).
@@ -67,16 +70,11 @@ jobs:
   lint:
     name: Lint + Typecheck (custom)
     runs-on: ubuntu-latest
-    # On workflow_run: only publish when Build App actually succeeded.
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
         with:
           persist-credentials: false
-          # workflow_run runs from the default-branch workflow file, but the
-          # image must be built from the commit that actually passed Build App.
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Set up Node
         uses: actions/setup-node@v6
@@ -100,6 +98,30 @@ jobs:
       - name: Core typecheck
         run: npm run typecheck:core
 
+      # The two steps below are the ONLY checks that reach the mirror-owned layer:
+      # `next build` keeps upstream's `typescript.ignoreBuildErrors: true` and
+      # `typecheck:core` is a curated 27-file list that excludes every custom file.
+      # See scripts/check/custom-layer-types.mjs.
+      - name: Mirror-layer typecheck
+        run: node scripts/check/custom-layer-types.mjs
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192
+
+      - name: Mirror-layer unit tests
+        env:
+          DISABLE_SQLITE_AUTO_BACKUP: "true"
+        run: >
+          node --max-old-space-size=8192 --import tsx/esm
+          --import ./open-sse/utils/setupPolyfill.ts
+          --import ./tests/_setup/isolateDataDir.ts
+          --test --test-force-exit --test-concurrency=4
+          tests/unit/exa-fetch.test.ts
+          tests/unit/tavily-fetch.test.ts
+          tests/unit/serper-pagination.test.ts
+          tests/unit/compression/lite.test.ts
+          tests/unit/db/stats-virtual-table.test.ts
+          tests/unit/lib/resilience-settings-schema-global-concurrent.test.ts
+
   build:
     name: Build and Push (linux/amd64)
     needs: lint
@@ -113,7 +135,6 @@ jobs:
         uses: actions/checkout@v7
         with:
           persist-credentials: false
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
@@ -128,6 +149,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Single source of truth for the version tag: the snapshot's own package.json
+      # (bumped by the upstream tag it mirrors), so a rebase cannot forget it.
+      - name: Read app version
+        id: ver
+        run: node -p "'version=' + require('./package.json').version" >> "$GITHUB_OUTPUT"
+
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v6
@@ -135,10 +162,12 @@ jobs:
           images: ${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=custom
+            type=raw,value=v${{ steps.ver.outputs.version }}
             type=sha,prefix=sha-
           labels: |
             org.opencontainers.image.title=omniroute-custom
             org.opencontainers.image.description=Unified AI proxy/router — custom fork image
+            org.opencontainers.image.version=v${{ steps.ver.outputs.version }}
             org.opencontainers.image.url=https://github.com/eliteraihan2nd/OmniRoute-custom
             org.opencontainers.image.source=https://github.com/eliteraihan2nd/OmniRoute-custom
             org.opencontainers.image.licenses=MIT

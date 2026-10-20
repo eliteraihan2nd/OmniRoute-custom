@@ -1700,11 +1700,12 @@ async function executeSerperSearch(
   providerSpecificData: Record<string, unknown> | undefined,
   startTime: number,
   globalStartTime: number,
+  globalTimeoutMs: number,
   log?: any
 ): Promise<SearchHandlerResult> {
   const { query, searchType, maxResults } = params;
 
-  const remainingGlobal = GLOBAL_TIMEOUT_MS - (Date.now() - globalStartTime);
+  const remainingGlobal = globalTimeoutMs - (Date.now() - globalStartTime);
   const timeout = Math.min(config.timeoutMs, Math.max(remainingGlobal, 1000));
 
   const pageCount = Math.max(1, Math.ceil(maxResults / SERPER_PAGE_SIZE));
@@ -1994,6 +1995,7 @@ async function tryProvider(
       providerSpecificData,
       startTime,
       globalStartTime,
+      globalTimeoutMs,
       log
     );
   }

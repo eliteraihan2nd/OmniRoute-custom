@@ -2,7 +2,8 @@
 
 This repo builds the OmniRoute image **once** in GitHub Actions and publishes it
 to GitHub Container Registry (GHCR). The deploy host (Dokploy or plain Docker)
-**never builds** — it just pulls `ghcr.io/eliteraihan2nd/omniroute-custom:custom`.
+**never builds** — it just pulls `ghcr.io/eliteraihan2nd/omniroute-custom:custom`
+(floating) or `:v<version>` (immutable — preferred, pin the deploy to it).
 
 ## Files in this directory
 
@@ -14,25 +15,30 @@ to GitHub Container Registry (GHCR). The deploy host (Dokploy or plain Docker)
 
 ## How the image gets published
 
-**A push to `custom` builds nothing by itself.** Since upstream v3.8.51
-(#11946), `Build App` is `workflow_dispatch`-only — the hosted runner can no
-longer build this tree on every push. So the chain is:
+**A push to `custom` is the whole trigger.** `build-publish.yml` runs on
+`push: [custom]`, plus `workflow_dispatch` to rebuild the same commit:
 
-1. Dispatch **Build App** by hand (Actions → "Build App" → Run workflow,
-   branch `custom`).
-2. On green, `build-publish.yml` fires automatically via `workflow_run`
-   (it watches "Build App" completions on `custom`).
-3. It builds `deploy/Dockerfile` (`target: runner-base`, `linux/amd64`)
-   and pushes `ghcr.io/eliteraihan2nd/omniroute-custom:custom` +
-   `:sha-<sha>` using `GITHUB_TOKEN` (job has `packages: write`).
-4. Package visibility stays as set once in the GitHub UI (see secrets below).
+1. `lint` job — `npm ci`, node-runtime check, `lint`, `typecheck:core`, then the
+   two **mirror-layer** gates: `scripts/check/custom-layer-types.mjs` and the six
+   unit-test files this repo owns. Those two are the only checks that reach the
+   custom layer — `next build` keeps upstream's `ignoreBuildErrors: true` and
+   `typecheck:core` is a curated 27-file list that excludes every custom file, so
+   a rebase can otherwise leave a call to a symbol upstream renamed (v3.8.52's
+   `GLOBAL_TIMEOUT_MS` in `open-sse/handlers/search.ts` was exactly that).
+2. `build` job (`needs: lint`) builds `deploy/Dockerfile` (`target: runner-base`,
+   `linux/amd64`) and pushes `:custom` (floating), `:v<package.json version>`
+   (`:v3.8.52` today) and `:sha-<sha>`, using `GITHUB_TOKEN` (job has
+   `packages: write`).
+3. Package visibility stays as set once in the GitHub UI (see secrets below).
 
-You can also fire step 2 directly via its `workflow_dispatch` (uses the
-`Build App` head SHA when chained, your current HEAD when dispatched).
+Do **not** re-add a `workflow_run: ["Build App"]` trigger: `build.yml` is
+`workflow_dispatch`-only since upstream #11946 (the hosted runner can no longer
+build this tree), so that chain never fired from a push — every publish needed a
+hand-dispatched Build App first.
 
 ### Build memory knobs
 
-The workflow pins two build-args, mirroring upstream v3.8.51's own
+The workflow pins two build-args, mirroring upstream v3.8.52's own
 `docker-publish.yml` (which publishes with 12288, NOT the Dockerfile's
 6144 default):
 

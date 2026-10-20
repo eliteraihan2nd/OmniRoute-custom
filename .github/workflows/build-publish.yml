@@ -44,6 +44,13 @@ on:
     types: [completed]
     branches: [custom]
 
+# One publish per ref: the floating :custom tag only ever needs the newest build,
+# and a push storm used to fan out concurrent ~8 GB image builds (upstream #11976).
+# Same shape as upstream v3.8.52's docker-publish.yml.
+concurrency:
+  group: build-publish-${{ github.ref }}
+  cancel-in-progress: true
+
 # Least-privilege default: read-only at top level; the build job grants
 # packages: write itself (Scorecard TokenPermissions).
 permissions:
@@ -79,6 +86,10 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        env:
+          # Upstream v3.8.52 (#16782): deliver the ONNX install skip through
+          # explicit env — skips the native ONNX install in CI.
+          ONNXRUNTIME_NODE_INSTALL: "skip"
 
       - name: Node runtime check
         run: npm run check:node-runtime
@@ -140,7 +151,7 @@ jobs:
           target: runner-base
           platforms: linux/amd64
           push: true
-          # Memory plan — mirrors upstream v3.8.51's docker-publish.yml, which
+          # Memory plan — mirrors upstream v3.8.52's docker-publish.yml, which
           # publishes with 12288 and NOT the Dockerfile's 6144 default:
           #   OMNIROUTE_USE_TURBOPACK=0     webpack (Docker escape hatch; the
           #                                 v3.8.27 Turbopack panic still bites

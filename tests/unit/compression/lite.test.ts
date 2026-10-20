@@ -292,10 +292,10 @@ describe("replaceImageUrls", () => {
 
 describe("stacked Lite precedence (global config vs explicit step)", () => {
   const toolContent = `${"word ".repeat(500)}TAIL`;
-  const liteStep = { engine: "lite" };
+  const liteStep = { engine: "lite" as const };
   const baseConfig = {
     enabled: true,
-    defaultMode: "lite",
+    defaultMode: "lite" as const,
     autoTriggerTokens: 0,
     cacheMinutes: 5,
     preserveSystemPrompt: true,
@@ -449,7 +449,7 @@ describe("applyLiteCompression", () => {
       {
         config: {
           enabled: true,
-          defaultMode: "lite",
+          defaultMode: "lite" as const,
           autoTriggerTokens: 0,
           cacheMinutes: 5,
           preserveSystemPrompt: true,
@@ -479,11 +479,13 @@ describe("applyLiteCompression", () => {
     const result = applyCompression(body, "lite", {
       config: {
         enabled: true,
-        defaultMode: "lite",
+        defaultMode: "lite" as const,
         autoTriggerTokens: 0,
         cacheMinutes: 5,
         preserveSystemPrompt: true,
         comboOverrides: {},
+        engines: {},
+        activeComboId: null,
       },
     });
     const messages = result.body.messages as typeof body.messages;

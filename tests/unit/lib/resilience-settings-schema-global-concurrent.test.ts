@@ -35,7 +35,7 @@ test("requestQueueSettingsSchema rejects negative globalConcurrentRequests", () 
   assert.equal(result.success, false);
   if (!result.success) {
     // Zod error shape: use issues if errors is absent.
-    const issues = result.error.issues ?? result.error.errors ?? [];
+    const issues = result.error.issues ?? [];
     assert.ok(
       issues.some((e) => e.path.some((p) => String(p) === "globalConcurrentRequests")),
       "negative globalConcurrentRequests should be rejected"

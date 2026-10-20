@@ -9,7 +9,7 @@ test("exaFetch returns content from a successful Exa /contents response", async 
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async (_input: RequestInfo | URL, init?: RequestInit) => {
     assert.equal(init.headers["x-api-key"], "exa-key");
-    assert.equal(JSON.parse(init.body).urls[0], "https://example.com");
+    assert.equal(JSON.parse(init.body as string).urls[0], "https://example.com");
     return new Response(
       JSON.stringify({
         results: [

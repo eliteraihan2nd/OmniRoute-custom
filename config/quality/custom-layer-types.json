@@ -1,0 +1,26 @@
+{
+  "_comment": "Mirror-owned layer: files this repo changes on top of the upstream snapshot. Kept in sync with `node scripts/check/custom-layer-types.mjs --sync-files` after each upstream rebase, then re-gated by scripts/check/custom-layer-types.mjs in CI. suppressions freezes PRE-EXISTING diagnostics so the gate only fails on regressions the custom layer introduces.",
+  "baseline": "baseline-v3.8.52",
+  "upstreamVersion": "3.8.52",
+  "files": [
+    "open-sse/config/searchRegistry.ts",
+    "open-sse/executors/exa-fetch.ts",
+    "open-sse/executors/tavily-fetch.ts",
+    "open-sse/handlers/search.ts",
+    "open-sse/handlers/webFetch.ts",
+    "open-sse/services/compression/lite.ts",
+    "src/app/api/v1/models/catalog.ts",
+    "src/lib/combos/builderOptions.ts",
+    "src/lib/services/serviceExposure.ts",
+    "src/shared/validation/schemas/apiV1.ts",
+    "src/shared/validation/schemas/settings.ts",
+    "src/sse/services/auth.ts",
+    "tests/unit/compression/lite.test.ts",
+    "tests/unit/db/stats-virtual-table.test.ts",
+    "tests/unit/exa-fetch.test.ts",
+    "tests/unit/lib/resilience-settings-schema-global-concurrent.test.ts",
+    "tests/unit/serper-pagination.test.ts",
+    "tests/unit/tavily-fetch.test.ts"
+  ],
+  "suppressions": {}
+}

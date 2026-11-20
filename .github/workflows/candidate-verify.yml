@@ -1,0 +1,72 @@
+name: Candidate verification (no publish)
+on:
+  push:
+    branches: [candidate/t-f9203a09]
+permissions:
+  contents: read
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+        env:
+          ONNXRUNTIME_NODE_INSTALL: 'skip'
+      - run: npm run check:node-runtime
+      - run: npm run lint
+      - run: npm run typecheck:core
+      - run: node scripts/check/custom-layer-types.mjs
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192
+      - name: Mirror-layer unit tests
+        env:
+          DISABLE_SQLITE_AUTO_BACKUP: 'true'
+        run: >
+          node --max-old-space-size=8192 --import tsx/esm
+          --import ./open-sse/utils/setupPolyfill.ts
+          --import ./tests/_setup/isolateDataDir.ts
+          --test --test-force-exit --test-concurrency=4
+          tests/unit/exa-fetch.test.ts
+          tests/unit/tavily-fetch.test.ts
+          tests/unit/serper-pagination.test.ts
+          tests/unit/compression/lite.test.ts
+          tests/unit/db/stats-virtual-table.test.ts
+          tests/unit/lib/resilience-settings-schema-global-concurrent.test.ts
+  image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: docker/setup-buildx-action@v4
+      - name: Build published target without publishing
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: deploy/Dockerfile
+          target: runner-base
+          platforms: linux/amd64
+          push: false
+          load: true
+          tags: omniroute-candidate:ci
+          build-args: |
+            OMNIROUTE_USE_TURBOPACK=0
+            OMNIROUTE_BUILD_MEMORY_MB=12288
+      - name: Non-root runtime CLI smoke
+        run: |
+          docker run --rm --entrypoint sh omniroute-candidate:ci -c '
+            set -eu
+            test "$(id -u)" != 0
+            codex --version
+            codex app-server --help
+            qodercli --version
+            qodercli --help
+          '

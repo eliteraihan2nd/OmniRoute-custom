@@ -1,5 +1,10 @@
 # ── Common base with runtime deps ──────────────────────────────────────────
-FROM node:26-trixie-slim AS base
+# Pinned to a patch release (Dependabot bumps it) instead of the floating `26-trixie-slim`
+# tag: the floating tag let v3.8.52 ship with node 26.12.0, whose bundled root store still
+# trusts the compromised eMudhra intermediates (https://emudhra.we-have-a-problem.com/).
+# 26.12.1 is the first 26.x that rejects them; tests/unit/build/docker-ca-baseline.test.mjs
+# keeps it from going below that.
+FROM node:26.12.1-trixie-slim AS base
 WORKDIR /app
 
 # Mirrors for builders whose network cannot reach the default sources
@@ -47,7 +52,7 @@ RUN --mount=type=cache,id=s/92ca8a61-c1ba-421f-a389-d48ac7258c2d-apt-cache,targe
 #   ip-address      10.2.0 (needs >= 10.5.1)  CVE-2026-69192/-69198/-54272 + the
 #                   isLinkLocal / NAT64 local-use SSRF advisories fixed in 10.5.1
 #   tar             7.5.19 (needs >= 7.5.21)  GHSA-r292-9mhp-454m
-#   undici          6.27.0 (needs >= 6.28.0)  CVE-2026-16729/-16728/-15157
+#   undici          6.27.0 (needs >= 6.29.1)  GHSA-2m5v-pch6-74hx and October 2026 fixes
 # No published npm release carries patched copies, so `npm install -g npm@latest`
 # alone was pure build time for zero CVEs — it is kept only to land on a known,
 # current npm tree, and the patched copies are overlaid on top below.
@@ -67,7 +72,7 @@ RUN set -eux; \
   npm install -g npm@latest; \
   npm install --prefix /tmp/npm-cve-patch --no-audit --no-fund --ignore-scripts \
     --install-strategy=nested \
-    brace-expansion@5.0.12 ip-address@10.7.3 postcss-selector-parser@7.1.6 tar@7.5.22 undici@6.29.0; \
+    brace-expansion@5.0.12 ip-address@10.7.4 postcss-selector-parser@7.1.6 tar@7.5.22 undici@6.29.1; \
   for pkg in brace-expansion ip-address postcss-selector-parser tar undici; do \
     test -d "/usr/local/lib/node_modules/npm/node_modules/$pkg"; \
     rm -rf "/usr/local/lib/node_modules/npm/node_modules/$pkg"; \
@@ -230,20 +235,27 @@ ENV NODE_OPTIONS="--max-old-space-size=${OMNIROUTE_BUILD_MEMORY_MB}"
 ARG OMNIROUTE_BUILD_WORKERS=2
 ENV CIRCLE_NODE_TOTAL=${OMNIROUTE_BUILD_WORKERS}
 
+# Webpack production builds skip the persistent cache unless this is 1 (see
+# next.config.mjs). Declared as ARG+ENV so `--build-arg
+# OMNIROUTE_WEBPACK_BUILD_CACHE=1` reaches `npm run build`.
+ARG OMNIROUTE_WEBPACK_BUILD_CACHE=""
+ENV OMNIROUTE_WEBPACK_BUILD_CACHE=$OMNIROUTE_WEBPACK_BUILD_CACHE
+
 COPY . ./
+# The cache mount keeps .build/next/cache across builds on the same BuildKit host.
+# It holds only the SWC cache unless OMNIROUTE_WEBPACK_BUILD_CACHE=1.
 RUN --mount=type=cache,id=s/92ca8a61-c1ba-421f-a389-d48ac7258c2d-next-cache,target=/app/.build/next/cache \
   mkdir -p /app/data \
   && npm run build \
   && node --input-type=module -e "import { createRequire } from 'node:module'; import { pathToFileURL } from 'node:url'; const standaloneRoot = '/app/.build/next/standalone/node_modules/'; const require = createRequire('/app/.build/next/standalone/package.json'); for (const pkg of ['@atjsh/llmlingua-2', '@huggingface/transformers', 'js-tiktoken']) { const resolved = require.resolve(pkg); if (!resolved.startsWith(standaloneRoot)) throw new Error(pkg + ' resolved outside standalone: ' + resolved); await import(pathToFileURL(resolved).href); } const onnxRuntime = require.resolve('onnxruntime-node'); if (!onnxRuntime.startsWith(standaloneRoot)) throw new Error('onnxruntime-node resolved outside standalone: ' + onnxRuntime); await import(pathToFileURL(onnxRuntime).href);"
 
 # ── Runner base ────────────────────────────────────────────────────────────
-
 FROM base AS runner-base
 
 LABEL org.opencontainers.image.title="omniroute" \
   org.opencontainers.image.description="Unified AI proxy — route any LLM through one endpoint" \
   org.opencontainers.image.url="https://omniroute.online" \
-  org.opencontainers.image.source="https://github.com/diegosouzapw/OmniRoute" \
+  org.opencontainers.image.source="https://github.com/cheaper-inference/OmniRoute" \
   org.opencontainers.image.licenses="MIT"
 
 ENV NODE_ENV=production
@@ -296,23 +308,26 @@ ENV OMNIROUTE_MIGRATIONS_DIR=/app/migrations
 # it explicitly. The HEALTHCHECK CMD references it as `node healthcheck.mjs`.
 COPY --chown=node:node --from=builder /app/scripts/dev/healthcheck.mjs ./healthcheck.mjs
 
-# ── Mirror-local: Qoder CLI ────────────────────────────────────────────────
-# Qoder CLI (qoder PAT provider): global npm install, mirror-only — upstream's
-# runner-base does not ship it. The runtime resolves it via /usr/local/bin
-# (cliRuntime getKnownToolPaths -> /usr/local/bin/qodercli), so no
-# CLI_QODER_BIN override is needed. Must run as root before USER node —
-# npm's global prefix is root-owned /usr/local.
-USER root
-RUN --mount=type=cache,id=npm-cache,target=/root/.npm \
-  npm install -g --no-audit --no-fund @qoder-ai/qodercli
+# Next.js standalone tracing omits the root LICENSE, so the published image shipped
+# without the license text. Copy it explicitly.
+COPY --chown=node:node --from=builder /app/LICENSE ./LICENSE
 
 # Every COPY above hands its files to the baked-in `node` non-root user
 # (UID/GID 1000) at copy time. Do NOT add a `RUN chown -R node:node /app`
 # afterwards: in the overlay filesystem changing ownership rewrites every file
 # into a new layer, which stored the ~2 GB standalone build twice (#13990).
-USER node
+
+# Runtime provider CLIs; versions match the upstream v3.8.54 runner-cli pins.
+# Packaging alone does not start a Codex app-server process.
+RUN --mount=type=cache,id=mirror-cli-npm-cache,target=/root/.npm \
+  npm install -g --no-audit --no-fund --allow-scripts=@qoder-ai/qodercli \
+    @openai/codex@0.165.0 @qoder-ai/qodercli@1.1.63
 
 EXPOSE 20128
+
+# Drop to non-root before ENTRYPOINT/CMD so every derived stage (runner-cli,
+# runner-web) also runs as a non-root user unless they explicitly switch back.
+USER node
 
 # Warns if the mounted data volume has wrong ownership
 COPY --chmod=755 scripts/check-permissions.sh /app/check-permissions.sh
@@ -323,3 +338,121 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
 
 CMD ["node", "dev/run-standalone.mjs"]
 
+# ── Runner Web (web-cookie providers: Gemini Web, Claude Turnstile) ───────────
+#
+#  Two image flavors:
+#    runner-base  →  omniroute:VERSION        Lean base (~500 MB). No browsers.
+#    runner-web   →  omniroute:VERSION-web    +Chromium/Playwright (~800 MB).
+#
+#  Use runner-web when you need web-cookie providers (gemini-web, claude-web,
+#  claude-turnstile). For all other providers runner-base is sufficient.
+#
+#  Build:
+#    docker build --target runner-web -t omniroute:web .
+#  Compose:
+#    build:
+#      context: .
+#      target: runner-web
+FROM runner-base AS runner-web
+
+USER root
+
+# Copy playwright and playwright-core from the builder stage.
+# The slim runtime image does not have playwright in node_modules, so npx falls
+# back to a registry download — unreliable on CI runners (exits 127 on failure).
+# Copying from the builder avoids any network access at image-build time and also
+# ensures the same playwright version is available at runtime for web-session providers.
+COPY --from=builder /app/node_modules/playwright-core ./node_modules/playwright-core
+COPY --from=builder /app/node_modules/playwright ./node_modules/playwright
+
+# xvfb is installed explicitly (#15300): zai-web needs a headed Chromium and the browser pool
+# starts a private Xvfb when the container has no DISPLAY.
+# Install Playwright browser binaries + OS dependencies under root, then hand
+# ownership of the browsers cache to the node user.
+# PLAYWRIGHT_BROWSERS_PATH overrides the default ~/.cache/ms-playwright so the
+# browsers land under /home/node which persists across image layers and is
+# accessible to the non-root runtime user.
+ENV PLAYWRIGHT_BROWSERS_PATH=/home/node/.cache/ms-playwright
+RUN --mount=type=cache,id=s/92ca8a61-c1ba-421f-a389-d48ac7258c2d-apt-cache,target=/var/cache/apt,sharing=locked \
+  --mount=type=cache,id=s/92ca8a61-c1ba-421f-a389-d48ac7258c2d-apt-lists,target=/var/lib/apt/lists,sharing=locked \
+  apt-get update \
+  && node node_modules/playwright/cli.js install chromium --with-deps \
+  && apt-get install -y --no-install-recommends xvfb \
+  && chown -R node:node /home/node/.cache \
+  && rm -rf /var/lib/apt/lists/*
+
+USER node
+
+FROM runner-base AS runner-cli-core
+
+# Shared CLI runtime: retains every supported AI CLI while keeping Docker client
+# packages out of the common layer. Deployments without a Docker socket (including
+# the homelab image) can stop at runner-cli-no-docker and avoid installing tools
+# that cannot reach a daemon. The published runner-cli target below keeps its
+# historical Docker client + Compose behavior. Drop back to root briefly so we can
+# install system + global npm packages, then return to the `node` non-root user
+# before the CMD inherited from runner-base runs.
+USER root
+
+# The CLI image can use the internal ChatGPT Web (Codex) Chromium sidecar over
+# CDP without installing a second browser in this container.
+COPY --from=builder /app/node_modules/playwright-core ./node_modules/playwright-core
+COPY --from=builder /app/node_modules/playwright ./node_modules/playwright
+
+# Install system dependencies required by openclaw (git+ssh references).
+RUN --mount=type=cache,id=s/92ca8a61-c1ba-421f-a389-d48ac7258c2d-apt-cache,target=/var/cache/apt,sharing=locked \
+  --mount=type=cache,id=s/92ca8a61-c1ba-421f-a389-d48ac7258c2d-apt-lists,target=/var/lib/apt/lists,sharing=locked \
+  apt-get update \
+  && apt-get install -y --no-install-recommends git ca-certificates \
+  && rm -rf /var/lib/apt/lists/* \
+  && git config --system url."https://github.com/".insteadOf "ssh://git@github.com/"
+
+# Install CLI tools globally. Separate layer from apt for better cache reuse.
+# Pinned to exact versions per Diego's diagnosis in #12576 — floating
+# `@latest` causes two CI failures:
+#   1. `openclaw` ships a breaking major ~weekly; overnight builds silently
+#      advance to a version that no longer matches the tested combo stack.
+#   2. `codex` / `claude-code` dev pre-releases (`@next`, dist-tags) mutate
+#      API surface without notice; reproducible builds need a SHA-pinned dev
+#      build, not the floating `@latest`.
+# `@qoder-ai/qodercli` (#9292): the Qoder PAT (`pt-*`) login path shells out to
+# this binary for WASM-signed Cosy auth; without it the executor's own
+# `cli_not_found` handling is correct but every PAT login fails with
+# `spawn qodercli ENOENT`. Same pinning rationale as the tools above.
+# npm 12 requires an explicit allowlist for required global lifecycle scripts.
+RUN --mount=type=cache,id=s/92ca8a61-c1ba-421f-a389-d48ac7258c2d-npm-cache,target=/root/.npm \
+  npm install -g --no-audit --no-fund --allow-scripts=@anthropic-ai/claude-code,@qoder-ai/qodercli,droid,openclaw,sharp,@google/genai,tree-sitter-bash,protobufjs \
+    @openai/codex@0.165.0 \
+    @anthropic-ai/claude-code@2.1.260 \
+    droid@0.212.0 \
+    openclaw@2026.9.1 \
+    @qoder-ai/qodercli@1.1.63
+
+USER node
+
+RUN --network=none codex --version \
+  && claude --version \
+  && droid --version \
+  && openclaw --version \
+  && qodercli --version
+
+# Docker-client-free CLI flavor for hosts that do not mount /var/run/docker.sock
+# and do not set DOCKER_HOST. It still includes Codex, Claude Code, Droid,
+# OpenClaw, Qoder CLI, Playwright, and git; only the unusable Docker/Compose
+# clients differ.
+FROM runner-cli-core AS runner-cli-no-docker
+
+# Backward-compatible generic CLI flavor. Existing builds targeting runner-cli
+# retain Docker and Compose clients for operators that connect to a daemon. It
+# stays the LAST stage so a build without --target still produces it.
+FROM runner-cli-core AS runner-cli
+
+USER root
+
+RUN --mount=type=cache,id=s/92ca8a61-c1ba-421f-a389-d48ac7258c2d-apt-cache,target=/var/cache/apt,sharing=locked \
+  --mount=type=cache,id=s/92ca8a61-c1ba-421f-a389-d48ac7258c2d-apt-lists,target=/var/lib/apt/lists,sharing=locked \
+  apt-get update \
+  && apt-get install -y --no-install-recommends docker.io docker-compose \
+  && rm -rf /var/lib/apt/lists/*
+
+USER node

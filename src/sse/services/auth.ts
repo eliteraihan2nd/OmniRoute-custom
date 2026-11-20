@@ -24,6 +24,7 @@ import {
   isWorkspacePolicyBudget429,
 } from "./modelScopedQuotaFailure.ts"; // #13548, #19314
 import { isCIPayloadQuotaFailure } from "./ciPayloadQuotaFailure.ts";
+import { getSettings } from "@/lib/db/settings";
 import {
   getCachedRawProviderConnections,
   getCachedProviderNodes,

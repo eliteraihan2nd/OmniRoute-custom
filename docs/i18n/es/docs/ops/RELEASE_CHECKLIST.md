@@ -1,0 +1,492 @@
+# Release Checklist (Español)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../ops/RELEASE_CHECKLIST.md) · 🇪🇹 [am](../../../am/docs/ops/RELEASE_CHECKLIST.md) · 🇸🇦 [ar](../../../ar/docs/ops/RELEASE_CHECKLIST.md) · 🇦🇿 [az](../../../az/docs/ops/RELEASE_CHECKLIST.md) · 🇧🇬 [bg](../../../bg/docs/ops/RELEASE_CHECKLIST.md) · 🇧🇩 [bn](../../../bn/docs/ops/RELEASE_CHECKLIST.md) · 🇧🇦 [bs](../../../bs/docs/ops/RELEASE_CHECKLIST.md) · 🇨🇿 [cs](../../../cs/docs/ops/RELEASE_CHECKLIST.md) · 🇩🇰 [da](../../../da/docs/ops/RELEASE_CHECKLIST.md) · 🇩🇪 [de](../../../de/docs/ops/RELEASE_CHECKLIST.md) · 🇬🇷 [el](../../../el/docs/ops/RELEASE_CHECKLIST.md) · 🇪🇪 [et](../../../et/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇷 [fa](../../../fa/docs/ops/RELEASE_CHECKLIST.md) · 🇫🇮 [fi](../../../fi/docs/ops/RELEASE_CHECKLIST.md) · 🇫🇷 [fr](../../../fr/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇪 [ga](../../../ga/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [gu](../../../gu/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇬 [ha](../../../ha/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇱 [he](../../../he/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [hi](../../../hi/docs/ops/RELEASE_CHECKLIST.md) · 🇭🇷 [hr](../../../hr/docs/ops/RELEASE_CHECKLIST.md) · 🇭🇺 [hu](../../../hu/docs/ops/RELEASE_CHECKLIST.md) · 🇦🇲 [hy](../../../hy/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇩 [id](../../../id/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇬 [ig](../../../ig/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇹 [it](../../../it/docs/ops/RELEASE_CHECKLIST.md) · 🇯🇵 [ja](../../../ja/docs/ops/RELEASE_CHECKLIST.md) · 🇬🇪 [ka](../../../ka/docs/ops/RELEASE_CHECKLIST.md) · 🇰🇭 [km](../../../km/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [kn](../../../kn/docs/ops/RELEASE_CHECKLIST.md) · 🇰🇷 [ko](../../../ko/docs/ops/RELEASE_CHECKLIST.md) · 🇱🇹 [lt](../../../lt/docs/ops/RELEASE_CHECKLIST.md) · 🇱🇻 [lv](../../../lv/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [ml](../../../ml/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [mr](../../../mr/docs/ops/RELEASE_CHECKLIST.md) · 🇲🇾 [ms](../../../ms/docs/ops/RELEASE_CHECKLIST.md) · 🇲🇹 [mt](../../../mt/docs/ops/RELEASE_CHECKLIST.md) · 🇲🇲 [my](../../../my/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇵 [ne](../../../ne/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇱 [nl](../../../nl/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇴 [no](../../../no/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [or](../../../or/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [pa](../../../pa/docs/ops/RELEASE_CHECKLIST.md) · 🇵🇭 [phi](../../../phi/docs/ops/RELEASE_CHECKLIST.md) · 🇵🇱 [pl](../../../pl/docs/ops/RELEASE_CHECKLIST.md) · 🇵🇹 [pt](../../../pt/docs/ops/RELEASE_CHECKLIST.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/ops/RELEASE_CHECKLIST.md) · 🇷🇴 [ro](../../../ro/docs/ops/RELEASE_CHECKLIST.md) · 🇷🇺 [ru](../../../ru/docs/ops/RELEASE_CHECKLIST.md) · 🇱🇰 [si](../../../si/docs/ops/RELEASE_CHECKLIST.md) · 🇸🇰 [sk](../../../sk/docs/ops/RELEASE_CHECKLIST.md) · 🇸🇮 [sl](../../../sl/docs/ops/RELEASE_CHECKLIST.md) · 🇷🇸 [sr](../../../sr/docs/ops/RELEASE_CHECKLIST.md) · 🇸🇪 [sv](../../../sv/docs/ops/RELEASE_CHECKLIST.md) · 🇰🇪 [sw](../../../sw/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [ta](../../../ta/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [te](../../../te/docs/ops/RELEASE_CHECKLIST.md) · 🇹🇭 [th](../../../th/docs/ops/RELEASE_CHECKLIST.md) · 🇹🇷 [tr](../../../tr/docs/ops/RELEASE_CHECKLIST.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/ops/RELEASE_CHECKLIST.md) · 🇵🇰 [ur](../../../ur/docs/ops/RELEASE_CHECKLIST.md) · 🇺🇿 [uz](../../../uz/docs/ops/RELEASE_CHECKLIST.md) · 🇻🇳 [vi](../../../vi/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇬 [yo](../../../yo/docs/ops/RELEASE_CHECKLIST.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/ops/RELEASE_CHECKLIST.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/ops/RELEASE_CHECKLIST.md)
+
+---
+
+> **Última actualización:** 2026-08-28 — v3.8.51
+> Flujo de lanzamiento optimizado que aprovecha las habilidades de Claude Code para la automatización.
+>
+> **Mantén la cola/rama en verde entre lanzamientos:** consulta [RELEASE_GREEN.md](./RELEASE_GREEN.md)
+> (familia `/green-prs` + `npm run check:release-green` + `/babysit` + ejecución nocturna). Ejecutar
+> esto periódicamente —y especialmente **antes** de esta lista de comprobación— hace que el PR de lanzamiento comience en verde.
+
+## Resumen
+
+```bash
+# 1. Incrementar la versión + generar el CHANGELOG (habilidad)
+/version-bump-cc patch    # o minor/major
+
+# 2. Ejecutar el control de calidad localmente
+npm run check              # lint + pruebas
+npm run test:coverage      # control de cobertura completo (60/60/60/60)
+
+# 3. Compilar y realizar una prueba de humo
+npm run build
+npm run test:e2e           # opcional, pero recomendado
+
+# 4. Generar el lanzamiento (habilidad)
+/generate-release-cc
+
+# 5. Desplegar (habilidad)
+/deploy-vps-both-cc        # o akamai-cc / local-cc
+
+# 6. Capturar evidencias del lanzamiento (habilidad)
+/capture-release-evidences-cc
+```
+
+## npm Trusted Publishing (predeterminado desde v3.8.51) — preparado a pedido, directo como respaldo
+
+`npm-publish.yml` publica a través de** npm Publicación confiable (OIDC)** de forma predeterminada: el trabajo `stage-npm` (alojado en github) intercambia el token de identificación de GitHub por una credencial npm de corta duración para esa ejecución — no hay token npm de larga duración en los secretos del repositorio, no hay aviso 2FA, se adjunta procedencia. Esas son las sanciones de npm ahora que se están retirando los tokens que omiten 2FA; Restaura el flujo completamente automático que tenía el proyecto hasta la v3.8.48 manteniendo la garantía WS1.3 (un token filtrado no puede publicarse solo — no hay ningún token).
+
+**Configuración única (propietario):** npmjs.com → paquete `omniroute` → Configuración → _Trusted Publisher_ → GitHub: propietario `diegosouzapw`, repositorio `OmniRoute`, flujo de trabajo `npm-publish.yml` (entorno: ninguno). Hasta que eso exista, el paso automático falla con `ENEEDAUTH`: volver a enviar con `publish_mode=staged` (abajo) o `direct`.
+
+### Edición en escena (bajo petición — `publish_mode=staged`)
+
+El flujo de trabajo npm-publish ya no publica directamente: arranca el tarball empaquetado (`check:pack-boot`) y luego ejecuta `npm stage publish` — los bytes exactos están estacionados en el registro.** no instalable** hasta que el propietario lo apruebe. La puerta 2FA humana se movió para AFTER la prueba, no antes.
+
+**Flujo de propietario después de que el flujo de trabajo se vuelve verde:**
+
+1. `npm stage list omniroute` — busca la identificación de la etapa (también impresa en el resumen del flujo de trabajo).
+2. Verifique los bytes preparados (recomendado): `npm stage download <id>`, luego instale el tarball descargado en un prefijo temporal e inícielo (`npm run check:pack-boot` automatiza el mismo paquete → install → boot verdict en CI).
+3. `npm stage approve <id>` — el mensaje 2FA IS la publicación. descartes `npm stage reject <id>`.
+4. Red posterior a la publicación: el verificador posterior a la publicación (WS1.4 del plan v3.8.49) instala la versión publicada desde el registro público en un contenedor limpio y la inicia.
+
+**Respaldo de emergencia:** `workflow_dispatch` con `publish_mode=direct` restaura el `npm publish` inmediato heredado (úselo solo si la preparación se comporta mal; registre el motivo).
+
+**Endurecimiento único (propietario, npmjs.com):** configurar el editor de confianza para `omniroute` en modo de solo etapa para que un token de larga duración filtrado no pueda `npm publish` directamente desde cualquier lugar donde — CI solo pueda realizar una etapa; solo las versiones 2FA del propietario.
+
+**Libro de jugadas de artefactos rotos (sin cambios):** `npm deprecate omniroute@<bad> "<reason> — use <fixed>"` como reflejo predeterminado (minutos, reversible); `npm unpublish` solo dentro de la ventana 72h/no-dependents y nunca como primer movimiento. Docker: nunca reescribir una etiqueta de versión — rollback está redireccionando `latest` al último buen resumen.
+
+**Docker Hub `latest` (requerido en cada publicación estable SemVer ):** el flujo de trabajo `docker-publish` debe etiquetar** ambos** `X.Y.Z` y, cuando `should-promote-latest.sh` concuerda, este es el SemVer estable más alto, `:latest` con el** mismo resumen** . Después del trabajo: Hub `latest` digest es igual al nuevo SemVer digest y `last_updated` movido. No deje `:latest` en una compilación anterior mientras las notas de la versión hablan sobre correcciones que solo existen en git. Redacte guías de inicio rápido use `:latest`; GitOps debería seguir fijando `X.Y.Z`. Consulte [los canales de lanzamiento Docker](../guides/DOCKER_GUIDE.md#release-channels) y #10317.
+
+**Repositorio de organización Docker Hub (`cheaperinference/omniroute`):** Docker Hub no puede mover un repositorio entre espacios de nombres, por lo que `diegosouzapw/omniroute` mantiene su historial de extracción y cada lanzamiento, y el trabajo `mirror-org-dockerhub` de `docker-publish` copia cada versión publicada (y `:latest` cuando se promociona) de `ghcr.io/cheaper-inference/omniroute` al repositorio de la organización. Necesita los secretos `DOCKERHUB_ORG_USERNAME` / `DOCKERHUB_ORG_TOKEN` ; sin ellos, el trabajo permanece en verde con una advertencia de "Docker Hub org mirror saltado" y los demás registros se publican normalmente. Para publicar una versión publicada allí más adelante, ejecute** Acciones → Reflejar imagen Docker en Docker Hub org → Ejecutar flujo de trabajo** con `version=X.Y.Z` (y `promote_latest` para la versión estable más alta): copia las imágenes existentes, no las reconstruye.
+
+## Vía rápida de hotfix (etiqueta `hotfix`)
+
+Un PR con la etiqueta `hotfix` omite la matriz pesada de CI (E2E con 9 particiones, control progresivo de cobertura,
+quality-gate, quality-extended) y mantiene las comprobaciones rápidas y de alta señal: compilación,
+particiones de pruebas unitarias, integración, vitest, lint/comprobación de tipos, sincronización de documentación, `check:pack-artifact`
+y la prueba rápida de arranque del tarball (`check:pack-boot`). Objetivo: todo en verde en ≤15min en lugar de ~33min.
+
+**Política de acceso — se requieren las cuatro condiciones (basada en las vías de emergencia de Chromium/VS Code/Node):**
+
+1. **Gravedad**: producción no funciona — un artefacto publicado falla al arrancar / una
+   corrección de seguridad / todos los usuarios de la versión están afectados. «Importante» no significa «no funciona».
+2. **Autoridad**: solo el propietario del repositorio aplica la etiqueta `hotfix`. La etiqueta ES
+   la aprobación — nunca debe aplicarse por cuenta propia en un PR de campaña.
+3. **Evidencia**: el cuerpo del PR enlaza la ejecución pesada anterior completamente en verde (la suite que
+   volverían a validar los trabajos omitidos), además de la prueba propia de la corrección, primero fallida y después satisfactoria.
+4. **Alcance**: solo cherry-pick — la corrección mínima, sin refactorizaciones ni cambios adicionales.
+
+La superficie de cobertura/control progresivo omitida vuelve a validarse en la siguiente ejecución completa de la
+rama de versión (versión continuamente en verde): la vía omite la ESPERA, nunca la validación.
+Los diffs que solo contienen pruebas (todos los archivos bajo `tests/`, ninguno bajo `tests/e2e/`) omiten la matriz
+E2E automáticamente, sin ninguna etiqueta.
+
+## Lista de verificación detallada
+
+### Prelanzamiento
+
+- [ ] Todos PRs destinados a esta versión se fusionan con `release/vX.Y.0`
+- [ ] Todos los elementos Linear/issue abiertos para esta versión se cierran o se pasan al siguiente hito.
+- [ ] CI verde en la rama `release/vX.Y.0`
+- [ ] No hay marcadores `TODO(release)` en el código: `grep -r "TODO(release)" src/ open-sse/`
+- [ ] Imagen base de Docker actualizada (actualmente `node:24.15.0-trixie-slim`)
+
+### Versión y registro de cambios
+
+- [ ] Ejecute `/version-bump-cc <patch|minor|major>` (habilidad de código Claude )
+  - Golpes `package.json`, `electron/package.json`
+  - Regenera `CHANGELOG.md` a partir de confirmaciones de git desde la última etiqueta
+  - Actualiza insignias README.md
+- [ ] Revise manualmente CHANGELOG.md y limpie los mensajes de confirmación si es necesario
+- [ ] Asegúrese de que la última sección semver en `CHANGELOG.md` sea igual a la versión `package.json`
+- [ ] Mantenga `## [Unreleased]` como la primera sección del registro de cambios para el próximo trabajo.
+- [ ] La actualización `docs/openapi.yaml` → `info.version` debe ser igual a la versión `package.json`
+
+### Calidad del código
+
+- [ ] `npm run lint` — 0 errores (las advertencias son preexistentes)
+- [ ] `npm run typecheck:core` — limpio
+- [ ] `npm run typecheck:noimplicit:core` — limpio (estricto)
+- [ ] `npm run check:cycles:ratchet` — dentro del techo `metrics.cycles` congelado ( `check:cycles` desnudo sale 1 en cualquier ciclo, #15281)
+- [ ] `npm run check:any-budget:t11` — dentro del presupuesto
+- [ ] `npm run check:route-validation:t06` — limpio
+- [ ] `npm run check:node-runtime` — admite el piso de tiempo de ejecución cumplido (`>=22.22.2 <23`, `>=24.0.0 <27`, per `SUPPORTED_NODE_RANGE` in `src/shared/utils/nodeRuntimeSupport.ts`; alineado con `package.json` `engines`)
+
+### Pruebas
+
+- [ ] pase `npm run test:unit` —
+- [ ] paso `npm run test:vitest` — (servidor MCP, autoCombo, caché)
+- [ ] `npm run test:coverage` — puerta 60/60/60/60 satisfecho (statements/lines/functions/branches)
+- [ ] pase `npm run test:integration` — (si cambia toque DB / handlers)
+- [ ] `npm run test:combo:matrix` — pass (matriz de estrategias combinadas: prueba las decisiones de selección de las 22 estrategias de enrutamiento público de forma determinista; se ejecuta al tocar el enrutamiento combinado, la resolución de estrategias o la lógica alternativa)
+- [ ] `RUN_COMBO_LIVE=1 npm run test:combo:live` —**optional/manual** (humo ascendente real cerrado; obtiene una instantánea DB de solo lectura de VPS `root@192.168.0.15`; llega a proveedores reales, cuesta créditos; nunca se ejecuta en CI; salta limpiamente sin la puerta)
+- [ ] `npm run test:combo:live:vps` —**optional/manual** (Phase-3 VPS live smoke: 7 escenarios HTTP contra el servidor `.15` en vivo a través del Nodo simple ESM; requiere `ssh root@192.168.0.15`; creates/deletes solo combos `__live_test__*` ; llega a proveedores reales; nunca se ejecuta en CI)
+- [ ] pase `npm run test:e2e` — (cambios UI )
+- [ ] pase `npm run test:protocols:e2e` — (cambios MCP/A2A )
+- [ ] pase `npm run test:ecosystem` —
+
+### Ganchos (validados para Husky)
+
+Los ganchos de Husky viven en `.husky/` y se ejecutan automáticamente en las operaciones de git.
+
+- **compromiso previo:** `npx lint-staged + node scripts/check/check-docs-sync.mjs + npm run check:any-budget:t11`
+- **preempuje:** puertas deterministas rápidas — `npm run check:any-budget:t11 && npm run check:tracked-artifacts` (activadas el 13/06/2026). Excluye intencionalmente `test:unit` (lento; cubierto por el trabajo CI `test-unit` ).
+  - Ejecute `npm run test:unit` manualmente antes de presionar las ramas de liberación.
+
+Si falla un enlace: solucione el problema subyacente, no lo omita con `--no-verify`.
+
+### Compromisos convencionales
+
+Todas las confirmaciones vinculadas al lanzamiento deben seguir el formato `type(scope): subject`.
+
+**Tipos válidos:** `feat`, `fix`, `refactor`, `docs`, `test`, `chore`, `perf`, `style`, `ci`
+
+**Alcances válidos:** `db`, `sse`, `oauth`, `dashboard`, `api`, `cli`, `docker`, `ci`, `mcp`, `a2a`, `memory`, `skills`, `cloud-agent`, `guardrails`, `compression`, `auto-combo`, `resilience`, `providers`, `executors`, `translator`, `domain`, `authz`
+
+Cambios importantes: agregue `BREAKING CHANGE:` pie de página o `!` después del alcance (por ejemplo, `feat(api)!: drop /v0`).
+
+### Documentación
+
+- [ ] pases `npm run check:docs-sync` (ejecución automática mediante confirmación previa)
+- [ ] pases `npm run check:docs-all` (paraguas: docs-sync + docs-counts + env-doc-sync + deprecated-versions + doc-links)
+- [ ] `npm run check:env-doc-sync` sale 0 código — ↔ `.env.example` ↔ `docs/reference/ENVIRONMENT.md` env el contrato está intacto
+- [ ] `npm run check:doc-links` sale de 0 — sin referencias de rebajas internas rotas después de la reestructuración
+- [ ] `docs/architecture/ARCHITECTURE.md` revisado para deriva storage/runtime
+- [ ] `docs/guides/TROUBLESHOOTING.md` revisado para env var y deriva operativa
+- [ ] Si `.env.example` cambió: `docs/reference/ENVIRONMENT.md` actualizado
+- [ ] Si la nueva característica tiene un UI: `docs/guides/USER_GUIDE.md` lo menciona
+- [ ] Si la nueva característica tiene API: `docs/reference/API_REFERENCE.md` + `docs/openapi.yaml` actualizado
+- [ ] Si la nueva característica es un módulo: existe `docs/<MODULE>.md` dedicado
+- [ ] Si hay cambios importantes: `docs/guides/TROUBLESHOOTING.md` tiene una nota de migración
+
+### i18n
+
+- [ ] `npm run i18n:check` sale del estado de traducción — 0 (`.i18n-state.json`) en sincronización con los documentos fuente (no hay fuentes desviadas en modo estricto; el aviso en modo de advertencia es aceptable para retoques de documentos de última hora, pero debe ser 0 antes de etiquetar)
+- [ ] `npm run i18n:check-ui-coverage` sale de 0 — en cada ubicación UI en o por encima del piso de cobertura del 80%
+- [ ] `npm run i18n:sync-ui:dry` informa que faltan 0 claves en las 66 configuraciones regionales de destino (todas las configuraciones regionales excepto la fuente `en` )
+- [ ] Si los documentos fuente en inglés cambiaron, ejecute `npm run i18n:run` (requiere `OMNIROUTE_TRANSLATION_API_KEY` en `.env`) antes de etiquetar
+- [ ] Las contribuciones de traducción se pueden aplazar hasta la próxima versión si son menores (pista en CHANGELOG)
+
+### Migraciones de bases de datos
+
+- [ ] Si `src/lib/db/migrations/` tiene archivos nuevos:
+  - [ ] Cada migración es idempotente (`CREATE TABLE IF NOT EXISTS`, etc.)
+  - [ ] Migraciones envueltas en transacciones
+  - [ ] Numerado correctamente (sin espacios en secuencia)
+- [ ] Pruebe en una instalación nueva: elimine `~/.omniroute/omniroute.db` y ejecute `npm run dev`
+- [ ] Pruebe en una instalación existente: haga una copia de seguridad DB, ejecute la migración, verifique el esquema
+- [ ] Los archivos WAL (`-wal`, `-shm`) se manejan correctamente si la migración reescribe las tablas
+
+### Catálogo de proveedores (validado por Zod)
+
+- [ ] Esquema `src/shared/constants/providers.ts` Zod válido en el momento de la carga.
+  - [ ] Todos los proveedores tienen campos obligatorios (`id`, `label`, `kind`, etc.)
+  - [ ] `freeNote` proporcionó nuevos proveedores gratuitos
+  - [ ] Los proveedores OAuth tienen `oauthConfig` registrado en `src/lib/oauth/constants/oauth.ts`
+- [ ] Si se agrega un nuevo proveedor: ejecutor correspondiente en `open-sse/executors/`
+- [ ] Si no es formato OpenAI: traductor en `open-sse/translator/`
+- [ ] Modelos registrados en `open-sse/config/providerRegistry.ts`
+- [ ] Las pruebas unitarias en `tests/unit/` cubren la clasificación y el enrutamiento de proveedores.
+
+### Escritorio (Electron)
+
+Si `electron/` cambió:
+
+- [ ] pases `npm run electron:smoke:packaged`
+- [ ] Compilaciones probadas para al menos uno de `:win`, `:mac`, `:linux`
+- [ ] Certificados de firma de código no vencidos (si se firman)
+- [ ] La versión `electron/package.json` coincide con la raíz `package.json`
+- [ ] Puntero de canal de actualización automática actualizado si se lanza a `stable`
+
+### Diseño de construcción
+
+El repositorio utiliza tres directorios de salida distintos — nunca los mezcla:
+
+| Directorio | Objetivo                                                              | ¿Seguimiento? |
+| ---------- | --------------------------------------------------------------------- | ------------- |
+| `src/`     | Fuente de la aplicación (TypeScript / TSX)                            | Sí            |
+| `.build/`  | Generar salida — `next build` intermedia (`distDir`)                  | No (ignorado) |
+| `dist/`    | Paquete npm que se puede enviar — ensamblado por `assembleStandalone` | No (ignorado) |
+
+> **Nota del operador:** el directorio de imágenes VPS remoto sigue siendo `/usr/lib/node_modules/omniroute/app/`. Sólo el** en repositorio** salida de compilación movida (`app/` → `dist/`). Las habilidades de implementación rsync `dist/` contenidos en el directorio `app/` remoto — no requieren cambios en la ruta VPS.
+
+**Flujo de construcción única:**
+
+```
+npm run build:release
+  └─ rm -rf .build dist          (clean)
+  └─ next build → .build/next/   (intermediates)
+  └─ assembleStandalone          (copies standalone + static + public + natives → dist/)
+  └─ writes dist/BUILD_SHA       (HEAD sentinel)
+```
+
+Haga NOT ejecute `npm run build` seguido de un `npm run build:cli` separado para implementar — use `npm run build:release` que realiza una reconstrucción limpia del centinela + en un solo comando.
+
+### Validación de artefactos
+
+- [ ] `npm run build:release` tiene éxito y `dist/BUILD_SHA` == `git rev-parse --short HEAD`
+- [ ] `npm run check:pack-artifact` clean — no `app.__qa_backup`, `scripts/scratch`, `package-lock.json` u otros residuos locales
+- [ ] `dist/server.js` existe después de la compilación
+- [ ] Humo de tiempo de ejecución empaquetado local opcional: `npm run dev:candidate -- validate` después de que `npm run dev:candidate -- build` inicie el tarball empaquetado en un `DATA_DIR` aislado y verifique `/api/health` + `/v1/models` (consulte [Contribution Golden Path](CONTRIBUTION_GOLDEN_PATH.md#local-candidate-loop) ).
+
+### Etiquetado y liberación
+
+- [ ] Ejecute `/generate-release-cc` (habilidad de código Claude ):
+  - Crea la etiqueta `vX.Y.Z`
+  - Empuja la etiqueta y la rama
+  - Abre la versión GitHub con el cuerpo del registro de cambios.
+  - Adjunta instaladores Electron (si están construidos)
+- [ ] O manualmente:
+  ```bash
+  git tag -a vX.Y.Z -m "Release vX.Y.Z"
+  git push origin vX.Y.Z
+  gh release create vX.Y.Z --notes-from-tag
+  ```
+
+### Desplegar
+
+Las habilidades de implementación utilizan el flujo rsync ligero — no `npm pack`, no `npm i -g`:
+
+- [ ] Utilice la habilidad de implementación que coincida con el objetivo:
+  - `/deploy-vps-local-cc` — local VPS (192.168.0.15)
+  - `/deploy-vps-akamai-cc` — Akamai VPS (69.164.221.35)
+  - `/deploy-vps-both-cc` — ambos
+- [ ] Antes de implementar, confirme `dist/BUILD_SHA` == `git rev-parse --short HEAD`
+- [ ] La compilación debe ejecutarse donde `node_modules` es real (pago principal o `npm ci`'d worktree — NOT un árbol de trabajo con enlace simbólico)
+- [ ] Instancia implementada de prueba de humo:
+  - Abrir `/dashboard/health` → verificar que la cadena de versión coincida con la versión
+  - Ejecute una solicitud `/v1/chat/completions` contra un proveedor conocido
+  - Verifique `/api/monitoring/health` devuelva los disyuntores `CLOSED`
+  - Confirmar que los transportes MCP responden (`/mcp` HTTP, `/mcp-sse` SSE)
+
+### Post-lanzamiento
+
+- [ ] Ejecute `/capture-release-evidences-cc` (habilidad de código Claude )
+  - Captura WebP screenshots/recordings de nuevas funciones.
+  - Se adjunta a las notas de la versión/publicación del blog
+- [ ] Actualice GitHub Discussions / Discord con anuncio de lanzamiento
+- [ ] Abrir hito para la próxima versión
+- [ ] Si es crítico: fije la discusión o publique en `news.json` para un banner en la aplicación
+
+### Puerta de lanzamiento público de radar
+
+El anuncio de Radar está cometido intencionalmente con `active: false`. La activación es un cambio separado después de que se evidencia cada elemento a continuación:
+
+- [ ] Todos los radares PRs apilados están fusionados y la punta de liberación CI es verde
+- [ ] Implemente y fume las rutas del radar OSS con `RADAR_ENABLED` aún desactivado de forma predeterminada
+- [ ] Fume `GET /planos`, `/termos`, `/privacidade` y `/reembolso` en el host de radar nombrado
+- [ ] Registro del operador identity/contact/address y revisión legal aprobada por el propietario en el servicio privado
+- [ ] Ejercicio Stripe Checkout y el webhook firmado solo en modo de prueba
+- [ ] Realice una entrega de correo electrónico transaccional cifrado con el sender/domain aprobado
+- [ ] Demostrar la restauración de la copia de seguridad y una ejecución de investigación supervisada y con un presupuesto limitado
+- [ ] Aprobar la política de revisión BRL/PIX antes de aceptar evidencia de donación
+- [ ] Habilite el pago público solo después de las puertas anteriores, luego active el nuevo `news.json` ID
+- [ ] Verifique que el banner de inicio utilice una copia localizada y que reaparezca un nuevo ID después de descartar un ID anterior.
+
+## Prueba de humo de servicios integrados (v3.8.4+)
+
+Antes de publicar cualquier versión que incluya cambios en los servicios integrados, verifica:
+
+### Arranque con una base de datos nueva (detecta colisiones de migraciones — añadido después de la revisión urgente de v3.8.4)
+
+- [ ] `DATA_DIR=$(mktemp -d) npm start &` — espera 10 s para que arranque
+- [ ] `curl -s http://127.0.0.1:20128/api/services/9router/status | jq '.tool'` devuelve `"9router"` (NO 404, NO 500). Confirma que se aplicó la migración `071_services.sql` y se insertó la fila inicial.
+- [ ] `sqlite3 $DATA_DIR/storage.sqlite "PRAGMA table_info(version_manager);" | grep -E "provider_expose|logs_buffer_path|last_sync_at"` devuelve 3 filas.
+- [ ] `sqlite3 $DATA_DIR/storage.sqlite "PRAGMA table_info(webhooks);" | grep -E "kind|metadata_encrypted"` devuelve 2 filas (valida que se aplicó `070_webhooks_kind_metadata.sql`).
+- [ ] `node --import tsx/esm --test tests/unit/db/no-migration-collisions.test.ts` se ejecuta correctamente — protege contra futuras colisiones.
+
+### 9Router
+
+- [ ] `POST /api/services/9router/install` devuelve 200 con `installedVersion` en menos de 2 min
+- [ ] `POST /api/services/9router/start` devuelve 200 y `state: "running"` en menos de 30 s
+- [ ] `GET /api/services/9router/status` informa de `health: "healthy"`
+- [ ] `POST /v1/chat/completions` con `"model": "9router/auto/..."` devuelve 200 (enrutamiento integral a través de 9Router)
+- [ ] `GET /dashboard/providers/services/9router/embed/dashboard` renderiza la interfaz nativa de 9Router dentro del proxy (sin un iframe directo a `127.0.0.1:port`)
+- [ ] `POST /api/services/9router/rotate-key` devuelve `{ keyRotated: true }` y el servicio se reinicia correctamente
+- [ ] `POST /api/services/9router/stop` devuelve 200 y `state: "stopped"`
+- [ ] `GET /api/services/9router/logs?tail=50` devuelve un flujo SSE con un evento `snapshot` que contiene líneas recientes
+- [ ] La instalación en un entorno sin `npm` en PATH devuelve 500 con un mensaje de error claro (sin traza de pila)
+
+### CLIProxyAPI
+
+- [ ] `POST /api/services/cliproxy/install` devuelve 200 en menos de 2 min
+- [ ] `POST /api/services/cliproxy/start` devuelve 200 y `state: "running"` en menos de 30 s
+- [ ] `GET /api/services/cliproxy/status` informa de `health: "healthy"`
+- [ ] `POST /api/services/cliproxy/stop` devuelve 200 y `state: "stopped"`
+- [ ] `GET /api/services/cliproxy/logs?tail=50` devuelve un flujo SSE
+
+### Regresión de seguridad
+
+- [ ] `curl -H "X-Forwarded-For: 1.2.3.4" http://localhost:20128/api/services/9router/start` devuelve `403 LOCAL_ONLY`
+- [ ] `curl -H "X-Forwarded-For: 1.2.3.4" http://localhost:20128/api/services/cliproxy/start` devuelve `403 LOCAL_ONLY`
+- [ ] Las respuestas de error de `/api/services/*` no contienen `err.stack` ni rutas de archivo absolutas
+
+## Comprobaciones para v3.8.0+
+
+Antes de publicar cualquier versión v3.8.x, verifica también estos elementos:
+
+- [ ] `omniroute --tray` arranca en macOS (systray2 instalado en `~/.omniroute/runtime/`)
+- [ ] `omniroute --tray` arranca en Linux (requiere DISPLAY; muestra un error controlado si no está configurado)
+- [ ] `omniroute --tray` arranca en Windows (PowerShell NotifyIcon, sin binarios adicionales)
+- [ ] `omniroute config tray enable` crea una entrada de inicio automático; la desactivación la elimina
+- [ ] `npm install -g omniroute@<this-version>` ejecuta postinstall sin una salida fatal
+- [ ] La ruta de actualización conserva las dependencias opcionales: `omniroute update --apply` y el actualizador automático
+      ejecutan `npm install -g … --include=optional` para que `optionalDependencies` (better-sqlite3,
+      keytar, tls-client y la pila SLM de llmlingua: `@atjsh/llmlingua-2@2.0.5`,
+      `js-tiktoken`) sobrevivan a una actualización. El nivel SLM ultra `modelPath` también necesita el
+      modelo tinybert, que se descarga automáticamente en `${DATA_DIR}/models/llmlingua` al usarse por primera vez. Después, postinstall
+      (`scripts/build/colocateOptionals.mjs`) coloca conjuntamente el cierre opcional de SLM en
+      `dist/node_modules` para que el worker resuelva UNA SOLA instancia de `@huggingface/transformers` ^4.2.0
+      — la traza independiente solo empaqueta transformers, no las dependencias opcionales importadas dinámicamente,
+      por lo que, sin esto, el worker cargaría llmlingua-2 con transformers de la raíz
+      y el nivel SLM pasaría silenciosamente al modo abierto ante fallos.
+- [ ] `omniroute status` funciona sin `.env` (ruta del token de la CLI, solo loopback)
+- [ ] `curl http://localhost:20128/api/shutdown` devuelve 401 (ruta siempre protegida)
+- [ ] `curl -H "host: evil.com" http://localhost:20128/api/mcp/sse` devuelve 401 (protección de loopback)
+- [ ] El entorno de ejecución de SQLite se resuelve como `bundled` en la primera ejecución (binario incluido válido para la plataforma)
+- [ ] El entorno de ejecución de SQLite recurre a `runtime` cuando se elimina `node_modules/better-sqlite3`
+- [ ] El filtro MCP inteligente comprime la salida real de `playwright-mcp browser_snapshot` (reducción ≥50 %)
+- [ ] Los 10 archivos `skills/omniroute*/SKILL.md` son accesibles públicamente mediante una URL raw de GitHub
+- [ ] El asistente de incorporación muestra el paso del recorrido por los niveles "Cómo funciona" en una configuración nueva
+- [ ] El widget de cobertura de niveles del panel de inicio muestra los recuentos configurados/activos
+
+---
+
+## Corte LTS 3.9.0 (ensayado en 3.8.58)
+
+Después de v3.8.59, la siguiente versión es 3.9.0, y su punta se convierte en dos ramas de larga duración:
+`stable/v3` (la línea LTS de v3, npm `latest`) y `develop` (v4, actualizada a 4.0.0, npm
+`nightly`). El modelo de ramas/canales, el forward-port y las etiquetas están en
+[RELEASE_STRATEGY.md](./RELEASE_STRATEGY.md); el plan está en el [ROADMAP](../../ROADMAP.md) (Fase 3). El corte se ejecuta una sola vez;
+3.8.58 lo ensaya de principio a fin en un fork, y 3.8.59 finaliza con la
+[lista de comprobación GO/NO-GO](./LTS_GO_NO_GO.md).
+
+### Simulación (solo lectura, segura en cualquier momento)
+
+```bash
+npm run release:dry-run-lts-cut                       # el corte real: 3.9.0 desde HEAD, etiqueta anterior v3.8.59
+npm run release:dry-run-lts-cut -- --from <3.9.0-tip> # fija el commit de origen
+```
+
+`scripts/release/dry-run-lts-cut.mjs` no ejecuta nada: lee git y `gh` e imprime la
+secuencia completa: condiciones previas (el origen se resuelve, el repositorio de origen tiene el historial completo;
+un clon superficial no puede enviar `stable/v3`, el lado receptor rechaza el paquete en el primer
+padre injertado, por lo que primero debe realizarse el corte desde un clon completo o ejecutar `git fetch --unshallow origin`;
+la etiqueta anterior existe, `package.json` tiene la versión de destino, hay una incidencia `release-freeze` abierta, no hay
+ninguna incidencia `Release branch not green` abierta
+en una rama de publicación existente; una rama que no existe informa `?` como desconocido, nunca
+como correcto; la cola `release` de Mergify está configurada (G11: `queue_rules`, `checks_timeout`,
+etiqueta `queue`), el conjunto de reglas `release/*` sigue bloqueando la eliminación y el envío forzado, y
+`stable/v3` y `develop` aún no existen), los dos pasos de creación de ramas, qué activadores de flujos de trabajo
+inactivos y qué condiciones `if:` pasan a ser verdaderas (y cuáles siguen bloqueadas por una variable del repositorio o
+fijadas al repositorio canónico), las dist-tags esperadas (`latest` → 3.9.0, `next` y
+`nightly` vacías) y la reversión. Código de salida `0` = `RESULT: READY`, `1` = una condición previa bloqueante
+ha fallado (`✗`), `2` = error de uso. `--advisory <id,...>` rebaja una comprobación a advertencia (`!`)
+sin ocultarla.
+
+Ejecute la simulación del corte real mientras el bloqueo de publicación de 3.9.0 siga abierto; las ramas se
+crean después de la etiqueta y antes de que la Fase 12c levante el bloqueo.
+
+### Ensayo de 3.8.58 (solo en un fork)
+
+```bash
+# 1. Simulación en la punta actual con parámetros de ensayo
+npm run release:dry-run-lts-cut -- --target-version 3.8.58 --previous-tag v3.8.57 \
+  --advisory freeze,base-green
+
+# 2. Ejecutar contra un remoto de un FORK (se rechaza origin, o cualquier remoto cuya URL
+#    sea la del repositorio canónico; cada paso solicita confirmación en la terminal)
+git remote add rehearsal https://github.com/<you>/OmniRoute.git
+node scripts/release/dry-run-lts-cut.mjs --execute --remote rehearsal \
+  --target-version 3.8.58 --previous-tag v3.8.57 --advisory freeze,base-green
+
+# 3. Probar los flujos de trabajo inactivos en el fork (workflow_dispatch cuando la simulación
+#    informa de una fijación al repositorio canónico) y, después, revertir
+node scripts/release/dry-run-lts-cut.mjs --execute --rollback --remote rehearsal \
+  --target-version 3.8.58 --previous-tag v3.8.57 --advisory freeze,base-green
+```
+
+El commit de actualización de develop se construye mediante las operaciones internas de git (sin modificar el árbol de trabajo) y actualiza
+los mismos cinco archivos que un commit de apertura de ciclo: `package.json`, `open-sse/package.json`,
+`electron/package.json`, `package-lock.json` y `docs/openapi.yaml`. La sección `[4.0.0]` del
+CHANGELOG y sus equivalentes i18n se abren posteriormente en `develop`, antes de su primer
+PR. El script nunca cambia las dist-tags de npm; ensáyelas en un paquete de prueba.
+
+### Artefacto de vista previa del PR (compilar una vez, promover exactamente los mismos bytes)
+
+`.github/workflows/preview-artifact.yml` compila un único tarball de producción desde la cabecera de un PR y
+valida exactamente esa compilación (parte (a) de #8084). Solo para PR del mismo repositorio; no se publica nada.
+
+```bash
+gh workflow run preview-artifact.yml -f pr_number=<N>   # o añada la etiqueta `preview-artifact`
+gh run download <run-id> --name preview-artifact-pr<N>-<sha7> --dir preview
+cd preview && sha256sum -c SHA256SUMS
+gh attestation verify omniroute-*.tgz --repo diegosouzapw/OmniRoute
+npm install -g ./omniroute-*.tgz                          # instalación de vista previa
+```
+
+La ejecución realiza `npm ci`, `npm run build:release`, `npm run check:pack-artifact`, empaqueta el
+tarball, ejecuta `npm run check:pack-boot` (secretos falsos, directorio de datos efímero), vuelve a empaquetarlo y
+falla a menos que el resumen sea idéntico; después, registra `artifact-identity.json` (SHA de la cabecera, SHA de la base,
+hash del lockfile, plataforma, arquitectura, ABI de node, empaquetador, política de compilación;
+`scripts/release/artifact-identity.mjs`) y certifica el tarball en un trabajo separado. Promover
+una vista previa significa instalar ese tarball: nunca vuelva a compilar desde el código fuente.
+
+### El corte (3.9.0, después de GO)
+
+1. GO registrado en [LTS_GO_NO_GO.md](./LTS_GO_NO_GO.md).
+2. `npm run release:dry-run-lts-cut -- --from v3.9.0` imprime `RESULT: READY`.
+3. Cree manualmente las ramas en `origin` con los comandos que imprime la simulación; el
+   script se niega a enviar a `origin`. Para reutilizar un commit de develop revisado, ejecute primero el
+   ensayo con `--execute` en la punta de 3.9.0 contra su fork; este imprime ambos SHA, y
+   pueden enviarse los mismos commits:
+
+   ```bash
+   git push origin <stable-sha>:refs/heads/stable/v3 <develop-sha>:refs/heads/develop
+   ```
+
+4. Protege `stable/v3` y `develop` (conjuntos de reglas + cola de fusión) antes de que llegue el primer PR.
+5. Los flujos de trabajo inactivos se activan al existir las ramas: `forward-port.yml` (push a
+   `stable/v3`), `validate-stable-pr.yml` (PRs dirigidos a `stable/v3`) y `nightly-v4-build.yml`
+   (compila `develop`). Antes de la puesta en producción, configura el secreto del repositorio `secrets.FORWARD_PORT_TOKEN` (para que CI se ejecute en
+   los PRs de forward-port); la publicación nocturna permanece desactivada hasta que el propietario establezca la variable del repositorio
+   `vars.NIGHTLY_PUBLISH` en `true` y npm Trusted Publishing acepte
+   `nightly-v4-build.yml`. La resolución de canales se realiza en `scripts/release/dist-tag.mjs`, el mismo
+   solucionador que utiliza `npm-publish.yml`.
+6. Verifica los canales: `npm view omniroute dist-tags --json` muestra `latest` = 3.9.0 y ningún
+   `next` / `nightly` hasta que se publique v4.
+7. Reversión, si es necesario: `git push origin --delete refs/heads/stable/v3 refs/heads/develop`
+   y `npm dist-tag add omniroute@3.8.59 latest`.
+
+---
+
+## Reversión
+
+Si una versión tiene un problema crítico:
+
+1. `gh release edit vX.Y.Z --prerelease` (la marca como no más reciente)
+2. `git tag -d vX.Y.Z && git push --delete origin vX.Y.Z` (solo si los usuarios aún no la han adoptado)
+3. O bien: corrección urgente en `release/vX.Y.0` → versión de parche `vX.Y.(Z+1)`
+4. Comunicarlo inmediatamente en GitHub Discussions y Discord
+
+## Reglas estrictas
+
+- Nunca hacer commits directamente en `main`
+- Nunca usar `git push --force` en `main` ni en ramas `release/*`
+- Nunca omitir los hooks de Husky (`--no-verify`)
+- Nunca hacer commits de secretos, credenciales ni archivos `.env`
+- La cobertura debe mantenerse ≥60/60/60/60 (sentencias/líneas/funciones/ramas)
+- Incluir o actualizar siempre las pruebas al cambiar código de producción en `src/`, `open-sse/`, `electron/` o `bin/`
+
+## Comprobación automatizada de sincronización
+
+Ejecutar localmente la protección de sincronización de la documentación antes de abrir una PR:
+
+```bash
+npm run check:docs-sync
+```
+
+CI también ejecuta esta comprobación en `.github/workflows/ci.yml` (tarea de lint).

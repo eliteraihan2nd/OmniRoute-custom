@@ -1,0 +1,570 @@
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { resolveDataDir } from "../data-dir.mjs";
+
+// #9455: "supervisor" must be tracked so killAllSubprocesses() can stop the
+// supervisor process, not just the child server it spawned (and respawns).
+const SERVICES = ["server", "supervisor", "mitm", "tunnel/cloudflared", "tunnel/tailscale"];
+
+function getServicePidPath(service) {
+  return join(resolveDataDir(), service, ".pid");
+}
+
+export function writePidFile(service, pid) {
+  try {
+    const dir = join(resolveDataDir(), service);
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(getServicePidPath(service), String(pid), "utf8");
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function readRawPid(service) {
+  try {
+    const file = getServicePidPath(service);
+    if (!existsSync(file)) return null;
+    const pid = parseInt(readFileSync(file, "utf8").trim(), 10);
+    return Number.isFinite(pid) ? pid : null;
+  } catch {
+    return null;
+  }
+}
+
+// A pid file can outlive its process (crash, reboot) and the pid can then be
+// reused by an unrelated process of the same user. A live pid is "ours" only
+// when its command line names OmniRoute: the CLI path, the server process
+// title, or an install directory called omniroute. An unreadable command line
+// is "unknown" and is NOT signalled. `deps` lets tests stub /proc, ps and
+// PowerShell. shortcut: no start-time check or cache, the pid file stores only
+// the pid; add both if the pid file ever records a start time.
+export function classifyPidIdentity(pid, deps = {}) {
+  const platform = deps.platform || process.platform;
+  const run = deps.execFileSync || execFileSync;
+  try {
+    let commandLine;
+    let argv = null;
+    if (platform === "win32") {
+      // Pid goes in by env, never into the script (Hard Rule #13). One retry:
+      // a cold PowerShell start can time out once.
+      const powershell = join(
+        process.env.SystemRoot || "C:\\Windows",
+        "System32",
+        "WindowsPowerShell",
+        "v1.0",
+        "powershell.exe"
+      );
+      const script =
+        '(Get-CimInstance Win32_Process -Filter "ProcessId = $env:OMNIROUTE_PROBE_PID").CommandLine';
+      const options = {
+        encoding: "utf8",
+        timeout: 10_000,
+        windowsHide: true,
+        env: { ...process.env, OMNIROUTE_PROBE_PID: String(pid) },
+      };
+      const args = ["-NoProfile", "-NonInteractive", "-Command", script];
+      try {
+        commandLine = run(powershell, args, options);
+      } catch {
+        commandLine = run(powershell, args, options);
+      }
+    } else if (platform === "darwin") {
+      // macOS has no /proc/<pid>/cmdline.
+      commandLine = run("/bin/ps", ["-p", String(pid), "-o", "command="], {
+        encoding: "utf8",
+        timeout: 5000,
+      });
+    } else {
+      const read = deps.readFileSync || ((file) => readFileSync(file, "utf8"));
+      commandLine = String(read(`/proc/${pid}/cmdline`));
+      // NUL-separated argv; process.title rewrites it in place and pads it with NUL bytes.
+      argv = commandLine.split("\0").filter(Boolean);
+    }
+    const isFile = deps.isFile || isRegularFile;
+    return commandIdentity(argv ?? splitCommandLine(String(commandLine)), argv === null, isFile);
+  } catch (err) {
+    // No /proc/<pid> entry while procfs is mounted: the process is gone, so
+    // there is nothing to signal. Without procfs, "gone" cannot be told from
+    // "cannot look", so it stays unknown.
+    const procMounted = (deps.existsSync || existsSync)("/proc/self");
+    return platform === "linux" && err?.code === "ENOENT" && procMounted ? "gone" : "unknown";
+  }
+}
+
+function isRegularFile(file) {
+  try {
+    return statSync(file).isFile();
+  } catch {
+    return false;
+  }
+}
+
+// Install dirs like "omniroute-main" or "my-omniroute" are legitimate, so match the substring,
+// but only in the executable, the script a JS runtime runs, or the process title ("omniroute
+// (v16.2.9)" is argv[0] after the rename). An argument such as --log=/tmp/omniroute.log proves
+// nothing about the process.
+const OMNIROUTE_COMMAND = /omniroute/i;
+const JS_RUNTIME = /(?:^|[\\/])(?:node|nodejs|bun)(?:\d+(?:\.\d+)*)?(?:\.exe)?$/i;
+const EXECUTABLE_END = /(?:^|[\\/])(?:(?:node|nodejs|bun)(?:\d+(?:\.\d+)*)?|[^\\/]+\.exe)$/i;
+const SCRIPT_END = /\.[cm]?[jt]s$/i;
+// Runtime options that take their value as the next argument.
+const RUNTIME_VALUE_OPTIONS = new Set([
+  "-r",
+  "--require",
+  "--import",
+  "--loader",
+  "--experimental-loader",
+  "--preload",
+  "-C",
+  "--conditions",
+  "--env-file",
+  "--title",
+  "--input-type",
+]);
+// Bare runtime options known to take no separate value. Exact names only: no prefix is safe
+// (--trace-event-file-pattern, --experimental-sea-config and --inspect-port all take one), and
+// any other bare option may take the next token as its value, so what follows it cannot be
+// proven to be the script. `--opt=value` forms carry their value and are always skipped.
+// OmniRoute spawns itself with --dns-result-order=, --max-old-space-size= (both `=` forms),
+// --import / --preload <path> (RUNTIME_VALUE_OPTIONS) and --no-warnings (plugins/loader.ts).
+const RUNTIME_FLAGS = new Set([
+  "--no-warnings",
+  "--enable-source-maps",
+  "--no-deprecation",
+  "--trace-warnings",
+  "--trace-deprecation",
+  "--trace-uncaught",
+  "--throw-deprecation",
+  "--expose-gc",
+  "--smol",
+]);
+const RUNTIME_INLINE_CODE = /^(?:-e|-p|-pe|-ep|--eval|--print)(?:=|$)/;
+
+// macOS ps and Windows CommandLine give one string. Double quotes group an argument.
+function splitCommandLine(commandLine) {
+  const tokens = [];
+  for (const match of commandLine.trim().matchAll(/"([^"]*)"?|(\S+)/g)) {
+    tokens.push({ value: match[1] ?? match[2], quoted: match[1] !== undefined });
+  }
+  return tokens;
+}
+
+// An unquoted path with a space ("C:\Program Files\nodejs\node.exe", "/Users/me/Application
+// Support/node") arrives as several tokens, but so does a path followed by an argument
+// ("/srv/other/server omniroute.js"). Joining is a guess, so it fails closed: a joined path counts
+// only when it is a real file and no shorter candidate (the first token alone included) is one.
+// Anything else is `ambiguous`. When no join reaches a recognised end (`isEnd`), the first token
+// stands alone: it is a prefix of the real path, so a match in it is still sound.
+function joinPathTokens(tokens, start, isEnd, joinable, isFile) {
+  const first = tokens[start];
+  const single = { value: first.value, next: start + 1, ambiguous: false };
+  if (!joinable || first.quoted || isEnd(first.value)) return single;
+  const shorter = [first.value];
+  let value = first.value;
+  for (let k = start + 1; k < tokens.length; k++) {
+    const token = tokens[k];
+    if (token.quoted || /^(?:[-/\\]|[A-Za-z]:)/.test(token.value)) break;
+    value += ` ${token.value}`;
+    if (isEnd(value)) {
+      const proven = isFile(value) && !shorter.some((candidate) => isFile(candidate));
+      return { value, next: k + 1, ambiguous: !proven };
+    }
+    shorter.push(value);
+  }
+  return single;
+}
+
+// `joinable`: the tokens came from a space-joined string, not an exact argv.
+function commandIdentity(rawTokens, joinable, isFile) {
+  const tokens = rawTokens.map((t) => (typeof t === "string" ? { value: t, quoted: false } : t));
+  if (tokens.length === 0) return "foreign";
+  const exe = joinPathTokens(tokens, 0, (v) => EXECUTABLE_END.test(v), joinable, isFile);
+  if (exe.ambiguous) return "unknown";
+  if (OMNIROUTE_COMMAND.test(exe.value)) return "ours";
+  if (!JS_RUNTIME.test(exe.value)) return "foreign";
+  for (let i = exe.next; i < tokens.length; i++) {
+    const arg = tokens[i].value;
+    // Inline code (-e/-p) has no script file to prove anything.
+    if (RUNTIME_INLINE_CODE.test(arg)) return "foreign";
+    if (arg === "--") {
+      if (i + 1 >= tokens.length) return "foreign";
+      i++;
+    } else if (arg.startsWith("-")) {
+      if (RUNTIME_VALUE_OPTIONS.has(arg)) i++;
+      else if (!arg.includes("=") && !RUNTIME_FLAGS.has(arg)) return "unknown";
+      continue;
+    }
+    const script = joinPathTokens(tokens, i, (v) => SCRIPT_END.test(v), joinable, isFile);
+    if (script.ambiguous) return "unknown";
+    return OMNIROUTE_COMMAND.test(script.value) ? "ours" : "foreign";
+  }
+  return "foreign";
+}
+
+// The pid in a pid file, or null when none can be signalled safely. A dead pid
+// is still returned so callers keep their stale-file handling; a live pid that
+// is foreign or unproven is hidden, so stop never signals a stranger.
+export function readPidFile(service, deps = {}) {
+  const pid = readRawPid(service);
+  if (!pid) return null;
+  if (!isPidRunning(pid)) return pid;
+  const identity = classifyPidIdentity(pid, deps);
+  return identity === "ours" || identity === "gone" ? pid : null;
+}
+
+export function cleanupPidFile(service) {
+  try {
+    unlinkSync(getServicePidPath(service));
+  } catch {}
+}
+
+export function killAllSubprocesses() {
+  for (const service of SERVICES) {
+    const pid = readRawPid(service);
+    if (!pid) continue;
+    if (readPidFile(service) === pid) {
+      try {
+        process.kill(pid, "SIGTERM");
+      } catch {}
+    }
+    cleanupPidFile(service);
+  }
+}
+
+export function isPidRunning(pid) {
+  if (!pid) return false;
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// #16030: shutdown intent marker. The dashboard shutdown route runs inside the
+// server CHILD, which cannot prove the supervisor's identity on every platform
+// (macOS has no /proc/<pid>/cmdline). Instead of signaling an unverified pid,
+// the child writes this marker with its own pid before exiting on purpose; the
+// supervisor consumes it in handleExit() and exits instead of restarting.
+// Spontaneous exits (crash, OOM) carry no marker and still restart.
+const SHUTDOWN_INTENT_FILE = ".shutdown-intent";
+
+function getShutdownIntentPath() {
+  return join(resolveDataDir(), "supervisor", SHUTDOWN_INTENT_FILE);
+}
+
+export function clearShutdownIntent() {
+  try {
+    unlinkSync(getShutdownIntentPath());
+  } catch {}
+}
+
+export function consumeShutdownIntent(expectedPid) {
+  try {
+    // A marker is only honored when we know exactly which child exited. With an
+    // unknown child pid (e.g. spawn failed), any marker must be ignored.
+    if (!Number.isInteger(expectedPid) || expectedPid <= 0) return false;
+    const file = getShutdownIntentPath();
+    if (!existsSync(file)) return false;
+    const raw = readFileSync(file, "utf8").trim();
+    const pid = parseInt(raw, 10);
+    const honored = Number.isInteger(pid) && pid > 0 && pid === expectedPid;
+    // Single-shot either way: a consumed or stale/foreign marker never survives.
+    unlinkSync(file);
+    return honored;
+  } catch {
+    return false;
+  }
+}
+
+// A port that is already owned must be reported, not spawned into. `omniroute
+// serve` used to hand the conflict to the child, which died with EADDRINUSE
+// twice on the supervisor's restart budget and printed three raw Node stack
+// traces without ever saying another instance owned the port. It did that
+// AFTER writing the pid files, so the doomed second instance de-registered the
+// healthy running one (supervisor/.pid left pointing at the dead starter,
+// server/.pid deleted outright).
+//
+// Discovery mirrors killByPort() in bin/cli/commands/stop.mjs (netstat on
+// win32, lsof elsewhere). Both now scope discovery to LISTEN sockets: a bare
+// `lsof -ti :PORT` also returns every client connected to the port, so a
+// client socket (for example a long-lived gateway connection left in
+// CLOSE_WAIT after its peer exited) made the preflight report a free port as
+// busy and drove omniroute.service into a restart crash-loop.
+export async function findListeningPids(port, deps = {}) {
+  const platform = deps.platform || process.platform;
+  let exec = deps.execFileAsync;
+  if (!exec) {
+    const { execFile } = await import("node:child_process");
+    const { promisify } = await import("node:util");
+    exec = promisify(execFile);
+  }
+  try {
+    if (platform === "win32") {
+      const { stdout } = await exec("netstat", ["-ano"]);
+      return parseNetstatListeningPids(stdout, port);
+    }
+    const { stdout } = await exec("lsof", ["-nP", `-iTCP:${port}`, "-sTCP:LISTEN"]);
+    return parseLsofListeningPids(stdout, port, deps.host);
+  } catch (err) {
+    // POSIX lsof exits 1 with empty output when there are simply no matches.
+    // That is the normal "port is free" result, not a discovery failure.
+    if (platform !== "win32" && err?.code === 1 && !String(err?.stdout ?? "").trim()) {
+      return [];
+    }
+    // Tool missing (ENOENT) or genuinely unusable: "no listener" cannot be
+    // distinguished from "cannot look" here, so report null and let the serve
+    // preflight bind-probe the port instead (#14518).
+    return null;
+  }
+}
+
+// Bind-probe a port without any external binary: try to listen on it. Answers
+// "is anything holding this port" on hosts without lsof/netstat (Termux, slim
+// containers) and on any other discovery failure. EADDRINUSE from the probe
+// attempt means the port is held; EACCES (privileged port) and friends are
+// reported as free — the guard must not block a legitimate start it cannot
+// actually observe (#14518 keeps the false-"busy" failure mode the worse one).
+export async function probePortFree(port, deps = {}) {
+  const net = deps.net || (await import("node:net"));
+  const bindable = (host) =>
+    new Promise((resolve) => {
+      const probe = net.createServer();
+      probe.once("error", (err) => {
+        probe.close();
+        resolve(err.code !== "EADDRINUSE");
+      });
+      probe.listen({ port, host }, () => {
+        probe.close(() => resolve(true));
+      });
+    });
+  // macOS lets a bind on one address succeed while another address holds the
+  // port, so a server on 0.0.0.0 (the default), 127.0.0.1 or ::1 (localhost) is
+  // only visible to a probe on that same address. A host without one of these
+  // addresses gets EADDRNOTAVAIL, which reads as free.
+  const bindHost = deps.host;
+  const hosts =
+    bindHost && bindHost !== "0.0.0.0" && bindHost !== "::" && bindHost !== "*"
+      ? [bindHost]
+      : [undefined, "0.0.0.0", "127.0.0.1", "::1"];
+  for (const host of hosts) {
+    if (!(await bindable(host))) return false;
+  }
+  return true;
+}
+
+function parseLsofListeningPids(stdout, port, host) {
+  const pids = [];
+  for (const line of String(stdout || "").split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("COMMAND")) continue;
+    const numeric = parseInt(trimmed, 10);
+    if (String(numeric) === trimmed && numeric > 0) {
+      pids.push(numeric);
+      continue;
+    }
+    const cols = trimmed.split(/\s+/);
+    const pid = parseInt(cols[1], 10);
+    if (!Number.isFinite(pid) || pid <= 0) continue;
+    const name =
+      cols.find((col) => {
+        const at = col.lastIndexOf(":");
+        return at > 0 && col.slice(at + 1) === String(port);
+      }) || "";
+    if (!name) continue;
+    const at = name.lastIndexOf(":");
+    const listenHost = name.slice(0, at);
+    if (!listenerBlocksBind(listenHost, host)) continue;
+    pids.push(pid);
+  }
+  return pids;
+}
+
+function listenerBlocksBind(listenHost, bindHost) {
+  if (!bindHost || bindHost === "0.0.0.0" || bindHost === "::" || bindHost === "*") return true;
+  const listen = normalizeListenHost(listenHost);
+  const bind = normalizeListenHost(bindHost);
+  if (!listen) return true;
+  if (listen === "*" || listen === "0.0.0.0" || listen === "::") return true;
+  if (bind === "127.0.0.1" || bind === "::1" || bind === "localhost") {
+    return listen === "127.0.0.1" || listen === "::1" || listen === "localhost";
+  }
+  return listen === bind;
+}
+
+function normalizeListenHost(host) {
+  const value = String(host || "").trim();
+  if (value.startsWith("[") && value.endsWith("]")) return value.slice(1, -1);
+  return value;
+}
+
+function parseNetstatListeningPids(stdout, port) {
+  const portCol = `:${port}`;
+  const pids = [];
+  for (const line of stdout.split(/\r?\n/)) {
+    const cols = line.trim().split(/\s+/);
+    // Proto  LocalAddress  ForeignAddress  State  PID
+    if (cols.length < 5) continue;
+    if (cols[0] !== "TCP" && cols[0] !== "TCPv6") continue;
+    if (!(cols[1] || "").endsWith(portCol)) continue;
+    if ((cols[cols.length - 2] || "").toUpperCase() !== "LISTENING") continue;
+    const pid = parseInt(cols[cols.length - 1], 10);
+    if (Number.isFinite(pid) && pid > 0 && !pids.includes(pid)) pids.push(pid);
+  }
+  return pids;
+}
+
+export function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+// A probe that times out is classified "hanging" and never counts toward
+// readiness (#6800), so a FIXED per-probe timeout puts a hard ceiling on how
+// slow a healthy first response is allowed to be. On a cold Windows boot the
+// health route resolves ~10 dynamic imports and reads the DB before it can
+// answer; when that first response lands past the ceiling the poll can never
+// succeed, because each abort discards the in-flight request before the route
+// finishes (its own 1s payload cache is never populated either) and the next
+// probe restarts the same work into the same ceiling — for the whole budget.
+// The CLI then printed "⚠ Server did not respond within 60s" over a server
+// that went on to serve traffic normally. Escalating the timeout keeps #6800's
+// guarantee (a socket that never answers still yields "hanging" forever) while
+// letting a slow-but-real response actually be observed.
+const INITIAL_PROBE_TIMEOUT_MS = 2000;
+const MAX_PROBE_TIMEOUT_MS = 15000;
+// Floor for the last probe of a budget that is nearly spent — long enough for a
+// loopback round-trip, short enough not to overrun the caller's timeout.
+const MIN_PROBE_TIMEOUT_MS = 250;
+
+// #2460: Default raised from 15s to 60s so Windows users (slower Next.js
+// cold start due to filesystem watchers, antivirus, etc.) get a working
+// "server ready" signal instead of a phantom timeout while the server is
+// still booting. #13369: Made configurable via OMNIROUTE_READY_TIMEOUT_MS
+// so operators on slow cold starts (e.g. 6+ min Windows boots) can raise
+// the budget instead of hitting the warning on every start.
+//
+// TCP fallback marks the server as ready when the port
+// has been listening for >= 3s consecutively AND the health route is
+// actively rejecting/resetting connections fast (route not mounted yet,
+// but the HTTP server is clearly alive and responsive) — never for a
+// socket that merely accepts TCP and then hangs without ever completing
+// a single request (#6800: that's a still-booting/CPU-bound process, not
+// a "route not mounted" gap, and must NOT be reported as ready).
+const DEFAULT_READY_TIMEOUT_MS = 60_000;
+
+export function resolveReadyTimeoutMs(overrides = {}) {
+  if (typeof overrides.timeoutMs === "number" && overrides.timeoutMs > 0) {
+    return overrides.timeoutMs;
+  }
+  const envValue = Number.parseInt(process.env.OMNIROUTE_READY_TIMEOUT_MS || "", 10);
+  return Number.isFinite(envValue) && envValue > 0 ? envValue : DEFAULT_READY_TIMEOUT_MS;
+}
+
+// `onOutcome` receives every probe classification so a caller can tell a
+// "nothing ever bound the port" timeout apart from a "port is up, the health
+// route is just still warming" one when it reports the failure.
+export async function waitForServer(port, timeout = 60000, { onOutcome } = {}) {
+  const start = Date.now();
+  let tcpListeningSince = null;
+  let probeTimeout = INITIAL_PROBE_TIMEOUT_MS;
+  while (Date.now() - start < timeout) {
+    const remaining = timeout - (Date.now() - start);
+    const outcome = await pollHealthOnce(
+      port,
+      Math.max(MIN_PROBE_TIMEOUT_MS, Math.min(probeTimeout, remaining))
+    );
+    onOutcome?.(outcome);
+    if (outcome === "ready") return true;
+    if (outcome === "fast-reject") {
+      if (tcpListeningSince === null) tcpListeningSince = Date.now();
+      if (Date.now() - tcpListeningSince >= 3000) return true;
+    } else {
+      // "hanging" (request timed out with no response at all) or
+      // "not-listening" — neither counts toward the grace window.
+      tcpListeningSince = null;
+      // Only a hang says "this server may simply need longer to answer";
+      // widen the next probe instead of aborting into the same ceiling again.
+      if (outcome === "hanging") {
+        probeTimeout = Math.min(probeTimeout * 2, MAX_PROBE_TIMEOUT_MS);
+      }
+    }
+    await sleep(500);
+  }
+  return false;
+}
+
+// Polls /api/monitoring/health once and classifies the outcome:
+// - "ready": got a 2xx HTTP response.
+// - "fast-reject": got a non-2xx HTTP response, or the connection was
+//   actively refused/reset (not a timeout) — the HTTP server is alive and
+//   answering quickly, just not routing this endpoint yet (#2460).
+// - "hanging": the request timed out waiting for any response — the
+//   process accepted the TCP connection but never answered (#6800). The
+//   caller widens `probeTimeoutMs` after a hang so a merely slow (rather
+//   than dead) server is not aborted into the same ceiling on every probe.
+// - "not-listening": nothing is accepting connections on the port at all.
+// #11766: probe both IPv4 and IPv6 loopback to handle servers listening on
+// either family (or both).
+async function pollHealthOnce(port, probeTimeoutMs = INITIAL_PROBE_TIMEOUT_MS) {
+  const hosts = ["127.0.0.1", "::1"];
+  const outcomes = [];
+
+  // Probe both loopback families concurrently
+  const results = await Promise.all(
+    hosts.map(async (host) => {
+      try {
+        const res = await fetch(`http://${host}:${port}/api/monitoring/health`, {
+          signal: AbortSignal.timeout(probeTimeoutMs),
+        });
+        return { host, outcome: res.ok ? "ready" : "fast-reject" };
+      } catch (err) {
+        const outcome = err?.name === "TimeoutError" ? "hanging" : "error";
+        return { host, outcome };
+      }
+    })
+  );
+
+  outcomes.push(...results.map((r) => r.outcome));
+
+  // If either family is ready, the server is ready
+  if (outcomes.includes("ready")) return "ready";
+
+  // If either family is fast-reject, treat as fast-reject
+  // (TCP is listening and rejecting, just route not ready yet)
+  if (outcomes.includes("fast-reject")) return "fast-reject";
+
+  // If either family is hanging, server accepted TCP but not answering
+  // (still booting, must not report as ready per #6800)
+  if (outcomes.includes("hanging")) return "hanging";
+
+  // Both families failed — check if either port is actually listening
+  // If listening, then errors above are route-level (fast-reject case)
+  const listening = await isPortListening(port).catch(() => false);
+  return listening ? "fast-reject" : "not-listening";
+}
+
+async function isPortListening(port) {
+  const net = await import("node:net");
+  // #11766: check both IPv4 and IPv6 loopback. Return true if either is listening.
+  const hosts = ["127.0.0.1", "::1"];
+  const results = await Promise.all(
+    hosts.map(
+      (host) =>
+        new Promise((resolve) => {
+          const socket = net.connect({ host, port, timeout: 1000 });
+          const finish = (ok) => {
+            try {
+              socket.destroy();
+            } catch {}
+            resolve(ok);
+          };
+          socket.once("connect", () => finish(true));
+          socket.once("error", () => finish(false));
+          socket.once("timeout", () => finish(false));
+        })
+    )
+  );
+  return results.some((ok) => ok);
+}

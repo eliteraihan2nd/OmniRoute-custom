@@ -1,0 +1,492 @@
+# Release Checklist (Українська)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../ops/RELEASE_CHECKLIST.md) · 🇪🇹 [am](../../../am/docs/ops/RELEASE_CHECKLIST.md) · 🇸🇦 [ar](../../../ar/docs/ops/RELEASE_CHECKLIST.md) · 🇦🇿 [az](../../../az/docs/ops/RELEASE_CHECKLIST.md) · 🇧🇬 [bg](../../../bg/docs/ops/RELEASE_CHECKLIST.md) · 🇧🇩 [bn](../../../bn/docs/ops/RELEASE_CHECKLIST.md) · 🇧🇦 [bs](../../../bs/docs/ops/RELEASE_CHECKLIST.md) · 🇨🇿 [cs](../../../cs/docs/ops/RELEASE_CHECKLIST.md) · 🇩🇰 [da](../../../da/docs/ops/RELEASE_CHECKLIST.md) · 🇩🇪 [de](../../../de/docs/ops/RELEASE_CHECKLIST.md) · 🇬🇷 [el](../../../el/docs/ops/RELEASE_CHECKLIST.md) · 🇪🇸 [es](../../../es/docs/ops/RELEASE_CHECKLIST.md) · 🇪🇪 [et](../../../et/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇷 [fa](../../../fa/docs/ops/RELEASE_CHECKLIST.md) · 🇫🇮 [fi](../../../fi/docs/ops/RELEASE_CHECKLIST.md) · 🇫🇷 [fr](../../../fr/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇪 [ga](../../../ga/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [gu](../../../gu/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇬 [ha](../../../ha/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇱 [he](../../../he/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [hi](../../../hi/docs/ops/RELEASE_CHECKLIST.md) · 🇭🇷 [hr](../../../hr/docs/ops/RELEASE_CHECKLIST.md) · 🇭🇺 [hu](../../../hu/docs/ops/RELEASE_CHECKLIST.md) · 🇦🇲 [hy](../../../hy/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇩 [id](../../../id/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇬 [ig](../../../ig/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇹 [it](../../../it/docs/ops/RELEASE_CHECKLIST.md) · 🇯🇵 [ja](../../../ja/docs/ops/RELEASE_CHECKLIST.md) · 🇬🇪 [ka](../../../ka/docs/ops/RELEASE_CHECKLIST.md) · 🇰🇭 [km](../../../km/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [kn](../../../kn/docs/ops/RELEASE_CHECKLIST.md) · 🇰🇷 [ko](../../../ko/docs/ops/RELEASE_CHECKLIST.md) · 🇱🇹 [lt](../../../lt/docs/ops/RELEASE_CHECKLIST.md) · 🇱🇻 [lv](../../../lv/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [ml](../../../ml/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [mr](../../../mr/docs/ops/RELEASE_CHECKLIST.md) · 🇲🇾 [ms](../../../ms/docs/ops/RELEASE_CHECKLIST.md) · 🇲🇹 [mt](../../../mt/docs/ops/RELEASE_CHECKLIST.md) · 🇲🇲 [my](../../../my/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇵 [ne](../../../ne/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇱 [nl](../../../nl/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇴 [no](../../../no/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [or](../../../or/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [pa](../../../pa/docs/ops/RELEASE_CHECKLIST.md) · 🇵🇭 [phi](../../../phi/docs/ops/RELEASE_CHECKLIST.md) · 🇵🇱 [pl](../../../pl/docs/ops/RELEASE_CHECKLIST.md) · 🇵🇹 [pt](../../../pt/docs/ops/RELEASE_CHECKLIST.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/ops/RELEASE_CHECKLIST.md) · 🇷🇴 [ro](../../../ro/docs/ops/RELEASE_CHECKLIST.md) · 🇷🇺 [ru](../../../ru/docs/ops/RELEASE_CHECKLIST.md) · 🇱🇰 [si](../../../si/docs/ops/RELEASE_CHECKLIST.md) · 🇸🇰 [sk](../../../sk/docs/ops/RELEASE_CHECKLIST.md) · 🇸🇮 [sl](../../../sl/docs/ops/RELEASE_CHECKLIST.md) · 🇷🇸 [sr](../../../sr/docs/ops/RELEASE_CHECKLIST.md) · 🇸🇪 [sv](../../../sv/docs/ops/RELEASE_CHECKLIST.md) · 🇰🇪 [sw](../../../sw/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [ta](../../../ta/docs/ops/RELEASE_CHECKLIST.md) · 🇮🇳 [te](../../../te/docs/ops/RELEASE_CHECKLIST.md) · 🇹🇭 [th](../../../th/docs/ops/RELEASE_CHECKLIST.md) · 🇹🇷 [tr](../../../tr/docs/ops/RELEASE_CHECKLIST.md) · 🇵🇰 [ur](../../../ur/docs/ops/RELEASE_CHECKLIST.md) · 🇺🇿 [uz](../../../uz/docs/ops/RELEASE_CHECKLIST.md) · 🇻🇳 [vi](../../../vi/docs/ops/RELEASE_CHECKLIST.md) · 🇳🇬 [yo](../../../yo/docs/ops/RELEASE_CHECKLIST.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/ops/RELEASE_CHECKLIST.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/ops/RELEASE_CHECKLIST.md)
+
+---
+
+> **Останнє оновлення:** 2026-08-28 — v3.8.51
+> Оптимізований процес випуску, що використовує навички Claude Code для автоматизації.
+>
+> **Підтримуйте чергу/гілку в зеленому стані між випусками:** див. [RELEASE_GREEN.md](./RELEASE_GREEN.md)
+> (сімейство `/green-prs` + `npm run check:release-green` + `/babysit` + нічний запуск). Періодичний запуск
+> цього процесу — і особливо **перед** виконанням цього контрольного списку — дає змогу почати PR випуску із зеленим статусом.
+
+## Коротко
+
+```bash
+# 1. Підвищте версію та згенеруйте CHANGELOG (навичка)
+/version-bump-cc patch    # або minor/major
+
+# 2. Локально виконайте перевірку якості
+npm run check              # лінтинг + тести
+npm run test:coverage      # повна перевірка покриття (60/60/60/60)
+
+# 3. Зберіть і виконайте димове тестування
+npm run build
+npm run test:e2e           # необов’язково, але рекомендовано
+
+# 4. Згенеруйте випуск (навичка)
+/generate-release-cc
+
+# 5. Розгорніть (навичка)
+/deploy-vps-both-cc        # або akamai-cc / local-cc
+
+# 6. Зберіть підтвердження випуску (навичка)
+/capture-release-evidences-cc
+```
+
+## npm Trusted Publishing (за замовчуванням, починаючи з версії 3.8.51) — поетапно за запитом, пряме як запасний варіант
+
+`npm-publish.yml` публікує через** npm Trusted Publishing (OIDC)** за замовчуванням: завдання `stage-npm` (розміщене на github) обмінює id-токен GitHub на короткочасні облікові дані npm для запуску — У секретах сховища немає довготривалого маркера npm, немає підказки 2FA, походження додається. Це обхід санкцій npm тепер, коли токени, які пропускають 2FA, припиняються; він відновлює повністю автоматичний потік, який проект мав до версії 3.8.48, зберігаючи гарантію WS1.3 (маркер, що витік, не може опублікувати сам — немає маркера).
+
+**Одноразове налаштування (власник):** npmjs.com → package `omniroute` → Settings → _Trusted Publisher_ → GitHub: власник `diegosouzapw`, repo `OmniRoute`, workflow `npm-publish.yml` (середовище: немає). Поки це не існує, автоматичний крок не виконується за допомогою `ENEEDAUTH`: повторна відправка за допомогою `publish_mode=staged` (нижче) або `direct`.
+
+### Поетапна публікація (за запитом — `publish_mode=staged`)
+
+Робочий процес npm-publish більше не публікує безпосередньо: він завантажує упакований архів (`check:pack-boot`), а потім запускає `npm stage publish` — точні байти зберігаються в реєстрі,** не встановлюється** до погодження власника. Ворота 2FA для людини перемістилися до AFTER доказу, а не до нього.
+
+**Потік власника після того, як робочий процес стане зеленим:**
+
+1. `npm stage list omniroute` — знайти ідентифікатор етапу (також надрукований у підсумку робочого процесу).
+2. Перевірте поетапні байти (рекомендовано): `npm stage download <id>`, потім встановіть завантажений архів у тимчасовий префікс і завантажте його (`npm run check:pack-boot` автоматизує той самий пакет → інсталювати → вердикт завантаження в CI).
+3. `npm stage approve <id>` — підказка 2FA IS публікація. `npm stage reject <id>` відкидає.
+4. Мережа після публікації: перевірка після публікації (WS1.4 плану v3.8.49) встановлює опубліковану версію з публічного реєстру в чистий контейнер і завантажує її.
+
+**Екстрений резерв:** `workflow_dispatch` з `publish_mode=direct` відновлює застарілий негайний `npm publish` (використовуйте, лише якщо сама постановка працює неправильно; запишіть, чому).
+
+**Одноразове загартування (власник, npmjs.com):** налаштуйте Trusted Publisher для `omniroute` лише в режимі етапу, щоб витік довгоживучого токена не міг `npm publish` безпосередньо з будь-якого місця, де — CI може лише етап; лише випуски 2FA власника.
+
+**Посібник зламаних артефактів (без змін):** `npm deprecate omniroute@<bad> "<reason> — use <fixed>"` як рефлекс за замовчуванням (хвилини, оборотний); `npm unpublish` лише у вікні 72h/no-dependents і ніколи як перший хід. Docker: ніколи не переписуйте тег версії — rollback — це перевказування `latest` на останній хороший дайджест.
+
+**Docker Hub `latest` (обов’язковий для кожної стабільної публікації SemVer ):** робочий процес `docker-publish` повинен мати теги** обидва** `X.Y.Z` і, коли `should-promote-latest.sh` погоджується, це найвищий стабільний SemVer, `:latest` з** той самий дайджест** . Після роботи: Дайджест концентратора `latest` дорівнює новому дайджесту SemVer і переміщеному `last_updated`. Не залишайте `:latest` у старішій збірці, поки в примітках до випуску йдеться про виправлення, які існують лише в git. Створення коротких інструкцій use `:latest`; GitOps має продовжувати закріплювати `X.Y.Z`. Перегляньте [канали випуску Docker](../guides/DOCKER_GUIDE.md#release-channels) і #10317.
+
+**Організаційний репозиторій Docker Hub (`cheaperinference/omniroute`):** Docker Hub не може переміщувати репозиторій між просторами імен, тому `diegosouzapw/omniroute` зберігає свою історію залучення та кожен випуск, а завдання `mirror-org-dockerhub` `docker-publish` копіює кожну випущену версію (і `:latest` якщо вона підвищена) із `ghcr.io/cheaper-inference/omniroute` до репозиторію організації. Для цього потрібні секрети `DOCKERHUB_ORG_USERNAME` / `DOCKERHUB_ORG_TOKEN` ; без них завдання залишається зеленим із попередженням «Docker Hub org дзеркало пропущено», а інші реєстри публікуються нормально. Щоб пізніше опублікувати там випущену версію, запустіть** Дії → Дзеркало зображення Docker у Docker Hub org → Виконати робочий процес** з `version=X.Y.Z` (і `promote_latest` для найвищої стабільної версії): він копіює існуючі зображення, без перебудови.
+
+## Швидкий шлях для термінових виправлень (мітка `hotfix`)
+
+PR із міткою `hotfix` пропускає важку матрицю CI (9-сегментний E2E, контрольне підвищення покриття,
+quality-gate, quality-extended) і зберігає швидкі та високоінформативні перевірки: збирання,
+сегменти модульних тестів, інтеграційні тести, vitest, lint/typecheck, docs-sync, `check:pack-artifact`
+і перевірку запуску з tarball (`check:pack-boot`). Мета: зелений статус за ≤15 хв замість ~33 хв.
+
+**Політика допуску — усі чотири умови обов’язкові (за зразком екстрених шляхів Chromium/VS Code/Node):**
+
+1. **Критичність**: продакшн зламаний — опублікований артефакт аварійно завершується під час запуску /
+   виправлення безпеки / проблема зачіпає кожного користувача релізу. «Важливо» не означає «зламано».
+2. **Повноваження**: лише власник репозиторію застосовує мітку `hotfix`. Мітка Є
+   схваленням — її ніколи не можна самостійно застосовувати до PR кампанії.
+3. **Докази**: тіло PR містить посилання на попередній повністю зелений важкий запуск (набір,
+   який повторно перевірили б пропущені завдання), а також на власний тест виправлення, що спочатку завершується невдало, а потім успішно.
+4. **Обсяг**: лише cherry-pick — мінімальне виправлення, без рефакторингу та супутніх змін.
+
+Пропущена поверхня перевірки покриття/контрольного підвищення повторно перевіряється наступним повним запуском у
+гілці релізу (безперервно зелений реліз) — цей шлях пропускає ОЧІКУВАННЯ, але ніколи не перевірку.
+Зміни лише в тестах (усі файли в `tests/`, жодного в `tests/e2e/`) автоматично пропускають матрицю E2E
+без будь-якої мітки.
+
+## Детальний контрольний список
+
+### Попередній випуск
+
+- [ ] Усі PRs націлені на цей випуск, об’єднано з `release/vX.Y.0`
+- [ ] Усі відкриті елементи Linear/issue для цієї версії закрито або перенесено на наступний етап
+- [ ] CI зелений на гілці `release/vX.Y.0`
+- [ ] У коді немає маркерів `TODO(release)` : `grep -r "TODO(release)" src/ open-sse/`
+- [ ] оновлений базовий образ Docker (наразі `node:24.15.0-trixie-slim`)
+
+### Версія та журнал змін
+
+- [ ] Запустіть `/version-bump-cc <patch|minor|major>` (навик коду Claude )
+  - Шишки `package.json`, `electron/package.json`
+  - Відновлює `CHANGELOG.md` з git-комітів після останнього тегу
+  - Оновлення значків README.md
+- [ ] Перегляньте вручну CHANGELOG.md та очистіть повідомлення комітів, якщо потрібно
+- [ ] Переконайтеся, що останній розділ semver у `CHANGELOG.md` відповідає версії `package.json`
+- [ ] Зберігайте `## [Unreleased]` як перший розділ журналу змін для майбутньої роботи
+- [ ] Оновлення `docs/openapi.yaml` → `info.version` має відповідати версії `package.json`
+
+### Якість коду
+
+- [ ] `npm run lint` — 0 помилок (попередження вже існують)
+- [ ] `npm run typecheck:core` — чистий
+- [ ] `npm run typecheck:noimplicit:core` — чистий (суворий)
+- [ ] `npm run check:cycles:ratchet` — в межах замороженої стелі `metrics.cycles` (голий `check:cycles` виходить 1 у будь-якому циклі, #15281)
+- [ ] `npm run check:any-budget:t11` — в межах бюджету
+- [ ] `npm run check:route-validation:t06` — чистий
+- [ ] `npm run check:node-runtime` — підтримує мінімальний рівень часу виконання (`>=22.22.2 <23`, `>=24.0.0 <27`, за `SUPPORTED_NODE_RANGE` у `src/shared/utils/nodeRuntimeSupport.ts`; узгоджено з `package.json` `engines`)
+
+### Тестування
+
+- [ ] `npm run test:unit` — пас
+- [ ] `npm run test:vitest` — pass (сервер MCP, autoCombo, кеш)
+- [ ] `npm run test:coverage` — гейт 60/60/60/60 задоволений (statements/lines/functions/branches)
+- [ ] `npm run test:integration` — pass (якщо зміни торкаються DB / обробники)
+- [ ] `npm run test:combo:matrix` — pass (матриця комбінованої стратегії: детерміновано підтверджує рішення щодо вибору всіх 22 загальнодоступних стратегій маршрутизації; запускається, коли торкається комбінованої маршрутизації, вирішення стратегії або резервної логіки)
+- [ ] `RUN_COMBO_LIVE=1 npm run test:combo:live` —**optional/manual** (закритий реальний висхідний дим; створює знімок DB лише для читання з VPS `root@192.168.0.15`; звертається до реальних постачальників, коштує кредитів; ніколи не запускається в CI; пропускає чисто без шлюзу)
+- [ ] `npm run test:combo:live:vps` —**optional/manual** (Phase-3 VPS live smoke: 7 сценаріїв HTTP проти живого сервера `.15` через звичайний вузол ESM; потрібен `ssh root@192.168.0.15`; creates/deletes лише комбінації `__live_test__*` ; вражає реальних постачальників; ніколи не працює в CI)
+- [ ] `npm run test:e2e` — pass (UI зміни)
+- [ ] `npm run test:protocols:e2e` — pass (MCP/A2A зміни)
+- [ ] `npm run test:ecosystem` — пас
+
+### Гачки (перевірено Husky)
+
+Хуки Husky живуть у `.husky/` та запускаються автоматично під час операцій git.
+
+- **попередньо здійснити:** `npx lint-staged + node scripts/check/check-docs-sync.mjs + npm run check:any-budget:t11`
+- **попередній натискання:** швидкі детерміновані ворота — `npm run check:any-budget:t11 && npm run check:tracked-artifacts` (активовано 2026-06-13). Навмисно виключає `test:unit` (повільний; покривається завданням CI `test-unit` ).
+  - Запустіть `npm run test:unit` вручну, перш ніж натискати випускні гілки.
+
+Якщо підхоплення не вдається: виправте основну проблему, не обходьте її за допомогою `--no-verify`.
+
+### Звичайні коміти
+
+Усі пов’язані з випуском коміти мають відповідати формату `type(scope): subject`.
+
+**Дійсні типи:** `feat`, `fix`, `refactor`, `docs`, `test`, `chore`, `perf`, `style`, `ci`
+
+**Дійсні області:** `db`, `sse`, `oauth`, `dashboard`, `api`, `cli`, `docker`, `ci`, `mcp`, `a2a`, `memory`, `skills`, `cloud-agent`, `guardrails`, `compression`, `auto-combo`, `resilience`, `providers`, `executors`, `translator`, `domain`, `authz`
+
+Ключові зміни: додайте нижній колонтитул `BREAKING CHANGE:` або `!` після області (наприклад, `feat(api)!: drop /v0`).
+
+### Документація
+
+- [ ] `npm run check:docs-sync` проходить (автоматичний запуск шляхом попередньої фіксації)
+- [ ] `npm run check:docs-all` пропускає (парасолька: docs-sync + docs-counts + env-doc-sync + deprecated-versions + doc-links)
+- [ ] `npm run check:env-doc-sync` виходить 0 — код ↔ `.env.example` ↔ `docs/reference/ENVIRONMENT.md` env контракт незмінний
+- [ ] `npm run check:doc-links` виходить 0 — немає зламаних внутрішніх посилань на розцінку після реструктуризації
+- [ ] `docs/architecture/ARCHITECTURE.md` перевірено на дрейф storage/runtime
+- [ ] `docs/guides/TROUBLESHOOTING.md` перевірено на змінну env та операційний дрейф
+- [ ] Якщо `.env.example` змінено: `docs/reference/ENVIRONMENT.md` оновлено
+- [ ] Якщо нова функція має UI: `docs/guides/USER_GUIDE.md` згадує про це
+- [ ] Якщо нова функція має API: `docs/reference/API_REFERENCE.md` + `docs/openapi.yaml` оновлено
+- [ ] Якщо новою функцією є модуль: виділений `docs/<MODULE>.md` існує
+- [ ] Якщо порушується зміна: `docs/guides/TROUBLESHOOTING.md` має примітку щодо міграції
+
+### i18n
+
+- [ ] `npm run i18n:check` виходить зі стану перекладу 0 — (`.i18n-state.json`) синхронізовано з вихідними документами (немає дрейфованих джерел у строгому режимі; рекомендації щодо режиму попередження прийнятні для редагування документа в останню хвилину, але має бути 0 перед позначенням)
+- [ ] `npm run i18n:check-ui-coverage` виходить з 0 — у кожній локалі UI на рівні 80% покриття або вище
+- [ ] `npm run i18n:sync-ui:dry` повідомляє про 0 відсутніх ключів у всіх 66 цільових локалях (кожній локалі, крім джерела `en` )
+- [ ] Якщо вихідні документи англійською мовою змінено, запустіть `npm run i18n:run` (потрібно `OMNIROUTE_TRANSLATION_API_KEY` у `.env`) перед додаванням тегів
+- [ ] Внески перекладу можуть бути відкладені до наступного випуску, якщо вони незначні (відстежити в CHANGELOG)
+
+### Міграція бази даних
+
+- [ ] Якщо `src/lib/db/migrations/` має нові файли:
+  - [ ] Кожна міграція є ідемпотентною (`CREATE TABLE IF NOT EXISTS` тощо)
+  - [ ] Міграції, загорнуті в транзакції
+  - [ ] Пронумеровано правильно (без пропусків у послідовності)
+- [ ] Перевірте нову установку: видаліть `~/.omniroute/omniroute.db` та запустіть `npm run dev`
+- [ ] Перевірте наявну інсталяцію: створіть резервну копію DB, запустіть міграцію, перевірте схему
+- [ ] Файли WAL (`-wal`, `-shm`) обробляються правильно, якщо міграція переписує таблиці
+
+### Каталог постачальників (перевірено Zod)
+
+- [ ] `src/shared/constants/providers.ts` Zod схема дійсна під час завантаження
+  - [ ] Усі постачальники мають обов’язкові поля (`id`, `label`, `kind` тощо)
+  - [ ] `freeNote` для нових безкоштовних постачальників
+  - [ ] Постачальники OAuth мають `oauthConfig` зареєстрований у `src/lib/oauth/constants/oauth.ts`
+- [ ] Якщо додано нового постачальника: відповідний виконавець у `open-sse/executors/`
+- [ ] Якщо формат не OpenAI: перекладач у `open-sse/translator/`
+- [ ] Моделі, зареєстровані в `open-sse/config/providerRegistry.ts`
+- [ ] Модульні тести в `tests/unit/` охоплюють класифікацію постачальників і маршрутизацію
+
+### Робочий стіл (Electron)
+
+Якщо `electron/` змінився:
+
+- [ ] `npm run electron:smoke:packaged` проходить
+- [ ] Збірки перевірені для принаймні одного з `:win`, `:mac`, `:linux`
+- [ ] Термін дії сертифікатів підпису коду не закінчився (якщо підписується)
+- [ ] версія `electron/package.json` відповідає кореневій `package.json`
+- [ ] Покажчик каналу автоматичного оновлення оновлюється, якщо випускається для `stable`
+
+### Побудувати макет
+
+Репозиторій використовує три різні вихідні каталоги — ніколи їх не плутайте:
+
+| Довідник  | призначення                                                      | Відстежено?     |
+| --------- | ---------------------------------------------------------------- | --------------- |
+| `src/`    | Джерело програми (TypeScript / TSX)                              | так             |
+| `.build/` | Збірка проміжних продуктів — `next build` вихід (`distDir`)      | Ні (gitignored) |
+| `dist/`   | Пакет npm — який можна відправити, зібраний `assembleStandalone` | Ні (gitignored) |
+
+> **Примітка оператора:** віддалений каталог зображень VPS залишається `/usr/lib/node_modules/omniroute/app/`. Тільки** в репо** Вивід збірки переміщено (`app/` → `dist/`). Вміст `dist/` rsync навичок розгортання у віддаленому `app/` dir — не вимагає змін шляху VPS.
+
+**Потік однієї збірки:**
+
+```
+npm run build:release
+  └─ rm -rf .build dist          (clean)
+  └─ next build → .build/next/   (intermediates)
+  └─ assembleStandalone          (copies standalone + static + public + natives → dist/)
+  └─ writes dist/BUILD_SHA       (HEAD sentinel)
+```
+
+Зробіть NOT запустіть `npm run build` а потім окремий `npm run build:cli` для розгортання — використовуйте `npm run build:release` який виконує чисту перебудову + sentinel однією командою.
+
+### Перевірка артефакту
+
+- [ ] `npm run build:release` вдається, а `dist/BUILD_SHA` == `git rev-parse --short HEAD`
+- [ ] `npm run check:pack-artifact` чистий — без `app.__qa_backup`, `scripts/scratch`, `package-lock.json` чи інших локальних залишків
+- [ ] `dist/server.js` існує після збірки
+- [ ] Необов’язковий локальний запакований пакет виконання: `npm run dev:candidate -- validate` після `npm run dev:candidate -- build` завантажує упакований архів на ізольованому `DATA_DIR` і перевіряє `/api/health` + `/v1/models` (див. [Contribution Golden Path](CONTRIBUTION_GOLDEN_PATH.md#local-candidate-loop) )
+
+### Позначення та випуск
+
+- [ ] Запустіть `/generate-release-cc` (навичка коду Claude ):
+  - Створює тег `vX.Y.Z`
+  - Штовхає тег і гілку
+  - Відкриває випуск GitHub з тілом журналу змін
+  - Підключає інсталятори Electron (якщо вбудовані)
+- [ ] Або вручну:
+  ```bash
+  git tag -a vX.Y.Z -m "Release vX.Y.Z"
+  git push origin vX.Y.Z
+  gh release create vX.Y.Z --notes-from-tag
+  ```
+
+### Розгорнути
+
+Розгорніть навички, використовуючи легкий потік rsync — no `npm pack`, no `npm i -g`:
+
+- [ ] Використовуйте навик розгортання, який відповідає меті:
+  - `/deploy-vps-local-cc` — локальний VPS (192.168.0.15)
+  - `/deploy-vps-akamai-cc` — Akamai VPS (69.164.221.35)
+  - `/deploy-vps-both-cc` — обидва
+- [ ] Перед розгортанням підтвердьте `dist/BUILD_SHA` == `git rev-parse --short HEAD`
+- [ ] Збірка має працювати там, де є реальна `node_modules` (основна перевірка або робоче дерево `npm ci`'d — NOT робоче дерево із символічним посиланням)
+- [ ] Розгорнутий екземпляр димового тесту:
+  - Відкрийте `/dashboard/health` → перевірте рядок версії, що відповідає випуску
+  - Запустіть запит `/v1/chat/completions` до відомого постачальника
+  - Переконайтеся, що `/api/monitoring/health` повертає автоматичні вимикачі `CLOSED`
+  - Підтвердження відповіді транспорту MCP (`/mcp` HTTP, `/mcp-sse` SSE)
+
+### Після звільнення
+
+- [ ] Запустіть `/capture-release-evidences-cc` (навик коду Claude )
+  - Захоплює WebP screenshots/recordings нових функцій
+  - Додається до приміток до випуску / допису в блозі
+- [ ] Оновлення GitHub Обговорення / Discord з повідомленням про випуск
+- [ ] Відкрити віху для наступної версії
+- [ ] Якщо критично: закріпіть обговорення або опублікуйте в `news.json` для банера в програмі
+
+### Радарний відкритий пусковий затвор
+
+Оголошення Radar навмисно фіксується за допомогою `active: false`. Активація є окремою зміною після підтвердження кожного пункту нижче:
+
+- [ ] Усі складені Radar PRs об’єднані, а наконечник звільнення CI зелений
+- [ ] Розгортайте та димуйте маршрути OSS Radar, але `RADAR_ENABLED` усе ще вимкнено за замовчуванням
+- [ ] Дим `GET /planos`, `/termos`, `/privacidade` і `/reembolso` на вказаному хості Radar
+- [ ] Запис оператора identity/contact/address та схвалений власником юридичний огляд у приватній службі
+- [ ] Виконуйте Stripe Checkout і підписаний вебхук лише в тестовому режимі
+- [ ] Виконайте одну зашифровану транзакційну доставку електронної пошти за допомогою затвердженого sender/domain
+- [ ] Підтвердьте відновлення з резервної копії та одне контрольоване дослідження з обмеженим бюджетом
+- [ ] Затвердьте політику перевірки BRL/PIX, перш ніж приймати докази пожертвувань
+- [ ] Увімкніть публічну перевірку лише після попередніх воріт, а потім активуйте новий `news.json` ID
+- [ ] Перевірте, чи домашній банер використовує локалізовану копію та новий ID з’являється знову після того, як старий ID буде закрито
+
+## Smoke-тест вбудованих сервісів (v3.8.4+)
+
+Перед випуском будь-якого релізу, що містить зміни у вбудованих сервісах, перевірте:
+
+### Запуск із новою БД (виявляє конфлікти міграцій — додано після термінового виправлення v3.8.4)
+
+- [ ] `DATA_DIR=$(mktemp -d) npm start &` — зачекайте 10 с на запуск
+- [ ] `curl -s http://127.0.0.1:20128/api/services/9router/status | jq '.tool'` повертає `"9router"` (НЕ 404, НЕ 500). Це підтверджує, що міграцію `071_services.sql` застосовано, а рядок додано.
+- [ ] `sqlite3 $DATA_DIR/storage.sqlite "PRAGMA table_info(version_manager);" | grep -E "provider_expose|logs_buffer_path|last_sync_at"` повертає 3 рядки.
+- [ ] `sqlite3 $DATA_DIR/storage.sqlite "PRAGMA table_info(webhooks);" | grep -E "kind|metadata_encrypted"` повертає 2 рядки (підтверджує застосування `070_webhooks_kind_metadata.sql`).
+- [ ] `node --import tsx/esm --test tests/unit/db/no-migration-collisions.test.ts` виконується успішно — захищає від майбутніх конфліктів.
+
+### 9Router
+
+- [ ] `POST /api/services/9router/install` повертає 200 з `installedVersion` менш ніж за 2 хв
+- [ ] `POST /api/services/9router/start` повертає 200 і `state: "running"` менш ніж за 30 с
+- [ ] `GET /api/services/9router/status` повідомляє `health: "healthy"`
+- [ ] `POST /v1/chat/completions` із `"model": "9router/auto/..."` повертає 200 (наскрізна маршрутизація через 9Router)
+- [ ] `GET /dashboard/providers/services/9router/embed/dashboard` відображає нативний інтерфейс 9Router усередині проксі (без прямого iframe на `127.0.0.1:port`)
+- [ ] `POST /api/services/9router/rotate-key` повертає `{ keyRotated: true }`, а сервіс коректно перезапускається
+- [ ] `POST /api/services/9router/stop` повертає 200 і `state: "stopped"`
+- [ ] `GET /api/services/9router/logs?tail=50` повертає потік SSE з подією `snapshot`, що містить останні рядки
+- [ ] Встановлення в середовищі без `npm` у PATH повертає 500 зі зрозумілим повідомленням про помилку (без трасування стека)
+
+### CLIProxyAPI
+
+- [ ] `POST /api/services/cliproxy/install` повертає 200 менш ніж за 2 хв
+- [ ] `POST /api/services/cliproxy/start` повертає 200 і `state: "running"` менш ніж за 30 с
+- [ ] `GET /api/services/cliproxy/status` повідомляє `health: "healthy"`
+- [ ] `POST /api/services/cliproxy/stop` повертає 200 і `state: "stopped"`
+- [ ] `GET /api/services/cliproxy/logs?tail=50` повертає потік SSE
+
+### Регресія безпеки
+
+- [ ] `curl -H "X-Forwarded-For: 1.2.3.4" http://localhost:20128/api/services/9router/start` повертає `403 LOCAL_ONLY`
+- [ ] `curl -H "X-Forwarded-For: 1.2.3.4" http://localhost:20128/api/services/cliproxy/start` повертає `403 LOCAL_ONLY`
+- [ ] Відповіді з помилками від `/api/services/*` не містять `err.stack` або абсолютних шляхів до файлів
+
+## Перевірки для v3.8.0+
+
+Перед випуском будь-якого релізу v3.8.x перевірте також такі пункти:
+
+- [ ] `omniroute --tray` запускається на macOS (systray2 встановлено в `~/.omniroute/runtime/`)
+- [ ] `omniroute --tray` запускається на Linux (потрібна DISPLAY; коректна помилка, якщо її не задано)
+- [ ] `omniroute --tray` запускається на Windows (PowerShell NotifyIcon, без додаткових бінарних файлів)
+- [ ] `omniroute config tray enable` створює запис автозапуску; вимкнення видаляє його
+- [ ] `npm install -g omniroute@<this-version>` виконує postinstall без аварійного завершення
+- [ ] Шлях оновлення зберігає необов’язкові залежності: `omniroute update --apply` і засіб автоматичного оновлення
+      виконують `npm install -g … --include=optional`, щоб `optionalDependencies` (better-sqlite3,
+      keytar, tls-client і стек SLM llmlingua: `@atjsh/llmlingua-2@2.0.5`,
+      `js-tiktoken`) зберігалися після оновлення. Для рівня SLM ultra з `modelPath` також потрібна
+      модель tinybert, яка автоматично завантажується до `${DATA_DIR}/models/llmlingua` під час першого використання. Потім postinstall
+      (`scripts/build/colocateOptionals.mjs`) розміщує необов’язкове замикання SLM поруч у
+      `dist/node_modules`, щоб воркер використовував ОДИН екземпляр `@huggingface/transformers` ^4.2.0
+      — автономне трасування включає лише transformers, але не динамічно імпортовані
+      необов’язкові залежності, тож без цього воркер завантажував би llmlingua-2 із transformers кореневого рівня,
+      а рівень SLM непомітно переходив би в режим fail-open.
+- [ ] `omniroute status` працює без `.env` (шлях токена CLI, лише loopback)
+- [ ] `curl http://localhost:20128/api/shutdown` повертає 401 (маршрут завжди захищений)
+- [ ] `curl -H "host: evil.com" http://localhost:20128/api/mcp/sse` повертає 401 (захист loopback)
+- [ ] Середовище виконання SQLite під час першого запуску визначається як `bundled` (вбудований бінарний файл дійсний для платформи)
+- [ ] Середовище виконання SQLite переходить на `runtime`, коли `node_modules/better-sqlite3` видалено
+- [ ] Розумний фільтр MCP стискає реальний вивід `playwright-mcp browser_snapshot` (скорочення ≥50%)
+- [ ] Усі 10 файлів `skills/omniroute*/SKILL.md` загальнодоступні через необроблену URL-адресу GitHub
+- [ ] Майстер початкового налаштування показує крок огляду рівнів «Як це працює» під час нового налаштування
+- [ ] Віджет покриття рівнів на головній панелі показує кількість налаштованих/активних рівнів
+
+---
+
+## Відгалуження 3.9.0 LTS (репетиція у 3.8.58)
+
+Після v3.8.59 наступною версією буде 3.9.0, а її вершина стане основою двох довготривалих гілок:
+`stable/v3` (лінійка v3 LTS, npm `latest`) і `develop` (v4, версію підвищено до 4.0.0, npm
+`nightly`). Модель гілок/каналів, пряме перенесення змін і мітки описані в
+[RELEASE_STRATEGY.md](./RELEASE_STRATEGY.md); план наведено в [ROADMAP](../../ROADMAP.md) (Фаза 3). Відгалуження виконується один раз;
+у 3.8.58 воно репетирується від початку до кінця у форку, а 3.8.59 завершується
+[контрольним списком GO/NO-GO](./LTS_GO_NO_GO.md).
+
+### Пробний запуск (лише читання, безпечний у будь-який час)
+
+```bash
+npm run release:dry-run-lts-cut                       # справжнє відгалуження: 3.9.0 з HEAD, попередній тег v3.8.59
+npm run release:dry-run-lts-cut -- --from <3.9.0-tip> # зафіксувати вихідний коміт
+```
+
+`scripts/release/dry-run-lts-cut.mjs` нічого не виконує: він читає дані git і `gh` та виводить
+повну послідовність — передумови (вихідне посилання розпізнається, вихідний репозиторій має повну історію —
+неглибокий клон не може відправити `stable/v3`, сторона-одержувач відхиляє пакет на першому
+прищепленому батьківському коміті, тому спочатку виконуйте відгалуження з повного клону або `git fetch --unshallow origin` —
+попередній тег існує, `package.json` містить цільову версію, відкрито задачу `release-freeze`, немає відкритої
+задачі `Release branch not green`
+для наявної гілки випуску — для гілки, якої не існує, повідомляється `?` (невідомо), але ніколи
+не зелений статус — чергу Mergify `release` налаштовано (G11: `queue_rules`, `checks_timeout`,
+мітка `queue`), набір правил `release/*` усе ще блокує видалення та примусове відправлення, а
+`stable/v3` і `develop` ще не існують), два кроки створення гілок, які тригери неактивних робочих процесів
+і умови `if:` стають істинними (а які залишаються заблокованими змінною репозиторію або
+закріпленими за канонічним репозиторієм), очікувані dist-теги (`latest` → 3.9.0, `next` і
+`nightly` порожні) та відкочування. Код виходу `0` = `RESULT: READY`, `1` = не виконано блокувальну
+передумову (`✗`), `2` = помилка використання. `--advisory <id,...>` понижує перевірку до попередження (`!`),
+не приховуючи її.
+
+Виконайте пробний запуск справжнього відгалуження, поки заморожування випуску 3.9.0 ще діє — гілки
+створюються після тега й до того, як Фаза 12c зніме заморожування.
+
+### Репетиція 3.8.58 (лише у форку)
+
+```bash
+# 1. Пробний запуск на поточній вершині з параметрами репетиції
+npm run release:dry-run-lts-cut -- --target-version 3.8.58 --previous-tag v3.8.57 \
+  --advisory freeze,base-green
+
+# 2. Виконання для віддаленого ФОРКУ (origin або будь-який віддалений репозиторій, URL якого
+#    вказує на канонічний репозиторій, відхиляється; кожен крок запитує підтвердження в терміналі)
+git remote add rehearsal https://github.com/<you>/OmniRoute.git
+node scripts/release/dry-run-lts-cut.mjs --execute --remote rehearsal \
+  --target-version 3.8.58 --previous-tag v3.8.57 --advisory freeze,base-green
+
+# 3. Випробування неактивних робочих процесів у форку (workflow_dispatch там, де пробний запуск
+#    повідомляє про прив’язку до канонічного репозиторію), після чого — відкочування
+node scripts/release/dry-run-lts-cut.mjs --execute --rollback --remote rehearsal \
+  --target-version 3.8.58 --previous-tag v3.8.57 --advisory freeze,base-green
+```
+
+Коміт підвищення версії develop створюється за допомогою низькорівневих засобів git (робоче дерево не змінюється) і підвищує
+версію в тих самих п’яти файлах, що й коміт відкриття циклу: `package.json`, `open-sse/package.json`,
+`electron/package.json`, `package-lock.json` і `docs/openapi.yaml`. Розділ `[4.0.0]`
+CHANGELOG та його локалізовані копії відкриваються в `develop` після цього, до першого
+PR у цій гілці. Скрипт ніколи не змінює dist-теги npm — репетируйте це з тестовим пакетом.
+
+### Артефакт попереднього перегляду PR (зібрати один раз, просувати ті самі байти)
+
+`.github/workflows/preview-artifact.yml` збирає один робочий tarball із вершини PR і
+перевіряє саме цю збірку (частина (a) задачі #8084). Лише PR з того самого репозиторію; нічого не публікується.
+
+```bash
+gh workflow run preview-artifact.yml -f pr_number=<N>   # або додайте мітку `preview-artifact`
+gh run download <run-id> --name preview-artifact-pr<N>-<sha7> --dir preview
+cd preview && sha256sum -c SHA256SUMS
+gh attestation verify omniroute-*.tgz --repo diegosouzapw/OmniRoute
+npm install -g ./omniroute-*.tgz                          # встановлення попередньої версії
+```
+
+Запуск виконує `npm ci`, `npm run build:release`, `npm run check:pack-artifact`, пакує
+tarball, запускає `npm run check:pack-boot` (несправжні секрети, тимчасовий каталог даних), повторно пакує та
+завершується помилкою, якщо дайджест не ідентичний, після чого записує `artifact-identity.json` (SHA вершини, SHA бази,
+хеш lock-файлу, платформа, архітектура, ABI Node, пакувальник, політика збірки —
+`scripts/release/artifact-identity.mjs`) і засвідчує tarball в окремому завданні. Просування
+попередньої версії означає встановлення цього tarball: ніколи не перебудовуйте його з вихідного коду.
+
+### Відгалуження (3.9.0, після GO)
+
+1. Рішення GO зафіксовано в [LTS_GO_NO_GO.md](./LTS_GO_NO_GO.md).
+2. `npm run release:dry-run-lts-cut -- --from v3.9.0` виводить `RESULT: READY`.
+3. Створіть гілки в `origin` вручну за допомогою команд, які виводить пробний запуск —
+   скрипт відмовляється виконувати відправлення до `origin`. Щоб повторно використати перевірений коміт develop, спочатку виконайте
+   репетицію з `--execute` на вершині 3.9.0 для свого форку; вона виведе обидва SHA, після чого
+   ті самі коміти можна відправити:
+
+   ```bash
+   git push origin <stable-sha>:refs/heads/stable/v3 <develop-sha>:refs/heads/develop
+   ```
+
+4. Захистіть `stable/v3` і `develop` (набори правил + черга злиття) до потрапляння першого PR.
+5. Неактивні робочі процеси вмикаються після створення відповідних гілок: `forward-port.yml` (push до
+   `stable/v3`), `validate-stable-pr.yml` (PR до `stable/v3`) і `nightly-v4-build.yml`
+   (збирає `develop`). Перед запуском налаштуйте секрет репозиторію `secrets.FORWARD_PORT_TOKEN` (щоб CI запускався для
+   PR із перенесенням змін уперед); нічна публікація залишатиметься вимкненою, доки власник не встановить для змінної репозиторію
+   `vars.NIGHTLY_PUBLISH` значення `true` і npm Trusted Publishing не дозволить
+   `nightly-v4-build.yml`. Канал визначається за допомогою `scripts/release/dist-tag.mjs` — того самого
+   засобу визначення, який використовує `npm-publish.yml`.
+6. Перевірте канали: `npm view omniroute dist-tags --json` має показувати `latest` = 3.9.0 і відсутність
+   `next` / `nightly`, доки не буде опубліковано v4.
+7. За потреби виконайте відкат: `git push origin --delete refs/heads/stable/v3 refs/heads/develop`
+   і `npm dist-tag add omniroute@3.8.59 latest`.
+
+---
+
+## Відкочування
+
+Якщо випуск має критичну проблему:
+
+1. `gh release edit vX.Y.Z --prerelease` (позначає як не найновіший)
+2. `git tag -d vX.Y.Z && git push --delete origin vX.Y.Z` (лише якщо користувачі ще не почали його використовувати)
+3. Або: термінове виправлення в `release/vX.Y.0` → випуск виправлення `vX.Y.(Z+1)`
+4. Негайно повідомте про це в GitHub Discussions і Discord
+
+## Суворі правила
+
+- Ніколи не робіть коміти безпосередньо в `main`
+- Ніколи не використовуйте `git push --force` для гілок `main` або `release/*`
+- Ніколи не пропускайте хуки Husky (`--no-verify`)
+- Ніколи не додавайте до комітів секрети, облікові дані або файли `.env`
+- Покриття має залишатися ≥60/60/60/60 (оператори/рядки/функції/гілки)
+- Завжди додавайте або оновлюйте тести під час зміни робочого коду в `src/`, `open-sse/`, `electron/` або `bin/`
+
+## Автоматизована перевірка синхронізації
+
+Перед відкриттям PR запустіть локально перевірку синхронізації документації:
+
+```bash
+npm run check:docs-sync
+```
+
+CI також виконує цю перевірку в `.github/workflows/ci.yml` (завдання lint).

@@ -1,0 +1,813 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+
+const mod = await import("../../scripts/release/reconcile-changelog.mjs");
+const {
+  primaryRefs,
+  parseBlocks,
+  addCredit,
+  appendLink,
+  bulletFromSubject,
+  sectionForType,
+  dedupeBullets,
+  computeCoverage,
+  versionSectionRange,
+  otherSectionsText,
+  rankAuthors,
+  renderSection,
+  reconcile,
+} = mod;
+
+const REPO = "cheaper-inference/OmniRoute";
+const link = (n: number) => `[#${n}](https://github.com/${REPO}/pull/${n})`;
+
+test("primaryRefs: /pull links and the LAST #N count, incidental mentions do not", () => {
+  const b = `- **test:** counts after additions — Opper #11629 + 1min.ai #11631 (${link(11674)}) — thanks @x`;
+  assert.deepEqual([...primaryRefs(b)].sort(), [11674]);
+  assert.deepEqual(
+    [...primaryRefs("- fix(x): thing (#11766) (#11794)")].sort(),
+    [11766, 11794],
+    "explicit (#N) groups count"
+  );
+  assert.deepEqual(
+    [...primaryRefs("- **security:** verbatim,\n  across two lines (#12457)")],
+    [12457],
+    "last ref of a multi-line block"
+  );
+  assert.deepEqual([...primaryRefs("- plain sentence, no refs")], []);
+});
+
+test("parseBlocks: sections by heading, continuation lines kept; fragments collapse to one line", () => {
+  const text = `### ✨ New Features
+
+- **feat(a):** one
+  continued here
+
+### 🐛 Bug Fixes
+
+- **fix(b):** two
+- **fix(c):** three
+`;
+  const p = parseBlocks(text);
+  assert.equal(p.features.length, 1);
+  assert.equal(p.features[0], "- **feat(a):** one\n  continued here");
+  assert.deepEqual(p.fixes, ["- **fix(b):** two", "- **fix(c):** three"]);
+  const frag = parseBlocks("- **fix(d):** wrapped\n  tail line\n", {
+    fixedSection: "fixes",
+    collapse: true,
+  });
+  assert.deepEqual(frag.fixes, ["- **fix(d):** wrapped tail line"]);
+});
+
+test("addCredit: appends, extends a trailing thanks group, skips maintainer and already-mentioned handles", () => {
+  assert.equal(addCredit("- x (#1)", ["alice"]), "- x (#1) — thanks @alice");
+  assert.equal(addCredit("- x (#1) — thanks @alice", ["bob"]), "- x (#1) — thanks @alice / @bob");
+  assert.equal(addCredit("- x (#1 — thanks @alice)", ["bob"]), "- x (#1 — thanks @alice / @bob)");
+  assert.equal(
+    addCredit("- x (#1) — thanks @alice", ["alice", "diegosouzapw"]),
+    "- x (#1) — thanks @alice"
+  );
+  assert.equal(
+    addCredit("- x by @alice-dev", ["alice"]),
+    "- x by @alice-dev — thanks @alice",
+    "handle boundary is exact"
+  );
+});
+
+test("appendLink: adds the PR link before a trailing thanks group and never twice", () => {
+  const once = appendLink("- x — thanks @alice", REPO, 12);
+  assert.equal(once, `- x (${link(12)}) — thanks @alice`);
+  assert.equal(appendLink(once, REPO, 12), once);
+  assert.equal(appendLink("- y", REPO, 3), `- y (${link(3)})`);
+});
+
+test("bulletFromSubject: bolds the conventional prefix, strips (#N) and URGENT, maps specials", () => {
+  assert.deepEqual(bulletFromSubject("fix(cli): thing (#11794)"), {
+    type: "fix",
+    text: "**fix(cli):** thing",
+  });
+  assert.deepEqual(bulletFromSubject("[URGENT] fix(dev): hot (#1)"), {
+    type: "fix",
+    text: "**fix(dev):** hot",
+  });
+  assert.deepEqual(bulletFromSubject("Update README.md (#5)"), {
+    type: "other",
+    text: "Update README.md",
+  });
+  assert.deepEqual(
+    bulletFromSubject("Update README.md (#5)", { "Update README.md": "docs(readme): touch-ups" }),
+    {
+      type: "docs",
+      text: "**docs(readme):** touch-ups",
+    }
+  );
+  assert.equal(sectionForType("feat"), "features");
+  assert.equal(sectionForType("perf"), "fixes");
+  assert.equal(sectionForType("docs"), "maintenance");
+});
+
+test("dedupeBullets: keeps the best-linked twin and merges the other twin's refs", () => {
+  const a = `- **fix(glm):** drop the extra arg (${link(12770)})`;
+  const b = "- **fix(glm):** drop the extra arg";
+  const c = `- **test(check):** escape the fixture (direct commit \`fb7445eaa1\`)`;
+  const d = `- **test(check):** escape the fixture (${link(11942)})`;
+  const { kept, dropped } = dedupeBullets([b, a, c, d]);
+  assert.deepEqual(dropped, [b, c]);
+  assert.equal(kept.length, 2);
+  assert.equal(kept[0], a);
+  assert.ok(
+    kept[1].includes(link(11942)) && kept[1].includes("direct commit `fb7445eaa1`"),
+    "merged the twin's hash"
+  );
+});
+
+test("computeCoverage: own PR must be a primary ref; incidental mention leaves the commit uncovered", () => {
+  const rows = [
+    { hash: "aaaaaaaaa1", pr: 11631, refs: [11631], subject: "feat: 1min (#11631)" },
+    { hash: "bbbbbbbbb2", pr: 11674, refs: [11674], subject: "test: counts (#11674)" },
+    { hash: "ccccccccc3", pr: null, refs: [11449], subject: "fix: direct (#11449)" },
+    { hash: "ddddddddd4", pr: 12000, refs: [12000], subject: "fix: closes issue (#12000)" },
+    { hash: "eeeeeeeee5", pr: null, refs: [], subject: "chore(release): open cycle" },
+    { hash: "f0f0f0f0f0abcdef", pr: null, refs: [], subject: "fix(ui): direct push" },
+  ];
+  const bullets = [
+    `- **test:** counts — 1min.ai #11631 (${link(11674)})`,
+    "- **fix:** direct push fixing #11449",
+    "- **fix:** the issue bullet cites #7000 only",
+    "- **fix(ui):** direct push (direct commit `f0f0f0f0f0`)",
+  ];
+  const { uncovered } = computeCoverage(rows, bullets, {
+    skipHashes: new Set(["eeeeeeeee"]),
+  });
+  assert.deepEqual(
+    uncovered.map((r) => r.hash),
+    ["aaaaaaaaa1", "ddddddddd4"],
+    "the incidentally-mentioned PR and the PR whose bullet only cites its closed issue are uncovered"
+  );
+});
+
+test("reconcile: a bullet citing the ISSUE a PR closes does not cover that PR (v3.8.52 lesson)", () => {
+  // Nine external PRs (#15113 #15415 #15423 #15703 #15754 #15772 #16091 #16269 #16445) lost their
+  // own bullet in the v3.8.52 reconciliation because another bullet mentioned the issue they closed.
+  const changelog = `# Changelog
+
+## [Unreleased]
+
+## [3.8.52] — TBD
+
+### ✨ New Features
+
+### 🐛 Bug Fixes
+
+- **fix(auth):** maintainer bullet that mentions the issue in passing (see #15700) (#16000)
+- **fix(ui):** contributor bullet with its own PR as primary ref (#15754)
+
+### 📝 Maintenance
+
+---
+
+## [3.8.51] — 2026-09-30
+
+---
+`;
+  const row = (hash: string, pr: number, subject: string, authorName: string) => ({
+    hash,
+    date: "2026-10-01",
+    authorName,
+    authorEmail: `${authorName}@x`,
+    subject,
+    refs: [pr],
+    pr,
+    coauthors: [],
+  });
+  const rows = [
+    row("aaaaaaaaa1aaaa", 16000, "fix(auth): maintainer thing (#16000)", "diegosouzapw"),
+    row(
+      "bbbbbbbbb2bbbb",
+      15703,
+      "fix(models): closes an issue cited elsewhere (#15703)",
+      "lacijowo"
+    ),
+    row("ccccccccc3cccc", 15754, "fix(ui): already has its own bullet (#15754)", "timootten"),
+  ];
+  const pr = (number: number, login: string, closes: number[] = []) => ({
+    number,
+    title: `pr ${number}`,
+    author: { login },
+    body: "",
+    closingIssuesReferences: closes.map((n) => ({ number: n })),
+  });
+  const prs = [
+    pr(16000, "diegosouzapw"),
+    pr(15703, "lacijowo", [15700]), // closes #15700, which the maintainer bullet cites
+    pr(15754, "timootten", [15750]),
+  ];
+  const { changelog: next, report } = reconcile({
+    changelog,
+    version: "3.8.52",
+    repo: REPO,
+    rows,
+    prs,
+    fragments: [],
+    today: "2026-10-18",
+    baseTip: "0000000",
+    headTip: "1111111",
+  });
+  const section = next.slice(next.indexOf("## [3.8.52]"), next.indexOf("## [3.8.51]"));
+  assert.ok(
+    section.includes(
+      `- **fix(models):** closes an issue cited elsewhere (${link(15703)}) — thanks @lacijowo`
+    ),
+    `#15703 must get its own bullet — citing its closed issue #15700 is not coverage:\n${section}`
+  );
+  assert.equal(
+    (section.match(/#15754/g) || []).length,
+    1,
+    "#15754 is covered by its own primary ref — no second bullet"
+  );
+  assert.equal(report.generated.fixes, 1);
+  assert.equal(report.uncovered, 1);
+});
+
+test("versionSectionRange / otherSectionsText isolate exactly one version block", () => {
+  const cl = `# Changelog
+
+## [Unreleased]
+
+### ✨ New Features
+
+- old feature (#1)
+
+## [3.8.51] — TBD
+
+### 🐛 Bug Fixes
+
+- **fix:** in section (#2)
+
+---
+
+## [3.8.50] — 2026-08-25
+
+- shipped (#3)
+`;
+  const r = versionSectionRange(cl, "3.8.51");
+  assert.ok(r && cl.slice(r.start, r.end).includes("in section (#2)"));
+  assert.ok(!cl.slice(r.start, r.end).includes("shipped (#3)"));
+  const other = otherSectionsText(cl, "3.8.51");
+  assert.ok(
+    other.includes("old feature (#1)") &&
+      other.includes("shipped (#3)") &&
+      !other.includes("in section (#2)")
+  );
+  assert.equal(versionSectionRange(cl, "9.9.9"), null);
+});
+
+test("rankAuthors: consolidates display-name drift by PR login, excludes bots", () => {
+  const rows = [
+    { authorName: "Webman", prAuthor: "jonlwheat2-gif" },
+    { authorName: "Webman", prAuthor: "jonlwheat2-gif" },
+    { authorName: "WebPerson", prAuthor: "jonlwheat2-gif" },
+    { authorName: "solo", prAuthor: null },
+    { authorName: "dependabot[bot]", prAuthor: null },
+  ];
+  const { top, counts } = rankAuthors(rows);
+  assert.deepEqual(top[0], ["Webman (@jonlwheat2-gif)", 3]);
+  assert.deepEqual(top[1], ["solo", 1]);
+  assert.equal("dependabot[bot]" in counts, false);
+});
+
+// merge-ff (omni-queue) keeps every contributor commit; a squash leaves one per PR.
+const queueRow = (pr: number, authorName: string, prAuthor: string) => ({
+  authorName,
+  prAuthor,
+  queue: { pr, author: prAuthor, title: `t${pr}`, mergeSha: "m", subjectPr: null },
+});
+
+test("rankAuthors: a PR landed by omni-queue counts once, however many commits it brought", () => {
+  const rows = [
+    queueRow(34, "Alice", "alice"),
+    queueRow(34, "Alice", "alice"),
+    queueRow(34, "Alice", "alice"),
+    { authorName: "Bob", prAuthor: "bob" },
+    { authorName: "Bob", prAuthor: "bob" },
+    { authorName: "Bob", prAuthor: "bob" },
+    queueRow(35, "Alice", "alice"),
+  ];
+  const { top, counts } = rankAuthors(rows);
+  assert.deepEqual(top[0], ["Bob (@bob)", 3], "three squash commits");
+  assert.deepEqual(top[1], ["Alice (@alice)", 2], "two queue PRs, four commits");
+  assert.equal(counts.alice, 2);
+});
+
+test("renderSection: commits in the cycle count a queue PR once and name the queue PRs", () => {
+  const base = {
+    version: "9.9.9",
+    today: "2026-11-14",
+    baseTip: "aaa",
+    headTip: "bbb",
+    all: { features: [], fixes: [], maintenance: [] },
+    prNumbers: new Set<number>(),
+  };
+  const squashRows = [
+    { authorName: "Bob", prAuthor: "bob" },
+    { authorName: "Bob", prAuthor: "bob" },
+  ];
+  const plain = renderSection({ ...base, rows: squashRows, ranking: rankAuthors(squashRows) });
+  assert.match(plain, /\| 📝 Commits in the cycle \| \*\*2\*\* \|/);
+  assert.doesNotMatch(plain, /omni-queue/, "squash-only cycles render exactly as before");
+
+  const rows = [
+    ...squashRows,
+    queueRow(34, "Alice", "alice"),
+    queueRow(34, "Alice", "alice"),
+    queueRow(34, "Alice", "alice"),
+  ];
+  const out = renderSection({ ...base, rows, ranking: rankAuthors(rows) });
+  assert.match(out, /5 non-merge commits/, "the scope line stays literal");
+  assert.match(
+    out,
+    /\| 📝 Commits in the cycle \(a PR landed by omni-queue counts once\) \| \*\*3\*\* \|/
+  );
+  assert.match(out, /\| 🚦 Pull requests landed by omni-queue \| \*\*1\*\* \|/);
+  assert.match(out, /A PR landed by omni-queue counts as one commit\./);
+});
+
+test("reconcile: folds fragments under the version section, credits by fragment origin, drops shipped twins, generates the rest", () => {
+  const changelog = `# Changelog
+
+## [Unreleased]
+
+### ✨ New Features
+
+- **feat(old):** shipped last cycle but never moved (#9000)
+
+## [3.8.51] — TBD
+
+### ✨ New Features
+
+### 🐛 Bug Fixes
+
+- **security(streaming):** pre-existing bullet stays verbatim,
+  across two lines (#12457)
+
+### 📝 Maintenance
+
+---
+
+## [3.8.50] — 2026-08-25
+
+### 🐛 Bug Fixes
+
+- **fix(cli):** \`omniroute update\` now finds npm on Windows. It called execFile with no shell (#11335)
+
+---
+`;
+  const rows = [
+    {
+      hash: "a0ceccc6f0aaaa",
+      date: "2026-08-25",
+      authorName: "Burak",
+      authorEmail: "b@x",
+      subject: "feat(search): add Xquik (#11370)",
+      refs: [11370],
+      pr: 11370,
+      coauthors: [],
+    },
+    {
+      hash: "b1b1b1b1b1bbbb",
+      date: "2026-08-26",
+      authorName: "Zero",
+      authorEmail: "z@x",
+      subject: "feat(providers): add 1min.ai provider (#11631)",
+      refs: [11631],
+      pr: 11631,
+      coauthors: [],
+    },
+    {
+      hash: "c2c2c2c2c2cccc",
+      date: "2026-08-26",
+      authorName: "diegosouzapw",
+      authorEmail: "d@x",
+      subject: "feat(models): recreated (#11887)",
+      refs: [11887],
+      pr: 11887,
+      coauthors: [],
+    },
+    {
+      hash: "d3d3d3d3d3dddd",
+      date: "2026-08-27",
+      authorName: "Markus Hartung",
+      authorEmail: "m@x",
+      subject: "fix(x): phantom fragment carrier (#11434)",
+      refs: [11434],
+      pr: 11434,
+      coauthors: [],
+    },
+    {
+      hash: "e4e4e4e4e4eeee",
+      date: "2026-08-27",
+      authorName: "dependabot[bot]",
+      authorEmail: "dep@x",
+      subject: "deps: bump a from 1 to 2 (#11500)",
+      refs: [11500],
+      pr: 11500,
+      coauthors: [],
+    },
+    {
+      hash: "f5f5f5f5f5ffff",
+      date: "2026-08-28",
+      authorName: "diegosouzapw",
+      authorEmail: "d@x",
+      subject: "chore(release): open v3.8.51 development cycle",
+      refs: [],
+      pr: null,
+      coauthors: [],
+    },
+    {
+      hash: "0606060606aaaa",
+      date: "2026-08-29",
+      authorName: "diegosouzapw",
+      authorEmail: "d@x",
+      subject: "fix(streaming): sanitize (#12457)",
+      refs: [12457],
+      pr: 12457,
+      coauthors: [],
+    },
+  ];
+  const prs = [
+    {
+      number: 11631,
+      title: "1min",
+      author: { login: "zero-executioner" },
+      body: "",
+      closingIssuesReferences: [],
+    },
+    {
+      number: 11887,
+      title: "recreated",
+      author: { login: "diegosouzapw" },
+      body: "",
+      closingIssuesReferences: [],
+    },
+    {
+      number: 11434,
+      title: "carrier",
+      author: { login: "hartmark" },
+      body: "",
+      closingIssuesReferences: [],
+    },
+    {
+      number: 11500,
+      title: "bump",
+      author: { login: "app/dependabot" },
+      body: "",
+      closingIssuesReferences: [],
+    },
+    {
+      number: 12457,
+      title: "sanitize",
+      author: { login: "diegosouzapw" },
+      body: "",
+      closingIssuesReferences: [],
+    },
+  ];
+  const fragments = [
+    // no-ref fragment whose origin commit is the contributor's own PR → link + credit from origin
+    {
+      path: "changelog.d/features/xquik.md",
+      section: "features",
+      text: "- **feat(search):** Add Xquik X search\n  with typed results\n",
+      originHash: "a0ceccc6f",
+      originPr: 11370,
+      prefixPr: null,
+    },
+    // fragment named after the CLOSED PR (11685) but landed by the recreated PR 11887 → origin wins, extra credit applies
+    {
+      path: "changelog.d/features/11685-antigravity.md",
+      section: "features",
+      text: "- Default Antigravity connections to auto-sync\n",
+      originHash: "c2c2c2c2c",
+      originPr: 11887,
+      prefixPr: 11685,
+    },
+    // phantom fragment: text already shipped in [3.8.50] → dropped
+    {
+      path: "changelog.d/fixes/cli-update-npm-win32.md",
+      section: "fixes",
+      text: "- **fix(cli):** `omniroute update` now finds npm on Windows. It called execFile with no shell\n",
+      originHash: "d3d3d3d3d",
+      originPr: 11434,
+      prefixPr: null,
+    },
+  ];
+  const { changelog: next, report } = reconcile({
+    changelog,
+    version: "3.8.51",
+    repo: REPO,
+    rows,
+    prs,
+    fragments,
+    credits: { 11887: ["MumuTW"] },
+    fragmentCredit: { "changelog.d/features/xquik.md": ["kriptoburak"] },
+    today: "2026-09-07",
+    baseTip: "0915890",
+    headTip: "d6f3150",
+    skipHashes: new Set(["f5f5f5f5f"]),
+  });
+  const section = next.slice(next.indexOf("## [3.8.51]"), next.indexOf("## [3.8.50]"));
+  // structure
+  assert.ok(
+    section.includes("### 📊 Release by the numbers") &&
+      section.includes("### 🏆 Top 25 contributors this cycle")
+  );
+  assert.ok(section.indexOf("### ✨ New Features") < section.indexOf("### 🐛 Bug Fixes"));
+  // [Unreleased] and [3.8.50] untouched
+  assert.ok(next.includes("- **feat(old):** shipped last cycle but never moved (#9000)"));
+  assert.equal(
+    (next.match(/now finds npm on Windows/g) || []).length,
+    1,
+    "phantom fragment dropped, original kept"
+  );
+  // pre-existing bullet verbatim (two lines)
+  assert.ok(
+    section.includes(
+      "- **security(streaming):** pre-existing bullet stays verbatim,\n  across two lines (#12457)"
+    )
+  );
+  // fragment credited by origin + override, collapsed to one line
+  assert.ok(
+    section.includes(
+      `- **feat(search):** Add Xquik X search with typed results — thanks @kriptoburak`
+    ),
+    section
+  );
+  // recreated PR: link to the landing PR, credit to the original author
+  assert.ok(
+    section.includes(
+      `- Default Antigravity connections to auto-sync (${link(11887)}) — thanks @MumuTW`
+    ),
+    section
+  );
+  // uncovered commit generated with author credit; dependabot rolled up; cycle-open skipped
+  assert.ok(
+    section.includes(
+      `- **feat(providers):** add 1min.ai provider (${link(11631)}) — thanks @zero-executioner`
+    )
+  );
+  assert.ok(section.includes("- **deps:** 1 Dependabot bumps — bump a from 1 to 2"));
+  assert.ok(!section.includes("open v3.8.51 development cycle"));
+  // the carrier commit of the dropped phantom fragment is NOT silently covered → it gets its own bullet
+  assert.ok(
+    section.includes(`- **fix(x):** phantom fragment carrier (${link(11434)}) — thanks @hartmark`)
+  );
+  assert.equal(report.dropped.length, 1);
+  assert.equal(report.generated.features, 1);
+  assert.equal(
+    report.generated.fixes,
+    1,
+    "12457's own commit is covered by the pre-existing multi-line bullet; only 11434 is generated"
+  );
+});
+
+test("reconcile: omni-queue merge-ff rows collapse into ONE bullet per PR, titled and credited from the merge", () => {
+  // merge-ff keeps every contributor commit; readCommits tags them with `queue` (history-map).
+  const changelog = `# Changelog
+
+## [Unreleased]
+
+## [3.8.55] — TBD
+
+### ✨ New Features
+
+### 🐛 Bug Fixes
+
+### 📝 Maintenance
+
+---
+
+## [3.8.54] — 2026-11-10
+
+---
+`;
+  const q = {
+    pr: 19001,
+    author: "alice",
+    title: "feat(queue): new thing",
+    mergeSha: "m".repeat(40),
+  };
+  const row = (hash: string, date: string, subject: string, extra = {}) => ({
+    hash,
+    date,
+    authorName: "Alice C",
+    authorEmail: "a@x",
+    subject,
+    refs: [],
+    pr: null as number | null,
+    prAuthor: null,
+    coauthors: [],
+    ...extra,
+  });
+  const rows = [
+    row("aaaaaaaaa1", "2026-11-02", "fix typo", { pr: 19001, queue: q }),
+    row("bbbbbbbbb2", "2026-11-01", "wip: start", { pr: 19001, queue: q }),
+    row("ccccccccc3", "2026-11-03", "fix(x): squashed (#19002)", { pr: 19002, refs: [19002] }),
+  ];
+  const prs = [
+    { number: 19002, title: "x", author: { login: "bob" }, body: "", closingIssuesReferences: [] },
+  ];
+  const { changelog: next, report } = reconcile({
+    changelog,
+    version: "3.8.55",
+    repo: REPO,
+    rows,
+    prs,
+    fragments: [],
+    today: "2026-11-13",
+    baseTip: "0000000",
+    headTip: "1111111",
+  });
+  const section = next.slice(next.indexOf("## [3.8.55]"), next.indexOf("## [3.8.54]"));
+  assert.ok(
+    section.includes(`- **feat(queue):** new thing (${link(19001)}) — thanks @alice`),
+    section
+  );
+  assert.equal((section.match(/pull\/19001\)/g) || []).length, 1, "two commits, one bullet");
+  assert.doesNotMatch(section, /fix typo|wip: start/);
+  assert.ok(section.includes(`- **fix(x):** squashed (${link(19002)}) — thanks @bob`));
+  assert.equal(report.generated.features, 1);
+  assert.equal(report.generated.fixes, 1);
+  assert.equal(rows[0].prAuthor, "alice", "gh data lacks the PR → trailer author");
+  assert.equal(rows[2].prAuthor, "bob");
+});
+
+// ── merge-ff attribution (CodeRabbit #20166 m11/m12/m13) ──
+const MERGE_FF_CHANGELOG = `# Changelog
+
+## [Unreleased]
+
+## [3.8.55] — TBD
+
+### ✨ New Features
+
+### 🐛 Bug Fixes
+
+### 📝 Maintenance
+
+---
+
+## [3.8.54] — 2026-11-10
+
+---
+`;
+const mergeFfRow = (hash: string, date: string, subject: string, extra = {}) => ({
+  hash,
+  date,
+  authorName: "Alice C",
+  authorEmail: "a@x",
+  subject,
+  refs: [] as number[],
+  pr: null as number | null,
+  prAuthor: null,
+  coauthors: [] as string[],
+  ...extra,
+});
+const ghPr = (number: number, login: string, extra = {}) => ({
+  number,
+  title: "x",
+  author: { login },
+  body: "",
+  closingIssuesReferences: [],
+  ...extra,
+});
+function mergeFfSection(opts: Record<string, unknown>) {
+  const { changelog: next, report } = reconcile({
+    changelog: MERGE_FF_CHANGELOG,
+    version: "3.8.55",
+    repo: REPO,
+    fragments: [],
+    today: "2026-11-13",
+    baseTip: "0000000",
+    headTip: "1111111",
+    ...opts,
+  });
+  return { section: next.slice(next.indexOf("## [3.8.55]"), next.indexOf("## [3.8.54]")), report };
+}
+
+test("reconcile: a collapsed queue PR is bot or human by its PR author, not its first commit", () => {
+  const q = { pr: 34, author: "alice", title: "feat(b): batch feature", mergeSha: "m".repeat(40) };
+  const rows = [
+    mergeFfRow("aaaaaaaaa1", "2026-11-01", "chore: bot autofix", {
+      authorName: "dependabot[bot]",
+      pr: 34,
+      queue: q,
+    }),
+    mergeFfRow("bbbbbbbbb2", "2026-11-02", "feat(b): real work", { pr: 34, queue: q }),
+  ];
+  const { section, report } = mergeFfSection({ rows, prs: [ghPr(34, "alice")] });
+  assert.ok(
+    section.includes(`- **feat(b):** batch feature (${link(34)}) — thanks @alice`),
+    section
+  );
+  assert.doesNotMatch(section, /Dependabot bumps/);
+  assert.equal(report.depsRolled, 0);
+
+  // a queue PR opened by Dependabot still goes to the deps rollup, even with a human commit first
+  const qb = { pr: 35, author: "app/dependabot", title: "deps: bump x", mergeSha: "n".repeat(40) };
+  const rows2 = [
+    mergeFfRow("ccccccccc3", "2026-11-01", "deps: bump x", { pr: 35, queue: qb }),
+    mergeFfRow("ddddddddd4", "2026-11-02", "deps: bump x again", {
+      authorName: "dependabot[bot]",
+      pr: 35,
+      queue: qb,
+    }),
+  ];
+  const { section: s2, report: r2 } = mergeFfSection({ rows: rows2, prs: [] });
+  assert.match(s2, /- \*\*deps:\*\* 1 Dependabot bumps — bump x \(\[#35\]/);
+  assert.equal(r2.depsRolled, 1);
+});
+
+test("reconcile: a queue fragment without gh metadata keeps the queue PR link and author", () => {
+  const q = { pr: 34, author: "alice", title: "feat(b): batch feature", mergeSha: "m".repeat(40) };
+  const rows = [
+    mergeFfRow("aaaaaaaaa1bbbb", "2026-11-01", "feat(b): add fragment", { pr: 34, queue: q }),
+  ];
+  const fragments = [
+    {
+      path: "changelog.d/features/x.md",
+      section: "features",
+      text: "- **feat(b):** fragment text",
+      originHash: "aaaaaaaaa",
+      originPr: 34,
+      prefixPr: null,
+      originSubjectPr: null,
+      originQueueAuthor: "alice",
+    },
+  ];
+  const { section, report } = mergeFfSection({ rows, prs: [], fragments });
+  assert.ok(
+    section.includes(`- **feat(b):** fragment text (${link(34)}) — thanks @alice`),
+    section
+  );
+  assert.equal((section.match(/pull\/34\)/g) || []).length, 1, "fragment covers the row");
+  assert.equal(report.generated.features, 0);
+
+  // gh metadata, when present, still wins over the queue trailer
+  const { section: s2 } = mergeFfSection({ rows, prs: [ghPr(34, "alicia")], fragments });
+  assert.ok(s2.includes(`- **feat(b):** fragment text (${link(34)}) — thanks @alicia`), s2);
+});
+
+test("collectExtraPrs: fetches foreign-squash subjects, keeping only MERGED PRs", () => {
+  const { collectExtraPrs } = mod;
+  const q = { pr: 34, author: "alice", title: "feat(b): batch feature", mergeSha: "m".repeat(40) };
+  const mkRows = () => [
+    mergeFfRow("aaaaaaaaa1", "2026-11-01", "fix(o): other PR squash (#500)", {
+      pr: 34,
+      queue: { ...q, subjectPr: 500 },
+    }),
+    mergeFfRow("bbbbbbbbb2", "2026-11-02", "feat(b): real work", {
+      pr: 34,
+      queue: { ...q, subjectPr: null },
+    }),
+  ];
+  const fragments = [{ originPr: 34, originSubjectPr: 600 }];
+  const calls: number[] = [];
+  const db: Record<number, unknown> = {
+    500: ghPr(500, "carol", { state: "MERGED", mergedAt: "2026-11-01T00:00:00Z" }),
+    600: ghPr(600, "dave", { state: "OPEN", mergedAt: null }),
+  };
+  const fetchPr = (n: number) => {
+    calls.push(n);
+    return db[n] ?? null;
+  };
+  const rows = mkRows();
+  const prs = [ghPr(34, "alice")];
+  const extraPrs = collectExtraPrs({
+    rows,
+    fragments,
+    known: new Set([34]),
+    fetchPr,
+  });
+  assert.deepEqual([...calls].sort(), [500, 600], "subject PRs are looked up");
+  assert.deepEqual([...extraPrs.keys()], [500], "an OPEN PR is not a foreign squash");
+
+  const { section } = mergeFfSection({ rows, prs, extraPrs });
+  assert.equal(rows[0].pr, 500);
+  assert.equal(rows[0].prAuthor, "carol");
+  assert.match(section, /other PR squash \(\[#500\]\([^)]*\)\) — thanks @carol/);
+
+  // the subject is not a merged PR → the row stays on the queue PR
+  db[500] = ghPr(500, "carol", { state: "CLOSED", mergedAt: null });
+  const rows2 = mkRows();
+  const extra2 = collectExtraPrs({ rows: rows2, fragments, known: new Set([34]), fetchPr });
+  assert.equal(extra2.size, 0);
+  mergeFfSection({ rows: rows2, prs, extraPrs: extra2 });
+  assert.equal(rows2[0].pr, 34);
+
+  // plain row PRs absent from the merged list are still fetched unconditionally
+  calls.length = 0;
+  const rows3 = [mergeFfRow("eeeeeeeee5", "2026-11-03", "fix: x (#77)", { pr: 77 })];
+  db[77] = ghPr(77, "erin", { state: "OPEN" });
+  const extra3 = collectExtraPrs({ rows: rows3, fragments: [], known: new Set(), fetchPr });
+  assert.deepEqual(calls, [77]);
+  assert.deepEqual([...extra3.keys()], [77]);
+});

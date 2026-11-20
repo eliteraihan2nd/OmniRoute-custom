@@ -1,0 +1,202 @@
+# Redis Production Configuration Guide (नेपाली)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../ops/REDIS_PRODUCTION_CONFIG.md) · 🇪🇹 [am](../../../am/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇸🇦 [ar](../../../ar/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇦🇿 [az](../../../az/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇧🇬 [bg](../../../bg/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇧🇩 [bn](../../../bn/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇧🇦 [bs](../../../bs/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇨🇿 [cs](../../../cs/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇩🇰 [da](../../../da/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇩🇪 [de](../../../de/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇬🇷 [el](../../../el/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇪🇸 [es](../../../es/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇪🇪 [et](../../../et/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇷 [fa](../../../fa/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇫🇮 [fi](../../../fi/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇫🇷 [fr](../../../fr/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇪 [ga](../../../ga/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇳 [gu](../../../gu/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇳🇬 [ha](../../../ha/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇱 [he](../../../he/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇳 [hi](../../../hi/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇭🇷 [hr](../../../hr/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇭🇺 [hu](../../../hu/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇦🇲 [hy](../../../hy/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇩 [id](../../../id/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇳🇬 [ig](../../../ig/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇹 [it](../../../it/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇯🇵 [ja](../../../ja/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇬🇪 [ka](../../../ka/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇰🇭 [km](../../../km/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇳 [kn](../../../kn/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇰🇷 [ko](../../../ko/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇱🇹 [lt](../../../lt/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇱🇻 [lv](../../../lv/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇳 [ml](../../../ml/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇳 [mr](../../../mr/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇲🇾 [ms](../../../ms/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇲🇹 [mt](../../../mt/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇲🇲 [my](../../../my/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇳🇱 [nl](../../../nl/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇳🇴 [no](../../../no/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇳 [or](../../../or/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇳 [pa](../../../pa/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇵🇭 [phi](../../../phi/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇵🇱 [pl](../../../pl/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇵🇹 [pt](../../../pt/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇷🇴 [ro](../../../ro/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇷🇺 [ru](../../../ru/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇱🇰 [si](../../../si/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇸🇰 [sk](../../../sk/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇸🇮 [sl](../../../sl/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇷🇸 [sr](../../../sr/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇸🇪 [sv](../../../sv/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇰🇪 [sw](../../../sw/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇳 [ta](../../../ta/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇮🇳 [te](../../../te/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇹🇭 [th](../../../th/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇹🇷 [tr](../../../tr/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇵🇰 [ur](../../../ur/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇺🇿 [uz](../../../uz/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇻🇳 [vi](../../../vi/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇳🇬 [yo](../../../yo/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/ops/REDIS_PRODUCTION_CONFIG.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/ops/REDIS_PRODUCTION_CONFIG.md)
+
+---
+
+## अवलोकन
+
+Redis एक हो** वैकल्पिक, नरम निर्भरता** OmniRoute — मा Redis अनुपलब्ध हुँदा एप्लिकेसन राम्रोसँग (इन-मेमोरी फलब्याकहरू) घट्छ। उत्पादनमा, ट्युनिङ Redis चार फरक वर्कलोडहरूको लागि विलम्बता घटाउँछ:
+
+| कार्यभार              | चालक                          | ग्राहक कारखाना                               | कुञ्जी ढाँचा                                 |
+| --------------------- | ----------------------------- | -------------------------------------------- | -------------------------------------------- |
+| दर सीमित              | `rateLimiter.ts`              | `getRedisClient()` — अल्छी `ioredis` सिंगलटन | `<prefix>rl:*` लुआ-परमाणु दर सीमा विन्डोज    |
+| प्रमाणीकरण क्यास      | `apiKeys.ts`                  | `rateLimiter` को ग्राहक पुन: प्रयोग गर्दछ    | TTL सँग `<prefix>auth:api_key:<sha256>`      |
+| कोटा स्टोर            | `redisQuotaStore.ts`          | अलग `getRedisClient(url)` सिंगलटन            | `<prefix>quota:*` कन्फिगर योग्य प्रति-उदाहरण |
+| वार्मअप सर्किट ब्रेकर | `redisCircuitBreakerStore.ts` | `circuitBreakerFactory.ts` मा अलग ग्राहक     | `<prefix>warmup:cb:<connectionId>`           |
+
+सबै चार वर्कलोडहरूले एउटै नेमस्पेस उपसर्ग साझा गर्दछ ताकि OmniRoute एकल Redis उदाहरणमा अन्य अनुप्रयोगहरूसँग सह-अस्तित्वमा रहन सक्छ (जस्तै `127.0.0.1:6379`)। [कुञ्जी नेमस्पेसिङ](#key-namespacing) हेर्नुहोस्।
+
+---
+
+## हालको कन्फिगरेसन (कोड पूर्वनिर्धारित)
+
+| सेटिङ                           | मूल्य                                                       | कहाँ                                                                                  |
+| ------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `REDIS_URL` env var             | `redis://redis:6379` (कम्पोज), वैकल्पिक                     | `rateLimiter.ts:5`, `.env.example`                                                    |
+| `REDIS_KEY_PREFIX` env var      | `omniroute:` (पूर्वनिर्धारित)                               | `rateLimiter.ts`, `redisQuotaStore.ts`, `redisCircuitBreakerStore.ts`, `.env.example` |
+| `QUOTA_STORE_REDIS_URL` env var | अलग, `REDIS_URL` बाट फरक हुन सक्छ                           | `quota/storeFactory.ts`                                                               |
+| `QUOTA_STORE_DRIVER`            | `"sqlite"` (पूर्वनिर्धारित), `"redis"` वैकल्पिक             | `quota/storeFactory.ts`                                                               |
+| ioredis `maxRetriesPerRequest`  | `3`                                                         | `rateLimiter.ts` ग्राहक निर्माण                                                       |
+| `enableReadyCheck`              | सेट गरिएको छैन (ioredis पूर्वनिर्धारित: `true`)             | —                                                                                     |
+| `lazyConnect`                   | सेट गरिएको छैन (ioredis पूर्वनिर्धारित: `false`)            | —                                                                                     |
+| `retryStrategy`                 | सेट गरिएको छैन (ioredis पूर्वनिर्धारित: 200ms आधार, घातांक) | —                                                                                     |
+| TLS / पासवर्ड / DB अनुक्रमणिका  | **कन्फिगर गरिएको छैन**                                      | —                                                                                     |
+| सेन्टिनेल / क्लस्टर             | **कन्फिगर गरिएको छैन** — स्ट्यान्डअलोन एकल-नोड मात्र        | —                                                                                     |
+
+---
+
+## कुञ्जी नेमस्पेसिङ
+
+OmniRoute ले होस्टमा चलिरहेका अन्य सेवाहरूसँग Redis इन्स्ट्यान्स साझा गर्छ। नेमस्पेसबिना,
+`auth:api_key:<sha256>` वा `rl:*` जस्ता कुञ्जीहरू उही Redis प्रयोग गर्ने अन्य अनुप्रयोगका
+कुञ्जीहरूसँग ठोक्किन सक्छन् (यो इन्स्ट्यान्स अन्य सेवाहरूसँगै `127.0.0.1:6379` मा Redis चलाउँछ)।
+
+OmniRoute को **प्रत्येक** कुञ्जीमा प्रिफिक्स थप्न `REDIS_KEY_PREFIX` लाई कुनै खाली नभएको स्ट्रिङमा सेट गर्नुहोस्:
+
+```bash
+# .env — OmniRoute का सबै कुञ्जीहरू omniroute:rl:*, omniroute:auth:*, omniroute:quota:*, omniroute:warmup:cb:* बन्छन्
+REDIS_KEY_PREFIX=omniroute:
+```
+
+- **पूर्वनिर्धारित:** `omniroute:` (`REDIS_KEY_PREFIX` सेट नगरिएको वा खाली हुँदा लागू हुन्छ)।
+- **यसमा लागू हुन्छ:** दर लिमिटर + प्रमाणीकरण क्यास (`keyPrefix` मार्फत साझा गरिएको `ioredis` क्लाइन्ट) र
+  कोटा स्टोर (`KEY_PREFIX = "${REDIS_KEY_PREFIX}quota"`) तथा वार्मअप सर्किट ब्रेकर
+  (`KEY_PREFIX = "${REDIS_KEY_PREFIX}warmup:cb:"`)।
+- Redis मा कुञ्जीहरू पहिल्यै अवस्थित हुँदा **प्रिफिक्स परिवर्तन गरेमा** पुराना कुञ्जीहरू छुटेर रहन्छन् (ती
+  TTL / LRU मार्फत समाप्त हुन्छन्)। परिवर्तन गर्न सुरक्षित छ; माइग्रेसन आवश्यक पर्दैन। यसको एउटा अपवाद भनेको निषेधित भनी चिनो लगाइएको कनेक्सनको वार्मअप
+  सर्किट-ब्रेकर कुञ्जी हो: यो TTL बिना स्थायी रूपमा भण्डारण हुन्छ, त्यसैले बाँकी रहेका कुञ्जीहरूलाई `redis-cli --scan --pattern '<old-prefix>warmup:cb:*'` प्रयोग गरेर सूचीबद्ध गरी मेटाउनुहोस्।
+- **ioredis `keyPrefix`** ले लेख्दा स्वचालित रूपमा प्रिफिक्स अगाडि थप्छ **र** पढ्दा त्यसलाई हटाउँछ,
+  त्यसैले अनुप्रयोग कोडले प्रिफिक्स कहिल्यै देख्दैन।
+
+---
+
+## उत्पादन ट्युनिङ सिफारिस गर्नुभयो
+
+### 1. जडान पूल / ग्राहक विकल्पहरू (ioredis `Redis` कन्स्ट्रक्टर)
+
+हालको कोडले कुनै अनुकूलन विकल्पहरू बिना एकल `new Redis(url)` सिर्जना गर्दछ। उत्पादन बहु-प्रतिकृति परिनियोजनका लागि, कोडमा ग्राहक कारखाना पास गर्नुहोस् वा `getRedisClient()` र्‍याप गर्नुहोस्:
+
+```typescript
+const redis = new Redis(REDIS_URL, {
+  maxRetriesPerRequest: null, // no retry limit; let retryStrategy decide
+  enableReadyCheck: true, // verify server is ready before accepting calls
+  lazyConnect: true, // don't connect on construction; wait for first call
+  retryStrategy: (times) => {
+    if (times > 10) return null; // give up after 10 retries → reconnect later
+    return Math.min(times * 200, 5000); // 200ms, 400ms, …, 5s cap
+  },
+  enableAutoPipelining: true, // coalesce concurrent commands into one TCP write
+  keepAlive: 10000, // TCP keep‑alive every 10s
+});
+```
+
+**प्रमुख व्यापार-अफहरू:**
+
+- `maxRetriesPerRequest: null` + `retryStrategy` — उत्पादनको लागि रुचाइएको छ त्यसैले क्षणिक Redis पुन: सुरु गर्दा प्रत्येक अनुरोध तुरुन्तै असफल हुँदैन। `checkRateLimit()` मा इन-मेमोरी फलब्याकले असफलताको बाटो अवशोषित गर्दछ।
+- `lazyConnect: true` — सर्भरले जडानहरू स्वीकार गर्न सुरु गर्नु अघि Redis मा स्टार्टअप निर्भरतालाई बेवास्ता गर्छ।
+- `enableAutoPipelining: true` — समवर्ती दर-सीमा जाँचहरूको लागि राउन्ड-ट्रिपहरू घटाउँछ; एकल जडानमा > 50 RPS मा लाभदायक।
+
+### 2. Redis सर्भर कन्फिगरेसन (`redis.conf`)
+
+```
+# Memory
+maxmemory 80%                        # leave room for OS page cache
+maxmemory-policy allkeys-lru         # evict stale auth cache entries under pressure
+
+# Persistence (optional — OmniRoute is crash‑safe without it)
+save 300 1                           # snapshot at least every 5 min if ≥1 key changed
+appendonly no                        # AOF not needed; data is regeneratable
+appendfsync no                       # no fsync overhead (RDB is sufficient)
+
+# Networking
+timeout 0                            # no idle disconnect
+tcp-keepalive 300                    # 5 min keep‑alive
+tcp-backlog 511                      # connection backlog for bursty load
+
+# Performance
+hz 10                                # default; 100 for latency‑sensitive
+activedefrag yes                     # auto‑defragment when fragmentation >10%
+```
+
+**`maxmemory-policy allkeys-lru` को लागि व्यापार बन्द:** प्रमाणीकरण क्यास प्रविष्टिहरू मेमोरी दबाबमा बेदखल गर्न सकिन्छ। यो सुरक्षित छ — `setCachedApiKey` सधैं मिसमा पुन: भरिन्छ, र SQLite फलब्याक आधिकारिक छ। दर-सीमा गर्ने लुआ स्क्रिप्टले सानो कुञ्जीहरू सिर्जना गर्दछ जुन डिजाइनद्वारा छोटो अवधिको हुन्छ।
+
+### 3. Docker रचना सेटिङहरू
+
+प्रोड कम्पोज (`docker-compose.prod.yml`) ले `redis:8.6.2-alpine` प्रयोग गर्दछ। थप्नुहोस्:
+
+```yaml
+redis:
+  image: redis:8.6.2-alpine
+  command:
+    [
+      "redis-server",
+      "--maxmemory",
+      "512mb",
+      "--maxmemory-policy",
+      "allkeys-lru",
+      "--activedefrag",
+      "yes",
+      "--save",
+      "300 1",
+    ]
+  healthcheck:
+    test: ["CMD", "redis-cli", "ping"]
+    interval: 10s
+    timeout: 3s
+    retries: 3
+    start_period: 5s
+```
+
+### 4. बहु-उदाहरण / स्केलिंग विचारहरू
+
+**सबै प्रतिकृतिहरूको लागि एकल Redis** — दर-सीमा लुआ लिपि एकल आधिकारिक कुञ्जी स्थानमा निर्भर गर्दछ। प्रतिकृतिहरू पछाडि धेरै Redis उदाहरणहरूले परमाणुता गुमाउनेछ र बजेट दोब्बर हुनेछ। सबै अनुप्रयोग प्रतिकृतिहरूका लागि एकल Redis (वा फेलओभरको साथ Redis Sentinel क्लस्टर) प्रयोग गर्नुहोस्।
+
+**जडान गणना:** प्रत्येक अनुप्रयोग प्रतिकृति खुल्छ** २ TCP जडानहरू** Redis मा (दर लिमिटर ग्राहक + कोटा स्टोर ग्राहक)। 10 replicas → 20 जडानहरूमा, राम्रोसँग पूर्वनिर्धारित Redis उदाहरणको 10k जडान छत भित्र।
+
+### 5. अनुगमन
+
+स्वास्थ्य जाँच अन्त्य बिन्दु मार्फत खुलासा गर्नुहोस्:
+
+```typescript
+// src/app/api/monitoring/health/route.ts already calls rateLimiter functions
+// Add Redis-specific checks:
+//   1. PING latency via ioredis .ping()
+//   2. Memory usage via INFO memory
+//   3. Connection count via INFO clients
+//   4. Hit rate for maxmemory-policy (evicted_keys / keyspace_hits)
+```
+
+हेर्नको लागि प्रमुख मेट्रिक्स:
+
+- **निष्कासित कुञ्जीहरू / सेकेन्ड** — यदि लगातार गैर-शून्य छ भने, `maxmemory` बढाउनुहोस्
+- **अवरुद्ध ग्राहकहरु** — गैर-शून्यले ढिलो लुआ लिपि वा उच्च विवादको सुझाव दिन्छ
+- **अस्वीकृत जडानहरू** — जडान सीमा हिट; 20 जडानहरूमा दुर्लभ
+
+### 6. Redis-कम्प्याटिबल सर्भरहरू
+
+यहाँ प्रयोग गरिएको कुनै पनि सर्भरले लुआ स्क्रिप्टहरू चलाउनै पर्छ: रेट लिमिटर एक `EVAL` हो। Lua बिना सर्भरमा, `checkRateLimit()` ले `[RATE_LIMITER] Redis eval failed, falling back to in-memory rate limiting` लग गर्दछ र प्रति प्रक्रिया गणना गर्दछ, त्यसैले प्रत्येक प्रतिकृतिले आफ्नै सीमा लागू गर्दछ। अप्ट-इन साझा सत्र-अफिनिटी स्टोर (`OMNIROUTE_SESSION_AFFINITY_STORE=redis`) ले `EVAL` सँग पिनहरू पनि पढ्छ र अद्यावधिक गर्दछ; लुआ बिना यसले `[SESSION_AFFINITY] Redis error; falling back to SQLite.` लग गर्छ र प्रत्येक प्रतिकृतिले आफ्नै पिन राख्छ। अन्य कार्यभारहरूले सादा आदेशहरू प्रयोग गर्दछ (`SET ... EX`, `GET`, `DEL`, `MGET`, `EXPIRE`, `INCRBYFLOAT`, ह्यास र सेटहरू), र सिमेन्टिक क्यासको Redis ब्याकइन्डले कुनै `FT.*` आदेशहरू पठाउँदैन।
+
+OmniRoute 3.8.52: KiviDB 1.2.0 यसको Lua छवि (`kividb/kividb:v1.2.0-lua`) को साथ परीक्षण गरियो। रेट लिमिटर (काउन्टरहरू साझेदारी गर्ने दोस्रो प्रक्रिया सहित), प्रमाणीकरण क्यास, कोटा स्टोर, वार्मअप सर्किट ब्रेकर, सिमान्टिक क्यास स्टोर, र च्याट ह्यान्डलर मार्फत `/v1/chat/completions` अनुरोधले Redis 8.10.3 मा पास हुने 19 चेकहरू मध्ये 18 पारित गरेको छ। जुन फरक छ: `INCRBYFLOAT` `0.1 + 0.2` `0.30000000000000004` को रूपमा भण्डार गर्दछ जहाँ Redis `0.3` ( [kividbio/kividb#387](https://github.com/kividbio/kividb/issues/387) ) भण्डार गर्दछ। कोटा स्टोरले दुवैलाई `parseFloat` सँग पार्स गर्छ, तर अन्तिम अंकहरूमा दुई नम्बरहरू फरक हुन्छन्, त्यसैले कोटा सीमामा ठ्याक्कै पर्ने तुलना फरक रूपमा आउन सक्छ। सत्र-सम्बन्ध स्टोर त्यो दौडको भाग थिएन। ( [सेटअप](https://github.com/kividbio/kividb/blob/master/docs/integrations/omniroute.md), [परिणाम](https://github.com/kividbio/kividb/tree/master/benchmarks/omniroute-compat) )
+
+---
+
+## वास्तुकला रेखाचित्र
+
+```mermaid
+flowchart LR
+    subgraph App["App Replica"]
+        RL[rateLimiter.ts]
+        AK[apiKeys.ts]
+        QS[redisQuotaStore.ts]
+    end
+    RL -- "REDIS_URL" --> R1[(Redis\nshared)]
+    AK -- "reuses RL's client" --> R1
+    QS -- "QUOTA_STORE_REDIS_URL" --> R2[(Redis\nquota store)]
+    R1 --> R2 -- "can be same instance" --> R1
+```
+
+---
+
+## सन्दर्भहरू
+
+| फाइल                               | उद्देश्य                                                   |
+| ---------------------------------- | ---------------------------------------------------------- |
+| `src/shared/utils/rateLimiter.ts`  | प्राथमिक Redis ग्राहक, लुआ दर-सीमा लिपि, इन-मेमोरी फलब्याक |
+| `src/lib/db/apiKeys.ts`            | प्रमाणीकरण क्यास — Redis→SQLite फलब्याक                    |
+| `src/lib/quota/redisQuotaStore.ts` | वैकल्पिक कोटा स्टोरको लागि अलग Redis ग्राहक                |
+| `src/lib/quota/storeFactory.ts`    | `sqlite` र `redis` कोटा ड्राइभरहरू बीच स्विच गर्दछ         |
+| `docker-compose.prod.yml`          | प्रोड Redis कन्टेनर (छवि `redis:8.6.2-alpine`)             |
+| `.env.example`                     | Redis env vars दस्तावेज                                    |
+| `src/app/api/local/redis/`         | देव कन्टेनर अर्केस्ट्रेसनको लागिAPI मार्गहरू               |
+| `bin/cli/commands/redis.mjs`       | देव कन्टेनर अर्केस्ट्रेसनको लागिCLI आदेशहरू                |

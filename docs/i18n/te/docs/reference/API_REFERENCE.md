@@ -1,0 +1,2357 @@
+# API Reference (తెలుగు)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../reference/API_REFERENCE.md) · 🇪🇹 [am](../../../am/docs/reference/API_REFERENCE.md) · 🇸🇦 [ar](../../../ar/docs/reference/API_REFERENCE.md) · 🇦🇿 [az](../../../az/docs/reference/API_REFERENCE.md) · 🇧🇬 [bg](../../../bg/docs/reference/API_REFERENCE.md) · 🇧🇩 [bn](../../../bn/docs/reference/API_REFERENCE.md) · 🇧🇦 [bs](../../../bs/docs/reference/API_REFERENCE.md) · 🇨🇿 [cs](../../../cs/docs/reference/API_REFERENCE.md) · 🇩🇰 [da](../../../da/docs/reference/API_REFERENCE.md) · 🇩🇪 [de](../../../de/docs/reference/API_REFERENCE.md) · 🇬🇷 [el](../../../el/docs/reference/API_REFERENCE.md) · 🇪🇸 [es](../../../es/docs/reference/API_REFERENCE.md) · 🇪🇪 [et](../../../et/docs/reference/API_REFERENCE.md) · 🇮🇷 [fa](../../../fa/docs/reference/API_REFERENCE.md) · 🇫🇮 [fi](../../../fi/docs/reference/API_REFERENCE.md) · 🇫🇷 [fr](../../../fr/docs/reference/API_REFERENCE.md) · 🇮🇪 [ga](../../../ga/docs/reference/API_REFERENCE.md) · 🇮🇳 [gu](../../../gu/docs/reference/API_REFERENCE.md) · 🇳🇬 [ha](../../../ha/docs/reference/API_REFERENCE.md) · 🇮🇱 [he](../../../he/docs/reference/API_REFERENCE.md) · 🇮🇳 [hi](../../../hi/docs/reference/API_REFERENCE.md) · 🇭🇷 [hr](../../../hr/docs/reference/API_REFERENCE.md) · 🇭🇺 [hu](../../../hu/docs/reference/API_REFERENCE.md) · 🇦🇲 [hy](../../../hy/docs/reference/API_REFERENCE.md) · 🇮🇩 [id](../../../id/docs/reference/API_REFERENCE.md) · 🇳🇬 [ig](../../../ig/docs/reference/API_REFERENCE.md) · 🇮🇹 [it](../../../it/docs/reference/API_REFERENCE.md) · 🇯🇵 [ja](../../../ja/docs/reference/API_REFERENCE.md) · 🇬🇪 [ka](../../../ka/docs/reference/API_REFERENCE.md) · 🇰🇭 [km](../../../km/docs/reference/API_REFERENCE.md) · 🇮🇳 [kn](../../../kn/docs/reference/API_REFERENCE.md) · 🇰🇷 [ko](../../../ko/docs/reference/API_REFERENCE.md) · 🇱🇹 [lt](../../../lt/docs/reference/API_REFERENCE.md) · 🇱🇻 [lv](../../../lv/docs/reference/API_REFERENCE.md) · 🇮🇳 [ml](../../../ml/docs/reference/API_REFERENCE.md) · 🇮🇳 [mr](../../../mr/docs/reference/API_REFERENCE.md) · 🇲🇾 [ms](../../../ms/docs/reference/API_REFERENCE.md) · 🇲🇹 [mt](../../../mt/docs/reference/API_REFERENCE.md) · 🇲🇲 [my](../../../my/docs/reference/API_REFERENCE.md) · 🇳🇵 [ne](../../../ne/docs/reference/API_REFERENCE.md) · 🇳🇱 [nl](../../../nl/docs/reference/API_REFERENCE.md) · 🇳🇴 [no](../../../no/docs/reference/API_REFERENCE.md) · 🇮🇳 [or](../../../or/docs/reference/API_REFERENCE.md) · 🇮🇳 [pa](../../../pa/docs/reference/API_REFERENCE.md) · 🇵🇭 [phi](../../../phi/docs/reference/API_REFERENCE.md) · 🇵🇱 [pl](../../../pl/docs/reference/API_REFERENCE.md) · 🇵🇹 [pt](../../../pt/docs/reference/API_REFERENCE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/reference/API_REFERENCE.md) · 🇷🇴 [ro](../../../ro/docs/reference/API_REFERENCE.md) · 🇷🇺 [ru](../../../ru/docs/reference/API_REFERENCE.md) · 🇱🇰 [si](../../../si/docs/reference/API_REFERENCE.md) · 🇸🇰 [sk](../../../sk/docs/reference/API_REFERENCE.md) · 🇸🇮 [sl](../../../sl/docs/reference/API_REFERENCE.md) · 🇷🇸 [sr](../../../sr/docs/reference/API_REFERENCE.md) · 🇸🇪 [sv](../../../sv/docs/reference/API_REFERENCE.md) · 🇰🇪 [sw](../../../sw/docs/reference/API_REFERENCE.md) · 🇮🇳 [ta](../../../ta/docs/reference/API_REFERENCE.md) · 🇹🇭 [th](../../../th/docs/reference/API_REFERENCE.md) · 🇹🇷 [tr](../../../tr/docs/reference/API_REFERENCE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/reference/API_REFERENCE.md) · 🇵🇰 [ur](../../../ur/docs/reference/API_REFERENCE.md) · 🇺🇿 [uz](../../../uz/docs/reference/API_REFERENCE.md) · 🇻🇳 [vi](../../../vi/docs/reference/API_REFERENCE.md) · 🇳🇬 [yo](../../../yo/docs/reference/API_REFERENCE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/reference/API_REFERENCE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/reference/API_REFERENCE.md)
+
+---
+
+🌐 **భాషలు:** 🇺🇸 [English](./API_REFERENCE.md) | 🇪🇹 [አማርኛ](../i18n/am/docs/reference/API_REFERENCE.md) | 🇸🇦 [العربية](../i18n/ar/docs/reference/API_REFERENCE.md) | 🇦🇿 [Azərbaycan dili](../i18n/az/docs/reference/API_REFERENCE.md) | 🇧🇬 [Български](../i18n/bg/docs/reference/API_REFERENCE.md) | 🇧🇩 [বাংলা](../i18n/bn/docs/reference/API_REFERENCE.md) | 🇧🇦 [Bosanski](../i18n/bs/docs/reference/API_REFERENCE.md) | 🇨🇿 [Čeština](../i18n/cs/docs/reference/API_REFERENCE.md) | 🇩🇰 [Dansk](../i18n/da/docs/reference/API_REFERENCE.md) | 🇩🇪 [Deutsch](../i18n/de/docs/reference/API_REFERENCE.md) | 🇬🇷 [Ελληνικά](../i18n/el/docs/reference/API_REFERENCE.md) | 🇪🇸 [Español](../i18n/es/docs/reference/API_REFERENCE.md) | 🇪🇪 [Eesti](../i18n/et/docs/reference/API_REFERENCE.md) | 🇮🇷 [فارسی](../i18n/fa/docs/reference/API_REFERENCE.md) | 🇫🇮 [Suomi](../i18n/fi/docs/reference/API_REFERENCE.md) | 🇫🇷 [Français](../i18n/fr/docs/reference/API_REFERENCE.md) | 🇮🇪 [Gaeilge](../i18n/ga/docs/reference/API_REFERENCE.md) | 🇮🇳 [ગુજરાતી](../i18n/gu/docs/reference/API_REFERENCE.md) | 🇳🇬 [Hausa](../i18n/ha/docs/reference/API_REFERENCE.md) | 🇮🇱 [עברית](../i18n/he/docs/reference/API_REFERENCE.md) | 🇮🇳 [हिन्दी](../i18n/hi/docs/reference/API_REFERENCE.md) | 🇭🇷 [Hrvatski](../i18n/hr/docs/reference/API_REFERENCE.md) | 🇭🇺 [Magyar](../i18n/hu/docs/reference/API_REFERENCE.md) | 🇦🇲 [Հայերեն](../i18n/hy/docs/reference/API_REFERENCE.md) | 🇮🇩 [Bahasa Indonesia](../i18n/id/docs/reference/API_REFERENCE.md) | 🇳🇬 [Igbo](../i18n/ig/docs/reference/API_REFERENCE.md) | 🇮🇹 [Italiano](../i18n/it/docs/reference/API_REFERENCE.md) | 🇯🇵 [日本語](../i18n/ja/docs/reference/API_REFERENCE.md) | 🇬🇪 [ქართული](../i18n/ka/docs/reference/API_REFERENCE.md) | 🇰🇭 [ខ្មែរ](../i18n/km/docs/reference/API_REFERENCE.md) | 🇮🇳 [ಕನ್ನಡ](../i18n/kn/docs/reference/API_REFERENCE.md) | 🇰🇷 [한국어](../i18n/ko/docs/reference/API_REFERENCE.md) | 🇱🇹 [Lietuvių](../i18n/lt/docs/reference/API_REFERENCE.md) | 🇱🇻 [Latviešu](../i18n/lv/docs/reference/API_REFERENCE.md) | 🇮🇳 [മലയാളം](../i18n/ml/docs/reference/API_REFERENCE.md) | 🇮🇳 [मराठी](../i18n/mr/docs/reference/API_REFERENCE.md) | 🇲🇾 [Bahasa Melayu](../i18n/ms/docs/reference/API_REFERENCE.md) | 🇲🇹 [Malti](../i18n/mt/docs/reference/API_REFERENCE.md) | 🇲🇲 [မြန်မာ](../i18n/my/docs/reference/API_REFERENCE.md) | 🇳🇵 [नेपाली](../i18n/ne/docs/reference/API_REFERENCE.md) | 🇳🇱 [Nederlands](../i18n/nl/docs/reference/API_REFERENCE.md) | 🇳🇴 [Norsk](../i18n/no/docs/reference/API_REFERENCE.md) | 🇮🇳 [ଓଡ଼ିଆ](../i18n/or/docs/reference/API_REFERENCE.md) | 🇮🇳 [ਪੰਜਾਬੀ](../i18n/pa/docs/reference/API_REFERENCE.md) | 🇵🇭 [Filipino](../i18n/phi/docs/reference/API_REFERENCE.md) | 🇵🇱 [Polski](../i18n/pl/docs/reference/API_REFERENCE.md) | 🇵🇹 [Português (Portugal)](../i18n/pt/docs/reference/API_REFERENCE.md) | 🇧🇷 [Português (Brasil)](../i18n/pt-BR/docs/reference/API_REFERENCE.md) | 🇷🇴 [Română](../i18n/ro/docs/reference/API_REFERENCE.md) | 🇷🇺 [Русский](../i18n/ru/docs/reference/API_REFERENCE.md) | 🇱🇰 [සිංහල](../i18n/si/docs/reference/API_REFERENCE.md) | 🇸🇰 [Slovenčina](../i18n/sk/docs/reference/API_REFERENCE.md) | 🇸🇮 [Slovenščina](../i18n/sl/docs/reference/API_REFERENCE.md) | 🇷🇸 [Српски](../i18n/sr/docs/reference/API_REFERENCE.md) | 🇸🇪 [Svenska](../i18n/sv/docs/reference/API_REFERENCE.md) | 🇰🇪 [Kiswahili](../i18n/sw/docs/reference/API_REFERENCE.md) | 🇮🇳 [தமிழ்](../i18n/ta/docs/reference/API_REFERENCE.md) | 🇮🇳 [తెలుగు](../i18n/te/docs/reference/API_REFERENCE.md) | 🇹🇭 [ไทย](../i18n/th/docs/reference/API_REFERENCE.md) | 🇹🇷 [Türkçe](../i18n/tr/docs/reference/API_REFERENCE.md) | 🇺🇦 [Українська](../i18n/uk-UA/docs/reference/API_REFERENCE.md) | 🇵🇰 [اردو](../i18n/ur/docs/reference/API_REFERENCE.md) | 🇺🇿 [Oʻzbekcha](../i18n/uz/docs/reference/API_REFERENCE.md) | 🇻🇳 [Tiếng Việt](../i18n/vi/docs/reference/API_REFERENCE.md) | 🇳🇬 [Yorùbá](../i18n/yo/docs/reference/API_REFERENCE.md) | 🇨🇳 [中文 (简体)](../i18n/zh-CN/docs/reference/API_REFERENCE.md) | 🇹🇼 [中文 (繁體)](../i18n/zh-TW/docs/reference/API_REFERENCE.md)
+
+OmniRoute APIకి సంబంధించిన ప్రధాన సూచన. ఇది పబ్లిక్ `/v1` ఉపరితలం మరియు అత్యధికంగా ఉపయోగించే నిర్వహణ ఎండ్పాయింట్లను కవర్ చేస్తుంది; యంత్రం చదవగల [`docs/openapi.yaml`](../openapi.yaml) మరియు `src/app/api/` కింద ఉన్న రూట్ ట్రీ పూర్తి స్థాయి మూలాలు.
+
+OpenAI-అనుకూల ప్రోటోకాల్ మరియు ప్రొవైడర్ సామర్థ్యాల మ్యాట్రిక్స్పై కేంద్రీకృత సమాచారం కోసం
+[`OPENAI_COMPATIBILITY.md`](./OPENAI_COMPATIBILITY.md) చూడండి.
+
+ప్రతి డిప్లాయ్మెంట్ `/openapi.yaml` వద్ద తన స్వంత స్పెక్ కాపీని అందిస్తుంది; ఇది బిల్డ్ సమయంలో `docs/openapi.yaml` నుంచి రూపొందించబడుతుంది. ఇందులో బిల్డ్ వెర్షన్ మరియు సాపేక్ష సర్వర్ URL (`./`) ఉంటాయి, అందువల్ల అభ్యర్థనలు పత్రాన్ని అందించిన హోస్ట్పైనే కొనసాగుతాయి. డౌన్లోడ్ చేసిన ఫైల్ను దిగుమతి చేసుకునే సాధనానికి అలాంటి హోస్ట్ ఉండదు, కాబట్టి బేస్ URLను చేతితో సెట్ చేయాలి.
+
+---
+
+## విషయ సూచిక
+
+- [చాట్ పూర్తి సమాధానాలు](#chat-completions)
+- [ప్రత్యేక నిర్వహిత సెషన్ లీజులు](#exclusive-managed-session-leases)
+- [ఎంబెడ్డింగ్లు](#embeddings)
+- [చిత్ర సృష్టి](#image-generation)
+- [పత్ర OCR](#document-ocr)
+- [మోడళ్ల జాబితా](#list-models)
+- [ప్రొవైడర్ ప్లగిన్ మానిఫెస్ట్](#provider-plugin-manifest)
+- [అనుకూలత ఎండ్పాయింట్లు](#compatibility-endpoints)
+- [Files API](#files-api)
+- [Batches API](#batches-api)
+- [Search API](#search-api)
+- [WebSocket స్ట్రీమింగ్](#websocket-streaming)
+- [కోటాలు & సమస్యల నివేదన](#quotas--issues-reporting)
+- [సెమాంటిక్ క్యాష్](#semantic-cache)
+- [CLIProxyAPI నిర్వహణ అనుకూలత](#cliproxyapi-management-compatibility)
+- [డ్యాష్బోర్డ్ & నిర్వహణ](#dashboard--management)
+- [కాంబో నిర్వహణ](#combo-management)
+- [వెబ్హుక్స్](#webhooks)
+- [నమోదిత కీలు (స్వయంచాలక నిర్వహణ)](#registered-keys-auto-management)
+- [ఏజెంట్ల ప్రోటోకాల్](#agents-protocol)
+- [నిర్వహణ ప్రాక్సీలు](#management-proxies)
+- [స్థైర్యం (విస్తరితం)](#resilience-extended)
+- [స్కిల్స్](#skills)
+- [మెమరీ](#memory)
+- [MCP సర్వర్](#mcp-server)
+- [A2A సర్వర్](#a2a-server)
+- [Cloud, Evals & Assess](#cloud-evals--assess)
+- [అభ్యర్థన ప్రాసెసింగ్](#request-processing)
+- [ప్రామాణీకరణ](#authentication)
+
+---
+
+## చాట్ పూర్తి సమాధానాలు
+
+```bash
+POST /v1/chat/completions
+Authorization: Bearer your-api-key
+Content-Type: application/json
+
+{
+  "model": "cc/claude-opus-4-6",
+  "messages": [
+    {"role": "user", "content": "Write a function to..."}
+  ],
+  "stream": true
+}
+```
+
+### అనుకూల హెడర్లు
+
+| Header                   | Direction   | Description                                                                                                                                                                                                                |
+| ------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `X-OmniRoute-No-Cache`   | అభ్యర్థన    | క్యాష్ను దాటవేయడానికి `true`గా సెట్ చేయండి                                                                                                                                                                                 |
+| `x-omniroute-no-memory`  | అభ్యర్థన    | ఈ అభ్యర్థన కోసం మెమరీ + స్కిల్స్ ఇంజెక్షన్ను దాటవేయడానికి `true`గా సెట్ చేయండి (no-cacheను అనుకరిస్తుంది; ప్రతి కాల్కు అయ్యే టోకెన్/ఖర్చు ఓవర్హెడ్ను నివారిస్తుంది)                                                        |
+| `X-OmniRoute-Progress`   | అభ్యర్థన    | ప్రోగ్రెస్ ఈవెంట్ల కోసం `true`గా సెట్ చేయండి                                                                                                                                                                               |
+| `X-Session-Id`           | అభ్యర్థన    | బాహ్య సెషన్ అనుబంధం కోసం స్టికీ సెషన్ కీ                                                                                                                                                                                   |
+| `x_session_id`           | అభ్యర్థన    | అండర్స్కోర్ వేరియంట్ కూడా ఆమోదించబడుతుంది (డైరెక్ట్ HTTP)                                                                                                                                                                  |
+| `X-OmniRoute-Session-Id` | అభ్యర్థన    | కాలర్ అందించే సెషన్/సంభాషణ ట్యాగ్ (మెమరీకి కూడా పంపబడుతుంది). ఇది ఉన్నప్పుడు, ప్రతి-సెషన్ ఖర్చు కేటాయింపు కోసం `call_logs.session_tag`లో యథాతథంగా నిల్వ చేయబడుతుంది (#8249) — లేనప్పుడు ఎప్పుడూ స్వయంచాలకంగా రూపొందించబడదు |
+| `Idempotency-Key`        | అభ్యర్థన    | డీడప్ కీ (5 సెకన్ల వ్యవధి)                                                                                                                                                                                                 |
+| `X-Request-Id`           | అభ్యర్థన    | ప్రత్యామ్నాయ డీడప్ కీ                                                                                                                                                                                                      |
+| `x-omniroute-connection` | అభ్యర్థన    | ఒకే-మోడల్ అభ్యర్థనను ఒక ప్రొవైడర్ కనెక్షన్ (ఖాతా)కు దాని ID ద్వారా పిన్ చేయండి — [ప్రతి అభ్యర్థనకు ఖాతా పిన్నింగ్](#account-pinning-per-request) చూడండి                                                                    |
+| `X-OmniRoute-Cache`      | ప్రతిస్పందన | స్ట్రీమింగ్ కానప్పుడు `HIT` లేదా `MISS`                                                                                                                                                                                    |
+| `X-OmniRoute-Idempotent` | ప్రతిస్పందన | డీడప్ చేయబడితే `true`                                                                                                                                                                                                      |
+| `X-OmniRoute-Progress`   | ప్రతిస్పందన | ప్రోగ్రెస్ ట్రాకింగ్ ఆన్లో ఉంటే `enabled`                                                                                                                                                                                  |
+| `X-OmniRoute-Session-Id` | ప్రతిస్పందన | OmniRoute ఉపయోగించిన ప్రభావిత సెషన్ ID                                                                                                                                                                                     |
+| `X-OmniRoute-Request-Id` | ప్రతిస్పందన | అభ్యర్థన సహసంబంధ ID (తెలిసినప్పుడు)                                                                                                                                                                                        |
+| `X-OmniRoute-Version`    | ప్రతిస్పందన | OmniRoute బిల్డ్ వెర్షన్ (ఎల్లప్పుడూ ఉంటుంది)                                                                                                                                                                              |
+| `X-OmniRoute-Cost-Saved` | ప్రతిస్పందన | `HIT` సమయంలో క్యాష్ నివారించిన USD ఖర్చు (క్యాష్ హిట్లకు మాత్రమే)                                                                                                                                                          |
+| `X-OmniRoute-Decision`   | ప్రతిస్పందన | రూటింగ్ ట్రేస్: `strategy=<name>; provider=<alias>; latency_ms=<n>` (`<name>` కాంబో స్ట్రాటజీ, లేదా కాంబో కాని అభ్యర్థనకు `single`) — పూర్తయిన ప్రతిస్పందనల్లో ఎల్లప్పుడూ ఉంటుంది                                          |
+
+> Nginx గమనిక: మీరు అండర్స్కోర్ హెడర్లపై ఆధారపడితే (ఉదాహరణకు `x_session_id`), `underscores_in_headers on;`ను ప్రారంభించండి.
+
+#### ప్రతి అభ్యర్థనకు ఖాతా పిన్నింగ్
+
+ఒక ప్రొవైడర్కు అనేక కనెక్షన్లు (ఖాతాలు లేదా కీలు) ఉన్నప్పుడు, OmniRoute సాధారణంగా తన ఖాతా-ఎంపిక వ్యూహం ద్వారా ఒకదాన్ని ఎంచుకుంటుంది. ఒక అభ్యర్థనకు బదులుగా `x-omniroute-connection` హెడర్తో ఒక నిర్దిష్ట కనెక్షన్ను పిన్ చేయవచ్చు:
+
+```bash
+curl http://localhost:20128/v1/chat/completions \
+  -H "Authorization: Bearer <your OmniRoute API key>" \
+  -H "Content-Type: application/json" \
+  -H "x-omniroute-connection: <connection id>" \
+  -d '{"model": "codex/gpt-5.5", "messages": [{"role": "user", "content": "hi"}]}'
+```
+
+- **idను ఎక్కడ కనుగొనాలి.** డ్యాష్బోర్డ్లో provider పేజీని తెరవండి
+  (**Dashboard → Providers → <provider>**) మరియు connection
+  వరుసలోని `xxxxxxxx…` id chipను క్లిక్ చేయండి — ఇది పూర్తి connection idను కాపీ చేస్తుంది.
+- **ఇది ఏ అభ్యర్థనలకు వర్తిస్తుంది.** `/v1/chat/completions`, `/v1/messages` మరియు
+  `/v1/responses`లోని సింగిల్-మోడల్ అభ్యర్థనలు (`provider/model`). Combos ఈ headerను
+  పట్టించుకోవు: ప్రతి combo దశకు దాని స్వంత connection ద్వారా ఒక accountను pin చేయండి.
+- **ఈ pin కేవలం ప్రాధాన్యత కాదు, కఠినంగా అమలవుతుంది.** Pin చేసిన connection మాత్రమే
+  ప్రత్యేకంగా ఉపయోగించబడుతుంది. అభ్యర్థనలోని వైఫల్యం account యొక్క cooldownను నమోదు చేస్తుంది,
+  కానీ అదే providerకు చెందిన sibling accountకు మారదు.
+- **Cooldown మరియు quota pinను విడుదల చేస్తాయి.** Pin చేసిన connection cooldownలో ఉన్నప్పుడు,
+  quota పూర్తయినప్పుడు లేదా quota policy ద్వారా బ్లాక్ చేయబడినప్పుడు, తరువాతి అభ్యర్థనలు providerలోని
+  ఇతర connectionsకు fallback అవుతాయి — pin చేయని traffic మాదిరిగానే.
+- **తెలియని లేదా డిసేబుల్ చేసిన ids విఫలమవుతాయి.** Provider యొక్క active poolలో లేని id
+  (తొలగించబడినది, డీయాక్టివేట్ చేయబడినది లేదా మరొక providerకు చెందినది) eligible account ఏదీ
+  లేకుండా చేస్తుంది, కాబట్టి అభ్యర్థన నిశ్శబ్దంగా మరెక్కడికీ route కాకుండా విఫలమవుతుంది.
+
+Claude Code custom headersను `ANTHROPIC_CUSTOM_HEADERS` ద్వారా పంపుతుంది. దీన్ని
+`~/.claude/settings.json`లోని `env` blockలో ఉంచండి, లేదా ప్రతి projectకు వేర్వేరు accountను
+pin చేయడానికి project-level `.claude/settings.json`లో ఉంచండి:
+
+```jsonc
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://<your OmniRoute>:20128",
+    "ANTHROPIC_AUTH_TOKEN": "<your OmniRoute API key>",
+    "ANTHROPIC_CUSTOM_HEADERS": "x-omniroute-connection: <connection id>",
+  },
+}
+```
+
+మూలం: `src/sse/handlers/chat.ts` (header read), `src/sse/services/auth.ts` మరియు
+`src/sse/services/sessionAffinityPin.ts` (pin విడుదల మరియు poolలో లేని వాటి తనిఖీ).
+
+> **ఖర్చు టెలిమెట్రీ headers:** non-streaming విజయవంతమైన ప్రతిస్పందనల్లో `X-OmniRoute-*` ఖర్చు-టెలిమెట్రీ సమితి కూడా ఉంటుంది — `X-OmniRoute-Response-Cost` (USD, స్థిరమైన 10 దశాంశ స్థానాలు; ఉచితం/ధర నిర్ణయించనిది అయితే `0.0000000000`), `X-OmniRoute-Tokens-In` / `X-OmniRoute-Tokens-Out`, `X-OmniRoute-Model`, `X-OmniRoute-Provider`, `X-OmniRoute-Latency-Ms`, `X-OmniRoute-Cache-Hit`, మరియు `X-OmniRoute-Fallback-Attempts` (0 కంటే ఎక్కువ ఉన్నప్పుడు మాత్రమే), అలాగే `X-OmniRoute-Request-Id` మరియు `X-OmniRoute-Version`. ఇవి chat completions, `/v1/responses`, `/v1/messages`, **మరియు media endpoints** — `/v1/embeddings`, `/v1/images/generations`, `/v1/audio/speech`, `/v1/audio/transcriptions`, `/v1/rerank`, `/v1/videos/generations`, `/v1/music/generations`, మరియు `/v1/moderations` — ద్వారా జారీ చేయబడతాయి (ఎల్లప్పుడూ ఖర్చు `0`). ధర అందుబాటులో ఉన్నప్పుడు media ఖర్చు ప్రతి modality ప్రకారం (ప్రతి image, ప్రతి second, ప్రతి character, ప్రతి search-unit) లెక్కించబడుతుంది; లేకపోతే `0`గా ఉంటుంది (fail-open).
+
+> **Cache-hit ఖర్చు అర్థం:** semantic-cache HIT (`X-OmniRoute-Cache-Hit: true`) అయినప్పుడు upstream call చేయబడదు, కాబట్టి `X-OmniRoute-Response-Cost` `0.0000000000`గా ఉంటుంది (hitను అందించడానికి అయ్యే **incremental** ఖర్చు). అసలు/జరిగి ఉండాల్సిన ఖర్చు `X-OmniRoute-Cost-Saved`లో విడిగా నివేదించబడుతుంది. Billing consumers `X-OmniRoute-Response-Cost` మొత్తాన్ని కలపాలి (hitsకు ఎలాంటి ఖర్చూ ఉండదు); cache analytics `X-OmniRoute-Cost-Saved`ను aggregate చేయవచ్చు.
+
+## ప్రత్యేక నిర్వహిత సెషన్ లీజులు
+
+ప్రత్యేక నిర్వహిత సెషన్ లీజింగ్ అనేది ఐచ్ఛిక, క్లయెంట్-నిరపేక్ష రూటింగ్ ఒప్పందం: ఒక సక్రియ యజమాని
+ఒక అర్హతగల OmniRoute కనెక్షన్ను కలిగి ఉంటాడు. ఇది మోడల్ను లీజ్ చేయదు, OAuth అవసరం లేదు, ఒక
+ప్రత్యేక క్లయెంట్ను గుర్తించదు, లేదా ఒక ప్రత్యేక ప్రొవైడర్ను అవసరం చేయదు.
+
+ఆథెంటికేట్ చేసే API కీకి `lease:exclusive` స్కోప్ మరియు స్పష్టమైన, ఖాళీ కాని
+`allowedConnections` జాబితా ఉండాలి. డేటాబేస్ మ్యూటేషన్ సరిహద్దు కీ సృష్టి మరియు పాక్షిక
+అప్డేట్ల సమయంలో ఈ రెండు ఫీల్డ్లను కలిపి అమలు చేస్తుంది.
+
+```http
+POST /api/v1/session-leases
+Authorization: Bearer <managed-api-key>
+Content-Type: application/json
+X-OmniRoute-Lease-Owner: vlo_<43-base64url-characters>
+
+{"action":"acquire","model":"glm/glm-4.6"}
+```
+
+విజయవంతమైన acquire, renew, మరియు release ప్రతిస్పందనలు టైమ్స్టాంప్లు, `state`, మరియు ఖచ్చితమైన
+పాజిటివ్ `generation`ను అందిస్తాయి, కానీ ఎంచుకున్న కనెక్షన్ లేదా ఆధారాలను ఎప్పుడూ బహిర్గతం చేయవు.
+Renew మరియు release JSON బాడీలో generationను అందిస్తాయి:
+
+```json
+{ "action": "renew", "generation": 1 }
+```
+
+```json
+{ "action": "release", "generation": 1, "reason": "OWNER_EXIT" }
+```
+
+సక్రియ లీజ్ యజమాని తన ప్రస్తుత బైండింగ్కు సంబంధించిన గోప్యత-సురక్షిత డిస్ప్లే మెటాడేటాను
+స్పష్టంగా అభ్యర్థించవచ్చు:
+
+```json
+{ "action": "status", "generation": 1 }
+```
+
+```json
+{
+  "state": "ACTIVE",
+  "generation": 1,
+  "acquiredAt": "2026-08-28T12:00:00.000Z",
+  "renewedAt": "2026-08-28T12:00:30.000Z",
+  "expiresAt": "2026-08-28T12:02:30.000Z",
+  "connection": {
+    "displayName": "Primary Codex",
+    "provider": "codex"
+  }
+}
+```
+
+ఈ ఐచ్ఛిక status చర్యను ఒకే డేటాబేస్ ట్రాన్సాక్షన్లో అపారదర్శక యజమాని, ఆథెంటికేట్ చేయబడిన
+నిర్వహిత API కీ, మరియు ఖచ్చితమైన సక్రియ generation ద్వారా ఫెన్స్ చేస్తారు. `displayName` అనేది
+కాన్ఫిగర్ చేయబడిన కనెక్షన్ పేరు యొక్క ట్రిమ్ చేసిన రూపం మాత్రమే; సురక్షితమైన కాన్ఫిగర్ చేయబడిన పేరు
+ఏదీ లేకపోతే అది `null`గా ఉంటుంది. OmniRoute ఎప్పుడూ ఇమెయిల్ లేదా రూపొందించబడిన ఖాతా గుర్తింపును
+ప్రత్యామ్నాయంగా ఉపయోగించదు. provider విలువ సున్నితమైనది కాని డిస్ప్లే లేబుల్, రూపొందించబడిన
+అనుకూల-ప్రొవైడర్ గుర్తింపు కాదు. ఆధారాలు, టోకెన్లు, కుకీలు, ముడి కనెక్షన్ లేదా API కీ
+ఐడీలు, యజమాని హ్యాష్లు, ఫెన్సింగ్ సీక్రెట్లు, మరియు అంతర్గత రూటింగ్ డేటా మినహాయించబడతాయి.
+
+తప్పు కీ, తప్పు యజమాని, పాత generation, కనుగొనబడని, గడువు ముగిసిన, విడుదలైన, మరియు
+చెల్లుబాటు రద్దు చేయబడిన లుకప్లు అన్నీ కనెక్షన్ మెటాడేటా లేకుండా అదే
+`409 LEASE_FENCE_STALE` లోపాన్ని అందిస్తాయి. కెపాసిటీ-వెయిట్ ప్రతిస్పందనను పొందిన క్లయెంట్కు
+పరిశీలించడానికి సక్రియ బైండింగ్ ఉండదు. రూటింగ్ ఒక సక్రియ లీజ్ను మార్చినప్పుడు, అదే generation
+చెల్లుబాటులో ఉంటుంది మరియు status కొత్త బైండింగ్ను అటామిక్గా అందిస్తుంది; పాతదాన్ని ఎప్పుడూ
+అందించదు. acquire, renew, release, మరియు waiting ప్రతిస్పందనలు తమ మునుపటి ఆకృతులను
+కొనసాగించడం వల్ల ఇప్పటికే ఉన్న క్లయెంట్లు మార్పు లేకుండా ఉంటాయి.
+
+ఈ సర్వర్ ఒప్పందం stock OpenAI Codex `/status`ను మార్చదు. Stock Codex ప్రస్తుతం తన మోడల్
+ప్రొవైడర్ మరియు అంతర్నిర్మిత ఆథెంటికేషన్/ఖాతా స్థితిని నివేదిస్తుంది, కానీ యాదృచ్ఛిక కస్టమ్
+ప్రొవైడర్ ఖాతా మెటాడేటాను రెండర్ చేయదు; భవిష్యత్ క్లయెంట్ ఇంటిగ్రేషన్ ఈ చర్యను కాల్ చేసి
+`connection.displayName`ను ఎలా చూపించాలో నిర్ణయించాలి.
+
+ప్రతి నిర్వహిత ఇన్ఫరెన్స్ అభ్యర్థన ఈ రెండు నియంత్రణ హెడర్లను అందిస్తుంది:
+
+```http
+X-OmniRoute-Lease-Owner: vlo_<43-base64url-characters>
+X-OmniRoute-Lease-Generation: 1
+```
+
+ప్రతి మద్దతు ఉన్న అప్స్ట్రీమ్ ప్రయత్నానికి వెంటనే ముందు ఖచ్చితమైన యజమాని, generation, సక్రియ
+కనెక్షన్, మరియు ఆథెంటికేట్ చేయబడిన API కీ ఫెన్స్ చేయబడతాయి. మరో కీతో యజమాని మరియు generationను
+రీప్లే చేస్తే, ఆ కీ అదే కనెక్షన్కు అనుమతి ఇచ్చినా విఫలమవుతుంది. ముడి యజమానులు నిల్వ చేయబడరు,
+లాగ్ చేయబడరు, అభ్యర్థన స్నాప్షాట్లో ఉంచబడరు, లేదా అప్స్ట్రీమ్కు ఫార్వర్డ్ చేయబడరు.
+
+తాత్కాలిక పోటీ HTTP `429`ను `Retry-After`తో పాటు ఈ ప్రతిస్పందనతో అందిస్తుంది:
+
+```json
+{
+  "state": "WAITING_FOR_CAPACITY",
+  "error": { "type": "lease_error", "code": "LEASE_CAPACITY_UNAVAILABLE" },
+  "reason": "NO_FREE_ELIGIBLE_CONNECTION",
+  "retryAfter": 30
+}
+```
+
+ఈ ప్రతిస్పందన సాధారణ అర్హతగల సెట్ ఖాళీగా లేదని, అయితే ప్రతి ఖాళీ అభ్యర్థి ఒక విదేశీ సక్రియ
+లీజ్ ఆధీనంలో ఉందని మాత్రమే సూచిస్తుంది. మద్దతు లేని మోడల్లు/ప్రొవైడర్లు, పాలసీ సరిపోలకపోవడం,
+కూల్డౌన్, కోటా, ఆరోగ్యం, మరియు ఇతర సాధారణ అర్హత వైఫల్యాలు తమ ఇప్పటికే ఉన్న OmniRoute
+ప్రతిస్పందనలను కొనసాగిస్తాయి.
+
+### `x-omniroute-compression`
+
+కంప్రెషన్ ప్లాన్కు ప్రతి-అభ్యర్థన ఓవర్రైడ్. అత్యధిక ప్రాధాన్యత — ఇది routing-combo
+ఓవర్రైడ్, సక్రియ ప్రొఫైల్, ఆటో-ట్రిగ్గర్, మరియు ప్యానెల్ Default కంటే ముందుంటుంది. విలువలు:
+
+| విలువ         | ప్రభావం                                                                                                       |
+| ------------- | ------------------------------------------------------------------------------------------------------------- |
+| `off`         | ఈ అభ్యర్థనకు కంప్రెషన్ లేదు.                                                                                  |
+| `default`     | ప్యానెల్-నుండి ఉత్పన్నమైన Default ప్రొఫైల్ (సక్రియ ప్రొఫైల్ను విస్మరిస్తుంది). Lossy ఇంజిన్లు ఆఫ్లోనే ఉంటాయి. |
+| `safe`        | Dedup మరియు whitespace folding మాత్రమే.                                                                       |
+| `allow-lossy` | summaries మరియు style rewrites సహా, ఈ అభ్యర్థనకు ఆపరేటర్ ప్లాన్ను కొనసాగిస్తుంది.                             |
+| `engine:<id>` | ఎనేబుల్ చేయబడినప్పుడు ఒకే ఇంజిన్, ఉదా. `engine:rtk`. ఆ ఇంజిన్కు ప్రతి-అభ్యర్థన opt-in.                        |
+| `<combo>`     | పేరుతో సరిపోల్చబడే నేమ్డ్ కాంబో (మొదట case-insensitiveగా, తర్వాత id ద్వారా).                                  |
+
+గమనికలు:
+
+- తెలియని విలువలు విస్మరించబడతాయి (అభ్యర్థన ఎప్పుడూ తిరస్కరించబడదు); resolution సాధారణ ఆపరేటర్ ప్రాధాన్యతా క్రమంలో కొనసాగుతుంది.
+- ఒకే పేరును అనేక కాంబోలు పంచుకుంటే, నిర్ణయాత్మక సరిపోలిక కోసం కాంబో **id**ను పంపండి.
+- పేరు `off` లేదా `default`గా ఉన్న కాంబోను పేరుతో ఎంచుకోలేరు (ఆ కీవర్డ్లు ముందుగా అర్థం చేసుకోబడతాయి); అలాంటి కాంబోను దాని id ద్వారా సూచించండి.
+- మాస్టర్ కంప్రెషన్ స్విచ్ ఒక కఠినమైన గేట్: కంప్రెషన్ ప్రపంచవ్యాప్తంగా డిసేబుల్ చేయబడినప్పుడు, ఈ హెడర్ దాన్ని ఎనేబుల్ చేయలేడు.
+
+అమలు చేయబడిన ప్లాన్ ప్రతిస్పందన హెడర్లో తిరిగి అందించబడుతుంది:
+
+```
+X-OmniRoute-Compression: <mode>; source=<source>
+```
+
+ఇక్కడ `<source>` వీటిలో ఒకటి: `request-header`, `routing-override`, `active-profile`, `auto-trigger`, `default`, లేదా `off`.
+
+---
+
+## ఎంబెడ్డింగ్లు
+
+```bash
+POST /v1/embeddings
+Authorization: Bearer your-api-key
+Content-Type: application/json
+
+{
+  "model": "nebius/Qwen/Qwen3-Embedding-8B",
+  "input": "The food was delicious"
+}
+```
+
+అందుబాటులో ఉన్న ప్రొవైడర్లు: Nebius, OpenAI, Mistral, Together AI, Fireworks, NVIDIA, **OpenRouter**, Jina AI.
+
+క్యాటలాగ్ ఐడీలు `provider/model` రూపంలో ఉంటాయి (ఉదాహరణ: `jina-ai/jina-embeddings-v5-omni-small`). రిజిస్ట్రీలో కనిపించే బేర్ Jina మోడల్ ఐడీలు (ఉదాహరణకు `jina-embeddings-v5-text-small`, `jina-reranker-v3.5`) కూడా పరిష్కరించబడతాయి. Jina embed/rerank/classify/segment కోసం ముందుగా డ్యాష్బోర్డ్లోని `jina-ai` ఆధారాలను ఉపయోగిస్తుంది; డ్యాష్బోర్డ్ కీ ఏదీ లేనప్పుడు మాత్రమే `JINA_AI_API_KEY` ఫాల్బ్యాక్గా ఉపయోగించబడుతుంది. `jina-reader` కార్డ్ Reader / `r.jina.ai` కోసం మాత్రమే (`POST /v1/web/fetch`), ఇది ఎప్పటికీ ఎంబెడ్డింగ్లు లేదా rerank అందించదు.
+
+మల్టీమోడల్ మద్దతును ప్రకటించే రిజిస్ట్రీ మోడల్లు గరిష్ఠంగా 32 ప్రొవైడర్-న్యూట్రల్ నిర్మిత
+ఐటమ్లను కూడా స్వీకరిస్తాయి. మీడియా ఐటమ్ రకాలు `text`, `image`, `audio`, `video`, మరియు `document`. వాటి మీడియా `source`
+`{"type":"url","url":"https://..."}` లేదా
+`{"type":"base64","data":"...","media_type":"..."}` అయి ఉంటుంది.
+
+Jina v5 Omni (`jina-ai/jina-embeddings-v5-omni-small`, `jina-ai/jina-embeddings-v5-omni-nano`,
+మరియు ఫ్యామిలీ అలియాస్ `jina-ai/jina-embeddings-v5-omni` → omni-small) Jina యొక్క స్థానిక
+EmbeddingsV5Request డాక్యుమెంట్లను కూడా స్వీకరిస్తుంది మరియు వాటిని
+`https://api.jina.ai/v1/embeddings` కు **యథాతథంగా ఫార్వర్డ్** చేస్తుంది:
+
+```json
+{
+  "model": "jina-ai/jina-embeddings-v5-omni-small",
+  "task": "retrieval.query",
+  "normalized": true,
+  "input": [
+    { "text": "a red bicycle" },
+    { "image": "https://example.com/bike.png" },
+    { "content": [{ "text": "caption" }, { "image": "data:image/png;base64,..." }] }
+  ]
+}
+```
+
+స్థానిక `{ image | audio | video | pdf }` విలువలు పబ్లిక్ HTTPS URL, `data:` URI లేదా ముడి
+base64 అయి ఉండవచ్చు. OmniRoute ఈ ఆబ్జెక్ట్లను స్ట్రింగ్లుగా మార్చదు లేదా స్థానిక image URLలను fetch చేయదు — Jina స్వయంగా
+పబ్లిక్ మీడియాను తిరిగి పొందుతుంది. అదనపు Jina ఫీల్డ్లు (`task`, `normalized`, `truncate`, `embedding_type`) కూడా
+ఫార్వర్డ్ చేయబడతాయి. టెక్స్ట్-మాత్రమే Jina SKUలు ఇప్పటికీ టెక్స్ట్ కాని డాక్యుమెంట్లను తిరస్కరిస్తాయి.
+
+భద్రత మరియు ట్రాన్స్పోర్ట్ పరిమితులు:
+
+- రిమోట్ మీడియా URLలు పబ్లిక్ HTTPS అయి ఉండాలి. కానానికల్ `{type,source:url}` ఐటమ్లు సర్వర్ వైపు fetch చేయబడతాయి
+  (రిడైరెక్ట్ పునఃధృవీకరణ, టైమ్అవుట్, పరిమాణ పరిమితులు, పబ్లిక్ DNS, కనెక్షన్ పిన్నింగ్) మరియు ప్రొవైడర్ కాల్కు
+  ముందు ఇన్లైన్ చేయబడతాయి. Jina-స్థానిక `{image:"https://..."}` ఐటమ్లు అదే పబ్లిక్-HTTPS తనిఖీ తర్వాత యథాతథంగా
+  ఫార్వర్డ్ చేయబడతాయి; URLను Jina fetch చేస్తుంది.
+- ఇన్లైన్ base64 మీడియా ఒక్కో ఐటమ్కు డీకోడ్ చేసిన తర్వాత 8 MiBకి, మొత్తం రిక్వెస్ట్కు డీకోడ్ చేసిన తర్వాత 16 MiBకి పరిమితం చేయబడుతుంది.
+
+ప్రొవైడర్ అనువాదం (కానానికల్ ఐటమ్లు ఎప్పటికీ మార్పులేకుండా ఫార్వర్డ్ చేయబడవు):
+
+- Jina మల్టీమోడల్ మోడల్లు: ప్రతి టాప్-లెవల్ ఐటమ్ ఒక modality-keyed ఆబ్జెక్ట్గా
+  (`text` / `image` / `audio` / `video` / `pdf`) మారుతుంది; ఇన్లైన్ మీడియా కోసం data URIలను ఉపయోగిస్తుంది; ప్రతి
+  టాప్-లెవల్ ఐటమ్కు ఒక వెక్టర్ ఉంటుంది.
+- Gemini Embedding 2 కుటుంబం: ఒక టాప్-లెవల్ అర్రే `content.parts` (`text` లేదా `inline_data`) కలిగిన ఒకే స్థానిక
+  `models/{model}:embedContent` రిక్వెస్ట్గా మారుతుంది.
+- llama.cpp (`llama-cpp/<model>`, స్థానిక సర్వర్ లోడ్ చేసిన ఏ మోడల్ అయినా): కానానికల్ `text` ఐటమ్లు
+  సాధారణ స్ట్రింగ్లుగా మారతాయి, అలాగే `image` / `audio` / `video` ఒక్కొక్కటి ఒక `{"content": [part]}` ఆబ్జెక్ట్గా
+  మారతాయి. ఇవి ఇన్లైన్ డేటాతో llama-server యొక్క చాట్ కంటెంట్ పార్ట్లను (`image_url`,
+  `input_audio` తో `wav` / `mp3` / `flac` ఫార్మాట్, `input_video`) ఉపయోగిస్తాయి; ప్రతి టాప్-లెవల్ ఐటమ్కు ఒక
+  వెక్టర్ ఉంటుంది. `--embedding --mmproj …` తో సర్వర్ నడవాలి; ప్రొజెక్టర్ లేకపోతే అది స్వయంగా మీడియాను తిరస్కరిస్తుంది.
+  `document`కు మద్దతు లేదు.
+- స్పష్టమైన modality మెటాడేటా లేని తెలియని/డైనమిక్ మోడల్లు నిర్మిత ఇన్పుట్ను HTTP 400తో తిరస్కరిస్తాయి.
+
+```json
+{
+  "model": "jina-ai/jina-embeddings-v5-omni-small",
+  "input": [
+    { "type": "text", "text": "A red bicycle" },
+    {
+      "type": "image",
+      "source": { "type": "url", "url": "https://example.com/bicycle.png" }
+    }
+  ],
+  "dimensions": 512,
+  "encoding_format": "float"
+}
+```
+
+మద్దతు లేని మోడల్/మోడాలిటీ కలయికలు ఐటమ్ను బలవంతంగా మార్చడం కాకుండా HTTP 400ను అందిస్తాయి. ఇన్పుట్ కాని
+ఎక్స్టెన్షన్ ఫీల్డ్లు ఉన్న లెగసీ స్ట్రింగ్/టోకెన్ రిక్వెస్ట్లు మునుపటిలాగే మార్పులేకుండా పాస్ అవుతాయి.
+
+```bash
+# అన్ని ఎంబెడ్డింగ్ మోడళ్లను జాబితా చేయండి
+GET /v1/embeddings
+```
+
+---
+
+## ఇమేజ్ జనరేషన్
+
+```bash
+POST /v1/images/generations
+Authorization: Bearer your-api-key
+Content-Type: application/json
+
+{
+  "model": "openai/gpt-image-2",
+  "prompt": "A beautiful sunset over mountains",
+  "size": "1024x1024"
+}
+```
+
+అందుబాటులో ఉన్న ప్రొవైడర్లలో OpenAI (GPT చిత్రం 2), xAI (Grok చిత్రం), Together AI (FLUX), Fireworks AI, Nebius (FLUX), హైపర్బోలిక్, NanoBanana,**OpenRouter** ,**ZenMux** , SD WebUI (స్థానికం), ComfyUI (స్థానికం).
+
+`n` `data[]` లో `n` చిత్రాలను అందిస్తుంది. అప్స్ట్రీమ్ API ఒక్కో కాల్కు ఒక ఇమేజ్ని తిరిగి ఇచ్చే ప్రొవైడర్లు (బ్లాక్ ఫారెస్ట్ ల్యాబ్స్, స్టెబిలిటీ AI, లియోనార్డో, ఐడియోగ్రామ్, హైపర్, హైపర్బోలిక్, Magnific/Freepik, NVIDIA NIM, Cloudflare వర్కర్స్ AI) గరిష్టంగా 4 విమానాల్లో `n` ప్రత్యేక అప్స్ట్రీమ్ కాల్లను పొందుతారు. స్థిర `seed` కాల్ ఇండెక్స్ (`seed`, `seed + 1`, …) ద్వారా ఆఫ్సెట్ చేయబడుతుంది, కాబట్టి చిత్రాలు విభిన్నంగా ఉంటాయి కానీ పునరుత్పత్తి చేయగలవు. `n` 10కి పరిమితం చేయబడింది. ఏదైనా కాల్ విఫలమైతే అభ్యర్థన మొత్తం విఫలమవుతుంది. ఫ్యాన్ అవుట్ ఫార్మాట్ల జాబితా `open-sse/handlers/imageGeneration/fanOut.ts` లో `SINGLE_IMAGE_FANOUT_FORMATS`.
+
+ZenMux ఇప్పటికే ఉన్న API-కీ కనెక్షన్ని మళ్లీ ఉపయోగిస్తుంది మరియు `zenmux/` లేదా `zm/` ప్రిఫిక్స్లను అంగీకరిస్తుంది:
+
+- `zenmux/openai/gpt-image-2` ZenMux యొక్క OpenAI చిత్రాలు API ఉపయోగిస్తుంది. ఎంపికలలో `size`, `quality`, `n`, `output_format`, `output_compression`, `background` మరియు `response_format` ఉన్నాయి.
+- `zm/meta/muse-image-1.0` వంటి ఇతర ప్రచురణకర్తలు ZenMux యొక్క వెర్టెక్స్ AI `:predict` ముగింపు బిందువును ఉపయోగిస్తారు. `n` మ్యాప్లు `sampleCount`, `aspect_ratio` నుండి `aspectRatio` మరియు `image_size` (`1K`, `2K`, `4K`) నుండి `sampleImageSize`. పిక్సెల్ `size` ఒక కారక నిష్పత్తిని మాత్రమే అందిస్తుంది, పిక్సెల్ కొలతలు హామీ ఇవ్వబడవు. మద్దతు ఉన్న నిష్పత్తులు, తీర్మానాలు మరియు గణనలు మోడల్ను బట్టి మారుతూ ఉంటాయి.
+- `zm/inclusionai/ming-image-0.1-design` దాని స్వంత కొలతలు ఎంచుకుంటుంది. `size`, `aspect_ratio` మరియు `image_size` వదిలివేయండి; స్పష్టమైన విలువలు HTTP 400ని అందిస్తాయి. `output_format` తో PNG, JPEG, మరియు WebP అభ్యర్థించవచ్చు.
+
+ఈ ఏకీకరణ టెక్స్ట్-టు-ఇమేజ్ జనరేషన్కు మద్దతు ఇస్తుంది, రిఫరెన్స్-ఇమేజ్ ఎడిటింగ్ కాదు. వెర్టెక్స్ అవుట్పుట్ `data[].b64_json` కి సాధారణీకరించబడింది; ఇమేజ్ బైట్లు మాత్రమే అందుబాటులో ఉన్నప్పుడు `response_format: "url"` అప్స్ట్రీమ్ HTTPS URL లేదా బేస్64 డేటా URL అందిస్తుంది. Empty/filtered అవుట్పుట్లు ఖాళీ విజయం కంటే దోషాన్ని అందిస్తాయి. మోడల్ యాక్సెస్ ZenMux ఖాతాపై ఆధారపడి ఉంటుంది. [ZenMux యొక్క వెర్టెక్స్ API](https://docs.zenmux.ai/api/vertexai/generate-images) మరియు [OpenAI చిత్రాలు API](https://docs.zenmux.ai/api/openai/generate-an-image) చూడండి.
+
+Microsoft 365 Copilot సైన్-ఇన్ కనెక్షన్ Copilot యొక్క అంతర్నిర్మిత చిత్ర సాధనం ద్వారా `copilot-m365-web/m365-copilot-image` అందిస్తుంది: ప్రతి చిత్రానికి ఒక Copilot టర్న్ (`n` 1–4), `size` స్టీరింగ్ మాత్రమే ఓరియంటేషన్, మరియు ఇమేజ్లు ఇన్లైన్లో రిటర్న్ చేయబడ్డాయి (`b64_json`, లేదా `response_format: "url"` కోసం డేటా URL ). [Microsoft 365 Copilot](../providers/COPILOT-M365.md#image-generation) చూడండి.
+
+```bash
+# List all image models
+GET /v1/images/generations
+```
+
+---
+
+## డాక్యుమెంట్ OCR
+
+```bash
+POST /v1/ocr
+Authorization: Bearer your-api-key
+Content-Type: application/json
+
+{
+  "model": "mistral/mistral-ocr-latest",
+  "document": {
+    "type": "document_url",
+    "document_url": "https://example.com/invoice.pdf"
+  }
+}
+```
+
+`model` అనేది `provider/model` ప్రీఫిక్స్ ద్వారా OCR ప్రొవైడర్ను ఎంచుకుంటుంది; ప్రీఫిక్స్ లేని మోడల్ ఐడి (ఉదా.
+`mistral-ocr-latest`) దాని నమోదిత ప్రొవైడర్కు పరిష్కరించబడుతుంది, మరియు వదిలివేసిన `model` డిఫాల్ట్గా
+Mistral (`mistral-ocr-latest`)కు సెట్ అవుతుంది. నమోదిత ప్రొవైడర్లు (`open-sse/config/ocrRegistry.ts`):
+
+| ప్రొవైడర్ ఐడి                 | మోడల్ ఐడి            | `model` విలువ                                                            | గమనికలు                                                                                                               |
+| ----------------------------- | -------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `mistral`                     | `mistral-ocr-latest` | `mistral/mistral-ocr-latest` (లేదా ప్రీఫిక్స్ లేని `mistral-ocr-latest`) | సమకాలికం — ఒకే అప్స్ట్రీమ్ కాల్ నుండి ప్రతిస్పందన నేరుగా అందించబడుతుంది.                                              |
+| `azure-document-intelligence` | `prebuilt-read`      | `azure-document-intelligence/prebuilt-read`                              | అసమకాలిక అప్స్ట్రీమ్ (`analyze` + poll) — దిగువ చూడండి.                                                               |
+| `vertex-deepseek-ocr`         | `deepseek-ocr-maas`  | `vertex-deepseek-ocr/deepseek-ocr-maas`                                  | Vertex AI యొక్క `openapi/chat/completions` భాగస్వామి ఎండ్పాయింట్ ద్వారా సమకాలికం — ప్రామాణీకరణ/URL కోసం దిగువ చూడండి. |
+
+మూడు ప్రొవైడర్లూ ఒకే Mistral-ఆకారంలోని బాడీలో ప్రతిస్పందిస్తాయి:
+
+```json
+{
+  "pages": [{ "index": 0, "markdown": "# Extracted text..." }],
+  "model": "mistral-ocr-latest",
+  "usage_info": { "pages_processed": 1 }
+}
+```
+
+### Azure Document Intelligence పోలింగ్ ప్రవాహం
+
+Azure Document Intelligence యొక్క `analyze` API అసమకాలికంగా ఉంటుంది: ప్రారంభ అభ్యర్థన బాడీకి బదులుగా
+`Operation-Location` హెడర్ను అందిస్తుంది, మరియు ఫలితాన్ని పోలింగ్ చేయాలి. హ్యాండ్లర్
+(`open-sse/handlers/ocr.ts`) ఆ URLను ప్రతి సెకనుకు గరిష్ఠంగా 30 ప్రయత్నాల వరకు పోలింగ్ చేస్తుంది, `ok` కాని
+పోలింగ్ ప్రతిస్పందన లేదా `"failed"` స్థితి వచ్చినప్పుడు వెంటనే విఫలమవుతుంది (పోలింగ్ కొనసాగించదు), మరియు ప్రయత్నాల పరిమితి పూర్తయ్యాక
+ఆపరేషన్ ఇంకా కొనసాగుతుంటే `504`ను అందిస్తుంది. తుది Azure ప్రతిస్పందన తిరిగి అందించడానికి ముందు Mistral ఉపయోగించే అదే
+`pages`/`markdown` ఆకృతిలోకి సాధారణీకరించబడుతుంది, కాబట్టి క్లయింట్ కోడ్ ప్రొవైడర్ను ప్రత్యేకంగా నిర్వహించాల్సిన అవసరం లేదు.
+
+### Vertex AI DeepSeek OCR ప్రామాణీకరణ మరియు ఎండ్పాయింట్ పరిష్కారం
+
+`vertex-deepseek-ocr`, చాట్/ఇమేజ్ ట్రాఫిక్ కోసం OmniRoute ఇప్పటికే మద్దతు ఇచ్చే అదే Vertex AI ప్రామాణీకరణను
+(`open-sse/executors/vertex.ts`) మళ్లీ ఉపయోగిస్తుంది: కనెక్షన్ యొక్క API కీ ఒక Service Account JSON
+క్రెడెన్షియల్ (JWT-bearer ఫ్లో ద్వారా స్వల్పకాలిక OAuth యాక్సెస్ టోకెన్కు మార్పిడి చేయబడుతుంది) లేదా ఇప్పటికే రూపొందించబడిన
+OAuth యాక్సెస్ టోకెన్ అయి ఉండవచ్చు, దాన్ని యథాతథంగా ఉపయోగిస్తారు. అప్స్ట్రీమ్ ఎండ్పాయింట్ URL అనేది Vertex యొక్క
+సాధారణ `openapi/chat/completions` భాగస్వామి ఎండ్పాయింట్; ఇది కనెక్షన్ యొక్క ప్రాజెక్ట్ మరియు ప్రాంతం ఆధారంగా నిర్మించబడుతుంది —
+స్పష్టమైన `providerSpecificData.project`/`providerSpecificData.region` ఎల్లప్పుడూ ప్రాధాన్యత పొందుతాయి;
+లేకపోతే ప్రాజెక్ట్ Service Account JSONలోని `project_id` నుండి ఉత్పన్నమవుతుంది మరియు ప్రాంతం డిఫాల్ట్గా
+`us-central1`గా ఉంటుంది. రెండు పరిష్కారాలూ `open-sse/handlers/ocr.ts`లో జరుగుతాయి
+(`resolveVertexOcrAccessToken`, `resolveVertexOcrBaseUrl`); `src/app/api/v1/ocr/route.ts`లో ఇవి
+`handleOcr`కు పంపిణీ చేయడానికి ముందు వినియోగించబడతాయి.
+
+---
+
+## మోడళ్ల జాబితా
+
+```bash
+GET /v1/models
+Authorization: Bearer your-api-key
+
+→ అన్ని చాట్, ఎంబెడ్డింగ్ మరియు ఇమేజ్ మోడళ్లు + కాంబోలను OpenAI ఫార్మాట్లో అందిస్తుంది
+```
+
+### మోడల్ ధరలు (`pricing`)
+
+OmniRouteకు మోడల్ ధర తెలిసినప్పుడు, ఒక ఎంట్రీలో `pricing` ఆబ్జెక్ట్ ఉంటుంది. ధర, ఖర్చు లెక్కింపు ఉపయోగించే ధరల పట్టిక నుంచి వస్తుంది: అంతర్నిర్మిత డిఫాల్ట్లు, సింక్ చేసిన ధరలు మరియు `/api/pricing` ద్వారా సెట్ చేసిన ఓవర్రైడ్లు. ఇవి లిస్ట్ ధరలు కాబట్టి, సబ్స్క్రిప్షన్ ప్రొవైడర్లకు కూడా ప్రతి టోకెన్ ధర చూపబడుతుంది.
+
+```json
+"pricing": {
+  "prompt": "0.000005",
+  "completion": "0.000025",
+  "input_cache_read": "0.0000005",
+  "input_cache_write": "0.00000625",
+  "input": 5,
+  "output": 25,
+  "cached": 0.5,
+  "cache_creation": 6.25
+}
+```
+
+| ఫీల్డ్లు                                                        | యూనిట్                                | గమనికలు                                                                                                                                                            |
+| --------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `prompt`, `completion`, `input_cache_read`, `input_cache_write` | ప్రతి టోకెన్కు USD, డెసిమల్ స్ట్రింగ్ | OpenRouterకు అనుకూలమైనవి; ఎక్స్పోనెంట్ నోటేషన్లో ఎప్పుడూ ఉండవు. కాష్ ధర ఉన్నప్పుడే రెండు కాష్ ఫీల్డ్లు కనిపిస్తాయి.                                                |
+| `input`, `output`, `cached`, `cache_creation`                   | 1M టోకెన్లకు USD, సంఖ్య               | మునుపటి కాటలాగ్ వెర్షన్లలోని ఫీల్డ్లు, ఇప్పటికే ఉన్న క్లయింట్ల కోసం ఉంచబడ్డాయి. ప్రైసింగ్ వరుసలో అవి ఉన్నప్పుడు `reasoning` మరియు `long_context` కూడా కనిపిస్తాయి. |
+
+- **కాంబోలు** వాటి మొదటి కనిపించే టార్గెట్ ధరను కలిగి ఉంటాయి. అంతర్నిర్మిత `auto/*` కాంబోలు అభ్యర్థన సమయంలో టార్గెట్ను ఎంచుకుంటాయి కాబట్టి, వాటికి `pricing` ఉండదు.
+- **ఉచిత మోడళ్లు** వాటి ధర సున్నా అయినప్పుడు `"0"` (మరియు `0`) చూపిస్తాయి. ప్రైసింగ్ వరుస లేని మోడల్ను కాటలాగ్ ఉచితంగా గుర్తించినప్పుడు (`free: true`) లేదా అంతర్నిర్మిత ఉచిత-మోడల్ కాటలాగ్లో అది ఉన్నప్పుడు కూడా `"0"` చూపిస్తుంది.
+- **తెలియని ధర:** ఎంట్రీలో `pricing` కీ ఉండదు.
+- **క్రెడిట్ ఆధారంగా మీటర్ చేసే ప్రొవైడర్లు** (ఉదాహరణకు Kiro) ప్రతి టోకెన్కు బదులుగా ప్రతి అభ్యర్థనకు బిల్ చేస్తారు. వాటి ఎంట్రీలు ముందుగా ఉన్న ప్రతి-1M సంఖ్యా ఫీల్డ్లను అలాగే ఉంచుతాయి, కానీ ప్రతి-టోకెన్ స్ట్రింగ్ ఫీల్డ్లు ఉండవు.
+- **వేరియంట్లు** (reasoning-effort idలు, no-thinking అలియాస్లు, డిస్కవరీ మరియు గేట్వే మిరర్లు) తాము రూట్ చేసే మోడల్ ధరను కాపీ చేస్తాయి.
+- ఫీల్డ్లు బేస్ రేట్లను మాత్రమే కలిగి ఉంటాయి. లాంగ్-కాంటెక్స్ట్ టియర్లు (సంఖ్యా `long_context` ఫీల్డ్) మరియు సర్వీస్-టియర్ మల్టిప్లయర్లు (ఉదాహరణకు Codex fast లేదా flex) `prompt` లేదా `completion`ను మార్చవు.
+- Anthropic-శైలి అభ్యర్థనలో `x-api-key` మరియు `anthropic-version` ఉన్నప్పటికీ, ప్రతి ఆథెంటికేషన్ శైలికి ఆబ్జెక్ట్ ఒకటే (ప్రతిస్పందన `{ "object": "list", "data": [...] }`గానే ఉంటుంది). అమలు: `src/app/api/v1/models/catalogPricing.ts`.
+
+### మోడల్ id ప్రిఫిక్స్లు (`?prefix=`)
+
+చాలా మోడళ్లు **ప్రొవైడర్ ప్రిఫిక్స్** కింద ప్రకటన చేయబడతాయి. మీరు పొందే ప్రిఫిక్స్ను `MODELS_CATALOG_PREFIX_MODE` ఫీచర్ ఫ్లాగ్ నియంత్రిస్తుంది; అలాగే ప్రతి అభ్యర్థనకు క్వెరీ పరామితితో దీన్ని ఓవర్రైడ్ చేయవచ్చు — అందరి కోసం సర్వర్-వ్యాప్త సెట్టింగ్ను మార్చకుండా శుభ్రమైన జాబితా కావాలనుకునే క్లయింట్కు ఇది ఉపయోగకరం:
+
+```bash
+GET /v1/models?prefix=alias        # ప్రతి మోడల్కు ఒక id — చిన్న alias ప్రిఫిక్స్
+GET /v1/models?prefix=dual         # రెండు రూపాలు (సర్వర్ డిఫాల్ట్)
+GET /v1/models?prefix=canonical    # పూర్తి provider-id ప్రిఫిక్స్ మాత్రమే
+```
+
+| మోడ్        | విడుదల చేసేది                                               | గమనికలు                                                                                                                                                                                    |
+| ----------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `dual`      | `cc/claude-sonnet-4-6` **మరియు** `claude/claude-sonnet-4-6` | **డిఫాల్ట్.** రెండు idలు ఒకే మోడల్కు రూట్ అవుతాయి; ఏ రూపాన్ని హార్డ్కోడ్ చేసినా క్లయింట్ కాన్ఫిగ్లు పనిచేస్తూ ఉండేందుకు ఇవి ఉంచబడ్డాయి. కాటలాగ్ పరిమాణం సుమారు రెట్టింపు అవుతుంది.         |
+| `alias`     | `cc/claude-sonnet-4-6`                                      | ప్రతి మోడల్కు ఒక ఎంట్రీ. ప్రత్యేక alias లేని ప్రొవైడర్లు కూడా తమ ఎంట్రీని విడుదల చేస్తారు, కాబట్టి ఏదీ కోల్పోదు.                                                                           |
+| `canonical` | `claude/claude-sonnet-4-6`                                  | పూర్తి provider-id ప్రిఫిక్స్ కింద ప్రతి మోడల్కు ఒక ఎంట్రీ. ప్రత్యేక alias లేని ప్రొవైడర్లు (ఉదా. `antigravity/…`, `agy/…`) కూడా తమ ఏకైక idని ఇక్కడ విడుదల చేస్తారు, కాబట్టి ఏదీ కోల్పోదు. |
+
+`dual`-మోడ్ మిరర్ను క్వెరీ పరామితి లేకుండానే గుర్తించవచ్చు: దానిలో ప్రాథమిక idని సూచించే `parent` ఫీల్డ్ ఉంటుంది.
+
+మోడల్ పికర్ను రెండర్ చేసే క్లయింట్లు `?prefix=alias`ను అభ్యర్థించాలి — [OmniCopilot VS Code ఎక్స్టెన్షన్](../guides/VSCODE-COPILOT.md) ఇదే చేస్తుంది.
+
+### డిస్కవరీ ఫిల్టర్లు (`?capability=`, `?min_context=`, `?kind=`, `?q=`)
+
+`GET /v1/models` ఆప్ట్-ఇన్ డిస్కవరీ ఫిల్టర్లను అంగీకరిస్తుంది. వీటిలో ఏదీ లేకపోతే ప్రతిస్పందన మారదు. ఇవి కాలర్ ఇప్పటికే చూడగల కాటలాగ్ను మాత్రమే పరిమితం చేస్తాయి (ముందుగా API-కీ అనుమతులు వర్తిస్తాయి), అలాగే ఇవి OpenAI-శైలి `limit` / `after` పేజింగ్కు ముందు అమలవుతాయి:
+
+```bash
+GET /v1/models?capability=vision&capability=tool_calling   # జాబితా చేసిన ప్రతి సామర్థ్యం true అయి ఉండాలి
+GET /v1/models?capability=vision,reasoning&min_context=200000
+GET /v1/models?kind=embedding                              # కాటలాగ్ `type`; అది లేని వరుసలు `chat`
+GET /v1/models?q=sonnet&limit=10                           # id లేదా పేరులో కేస్-ఇన్సెన్సిటివ్ సరిపోలిక
+```
+
+| Param         | Values                                                                                              |
+| ------------- | --------------------------------------------------------------------------------------------------- |
+| `capability`  | `attachment`, `reasoning`, `structured_output`, `temperature`, `thinking`, `tool_calling`, `vision` |
+| `min_context` | non-negative integer, compared with `context_length`                                                |
+| `kind`        | `chat`, `audio`, `embedding`, `image`, `moderation`, `music`, `rerank`, `video`                     |
+| `q`           | 1–200 characters                                                                                    |
+
+తెలియని విలువ, లేదా non-negative integer కాని `min_context` (ఉదాహరణకు `1.5`),
+HTTP `400`ని అందిస్తుంది మరియు సందేశంలో చెల్లుబాటు అయ్యే విలువలు జాబితా చేయబడతాయి. అమలు:
+`src/app/api/v1/models/catalogFilters.ts`.
+
+### మోడల్ షార్ట్లిస్ట్ (`POST /v1/models/query`)
+
+`POST /v1/models/query`, అదే కాటలాగ్ నుండి, `GET /v1/models`కు ఉన్న అదే
+ప్రామాణీకరణ మరియు ఒక్కో కీకి వర్తించే దృశ్యతతో, చిన్నదైన నిర్ణీత జాబితాను అందిస్తుంది:
+
+```bash
+POST /v1/models/query
+Authorization: Bearer your-api-key
+Content-Type: application/json
+
+{ "capabilities": ["vision", "tool_calling"], "min_context": 128000, "max_output": 16000,
+  "kind": "chat", "q": "gpt", "owned_by": "openai", "exclude": ["openai/gpt-4o"], "limit": 5 }
+
+→ { "object": "list", "data": [ ...models ] }
+```
+
+ప్రతి ఫీల్డ్ ఐచ్ఛికం. `capabilities` మరియు `exclude` అర్రే లేదా కామాతో వేరు చేసిన స్ట్రింగ్ను
+అంగీకరిస్తాయి; `max_output`, `max_output_tokens`తో పోల్చబడుతుంది. ఫలితాలు ముందుగా
+`owned_by`, ఆపై `id` ప్రకారం క్రమబద్ధీకరించబడతాయి. `limit` డిఫాల్ట్గా `20`గా ఉంటుంది మరియు
+`100` కంటే ఎక్కువ విలువలు `100`కి పరిమితం చేయబడతాయి. చెల్లని JSON, తెలియని
+ఫీల్డ్ లేదా చెల్లని విలువ HTTP `400`ని అందిస్తుంది.
+
+### వ్యక్తిగతంగా దాచిన చాట్ మోడళ్లు
+
+తమ ప్రొవైడర్ పేజీలో **దాచబడింది**గా గుర్తించబడిన మోడల్ కాటలాగ్ నుండి మినహాయించబడుతుంది
+మరియు స్పష్టంగా అభ్యర్థించినప్పుడు HTTP `404` / `model_not_found`తో తిరస్కరించబడుతుంది.
+ఈ తనిఖీ పరిష్కరించబడిన ప్రొవైడర్ మరియు మోడల్ను ఉపయోగిస్తుంది; ఇందులో ప్రొవైడర్
+అలియాస్లు, అనుకూల-ప్రొవైడర్ నోడ్ ప్రిఫిక్స్లు మరియు కనెక్షన్ డిఫాల్ట్లు కూడా ఉంటాయి.
+ఒక కాంబో దాచిన లక్ష్యాలను దాటవేసి, కనిపించే సహచర మోడల్ను ఉపయోగించవచ్చు; అమలు చేయగల
+లక్ష్యం ఏదీ మిగలకపోతే అదే ఎర్రర్ కోడ్ను అందిస్తుంది. దాచిన స్థితిని తొలగించడం తదుపరి
+అభ్యర్థనలో అమల్లోకి వస్తుంది. ఇమేజ్-మాత్రమే దృశ్యత ఓవర్రైడ్లు అదే ID కలిగిన చాట్
+మోడల్ను దాచవు.
+
+ఈ వ్యక్తిగత మోడల్ సెట్టింగ్
+[మోడల్ ఎక్స్పోజర్ అనుమతి/నిరాకరణ జాబితాల](../routing/MODEL_EXPOSURE_LIST.md) నుండి వేరు;
+అవి కాటలాగ్ ప్రకటన మరియు ఆటో-రూటింగ్ అభ్యర్థులను ఫిల్టర్ చేస్తాయి, అయితే స్పష్టమైన
+డిస్పాచ్ను కొనసాగిస్తాయి. API కీ మోడల్ అనుమతులు స్వతంత్రంగా వర్తిస్తూనే ఉంటాయి.
+డిఫాల్ట్ కాటలాగ్ ప్రిఫిక్స్ మోడ్ `dual`గానే ఉంటుంది.
+
+### ఆలోచన-రహిత మోడల్ వేరియంట్లు
+
+ఆలోచనా సామర్థ్యం ఉన్న Claude మోడళ్ల కోసం, `/v1/models` `claude-3-omniroute-no-thinking/`
+తో ప్రిఫిక్స్ చేయబడిన id కలిగిన **ఆలోచన-రహిత** వేరియంట్ను కూడా ప్రకటిస్తుంది:
+
+```
+claude-3-omniroute-no-thinking/<provider>/<model>
+```
+
+ఈ idను ఎంచుకున్నప్పుడు (ఉదాహరణకు, ఎల్లప్పుడూ `thinking` బ్లాక్ను జతచేసే Claude Code
+కాన్ఫిగరేషన్లో) అది నిజమైన `<provider>/<model>`కు తిరిగి పరిష్కరించబడుతుంది మరియు
+రీజనింగ్ అణచివేయబడుతుంది — `/v1/messages` మార్గంలో
+`thinking:{type:"disabled"}`, లేదా `/v1/chat/completions` మార్గంలో
+`reasoning`/`reasoning_effort` ఫీల్డ్లు తొలగించబడతాయి. ఆలోచనకు మద్దతు ఇచ్చి,
+`disabled`ను గౌరవించే Claude-కుటుంబ మోడళ్లకు మాత్రమే ఈ వేరియంట్ జాబితా చేయబడుతుంది
+(అందువల్ల, `disabled`ను తిరస్కరించే adaptive-only మోడళ్లు మినహాయించబడతాయి).
+ఆపరేటర్లు ఒక్కో మోడల్కు `ModelSpec.noThinkingAlias` ద్వారా ఈ వేరియంట్ను
+బలవంతంగా ప్రారంభించవచ్చు లేదా నిలిపివేయవచ్చు.
+
+---
+
+## ప్రొవైడర్ ప్లగిన్ మానిఫెస్ట్
+
+```bash
+GET /api/v1/provider-plugin-manifest
+```
+
+Bifrost, CLIProxyAPI మరియు భవిష్యత్ సైడ్కార్ రూటర్లు ఉపయోగించే JSON-సురక్షిత ప్రొవైడర్ ప్లగిన్ మానిఫెస్ట్ను అందిస్తుంది. ప్రతిస్పందన TypeScript ప్రొవైడర్ రిజిస్ట్రీ నుండి రూపొందించబడుతుంది మరియు ఉద్దేశపూర్వకంగా OAuth క్లయెంట్ సీక్రెట్లు, రన్టైమ్ ఎన్విరాన్మెంట్ పరిష్కారం, ఎగ్జిక్యూటర్ ఫంక్షన్లు, రిక్వెస్ట్ హెడర్లు మరియు ఖాతా డేటాను మినహాయిస్తుంది.
+
+సైడ్కార్ అవుట్-ఆఫ్-ప్రాసెస్గా నడుస్తూ, `open-sse/config/providerPluginManifestRegistry.ts` ను నేరుగా దిగుమతి చేయలేనప్పుడు ఈ ఎండ్పాయింట్ను ఉపయోగించండి.
+
+---
+
+## ElevenLabs ఆడియో జనరేషన్
+
+మీ ElevenLabs API కీతో OmniRouteలో `elevenlabs` ప్రొవైడర్ కనెక్షన్ను కాన్ఫిగర్ చేయండి. క్లయెంట్లు తమ **OmniRoute** కీతో ప్రామాణీకరించుకుంటారు (`Authorization: Bearer $OMNIROUTE_API_KEY`); గేట్వే నిల్వ చేసిన ప్రొవైడర్ కీని `xi-api-key`గా అందిస్తుంది. ElevenLabs కీని గేట్వే బేరర్ టోకెన్గా ఎప్పుడూ పంపవద్దు.
+
+| పద్ధతి | మార్గం                      | ప్రతిస్పందన                                      | API కీ ఎండ్పాయింట్ వర్గం |
+| ------ | --------------------------- | ------------------------------------------------ | ------------------------ |
+| POST   | `/v1/sound-generation`      | స్థానిక ఆడియో బైట్లు                             | `elevenlabs`             |
+| POST   | `/v1/music`                 | స్థానిక ఆడియో బైట్లు                             | `music`                  |
+| POST   | `/v1/music/stream`          | స్ట్రీమింగ్ ఆడియో బైట్లు                         | `music`                  |
+| POST   | `/v1/music/detailed`        | స్థానిక మల్టీపార్ట్ ఆడియో మరియు కంపోజిషన్ ప్లాన్ | `music`                  |
+| POST   | `/v1/music/detailed/stream` | స్థానిక SSE మెటాడేటా మరియు ఆడియో భాగాలు          | `music`                  |
+| POST   | `/v1/music/plan`            | JSON కంపోజిషన్ ప్లాన్                            | `music`                  |
+
+ఈ ఎండ్పాయింట్లు ఇప్పటికే ఉన్న `/v1/audio/speech`, `/v1/audio/transcriptions`,
+`/v1/voices`, `/v1/text-to-speech/{voiceId}` మరియు `/v1/speech-to-text` రూట్లకు పూరకంగా ఉంటాయి. స్థానిక JSON ఫీల్డ్లు మరియు `output_format`, `enable_logging` వంటి క్వెరీ పారామీటర్లు యథాతథంగా ఉంచబడతాయి. `/v1/music/detailed` ప్రతిస్పందనలు తమ మల్టీపార్ట్ బౌండరీలను నిలుపుకుంటాయి; వాటిని మల్టీపార్ట్గా పార్స్ చేయండి. `/v1/music/detailed/stream` కంపోజిషన్ మెటాడేటా మరియు SSE ఈవెంట్లలో base64 ఆడియో భాగాలతో `text/event-stream` ను అందిస్తుంది. ఈ ఆరు రూట్లు CORS ప్రీఫ్లైట్కు మద్దతు ఇస్తాయి.
+
+```bash
+export OMNIROUTE_BASE_URL="http://localhost:20128"
+export OMNIROUTE_API_KEY="your-omniroute-api-key"
+
+# చిన్న సౌండ్ ఎఫెక్ట్. వ్యవధి: 0.5 నుండి 30 సెకన్లు.
+curl --fail-with-body "$OMNIROUTE_BASE_URL/v1/sound-generation?output_format=mp3_44100_128" \
+  -H "Authorization: Bearer $OMNIROUTE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"text":"A single soft bell chime","duration_seconds":1,"model_id":"eleven_text_to_sound_v2"}' \
+  --output effect.mp3
+
+# సంగీత వ్యవధి మిల్లీసెకన్లలో వ్యక్తీకరించబడుతుంది: 3000 నుండి 600000.
+curl --fail-with-body "$OMNIROUTE_BASE_URL/v1/music?output_format=mp3_44100_128" \
+  -H "Authorization: Bearer $OMNIROUTE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"prompt":"Gentle instrumental piano","music_length_ms":10000,"force_instrumental":true,"model_id":"music_v1"}' \
+  --output music.mp3
+```
+
+ఇంక్రిమెంటల్ ఆడియో డెలివరీ కోసం అదే JSON బాడీతో `/v1/music/stream` ను ఉపయోగించండి. కంపోజిషన్లో `prompt` లేదా `composition_plan` లో ఖచ్చితంగా ఒకదాన్ని మాత్రమే స్వీకరిస్తుంది; `/v1/music/plan` కు `prompt` తప్పనిసరి మరియు ఐచ్ఛికంగా `source_composition_plan` ను స్వీకరిస్తుంది. స్థానిక స్కీమాలు అదనపు ప్రొవైడర్ ఫీల్డ్లను నిలుపుకుంటాయి కాబట్టి, కంపోజిషన్-ప్లాన్ వెర్షన్లు మరియు ఫైన్-ట్యూనింగ్ ఎంపికలు ElevenLabsకు చేరుతాయి.
+
+ఏకీకృత `/v1/music/generations` ఎండ్పాయింట్ `elevenlabs/music_v1`, `elevenlabs/music_v2` మరియు `elevenlabs/music_v2_5`లను కూడా స్వీకరిస్తుంది. సక్రియ ElevenLabs కనెక్షన్ ఉన్నప్పుడు, ఈ మోడల్లు మ్యూజిక్ కాటలాగ్లో అందుబాటులో ఉంటాయి. ఈ ఎండ్పాయింట్ `{"created":...,"data":[{"b64_json":"...","format":"mp3"}]}` ను అందిస్తుంది. దీని `duration` ఫీల్డ్ సెకన్లలో ఉంటుంది మరియు `music_length_ms` కు మ్యాప్ అవుతుంది; స్పష్టంగా ఇచ్చిన `music_length_ms` కు ప్రాధాన్యత ఉంటుంది. `instrumental` `force_instrumental` కు మ్యాప్ అవుతుంది, అయితే స్థానిక ఫీల్డ్కు ప్రాధాన్యత ఉంటుంది. స్ట్రీమింగ్ కోసం స్థానిక స్ట్రీమింగ్ ఎండ్పాయింట్లను, కంపోజిషన్ ప్లాన్ ఆధారంగా మాత్రమే చేసే అభ్యర్థనల కోసం స్థానిక కంపోజిషన్ ఎండ్పాయింట్ను ఉపయోగించండి.
+
+```bash
+curl --fail-with-body "$OMNIROUTE_BASE_URL/v1/music/generations" \
+  -H "Authorization: Bearer $OMNIROUTE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"elevenlabs/music_v1","prompt":"Gentle instrumental piano","duration":10,"instrumental":true}'
+```
+
+అప్స్ట్రీమ్ కాల్కు ముందే ఎండ్పాయింట్, మోడల్, బడ్జెట్ మరియు కనెక్షన్ పరిమితులు వర్తిస్తాయి. స్థానిక రూట్లు అప్స్ట్రీమ్ స్థితి కోడ్లు మరియు ఎర్రర్ బాడీలను మార్పులేకుండా అందిస్తాయి; ఇందులో ప్లాన్ పరిమితికి `402` మరియు కోటా పరిమితికి `429` కూడా ఉన్నాయి. అందుబాటులో ఉన్నప్పుడు `character-cost`, `song-id`, `request-id` మరియు `retry-after` హెడర్లు నిలుపుకోబడతాయి. ఉచిత క్రెడిట్ బ్యాలెన్స్ ఉన్నంత మాత్రాన ప్రతి మ్యూజిక్ మోడల్, అవుట్పుట్ ఫార్మాట్ లేదా API ఫీచర్కు ప్రాప్యత లభిస్తుందని హామీ లేదు: ప్రతి అభ్యర్థనకు అర్హతను ElevenLabs నిర్ణయిస్తుంది. ఏకీకృత ఎండ్పాయింట్ OmniRoute యొక్క సాధారణీకరించిన ఎర్రర్ ఎన్వలప్లో ఎర్రర్ స్థితి కోడ్లను నిలుపుకుంటుంది.
+
+అప్స్ట్రీమ్ కాంట్రాక్ట్లు: [సౌండ్ ఎఫెక్ట్లు](https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert), [మ్యూజిక్ కంపోజిషన్](https://elevenlabs.io/docs/api-reference/music/compose) మరియు [స్ట్రీమింగ్ మ్యూజిక్ వివరాలు](https://elevenlabs.io/docs/api-reference/music/compose-detailed-stream).
+
+---
+
+## అనుకూలత ఎండ్పాయింట్లు
+
+| పద్ధతి | మార్గం                                    | ఫార్మాట్                                |
+| ------ | ----------------------------------------- | --------------------------------------- |
+| POST   | `/v1/chat/completions`                    | OpenAI                                  |
+| POST   | `/v1/messages`                            | Anthropic                               |
+| POST   | `/v1/responses`                           | OpenAI Responses                        |
+| POST   | `/v1/embeddings`                          | OpenAI                                  |
+| POST   | `/v1/images/generations`                  | OpenAI Images                           |
+| POST   | `/v1/images/edits`                        | OpenAI Images (edit/inpaint)            |
+| POST   | `/v1/videos/generations`                  | OpenAI-శైలి వీడియో జనరేషన్              |
+| POST   | `/v1/music/generations`                   | OpenAI-శైలి సంగీత జనరేషన్               |
+| POST   | `/v1/audio/transcriptions`                | OpenAI Audio (STT)                      |
+| POST   | `/v1/audio/speech`                        | OpenAI TTS (ఆడియో బాడీని అందిస్తుంది)   |
+| POST   | `/v1/rerank`                              | Cohere/Voyage-శైలి ర్యాంక్ పునఃక్రమీకరణ |
+| POST   | `/v1/classify`                            | Jina classify (`api.jina.ai`)           |
+| POST   | `/v1/segment`                             | Jina segmenter (`segment.jina.ai`)      |
+| POST   | `/v1/moderations`                         | OpenAI Moderations                      |
+| GET    | `/v1/models`                              | OpenAI                                  |
+| POST   | `/v1/models/query`                        | ఫిల్టర్ చేసిన మోడల్ షార్ట్లిస్ట్        |
+| POST   | `/v1/messages/count_tokens`               | Anthropic                               |
+| GET    | `/v1beta/models`                          | Gemini                                  |
+| POST   | `/v1beta/models/{...path}`                | Gemini generateContent                  |
+| POST   | `/v1/api/chat`                            | Ollama                                  |
+| GET    | `/api/v1/vscode/{token}/`                 | OpenAI కేటలాగ్ అలియాస్                  |
+| GET    | `/api/v1/vscode/{token}/models`           | OpenAI మోడల్స్ అలియాస్                  |
+| POST   | `/api/v1/vscode/{token}/chat/completions` | OpenAI టోకెనైజ్డ్ అలియాస్               |
+| POST   | `/api/v1/vscode/{token}/responses`        | OpenAI Responses టోకెనైజ్డ్ అలియాస్     |
+| POST   | `/api/v1/vscode/{token}/api/chat`         | Ollama టోకెనైజ్డ్ అలియాస్               |
+| GET    | `/api/v1/vscode/{token}/api/tags`         | Ollama ట్యాగ్స్ టోకెనైజ్డ్ అలియాస్      |
+
+అన్ని POST మార్గాలు ఒకే ఆకృతిని అనుసరిస్తాయి: `Bearer your-api-key` + Zod ద్వారా ధృవీకరించబడిన JSON బాడీ (`v1RerankSchema`, `v1ModerationSchema`, `v1AudioSpeechSchema` మొదలైనవి, `src/shared/validation/schemas.ts` చూడండి). స్కీమా విఫలమైతే 4xx తిరిగి అందించబడుతుంది.
+
+`Authorization: Bearer ...` హెడర్ను జోడించలేని క్లయింట్ల కోసం, దిగువ వివరించిన క్వెరీ-స్ట్రింగ్ అనుకూలత (`?token=...`, `?apiKey=...`, `?api_key=...`, `?key=...`) ద్వారా లేదా ప్రత్యేక `/api/v1/vscode/{token}/...` ఎండ్పాయింట్ల ద్వారా URLలో API కీలను కూడా OmniRoute స్వీకరిస్తుంది.
+
+```bash
+# ర్యాంక్ పునఃక్రమీకరణ (క్లౌడ్ రిజిస్ట్రీ ప్రొవైడర్ లేదా "<prefix>/<model>"గా OpenAI-అనుకూల ప్రొవైడర్ నోడ్)
+POST /v1/rerank      { "model": "jina-ai/jina-reranker-v3.5", "query": "...", "documents": ["..."] }
+
+# Jina వర్గీకరణ (Foundation API ఆధారాలు)
+POST /v1/classify    { "model": "jina-embeddings-v5-text-small", "input": ["..."], "labels": ["a", "b"] }
+
+# Jina సెగ్మెంటర్
+POST /v1/segment     { "content": "...", "return_chunks": true }
+
+# Jina శోధన (s.jina.ai; ప్రొవైడర్ అలియాస్లు: jina-search, jina-ai, jina)
+POST /v1/search      { "query": "...", "provider": "jina-search" }
+
+# మోడరేషన్లు
+POST /v1/moderations { "model": "omni-moderation-latest", "input": "..." }
+
+# TTS — audio/mpeg (లేదా అభ్యర్థించిన ఫార్మాట్) బాడీని అందిస్తుంది
+POST /v1/audio/speech { "model": "openai/tts-1", "input": "Hello", "voice": "alloy" }
+
+# Soniox TTS కు భాష మరియు వాయిస్ అవసరం: `language` డిఫాల్ట్గా "en"; ఇవ్వని
+# వాయిస్ లేదా OpenAI స్టాక్ వాయిస్ పేరు (alloy, nova, …) "Adrian"గా మారుతుంది
+POST /v1/audio/speech { "model": "soniox/tts-rt-v1", "input": "Xin chào", "voice": "Adrian", "language": "vi" }
+
+# ఇమేజ్ ఎడిట్ (మల్టీపార్ట్)
+POST /v1/images/edits  -F image=@input.png -F prompt="..." -F mask=@mask.png
+
+# వీడియో / సంగీత జనరేషన్ (ప్రొవైడర్-ప్రిఫిక్స్ కలిగిన మోడల్ ఐడి)
+POST /v1/videos/generations { "model": "runway/gen-3", "prompt": "..." }
+POST /v1/music/generations  { "model": "kie/suno-v4.0",   "prompt": "..." }
+```
+
+> **రీర్యాంక్ ప్రొవైడర్ నోడ్లు:** `POST /v1/rerank` కూడా `<node-prefix>/<model>`గా సూచించబడిన OpenAI-అనుకూల ప్రొవైడర్ నోడ్లకు (oMLX, vLLM, Infinity, గేట్వే వెనుక ఉన్న TEI, …) రూట్ చేస్తుంది. లూప్బ్యాక్ నోడ్లు (`localhost`, `127.0.0.1`, `172.16.0.0/12`) ఎల్లప్పుడూ అర్హత కలిగి ఉంటాయి. అలాగే `OMNIROUTE_LOCAL_PROVIDER_NODE_HOSTS`లో ఆపరేటర్ జాబితా చేసిన హోస్ట్నేమ్లు కూడా అర్హత కలిగి ఉంటాయి (ఉదా., `http://reranker:8080/v1` వంటి Docker/Compose సర్వీస్ పేరు; వీటిని నేరుగా పిలుస్తారు, ఎప్పుడూ `HTTP(S)_PROXY` ద్వారా లేదా కనెక్షన్కు పిన్ చేసిన ప్రాక్సీ ద్వారా కాదు). ఇతర ఏ హోస్ట్లోనైనా ఉన్న నోడ్లు — LAN బాక్స్ లేదా Tailscale పీర్ — ఆపరేటర్ `RERANK_REMOTE_PROVIDER_NODES` ఫీచర్ ఫ్లాగ్ను ప్రారంభించినప్పుడు **మరియు** నోడ్ యొక్క బేస్ URL ప్రొవైడర్ అవుట్బౌండ్ URL పాలసీకి (`OMNIROUTE_ALLOW_LOCAL_PROVIDER_URLS` / `OMNIROUTE_ALLOW_PRIVATE_PROVIDER_URLS`) సరిపడినప్పుడు మాత్రమే అర్హత కలిగి ఉంటాయి. మెమరీ ఇంజిన్లోని రీర్యాంక్ దశ ఈ రూట్ను లూప్బ్యాక్ ద్వారా పిలుస్తుంది, కాబట్టి Memory సెట్టింగ్లలోని `rerankProviderModel`కూ ఇదే నియమం వర్తిస్తుంది.
+>
+> **లోకల్ సర్వర్ ఆకృతులు:** నోడ్ను `<base>/v1/rerank` వద్ద, 404 వచ్చినప్పుడు `<base>/rerank` వద్ద (Infinity, TEI) పిలుస్తారు. అప్స్ట్రీమ్ బాడీలో Cohere/OpenAI స్పెల్లింగ్ (`documents`, `return_documents`)తో పాటు TEI స్పెల్లింగ్ (`texts`, `return_text`) కూడా ఉంటాయి. అప్స్ట్రీమ్ ప్రతిస్పందన Cohere ఎన్వలప్కు సాధారణీకరించబడుతుంది: TEI యొక్క నిరాడంబరమైన `[{index, score, text}]`, సన్నని గేట్వేల నుంచి వచ్చే `{results: [{index, score}]}`, అలాగే Voyage-శైలి `{data: [...]}` అన్నీ క్లయింట్కు `{results: [{index, relevance_score, document?}]}`గా తిరిగి వస్తాయి; ఇవి స్కోర్ ప్రకారం క్రమబద్ధీకరించబడి, `top_n`కి పరిమితం చేయబడతాయి.
+
+> **ప్రొవైడర్-నోడ్ డిస్కవరీ:** OpenAI-అనుకూల ప్రొవైడర్ నోడ్లోని మోడళ్లు నోడ్ ప్రిఫిక్స్ కింద `GET /v1/models`లో కనిపిస్తాయి. ఎండ్పాయింట్ మెటాడేటా లేని వరుసలు (లోకల్ `/v1/models` జాబితాల్లో సాధారణంగా కనిపించేవి) నోడ్ యొక్క `apiType`ను స్వీకరిస్తాయి. అందువల్ల `embeddings` నోడ్లోని మోడళ్ల `type: "embedding"`గా, `rerank` నోడ్లోని మోడళ్ల `type: "rerank"`గా ఉంటాయి; డిఫాల్ట్గా chatగా మారవు. సింక్ చేసిన లేదా మాన్యువల్గా జోడించిన వరుసలోని స్పష్టమైన `supportedEndpoints`కు ఇప్పటికీ ప్రాధాన్యత ఉంటుంది.
+
+### ప్రత్యేక ప్రొవైడర్ రూట్లు
+
+```bash
+POST /v1/providers/{provider}/chat/completions
+POST /v1/providers/{provider}/embeddings
+POST /v1/providers/{provider}/images/generations
+```
+
+ప్రొవైడర్ ప్రిఫిక్స్ లేకపోతే అది స్వయంచాలకంగా జోడించబడుతుంది. సరిపోలని మోడళ్లకు `400` తిరిగి వస్తుంది.
+
+---
+
+## Files API
+
+బ్యాచ్ ఇన్పుట్/అవుట్పుట్ మరియు ఫైల్-పర్పస్ అప్లోడ్ల కోసం OpenAI-అనుకూల ఫైల్స్ ఎండ్పాయింట్.
+
+| Method | Path                     | Description                                                                                                                 |
+| ------ | ------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| POST   | `/v1/files`              | ఫైల్ అప్లోడ్ చేయండి (మల్టీపార్ట్: `file`, `purpose`, `expires_after[anchor]`, `expires_after[seconds]`) — గరిష్ఠంగా 512 MiB |
+| GET    | `/v1/files`              | ప్రామాణీకరించబడిన API కీకి సంబంధించిన ఫైళ్లను జాబితా చేయండి                                                                 |
+| GET    | `/v1/files/[id]`         | ఫైల్ మెటాడేటాను పొందండి                                                                                                     |
+| DELETE | `/v1/files/[id]`         | ఫైల్ను తొలగించండి                                                                                                           |
+| GET    | `/v1/files/[id]/content` | ముడి ఫైల్ బాడీని స్ట్రీమ్ చేయండి                                                                                            |
+
+**ప్రామాణీకరణ:** Bearer API కీ — `getApiKeyRequestScope` ద్వారా ఫైళ్లు API కీ ప్రాతిపదికన పరిధి చేయబడతాయి. ఒక కీ
+తన స్వంత ఫైళ్లను మాత్రమే చూస్తుంది, డౌన్లోడ్ చేస్తుంది మరియు తొలగిస్తుంది; కీ లేని డ్యాష్బోర్డ్ సెషన్
+మొత్తం ఇన్స్టాన్స్ను చదవగలదు; యజమాని లేని ఫైల్ (అనామక లేదా డ్యాష్బోర్డ్-సెషన్ అప్లోడ్) ప్రతి
+సెషన్ కాని కాలర్కు నిరాకరించబడుతుంది. `GET /v1/files`, `REQUIRE_API_KEY=false` అయినప్పటికీ, అనామక కాలర్ను — అలాగే
+రిజాల్వ్ కాని సమర్పించిన కీని — ప్రతి టెనెంట్కు చెందిన ఫైళ్లను జాబితా చేయడానికి బదులుగా `401`తో తిరస్కరిస్తుంది
+(GHSA-m3hp-hq9g-fpmv, GHSA-2jm2-mpx8-6523).
+
+---
+
+## Batches API
+
+OpenAI-అనుకూల బ్యాచ్ ప్రాసెసింగ్.
+
+| Method | Path                      | Description                                                                                                                 |
+| ------ | ------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| POST   | `/v1/batches`             | బ్యాచ్ను సృష్టించండి — బాడీని `v1BatchCreateSchema` (`input_file_id`, `endpoint`, `completion_window`) ద్వారా ధృవీకరిస్తారు |
+| GET    | `/v1/batches`             | బ్యాచ్లను జాబితా చేయండి                                                                                                     |
+| GET    | `/v1/batches/[id]`        | బ్యాచ్ స్థితి + `request_counts`ను పొందండి                                                                                  |
+| DELETE | `/v1/batches/[id]`        | పూర్తయిన/విఫలమైన బ్యాచ్ను తొలగించండి                                                                                        |
+| POST   | `/v1/batches/[id]/cancel` | ప్రోగ్రెస్లో ఉన్న బ్యాచ్ను రద్దు చేయండి                                                                                     |
+
+**ప్రామాణీకరణ:** Bearer API కీ. ఫైళ్లకు వర్తించే అదే మూడు-మార్గ నియమం ప్రకారం బ్యాచ్లు API కీ ప్రాతిపదికన పరిధి చేయబడతాయి:
+స్వంత కీకి మాత్రమే ప్రాప్యత, డ్యాష్బోర్డ్ సెషన్కు మొత్తం ఇన్స్టాన్స్పై ప్రాప్యత, యజమాని లేని రికార్డులు ప్రతి
+సెషన్ కాని కాలర్కు నిరాకరించబడతాయి (పొందడం, తొలగించడం, రద్దు చేయడం మరియు సృష్టించే సమయంలోని `input_file_id` తనిఖీ).
+`GET /v1/batches`, `REQUIRE_API_KEY=false` అయినప్పటికీ, అనామక కాలర్ను `401`తో తిరస్కరిస్తుంది.
+
+---
+
+## శోధన API
+
+వెబ్/శోధన ప్రొవైడర్ అబ్స్ట్రాక్షన్ (Tavily, Brave, Exa, Serper మొదలైనవి).
+
+| పద్ధతి | మార్గం                 | వివరణ                                                                                                            |
+| ------ | ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| GET    | `/v1/search`           | కాన్ఫిగర్ చేసిన శోధన ప్రొవైడర్లు + సామర్థ్యాల జాబితా                                                             |
+| POST   | `/v1/search`           | శోధన ప్రశ్నను అమలు చేయడం — బాడీ `v1SearchSchema` ద్వారా ధృవీకరించబడుతుంది, క్యాషింగ్/కోఅలెసింగ్కు మద్దతు ఉంటుంది |
+| GET    | `/v1/search/analytics` | ప్రతి ప్రొవైడర్కు సంబంధించిన హిట్/లేటెన్సీ/క్యాష్ గణాంకాలు                                                       |
+
+**ప్రామాణీకరణ:** Bearer API కీ (`extractApiKey` + `isValidApiKey`). శోధన విధానం `enforceApiKeyPolicy` ద్వారా అమలు చేయబడుతుంది.
+
+### పేరున్న శోధన/ఫెచ్ కలయికలు
+
+`POST /v1/search` మరియు `POST /v1/web/fetch` రెండూ సేవ్ చేసిన కాంబో పేరును `model`గా స్వీకరిస్తాయి.
+`model` లేదా స్పష్టమైన `provider`లో ఏదో ఒకదాన్ని ఉపయోగించండి; రెండింటినీ పంపితే `400` వస్తుంది.
+రెండు ఫీల్డ్లూ లేకపోతే, ఇప్పటికే ఉన్న ఆటోమేటిక్ ప్రొవైడర్ ఎంపికలో ఎలాంటి మార్పూ ఉండదు.
+
+కనెక్ట్ చేసిన ప్రొవైడర్ల కోసం Combo Builder మరియు దాని Add Model కాటలాగ్, LLM మోడల్ జాబితా
+లేకపోయినా, స్థానిక వెబ్-ఆపరేషన్ ఎంట్రీలను చూపిస్తాయి. Serperలో **వెబ్ శోధన**;
+Tavilyలో **వెబ్ శోధన / పేజీ ఎక్స్ట్రాక్షన్**, అలాగే ఫెచ్-మాత్రమే ప్రొవైడర్లలో **పేజీ ఎక్స్ట్రాక్షన్** చూపిస్తాయి.
+ఎప్పటిలాగే ఎంట్రీ మరియు ఖాతాను ఎంచుకోండి. ఒకే Tavily ఎంట్రీ రెండు వెబ్ ఎండ్పాయింట్లకూ ఉపయోగపడుతుంది;
+ఈ ఆపరేషన్ ఎంట్రీలు చాట్-మాత్రమే క్లయెంట్ సెలెక్టర్లకు లేదా చాట్ మోడల్ ప్రోబ్లకు జోడించబడవు.
+
+ఉదాహరణకు, ఈ క్రమబద్ధమైన టార్గెట్లతో `shared-free` అనే **priority** కాంబోను సృష్టించండి:
+
+1. `openai/gpt-4o`
+2. `tavily-search/web`
+3. `serper-search/web`
+4. `jina-reader/fetch`
+
+తర్వాత ప్రతి సర్ఫేస్లో అదే పేరును ఉపయోగించండి:
+
+```json
+{ "model": "shared-free", "query": "Open source speech recognition", "max_results": 5 }
+```
+
+```json
+{ "model": "shared-free", "url": "https://example.com", "format": "markdown" }
+```
+
+శోధన Tavily, ఆపై Serperను పరిగణిస్తుంది; ఫెచ్ Tavily, ఆపై Jina Readerను పరిగణిస్తుంది;
+చాట్ ప్రత్యేక శోధన/ఫెచ్ ప్రొవైడర్లను దాటవేసి OpenAIను పరిగణిస్తుంది. అనుకూలత
+మోడల్ పేరులోని పదాల వల్ల కాకుండా, శోధన/ఫెచ్ ఎగ్జిక్యూటర్ రిజిస్ట్రీల వల్ల వస్తుంది.
+ఫిల్టరింగ్ క్రెడెన్షియల్ ఎంపిక మరియు డిస్పాచ్కు ముందు జరుగుతుంది, అలాగే సేవ్ చేసిన కాంబోను
+ఎప్పుడూ సవరించదు.
+
+చాట్ కాని సామర్థ్య మార్గాలు `priority`, `fill-first`, `round-robin`, `weighted`,
+`random`, `strict-random`, `least-used`, మరియు `p2c`కు మద్దతు ఇస్తాయి. `fusion`,
+`pipeline`, మరియు `context-relay` వంటి చాట్-మాత్రమే సింథసిస్ వ్యూహాలు
+చాట్ కాని మార్గాల్లో తిరస్కరించబడతాయి; అవి శోధనకు లేదా రూపొందించిన మీడియాకు
+నిశ్శబ్దంగా వర్తింపజేయబడవు.
+ఇప్పటికే ఉన్న కాంబో ఇంజిన్ అప్స్ట్రీమ్ కోటా వైఫల్యాలతో సహా, క్రమబద్ధమైన ఫాల్బ్యాక్ను నిర్వహిస్తుంది,
+మరియు స్టెప్ IDలు, ఖాతా పిన్లు, ప్రతి-స్టెప్ ఖాతా అనుమతి జాబితాలు, నెస్టెడ్ రిఫరెన్స్లు,
+కాలర్ కనెక్షన్/కోటా స్కోప్లు, అలాగే కాంబో యాక్సెస్ పాలసీని నిలుపుకుంటుంది. ఫలితాలు తమ స్థానిక
+శోధన/ఫెచ్ స్కీమాను, వాస్తవ ప్రొవైడర్తో సహా, నిలుపుకుంటాయి; `X-OmniRoute-Combo-Trace` రూటింగ్
+నిర్ణయాన్ని గుర్తిస్తుంది. తెలియని కాంబోలు `404`ను అందిస్తాయి; క్రియాశీలంగా లేని కాంబోలు మరియు
+అనుకూలమైన టార్గెట్లు లేని కలయికలు `400`ను అందిస్తాయి.
+
+ప్రతి కాంబో ప్రయత్నం ఒక స్పష్టమైన ప్రొవైడర్ను ఉపయోగిస్తుంది. కాంబో వెనుక దాగి ఉన్న స్థానిక
+ఆటోమేటిక్ ప్రొవైడర్ పూల్ను అది ఆహ్వానించదు. స్పష్టమైన-ప్రొవైడర్ అభ్యర్థనలు వాటి
+ఇప్పటికే ఉన్న సింగిల్-ప్రొవైడర్ ప్రవర్తనను కొనసాగిస్తాయి. ప్రత్యేక శోధన/ఫెచ్ ప్రొవైడర్లను
+లక్ష్యంగా చేసుకున్న ప్రత్యక్ష చాట్ అభ్యర్థనలు, OpenAI-శైలి ఎగ్జిక్యూటర్కు ఫాల్థ్రూ కాకుండా,
+చర్య తీసుకోవచ్చే JSON `400`ను అందిస్తాయి.
+
+### సామర్థ్య-ప్రత్యేక కాంబో మార్గాలు
+
+సేవ్ చేసిన కాంబోలు API సామర్థ్యాలైన కీలతో కూడిన `routes` ఆబ్జెక్ట్ను కలిగి ఉండవచ్చు. ప్రతి మార్గానికి
+దాని స్వంత టార్గెట్ జాబితా, వ్యూహం, మరియు రన్టైమ్ కాన్ఫిగరేషన్ ఉంటాయి. అగ్రస్థాయి `models`, `strategy`, మరియు `config`
+లెగసీ-అనుకూల Chat ప్లాన్గా కొనసాగుతాయి; `routes` లేని పాత కాంబోలు ఎలాంటి మార్పు లేకుండా పనిచేస్తాయి.
+
+మద్దతు ఉన్న మార్గ కీలు `chat`, `search`, `web-fetch`, `embeddings`, `rerank`, `images`,
+`image-edits`, `videos`, `music`, `ocr`, `audio-speech`, `audio-transcriptions`,
+`audio-translations`, మరియు `audio-generation`. క్రెడెన్షియల్ ఎంపిక, స్కోరింగ్, లేదా డిస్పాచ్కు ముందు
+ఎండ్పాయింట్ ప్రొజెక్షన్ జరుగుతుంది. నెస్టెడ్ కాంబో రిఫరెన్స్లు అదే సామర్థ్యానికి చైల్డ్ కాంబో యొక్క
+మార్గాన్ని ఎంచుకుంటాయి.
+
+`POST /v1/music/generations` మరియు `POST /v1/ocr`లు `model`లో కాంబో పేరును స్వీకరిస్తాయి. స్థానిక
+ElevenLabs-అనుకూల `POST /v1/music` కూడా `model_id`లో కాంబో పేరును స్వీకరిస్తుంది, అయితే ఆ స్థానిక ఎండ్పాయింట్లోని
+ప్రతి ఉపయోగించగల టార్గెట్ తప్పనిసరిగా ElevenLabs మ్యూజిక్ మోడల్ అయి ఉండాలి, తద్వారా దాని బైనరీ ప్రతిస్పందన
+కాంట్రాక్ట్ భద్రంగా ఉంటుంది. `POST /v1/sound-generation` కూడా అదే స్థానిక-బైనరీ పరిమితి కింద
+`model_id`లో `audio-generation` కాంబోను స్వీకరిస్తుంది. విభిన్న మ్యూజిక్ ప్రొవైడర్ల కోసం
+`/v1/music/generations`ను ఉపయోగించండి.
+
+**ఆటో-సెలెక్ట్:** `provider` లేకపోతే, కాన్ఫిగర్ చేసిన కనెక్షన్ ఉన్న అతి తక్కువ ఖర్చు ప్రొవైడర్ ముందుగా
+నడుస్తుంది, తదుపరి అతి తక్కువ ఖర్చు ప్రొవైడర్ ఫెయిల్ఓవర్గా ఉంటుంది. ఉచిత చివరి-ప్రత్యామ్నాయ ప్రొవైడర్లు
+(`duckduckgo-free`) మరే ఇతర ప్రొవైడర్ కాన్ఫిగర్ చేయబడనప్పుడు మాత్రమే ఉపయోగించబడతాయి. స్వీయ-హోస్ట్ చేసిన
+SearXNG కనెక్షన్లో నిజమైన `baseUrl` (కాటలాగ్ డిఫాల్ట్ `http://localhost:8888/search` కాదు) నిల్వ చేయబడిన వెంటనే,
+అది కాన్ఫిగర్ చేసినదిగా పరిగణించబడుతుంది: అప్పుడు అది కీ అవసరమైన ప్రొవైడర్ల కంటే ముందుగా $0 ప్రొవైడర్గా
+ర్యాంక్ అవుతుంది, మరియు SearXNG `400`, `401`, `403` లేదా `404`ను అందించినప్పటికీ, అతి తక్కువ ఖర్చు ఉన్న
+కీ-ఆధారిత ప్రొవైడర్ ఫెయిల్ఓవర్గా ఉంటుంది. చెల్లుబాటు అయ్యే `http(s)` URL కాని `baseUrl`, లేదా
+క్లౌడ్-మెటాడేటా చిరునామాను సూచించేది, పరిగణనలోకి రాదు. టోకెన్ను నిల్వ చేసే SearXNG కనెక్షన్
+`https://` లేదా లూప్బ్యాక్ `http://`పై మాత్రమే ఈ విధంగా ర్యాంక్ అవుతుంది. రిమోట్ సాధారణ
+`http://`పై అది ఎప్పుడూ ఫెయిల్ఓవర్ కాదు మరియు చివరి ప్రత్యామ్నాయంగానే ఉంటుంది; మరే ఇతర ప్రొవైడర్
+కాన్ఫిగర్ చేయబడనప్పుడు లేదా పేరుతో అభ్యర్థించినప్పుడు మాత్రమే ఉపయోగించబడుతుంది. అందువల్ల ఆ రెండు
+సందర్భాల్లో టోకెన్ క్లియర్టెక్స్ట్గా పంపబడుతుంది.
+
+### Exa మరియు Tavily `provider_options`
+
+Exa మరియు Tavily నేమ్స్పేస్ చేసిన బ్యాగ్ నుండి ప్రొవైడర్-నిర్దిష్ట ఫీల్డ్లను చదువుతాయి:
+`provider_options.exa` (లేదా `provider_options["exa-search"]`) మరియు `provider_options.tavily`
+(లేదా `provider_options["tavily-search"]`). దిగువన ఉన్న కీలు మాత్రమే ఫార్వర్డ్ చేయబడతాయి. ప్రతి కీ
+`open-sse/handlers/search/providerOptionsPassthrough.ts` లోని దాని స్వంత Zod స్కీమాతో
+తనిఖీ చేయబడుతుంది; తప్పు రకం కలిగిన కీ తొలగించబడుతుంది. auth, base URL,
+`stream` మరియు `outputSchema` సహా ఇతర ఏ కీ అయినా విస్మరించబడుతుంది. ఇతర ప్రొవైడర్లు ఉపయోగించే
+ఫ్లాట్ కీలు (`cx`, `depth`, ...) మునుపటిలాగే పనిచేస్తాయి.
+
+| Provider | Top-level fields                                                                                                                                                                                                                                                                                                                                                          | Nested                                                                                                                                          |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Exa      | `type`, `category`, `userLocation`, `moderation`, `additionalQueries`, `objective`, `systemPrompt`, `compliance` (ఫ్లాట్ ప్రిమిటివ్లు), `startPublishedDate`, `endPublishedDate`                                                                                                                                                                                          | `contents.{text, highlights, summary, extras, livecrawlTimeout, maxAgeHours}` డిఫాల్ట్ `{ text: true, highlights: true }` పై విలీనం చేయబడుతుంది |
+| Tavily   | `search_depth`, `chunks_per_source`, `time_range`, `start_date`, `end_date`, `include_published_date`, `filter_by_published_date`, `include_answer`, `include_raw_content`, `include_images`, `include_image_descriptions`, `include_favicon`, `include_domains_mode`, `language`, `filter_by_language`, `auto_parameters`, `exact_match`, `include_usage`, `safe_search` | —                                                                                                                                               |
+
+జెనరిక్ ఫీల్డ్లకే ఎల్లప్పుడూ ప్రాధాన్యత ఉంటుంది: `query`, `max_results`, `filters` (డొమైన్లు),
+`country` మరియు `search_type` నుండి ఉత్పన్నమయ్యే టాపిక్. Exaలో, `search_type: "news"` ఉంటే
+`category: "news"` అలాగే కొనసాగుతుంది. Tavily `search_type: "finance"`ను కూడా అంగీకరిస్తుంది
+(`topic: "finance"`).
+
+Firecrawl శోధన ఖర్చు, తిరిగి అందించబడిన ప్రతి 10 ఫలితాల ప్రారంభమైన బ్లాక్కు $0.002 (2
+క్రెడిట్లు)గా నమోదు చేయబడుతుంది; ప్రతి కాల్కు కనీసం ఒక బ్లాక్ ఉంటుంది
+([Firecrawl billing](https://docs.firecrawl.dev/billing)): 11 ఫలితాలకు $0.004 ఖర్చవుతుంది.
+
+జెనరిక్ `time_range` ఇప్పుడు రెండు ప్రొవైడర్లకు చేరుతుంది: Exaకు `startPublishedDate`
+(ISO టైమ్స్టాంప్), Tavilyకు `start_date` (`YYYY-MM-DD`)గా పంపబడుతుంది. `provider_options`లో
+స్పష్టంగా ఇచ్చిన తేదీ మ్యాప్ చేయబడిన తేదీని అధిగమిస్తుంది.
+
+Exa ఫలితాలు `id`, `highlights` (వాటిలో `snippet`గా ఉపయోగించిన మొదటి హైలైట్ మాత్రమే కాకుండా
+ప్రతి హైలైట్), `highlight_scores`, `summary`, `subpages`, `entities` మరియు `extras`ను
+`provider_raw`లో నిలుపుకుంటాయి. Tavily ఫలితాలు `images` మరియు `favicon`ను నిలుపుకుంటాయి.
+
+`depth` `fast` మరియు `standard`గా ఉన్నప్పుడు Linkup శోధన ఖర్చు $0.005గా, `deep`గా ఉన్నప్పుడు
+$0.05గా నమోదు చేయబడుతుంది
+([Linkup pricing](https://docs.linkup.so/pages/documentation/development/pricing)),
+`depth` `provider_options` నుండి వచ్చినా లేదా కనెక్షన్ సెట్టింగ్ల నుండి వచ్చినా ఇదే వర్తిస్తుంది.
+
+Exa `type: "lite"` (Exa 3.0) చిన్న ఫీల్డ్ల సమితిని మాత్రమే అంగీకరిస్తుంది; ఇతర ఏదైనా ఫీల్డ్
+సెట్ చేయబడితే మొత్తం అభ్యర్థనను తిరస్కరిస్తుంది. lite కోసం, కాల్కు ముందు
+`additionalQueries`, `systemPrompt` మరియు `text`, `highlights` మినహా ప్రతి `contents` కీ
+తొలగించబడతాయి. పాతబడిన `subpages`, `subpageTarget`, `highlights.numSentences` మరియు
+`highlights.highlightsPerUrl` ఇకపై ఫార్వర్డ్ చేయబడవు.
+
+ఖర్చు లెక్కింపు ఫ్లాట్ రిజిస్ట్రీ `costPerQuery`ను అనుసరిస్తుంది; అయితే Exa తన స్వంత ధరలను
+అనుసరిస్తుంది: `auto` (మరియు పాత `fast`) కోసం ప్రతి కాల్కు $0.007 లేదా `lite` (మరియు పాత
+`instant`) కోసం $0.004, ఇందులో 10 ఫలితాలు ఉంటాయి; ప్రతి అదనపు ఫలితానికి $0.001; మరియు
+`contents.summary` సెట్ చేయబడినప్పుడు తిరిగి అందించబడిన ప్రతి ఫలితానికి $0.001. Tavilyలో
+`search_depth` `basic`, `fast` మరియు `ultra-fast` కోసం 1 క్రెడిట్ ($0.008), `advanced` కోసం
+2 క్రెడిట్లు ($0.016)గా నమోదు చేయబడుతుంది
+([Tavily API credits](https://docs.tavily.com/documentation/api-credits)). `auto_parameters: true`
+ఉన్న కాల్ను Tavily advancedకు అప్గ్రేడ్ చేసినా, అది 1 క్రెడిట్గానే నమోదు చేయబడుతుంది.
+
+---
+
+## వెబ్ Fetch API
+
+కాన్ఫిగర్ చేసిన వెబ్-ఫెచ్ ప్రొవైడర్ (Firecrawl, Jina
+Reader, Tavily Extract, TinyFish Fetch, Nimble Extract, Parallel Extract, Keenable Fetch) ద్వారా URL నుండి కంటెంట్ను
+ఎక్స్ట్రాక్ట్ చేయండి.
+
+Parallel Extract (`parallel-search`, Parallel Search వలే అదే API key) Markdown
+మాత్రమే అందిస్తుంది — ఇతర ఏ `format` అయినా `400` — మరియు కంటెంట్ను 100,000
+అక్షరాలకు పరిమితం చేస్తుంది. లక్ష్య పేజీని స్వయంగా ఎక్స్ట్రాక్ట్ చేయలేనప్పుడు, upstream దానిని HTTP 200లోనే
+నివేదిస్తుంది; OmniRoute దానిని స్థిరమైన సందేశంతో `422`గా అందిస్తుంది.
+
+Keenable Fetch (`keenable-search`) కూడా Markdown మాత్రమే అందిస్తుంది (ఇతర ఏ `format` అయినా `400`) మరియు కంటెంట్ను
+100,000 అక్షరాలకు పరిమితం చేస్తుంది. ఇది key లేకుండానే పనిచేస్తుంది: connection లేకుండా
+`provider: "keenable-search"`ను స్పష్టంగా అభ్యర్థించినప్పుడు, Keenable యొక్క keyless endpoint
+(per-IP rate limits) ఉపయోగించబడుతుంది. కాన్ఫిగర్ చేసిన key ఈ పరిమితులను మాత్రమే తొలగిస్తుంది; auto-select
+key కాన్ఫిగర్ చేయబడినప్పుడు మాత్రమే Keenableను ఉపయోగిస్తుంది.
+
+| Method | Path            | Description                                                                   |
+| ------ | --------------- | ----------------------------------------------------------------------------- |
+| POST   | `/v1/web/fetch` | URLను ఫెచ్/స్క్రేప్ చేయండి — బాడీ `v1WebFetchSchema` ద్వారా ధృవీకరించబడుతుంది |
+
+**ప్రమాణీకరణ:** Bearer API key (`extractApiKey` + `isValidApiKey`). పాలసీ `enforceApiKeyPolicy` ద్వారా అమలు చేయబడుతుంది.
+
+పేరున్న కాంబినేషన్లు [`model` రూటింగ్ కాంట్రాక్ట్](#named-searchfetch-combinations)
+ను ఉపయోగిస్తాయి; ఫెచ్కు ప్రత్యేకమైన ఎంపికలు మరియు ప్రతిస్పందనలు అలాగే ఉంచబడతాయి.
+
+**కోటా-అవగాహన కలిగిన ఫాల్బ్యాక్ (#8297):** `provider` లేదా `model` ఏదీ ఇవ్వనప్పుడు, pool
+(`firecrawl` → `jina-reader` → `tavily-search` → `tinyfish` → `nimble-search` →
+`parallel-search` → `keenable-search`)ను
+స్థిరమైన ప్రాధాన్యత క్రమంలో (fill-first) పరిశీలిస్తారు — రేట్-లిమిట్ చేయబడినప్పటికీ కాన్ఫిగర్ చేసిన ప్రొవైడర్ను అభ్యర్థనను
+ముందుగానే నిలిపివేయడానికి బదులుగా దాటవేస్తారు; అలాగే మళ్లీ ప్రయత్నించగల/quota upstream వైఫల్యం
+(HTTP 429 ఎల్లప్పుడూ; Firecrawl/Tavily/TinyFish quota-శైలి ఉచిత శ్రేణుల కోసం 402/403 —
+Jina Reader కోసం కాదు, సాధారణ 400 bad request కోసం ఎప్పటికీ కాదు) తదుపరి ప్రయత్నించని credential కలిగిన ప్రొవైడర్కు
+అభ్యర్థన సమయంలో ముందుకు వెళ్తుంది. poolలోని ప్రతి ప్రొవైడర్ అయిపోయినప్పుడు, endpoint
+మునుపటి సాధారణ `400`కు బదులుగా ఒకే `429`ను (`Retry-After`
+హెడర్తో) అందిస్తుంది. స్పష్టమైన `provider`ను అభ్యర్థించినప్పుడు, నిశ్శబ్ద ఫాల్బ్యాక్ ఉండదు — రేట్-లిమిట్ చేయబడిన లేదా విఫలమైన స్పష్టమైన
+ప్రొవైడర్ తన స్వంత లోపాన్ని అందిస్తుంది (రేట్-లిమిట్ అయితే `429`, లేకపోతే upstream status).
+
+---
+
+## WebSocket Streaming
+
+```bash
+GET /v1/ws?handshake=1
+```
+
+WebSocket upgrade handshakeను validate చేసి wire protocol example messages (`request`, `cancel`)ను రిటర్న్ చేస్తుంది. Actual WS framesను Next.js route table వెలుపల bundled WS server నిర్వహిస్తుంది.
+
+**Auth:** handshake సమయంలో Bearer API key.
+
+### Responses API over WebSocket (codex only)
+
+```bash
+# HTTP API వలే అదే host:port (default 20128); connectionను upgrade చేయండి:
+wscat -c "ws://localhost:20128/v1/responses?api_key=<OMNIROUTE_API_KEY>"
+# (లేదా: -H "Authorization: Bearer <OMNIROUTE_API_KEY>")
+
+# మొదటి frame తప్పనిసరిగా response.create అయి ఉండాలి:
+{ "type": "response.create", "model": "gpt-5.5", "input": [ { "role": "user", "content": "hi" } ] }
+```
+
+Responses-API-over-WebSocket proxy **ప్రత్యేకంగా `codex`కు మాత్రమే** (ChatGPT
+backend) అనుసంధానించబడింది. ఇది API/dashboard వలే అదే portలో `/v1/responses`,
+`/responses`, మరియు `/api/v1/responses` paths వద్ద listen చేస్తుంది. మొదటి `response.create` frameపై ఇది
+internal `codex-responses-ws` bridge ద్వారా authenticate + prepare చేసి, ఒక codex OAuth connectionను ఎంచుకుని,
+`wreq-js` transport ద్వారా `wss://chatgpt.com/backend-api/codex/responses`కు tunnel చేస్తుంది. **Non-codex models reject చేయబడతాయి** (`codex_ws_provider_required`).
+Quota-share routing కోసం `model: "qtSd/<group>/codex/<model>"` ఉపయోగించండి. ఇది
+`app/server-ws.mjs` + `scripts/dev/responses-ws-proxy.mjs` + `src/app/api/internal/codex-responses-ws/route.ts`లో అమలు చేయబడింది.
+
+**Auth:** handshake సమయంలో Bearer API key. Bundled HTTP server (`server-ws.mjs`)
+active entrypoint అయి ఉండాలి ( `app/server-ws.mjs` ఉన్నప్పుడు ఇది defaultగా ఉంటుంది).
+
+#### Model id: bare ChatGPT idను ఉపయోగించండి (`codex/` prefix వద్దు)
+
+OpenAI **Codex CLI**, `supports_websockets = true`గా ఉన్నప్పుడు model nameను client-sideలో validate చేస్తుంది మరియు
+`codex/gpt-5.5` వంటి provider-prefixed idsను reject చేస్తుంది (`The 'codex/gpt-5.5' model is not supported when using Codex with
+a ChatGPT account`). Bare idను (ఉదా. `gpt-5.5`) పంపండి. OmniRoute bridge codex-only కావడంతో, HTTP ద్వారా bare
+`gpt-5.5` సాధారణంగా మరొక providerకు route అయినప్పటికీ — tunneling చేయడానికి ముందు అది bare idను codex modelగా
+(`resolveCodexWsModelInfo`) మళ్లీ resolve చేస్తుంది.
+
+#### OpenAI Codex CLIని కాన్ఫిగర్ చేయడం
+
+WebSocket supportతో custom providerను `~/.codex/config.toml`కు జోడించడం ద్వారా Codex CLIని OmniRouteకు point చేయండి (ఇప్పటికే ఉన్న configను మార్చకుండా ఉండేందుకు ప్రత్యేక `CODEX_HOME`ను ఉపయోగించండి):
+
+```toml
+model = "gpt-5.5"                 # bare id — NOT "codex/gpt-5.5"
+model_provider = "omniroute"
+
+[model_providers.omniroute]
+name = "OmniRoute (WS)"
+base_url = "http://localhost:20128/v1"   # trailing slash వద్దు; WS URL derive చేయబడుతుంది (productionలో https/wss ఉపయోగించండి)
+wire_api = "responses"                    # Feb 2026 నుండి supported value ఇదొక్కటే
+supports_websockets = true                # Responses-over-WS transportను enable చేస్తుంది
+env_key = "OMNIROUTE_API_KEY"             # OmniRoute API key (Bearer)ను కలిగి ఉంటుంది
+```
+
+```bash
+export OMNIROUTE_API_KEY=sk-...           # OmniRoute API key (REQUIRE_API_KEY=false అయితే ఏదైనా key)
+codex exec "Responda apenas: PONG"
+```
+
+CLI `base_url + /responses`ను WebSocketగా upgrade చేస్తుంది మరియు OmniRoute దాన్ని ఎంచుకున్న codex OAuth connectionకు tunnel చేస్తుంది. Local serverకు end-to-endగా validate చేయబడింది: ChatGPT `codex.rate_limits` + `response.created`ను రిటర్న్ చేసి completionను stream చేస్తుంది.
+
+---
+
+## కోటాలు & సమస్యల నివేదిక
+
+| పద్ధతి | మార్గం              | వివరణ                                                                                         |
+| ------ | ------------------- | --------------------------------------------------------------------------------------------- |
+| GET    | `/v1/quotas/check`  | రిజిస్టర్డ్ కీ జారీ చేయడానికి ముందు `provider` + `accountId` కోసం కోటాను ముందుగా ధృవీకరించండి |
+| POST   | `/v1/issues/report` | GitHubకు కోటా/కీ జారీ వైఫల్యాన్ని నివేదించండి (`GITHUB_ISSUES_REPO` + టోకెన్ అవసరం)           |
+
+**ప్రామాణీకరణ:** `/v1/quotas/check` ఒక Bearer API కీని (`isAuthenticated`) స్వీకరిస్తుంది. `/v1/issues/report` నిర్వహణకు మాత్రమే పరిమితం (`requireManagementAuth`), `/api/v1/registered-keys` మాదిరిగానే: డాష్బోర్డ్ సెషన్,
+స్థానిక CLI టోకెన్ లేదా `manage`/`admin` స్కోప్ కలిగిన API కీ; inference-only API కీలు `403` పొందుతాయి.
+
+### కోటా సెషన్ పునరుద్ధరణ (ఐచ్ఛికంగా ప్రారంభించవచ్చు)
+
+టెర్మినల్ కోటా లోపంతో (`402`/`429`/`503`, దాని బాడీలో కోటా లేదా క్రెడిట్లు ఖాళీ అయ్యాయని పేర్కొంటే) విఫలమయ్యే
+స్ట్రీమింగ్ కాని `POST /v1/chat/completions` లేదా `POST /v1/responses` ను లోపాన్ని తిరిగి పంపడం బదులుగా నిల్వ చేసి, తర్వాత
+మళ్లీ ప్లే చేయవచ్చు. ప్రతి అభ్యర్థనకు కాలర్ మూడు హెడర్లతో ఎంపికను ప్రారంభిస్తారు:
+
+| హెడర్                        | విలువ                                     |
+| ---------------------------- | ----------------------------------------- |
+| `x-omniroute-quota-recovery` | `auto`                                    |
+| `x-omniroute-session`        | సెషన్ ఐడి, `[A-Za-z0-9._:-]{1,128}`       |
+| `x-omniroute-recovery-turn`  | సెషన్లో ప్రత్యేకమైన టర్న్ ఐడి (అదే నియమం) |
+
+`stream: false` కలిగిన, టూల్స్, టూల్ చరిత్ర లేదా `previous_response_id` లేనివి, అలాగే `x-omniroute-connection` పిన్ లేనివి మాత్రమే
+అర్హత పొందుతాయి. అదనంగా, `STORAGE_ENCRYPTION_KEY` తప్పనిసరిగా సెట్ చేయాలి (అభ్యర్థన గుప్తీకరించబడిన రూపంలో గరిష్ఠంగా 24 గంటల పాటు నిల్వ చేయబడుతుంది). ఆపై ప్రతిస్పందన
+`202` మరియు `recovery.poll` తో వస్తుంది; `GET /v1/quota-recoveries/{id}` ను పోలింగ్ చేయండి (`202` పెండింగ్లో ఉన్నప్పుడు, పూర్తయిన తర్వాత
+పునరుద్ధరించబడిన బాడీతో `200`) లేదా `DELETE` తో రద్దు చేయండి. టికెట్లు వాటిని సృష్టించిన API కీకి మాత్రమే కనిపిస్తాయి. ఫలితం
+అనిశ్చితంగా ఉన్న రీప్లే, రెండుసార్లు పంపబడటానికి బదులుగా `needs_confirmation` స్థితిలో ముగుస్తుంది. మూలం: `src/lib/quota/quotaSessionRecovery.ts`.
+
+---
+
+## స్వీయ-సేవ వినియోగం (`/api/usage/om-usage`)
+
+ఏదైనా API కీ చదవగలదు** దాని స్వంత** వినియోగం మరియు కోటాలు — నిర్వహణ ప్రమాణీకరణ లేదు. ఇది క్లయింట్ (CLI, OmniCopilot ప్యానెల్) కీ హోల్డర్కు వారి ఖర్చును చూపించడానికి ఉపయోగించే ముగింపు స్థానం.
+
+```bash
+# Text form (the historical contract — plain text for a terminal)
+curl -H "Authorization: Bearer <your-api-key>" \
+  http://localhost:20128/api/usage/om-usage
+
+# Structured form — what a UI consumes
+curl -H "Authorization: Bearer <your-api-key>" \
+  "http://localhost:20128/api/usage/om-usage?format=json"
+```
+
+కీ తప్పనిసరిగా ఉండాలి**`allowUsageCommand`** ప్రారంభించబడింది (డిఫాల్ట్గా ఆఫ్ — డాష్బోర్డ్ యొక్క API-కీ మేనేజర్ ప్రతి కీకి దాన్ని టోగుల్ చేస్తుంది). అది లేకుండా ఎండ్ పాయింట్ `403` సమాధానం ఇస్తుంది.
+
+`?format=json` వివక్షత ఆకారాన్ని తిరిగి ఇస్తుంది కాబట్టి కాలర్ తిరస్కరించిన డేటా ఫీల్డ్ను ఎప్పటికీ చదవడు. విజయంపై:
+
+```jsonc
+{
+  "allowed": true,
+  // present only when the key opted into per-key usage limits (daily/weekly/5-hour USD):
+  "personal": {
+    "dailySpentUsd": 1.25,
+    "dailyLimitUsd": 5,
+    "dailyResetAtIso": "…",
+    "weeklySpentUsd": 8,
+    "weeklyLimitUsd": 20,
+    "weeklyResetAtIso": "…" /* … */,
+  },
+  // the selected provider quota snapshot, or null when nothing is cached yet:
+  "provider": { "connectionId": "…", "provider": "claude", "plan": "…", "quotas": {/* … */} },
+  // every connection's snapshot, so a UI can render several providers side by side:
+  "providers": [
+    { "connectionId": "…", "provider": "claude" /* … */ },
+    { "provider": "codex" /* … */ },
+  ],
+}
+```
+
+తిరస్కరణపై (`401` చెడు కీ / `403` అనుమతించబడదు) అదే మార్గం `{ "allowed": false, "error": { "message": "…" } }` — ని ప్రస్తుత-కానీ-ఖాళీ `personal`/`provider` (కీ అనుమతించబడింది, ఇంకా ఏమీ నేర్చుకోలేదు) అనేది తిరస్కరణ నుండి భిన్నమైన స్థితి మరియు JSON రూపం మాత్రమే వాటిని వేరు చేస్తుంది.
+
+**ప్రమాణీకరణ:** కాలర్ యొక్క స్వంత బేరర్ API కీ, `isValidApiKey` — తో ధృవీకరించబడింది ఇది _not_ నిర్వహణ ఉపరితలం (`/api/keys/…`), ఇది `requireManagementAuth` వెనుక ఉంటుంది.
+
+### ముడి వర్సెస్ కటాఫ్-సర్దుబాటు చేసిన కోటా శాతాలు
+
+`/api/usage/om-usage` వినియోగిస్తున్నప్పుడు, కాలర్లు సమర్పించిన శాతాల మధ్య వ్యత్యాసాన్ని గమనించాలి** సాదా-టెక్స్ట్ అవుట్పుట్** మరియు నిర్మాణాత్మకమైనది**JSON అవుట్పుట్** :
+
+| కోణం                     | సాదా-వచన ఆకృతి (`/api/usage/om-usage` / `@@om-usage`)                                                 | JSON ఫార్మాట్ (`?format=json`)                                                         |
+| :----------------------- | :---------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------- |
+| **అవుట్పుట్ ఫీల్డ్**     | `NN% left` (ఉదా, `20% left`)                                                                          | `provider.quotas` / `providers[].quotas`                                               |
+| **కొలత**                 | **కటాఫ్-సర్దుబాటు ఉపయోగించగల భత్యం** : కటాఫ్ థ్రెషోల్డ్ పైన మిగిలిన సామర్థ్యం                         | **రా అప్స్ట్రీమ్ కోటా** : సర్దుబాటు చేయని ప్రొవైడర్ కొలత                               |
+| **కటాఫ్ స్కేలింగ్**      | `effectiveRemainingPercent()` ద్వారా స్కేల్ చేయబడింది కాబట్టి రక్షిత రిజర్వ్ `0% left` గా చదవబడుతుంది | ఏదీ లేదు (ప్రొవైడర్ ద్వారా నివేదించబడిన ముడి స్నాప్షాట్ విలువలు)                       |
+| **థ్రెషోల్డ్ డేటా**      | ప్రదర్శించబడిన శాతంలో చేర్చబడింది                                                                     | ప్రతి కనెక్షన్కు `quotaWindowThresholds` లో నిల్వ చేయబడుతుంది (లేదా సర్వర్ డిఫాల్ట్లు) |
+| **ప్రాథమిక వినియోగదారు** | ఇంటరాక్టివ్ CLIs, టెర్మినల్ ప్రాంప్ట్లు, హ్యూమన్ ఆపరేటర్లు                                            | ప్రోగ్రామాటిక్ ఇంటిగ్రేషన్లు, డాష్బోర్డ్లు, విశ్లేషణలు, బిల్లింగ్ ట్రాకర్లు            |
+
+#### కటాఫ్ అడ్జస్ట్మెంట్ ఫార్ములా
+
+OmniRoute అప్స్ట్రీమ్ ఎగ్జాషన్ను నిరోధించడానికి ప్రోయాక్టివ్ కోటా కటాఫ్లకు మద్దతు ఇస్తుంది (కనెక్షన్ `quotaWindowThresholds`, ప్రొవైడర్ డిఫాల్ట్లు లేదా గ్లోబల్ రెసిలెన్స్ సెట్టింగ్ల ద్వారా కాన్ఫిగర్ చేయబడింది). కోటా విండోలో కటాఫ్ థ్రెషోల్డ్ (ఉదా, `cutoff = 25%`) సక్రియంగా ఉన్నప్పుడు, టెక్స్ట్ రెండరర్ మిగిలిన భత్యాన్ని ఇలా లెక్కిస్తుంది:
+
+- `remaining <= cutoff` అయితే: `0%` ని అందిస్తుంది.
+- `remaining > cutoff` అయితే: `((remaining - cutoff) / (100 - cutoff)) * 100` ని అందిస్తుంది.
+
+ఫార్మాట్ చేయబడిన టెక్స్ట్ అవుట్పుట్ దీన్ని సమీప పూర్ణాంకానికి (`Math.round(...)`) రౌండ్ చేస్తుంది.
+
+#### ఇలస్ట్రేటివ్ ఉదాహరణ
+
+దీనితో ప్రొవైడర్ విండోను పరిగణించండి** 60% ముడి వినియోగం** (అందుకే** 40% ముడి మిగిలిన కోటా** ) మరియు కాన్ఫిగర్ చేయబడింది** 25% మిగిలిన-కోటా కటాఫ్** థ్రెషోల్డ్:
+
+| ప్రాతినిధ్యం                       | గణన                                                | మిగిలింది |       పరోక్షంగా ఉపయోగించబడింది       |
+| :--------------------------------- | :------------------------------------------------- | :-------: | :----------------------------------: |
+| **రా JSON (`?format=json`)**       | అప్స్ట్రీమ్ స్నాప్షాట్ (`quotas[window]`)          |  **40%**  |               **60%**                |
+| **టెక్స్ట్ ఫార్మాట్ (`NN% left`)** | `((40 - 25) / (100 - 25)) * 100 = (15 / 75) * 100` |  **20%**  | **80%** ( `100 - remaining` గణిస్తే) |
+
+- **వచనం 20% ఎడమవైపు ఎందుకు చూపుతుంది:** ఖాతాలో మిగిలి ఉన్న 40% భౌతిక కోటాలో, 25% కటాఫ్ విధానం ద్వారా రిజర్వ్ చేయబడింది. రూటర్ ఈ కనెక్షన్కి రూటింగ్ చేయడం ఆపివేయడానికి ముందు కాలర్కు 75% ఉపయోగించగల హెడ్రూమ్లో 15% మాత్రమే మిగిలి ఉంది. స్కేలింగ్ కనెక్షన్ సిగ్నల్స్ ఎగ్జాషన్ను నిర్ధారిస్తుంది (`0% left`) రూటింగ్ ఆగిపోయినప్పుడు.
+- **JSON ముడి విలువలను ఎందుకు సంరక్షిస్తుంది:** JSON పేలోడ్ ఖచ్చితమైన ప్రొవైడర్ స్నాప్షాట్ (`UsageSnapshot`)ని అందిస్తుంది కాబట్టి బాహ్య సాధనాలు సర్వర్-సైడ్ లాస్సీ స్కేలింగ్ లేకుండా గ్రౌండ్-ట్రూత్ అప్స్ట్రీమ్ యుటిలైజేషన్ మరియు కనెక్షన్-లెవల్ `quotaWindowThresholds` కి యాక్సెస్ను కలిగి ఉంటాయి.
+
+#### కన్స్యూమర్ మైగ్రేషన్ గైడెన్స్
+
+ఒక బాహ్య ఏకీకరణ (ఎడిటర్ ప్లగిన్ లేదా ఏజెంట్ పొడిగింపు వంటివి) గతంలో టెక్స్ట్ ఎండ్పాయింట్ (`NN% left`)ని స్క్రాప్ చేసి, ఉపయోగించిన శాతాన్ని `100 - NN` గా గణిస్తే, `?format=json` కి మారడం అంటే:
+
+- ముడి JSON విలువలను చదవడం ప్రతిబింబిస్తుంది** వాస్తవ అప్స్ట్రీమ్ వినియోగం** (పై ఉదాహరణలో 60% ఉపయోగించబడింది).
+- ఇంటిగ్రేషన్ టెక్స్ట్ ఎండ్పాయింట్ యొక్క ఉపయోగించగల-అలవెన్స్ సెమాంటిక్స్ను భద్రపరచాలని కోరుకుంటే, అది కనెక్షన్-స్థాయి ఓవర్రైడ్ల కోసం `quotaWindowThresholds` ఉపయోగించి ప్రభావవంతమైన మిగిలిన ఫార్ములా క్లయింట్-సైడ్ను అంచనా వేయగలదు.
+
+---
+
+## సెమాంటిక్ కాష్
+
+```bash
+# కాష్ గణాంకాలను పొందండి
+GET /api/cache/stats
+
+# అన్ని కాష్లను క్లియర్ చేయండి
+DELETE /api/cache/stats
+```
+
+ప్రతిస్పందన ఉదాహరణ:
+
+```json
+{
+  "semanticCache": {
+    "memorySize": 42,
+    "memoryMaxSize": 500,
+    "dbSize": 128,
+    "hitRate": 0.65
+  },
+  "idempotency": {
+    "activeKeys": 3,
+    "windowMs": 5000
+  }
+}
+```
+
+### ఆలస్యంపై ప్రభావం
+
+సెమాంటిక్ కాష్ HIT ప్రతిస్పందనను **అప్స్ట్రీమ్ కాల్ లేకుండా** కాష్ నుంచి అందిస్తుంది, కాబట్టి నివేదించబడిన `X-OmniRoute-Response-Latency` అసలు అప్స్ట్రీమ్ ఆలస్యంతో సంబంధం లేకుండా దాదాపు సున్నాగా ఉంటుంది. ఆలస్య-సున్నిత క్లయింట్లు (బెంచ్మార్కింగ్, p50/p99 పర్యవేక్షణ) `X-OmniRoute-Cache-Latency` ప్రతిస్పందన హెడర్ను పరిశీలించాలి:
+
+| విలువ       | అర్థం                                                                    |
+| ----------- | ------------------------------------------------------------------------ |
+| `synthetic` | ప్రతిస్పందన కాష్ నుంచి అందించబడింది; ఆలస్యం నిజమైన అప్స్ట్రీమ్ సమయం కాదు |
+| _(absent)_  | నిజమైన అప్స్ట్రీమ్ కాల్ నుంచి ప్రతిస్పందన                                |
+
+### ఒక్కో కీకి కాష్ బైపాస్
+
+`cacheDefaultMode` ద్వారా API కీలు సెమాంటిక్ కాష్ రీడ్ల నుంచి వైదొలగవచ్చు:
+
+| విలువ    | ప్రవర్తన                                                            |
+| -------- | ------------------------------------------------------------------- |
+| `legacy` | సాధారణ కాష్ ప్రవర్తన (డిఫాల్ట్)                                     |
+| `bypass` | కాష్ లుకప్ను పూర్తిగా దాటవేయండి; ఎల్లప్పుడూ అప్స్ట్రీమ్ను చేరుకోండి |
+
+కీ సృష్టించే సమయంలో (`POST /api/keys`) లేదా అప్డేట్ చేసే సమయంలో (`PATCH /api/keys/[id]`) సెట్ చేయండి:
+
+```json
+{ "cacheDefaultMode": "bypass" }
+```
+
+### ఒక్కో అభ్యర్థనకు బైపాస్
+
+కీ సెట్టింగ్లతో సంబంధం లేకుండా ఏదైనా అభ్యర్థన కాష్ను బైపాస్ చేయగలదు:
+
+```
+X-OmniRoute-No-Cache: true
+```
+
+---
+
+## CLIProxyAPI నిర్వహణ అనుకూలత
+
+వినియోగ డ్యాష్బోర్డ్లు Claude మరియు Codex సబ్స్క్రిప్షన్ పరిమితులను చదవడానికి ఉపయోగించే మూడు [CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) నిర్వహణ ఎండ్పాయింట్లకు OmniRoute సమాధానం ఇస్తుంది (ఉదాహరణకు, T3 Code యొక్క `cliproxy` వినియోగ-పరిమితి మూలం). క్లయింట్ యొక్క బేస్ URLను OmniRouteకు సూచించి, `manage` స్కోప్ ఉన్న API కీని నిర్వహణ కీగా ఉపయోగించండి. రూట్లు `/v0/management/*` మరియు `/api/v0/management/*` వద్ద అందించబడతాయి.
+
+| పద్ధతి | మార్గం                       | వివరణ                                                                                                                                     |
+| ------ | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/v0/management/auth-files`  | `{ files: [{ id, auth_index, provider, email, disabled, id_token }] }` రూపంలో Claude మరియు Codex OAuth కనెక్షన్లు. టోకెన్లు లేవు          |
+| POST   | `/v0/management/api-call`    | బాడీ `{ auth_index, method, url, header?, data? }`. ఖాతా టోకెన్తో అనుమతించబడిన ఒక అభ్యర్థనను పంపి `{ status_code, body }` తిరిగి ఇస్తుంది |
+| POST   | `/v0/management/reset-quota` | బాడీ `{ auth_index }`. ఒక ఖాతా యొక్క కనెక్షన్ కూల్డౌన్, మోడల్ లాక్అవుట్లు మరియు Codex ఒక్కో-స్కోప్ కూల్డౌన్లను క్లియర్ చేస్తుంది          |
+
+- `auth_index` అనేది OmniRoute కనెక్షన్ ID. `provider` అనేది `claude` లేదా `codex` (OAuth కనెక్షన్లు మాత్రమే; `anthropic` API-కీ ప్రొవైడర్ జాబితా చేయబడదు). Codex కోసం, `id_token.chatgpt_account_id` నిల్వ చేయబడిన వర్క్స్పేస్ ID, అలాగే `plan_type` నిల్వ చేయబడిన ప్లాన్.
+- `api-call` సాధారణ ప్రాక్సీ కాదు. ఇది Claude `GET https://api.anthropic.com/api/oauth/usage` మరియు Codex `GET https://chatgpt.com/backend-api/wham/usage`, `GET .../wham/rate-limit-reset-credits` మరియు `POST .../wham/rate-limit-reset-credits/consume`లను మాత్రమే అంగీకరిస్తుంది; ప్రతి అభ్యర్థన సంబంధిత ప్రొవైడర్కు చెందిన ఖాతా కోసమే ఉండాలి. మిగతా ఏదైనా అప్స్ట్రీమ్ను సంప్రదించకుండా `403`ను తిరిగి ఇస్తుంది. కాలర్ యొక్క `Authorization` హెడర్ (`$TOKEN$` ప్లేస్హోల్డర్తో సహా) విస్మరించబడుతుంది: OmniRoute కనెక్షన్ యొక్క యాక్సెస్ టోకెన్ను ఇంజెక్ట్ చేస్తుంది, గడువు సమీపిస్తే ముందుగా దాన్ని రిఫ్రెష్ చేస్తుంది, అలాగే అనుమతించబడిన హెడర్లను మాత్రమే ఫార్వర్డ్ చేస్తుంది (`anthropic-beta`; `OpenAI-Beta`, `Originator`, `Chatgpt-Account-Id`; `Accept`, `Content-Type`). `Chatgpt-Account-Id` లేకపోతే నిల్వ చేయబడిన వర్క్స్పేస్ ID డిఫాల్ట్గా ఉపయోగించబడుతుంది. అభ్యర్థనలకు 15 సెకన్ల తర్వాత టైమ్అవుట్ అవుతుంది మరియు కనెక్షన్ ప్రాక్సీని ఉపయోగిస్తాయి.
+- `reset-quota` టెర్మినల్ స్థితులను (banned, expired, credits_exhausted) అలాగే ఉంచుతుంది. తెలియని `auth_index` `404`ను తిరిగి ఇస్తుంది.
+
+**ప్రామాణీకరణ:** డ్యాష్బోర్డ్ సెషన్ లేదా `manage`-స్కోప్ ఉన్న API కీ అవసరం; లాగిన్ నిలిపివేయబడినప్పటికీ ఇది అవసరమే (ఈ మార్గాలు `ALWAYS_PROTECTED_API_PATHS`లో ఉన్నాయి). ఇన్ఫరెన్స్-మాత్రమే కీలు `403`ను పొందుతాయి. మూలం: `src/lib/cliproxyCompat/managementApi.ts`.
+
+---
+
+## డాష్బోర్డ్ & నిర్వహణ
+
+నిర్వహణ మార్గాలు (`/api/*` పబ్లిక్ auth/login తప్ప)** కాదు** సాధారణ అనుమితి API కీల ద్వారా అధికారం. ఆధారాల కుటుంబాలు, స్కోప్లు మరియు కర్ల్ ఉదాహరణలు: [నిర్వహణ ప్రమాణీకరణ](../guides/MANAGEMENT-AUTH.md).
+
+### ప్రమాణీకరణ
+
+| ఎండ్ పాయింట్                  | పద్ధతి   | వివరణ                                                                                                                                                                                                                                                                                                                |
+| ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/api/auth/login`             | POST     | లాగిన్ చేయండి                                                                                                                                                                                                                                                                                                        |
+| `/api/auth/logout`            | POST     | లాగ్అవుట్                                                                                                                                                                                                                                                                                                            |
+| `/api/settings/require-login` | GET/POST | లాగిన్ స్థితి (GET, పబ్లిక్). POST పాస్వర్డ్ను సెట్ చేస్తుంది / లాగిన్ని టోగుల్ చేస్తుంది: ఆపరేటర్-ఒకసారి పాస్వర్డ్ ఉంటే మాత్రమే (డ్యాష్బోర్డ్ సెషన్, లోకల్ CLI, లేదా లాగిన్ డిసేబుల్డ్ — API కీలు మరియు `oma_` టోకెన్లు `403` పొందుతాయి ); పాస్వర్డ్ను భర్తీ చేయడానికి డాష్బోర్డ్ సెషన్ `currentPassword` పంపుతుంది |
+
+### ప్రొవైడర్ మేనేజ్మెంట్
+
+| ఎండ్ పాయింట్                            | పద్ధతి                    | వివరణ                                                                                                                                                               |
+| --------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/api/providers`                        | GET/POST                  | జాబితా / ప్రొవైడర్లను సృష్టించండి                                                                                                                                   |
+| `/api/providers/[id]`                   | GET/PUT/DELETE            | ప్రొవైడర్ను నిర్వహించండి                                                                                                                                            |
+| `/api/providers/[id]/test`              | POST                      | టెస్ట్ ప్రొవైడర్ కనెక్షన్                                                                                                                                           |
+| `/api/providers/[id]/models`            | GET                       | జాబితా ప్రొవైడర్ మోడల్స్                                                                                                                                            |
+| `/api/providers/validate`               | POST                      | ప్రొవైడర్ కాన్ఫిగరేషన్ని ధృవీకరించండి                                                                                                                               |
+| `/api/providers/bulk`                   | POST                      | ONE ప్రొవైడర్ కోసం API కీలను బల్క్-యాడ్ చేయండి                                                                                                                      |
+| `/api/providers/import`                 | POST                      | అన్వయించబడిన CSV/JSON ఫైల్ (#6836) నుండి వైవిధ్యమైన ప్రొవైడర్ LIST దిగుమతి చేయండి; ప్రతి-వరుస పాక్షిక-వైఫల్య ఫలితాలు                                                |
+| `/api/provider-nodes*`                  | వివిధ                     | ప్రొవైడర్ నోడ్ నిర్వహణ                                                                                                                                              |
+| `/api/provider-models`                  | GET/POST/PUT/PATCH/DELETE | అనుకూల నమూనాలు మరియు ప్రతి మోడల్ ఓవర్రైడ్లు (జోడించు, నవీకరించు, hide/show, తొలగించు)                                                                               |
+| `/api/provider-models/validate-and-add` | POST                      | నిర్వహణ-ప్రామాణీకరించబడిన, కఠినమైన-కనెక్షన్ ధ్రువీకరణ మరియు అటామిక్ అనుకూల-నమూనా నమోదును ఎంపిక చేసుకోవడం; [మోడల్ ధ్రువీకరణను](../guides/MODEL-VALIDATION.md) చూడండి |
+
+synced/imported మోడల్ల కోసం, `PUT /api/provider-models` `provider`, `modelId`, మరియు `maxOutputTokenOverride` అంగీకరిస్తుంది: ధనాత్మక పూర్ణాంకం మాన్యువల్ అవుట్పుట్-టోకెన్ క్యాప్ను సెట్ చేస్తుంది మరియు డిఫాల్ట్ను పునరుద్ధరించడానికి `null` దాన్ని క్లియర్ చేస్తుంది. `GET /api/provider-models?provider=<provider>` ఈ విలువలను `modelOutputOverrides` లో అందిస్తుంది, కస్టమ్-మోడల్ అడ్డు వరుస లేని మోడల్లతో సహా. ఓవర్రైడ్ రన్టైమ్ `max_output_tokens` సామర్ధ్యాన్ని ఉపయోగిస్తుంది మరియు మోడల్ రీ-సింక్ను కలిగి ఉంటుంది. OpenAI-అనుకూల ప్రొవైడర్ పేజీ అదే edit/clear నియంత్రణలను అందిస్తుంది మరియు స్పష్టమైన దృష్టి మద్దతుతో నమూనాలను సూచిస్తుంది.
+
+అనుకూలమైన ప్రొవైడర్ నోడ్లో, రైట్ పాత్లు (`POST`, `PUT`, `PATCH`, `DELETE` మరియు `/api/provider-models/validate-and-add`) మోడల్ ఐడిని బేర్ అప్స్ట్రీమ్ ఐడి వలె నిల్వ చేస్తాయి: ఉపసర్గ జాబితా నుండి అతికించబడిన ఐడి నోడ్ యొక్క స్వంత ఉపసర్గ యొక్క ఏదైనా ప్రముఖ స్టాక్ను కలిగి ఉంటుంది మరియు నిల్వ చేయబడిన ప్రతిస్పందనలు ప్రతిధ్వనిస్తాయి. కానానికల్ ప్రొవైడర్ల స్లాష్డ్ ఐడిలు (ఉదా `nvidia/nemotron-…`) పదాల రూపంలో నిల్వ చేయబడతాయి. `/v1/models` ఎప్పుడూ పేర్చబడిన `<prefix>/<prefix>/<model>` idని విడుదల చేయదు.
+
+కస్టమ్ చాట్ కంప్లీషన్స్ నోడ్లు అప్స్ట్రీమ్ బ్యాకెండ్కు స్పష్టమైన రీజనింగ్ ఆప్ట్-అవుట్లను అడాప్ట్ చేస్తాయి. ఒక విజయవంతమైన కనెక్షన్ పరీక్ష స్వయంచాలకంగా ప్రతి ఖచ్చితమైన మోడల్ ID కోసం చాట్-టెంప్లేట్ నియంత్రణలను ఎంచుకుంటుంది, దీని `/models` నమోదు గుర్తించబడిన `owned_by` విలువను రుజువు చేస్తుంది: `vllm`, `sglang`, లేదా `llamacpp`. పారదర్శక OpenAI-అనుకూల రేపర్లు సమూహ `openai` వస్తువు లోపల అసలు మోడల్ ఎంట్రీని భద్రపరచవచ్చు; గుర్తింపు అటువంటి మూడు ఎన్వలప్లను అనుసరిస్తుంది. తప్పిపోయిన, తెలియని లేదా విరుద్ధమైన యాజమాన్యంతో మోడల్లు సాధారణ OpenAI ప్రవర్తనను ఉంచుతాయి. డిటెక్షన్ ఇప్పటికే ఉన్న కేటలాగ్ అభ్యర్థనను మళ్లీ ఉపయోగిస్తుంది, పూర్తి టోకెన్లను రూపొందించదు మరియు కనెక్షన్ ముగింపు స్థానం మారినప్పుడు చెల్లుబాటు కాదు.
+
+మెటాడేటాను బహిర్గతం చేయని బ్యాకెండ్ ప్రవర్తనను పిన్ చేయడానికి, ఇప్పటికే ఉన్న పాక్షిక ప్రొవైడర్ అప్డేట్ API ఉపయోగించండి:
+
+```json
+{
+  "providerSpecificData": {
+    "reasoningControl": "chat-template"
+  }
+}
+```
+
+ఆ శరీరాన్ని `PUT /api/providers/<connection-id>` తో పంపండి. ఆ కనెక్షన్పై, `none` యొక్క స్పష్టమైన తార్కిక ప్రయత్నం `chat_template_kwargs.thinking=false` మరియు `chat_template_kwargs.enable_thinking=false` వలె పంపబడుతుంది. సర్వర్ వైపు తార్కిక నియమం ప్రయత్నాన్ని బలవంతం చేస్తే తప్ప స్పష్టమైన స్థానిక టెంప్లేట్ విలువలు అధికారికంగా ఉంటాయి. కస్టమ్ OpenAI-అనుకూల కనెక్షన్ చాట్ కంప్లీషన్స్ బాడీని పంపినప్పుడు మాత్రమే సెట్టింగ్ వర్తిస్తుంది; ప్రతిస్పందనల అభ్యర్థనలు మరియు సాధారణ ప్రొవైడర్లు వారి స్థానిక అభ్యర్థన ఆకారాన్ని ఉంచుతారు. సాధారణ OpenAI `reasoning_effort` పాస్త్రూని బలవంతం చేయడానికి `reasoningControl` `openai` కి సెట్ చేయండి లేదా ఆటోమేటిక్ డిటెక్షన్ని ఉపయోగించడానికి it/set ని `null` కి వదిలివేయండి.
+
+Claude కోడ్ ఆటో-మోడ్ క్లాసిఫైయర్ స్పష్టమైన తార్కిక నియంత్రణలను కలిగి లేనప్పుడు డిఫాల్ట్ స్థానిక ఆలోచనను నిలిపివేయమని అభ్యర్థిస్తుంది. డిటెక్షన్ క్లాడ్-ఫార్మాట్ అభ్యర్థనలలో వర్గీకరణ యొక్క సిస్టమ్ మార్కర్ను ఉపయోగిస్తుంది, మోడల్ పేర్లు లేదా పూర్తి పరిమితులు కాదు. స్పష్టమైన శరీర నియంత్రణలు, మద్దతు ఉన్న effort/thinking హెడర్లు, రూటింగ్ నియమాలు మరియు పరిష్కరించబడిన మోడల్ ప్రయత్నం వాటి ప్రస్తుత ప్రాధాన్యతను ఉంచుతాయి. రెండు వర్గీకరణ దశలు వాటి ప్రాంప్ట్లు, పూర్తి పరిమితులు, స్టాప్ సీక్వెన్సులు మరియు నిజమైన అప్స్ట్రీమ్ అనుమతి తీర్పులను కలిగి ఉంటాయి; రెండవ దశ ఇప్పటికీ దాని అభ్యర్థించిన కనిపించే తార్కికతను సాధారణ వచనంగా ఉత్పత్తి చేయగలదు.
+
+### OAuth ప్రవహిస్తుంది
+
+| ఎండ్ పాయింట్                     | పద్ధతి | వివరణ                     |
+| -------------------------------- | ------ | ------------------------- |
+| `/api/oauth/[provider]/[action]` | వివిధ  | ప్రొవైడర్-నిర్దిష్ట OAuth |
+
+### రూటింగ్ & కాన్ఫిగర్
+
+| ఎండ్ పాయింట్          | పద్ధతి   | వివరణ                                |
+| --------------------- | -------- | ------------------------------------ |
+| `/api/models`         | GET/PUT  | మోడల్ జాబితా / మారుపేరు నవీకరణ       |
+| `/api/models/alias`   | GET/POST | మోడల్ మారుపేర్లు                     |
+| `/api/models/catalog` | GET      | ప్రొవైడర్ + రకం ద్వారా అన్ని మోడల్లు |
+| `/api/combos*`        | వివిధ    | కాంబో నిర్వహణ                        |
+| `/api/keys*`          | వివిధ    | API కీ నిర్వహణ                       |
+| `/api/pricing`        | GET      | మోడల్ ధర                             |
+
+#### మోడల్ పరిమితి మూలాధారం
+
+`GET /api/models?withLimits=1` ( `true`; `0`/`false` లేదా దానిని వదిలివేయడం డిఫాల్ట్ పేలోడ్ను మార్చకుండా ఉంచుతుంది) ప్రతి మోడల్ వరుసకు `contextWindow`, `maxInputTokens`, `maxOutputTokens` మరియు `capsSource` ఆబ్జెక్ట్ను జోడిస్తుంది. `capsSource` ప్రతి పరిమితిని అందించే నియమానికి పేరు పెట్టింది, కాబట్టి ఆశ్చర్యకరమైన పరిమితి (ఉదాహరణకు 1M మోడల్లో 128k) దాని మూలాన్ని గుర్తించవచ్చు. పరిష్కరించబడిన విలువలు అదే రూటింగ్ ఉపయోగాలు; ఫ్లాగ్ ఫీల్డ్లను మాత్రమే జోడిస్తుంది మరియు విలువను ఎప్పటికీ మార్చదు. ఏదైనా ఇతర `withLimits` విలువ `400` తో తిరస్కరించబడుతుంది.
+
+| `capsSource` విలువ                           | మూలం                                                                     |
+| -------------------------------------------- | ------------------------------------------------------------------------ |
+| `override:context`                           | నిరంతర సందర్భ-విండో ఓవర్రైడ్ (`model_context_overrides`)                 |
+| `override:max_input` / `override:max_output` | పెర్సిస్టెడ్ `max_input_tokens` / `max_output_tokens` సామర్ధ్యం ఓవర్రైడ్ |
+| `static-authoritative:<provider>/<model>`    | స్టాటిక్ అధీకృత సందర్భ-విండో పట్టిక                                      |
+| `synced:<provider>/<model>`                  | models.dev సమకాలీకరించబడిన సామర్థ్యం వరుస                                |
+| `registry:<provider>/<model>`                | ప్రొవైడర్ రిజిస్ట్రీ ఎంట్రీ                                              |
+| `spec:<model>`                               | స్టాటిక్ మోడల్ స్పెక్                                                    |
+| `effort-base:` ఉపసర్గ                        | ఎఫర్ట్-సఫిక్స్డ్ వేరియంట్ యొక్క బేస్ మోడల్ నుండి రో అరువు తీసుకోబడింది   |
+| `none`                                       | ఏ మూలమూ పరిమితిని ప్రకటించలేదు (విలువ `null`)                            |
+
+అమలు: `src/lib/modelCapabilities.ts` లో `getResolvedModelCapabilitiesWithLimitSources()` మరియు `src/lib/modelCapabilityLimits.ts` లో ప్రాధాన్యత గొలుసులు.
+
+### వినియోగం & విశ్లేషణలు
+
+| ఎండ్ పాయింట్                     | పద్ధతి          | వివరణ                                                                                                                                                                                                                                                                                                       |
+| -------------------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/api/usage/history`             | GET             | వినియోగ చరిత్ర                                                                                                                                                                                                                                                                                              |
+| `/api/usage/logs`                | GET             | వినియోగ లాగ్లు                                                                                                                                                                                                                                                                                              |
+| `/api/usage/request-logs`        | GET             | అభ్యర్థన-స్థాయి లాగ్లు                                                                                                                                                                                                                                                                                      |
+| `/api/usage/[connectionId]`      | GET             | ప్రతి కనెక్షన్ వినియోగం                                                                                                                                                                                                                                                                                     |
+| `/api/usage/token-limits`        | GET/POST/DELETE | ఒక్కో API-కీ టోకెన్-పరిమితి బడ్జెట్లు                                                                                                                                                                                                                                                                       |
+| `/api/usage/model-latency-stats` | GET             | రోలింగ్ per-provider/model జాప్యం మొత్తం (avg/p50/p95/p99, విజయం రేటు); ఫిల్టర్లు: `windowHours`/`minSamples`/`maxRows`/`provider`/`model` (#6873)                                                                                                                                                          |
+| `/api/usage/cache-health`        | GET             | `call_logs` — write/read నిష్పత్తి, p50/p90/p99 రైట్-సైజ్ డిస్ట్రిబ్యూషన్, హెవీ-రైట్ ఏకాగ్రత, ఒక్కో మోడల్ స్ప్లిట్ మరియు `healthy`/`degraded`/`thrash`/`no-data` తీర్పుపై ప్రాంప్ట్-కాష్ హెల్త్ సారాంశం; ప్రశ్న పారాములు `range` (`1h`\| `24h`\| `7d`\| `30d`, డిఫాల్ట్ `24h`) మరియు ఐచ్ఛిక `model` (#8827) |
+
+### API కీ అనుమతులు
+
+`PATCH /api/keys/{id}` ఇప్పటికే ఉన్న కీ అనుమతులను నవీకరిస్తుంది. ప్రతి `/api/keys*` మార్గం వలె దీనికి నిర్వహణ ప్రమాణీకరణ అవసరం ( [నిర్వహణ ప్రమాణీకరణ](../guides/MANAGEMENT-AUTH.md) చూడండి), అనుమితి కీ కాదు. మీరు మార్చాలనుకుంటున్న ఫీల్డ్లను మాత్రమే పంపండి; వాటిలో ఏదీ లేని అభ్యర్థన `No valid fields to update` తో తిరస్కరించబడింది. ఆమోదించబడిన ఫీల్డ్లు `src/shared/validation/schemas/keys.ts` లో `updateKeyPermissionsSchema` ద్వారా నిర్వచించబడ్డాయి.
+
+| ఫీల్డ్                                      | టైప్ చేయండి                                                           | గమనికలు                                                                                                                                                                                                                                                                            |
+| ------------------------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`                                      | స్ట్రింగ్, 1-200 అక్షరాలు                                             |                                                                                                                                                                                                                                                                                    |
+| `isActive`                                  | బూలియన్                                                               |                                                                                                                                                                                                                                                                                    |
+| `isBanned`                                  | బూలియన్                                                               |                                                                                                                                                                                                                                                                                    |
+| `expiresAt`                                 | ISO 8601 తేదీ సమయం లేదా `null`                                        | `null` గడువును క్లియర్ చేస్తుంది                                                                                                                                                                                                                                                   |
+| `modelAccessMode`                           | `all` \| `restricted`                                                 | మోడ్ `all` అయినప్పుడు`allowedModels` తప్పనిసరిగా ఖాళీగా ఉండాలి                                                                                                                                                                                                                     |
+| `allowedModels`, `blockedModels`            | తీగల శ్రేణి, 1000 వరకు                                                |                                                                                                                                                                                                                                                                                    |
+| `allowedCombos`                             | తీగల శ్రేణి, 500 వరకు                                                 | కీని కలిపే గేట్లు కాల్ చేయవచ్చు; ప్రత్యక్ష నమూనాలు `modelAccessMode` / `allowedModels` ద్వారా నిర్వహించబడతాయి                                                                                                                                                                      |
+| `connectionAccessMode`                      | `all` \| `restricted`                                                 | `allowedConnections` తప్పనిసరిగా `restricted` అయినప్పుడు ఖాళీగా ఉండకూడదు మరియు `all` అయినప్పుడు ఖాళీగా ఉండాలి                                                                                                                                                                      |
+| `allowedConnections`                        | UUIDs శ్రేణి, 100 వరకు                                                |                                                                                                                                                                                                                                                                                    |
+| `allowAutoCombos`                           | బూలియన్                                                               | `false` ఈ కీతో `auto/*` నమూనాల అభ్యర్థనలను తిరస్కరిస్తుంది; ఎప్పుడూ సెట్ చేయని కీలు అనుమతించబడతాయి                                                                                                                                                                                 |
+| `catalogScope`                              | `all` \| `combos` \| `models`                                         | ఈ కీ కోసం `GET /v1/models` ఏమి జాబితా చేస్తుంది (కాంబోలు మాత్రమే, మోడల్లు మాత్రమే లేదా రెండూ); కీ కాల్ చేసే దానిని మార్చదు                                                                                                                                                         |
+| `forcedModel`                               | 300 అక్షరాలు లేదా `null` వరకు స్ట్రింగ్                               | `X-Route-Model` మరియు `body.model` ద్వారా ఈ model/combo కి చాట్ అభ్యర్థనలను రూట్ చేస్తుంది; కీ పరిమితులు ఇప్పటికీ వర్తిస్తాయి                                                                                                                                                      |
+| `noLog`, `autoResolve`                      | బూలియన్                                                               |                                                                                                                                                                                                                                                                                    |
+| `throttleDelayMs`                           | పూర్ణాంకం, 0-300000                                                   |                                                                                                                                                                                                                                                                                    |
+| `maxSessions`                               | పూర్ణాంకం, 0-10000                                                    |                                                                                                                                                                                                                                                                                    |
+| `rateLimits`                                | `{ limit, window }` (సానుకూల పూర్ణాంకాలు, 50 వరకు) లేదా `null` శ్రేణి | `null` పరిమితులను క్లియర్ చేస్తుంది                                                                                                                                                                                                                                                |
+| `accessSchedule`                            | షెడ్యూల్ వస్తువు లేదా `null`                                          | `null` షెడ్యూల్ను క్లియర్ చేస్తుంది                                                                                                                                                                                                                                                |
+| `scopes`                                    | తీగల శ్రేణి, 32 వరకు                                                  |                                                                                                                                                                                                                                                                                    |
+| `allowedEndpoints`                          | తీగల శ్రేణి, 20 వరకు                                                  |                                                                                                                                                                                                                                                                                    |
+| `streamDefaultMode`                         | `legacy` \| `json`                                                    |                                                                                                                                                                                                                                                                                    |
+| `cacheDefaultMode`                          | `legacy` \| `bypass`                                                  | [పర్-కీ కాష్ బైపాస్](#per-key-cache-bypass) చూడండి                                                                                                                                                                                                                                 |
+| `compressionEnabled`                        | బూలియన్                                                               |                                                                                                                                                                                                                                                                                    |
+| `codexServiceMode`                          | Codex సర్వీస్ మోడ్లలో ఒకటి                                            |                                                                                                                                                                                                                                                                                    |
+| `disableNonPublicModels`                    | బూలియన్                                                               |                                                                                                                                                                                                                                                                                    |
+| `allowUsageCommand`                         | బూలియన్                                                               |                                                                                                                                                                                                                                                                                    |
+| `usageLimitEnabled`                         | బూలియన్                                                               |                                                                                                                                                                                                                                                                                    |
+| `dailyUsageLimitUsd`, `weeklyUsageLimitUsd` | సంఖ్య >= 0 లేదా `null`                                                |                                                                                                                                                                                                                                                                                    |
+| `fiveHourUsageLimitUsd`                     | సంఖ్య >= 0 లేదా `null`                                                | రోలింగ్ 5-గంటల USD బడ్జెట్, రోజువారీ మరియు వారపు పరిమితుల (`usageLimitEnabled`, `UNPRICED_USAGE_BUDGET_POLICY`) వలె అమలు చేయబడుతుంది. `retry-after` అనేది విండోలో ఎక్కువ కాలం గడిపిన వ్యక్తికి వయస్సు అయిపోయినప్పుడు, దాని పరిమితి కంటే ఎక్కువ కీని ఇప్పటికీ బ్లాక్ చేసి ఉంచవచ్చు. |
+| `chaosModeEnabled`                          | బూలియన్                                                               |                                                                                                                                                                                                                                                                                    |
+
+```bash
+curl -X PATCH "$OMNIROUTE_URL/api/keys/$KEY_ID" \
+  -H "Authorization: Bearer <management-credential>" \
+  -H "Content-Type: application/json" \
+  -d '{ "allowAutoCombos": false, "catalogScope": "combos" }'
+```
+
+### సెట్టింగ్లు
+
+| ఎండ్ పాయింట్                          | పద్ధతి        | వివరణ                                                                                                                                                                                                                                                                                  |
+| ------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/api/settings`                       | GET/PUT/PATCH | సాధారణ సెట్టింగులు. భద్రతా-విధాన కీలు (`requireLogin`, `newPassword`, `oidc*`, `corsOrigins`, `bruteForceProtection`) `currentPassword` అవసరం మరియు ఒక ఆపరేటర్ క్రెడెన్షియల్ — API కీలు మరియు `oma_` టోకెన్లు `403` పొందుతాయి ; ప్రతి మ్యుటేషన్కు `admin` యాక్సెస్-టోకెన్ స్కోప్ అవసరం |
+| `/api/settings/proxy`                 | GET/PUT       | నెట్వర్క్ ప్రాక్సీ కాన్ఫిగరేషన్                                                                                                                                                                                                                                                        |
+| `/api/settings/proxy/test`            | POST          | ప్రాక్సీ కనెక్షన్ని పరీక్షించండి                                                                                                                                                                                                                                                       |
+| `/api/settings/ip-filter`             | GET/PUT       | IP allowlist/blocklist                                                                                                                                                                                                                                                                 |
+| `/api/settings/thinking-budget`       | GET/PUT       | Thinking/reasoning** అభ్యర్థన** రీరైట్ మోడ్ (పాస్త్రూ / ఆటో-స్ట్రిప్ / కస్టమ్ / అడాప్టివ్). కుదింపు స్వతంత్ర. [THINKING_BUDGET.md](../guides/THINKING_BUDGET.md) చూడండి.                                                                                                               |
+| `/api/settings/system-prompt`         | GET/PUT       | గ్లోబల్ సిస్టమ్ ప్రాంప్ట్                                                                                                                                                                                                                                                              |
+| `/api/settings/compression`           | GET/PUT       | గ్లోబల్ కంప్రెషన్ కాన్ఫిగరేషన్                                                                                                                                                                                                                                                         |
+| `/api/settings/purge-request-history` | POST          | అభ్యర్థన లాగ్ అడ్డు వరుసలు మరియు స్థానిక కాల్-లాగ్ కళాఖండాలను క్లియర్ చేయండి                                                                                                                                                                                                           |
+
+### సందర్భం & కుదింపు
+
+| ఎండ్ పాయింట్                           | పద్ధతి         | వివరణ                                                                        |
+| -------------------------------------- | -------------- | ---------------------------------------------------------------------------- |
+| `/api/compression/preview`             | POST           | off/lite/standard/aggressive/ultra/RTK/stacked కుదింపును పరిదృశ్యం చేయండి    |
+| `/api/compression/language-packs`      | GET            | అందుబాటులో ఉన్న కేవ్మ్యాన్ భాషా ప్యాక్లను జాబితా చేయండి                      |
+| `/api/compression/rules`               | GET            | కేవ్మ్యాన్ రూల్ మెటాడేటాను జాబితా చేయండి                                     |
+| `/api/context/caveman/config`          | GET/PUT        | కేవ్మ్యాన్-నిర్దిష్ట సెట్టింగ్లు అలియాస్                                     |
+| `/api/context/rtk/config`              | GET/PUT        | కస్టమ్ ఫిల్టర్లు మరియు రా-అవుట్పుట్ నిలుపుదలతో సహా RTK-నిర్దిష్ట సెట్టింగ్లు |
+| `/api/context/rtk/filters`             | GET            | RTK ఫిల్టర్ కేటలాగ్ మరియు కస్టమ్-ఫిల్టర్ డయాగ్నస్టిక్స్                      |
+| `/api/context/rtk/test`                | POST           | టెక్స్ట్ పేలోడ్కు వ్యతిరేకంగా RTK preview/test అమలు చేయండి                   |
+| `/api/context/rtk/raw-output/[id]`     | GET            | పాయింటర్ ఐడి ద్వారా రిటైన్ చేయబడిన రీడక్ట్ చేసిన రా అవుట్పుట్ను చదవండి       |
+| `/api/context/combos`                  | GET/POST       | కంప్రెషన్ కాంబో list/create                                                  |
+| `/api/context/combos/[id]`             | GET/PUT/DELETE | కంప్రెషన్ కాంబో detail/update/delete                                         |
+| `/api/context/combos/[id]/assignments` | GET/PUT        | రౌటింగ్ కాంబోలకు కంప్రెషన్ కాంబోలను కేటాయించండి                              |
+| `/api/context/analytics`               | GET            | కంప్రెషన్ అనలిటిక్స్ అలియాస్                                                 |
+
+### మానిటరింగ్
+
+| ఎండ్ పాయింట్                         | పద్ధతి     | వివరణ                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ------------------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/api/sessions`                      | GET        | సక్రియ సెషన్ ట్రాకింగ్                                                                                                                                                                                                                                                                                                                                                                                 |
+| `/api/rate-limits`                   | GET        | ప్రతి ఖాతా రేటు పరిమితులు                                                                                                                                                                                                                                                                                                                                                                              |
+| `/api/monitoring/health`             | GET        | ఆరోగ్య తనిఖీ + ప్రొవైడర్ సారాంశం (`catalogCount`, `configuredCount`, `activeCount`, `monitoredCount`). నిర్వహణ వీక్షణలో `credentialHealth`: ప్రోబ్-కాష్ స్కేలర్లు, `failedConnections` ఉన్నప్పుడు `failed>0` మరియు `staleDbNonOkCount` (SQLite స్టిక్కీ `test_status`, గేజ్ కాదు) ఉంటాయి. [MONITORING_GUIDE.md](../ops/MONITORING_GUIDE.md#credentialhealth-probe-cache-vs-sqlite-test_status) చూడండి. |
+| `/api/cache/stats`                   | GET/DELETE | కాష్ గణాంకాలు / క్లియర్                                                                                                                                                                                                                                                                                                                                                                                |
+| `/api/modality-bridge/stats`         | GET        | ఇన్-మెమరీ `attempts`, విజయాలు/`bridged`, వైఫల్యాలు, కాష్ హిట్లు, `totalLatencyMs`, `latencySamples`, నమూనా-డినామినేటెడ్ `averageLatencyMs`, మరియు చివరి వినియోగ సమయం (పునఃప్రారంభించినప్పుడు రీసెట్ చేయండి; నిర్వహణ ప్రమాణీకరణ)                                                                                                                                                                        |
+| `/api/modality-bridge/video/runtime` | GET        | నిర్వహణ auth/probe ముందు కఠినమైన విశ్వసనీయ-లూప్బ్యాక్ తనిఖీ; శుభ్రపరచబడిన FFmpeg/ffprobe లభ్యత మరియు సంస్కరణలు (నో-స్టోర్)                                                                                                                                                                                                                                                                             |
+| `/api/modality-bridge/video/extract` | POST       | అంతర్గత ప్రమాణీకరించబడిన విశ్వసనీయ-లూప్బ్యాక్ బైట్ బ్రోకర్; 50 MiB ఇన్పుట్, పరిమితమైన queue/32 MiB అవుట్పుట్, `503` సామర్థ్యం, `499` డిస్కనెక్ట్, `504` గడువు; పబ్లిక్ అప్లోడ్ API కాదు                                                                                                                                                                                                                |
+
+### వీడియో ఫ్రేమ్ డ్రిల్-డౌన్
+
+`GET /api/v1/video-bridge/drilldown` స్పష్టంగా సమ్మతించిన వీడియో బ్రిడ్జ్ అభ్యర్థన తర్వాత `x-omniroute-video-drilldown` లో అద్దెదారు-బౌండ్ అపారదర్శక హ్యాండిల్ను రీడ్ చేస్తుంది. రీడ్లు మరియు `DELETE` రెండింటికీ ఎల్లప్పుడూ చెల్లుబాటు అయ్యే API కీ మరియు ఆపరేటర్ యొక్క స్వతంత్ర `modalityBridgeVideoDrilldownRemoteEnabled` అనుమతి అవసరం. ఉత్పత్తి నిలుపుదలకి అదనంగా `modalityBridgeVideoDrilldownEnabled` మరియు ఖచ్చితమైన పర్-పార్ట్ `drilldown: true` అవసరం. కీ ఖాళీగా లేని ముగింపు పాయింట్ అనుమతి జాబితాను కలిగి ఉన్నట్లయితే, అది తప్పనిసరిగా GET మరియు DELETE రెండింటికీ `video` కలిగి ఉండాలి, కాలర్ `/v1` లేదా `/api/v1` ఉపయోగించినా.
+
+GET ప్రశ్న: అవసరమైన `handle`; ఐచ్ఛిక `variant` (`preview`, `standard`, `detail`), `limit` (1–8; లెగసీ `frames` ఆమోదించబడింది కానీ `limit` తో కలపడం సాధ్యం కాదు), సున్నా-ఆధారిత `page` మరియు `start`/`end` సెకన్లు. రెండు ఫోకస్ హద్దులు సరఫరా చేయబడినప్పుడు, `end` తప్పనిసరిగా `start` కంటే ఎక్కువగా ఉండాలి. Duplicate/unknown ప్రశ్న కీలు తిరస్కరించబడ్డాయి. విజయవంతమైన ప్రతిస్పందనలు `derivation`, `durationSeconds`, `frames`, `hasMore`, `page`, `variant`, మరియు ఐచ్ఛిక `focusWindow`; నో-స్టోర్ JSON బేస్64తో సహా 32 MiB వద్ద క్యాప్ చేయబడింది. ఓవర్సైజ్డ్ అవుట్పుట్ రిటర్న్స్ 413; తక్కువ ఫ్రేమ్లను అభ్యర్థించండి.
+
+`DELETE /api/v1/video-bridge/drilldown?handle=...` తిరిగి `{ "removed": 0|1 }`. తెలియని, గడువు ముగిసిన మరియు క్రాస్-కీ GETs వేరు చేయలేని 404 ప్రతిస్పందనలు; క్రాస్-కీ DELETE యజమాని ఎంట్రీని తీసివేయలేదు. డిసేబుల్ యాక్సెస్ రిటర్న్స్ 403, missing/invalid ప్రామాణీకరణ 401, చెల్లని ప్రశ్నలు 400, రద్దు 499 మరియు తాత్కాలిక లోపాలు 503. హ్యాండిల్స్ ప్రాసెస్-స్థానికమైనవి, పది నిమిషాల తర్వాత గడువు ముగుస్తాయి మరియు పునఃప్రారంభించబడవు. కొత్త హ్యాండిల్స్ `v1.` ప్లస్ 32-బైట్ యాదృచ్ఛిక Base64URL టోకెన్ను ఉపయోగిస్తాయి; టోకెన్ హాష్లు మాత్రమే ఉంచబడతాయి. లెగసీ 64-హెక్స్ టోకెన్లు అనుకూలత కోసం వాక్యనిర్మాణ రీడబుల్గా ఉంటాయి. సమ్మతి, కోటాలు మరియు వేరియంట్ డెరివేషన్ వివరాల కోసం [వీడియో బ్రిడ్జ్ గార్డ్రైల్లను](../security/GUARDRAILS.md#video-bridge-videobridgets-videobridgepipelinets) చూడండి.
+
+### బ్యాకప్ & Export/Import
+
+| ఎండ్ పాయింట్                | పద్ధతి | వివరణ                                                                                         |
+| --------------------------- | ------ | --------------------------------------------------------------------------------------------- |
+| `/api/db-backups`           | GET    | అందుబాటులో ఉన్న బ్యాకప్లను జాబితా చేయండి                                                      |
+| `/api/db-backups`           | PUT    | మాన్యువల్ బ్యాకప్ను సృష్టించండి                                                               |
+| `/api/db-backups`           | POST   | నిర్దిష్ట బ్యాకప్ నుండి పునరుద్ధరించండి                                                       |
+| `/api/db-backups`           | PATCH  | బ్యాకప్ నిలుపుదల సెట్టింగ్లను సేవ్ చేయండి (ఆపరేటర్-మాత్రమే)                                   |
+| `/api/db-backups`           | DELETE | నిల్వ చేసిన బ్యాకప్లను నిలుపుదల సెట్టింగ్లకు కత్తిరించండి (ఆపరేటర్-మాత్రమే)                   |
+| `/api/db-backups/export`    | GET    | డేటాబేస్ని .sqlite ఫైల్గా డౌన్లోడ్ చేయండి                                                     |
+| `/api/db-backups/import`    | POST   | డేటాబేస్ స్థానంలో .sqlite ఫైల్ను అప్లోడ్ చేయండి (`?dryRun=true` చెల్లుబాటు చేస్తుంది మాత్రమే) |
+| `/api/db-backups/exportAll` | GET    | పూర్తి బ్యాకప్ను .tar.gz ఆర్కైవ్గా డౌన్లోడ్ చేయండి                                            |
+
+`/api/db-backups/export`, `/api/db-backups/exportAll` మరియు `/api/settings/export-json` నిల్వ చేయబడిన ప్రతి ఆధారాలను అందజేస్తాయి, కాబట్టి వాటికి డాష్బోర్డ్ సెషన్ లేదా స్థానిక CLI (లేదా లాగిన్ డిసేబుల్) అవసరం. ఏదైనా స్కోప్ యొక్క API కీలు మరియు `oma_` యాక్సెస్ టోకెన్లు `403` పొందుతాయి. పునరుద్ధరణలు ఒకే సరిహద్దును కలిగి ఉంటాయి: `POST /api/db-backups/import` (`dryRun=true` చేర్చబడింది), `POST /api/db-backups` (id ద్వారా పునరుద్ధరించు) మరియు `POST /api/settings/import-json` ప్రత్యక్ష డేటాబేస్ లేదా సెట్టింగ్లను భర్తీ చేస్తాయి, కాబట్టి మెషీన్ క్రెడెన్షియల్ అక్కడ కూడా `403` పొందుతుంది; `omniroute sync import` స్థానిక CLI ఆధారాలను పంపుతుంది. కాబట్టి `DELETE /api/db-backups` (ప్రూన్ నిల్వ చేయబడిన బ్యాకప్లు) మరియు `PATCH /api/db-backups` (నిలుపుదల సెట్టింగ్లు: ప్రతి బ్యాకప్ తర్వాత స్థిరమైన విలువలు ఆటోమేటిక్ కత్తిరింపును డ్రైవ్ చేస్తాయి). జాబితా చేయడం (`GET`) మరియు మాన్యువల్ బ్యాకప్ (`PUT`) సృష్టించడం సాధారణ నిర్వహణ ప్రమాణాన్ని ఉంచుతుంది.
+
+### క్లౌడ్ సమకాలీకరణ
+
+| ఎండ్ పాయింట్           | పద్ధతి | వివరణ                         |
+| ---------------------- | ------ | ----------------------------- |
+| `/api/sync/cloud`      | వివిధ  | క్లౌడ్ సమకాలీకరణ కార్యకలాపాలు |
+| `/api/sync/initialize` | POST   | సమకాలీకరణను ప్రారంభించండి     |
+| `/api/cloud/*`         | వివిధ  | క్లౌడ్ నిర్వహణ                |
+
+### సొరంగాలు
+
+| ఎండ్ పాయింట్               | పద్ధతి | వివరణ                                                                                 |
+| -------------------------- | ------ | ------------------------------------------------------------------------------------- |
+| `/api/tunnels/cloudflared` | GET    | డాష్బోర్డ్ కోసం Cloudflare క్విక్ టన్నెల్ install/runtime స్థితిని చదవండి             |
+| `/api/tunnels/cloudflared` | POST   | Cloudflare త్వరిత టన్నెల్ (`action=enable/disable`)ని ప్రారంభించండి లేదా నిలిపివేయండి |
+| `/api/tunnels/ngrok`       | GET    | డాష్బోర్డ్ కోసం ngrok టన్నెల్ రన్టైమ్ స్థితిని చదవండి                                 |
+| `/api/tunnels/ngrok`       | POST   | ngrok టన్నెల్ (`action=enable/disable`)ని ప్రారంభించండి లేదా నిలిపివేయండి             |
+
+### CLI సాధనాలు
+
+| ఎండ్ పాయింట్                       | పద్ధతి | వివరణ               |
+| ---------------------------------- | ------ | ------------------- |
+| `/api/cli-tools/claude-settings`   | GET    | Claude CLI స్థితి   |
+| `/api/cli-tools/codex-settings`    | GET    | Codex CLI స్థితి    |
+| `/api/cli-tools/droid-settings`    | GET    | Droid CLI స్థితి    |
+| `/api/cli-tools/openclaw-settings` | GET    | OpenClaw CLI స్థితి |
+| `/api/cli-tools/runtime/[toolId]`  | GET    | సాధారణ CLI రన్టైమ్  |
+
+CLI ప్రతిస్పందనలు: `installed`, `runnable`, `command`, `commandPath`, `runtimeMode`, `reason`.
+
+### ACP ఏజెంట్లు
+
+| ఎండ్ పాయింట్      | పద్ధతి | వివరణ                                                                        |
+| ----------------- | ------ | ---------------------------------------------------------------------------- |
+| `/api/acp/agents` | GET    | స్టేటస్తో గుర్తించబడిన అన్ని ఏజెంట్లను (అంతర్నిర్మిత + కస్టమ్) జాబితా చేయండి |
+| `/api/acp/agents` | POST   | అనుకూల ఏజెంట్ని జోడించండి లేదా గుర్తింపు కాష్ని రిఫ్రెష్ చేయండి              |
+| `/api/acp/agents` | DELETE | `id` ప్రశ్న పారామ్ ద్వారా అనుకూల ఏజెంట్ను తీసివేయండి                         |
+
+GET ప్రతిస్పందనలో `agents[]` (id, పేరు, బైనరీ, వెర్షన్, ఇన్స్టాల్ చేయబడింది, ప్రోటోకాల్, isCustom) మరియు `summary` (మొత్తం, ఇన్స్టాల్ చేయబడింది, notFound, builtIn, కస్టమ్) ఉన్నాయి.
+
+### స్థితిస్థాపకత & ధర పరిమితులు
+
+| ఎండ్ పాయింట్                      | పద్ధతి    | వివరణ                                                                                                                                                                                                                                                                                                                                                                                                 |
+| --------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/api/resilience`                 | GET/PATCH | Get/update అభ్యర్థన క్యూ, కనెక్షన్ కూల్డౌన్, ప్రొవైడర్ బ్రేకర్ మరియు వెయిట్ సెట్టింగ్లు                                                                                                                                                                                                                                                                                                               |
+| `/api/resilience/reset`           | POST      | ప్రొవైడర్ సర్క్యూట్ బ్రేకర్లను రీసెట్ చేయండి                                                                                                                                                                                                                                                                                                                                                          |
+| `/api/resilience/model-cooldowns` | GET       | సక్రియ ప్రతి-(ప్రొవైడర్, కనెక్షన్, మోడల్) లాకౌట్ల జాబితా, మిగిలిన సమయం ఆధారంగా క్రమబద్ధీకరించబడింది                                                                                                                                                                                                                                                                                                   |
+| `/api/resilience/model-cooldowns` | DELETE    | అన్నింటినీ తుడిచివేయడానికి మోడల్ లాకౌట్ — బాడీ `{provider, model}` లేదా `{all: true}` ని క్లియర్ చేయండి                                                                                                                                                                                                                                                                                               |
+| `/api/rate-limits`                | GET/POST  | ప్రతి ఖాతా రేటు పరిమితి స్థితి (GET) లేదా కనెక్షన్ కోసం టోగుల్ రేటు-పరిమితి రక్షణ (POST `{connectionId, enabled}`). `rateLimitProtection` కోసం మద్దతు గల రైట్ పాత్ ( `PUT /api/providers/[id]` ద్వారా ఎప్పుడూ సవరించబడలేదు). గమనిక: `enabled: false` స్పష్టమైన రక్షణను నిలిపివేస్తుంది కానీ గ్లోబల్ ఆటో-ఎనేబుల్ సేఫ్టీ నెట్ (`autoEnableApiKeyProviders`) నుండి క్రియాశీల API-కీ కనెక్షన్ని ఎంచుకోదు. |
+| `/api/rate-limit`                 | GET       | గ్లోబల్ రేట్ పరిమితి కాన్ఫిగరేషన్ (విస్మరించబడింది; మారుపేరు `/api/rate-limits`)                                                                                                                                                                                                                                                                                                                      |
+
+> అన్ని నాలుగు `/api/resilience/*` మార్గాలు అవసరం** నిర్వహణ ప్రమాణం** (`requireManagementAuth`) ప్రొవైడర్ బ్రేకర్ vs కనెక్షన్ కూల్డౌన్ vs మోడల్ లాకౌట్ యొక్క పూర్తి బ్రేక్డౌన్ కోసం [రెసిలెన్స్ (పొడిగించబడింది)](#resilience-extended) చూడండి.
+
+### ఎవాల్స్
+
+| ఎండ్ పాయింట్ | పద్ధతి   | వివరణ                                        |
+| ------------ | -------- | -------------------------------------------- |
+| `/api/evals` | GET/POST | ఎవాల్ సూట్లను జాబితా చేయండి / రన్ మూల్యాంకనం |
+
+### విధానాలు
+
+| ఎండ్ పాయింట్    | పద్ధతి          | వివరణ                          |
+| --------------- | --------------- | ------------------------------ |
+| `/api/policies` | GET/POST/DELETE | రూటింగ్ విధానాలను నిర్వహించండి |
+
+### వర్తింపు
+
+| ఎండ్ పాయింట్                | పద్ధతి | వివరణ                         |
+| --------------------------- | ------ | ----------------------------- |
+| `/api/compliance/audit-log` | GET    | వర్తింపు ఆడిట్ లాగ్ (చివరి N) |
+
+### v1beta (జెమిని-అనుకూలమైనది)
+
+| ఎండ్ పాయింట్               | పద్ధతి | వివరణ                                   |
+| -------------------------- | ------ | --------------------------------------- |
+| `/v1beta/models`           | GET    | Gemini ఆకృతిలో జాబితా నమూనాలు           |
+| `/v1beta/models/{...path}` | POST   | Gemini `generateContent` ముగింపు స్థానం |
+
+ఈ ముగింపు పాయింట్లు స్థానిక Gemini SDK అనుకూలతను ఆశించే క్లయింట్ల కోసం Gemini యొక్క API ఆకృతిని ప్రతిబింబిస్తాయి.
+
+### అంతర్గత / సిస్టమ్ APIs
+
+| ఎండ్ పాయింట్             | పద్ధతి | వివరణ                                                      |
+| ------------------------ | ------ | ---------------------------------------------------------- |
+| `/api/init`              | GET    | నేపథ్య సమకాలీకరణ సేవలను ప్రారంభించండి (నిర్వహణ ప్రమాణీకరణ) |
+| `/api/tags`              | GET    | ఒల్లామా-అనుకూల మోడల్ ట్యాగ్లు ( Ollama క్లయింట్ల కోసం)     |
+| `/api/restart`           | POST   | ఆకర్షణీయమైన సర్వర్ పునఃప్రారంభాన్ని ట్రిగ్గర్ చేయండి       |
+| `/api/shutdown`          | POST   | ఆకర్షణీయమైన సర్వర్ షట్డౌన్ను ట్రిగ్గర్ చేయండి              |
+| `/api/system/env/repair` | POST   | OAuth ప్రొవైడర్ ఎన్విరాన్మెంట్ వేరియబుల్స్ రిపేర్ చేయండి   |
+| `/api/system/version`    | GET    | Current/latest వెర్షన్, అప్డేట్ స్థితి, విడుదల ఛానెల్      |
+| `/api/system/version`    | POST   | తాజా సంస్కరణకు విస్తరణ-అవగాహన నవీకరణను ప్రారంభించండి       |
+
+> **గమనిక:** ఈ ముగింపు బిందువులు సిస్టమ్ ద్వారా లేదా Ollama క్లయింట్ అనుకూలత కోసం అంతర్గతంగా ఉపయోగించబడతాయి. వారు సాధారణంగా తుది వినియోగదారులచే పిలవబడరు.
+
+### OAuth పర్యావరణ మరమ్మతు _(v3.6.1 +)_
+
+```bash
+POST /api/system/env/repair
+Content-Type: application/json
+
+{
+  "provider": "claude-code"
+}
+```
+
+నిర్దిష్ట ప్రొవైడర్ కోసం తప్పిపోయిన లేదా పాడైన OAuth ఎన్విరాన్మెంట్ వేరియబుల్స్ను రిపేర్ చేస్తుంది. రిటర్న్స్:
+
+```json
+{
+  "success": true,
+  "repaired": ["CLAUDE_CODE_OAUTH_CLIENT_ID", "CLAUDE_CODE_OAUTH_CLIENT_SECRET"],
+  "backupPath": "/home/user/.omniroute/backups/env-repair-2026-04-11.bak"
+}
+```
+
+### వెర్షన్ మరియు విడుదల ఛానెల్
+
+```bash
+GET /api/system/version
+```
+
+లూప్బ్యాక్-మాత్రమే నిర్వహణ మార్గం (అడ్మిన్ ప్రమాణీకరణ). నడుస్తున్న సంస్కరణ, తాజాగా ప్రచురించబడిన సంస్కరణ మరియు స్వీయ-నవీకరణ స్థితిని అందిస్తుంది. `releaseChannel` మరియు `channels` సంకలిత క్షేత్రాలు (రైలు 3.8.54); `channel` దాని అర్థాన్ని — డ్యాష్బోర్డ్ అప్డేటర్ ఉపయోగించే డిప్లాయ్మెంట్ మోడ్గా ఉంచుతుంది (`npm`, `source` లేదా `docker-compose`).
+
+```json
+{
+  "current": "3.8.52",
+  "latest": "3.8.52",
+  "updateAvailable": false,
+  "channel": "npm",
+  "autoUpdateSupported": true,
+  "autoUpdateError": null,
+  "news": null,
+  "releaseChannel": "latest",
+  "channels": { "latest": "3.8.52", "next": "3.8.53-rc.1" }
+}
+```
+
+- నడుస్తున్న బిల్డ్ యొక్క `releaseChannel` — npm ఛానెల్: `-nightly.*` వెర్షన్ల కోసం `nightly`, ఇతర ప్రీ-రిలీజ్ల కోసం `next` (`-rc.*`, `-beta.*`, `-alpha.*`), `channels.latest` కంటే పాత మేజర్ యొక్క స్థిరమైన వెర్షన్ కోసం `lts`, లేకపోతే `latest`. అదే నియమాలు `scripts/release/dist-tag.mjs`, ఇది ప్రచురణ సమయంలో npm డిస్ట్-ట్యాగ్ని ఎంచుకుంటుంది.
+- `channels` — ప్రతి డిస్ట్-ట్యాగ్ యొక్క హెడ్ని ప్రచురించింది, `npm view omniroute dist-tags` (రిజిస్ట్రీ HTTP ఫాల్బ్యాక్) నుండి, `latest` వలె అదే 10 నిమిషాల TTL తో కాష్ చేయబడింది. `latest` ఎల్లప్పుడూ ఉంటుంది ( `latest` ఫీల్డ్కి తిరిగి వస్తుంది, ఆపై `"unavailable"`); `next`, `nightly` మరియు `lts` ఆ dist-tag ఉనికిలో ఉన్నప్పుడు మాత్రమే కనిపిస్తాయి. `Cache-Control: no-cache` అభ్యర్థన రెండు శోధనలను రిఫ్రెష్ చేస్తుంది.
+
+ఛానెల్ మోడల్ (`latest` = v3 వరకు 4.0 GA, `next` = rc, `nightly` = `develop` బిల్డ్లు, 4.0 GA తర్వాత `lts` = v3 ప్యాచ్లు) `docs/ops/RELEASE_STRATEGY.md` లో వివరించబడింది.
+
+---
+
+## ఆడియో ట్రాన్స్క్రిప్షన్
+
+```bash
+POST /v1/audio/transcriptions
+Authorization: Bearer your-api-key
+Content-Type: multipart/form-data
+```
+
+కాన్ఫిగర్ చేసిన ఏదైనా STT ప్రొవైడర్ను ఉపయోగించి ఆడియో ఫైళ్లను ట్రాన్స్క్రైబ్ చేయండి. మొదటి పాత్
+సెగ్మెంట్ స్థానిక ప్రొవైడర్ను ఎంచుకుంటుంది (`openai/…`, `deepgram/…`). మరొక విక్రేత మోడల్ను
+మళ్లీ ఎగుమతి చేసే గేట్వేలు అర్హత కలిగిన idను ఉపయోగిస్తాయి
+(`openrouter/deepgram/nova-3`).
+
+**అభ్యర్థన:**
+
+```bash
+curl -X POST http://localhost:20128/v1/audio/transcriptions \
+  -H "Authorization: Bearer your-api-key" \
+  -F "file=@recording.mp3" \
+  -F "model=openai/whisper-1"
+```
+
+**ప్రతిస్పందన:**
+
+```json
+{
+  "text": "Hello, this is the transcribed audio content.",
+  "task": "transcribe",
+  "language": "en",
+  "duration": 12.5
+}
+```
+
+**ఉదాహరణ model ids:** `openai/whisper-1` (OpenAI కీ అవసరం),
+`openrouter/deepgram/nova-3` (OpenRouter కీ అవసరం),
+`deepgram/nova-3` (స్థానిక Deepgram కీ అవసరం). కేవలం
+`deepgram/nova-3`తో చేసే అభ్యర్థన OpenRouterను ఉపయోగించదు.
+
+**మద్దతు ఉన్న ఫార్మాట్లు:** `mp3`, `wav`, `m4a`, `flac`, `ogg`, `webm`.
+
+**Gemini Live (`gemini/gemini-3.5-transcribe-live`):** Gemini Live
+WebSocket ద్వారా ఫైల్-మోడ్ ట్రాన్స్క్రిప్షన్ (Gemini API కీ అవసరం). అప్లోడ్ను `ffmpeg`
+తో 16 kHz మోనో PCMకు మార్చి (ఫైల్ ఇప్పటికే 16 kHz మోనో PCM WAV అయితే తప్పనిసరిగా
+`PATH`లో ఉండాలి), సెషన్కు స్ట్రీమ్ చేసి, తుది టెక్స్ట్ను `{ "text": "..." }`గా అందిస్తుంది. ఐచ్ఛికమైన
+`language` మరియు `prompt` ఫారమ్ ఫీల్డ్లు ఫార్వర్డ్ చేయబడతాయి. పరిమితులు: 25 MiB కంటే
+పెద్ద అప్లోడ్లు లేదా డీకోడ్ చేసిన 10 నిమిషాల కంటే ఎక్కువ నిడివి ఉన్న ఆడియోకు `413`
+ప్రతిస్పందన వస్తుంది; మార్పిడి 60 s కంటే ఎక్కువ సమయం తీసుకుంటే అది నిలిపివేయబడి `504`
+ప్రతిస్పందన వస్తుంది. API కీ `x-goog-api-key` హెడర్లో మాత్రమే పంపబడుతుంది, WebSocket URLలో
+ఎప్పుడూ పంపబడదు.
+
+---
+
+## Ollama అనుకూలత
+
+Ollama API ఫార్మాట్ను ఉపయోగించే క్లయింట్ల కోసం:
+
+```bash
+# చాట్ ఎండ్పాయింట్ (Ollama ఫార్మాట్)
+POST /v1/api/chat
+
+# మోడల్ జాబితా (Ollama ఫార్మాట్)
+GET /api/tags
+```
+
+అభ్యర్థనలు Ollama మరియు అంతర్గత ఫార్మాట్ల మధ్య స్వయంచాలకంగా అనువదించబడతాయి.
+
+## టోకనైజ్ చేసిన VS Code / హెడర్లేని అలియాస్లు
+
+ఇంటిగ్రేషన్కు `Authorization` హెడర్ను జోడించడం సాధ్యం కాకపోయి, API కీని బేస్ URLలో పొందుపరచాల్సి వచ్చినప్పుడు ఈ అలియాస్లను ఉపయోగించండి.
+
+```bash
+# OpenAI-శైలి క్యాటలాగ్ అలియాస్
+GET /api/v1/vscode/{token}/
+GET /api/v1/vscode/{token}/models
+
+# OpenAI-శైలి చాట్ అలియాస్లు
+POST /api/v1/vscode/{token}/chat/completions
+POST /api/v1/vscode/{token}/responses
+
+# Ollama-శైలి అలియాస్లు
+POST /api/v1/vscode/{token}/api/chat
+GET /api/v1/vscode/{token}/api/tags
+```
+
+ఉదాహరణ:
+
+```bash
+curl https://your-host.example/api/v1/vscode/YOUR_API_KEY/models
+curl -X POST https://your-host.example/api/v1/vscode/YOUR_API_KEY/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{"model":"auto","messages":[{"role":"user","content":"hello"}]}'
+```
+
+గమనికలు:
+
+- టోకనైజ్ చేసిన అలియాస్లు `/v1/*` మరియు `/api/tags`లతో అదే హ్యాండ్లర్లను పునర్వినియోగిస్తాయి; ప్రతిస్పందన ఆకృతులు ఒకేలా ఉంటాయి.
+- క్లయింట్ అనుకూల హెడర్లకు మద్దతు ఇస్తే, ఎల్లప్పుడూ `Authorization: Bearer ...`కు ప్రాధాన్యత ఇవ్వండి.
+- URL-ఆధారిత టోకన్లు OmniRoute వెలుపల ఉన్న రివర్స్-ప్రాక్సీ లాగ్లు, బ్రౌజర్ చరిత్ర మరియు టెలిమెట్రీలో కనిపించవచ్చు. వాటిని డిఫాల్ట్ ప్రమాణీకరణ విధానంగా కాకుండా, అనుకూలత ఎంపికగా పరిగణించండి.
+
+---
+
+## టెలిమెట్రీ
+
+```bash
+# లేటెన్సీ టెలిమెట్రీ సారాంశాన్ని పొందండి (ప్రతి ప్రొవైడర్కు p50/p95/p99)
+GET /api/telemetry/summary
+```
+
+**ప్రతిస్పందన:**
+
+```json
+{
+  "providers": {
+    "claudeCode": { "p50": 245, "p95": 890, "p99": 1200, "count": 150 },
+    "github": { "p50": 180, "p95": 620, "p99": 950, "count": 320 }
+  }
+}
+```
+
+---
+
+## బడ్జెట్
+
+```bash
+# అన్ని API కీల కోసం బడ్జెట్ స్థితిని పొందండి
+GET /api/usage/budget
+
+# బడ్జెట్ను సెట్ చేయండి లేదా నవీకరించండి
+POST /api/usage/budget
+Content-Type: application/json
+
+{
+  "apiKeyId": "key-123",
+  "dailyLimitUsd": 5.00,
+  "weeklyLimitUsd": 30.00,
+  "monthlyLimitUsd": 100.00,
+  "warningThreshold": 0.8,
+  "resetInterval": "monthly"
+}
+```
+
+> **స్కీమా గమనికలు** (`setBudgetSchema`): `apiKeyId` తప్పనిసరి; `dailyLimitUsd`, `weeklyLimitUsd`, లేదా `monthlyLimitUsd`లో కనీసం ఒకటి సున్నా కంటే ఎక్కువగా ఉండాలి. ఐచ్ఛిక ఫీల్డ్లు: `warningThreshold` (0–1), `resetInterval` (`daily` | `weekly` | `monthly`), `resetTime` (`HH:MM`). పాత `{keyId, limit, period}` ఆకృతి `400 Bad Request`ను అందిస్తుంది.
+
+## టోకెన్ పరిమితులు
+
+ప్రతి API కీకి సంబంధించిన **టోకెన్** బడ్జెట్లు (పైన పేర్కొన్న USD-ఆధారిత బడ్జెట్కు భిన్నమైనవి). ఇవి అభ్యర్థన మార్గంలోనే అమలు చేయబడతాయి: ఒక కీ యొక్క ప్రస్తుత విండో వినియోగం దాని పరిమితిని చేరుకున్నప్పుడు, అభ్యర్థనలు `429 Too Many Requests`తో తిరస్కరించబడతాయి. పరిమితులను నిర్దిష్ట `model`, ఒక `provider`కు పరిధి చేయవచ్చు లేదా కీ అంతటా `global`గా వర్తింపజేయవచ్చు; ఒక అభ్యర్థనకు అనేక పరిమితులు సరిపోతే, అత్యంత కఠినమైన పరిమితి అమలవుతుంది.
+
+```bash
+# కీకి సంబంధించిన టోకెన్ పరిమితులను జాబితా చేయండి (ప్రస్తుత విండో వినియోగంతో సహా)
+GET /api/usage/token-limits?apiKeyId=key-123
+
+# టోకెన్ పరిమితిని సృష్టించండి లేదా నవీకరించండి
+POST /api/usage/token-limits
+Content-Type: application/json
+
+{
+  "apiKeyId": "key-123",
+  "scopeType": "model",
+  "scopeValue": "openai/gpt-4o",
+  "tokenLimit": 1000000,
+  "resetInterval": "monthly",
+  "enabled": true
+}
+
+# id ద్వారా టోకెన్ పరిమితిని తొలగించండి
+DELETE /api/usage/token-limits?id=tl-abc
+```
+
+> **స్కీమా గమనికలు** (`setTokenLimitSchema`): `apiKeyId` మరియు `scopeType` (`model` | `provider` | `global`) తప్పనిసరి. `scopeType` `global` కానప్పుడు `scopeValue` తప్పనిసరి (`model` పరిధికి మోడల్ id, `provider` పరిధికి provider id వంటివి). `tokenLimit` ధనాత్మక పూర్ణాంకం అయి ఉండాలి (స్ట్రింగ్ నుంచి మార్పిడి చేయబడుతుంది). ఐచ్ఛికాలు: `id` (సృష్టించేటప్పుడు వదిలివేయండి, నవీకరించేటప్పుడు అందించండి), `resetInterval` (`daily` | `weekly` | `monthly`, డిఫాల్ట్ `monthly`), `resetTime` (`HH:MM`), `enabled` (డిఫాల్ట్ `true`). `GET` ప్రతిస్పందనలు ప్రతి పరిమితికి `tokensUsed`, `remaining`, `windowStart`, `periodStartAt`, మరియు `nextResetAt`లను అదనంగా జోడిస్తాయి. ఇది నిర్వహణ-తరగతి ఎండ్పాయింట్ (ఆథ్ కేంద్రంగా authz పైప్లైన్ ద్వారా అమలు చేయబడుతుంది).
+
+## అభ్యర్థన ప్రాసెసింగ్
+
+1. క్లయింట్ `/v1/*`కు అభ్యర్థన పంపుతుంది
+2. రూట్ హ్యాండ్లర్ `handleChat`, `handleEmbedding`, `handleAudioTranscription`, లేదా `handleImageGeneration`ను పిలుస్తుంది
+3. మోడల్ పరిష్కరించబడుతుంది (నేరుగా provider/model లేదా alias/combo)
+4. ఖాతా అందుబాటు ఫిల్టరింగ్తో స్థానిక DB నుంచి ఆధారాలు ఎంపిక చేయబడతాయి
+5. చాట్ కోసం: `handleChatCore` semantic/signature cacheను తనిఖీ చేసి, combo compression సెట్టింగ్లను పరిష్కరిస్తుంది
+6. ప్రారంభ కంప్రెషన్ ప్రారంభించబడినప్పుడు provider అనువాదానికి ముందు అమలవుతుంది (`lite`, Caveman, RTK, లేదా stacked)
+7. Provider executor upstream అభ్యర్థనను పంపుతుంది
+8. ప్రతిస్పందనను క్లయింట్ ఫార్మాట్కు (చాట్) తిరిగి అనువదిస్తారు లేదా ఉన్నదున్నట్లుగా (embeddings/images/audio) అందిస్తారు
+9. వినియోగం, కంప్రెషన్ అనలిటిక్స్, మరియు అభ్యర్థన లాగ్లు నమోదు చేయబడతాయి
+10. combo నియమాల ప్రకారం లోపాలపై fallback వర్తిస్తుంది
+
+పూర్తి ఆర్కిటెక్చర్ సూచన: [`ARCHITECTURE.md`](../architecture/ARCHITECTURE.md)
+
+---
+
+## Combo నిర్వహణ
+
+ఉన్నత-స్థాయి రూటింగ్ combos (ఇవి ఇప్పటికే `/api/combos*` కింద సంక్షిప్తంగా వివరించబడ్డాయి)ను మోడల్ id నమూనా నుంచి 1:1గా మ్యాప్ చేయవచ్చు. దీని ద్వారా OpenAI-శైలి మోడల్ idను పారదర్శకంగా comboకు మళ్లించవచ్చు.
+
+| పద్ధతి | మార్గం                           | వివరణ                                                                                 |
+| ------ | -------------------------------- | ------------------------------------------------------------------------------------- |
+| GET    | `/api/model-combo-mappings`      | అన్ని model→combo మ్యాపింగ్లను జాబితా చేయండి                                          |
+| POST   | `/api/model-combo-mappings`      | మ్యాపింగ్ సృష్టించండి — body: `{pattern, comboId, priority?, enabled?, description?}` |
+| GET    | `/api/model-combo-mappings/[id]` | ఒక మ్యాపింగ్ను తిరిగి పొందండి                                                         |
+| PUT    | `/api/model-combo-mappings/[id]` | ఇప్పటికే ఉన్న మ్యాపింగ్ ఫీల్డ్లను నవీకరించండి                                         |
+| DELETE | `/api/model-combo-mappings/[id]` | ఒక మ్యాపింగ్ను తొలగించండి                                                             |
+
+**ఆథ్:** నిర్వహణ సెషన్/API కీ (`requireManagementAuth`).
+
+---
+
+## వెబ్హుక్స్
+
+OmniRoute ఈవెంట్ల కోసం అవుట్బౌండ్ వెబ్హుక్ సబ్స్క్రిప్షన్లు (అభ్యర్థన పూర్తి, కోటా ముగింపు, కీ రొటేషన్ మొదలైనవి).
+
+| Method | Path                      | Description                                                               |
+| ------ | ------------------------- | ------------------------------------------------------------------------- |
+| GET    | `/api/webhooks`           | వెబ్హుక్ల జాబితా (సీక్రెట్లు `<prefix>...`గా మాస్క్ చేయబడతాయి)            |
+| POST   | `/api/webhooks`           | వెబ్హుక్ సృష్టించు — బాడీ: `{url, events?: ["*"], secret?, description?}` |
+| GET    | `/api/webhooks/[id]`      | వెబ్హుక్ను పొందండి                                                        |
+| PUT    | `/api/webhooks/[id]`      | url/events/secret/description నవీకరించండి                                 |
+| DELETE | `/api/webhooks/[id]`      | వెబ్హుక్ను తొలగించండి                                                     |
+| POST   | `/api/webhooks/[id]/test` | వెబ్హుక్ URLకు టెస్ట్ పేలోడ్ పంపి, డెలివరీ స్థితిని తిరిగి ఇవ్వండి        |
+
+**ప్రామాణీకరణ:** మేనేజ్మెంట్ సెషన్/API కీ (`requireManagementAuth`).
+
+---
+
+## నమోదిత కీలు (స్వయంచాలక నిర్వహణ)
+
+రోజువారీ/గంటవారీ కోటాలతో, బ్యాకింగ్ ప్రొవైడర్/ఖాతాకు వ్యతిరేకంగా API కీలను జారీ చేసి, రొటేట్ చేయడానికి స్వయంచాలక-కీ నిర్వహణ సబ్సిస్టమ్ ఉపయోగిస్తుంది.
+
+| పద్ధతి | మార్గం                                | వివరణ                                                                                                                                                                                                               |
+| ------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/v1/registered-keys`             | నమోదిత కీల జాబితాను చూపుతుంది (మాస్క్ చేసిన ప్రిఫిక్స్ మాత్రమే)                                                                                                                                                     |
+| POST   | `/api/v1/registered-keys`             | కొత్త నమోదిత కీని జారీ చేస్తుంది — బాడీ: `{name, provider?, accountId?, idempotencyKey?, expiresAt?, dailyBudget?, hourlyBudget?}`. ముడి కీని **ఒక్కసారి** మాత్రమే తిరిగి ఇస్తుంది. కోటా తిరస్కరణపై `429` ఇస్తుంది. |
+| GET    | `/api/v1/registered-keys/[id]`        | నమోదిత కీ మెటాడేటాను పొందుతుంది (ముడి కీ సమాచారం లేదు)                                                                                                                                                              |
+| DELETE | `/api/v1/registered-keys/[id]`        | నమోదిత కీని ఉపసంహరిస్తుంది                                                                                                                                                                                          |
+| POST   | `/api/v1/registered-keys/[id]/revoke` | స్పష్టమైన ఉపసంహరణ ఎండ్పాయింట్ (DELETEతో సమాన ప్రభావం)                                                                                                                                                               |
+| GET    | `/api/v1/providers/[provider]/limits` | ప్రొవైడర్ జారీ పరిమితులను చదువుతుంది                                                                                                                                                                                |
+| PUT    | `/api/v1/providers/[provider]/limits` | ప్రొవైడర్ జారీ పరిమితులను సెట్ చేస్తుంది — బాడీ: `{maxActiveKeys?, dailyIssueLimit?, hourlyIssueLimit?}`                                                                                                            |
+| GET    | `/api/v1/accounts/[id]/limits`        | ఖాతా జారీ పరిమితులను చదువుతుంది                                                                                                                                                                                     |
+| PUT    | `/api/v1/accounts/[id]/limits`        | ఖాతా జారీ పరిమితులను సెట్ చేస్తుంది — ప్రొవైడర్ మార్గంలోని అదే బాడీ                                                                                                                                                 |
+
+**ప్రామాణీకరణ:** నిర్వహణ సెషన్/API కీ (`requireManagementAuth`) — `/api/keys` కోసం ఉపయోగించే అదే గార్డ్: డాష్బోర్డ్ సెషన్, స్థానిక CLI టోకెన్ లేదా `manage`/`admin` స్కోప్ ఉన్న API కీ; ఇన్ఫరెన్స్-మాత్రమే API కీలకు `403` వస్తుంది. `/v1/quotas/check` మరియు `/v1/issues/report` కూడా చూడండి.
+
+---
+
+## ఏజెంట్ల ప్రోటోకాల్
+
+OmniRoute వినియోగదారుల తరఫున రిమోట్గా అమలు చేయబడే క్లౌడ్ ఏజెంట్ పనులు (Claude Code, Codex Cloud, OpenHands మొదలైనవి).
+
+| Method | Path                          | Description                                                                                                                                                             |
+| ------ | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/v1/agents/tasks`        | పనుల జాబితా — ఐచ్ఛికంగా `?provider=`, `?status=`, `?limit=` (1–500, డిఫాల్ట్ 50)                                                                                        |
+| POST   | `/api/v1/agents/tasks`        | పనిని సృష్టించండి — బాడీ `CreateCloudAgentTaskSchema` (`providerId`, `prompt`, `source`, `options?`) ద్వారా ధృవీకరించబడుతుంది. టాస్క్ ఎన్వలప్తో `201` రిటర్న్ చేస్తుంది |
+| DELETE | `/api/v1/agents/tasks?id=...` | పనిని తొలగించండి                                                                                                                                                        |
+| GET    | `/api/v1/agents/tasks/[id]`   | పనిని చదవండి — `external_id` సెట్ చేయబడినప్పుడు అప్స్ట్రీమ్ క్లౌడ్ ఏజెంట్ నుండి స్థితిని సింక్రోనస్గా రిఫ్రెష్ చేస్తుంది                                                |
+| POST   | `/api/v1/agents/tasks/[id]`   | విభేదిత చర్య: `{action: "approve"}`, `{action: "message", message}`, లేదా `{action: "cancel"}`                                                                          |
+| DELETE | `/api/v1/agents/tasks/[id]`   | id ద్వారా నిర్దిష్ట పనిని తొలగించండి                                                                                                                                    |
+
+> **ప్రామాణీకరణ:** ప్రతి మెథడ్కు మేనేజ్మెంట్ ప్రామాణీకరణ అవసరం (`requireCloudAgentManagementAuth`). v3.8.0కి ముందు ఇవి ప్రామాణీకరణ లేకుండా ఉండేవి — బ్రేకింగ్ మార్పు కోసం కమిట్ `588a0333` చూడండి.
+
+```bash
+# Claude Code క్లౌడ్ పనిని సృష్టించండి
+curl -X POST http://localhost:20128/api/v1/agents/tasks \
+  -H "Authorization: Bearer your-management-key" \
+  -H "Content-Type: application/json" \
+  -d '{"providerId":"claude-code-cloud","prompt":"Fix the failing test","source":{"repo":"...","branch":"..."}}'
+```
+
+---
+
+## మేనేజ్మెంట్ ప్రాక్సీలు
+
+ప్రొవైడర్లు, ఖాతాలు లేదా గ్లోబల్ స్థాయికి కేటాయించగల అవుట్బౌండ్ HTTP(S)/SOCKS ప్రాక్సీలు.
+
+| Method | Path                                         | Description                                                                                                                                                     |
+| ------ | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/v1/management/proxies`                 | ప్రాక్సీల జాబితా ( `?id=` తో ఒకదాన్ని రిటర్న్ చేస్తుంది; `?id=&where_used=1` తో అసైన్మెంట్ గ్రాఫ్ను రిటర్న్ చేస్తుంది)                                          |
+| POST   | `/api/v1/management/proxies`                 | ప్రాక్సీని సృష్టించండి — బాడీ `createProxyRegistrySchema` ద్వారా ధృవీకరించబడుతుంది                                                                              |
+| PATCH  | `/api/v1/management/proxies`                 | ప్రాక్సీని అప్డేట్ చేయండి — బాడీ `updateProxyRegistrySchema` ద్వారా ధృవీకరించబడుతుంది (`id` అవసరం)                                                              |
+| DELETE | `/api/v1/management/proxies?id=...&force=1`  | ప్రాక్సీని తొలగించండి (అసైన్మెంట్లను విడదీయడానికి `force=1` ఉపయోగించండి)                                                                                        |
+| GET    | `/api/v1/management/proxies/assignments`     | అసైన్మెంట్ల జాబితా — `proxy_id`, `scope`, `scope_id` ద్వారా ఫిల్టర్ చేయవచ్చు; కనెక్షన్కు సక్రియ ప్రాక్సీని పరిష్కరించడానికి `resolve_connection_id=<id>` పంపండి |
+| PUT    | `/api/v1/management/proxies/assignments`     | అసైన్ చేయండి — బాడీ `proxyAssignmentSchema` (`{scope, scopeId?, proxyId?}`) ద్వారా ధృవీకరించబడుతుంది. డిస్పాచర్ క్యాష్ను క్లియర్ చేస్తుంది                      |
+| PUT    | `/api/v1/management/proxies/bulk-assign`     | బల్క్ అసైన్ చేయండి — బాడీ `bulkProxyAssignmentSchema` (`{scope, scopeIds[], proxyId?}`) ద్వారా ధృవీకరించబడుతుంది)                                               |
+| GET    | `/api/v1/management/proxies/health?hours=24` | ఒక వ్యవధిలో సమగ్ర ప్రాక్సీ ఆరోగ్య గణాంకాలు (విజయం/విఫలాల సంఖ్యలు, లేటెన్సీ)                                                                                     |
+
+**ప్రామాణీకరణ:** ప్రతి రూట్పై మేనేజ్మెంట్ సెషన్/API కీ (`requireManagementAuth`).
+
+> టాస్క్ వివరణలోని `POST /api/v1/management/proxies/[id]/assignments` మరియు `POST /api/v1/management/proxies/[id]/health` పై చూపిన ఫ్లాట్ `/assignments` మరియు `/health` రూట్ల ద్వారా అందించబడతాయి — కోడ్బేస్లో ప్రతి id కోసం ప్రత్యేక సబ్రూట్లు లేవు.
+
+---
+
+## స్థితిస్థాపకత (విస్తరితం)
+
+OmniRoute మూడు స్వతంత్ర తాత్కాలిక-వైఫల్య విధానాలను అందిస్తుంది; దిగువ నిర్వహణ ఎండ్పాయింట్లు ఆ స్థితులను చదవడానికి, ఓవర్రైడ్ చేయడానికి అనుమతిస్తాయి:
+
+| పరిధి             | స్థితి నిల్వ                               | చదవడం                                     | రీసెట్ / క్లియర్                                                         |
+| ----------------- | ------------------------------------------ | ----------------------------------------- | ------------------------------------------------------------------------ |
+| ప్రొవైడర్ బ్రేకర్ | `domain_circuit_breakers` + మెమరీలో        | `/api/monitoring/health`                  | `POST /api/resilience/reset`                                             |
+| కనెక్షన్ కూల్డౌన్ | ప్రొవైడర్ కనెక్షన్లలోని `rateLimitedUntil` | `/api/rate-limits`, `/api/providers/[id]` | (ఆలస్యంగా మళ్లీ ప్రారంభించబడుతుంది; ప్రొవైడర్ PUT ద్వారా క్లియర్ చేయండి) |
+| మోడల్ లాక్అవుట్   | మెమరీలోని మోడల్-అందుబాటు రిజిస్ట్రీ        | `GET /api/resilience/model-cooldowns`     | `DELETE /api/resilience/model-cooldowns`                                 |
+
+`PATCH /api/resilience` అనేది `providerBreaker.oauth` మరియు `providerBreaker.apikey` కింద ప్రొవైడర్ బ్రేకర్ ఓవర్రైడ్లను అంగీకరిస్తుంది. ప్రతి ప్రొఫైల్ `degradationThreshold`, `failureThreshold`, మరియు `resetTimeoutMs`లకు మద్దతు ఇస్తుంది; ఇదే ఫీల్డ్లు Dashboard → Settings → Resilienceలో కూడా అందుబాటులో ఉంటాయి.
+
+```bash
+# ఒకే మోడల్ లాక్అవుట్ను క్లియర్ చేయండి
+curl -X DELETE http://localhost:20128/api/resilience/model-cooldowns \
+  -H "Cookie: auth_token=..." \
+  -H "Content-Type: application/json" \
+  -d '{"provider":"openai","model":"gpt-4o-mini"}'
+
+# అన్ని లాక్అవుట్లను తొలగించండి
+curl -X DELETE http://localhost:20128/api/resilience/model-cooldowns \
+  -H "Cookie: auth_token=..." \
+  -d '{"all":true}'
+```
+
+పూర్తి భావనాత్మక రిఫరెన్స్ మరియు బ్రేకర్ డిఫాల్ట్ల కోసం: [`CLAUDE.md`](../../CLAUDE.md) → "Resilience Runtime State" మరియు [`docs/architecture/RESILIENCE_GUIDE.md`](../architecture/RESILIENCE_GUIDE.md) చూడండి.
+
+### రేట్-లిమిట్ క్యూ & ఆటో-ఎనేబుల్ భద్రతా వలయం
+
+- **మద్దతు ఉన్న రైట్ మార్గం**: `POST /api/rate-limits`కి `{"connectionId": "<id>", "enabled": true|false}` బాడీతో పంపడం, కనెక్షన్కు రేట్-లిమిట్ రక్షణను టాగుల్ చేయడానికి మద్దతు ఉన్న నిర్వహణ ఎండ్పాయింట్. `PUT /api/providers/[id]` ఉద్దేశపూర్వకంగా `rateLimitProtection`ను మార్చదు లేదా ఫ్లిప్ చేయదు (#11278).
+- **`enabled: false` అర్థం**: `enabled: false`ను సెట్ చేయడం ద్వారా కనెక్షన్కు స్పష్టంగా నిర్వచించిన రక్షణ తొలగించబడుతుంది, అయితే ఇది యాక్టివ్ API-కీ కనెక్షన్ను గ్లోబల్ ఆటో-ఎనేబుల్ భద్రతా వలయం (`autoEnableApiKeyProviders = true`) నుండి తప్పించదు. `reconcileEnabledConnections` (`open-sse/services/rateLimitManager.ts`)లో `false` మరియు `undefined` సమానంగా పరిగణించబడతాయి; స్పష్టమైన రక్షణ లేని యాక్టివ్ API-కీ కనెక్షన్లు ఆటో-ఎనేబుల్ భద్రతా వలయం కింద రక్షితంగానే ఉంటాయి.
+- **గ్లోబల్ డిసేబుల్**: రేట్-లిమిట్ క్యూ లేకుండా API-కీ కనెక్షన్లను అమలు చేయాలంటే, `RATE_LIMIT_AUTO_ENABLE=false` (env) ద్వారా లేదా `resilienceSettings.requestQueue.autoEnableApiKeyProviders = false` (Settings → Resilience / `PATCH /api/resilience`) ద్వారా భద్రతా వలయాన్ని గ్లోబల్గా డిసేబుల్ చేయండి.
+
+---
+
+## నైపుణ్యాలు
+
+కస్టమ్ ఎగ్జిక్యూటబుల్ హ్యాండ్లర్లతో OmniRouteను విస్తరించడానికి స్కిల్ ఫ్రేమ్వర్క్, అలాగే మార్కెట్ప్లేస్ ఇంటిగ్రేషన్లు.
+
+| విధానం | మార్గం                            | వివరణ                                                                                                                                                        |
+| ------ | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| GET    | `/api/skills`                     | ఇన్స్టాల్ చేసిన స్కిల్లను జాబితా చేయండి — `?q=`, `?mode=on\|off\|auto`, `?source=skillsmp\|skillssh\|local` ద్వారా ఫిల్టర్ చేయవచ్చు, పేజినేషన్కు మద్దతు ఉంది |
+| GET    | `/api/skills/[id]`                | ఒక స్కిల్ను తిరిగి పొందండి                                                                                                                                   |
+| PUT    | `/api/skills/[id]`                | స్కిల్ను నవీకరించండి (పేరు, వివరణ, మోడ్, స్కీమా, హ్యాండ్లర్, ట్యాగ్లు)                                                                                       |
+| DELETE | `/api/skills/[id]`                | ఒక స్కిల్ను అన్ఇన్స్టాల్ చేయండి                                                                                                                              |
+| POST   | `/api/skills/install`             | రా మానిఫెస్ట్ నుంచి స్కిల్ను ఇన్స్టాల్ చేయండి — బాడీ: `{name, version, description, schema:{input, output}, handlerCode, apiKeyId?}`                         |
+| GET    | `/api/skills/executions`          | ఇటీవలి స్కిల్ ఎగ్జిక్యూషన్లను జాబితా చేయండి (ఇన్పుట్లు/అవుట్పుట్లు/వ్యవధితో కూడిన ఆడిట్ ట్రయిల్)                                                             |
+| GET    | `/api/skills/marketplace?q=...`   | SkillsMP మార్కెట్ప్లేస్ నుంచి శోధన/ప్రముఖ జాబితా (`skillsmpApiKey` సెట్టింగ్ అవసరం)                                                                          |
+| POST   | `/api/skills/marketplace/install` | SkillsMP నుంచి ID ద్వారా స్కిల్ను ఇన్స్టాల్ చేయండి                                                                                                           |
+| GET    | `/api/skills/skillssh?q=&limit=`  | skills.sh రిజిస్ట్రీలో శోధించండి                                                                                                                             |
+| POST   | `/api/skills/skillssh/install`    | skills.sh నుంచి ID ద్వారా స్కిల్ను ఇన్స్టాల్ చేయండి                                                                                                          |
+
+**ప్రామాణీకరణ:** నిర్వహణ సెషన్/API కీ. మార్కెట్ప్లేస్ శోధన మార్గాలు నిర్వహణ ప్రామాణీకరణ లేదా Bearer API కీ (`isAuthenticated`) రెండింటిలో ఏదో ఒకదాన్ని అంగీకరిస్తాయి.
+
+---
+
+## మెమరీ
+
+ప్రతి API కీ / సెషన్కు పరిధి కలిగిన నిరంతర సంభాషణాత్మక/వాస్తవ మెమరీ స్టోర్.
+
+| పద్ధతి | పాత్                 | వివరణ                                                                                                                     |
+| ------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/memory`        | మెమరీలను జాబితా చేయండి — `?apiKeyId=`, `?type=`, `?sessionId=`, `?q=`, `offset/limit` లేదా `page/limit` పేజినేషన్తో       |
+| POST   | `/api/memory`        | మెమరీని సృష్టించండి — Zod ద్వారా ధృవీకరించబడే బాడీ: `{content, key, type?, sessionId?, apiKeyId?, metadata?, expiresAt?}` |
+| GET    | `/api/memory/[id]`   | ఒక మెమరీని తిరిగి పొందండి                                                                                                 |
+| DELETE | `/api/memory/[id]`   | ఒక మెమరీని తొలగించండి                                                                                                     |
+| GET    | `/api/memory/health` | మెమరీ సబ్సిస్టమ్ ఆరోగ్యం (DB కనెక్టివిటీ, embeddings బ్యాక్ఎండ్, వెక్టర్ ఇండెక్స్ స్థితి)                                 |
+
+**ప్రమాణీకరణ:** మేనేజ్మెంట్ సెషన్/API కీ (`requireManagementAuth`). `type` enum: `FACTUAL`, `EPISODIC`, `SEMANTIC`, `PROCEDURAL` (`src/lib/memory/types.ts`లోని `MemoryType` చూడండి).
+
+---
+
+## MCP సర్వర్
+
+OmniRoute 3 ట్రాన్స్పోర్ట్లతో (stdio, SSE, streamable-http) మరియు పరిధి-నిర్దిష్ట టూల్లతో పొందుపరచబడిన Model Context Protocol సర్వర్ను అందిస్తుంది. దిగువ డ్యాష్బోర్డ్ ఎండ్పాయింట్లు స్థితి/ఆడిట్ డేటాను చదివి, HTTP ట్రాన్స్పోర్ట్లకు ప్రాక్సీగా పనిచేస్తాయి.
+
+| పద్ధతి | పాత్ | వివరణ |
+| ------ | ---------------------- | ------------------------------------------------------------------------------------------------ | -------------------- |
+| GET | `/api/mcp/status` | హార్ట్బీట్, ట్రాన్స్పోర్ట్, ఆన్లైన్ స్థితి, చివరి కాల్, అగ్ర టూల్లు, 24 గంటల విజయ శాతం |
+| GET | `/api/mcp/tools` | `name`, `description`, `scopes`, `phase`, `auditLevel`, `sourceEndpoints`లతో MCP టూల్ల జాబితా |
+| GET | `/api/mcp/sse` | SSE ట్రాన్స్పోర్ట్ కోసం SSE స్ట్రీమ్ను తెరవండి (MCP నిలిపివేయబడితే లేదా ట్రాన్స్పోర్ట్ సరిపోలకపోతే `503`ను అందిస్తుంది) |
+| POST | `/api/mcp/sse` | SSE ట్రాన్స్పోర్ట్పై JSON-RPC ఫ్రేమ్ను పంపండి |
+| GET | `/api/mcp/stream` | Streamable HTTP ట్రాన్స్పోర్ట్లోని SSE వైపును తెరవండి (సర్వర్-ప్రారంభిత సందేశాలు) |
+| POST | `/api/mcp/stream` | Streamable HTTP ట్రాన్స్పోర్ట్పై JSON-RPC ఫ్రేమ్ను పంపండి |
+| DELETE | `/api/mcp/stream` | Streamable HTTP సెషన్ను ముగించండి |
+| GET | `/api/mcp/audit` | ఆడిట్ లాగ్ను ప్రశ్నించండి — `?limit=`, `?offset=`, `?tool=`, `?success=true                                | false`, `?apiKeyId=` |
+| GET | `/api/mcp/audit/stats` | సమగ్ర ఆడిట్ గణాంకాలు (మొత్తాలు, విజయ శాతం, సగటు వ్యవధి, అగ్ర టూల్లు) |
+
+**ప్రమాణీకరణ:** `sse`/`stream` ట్రాన్స్పోర్ట్లు MCP-నిర్దిష్ట ప్రమాణీకరణ ఉపరితలాన్ని ( `mcp` స్కోప్తో కూడిన Bearer API కీ) అనుసరిస్తాయి; `status`/`tools`/`audit*` రూట్లను డ్యాష్బోర్డ్ నుండి చదవవచ్చు (డ్యాష్బోర్డ్ హోస్ట్ను చేరుకోవడానికి అవసరమైన అదనపు ప్రమాణీకరణ తప్ప మరేదీ అవసరం లేదు).
+
+> రెండు HTTP ట్రాన్స్పోర్ట్లు `settings.mcpEnabled` మరియు `settings.mcpTransport` ద్వారా నియంత్రించబడతాయి — ట్రాన్స్పోర్ట్ సరిపోలకపోతే `400`, MCP నిలిపివేయబడిన స్థితిలో `503` అందుతుంది.
+
+---
+
+## A2A సర్వర్
+
+OmniRoute తనిఖీ/డాష్బోర్డ్ ఉపయోగం కోసం A2A (Agent-to-Agent) JSON-RPC 2.0 ఎండ్పాయింట్తో పాటు REST ర్యాపర్ను అందిస్తుంది.
+
+### JSON-RPC
+
+```bash
+POST /a2a
+Authorization: Bearer your-api-key   # OMNIROUTE_API_KEY సెట్ చేయబడితే తప్పనిసరి; లేకపోతే ఐచ్ఛికం
+Content-Type: application/json
+
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "message/send",
+  "params": {
+    "skill": "smart-routing",
+    "messages": [{"role": "user", "content": "Route this coding task"}]
+  }
+}
+```
+
+మద్దతు ఉన్న పద్ధతులు (`settings.a2aEnabled` ఆధారంగా అన్నీ నియంత్రించబడతాయి):
+
+| పద్ధతి           | వివరణ                                                              |
+| ---------------- | ------------------------------------------------------------------ |
+| `message/send`   | సమకాలిక నైపుణ్య అమలు; `{task, artifacts, metadata}` ను అందిస్తుంది |
+| `message/stream` | అదే నైపుణ్య సమితి యొక్క స్ట్రీమింగ్ SSE అమలు                       |
+| `tasks/get`      | `taskId` ద్వారా ఒక టాస్క్ను పొందడం                                 |
+| `tasks/cancel`   | `taskId` ద్వారా ఒక టాస్క్ను రద్దు చేయడం                            |
+
+అంతర్నిర్మిత నైపుణ్యాలు: `smart-routing`, `quota-management`, `provider-discovery`, `cost-analysis`, `health-report`.
+
+### ఏజెంట్ కార్డ్
+
+```bash
+GET /.well-known/agent.json
+```
+
+పబ్లిక్ A2A ఏజెంట్ కార్డ్ (పేరు, వివరణ, సామర్థ్యాలు, నైపుణ్య కేటలాగ్, ఆథ్ పథకం)ను అందిస్తుంది — 1 గంట పాటు పబ్లిక్గా కాష్ చేయబడుతుంది. ఆథ్ అవసరం లేదు.
+
+### REST సహాయకాలు
+
+| పద్ధతి | పాత్                         | వివరణ                                                                                                               |
+| ------ | ---------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/a2a/status`            | A2A ప్రారంభించబడిందా + టాస్క్ గణాంకాలు + కాష్ చేయబడిన ఏజెంట్ కార్డ్ సారాంశం                                         |
+| GET    | `/api/a2a/tasks`             | టాస్క్ల జాబితా — `?state=submitted\|working\|completed\|failed\|cancelled`, `?skill=`, `?limit=` (≤200), `?offset=` |
+| POST   | `/api/a2a/tasks`             | (REST సహాయకంగా అమలు చేయబడలేదు — JSON-RPC `message/send` ద్వారా సృష్టించండి)                                         |
+| GET    | `/api/a2a/tasks/[id]`        | ఒక టాస్క్ను పొందడం                                                                                                  |
+| POST   | `/api/a2a/tasks/[id]/cancel` | ఒక టాస్క్ను రద్దు చేయడం                                                                                             |
+
+**ఆథ్:** REST సహాయకాలు మేనేజ్మెంట్ ఆథ్ లేకుండా అమలవుతాయి (డాష్బోర్డ్లో చదవడానికి వీలుగా); కాన్ఫిగర్ చేయబడితే JSON-RPC `/a2a` రూట్ Bearer `OMNIROUTE_API_KEY` ను ఉపయోగిస్తుంది.
+
+---
+
+## క్లౌడ్, ఈవాల్స్ & అంచనా
+
+| పద్ధతి | పాత్ | వివరణ |
+| ------ | ------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------- | ----------------------------------- |
+| POST | `/api/cloud/auth` | Bearer కీని ధృవీకరించి, క్లౌడ్ సింక్ క్లయింట్ల కోసం మాస్క్ చేయబడిన ప్రొవైడర్ కనెక్షన్లు + మోడల్ అలియాస్లను అందిస్తుంది |
+| POST | `/api/cloud/credentials/update` | క్లౌడ్-సింక్ చేయబడిన ప్రొవైడర్ కోసం ఎన్క్రిప్ట్ చేయబడిన ఆధారాలను నవీకరిస్తుంది |
+| POST | `/api/cloud/model/resolve` | స్థానిక రూటింగ్ పట్టికను ఉపయోగించి లాజికల్ మోడల్ IDని నిర్దిష్ట ప్రొవైడర్/మోడల్కు పరిష్కరిస్తుంది |
+| GET | `/api/cloud/models/alias` | క్లౌడ్ సింక్కు బహిర్గతం చేయబడిన మోడల్ అలియాస్లను జాబితా చేస్తుంది |
+| GET | `/api/assess` | తాజా అంచనా వర్గీకరణలను (ప్రతి ప్రొవైడర్/మోడల్కు) చదువుతుంది |
+| POST | `/api/assess` | ఒక అంచనాను అమలు చేస్తుంది — బాడీ: `{scope: {type:"all"}                                                   | {type:"provider", providerId} | {type:"model", modelId}, trigger?}` |
+| GET | `/api/evals` | అంతర్నిర్మిత ఈవాల్ సూట్లు + ఇటీవల నిర్వహించిన రన్లను జాబితా చేస్తుంది |
+| POST | `/api/evals` | ఒక ఈవాల్ రన్ను ప్రారంభిస్తుంది |
+| POST | `/api/evals/suites` | కస్టమ్ ఈవాల్ సూట్ను సృష్టిస్తుంది — బాడీ `evalSuiteSaveSchema` ద్వారా ధృవీకరించబడుతుంది |
+| GET | `/api/evals/suites/[id]` | కస్టమ్ ఈవాల్ సూట్ను పొందుతుంది |
+
+**ఆథ్:** `/api/cloud/auth` ఒక Bearer కీని నేరుగా ధృవీకరిస్తుంది మరియు `manage` / `admin` స్కోప్ ఉన్న కీకి మాత్రమే ప్రతి కనెక్షన్కు సంబంధించిన మాస్క్ చేయబడిన కీ మరియు `projectId`ను అందిస్తుంది; ఇతర `/api/cloud/*`, `/api/evals/*`, మరియు `/api/assess` రూట్లకు మేనేజ్మెంట్ సెషన్/API కీ అవసరం. `/api/assess` POST వివక్షిత-యూనియన్ స్కోప్ స్కీమాతో `validateBody`ను ఉపయోగిస్తుంది.
+
+---
+
+## ACP (Agent Client Protocol) నిర్వహణ
+
+చైల్డ్ ప్రాసెస్లుగా. ఈ ఎండ్పాయింట్లు ACP ఏజెంట్ గుర్తింపు మరియు కస్టమ్ ఏజెంట్
+రిజిస్ట్రేషన్ను నిర్వహిస్తాయి.
+
+| Method | Path              | Description                                                                                                                                                              |
+| ------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| GET    | `/api/acp/agents` | ఇన్స్టాలేషన్ స్థితి, వెర్షన్, బైనరీతో తెలిసిన అన్ని CLI ఏజెంట్లను (అంతర్నిర్మిత + కస్టమ్) జాబితా చేయండి                                                                  |
+| POST   | `/api/acp/agents` | కస్టమ్ ACP ఏజెంట్ను నమోదు చేయండి లేదా కాష్ను రిఫ్రెష్ చేయండి — బాడీ: `{id, name, binary, versionCommand, providerAlias, spawnArgs, protocol}` లేదా `{action: "refresh"}` |
+| DELETE | `/api/acp/agents` | కస్టమ్ ACP ఏజెంట్ను తొలగించండి — క్వెరీ పరామితి: `?id=<agentId>`                                                                                                         |
+
+**ప్రతిస్పందన ఉదాహరణ** (`GET /api/acp/agents`):
+
+```json
+{
+  "agents": [
+    {
+      "id": "claude",
+      "name": "Claude Code CLI",
+      "binary": "claude",
+      "version": "1.0.45",
+      "installed": true,
+      "protocol": "stdio",
+      "providerAlias": "claude",
+      "isCustom": false
+    },
+    {
+      "id": "my-custom-cli",
+      "name": "My Custom CLI",
+      "installed": false,
+      "protocol": "stdio",
+      "providerAlias": "my-provider",
+      "isCustom": true
+    }
+  ],
+  "cacheTtlMs": 60000,
+  "cacheAge": 1234
+}
+```
+
+**ప్రమాణీకరణ:** నిర్వహణ సెషన్ (డాష్బోర్డ్ `auth_token` కుకీ) లేదా నిర్వహణ-స్కోప్ గల
+API కీ అవసరం.
+
+పూర్తి వివరాల కోసం [ACP Framework](../frameworks/ACP.md) చూడండి.
+
+---
+
+## విశ్లేషణలు & పరిశీలనీయత
+
+రూటింగ్, కంప్రెషన్ మరియు ప్రొవైడర్ వైవిధ్యాన్ని పర్యవేక్షించడానికి రియల్-టైమ్ విశ్లేషణ ఎండ్పాయింట్లు. ఇవి `/dashboard/analytics/*` పేజీలకు ఆధారం.
+
+### ఆటో-రూటింగ్ విశ్లేషణలు
+
+| Method | Path                                 | Description                                                                              |
+| ------ | ------------------------------------ | ---------------------------------------------------------------------------------------- |
+| GET    | `/api/analytics/auto-routing`        | సమగ్ర ఆటో-రూటింగ్ గణాంకాలు: మొత్తం కాల్లు, వ్యూహ పంపిణీ, శ్రేణి పంపిణీ, అగ్ర ప్రొవైడర్లు |
+| GET    | `/api/analytics/auto-routing?days=7` | కాల-పరిధి ఆధారిత గణాంకాలు (డిఫాల్ట్ 24గం.)                                               |
+
+**ప్రతిస్పందన ఉదాహరణ**:
+
+```json
+{
+  "window": "24h",
+  "totalCalls": 1234,
+  "strategyBreakdown": {
+    "rules": 800,
+    "cost": 200,
+    "latency": 150,
+    "sla-aware": 50,
+    "lkgp": 34
+  },
+  "tierBreakdown": {
+    "ultra": 100,
+    "pro": 500,
+    "standard": 400,
+    "free": 234
+  },
+  "topProviders": [
+    { "provider": "openai", "calls": 500, "avgLatencyMs": 850 },
+    { "provider": "anthropic", "calls": 300, "avgLatencyMs": 1200 }
+  ]
+}
+```
+
+### కంప్రెషన్ విశ్లేషణలు
+
+| Method | Path                         | Description                                                                           |
+| ------ | ---------------------------- | ------------------------------------------------------------------------------------- |
+| GET    | `/api/analytics/compression` | సమగ్ర కంప్రెషన్ గణాంకాలు: సేవ్ చేసిన టోకెన్లు, పొదుపు %, మోడ్ పంపిణీ, ఇంజిన్ వినియోగం |
+
+**ప్రతిస్పందన ఉదాహరణ**:
+
+```json
+{
+  "window": "24h",
+  "totalOriginalTokens": 5000000,
+  "totalCompressedTokens": 3500000,
+  "totalSavings": 1500000,
+  "savingsPct": 30.0,
+  "modeBreakdown": {
+    "lite": 400,
+    "standard": 600,
+    "aggressive": 100,
+    "ultra": 50,
+    "rtk": 84
+  },
+  "engineBreakdown": {
+    "caveman": 800,
+    "rtk": 434
+  }
+}
+```
+
+### ప్రొవైడర్ వైవిధ్య ట్రాకింగ్
+
+| Method | Path                       | Description                                                                                                                |
+| ------ | -------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/analytics/diversity` | షానన్ ఎంట్రపీ-ఆధారిత వైవిధ్య ట్రాకింగ్: ప్రొవైడర్ వ్యాప్తిని కొలవడం ద్వారా సింగిల్ పాయింట్ ఆఫ్ ఫెయిల్యూర్లను నివారిస్తుంది |
+
+**ప్రతిస్పందన ఉదాహరణ**:
+
+```json
+{
+  "window": "24h",
+  "shannonEntropy": 2.45,
+  "maxEntropy": 3.17,
+  "diversityRatio": 0.77,
+  "providerUsage": {
+    "openai": 0.4,
+    "anthropic": 0.25,
+    "google": 0.2,
+    "kiro": 0.15
+  },
+  "warnings": ["OpenAI accounts for 40% of traffic — consider diversifying"]
+}
+```
+
+**ప్రమాణీకరణ:** నిర్వహణ సెషన్ లేదా నిర్వహణ-స్కోప్ గల API కీ అవసరం.
+
+---
+
+## అడ్మిన్ కార్యకలాపాలు
+
+కార్యనిర్వహణ నిర్వహణ కోసం అడ్మిన్కు మాత్రమే అందుబాటులో ఉండే ఎండ్పాయింట్లు.
+
+| Method | Path                     | Description                                                                                              |
+| ------ | ------------------------ | -------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/admin/concurrency` | ప్రస్తుత సమాంతర అభ్యర్థన పరిమితులను చదవండి (గ్లోబల్ + ప్రతి ప్రొవైడర్కు)                                 |
+| POST   | `/api/admin/concurrency` | సమాంతర అభ్యర్థన పరిమితులను నవీకరించండి — బాడీ: `{global?: number, perProvider?: Record<string, number>}` |
+
+**ప్రామాణీకరణ:** అడ్మిన్ స్కోప్తో కూడిన నిర్వహణ సెషన్ అవసరం.
+
+---
+
+## CLI సాధనాల నిర్వహణ
+
+OmniRouteతో అనుసంధానమయ్యే CLI సాధనాలను నిర్వహించండి (antigravity, commandCode,
+devin-cli మొదలైనవి). పూర్తి జాబితా కోసం [ప్రొవైడర్ రిఫరెన్స్](./PROVIDER_REFERENCE.md) చూడండి.
+
+| Method | Path                                    | Description                                                                                                                                                                             |
+| ------ | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/cli-tools/all-statuses`           | అన్ని CLI సాధనాల స్థితి (ఇన్స్టాల్ చేయబడిందా, వెర్షన్, చివరిసారి కనిపించిన సమయం)                                                                                                        |
+| GET    | `/api/cli-tools/status`                 | ఒక CLI సాధనం యొక్క స్థితి వివరాలు (`?tool=` query)                                                                                                                                      |
+| POST   | `/api/cli-tools/apply`                  | సాధనం రూపొందించిన కాన్ఫిగరేషన్ను వ్రాయండి (`dryRun` ప్రివ్యూలను చూపుతుంది; కంటైనర్లో అమలు చేస్తున్నప్పుడు `422` + `containerEphemeralTarget`; `migration` పాత Codex YAMLను సూచిస్తుంది) |
+| GET    | `/api/cli-tools/backups`                | CLI సాధనాల కాన్ఫిగరేషన్ బ్యాకప్ల జాబితా                                                                                                                                                 |
+| POST   | `/api/cli-tools/backups`                | అన్ని CLI సాధనాల కాన్ఫిగరేషన్ల బ్యాకప్ను సృష్టించండి                                                                                                                                    |
+| POST   | `/api/cli-tools/backups`                | పునరుద్ధరించండి: బాడీలో `{tool, backupId}`తో అదే ఎండ్పాయింట్ను ఉపయోగిస్తే ఆ బ్యాకప్ పునరుద్ధరించబడుతుంది                                                                                |
+| GET    | `/api/cli-tools/antigravity-mitm`       | Antigravity MITM ప్రాక్సీ స్థితి ("antigravity-mitm" CLI సాధనం)                                                                                                                         |
+| POST   | `/api/cli-tools/antigravity-mitm/alias` | antigravity-mitm అలియాస్లను కాన్ఫిగర్ చేయండి                                                                                                                                            |
+
+**ప్రామాణీకరణ:** నిర్వహణ సెషన్ అవసరం.
+
+---
+
+## ఏజెంట్ స్కిల్లు
+
+AI ఏజెంట్ స్కిల్లను నిర్వహించండి (ఏజెంట్ల కోసం OpenAI యొక్క కస్టమ్ GPTలకు సమానమైనవి).
+
+| Method | Path                         | Description                                                                                    |
+| ------ | ---------------------------- | ---------------------------------------------------------------------------------------------- |
+| GET    | `/api/agent-skills`          | అన్ని ఏజెంట్ స్కిల్లను జాబితా చేయండి (అంతర్నిర్మిత + కస్టమ్)                                   |
+| GET    | `/api/agent-skills/[id]`     | నిర్దిష్ట ఏజెంట్ స్కిల్ను పొందండి                                                              |
+| POST   | `/api/agent-skills`          | కస్టమ్ ఏజెంట్ స్కిల్ను సృష్టించండి — బాడీ: `{name, description, prompt, model?, temperature?}` |
+| PUT    | `/api/agent-skills/[id]`     | కస్టమ్ ఏజెంట్ స్కిల్ను నవీకరించండి                                                             |
+| DELETE | `/api/agent-skills/[id]`     | కస్టమ్ ఏజెంట్ స్కిల్ను తొలగించండి                                                              |
+| GET    | `/api/agent-skills/[id]/raw` | ముడి ప్రాంప్ట్ + మెటాడేటాను పొందండి (ఎటువంటి ఎగ్జిక్యూషన్ లేదు)                                |
+| POST   | `/api/agent-skills/generate` | సహజ భాషా వివరణ నుండి కొత్త స్కిల్ను AIతో రూపొందించండి                                          |
+
+**ప్రామాణీకరణ:** నిర్వహణ సెషన్ లేదా నిర్వహణ-స్కోప్ ఉన్న API కీ అవసరం.
+
+---
+
+## క్యాష్ నిర్వహణ
+
+సెమాంటిక్ క్యాష్ మరియు రీజనింగ్ క్యాష్ను నిర్వహించండి.
+
+| విధానం | మార్గం                 | వివరణ                                                                                                                                    |
+| ------ | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/cache`           | క్యాష్ అవలోకనం: మొత్తం ఎంట్రీలు, హిట్ రేట్, డిస్క్లో పరిమాణం                                                                             |
+| GET    | `/api/cache/entries`   | క్యాష్ చేసిన ఎంట్రీలను జాబితా చేయండి (పేజినేషన్తో)                                                                                       |
+| DELETE | `/api/cache/entries`   | క్యాష్ ఎంట్రీలను తొలగించండి (క్వెరీ పారామీటర్ల ద్వారా ఫిల్టర్ చేయండి)                                                                    |
+| GET    | `/api/cache/stats`     | వివరణాత్మక క్యాష్ గణాంకాలు (ప్రతి ప్రొవైడర్, ప్రతి మోడల్ వారీగా)                                                                         |
+| GET    | `/api/cache/reasoning` | రీజనింగ్ క్యాష్ స్థితి (రీజనింగ్ రీప్లే కోసం)                                                                                            |
+| DELETE | `/api/cache/reasoning` | రీజనింగ్ క్యాష్ను క్లియర్ చేయండి — క్వెరీ పారామీటర్లు: `?toolCallId=<id>` (ఒక్కటి) లేదా `?provider=<p>` లేదా పారామీటర్లు లేకుండా (అన్నీ) |
+
+**ప్రామాణీకరణ:** మేనేజ్మెంట్ సెషన్ అవసరం.
+
+---
+
+## మెమరీ సిస్టమ్
+
+పెర్సిస్టెంట్ మెమరీని నిర్వహించండి (FTS5 + వెక్టర్ ఎంబెడ్డింగ్లు).
+
+| విధానం | మార్గం             | వివరణ                                                                          |
+| ------ | ------------------ | ------------------------------------------------------------------------------ |
+| GET    | `/api/memory`      | మెమరీ ఎంట్రీలను జాబితా చేయండి (స్కోప్, రకం, శోధన క్వెరీ ద్వారా ఫిల్టర్ చేయండి) |
+| POST   | `/api/memory`      | కొత్త మెమరీ ఎంట్రీని సృష్టించండి — బాడీ: `{scope, type, content, metadata?}`   |
+| GET    | `/api/memory/[id]` | నిర్దిష్ట మెమరీ ఎంట్రీని పొందండి                                               |
+| PUT    | `/api/memory/[id]` | మెమరీ ఎంట్రీని నవీకరించండి                                                     |
+| DELETE | `/api/memory/[id]` | మెమరీ ఎంట్రీని తొలగించండి                                                      |
+| GET    | `/api/memory?q=`   | మెమరీని శోధించండి (FTS5 + వెక్టర్) — గణాంకాలు అదే ప్రతిస్పందనలో చేర్చబడతాయి    |
+
+**ప్రామాణీకరణ:** మేనేజ్మెంట్ సెషన్ లేదా మేనేజ్మెంట్-స్కోప్డ్ API కీ అవసరం.
+
+---
+
+## వెబ్హుక్స్
+
+ఈవెంట్ల కోసం వెబ్హుక్ సబ్స్క్రిప్షన్లను నిర్వహించండి.
+
+| విధానం | మార్గం                          | వివరణ                                                                             |
+| ------ | ------------------------------- | --------------------------------------------------------------------------------- |
+| GET    | `/api/webhooks`                 | అన్ని వెబ్హుక్ సబ్స్క్రిప్షన్లను జాబితా చేయండి                                    |
+| POST   | `/api/webhooks`                 | వెబ్హుక్ సబ్స్క్రిప్షన్ను సృష్టించండి — బాడీ: `{url, events[], secret?, active?}` |
+| GET    | `/api/webhooks/[id]`            | నిర్దిష్ట వెబ్హుక్ సబ్స్క్రిప్షన్ను పొందండి                                       |
+| PUT    | `/api/webhooks/[id]`            | వెబ్హుక్ సబ్స్క్రిప్షన్ను నవీకరించండి                                             |
+| DELETE | `/api/webhooks/[id]`            | వెబ్హుక్ సబ్స్క్రిప్షన్ను తొలగించండి                                              |
+| GET    | `/api/webhooks/[id]/deliveries` | వెబ్హుక్ కోసం డెలివరీ చరిత్రను జాబితా చేయండి (విజయం/విఫలమైన లాగ్)                 |
+| POST   | `/api/webhooks/[id]/test`       | వెబ్హుక్కు పరీక్ష ఈవెంట్ను పంపండి                                                 |
+
+**ప్రామాణీకరణ:** మేనేజ్మెంట్ సెషన్ అవసరం.
+
+పూర్తి ఈవెంట్ రకాల కోసం [వెబ్హుక్స్ ఫ్రేమ్వర్క్](../frameworks/WEBHOOKS.md) చూడండి.
+
+---
+
+## నైపుణ్యాల ఫ్రేమ్వర్క్
+
+నైపుణ్యాలను నిర్వహించండి (ఏజెంటిక్ ఎక్స్టెన్షన్ల ఫ్రేమ్వర్క్).
+
+| Method | Path                     | Description                                                                                                |
+| ------ | ------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/skills`            | ఇన్స్టాల్ చేసిన అన్ని నైపుణ్యాలను జాబితా చేయండి (అంతర్నిర్మిత + కస్టమ్)                                    |
+| POST   | `/api/skills/install`    | స్థానిక పాత్ లేదా URL నుంచి నైపుణ్యాన్ని ఇన్స్టాల్ చేయండి                                                  |
+| DELETE | `/api/skills/[id]`       | నైపుణ్యాన్ని అన్ఇన్స్టాల్ చేయండి                                                                           |
+| PUT    | `/api/skills/[id]`       | నైపుణ్యాన్ని ప్రారంభించండి లేదా నిలిపివేయండి — body: `{enabled?: boolean, mode?: "on" \| "off" \| "auto"}` |
+| POST   | `/api/skills/executions` | నైపుణ్యాన్ని అమలు చేయండి — body: `{skillName, apiKeyId, input?, sessionId?}`                               |
+| GET    | `/api/skills/executions` | అన్ని నైపుణ్యాల అమలు చరిత్రను జాబితా చేయండి (`?apiKeyId=` ద్వారా ఫిల్టర్ చేయండి)                           |
+
+**ప్రామాణీకరణ:** నిర్వహణ సెషన్ లేదా నిర్వహణ-పరిధి API కీ అవసరం.
+
+పూర్తి వివరాల కోసం [నైపుణ్యాల ఫ్రేమ్వర్క్](../frameworks/SKILLS.md) చూడండి.
+
+---
+
+## ప్లగిన్లు
+
+OmniRoute ప్లగిన్లను (మూడవ పక్ష ఎక్స్టెన్షన్లు) నిర్వహించండి.
+
+| Method | Path                               | Description                                  |
+| ------ | ---------------------------------- | -------------------------------------------- |
+| GET    | `/api/plugins`                     | ఇన్స్టాల్ చేసిన ప్లగిన్లను జాబితా చేయండి     |
+| POST   | `/api/plugins/marketplace/install` | Marketplace నుంచి ప్లగిన్ను ఇన్స్టాల్ చేయండి |
+| DELETE | `/api/plugins/[name]`              | ప్లగిన్ను అన్ఇన్స్టాల్ చేయండి                |
+| POST   | `/api/plugins/[name]/activate`     | ప్లగిన్ను సక్రియం చేయండి                     |
+| POST   | `/api/plugins/[name]/deactivate`   | ప్లగిన్ను నిష్క్రియం చేయండి                  |
+| GET    | `/api/plugins/[name]/config`       | ప్లగిన్ కాన్ఫిగరేషన్ను పొందండి               |
+| PUT    | `/api/plugins/[name]/config`       | ప్లగిన్ కాన్ఫిగరేషన్ను నవీకరించండి           |
+
+**ప్రామాణీకరణ:** నిర్వహణ సెషన్ అవసరం.
+
+పూర్తి వివరాల కోసం [ప్లగిన్ల ఫ్రేమ్వర్క్](../frameworks/PLUGIN_SDK.md) చూడండి.
+
+---
+
+## షాడో రూటింగ్
+
+ప్రొవైడర్ల షాడో / A-B పోలిక **స్వతంత్ర REST ఉపరితలం కాదు** — ఇది కాంబో రూటింగ్ ద్వారా కాన్ఫిగర్ చేయబడుతుంది ([ఆటో-కాంబో](../routing/AUTO-COMBO.md) చూడండి). ప్రతి కాంబో పోలిక మెట్రిక్లు `GET /api/combos/metrics` ద్వారా అందించబడతాయి.
+
+---
+
+## గార్డ్రెయిల్స్
+
+రన్టైమ్ గార్డ్రెయిల్స్ను తనిఖీ చేయండి (PII గుర్తింపు, ప్రాంప్ట్ ఇంజెక్షన్ గుర్తింపు, విజన్ బ్రిడ్జింగ్). గార్డ్రెయిల్స్ ప్రతి అభ్యర్థనపై అమలవుతాయి; ప్రతి కాల్కు ఆప్ట్-అవుట్ `x-omniroute-disabled-guardrails` రిక్వెస్ట్ హెడర్ ద్వారా చేయవచ్చు — నిల్వ చేయబడే ప్రారంభించు/నిలిపివేయు ఉపరితలం లేదు.
+
+| Method | Path                   | Description                                                                                             |
+| ------ | ---------------------- | ------------------------------------------------------------------------------------------------------- |
+| GET    | `/api/guardrails`      | రిజిస్టర్ చేసిన గార్డ్రెయిల్స్ మరియు వాటి స్థితిని (పేరు / ప్రారంభించబడింది / ప్రాధాన్యత) జాబితా చేయండి |
+| POST   | `/api/guardrails/test` | నమూనా ఇన్పుట్పై కాల్కు ముందు పైప్లైన్ను డ్రై-రన్ చేయండి — body: `{input, disabledGuardrails?}`          |
+
+**ప్రామాణీకరణ:** నిర్వహణ సెషన్ అవసరం.
+
+పూర్తి వివరాల కోసం [భద్రత > గార్డ్రెయిల్స్](../security/GUARDRAILS.md) చూడండి.
+
+---
+
+---
+
+## ప్రామాణీకరణ
+
+నాలుగు ఆధారాల కుటుంబాల (డ్యాష్బోర్డ్ సెషన్, స్థానిక CLI టోకెన్, `oma_live_…` యాక్సెస్ టోకెన్, మేనేజ్-స్కోప్డ్ API కీ) గురించి, అలాగే అవి ఇన్ఫరెన్స్ కీలకు ఎలా భిన్నంగా ఉంటాయో తెలుసుకోవడానికి [మేనేజ్మెంట్ ప్రామాణీకరణ](../guides/MANAGEMENT-AUTH.md) చూడండి.
+
+- డ్యాష్బోర్డ్ రూట్లు (`/dashboard/*`) `auth_token` కుకీని ఉపయోగిస్తాయి
+- లాగిన్ సేవ్ చేసిన పాస్వర్డ్ హ్యాష్ను ఉపయోగిస్తుంది; అది లేకపోతే `INITIAL_PASSWORD` ను ఉపయోగిస్తుంది
+- `/api/settings/require-login` ద్వారా `requireLogin` ను టాగుల్ చేయవచ్చు
+- `REQUIRE_API_KEY=true` ఉన్నప్పుడు `/v1/*` రూట్లకు ఐచ్ఛికంగా Bearer API కీ అవసరం
+- ఈ రిఫరెన్స్లోని "మేనేజ్మెంట్ టోకెన్" / "మేనేజ్మెంట్-స్కోప్డ్ API కీ" అనే పదాలు ఆ గైడ్లోని కుటుంబాలలో ఒకదానిని సూచిస్తాయి — నిర్వచించని అదనపు రహస్య రకాన్ని కాదు
+
+> **బ్రేకింగ్ మార్పు (v3.8.0)** — `/api/v1/agents/tasks/*` మరియు కూల్డౌన్ నిర్వహణ ఎండ్పాయింట్లకు ఇప్పుడు **మేనేజ్మెంట్ ప్రామాణీకరణ** (డ్యాష్బోర్డ్ `auth_token` కుకీ లేదా మేనేజ్మెంట్-స్కోప్డ్ API కీ) అవసరం. గతంలో ఈ రూట్లను ప్రామాణీకరణ లేకుండా పిలిచిన క్లయింట్లు `401 Unauthorized` ప్రతిస్పందనను పొందుతారు. `588a0333` కమిట్ను చూడండి (`fix(auth): require management auth for agent and cooldown APIs`).

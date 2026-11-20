@@ -1,0 +1,427 @@
+# 📖 Setup Guide — OmniRoute (Українська)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../guides/SETUP_GUIDE.md) · 🇪🇹 [am](../../../am/docs/guides/SETUP_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/guides/SETUP_GUIDE.md) · 🇦🇿 [az](../../../az/docs/guides/SETUP_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/guides/SETUP_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/guides/SETUP_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/guides/SETUP_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/guides/SETUP_GUIDE.md) · 🇩🇰 [da](../../../da/docs/guides/SETUP_GUIDE.md) · 🇩🇪 [de](../../../de/docs/guides/SETUP_GUIDE.md) · 🇬🇷 [el](../../../el/docs/guides/SETUP_GUIDE.md) · 🇪🇸 [es](../../../es/docs/guides/SETUP_GUIDE.md) · 🇪🇪 [et](../../../et/docs/guides/SETUP_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/guides/SETUP_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/guides/SETUP_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/guides/SETUP_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/guides/SETUP_GUIDE.md) · 🇮🇱 [he](../../../he/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/guides/SETUP_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/guides/SETUP_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/guides/SETUP_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/guides/SETUP_GUIDE.md) · 🇮🇩 [id](../../../id/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/guides/SETUP_GUIDE.md) · 🇮🇹 [it](../../../it/docs/guides/SETUP_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/guides/SETUP_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/guides/SETUP_GUIDE.md) · 🇰🇭 [km](../../../km/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/guides/SETUP_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/guides/SETUP_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/guides/SETUP_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/guides/SETUP_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/guides/SETUP_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/guides/SETUP_GUIDE.md) · 🇲🇲 [my](../../../my/docs/guides/SETUP_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/guides/SETUP_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/guides/SETUP_GUIDE.md) · 🇳🇴 [no](../../../no/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [or](../../../or/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/guides/SETUP_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/guides/SETUP_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/guides/SETUP_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/guides/SETUP_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/guides/SETUP_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/guides/SETUP_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/guides/SETUP_GUIDE.md) · 🇱🇰 [si](../../../si/docs/guides/SETUP_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/guides/SETUP_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/guides/SETUP_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/guides/SETUP_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/guides/SETUP_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [te](../../../te/docs/guides/SETUP_GUIDE.md) · 🇹🇭 [th](../../../th/docs/guides/SETUP_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/guides/SETUP_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/guides/SETUP_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/guides/SETUP_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/guides/SETUP_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/guides/SETUP_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/guides/SETUP_GUIDE.md)
+
+---
+
+> Повний довідник із налаштування OmniRoute. Скорочену версію див. у розділі [Швидкий старт у README](../README.md#-quick-start).
+
+## Зміст
+
+- [Способи встановлення](#install-methods)
+- [Налаштування інструментів CLI](#cli-tool-configuration)
+- [Налаштування протоколів (MCP + A2A)](#protocol-setup-mcp--a2a)
+- [Налаштування тайм-аутів](#timeout-configuration)
+- [Режим розділених портів](#split-port-mode)
+- [Void Linux (xbps-src)](#void-linux-xbps-src-template)
+- [Видалення](#uninstalling)
+
+---
+
+## Методи встановлення
+
+### npm (рекомендовано)
+
+```bash
+npm install -g omniroute
+omniroute
+```
+
+Інформаційна панель відкривається на `http://localhost:20128`, а API base URL – `http://localhost:20128/v1`.
+
+> **користувачі npm:** Якщо npm попереджає, що сценарії встановлення заблоковано (наприклад, `omniroute`, `better-sqlite3`), див. [розділ Усунення несправностей — npm install-scripts blocked](./TROUBLESHOOTING.md#npm-install-scripts-blocked-warning-global-install).
+
+### pnpm
+
+```bash
+pnpm add -g omniroute@latest --allow-build=better-sqlite3 --allow-build=@swc/core
+omniroute
+```
+
+> **користувачі pnpm:** прапор `--allow-build` необхідний для ввімкнення власних сценаріїв збірки для `better-sqlite3` і `@swc/core`. Команда `pnpm approve-builds -g` не підтримується для глобального встановлення на pnpm v11.
+
+### Арка Linux (AUR)
+
+```bash
+yay -S omniroute-bin
+systemctl --user enable --now omniroute.service
+```
+
+[Пакет AUR](https://aur.archlinux.org/packages/omniroute-bin) встановлює OmniRoute і надає службу користувача systemd.
+
+### Від джерела
+
+```bash
+npm install
+PORT=20128 DASHBOARD_PORT=20129 NEXT_PUBLIC_BASE_URL=http://localhost:20129 npm run dev
+```
+
+> **Windows примітка:** За замовчуванням OmniRoute використовує `%APPDATA%\omniroute`, коли застарілий каталог `%USERPROFILE%\.omniroute` відсутній. Налаштуйте `DATA_DIR` на вибір іншого розташування каталогу даних.
+
+> **Примітка:** `npm install` автоматично генерує `.env` із `.env.example` під час першого запуску. Подальші встановлення не перезапишуть існуючий `.env`, тому налаштування збережуться. Щоб повторно запустити, видаліть `.env` перед повторним запуском.
+
+### Docker
+
+Перегляньте [посібник Docker](./DOCKER_GUIDE.md) для повного налаштування Docker, включаючи профілі Compose та Caddy HTTPS.
+
+### Настільна програма (Electron)
+
+OmniRoute постачає оболонку робочого столу, створену на основі Electron 41 + electron-builder 26.10. Доступні скрипти (корінь робочої області):
+
+```bash
+npm run electron:dev          # Run desktop with hot-reload
+npm run electron:build        # Build for current OS (auto-detected)
+npm run electron:build:win    # Windows installer (NSIS + portable)
+npm run electron:build:mac    # macOS (dmg + zip, arm64+x64)
+npm run electron:build:linux  # Linux (AppImage + deb + rpm)
+npm run electron:smoke:packaged  # Smoke-test packaged build
+```
+
+Випуски настільних інсталяторів додаються до випусків GitHub. Повну інформацію про Electron (підписання, міст IPC, дистрибутиви) див. [`ELECTRON_GUIDE.md`](./ELECTRON_GUIDE.md) _(criado em fase posterior)_.
+
+### Безголовий сервер (CI/automation)
+
+Для автоматичних установок (Docker, Kubernetes, CI) використовуйте:
+
+```bash
+omniroute setup --non-interactive
+omniroute providers test-batch
+```
+
+У поєднанні зі змінними env (`INITIAL_PASSWORD`, `OMNIROUTE_WS_BRIDGE_SECRET` тощо) це дає змогу створити екземпляр OmniRoute який повністю підтримує сценарії.
+
+### Параметри CLI
+
+| Команда                 | опис                                                                                         |
+| ----------------------- | -------------------------------------------------------------------------------------------- |
+| `omniroute`             | Запустіть сервер (`PORT=20128`, API і панель приладів на одному порту)                       |
+| `omniroute setup`       | Керована підготовка до CLI для пароля та першого постачальника                               |
+| `omniroute doctor`      | Виконуйте локальні перевірки справності без запуску сервера                                  |
+| `omniroute providers`   | Знаходьте, перераховуйте, перевіряйте та тестуйте постачальників від CLI                     |
+| `omniroute config`      | конфігурація інструменту CLI список —, отримання, встановлення, перевірка конфігурацій       |
+| `omniroute status`      | Інформаційна панель стану офлайн Версія —, DB, інструменти, конфігурація                     |
+| `omniroute logs`        | Журнали потокового використання з API (підтримує `--follow`)                                 |
+| `omniroute update`      | Перевірте чи застосуйте оновлення OmniRoute                                                  |
+| `omniroute provider`    | Керуйте підключеннями провайдера — додавання, список, видалення, перевірка, за замовчуванням |
+| `omniroute --port 3000` | Встановіть порт canonical/API на 3000                                                        |
+| `omniroute --mcp`       | Запустіть сервер MCP (транспорт stdio)                                                       |
+| `omniroute --no-open`   | Не відкривати браузер автоматично                                                            |
+| `omniroute --help`      | Показати допомогу                                                                            |
+
+Безголове налаштування може бути написано за допомогою прапорців або змінних середовища:
+
+```bash
+omniroute setup --non-interactive --password "$OMNIROUTE_PASSWORD"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY" --test-provider
+```
+
+Запустіть локальну діагностику, не відкриваючи інформаційну панель:
+
+```bash
+omniroute doctor
+omniroute doctor --json
+omniroute doctor --no-liveness
+```
+
+Керуйте провайдерами за допомогою SSH або скриптів, не відкриваючи інформаційну панель:
+
+```bash
+omniroute providers available
+omniroute providers available --search openai
+omniroute providers available --category api-key
+omniroute providers list
+omniroute providers test <id-or-name>
+omniroute providers test-all
+omniroute providers validate
+```
+
+---
+
+## Налаштування інструментів CLI
+
+### 1) Підключіть провайдерів і створіть ключ API
+
+1. Відкрийте Панель керування → `Providers` і підключіть принаймні одного провайдера (OAuth або ключ API).
+2. Відкрийте Панель керування → `Endpoints` і створіть ключ API.
+3. (Необов’язково) Відкрийте Панель керування → `Combos` і налаштуйте резервний ланцюжок.
+
+### 2) Налаштуйте свій інструмент для програмування
+
+```txt
+Базова URL-адреса: http://localhost:20128/v1
+Ключ API:          [скопіюйте зі сторінки Endpoint]
+Модель:            if/qwen3.8-max-preview (або будь-який префікс провайдера/моделі)
+```
+
+Якщо ваш редактор не може надсилати `Authorization: Bearer ...`, натомість використовуйте базову URL-адресу сумісності з токеном:
+
+```txt
+Базова URL-адреса:     http://localhost:20128/api/v1/vscode/YOUR_KEY/
+URL-адреса моделей:    http://localhost:20128/api/v1/vscode/YOUR_KEY/models
+URL-адреса чату:       http://localhost:20128/api/v1/vscode/YOUR_KEY/chat/completions
+URL-адреса тегів Ollama: http://localhost:20128/api/v1/vscode/YOUR_KEY/api/tags
+```
+
+Працює з Claude Code, Codex CLI, Cursor, Cline, OpenClaw, OpenCode та SDK, сумісними з OpenAI.
+
+#### Автоматичне налаштування за допомогою `setup-*`
+
+Замість ручного вставлення базової URL-адреси та ключа дозвольте OmniRoute записати власну конфігурацію кожного інструмента з актуального каталогу моделей. Одна команда для кожного інструмента:
+
+```bash
+omniroute setup-codex        # профілі ~/.codex/<name>.config.toml
+omniroute setup-claude       # ~/.claude/profiles/<name>/settings.json
+omniroute setup-opencode     # ~/.config/opencode/opencode.json (сумісний з OpenAI)
+omniroute setup-cline        # налаштування Cline CLI + розширення VS Code
+omniroute setup-kilo         # Kilo Code
+omniroute setup-continue     # ~/.continue/config.yaml (Continue / cn)
+omniroute setup-cursor       # виводить кроки для виконання в застосунку Cursor
+omniroute setup-roo          # імпорт Roo Code + вказівник autoImport
+omniroute setup-crush        # ~/.config/crush/crush.json
+omniroute setup-zed          # ~/.config/zed/settings.json (openai_compatible)
+omniroute setup-goose        # ~/.config/goose/config.yaml
+omniroute setup-aider        # ~/.aider.conf.yml
+omniroute setup-qwen         # ~/.qwen/settings.json + ~/.qwen/.env
+```
+
+Кожна команда підтримує `--remote <url> --api-key <key>` для налаштування локального інструмента для роботи з **віддаленим** OmniRoute, а також `--dry-run` для попереднього перегляду. Щоб запустити CLI з переданими правильними змінними середовища без запису конфігурації, використовуйте універсальний засіб запуску `omniroute run <target>` (claude, codex, aider, goose, opencode, qwen, gemini); застарілі засоби запуску для окремих інструментів `omniroute launch` (Claude Code) і `omniroute launch-codex` (Codex) залишаються доступними.
+
+Повну таблицю (що записує кожна команда, усі прапорці, локальний і віддалений режими, правила використання `/v1` у базовій URL-адресі) дивіться в розділі **[Інтеграції CLI](./CLI-INTEGRATIONS.md)**.
+
+Докладні налаштування для кожного інструмента (Claude Code, Codex CLI, Cursor, Cline, OpenClaw, Kilo Code, Copilot тощо) дивіться в окремому **[Посібнику з інструментів CLI](../reference/CLI-TOOLS.md)**.
+
+---
+
+## Налаштування протоколу (MCP + A2A)
+
+### Налаштування MCP (протокол контексту моделі)
+
+Запустіть транспорт MCP у режимі stdio:
+
+```bash
+omniroute --mcp
+```
+
+Рекомендований процес перевірки:
+
+```bash
+# 1. Start MCP server
+omniroute --mcp
+
+# 2. From your MCP client, call:
+omniroute_get_health        # Should return system health
+omniroute_list_combos       # Should return active combos
+
+# 3. Or run the full E2E suite:
+npm run test:protocols:e2e
+```
+
+#### Конфігурація клієнта MCP
+
+**Код Claude :**
+
+Код Claude підключається через HTTP, який `omniroute --mcp` (stdio) не запускає. Транспорт HTTP вимкнено за замовчуванням: спочатку ввімкніть його на запущеному сервері. Коли ввімкнено вхід на інформаційну панель, запит без облікових даних отримує `401`, тому передайте ключ API, який містить `mcp:connect` (або `manage`); ключ без `manage`/`admin` також потребує області видимості кожного інструменту (див. [Області дії інструмента MCP Server → MCP](../frameworks/MCP-SERVER.md#mcp-tool-scopes) ).
+
+```bash
+omniroute mcp enable --transport streamable-http
+claude mcp add --transport http omniroute http://localhost:20128/api/mcp/stream \
+  --header "Authorization: Bearer your-key"
+```
+
+**Cursor / Cline:**
+
+Додайте до налаштувань MCP (stdio, з ключем, щоб абонент мав принципала):
+
+```json
+{
+  "mcpServers": {
+    "omniroute": {
+      "command": "omniroute",
+      "args": ["--mcp"],
+      "env": {
+        "OMNIROUTE_API_KEY": "your-key",
+        "OMNIROUTE_BASE_URL": "http://localhost:20128"
+      }
+    }
+  }
+}
+```
+
+Або, коли `mcpTransport` дорівнює `streamable-http` (встановіть його на `/dashboard/mcp` або за допомогою `omniroute mcp enable --transport streamable-http`), вкажіть запис віддаленого сервера MCP клієнта на `http://localhost:20128/api/mcp/stream`.
+
+Ключ передається як `Authorization: Bearer <api-key>` (див. [MCP Server → Віддалений доступ](../frameworks/MCP-SERVER.md#remote-access-manage-scope-bypass) для віддалених хостів; для віддаленого ключа потрібен `mcp:connect` плюс його області read/write ).
+
+**Повна документація MCP :** [Сервер MCP README](../../open-sse/mcp-server/README.md) — 110 інструменти, конфігурації IDE, клієнти Python/TS/Go. Довідник оператора для інструментів стиснення CCR/dedup (маркери, передумови, області дії для кожного інструменту, розбиття на сторінки пошуку, діагностика): [механізми стиснення → Попередні умови / посібник оператора](../compression/COMPRESSION_ENGINES.md#prerequisites--operator-guide-ccr--session-dedup).
+
+### Налаштування A2A (протокол між агентами)
+
+Перевірте картку агента:
+
+```bash
+curl http://localhost:20128/.well-known/agent.json
+```
+
+Надіслати завдання:
+
+```bash
+curl -X POST http://localhost:20128/a2a \
+  -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":"quickstart","method":"message/send","params":{"skill":"quota-management","messages":[{"role":"user","content":"Give me a short quota summary."}]}}'
+```
+
+**Повна документація A2A :** [A2A сервер README](../../src/lib/a2a/README.md) — JSON-RPC 2.0, навички, потокове передавання, життєвий цикл завдання.
+
+---
+
+## Налаштування тайм-аутів
+
+### Основні тайм-аути
+
+Для більшості розгортань потрібні лише ці дві змінні:
+
+| Змінна                   | Значення за замовчуванням       | Призначення                                                                                                                                                                     |
+| ------------------------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `REQUEST_TIMEOUT_MS`     | `600000`                        | Спільне базове значення тайм-ауту початку відповіді від висхідного сервера, прихованих тайм-аутів Undici, запитів цифрового відбитка TLS і тайм-аутів запитів/проксі API bridge |
+| `STREAM_IDLE_TIMEOUT_MS` | успадковує `REQUEST_TIMEOUT_MS` | Максимальний інтервал між фрагментами потокових даних, після якого OmniRoute перериває потік SSE                                                                                |
+
+Зворотну сумісність збережено: наявні змінні `FETCH_TIMEOUT_MS`, `API_BRIDGE_PROXY_TIMEOUT_MS` та інші змінні тайм-аутів для окремих рівнів і надалі працюють та перевизначають спільне базове значення.
+
+### Примітки щодо окремих провайдерів
+
+Для висхідних серверів, сумісних із Claude Code (`anthropic-compatible-cc-*`), OmniRoute формує вихідний заголовок `X-Stainless-Timeout` на основі визначеного тайм-ауту отримання даних, щоб тайм-аути читання на боці провайдера відповідали вашій конфігурації змінних середовища.
+
+Для сторонніх зворотних проксі, сумісних із Claude Code, OmniRoute зберігає консервативний стандартний набір `anthropic-beta` і, коли для `Client Cache Control` залишено значення `Auto`, передає лише надані клієнтом маркери `cache_control`. Вмикайте перемикач «Enable redact-thinking beta» для окремого з’єднання лише тоді, коли висхідний сервер безпосередньо вимагає потоки міркувань Claude із прихованими даними.
+
+### Розширені перевизначення тайм-аутів
+
+| Змінна                                   | Значення за замовчуванням                    | Призначення                                                                                    |
+| ---------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `FETCH_TIMEOUT_MS`                       | успадковує `REQUEST_TIMEOUT_MS`              | Тайм-аут початку відповіді від висхідного сервера, що діє до отримання заголовків відповіді    |
+| `FETCH_HEADERS_TIMEOUT_MS`               | успадковує `FETCH_TIMEOUT_MS`                | Обмеження часу Undici для отримання заголовків відповіді від висхідного сервера                |
+| `FETCH_BODY_TIMEOUT_MS`                  | успадковує `FETCH_TIMEOUT_MS`                | Обмеження часу Undici між фрагментами тіла відповіді від висхідного сервера (`0` вимикає його) |
+| `FETCH_CONNECT_TIMEOUT_MS`               | `30000`                                      | Тайм-аут встановлення TCP-з’єднання Undici                                                     |
+| `FETCH_KEEPALIVE_TIMEOUT_MS`             | `4000`                                       | Тайм-аут неактивного keep-alive-сокета Undici                                                  |
+| `TLS_CLIENT_TIMEOUT_MS`                  | успадковує `FETCH_TIMEOUT_MS`                | Тайм-аут для запитів цифрового відбитка TLS, виконаних через `wreq-js`                         |
+| `API_BRIDGE_PROXY_TIMEOUT_MS`            | успадковує `REQUEST_TIMEOUT_MS` або `600000` | Тайм-аут для проксіювання `/v1` з порту API на порт панелі керування                           |
+| `API_BRIDGE_SERVER_REQUEST_TIMEOUT_MS`   | `max(API_BRIDGE_PROXY_TIMEOUT_MS, 300000)`   | Тайм-аут вхідного запиту на сервері API bridge                                                 |
+| `API_BRIDGE_SERVER_HEADERS_TIMEOUT_MS`   | `60000`                                      | Тайм-аут вхідних заголовків на сервері API bridge                                              |
+| `API_BRIDGE_SERVER_KEEPALIVE_TIMEOUT_MS` | `5000`                                       | Тайм-аут keep-alive на сервері API bridge                                                      |
+| `API_BRIDGE_SERVER_SOCKET_TIMEOUT_MS`    | `0`                                          | Тайм-аут неактивності сокета на сервері API bridge (`0` вимикає його)                          |
+
+> **Примітка:** Для потокових запитів `FETCH_TIMEOUT_MS` охоплює лише встановлення з’єднання / очікування першої відповіді від висхідного сервера. Після активації потоку OmniRoute перериває його лише в разі фактичної зупинки (`STREAM_IDLE_TIMEOUT_MS`) або неактивності тіла відповіді Undici (`FETCH_BODY_TIMEOUT_MS`).
+
+### Сумісність зі зворотними проксі
+
+Якщо ви запускаєте OmniRoute за Nginx, Caddy, Cloudflare або іншим зворотним проксі, переконайтеся, що тайм-аути проксі також перевищують тайм-аути потоків/отримання даних OmniRoute.
+
+---
+
+## Режим розділених портів
+
+Запускайте API та Dashboard на окремих портах для розширених сценаріїв (зворотний проксі, контейнерна мережа):
+
+```bash
+PORT=20128 DASHBOARD_PORT=20129 omniroute
+# API:       http://localhost:20128/v1
+# Dashboard: http://localhost:20129
+```
+
+---
+
+## Шаблон Void Linux (xbps-src).
+
+Для користувачів Void Linux ви можете створити нативний пакет за допомогою `xbps-src`. Збережіть цей блок як `srcpkgs/omniroute/template`:
+
+```bash
+# Template file for 'omniroute'
+pkgname=omniroute
+version=3.8.0
+revision=1
+hostmakedepends="nodejs python3 make"
+depends="openssl"
+short_desc="Universal AI gateway with smart routing for multiple LLM providers"
+maintainer="zenobit <zenobit@disroot.org>"
+license="MIT"
+homepage="https://github.com/diegosouzapw/OmniRoute"
+distfiles="https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz"
+# Regenerate the checksum for each release with:
+#   curl -L -o /tmp/omniroute.tar.gz "https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz" && sha256sum /tmp/omniroute.tar.gz
+checksum=PLACEHOLDER_REGENERATE_PER_RELEASE
+system_accounts="_omniroute"
+omniroute_homedir="/var/lib/omniroute"
+export NODE_ENV=production
+export npm_config_engine_strict=false
+export npm_config_loglevel=error
+export npm_config_fund=false
+export npm_config_audit=false
+
+do_build() {
+	local _gyp_arch
+	case "$XBPS_TARGET_MACHINE" in
+		aarch64*) _gyp_arch=arm64 ;;
+		armv7*|armv6*) _gyp_arch=arm ;;
+		i686*) _gyp_arch=ia32 ;;
+		*) _gyp_arch=x64 ;;
+	esac
+
+	NODE_ENV=development npm ci --ignore-scripts
+	npm run build
+	cp -r .next/static .next/standalone/.next/static
+	[ -d public ] && cp -r public .next/standalone/public || true
+
+	local _node_gyp=/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+	(cd node_modules/better-sqlite3 && node "$_node_gyp" rebuild --arch="$_gyp_arch")
+
+	local _bs3_release=.next/standalone/node_modules/better-sqlite3/build/Release
+	mkdir -p "$_bs3_release"
+	cp node_modules/better-sqlite3/build/Release/better_sqlite3.node "$_bs3_release/"
+
+	rm -rf .next/standalone/node_modules/@img
+
+	for _mod in pino-abstract-transport split2 process-warning; do
+		cp -r "node_modules/$_mod" .next/standalone/node_modules/
+	done
+}
+
+do_check() {
+	npm run test:unit
+}
+
+do_install() {
+	vmkdir usr/lib/omniroute/.next
+	vcopy .next/standalone/. usr/lib/omniroute/.next/standalone
+
+	for _d in \
+		.next/standalone/.next/server/app/dashboard \
+		.next/standalone/.next/server/app/dashboard/settings \
+		.next/standalone/.next/server/app/dashboard/providers; do
+		touch "${DESTDIR}/usr/lib/omniroute/${_d}/.keep"
+	done
+
+	cat > "${WRKDIR}/omniroute" <<'EOF'
+#!/bin/sh
+export PORT="${PORT:-20128}"
+export DATA_DIR="${DATA_DIR:-${XDG_DATA_HOME:-${HOME}/.local/share}/omniroute}"
+export APP_LOG_TO_FILE="${APP_LOG_TO_FILE:-false}"
+mkdir -p "${DATA_DIR}"
+exec node /usr/lib/omniroute/.next/standalone/server.js "$@"
+EOF
+	vbin "${WRKDIR}/omniroute"
+}
+
+post_install() {
+	vlicense LICENSE
+}
+```
+
+---
+
+## Видалення
+
+| Команда                  | Дія                                                                                     |
+| ------------------------ | --------------------------------------------------------------------------------------- |
+| `npm run uninstall`      | Видаляє системний застосунок, але **зберігає вашу БД і конфігурації** в `~/.omniroute`. |
+| `npm run uninstall:full` | Видаляє застосунок І назавжди **стирає всі конфігурації, ключі та бази даних**.         |
+
+> Докладні інструкції з видалення для всіх способів див. у файлі [UNINSTALL.md](./UNINSTALL.md).

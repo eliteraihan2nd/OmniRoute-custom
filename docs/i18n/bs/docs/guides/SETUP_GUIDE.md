@@ -1,0 +1,429 @@
+# 📖 Setup Guide — OmniRoute (Bosanski)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../guides/SETUP_GUIDE.md) · 🇪🇹 [am](../../../am/docs/guides/SETUP_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/guides/SETUP_GUIDE.md) · 🇦🇿 [az](../../../az/docs/guides/SETUP_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/guides/SETUP_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/guides/SETUP_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/guides/SETUP_GUIDE.md) · 🇩🇰 [da](../../../da/docs/guides/SETUP_GUIDE.md) · 🇩🇪 [de](../../../de/docs/guides/SETUP_GUIDE.md) · 🇬🇷 [el](../../../el/docs/guides/SETUP_GUIDE.md) · 🇪🇸 [es](../../../es/docs/guides/SETUP_GUIDE.md) · 🇪🇪 [et](../../../et/docs/guides/SETUP_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/guides/SETUP_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/guides/SETUP_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/guides/SETUP_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/guides/SETUP_GUIDE.md) · 🇮🇱 [he](../../../he/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/guides/SETUP_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/guides/SETUP_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/guides/SETUP_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/guides/SETUP_GUIDE.md) · 🇮🇩 [id](../../../id/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/guides/SETUP_GUIDE.md) · 🇮🇹 [it](../../../it/docs/guides/SETUP_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/guides/SETUP_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/guides/SETUP_GUIDE.md) · 🇰🇭 [km](../../../km/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/guides/SETUP_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/guides/SETUP_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/guides/SETUP_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/guides/SETUP_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/guides/SETUP_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/guides/SETUP_GUIDE.md) · 🇲🇲 [my](../../../my/docs/guides/SETUP_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/guides/SETUP_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/guides/SETUP_GUIDE.md) · 🇳🇴 [no](../../../no/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [or](../../../or/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/guides/SETUP_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/guides/SETUP_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/guides/SETUP_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/guides/SETUP_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/guides/SETUP_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/guides/SETUP_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/guides/SETUP_GUIDE.md) · 🇱🇰 [si](../../../si/docs/guides/SETUP_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/guides/SETUP_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/guides/SETUP_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/guides/SETUP_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/guides/SETUP_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [te](../../../te/docs/guides/SETUP_GUIDE.md) · 🇹🇭 [th](../../../th/docs/guides/SETUP_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/guides/SETUP_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/guides/SETUP_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/guides/SETUP_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/guides/SETUP_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/guides/SETUP_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/guides/SETUP_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/guides/SETUP_GUIDE.md)
+
+---
+
+# 📖 Vodič za podešavanje — OmniRoute
+
+> Kompletna referenca za podešavanje OmniRoute-a. Za brzu verziju, pogledajte [Brzi početak u README](../README.md#-quick-start).
+
+## Sadržaj
+
+- [Metode instalacije](#metode-instalacije)
+- [Konfiguracija CLI alata](#konfiguracija-cli-alata)
+- [Podešavanje protokola (MCP + A2A)](#podešavanje-protokola-mcp--a2a)
+- [Konfiguracija vremenskog ograničenja (Timeout)](#konfiguracija-vremenskog-ograničenja-timeout)
+- [Režim podijeljenog porta (Split-Port Mode)](#režim-podijeljenog-porta-split-port-mode)
+- [Void Linux (xbps-src)](#void-linux-xbps-src-template)
+- [Deinstalacija](#deinstalacija)
+
+---
+
+## Metode instalacije
+
+### npm (preporučeno)
+
+```bash
+npm install -g omniroute
+omniroute
+```
+
+Kontrolna tabla se otvara na `http://localhost:20128` i API baza URL je `http://localhost:20128/v1`.
+
+> **npm korisnici:** Ako npm upozori da su instalacijske skripte blokirane (npr. `omniroute`, `better-sqlite3`), pogledajte [Rješavanje problema — npm instalacijske skripte blokirane](./TROUBLESHOOTING.md#npm-install-scripts-blocked-warning-global-install).
+
+### pnpm
+
+```bash
+pnpm add -g omniroute@latest --allow-build=better-sqlite3 --allow-build=@swc/core
+omniroute
+```
+
+> **pnpm korisnici:** `--allow-build` zastavica je potrebna za omogućavanje izvornih skripti za `better-sqlite3` i `@swc/core`. Naredba `pnpm approve-builds -g` nije podržana za globalne instalacije na pnpm v11.
+
+### Arch Linux (AUR)
+
+```bash
+yay -S omniroute-bin
+systemctl --user enable --now omniroute.service
+```
+
+[AUR paket](https://aur.archlinux.org/packages/omniroute-bin) instalira OmniRoute i pruža systemd korisničku uslugu.
+
+### From Source
+
+```bash
+npm install
+PORT=20128 DASHBOARD_PORT=20129 NEXT_PUBLIC_BASE_URL=http://localhost:20129 npm run dev
+```
+
+> **Windows napomena:** Po defaultu, OmniRoute koristi `%APPDATA%\omniroute` kada nije prisutan naslijeđeni `%USERPROFILE%\.omniroute` direktorij. Postavite `DATA_DIR` da odabere drugu lokaciju direktorija podataka.
+
+> **Napomena:** `npm install` automatski generiše `.env` iz `.env.example` pri prvom pokretanju. Naredne instalacije neće prepisati postojeći `.env`, tako da su prilagođavanja sačuvana. Za ponovno postavljanje, obrišite `.env` prije ponovnog pokretanja.
+
+### Docker
+
+Pogledajte [vodič Docker](./DOCKER_GUIDE.md) za kompletno podešavanje Docker uključujući Compose profile i Caddy HTTPS.
+
+### Desktop aplikacija (Electron)
+
+OmniRoute isporučuje desktop omot izgrađen na Electron 41 + electron-builder 26.10. Dostupne skripte (osnovni radni prostor):
+
+```bash
+npm run electron:dev          # Run desktop with hot-reload
+npm run electron:build        # Build for current OS (auto-detected)
+npm run electron:build:win    # Windows installer (NSIS + portable)
+npm run electron:build:mac    # macOS (dmg + zip, arm64+x64)
+npm run electron:build:linux  # Linux (AppImage + deb + rpm)
+npm run electron:smoke:packaged  # Smoke-test packaged build
+```
+
+Izdanja desktop instalatora su priložena uz GitHub izdanja. Za puni Electron deep-dive (potpisivanje, IPC bridge, distros), pogledajte [`ELECTRON_GUIDE.md`](./ELECTRON_GUIDE.md) _(criado em fase posterior)_.
+
+### Server bez glave (CI/automation)
+
+Za podešavanja bez nadzora (Docker, Kubernetes, CI), koristite:
+
+```bash
+omniroute setup --non-interactive
+omniroute providers test-batch
+```
+
+U kombinaciji sa env varsima (`INITIAL_PASSWORD`, `OMNIROUTE_WS_BRIDGE_SECRET`, itd.), ovo vam omogućava da pokrenete OmniRoute instancu koja je u potpunosti skriptovana.
+
+### CLI Opcije
+
+| Command                 | Opis                                                                                 |
+| ----------------------- | ------------------------------------------------------------------------------------ |
+| `omniroute`             | Pokrenite server (`PORT=20128`, API i kontrolna tabla na istom portu)                |
+| `omniroute setup`       | Vodeni CLI onboarding za lozinku i prvog provajdera                                  |
+| `omniroute doctor`      | Pokrenite lokalne zdravstvene provjere bez pokretanja servera                        |
+| `omniroute providers`   | Otkrijte, navedite, potvrdite i testirajte dobavljače iz CLI                         |
+| `omniroute config`      | konfiguracija CLI alata — lista, preuzimanje, postavljanje, validacija konfiguracija |
+| `omniroute status`      | Offline nadzorna ploča statusa — verzija, DB, alati, konfig                          |
+| `omniroute logs`        | Dnevnici korištenja prijenosa iz API (podržava `--follow`)                           |
+| `omniroute update`      | Provjerite ili primijenite ažuriranja OmniRoute                                      |
+| `omniroute provider`    | Upravljajte konekcijama provajdera — add, list, remove, test, default                |
+| `omniroute --port 3000` | Postavite canonical/API port na 3000                                                 |
+| `omniroute --mcp`       | Pokrenite MCP server (stdio transport)                                               |
+| `omniroute --no-open`   | Nemojte automatski otvarati pretraživač                                              |
+| `omniroute --help`      | Pokaži pomoć                                                                         |
+
+Bezglavo podešavanje može biti skriptirano sa zastavicama ili varijablama okruženja:
+
+```bash
+omniroute setup --non-interactive --password "$OMNIROUTE_PASSWORD"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY" --test-provider
+```
+
+Pokrenite lokalnu dijagnostiku bez otvaranja kontrolne ploče:
+
+```bash
+omniroute doctor
+omniroute doctor --json
+omniroute doctor --no-liveness
+```
+
+Upravljajte provajderima iz SSH ili skripti bez otvaranja kontrolne ploče:
+
+```bash
+omniroute providers available
+omniroute providers available --search openai
+omniroute providers available --category api-key
+omniroute providers list
+omniroute providers test <id-or-name>
+omniroute providers test-all
+omniroute providers validate
+```
+
+---
+
+## Konfiguracija CLI alata
+
+### 1) Povežite pružaoce usluga i kreirajte API ključ
+
+1. Otvorite kontrolnu ploču → `Providers` i povežite najmanje jednog pružaoca usluga (OAuth ili API ključ).
+2. Otvorite kontrolnu ploču → `Endpoints` i kreirajte API ključ.
+3. (Opcionalno) Otvorite kontrolnu ploču → `Combos` i postavite svoj rezervni lanac.
+
+### 2) Usmjerite svoj alat za programiranje
+
+```txt
+Osnovni URL: http://localhost:20128/v1
+API ključ:   [kopirajte sa stranice Endpoint]
+Model:       if/qwen3.8-max-preview (ili bilo koji prefiks pružaoca/modela)
+```
+
+Ako vaš uređivač ne može poslati `Authorization: Bearer ...`, umjesto toga koristite tokeniziranu osnovnu adresu za kompatibilnost:
+
+```txt
+Osnovni URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/
+URL modela: http://localhost:20128/api/v1/vscode/YOUR_KEY/models
+URL razgovora: http://localhost:20128/api/v1/vscode/YOUR_KEY/chat/completions
+URL Ollama oznaka: http://localhost:20128/api/v1/vscode/YOUR_KEY/api/tags
+```
+
+Radi s alatima Claude Code, Codex CLI, Cursor, Cline, OpenClaw, OpenCode i SDK-ovima kompatibilnim s OpenAI-em.
+
+#### Automatski konfigurirajte pomoću `setup-*`
+
+Umjesto ručnog lijepljenja osnovnog URL-a i ključa, dopustite da OmniRoute zapiše vlastitu konfiguraciju svakog alata iz aktivnog kataloga modela. Jedna naredba po alatu:
+
+```bash
+omniroute setup-codex        # profili ~/.codex/<name>.config.toml
+omniroute setup-claude       # ~/.claude/profiles/<name>/settings.json
+omniroute setup-opencode     # ~/.config/opencode/opencode.json (kompatibilno s OpenAI-em)
+omniroute setup-cline        # postavke za Cline CLI + VS Code ekstenziju
+omniroute setup-kilo         # Kilo Code
+omniroute setup-continue     # ~/.continue/config.yaml (Continue / cn)
+omniroute setup-cursor       # ispisuje korake unutar aplikacije Cursor
+omniroute setup-roo          # Roo Code uvoz + pokazivač autoImport
+omniroute setup-crush        # ~/.config/crush/crush.json
+omniroute setup-zed          # ~/.config/zed/settings.json (openai_compatible)
+omniroute setup-goose        # ~/.config/goose/config.yaml
+omniroute setup-aider        # ~/.aider.conf.yml
+omniroute setup-qwen         # ~/.qwen/settings.json + ~/.qwen/.env
+```
+
+Svaka prihvata `--remote <url> --api-key <key>` za konfiguriranje lokalnog alata prema **udaljenom** OmniRouteu, kao i `--dry-run` za pregled. Za pokretanje CLI-ja s umetnutim odgovarajućim okruženjem, bez ikakvog zapisivanja konfiguracije, koristite generički pokretač `omniroute run <target>` (claude, codex, aider, goose, opencode, qwen, gemini); stariji pokretači za pojedinačne alate `omniroute launch` (Claude Code) i `omniroute launch-codex` (Codex) ostaju dostupni.
+
+Za kompletnu tabelu (šta svaka naredba zapisuje, sve zastavice, lokalno naspram udaljenog, konvencije osnovnog URL-a `/v1`) pogledajte **[CLI integracije](./CLI-INTEGRATIONS.md)**.
+
+Za detaljnu konfiguraciju pojedinačnih alata (Claude Code, Codex CLI, Cursor, Cline, OpenClaw, Kilo Code, Copilot i drugi) pogledajte namjenski **[Vodič za CLI alate](../reference/CLI-TOOLS.md)**.
+
+---
+
+## Podešavanje protokola (MCP + A2A)
+
+### MCP Setup (Model Context Protocol)
+
+Pokrenite MCP transport u stdio modu:
+
+```bash
+omniroute --mcp
+```
+
+Preporučeni tok validacije:
+
+```bash
+# 1. Start MCP server
+omniroute --mcp
+
+# 2. From your MCP client, call:
+omniroute_get_health        # Should return system health
+omniroute_list_combos       # Should return active combos
+
+# 3. Or run the full E2E suite:
+npm run test:protocols:e2e
+```
+
+#### MCP konfiguracija klijenta
+
+**Claude kod:**
+
+Claude kod se povezuje preko HTTP, koji `omniroute --mcp` (stdio) ne pokreće. HTTP transport je podrazumevano isključen: prvo ga omogućite na pokrenutom serveru. Kada je prijava na kontrolnu tablu omogućena, zahtjev bez akreditiva dobiva `401`, pa proslijedite API ključ koji drži `mcp:connect` (ili `manage`); ključ bez `manage`/`admin` takođe treba opseg svakog alata (pogledajte [MCP Server → MCP opseg alata](../frameworks/MCP-SERVER.md#mcp-tool-scopes) ).
+
+```bash
+omniroute mcp enable --transport streamable-http
+claude mcp add --transport http omniroute http://localhost:20128/api/mcp/stream \
+  --header "Authorization: Bearer your-key"
+```
+
+**Cursor / Cline:**
+
+Dodajte svojim MCP postavkama (stdio, sa ključem tako da pozivalac ima principala):
+
+```json
+{
+  "mcpServers": {
+    "omniroute": {
+      "command": "omniroute",
+      "args": ["--mcp"],
+      "env": {
+        "OMNIROUTE_API_KEY": "your-key",
+        "OMNIROUTE_BASE_URL": "http://localhost:20128"
+      }
+    }
+  }
+}
+```
+
+Ili, kada je `mcpTransport` `streamable-http` (postavite ga na `/dashboard/mcp` ili sa `omniroute mcp enable --transport streamable-http`), usmjerite klijentov daljinski MCP server na `http://localhost:20128/api/mcp/stream`.
+
+Ključ putuje kao `Authorization: Bearer <api-key>` (pogledajte [MCP Server → Daljinski pristup](../frameworks/MCP-SERVER.md#remote-access-manage-scope-bypass) za udaljene hostove; udaljenom ključu je potreban `mcp:connect` plus njegove read/write opsege).
+
+**Kompletna MCP dokumentacija:** [MCP server README](../../open-sse/mcp-server/README.md) — 110 alati, IDE konfiguracije, Python/TS/Go klijenti. Referenca operatera za alate za kompresiju CCR/dedup (markeri, preduvjeti, opsezi po alatu, paginacija pri preuzimanju, dijagnostika): [Motori kompresije → Preduvjeti / vodič za operatera](../compression/COMPRESSION_ENGINES.md#prerequisites--operator-guide-ccr--session-dedup).
+
+### A2A postavljanje (protokol agent-to-agent)
+
+Potvrdite karticu agenta:
+
+```bash
+curl http://localhost:20128/.well-known/agent.json
+```
+
+Pošaljite zadatak:
+
+```bash
+curl -X POST http://localhost:20128/a2a \
+  -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":"quickstart","method":"message/send","params":{"skill":"quota-management","messages":[{"role":"user","content":"Give me a short quota summary."}]}}'
+```
+
+**Kompletna A2A dokumentacija:** [A2A Server README](../../src/lib/a2a/README.md) — JSON-RPC 2.0, vještine, streaming, životni ciklus zadatka.
+
+---
+
+## Konfiguracija timeouta
+
+### Osnovna vremenska ograničenja
+
+Za većinu implementacija, potrebne su vam samo ove dvije varijable:
+
+| Varijabla                | Zadano                          | Namjena                                                                                                                                                         |
+| ------------------------ | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `REQUEST_TIMEOUT_MS`     | `600000`                        | Zajednička osnova za timeout početka odgovora upstream servisa, skrivene Undici timeout-e, zahtjeve za TLS fingerprint, te timeout-e zahtjeva/proxyja API mosta |
+| `STREAM_IDLE_TIMEOUT_MS` | nasljeđuje `REQUEST_TIMEOUT_MS` | Maksimalni razmak između streaming dijelova (chunkova) prije nego što OmniRoute prekine SSE stream                                                              |
+
+Očuvana je povratna kompatibilnost: postojeće `FETCH_TIMEOUT_MS`, `API_BRIDGE_PROXY_TIMEOUT_MS` i druge varijable vremenskih ograničenja po slojevima i dalje rade i nadjačavaju zajedničku osnovu.
+
+### Napomene specifične za provajdera
+
+Za upstream servise kompatibilne sa Claude Code (`anthropic-compatible-cc-*`), OmniRoute izvodi odlazno `X-Stainless-Timeout` zaglavlje iz razriješenog fetch timeout-a, tako da timeout-i čitanja na strani provajdera ostaju usklađeni sa vašom konfiguracijom okruženja.
+
+Za Claude Code-kompatibilne reverzne proxyje trećih strana, OmniRoute održava zadani `anthropic-beta` skup konzervativnim i, kada je `Client Cache Control` ostavljen na `Auto`, prosljeđuje samo `cache_control` markere koje je dostavio klijent. Omogućite prekidač "Enable redact-thinking beta" po konekciji samo kada upstream servis izričito zahtijeva redigovane Claude thinking streamove.
+
+### Napredna nadjačavanja vremenskih ograničenja
+
+| Varijabla                                | Zadano                                       | Namjena                                                                                                 |
+| ---------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `FETCH_TIMEOUT_MS`                       | nasljeđuje `REQUEST_TIMEOUT_MS`              | Timeout početka odgovora upstream servisa koji se koristi dok ne stignu zaglavlja odgovora              |
+| `FETCH_HEADERS_TIMEOUT_MS`               | nasljeđuje `FETCH_TIMEOUT_MS`                | Undici vremensko ograničenje za primanje zaglavlja odgovora upstream servisa                            |
+| `FETCH_BODY_TIMEOUT_MS`                  | nasljeđuje `FETCH_TIMEOUT_MS`                | Undici vremensko ograničenje između dijelova tijela (body chunks) upstream servisa (`0` ga onemogućava) |
+| `FETCH_CONNECT_TIMEOUT_MS`               | `30000`                                      | Undici TCP timeout povezivanja                                                                          |
+| `FETCH_KEEPALIVE_TIMEOUT_MS`             | `4000`                                       | Undici timeout neaktivnog keep-alive socketa                                                            |
+| `TLS_CLIENT_TIMEOUT_MS`                  | nasljeđuje `FETCH_TIMEOUT_MS`                | Timeout za zahtjeve TLS otiska (fingerprint) napravljene putem `wreq-js`                                |
+| `API_BRIDGE_PROXY_TIMEOUT_MS`            | nasljeđuje `REQUEST_TIMEOUT_MS` ili `600000` | Timeout za `/v1` proxy prosljeđivanje sa API porta na port kontrolne ploče (dashboard)                  |
+| `API_BRIDGE_SERVER_REQUEST_TIMEOUT_MS`   | `max(API_BRIDGE_PROXY_TIMEOUT_MS, 300000)`   | Timeout dolaznog zahtjeva na serveru API mosta                                                          |
+| `API_BRIDGE_SERVER_HEADERS_TIMEOUT_MS`   | `60000`                                      | Timeout dolaznog zaglavlja na serveru API mosta                                                         |
+| `API_BRIDGE_SERVER_KEEPALIVE_TIMEOUT_MS` | `5000`                                       | Keep-alive timeout na serveru API mosta                                                                 |
+| `API_BRIDGE_SERVER_SOCKET_TIMEOUT_MS`    | `0`                                          | Timeout neaktivnosti socketa na serveru API mosta (`0` ga onemogućava)                                  |
+
+> **Napomena:** Za streaming zahtjeve, `FETCH_TIMEOUT_MS` pokriva samo uspostavljanje konekcije / čekanje na prvi odgovor upstream servisa. Kada je stream aktivan, OmniRoute će prekinuti samo u slučaju stvarnog zastoja (`STREAM_IDLE_TIMEOUT_MS`) ili neaktivnosti Undici tijela (`FETCH_BODY_TIMEOUT_MS`).
+
+### Kompatibilnost sa reverznim proxyjem
+
+Ako pokrećete OmniRoute iza Nginx-a, Caddy-ja, Cloudflare-a ili drugog reverznog proxyja, provjerite jesu li timeout-i proxyja također viši od vaših OmniRoute stream/fetch timeout-a.
+
+---
+
+## Režim sa odvojenim portovima
+
+Pokrenite API i kontrolnu tablu na odvojenim portovima za napredne scenarije (reverzni proxy, kontejnersko umrežavanje):
+
+```bash
+PORT=20128 DASHBOARD_PORT=20129 omniroute
+# API:       http://localhost:20128/v1
+# Kontrolna tabla: http://localhost:20129
+```
+
+---
+
+## Void Linux (xbps-src) predložak
+
+Za korisnike Void Linux, možete napraviti izvorni paket koristeći `xbps-src`. Sačuvajte ovaj blok kao `srcpkgs/omniroute/template`:
+
+```bash
+# Template file for 'omniroute'
+pkgname=omniroute
+version=3.8.0
+revision=1
+hostmakedepends="nodejs python3 make"
+depends="openssl"
+short_desc="Universal AI gateway with smart routing for multiple LLM providers"
+maintainer="zenobit <zenobit@disroot.org>"
+license="MIT"
+homepage="https://github.com/diegosouzapw/OmniRoute"
+distfiles="https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz"
+# Regenerate the checksum for each release with:
+#   curl -L -o /tmp/omniroute.tar.gz "https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz" && sha256sum /tmp/omniroute.tar.gz
+checksum=PLACEHOLDER_REGENERATE_PER_RELEASE
+system_accounts="_omniroute"
+omniroute_homedir="/var/lib/omniroute"
+export NODE_ENV=production
+export npm_config_engine_strict=false
+export npm_config_loglevel=error
+export npm_config_fund=false
+export npm_config_audit=false
+
+do_build() {
+	local _gyp_arch
+	case "$XBPS_TARGET_MACHINE" in
+		aarch64*) _gyp_arch=arm64 ;;
+		armv7*|armv6*) _gyp_arch=arm ;;
+		i686*) _gyp_arch=ia32 ;;
+		*) _gyp_arch=x64 ;;
+	esac
+
+	NODE_ENV=development npm ci --ignore-scripts
+	npm run build
+	cp -r .next/static .next/standalone/.next/static
+	[ -d public ] && cp -r public .next/standalone/public || true
+
+	local _node_gyp=/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+	(cd node_modules/better-sqlite3 && node "$_node_gyp" rebuild --arch="$_gyp_arch")
+
+	local _bs3_release=.next/standalone/node_modules/better-sqlite3/build/Release
+	mkdir -p "$_bs3_release"
+	cp node_modules/better-sqlite3/build/Release/better_sqlite3.node "$_bs3_release/"
+
+	rm -rf .next/standalone/node_modules/@img
+
+	for _mod in pino-abstract-transport split2 process-warning; do
+		cp -r "node_modules/$_mod" .next/standalone/node_modules/
+	done
+}
+
+do_check() {
+	npm run test:unit
+}
+
+do_install() {
+	vmkdir usr/lib/omniroute/.next
+	vcopy .next/standalone/. usr/lib/omniroute/.next/standalone
+
+	for _d in \
+		.next/standalone/.next/server/app/dashboard \
+		.next/standalone/.next/server/app/dashboard/settings \
+		.next/standalone/.next/server/app/dashboard/providers; do
+		touch "${DESTDIR}/usr/lib/omniroute/${_d}/.keep"
+	done
+
+	cat > "${WRKDIR}/omniroute" <<'EOF'
+#!/bin/sh
+export PORT="${PORT:-20128}"
+export DATA_DIR="${DATA_DIR:-${XDG_DATA_HOME:-${HOME}/.local/share}/omniroute}"
+export APP_LOG_TO_FILE="${APP_LOG_TO_FILE:-false}"
+mkdir -p "${DATA_DIR}"
+exec node /usr/lib/omniroute/.next/standalone/server.js "$@"
+EOF
+	vbin "${WRKDIR}/omniroute"
+}
+
+post_install() {
+	vlicense LICENSE
+}
+```
+
+---
+
+## Deinstalacija
+
+| Komanda                  | Radnja                                                                                              |
+| ------------------------ | --------------------------------------------------------------------------------------------------- |
+| `npm run uninstall`      | Uklanja sistemsku aplikaciju, ali **zadržava vašu bazu podataka i konfiguracije** u `~/.omniroute`. |
+| `npm run uninstall:full` | Uklanja aplikaciju I trajno **briše sve konfiguracije, ključeve i baze podataka**.                  |
+
+> Za detaljna uputstva o deinstalaciji za sve metode, pogledajte [UNINSTALL.md](./UNINSTALL.md).

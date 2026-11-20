@@ -1,0 +1,433 @@
+# 📖 Setup Guide — OmniRoute (اردو)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../guides/SETUP_GUIDE.md) · 🇪🇹 [am](../../../am/docs/guides/SETUP_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/guides/SETUP_GUIDE.md) · 🇦🇿 [az](../../../az/docs/guides/SETUP_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/guides/SETUP_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/guides/SETUP_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/guides/SETUP_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/guides/SETUP_GUIDE.md) · 🇩🇰 [da](../../../da/docs/guides/SETUP_GUIDE.md) · 🇩🇪 [de](../../../de/docs/guides/SETUP_GUIDE.md) · 🇬🇷 [el](../../../el/docs/guides/SETUP_GUIDE.md) · 🇪🇸 [es](../../../es/docs/guides/SETUP_GUIDE.md) · 🇪🇪 [et](../../../et/docs/guides/SETUP_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/guides/SETUP_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/guides/SETUP_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/guides/SETUP_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/guides/SETUP_GUIDE.md) · 🇮🇱 [he](../../../he/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/guides/SETUP_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/guides/SETUP_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/guides/SETUP_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/guides/SETUP_GUIDE.md) · 🇮🇩 [id](../../../id/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/guides/SETUP_GUIDE.md) · 🇮🇹 [it](../../../it/docs/guides/SETUP_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/guides/SETUP_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/guides/SETUP_GUIDE.md) · 🇰🇭 [km](../../../km/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/guides/SETUP_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/guides/SETUP_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/guides/SETUP_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/guides/SETUP_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/guides/SETUP_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/guides/SETUP_GUIDE.md) · 🇲🇲 [my](../../../my/docs/guides/SETUP_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/guides/SETUP_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/guides/SETUP_GUIDE.md) · 🇳🇴 [no](../../../no/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [or](../../../or/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/guides/SETUP_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/guides/SETUP_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/guides/SETUP_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/guides/SETUP_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/guides/SETUP_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/guides/SETUP_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/guides/SETUP_GUIDE.md) · 🇱🇰 [si](../../../si/docs/guides/SETUP_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/guides/SETUP_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/guides/SETUP_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/guides/SETUP_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/guides/SETUP_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [te](../../../te/docs/guides/SETUP_GUIDE.md) · 🇹🇭 [th](../../../th/docs/guides/SETUP_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/guides/SETUP_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/guides/SETUP_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/guides/SETUP_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/guides/SETUP_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/guides/SETUP_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/guides/SETUP_GUIDE.md)
+
+---
+
+> OmniRoute کی مکمل سیٹ اپ حوالہ گائیڈ۔ مختصر ورژن کے لیے، [README میں فوری آغاز](../README.md#-quick-start) دیکھیں۔
+
+## فہرستِ مضامین
+
+- [تنصیب کے طریقے](#install-methods)
+- [CLI ٹول کی تشکیل](#cli-tool-configuration)
+- [پروٹوکول سیٹ اپ (MCP + A2A)](#protocol-setup-mcp--a2a)
+- [ٹائم آؤٹ کی تشکیل](#timeout-configuration)
+- [تقسیم شدہ پورٹ موڈ](#split-port-mode)
+- [Void Linux (xbps-src)](#void-linux-xbps-src-template)
+- [اَن انسٹال کرنا](#uninstalling)
+
+---
+
+## انسٹال کرنے کے طریقے
+
+### npm (تجویز کردہ)
+
+```bash
+npm install -g omniroute
+omniroute
+```
+
+ڈیش بورڈ `http://localhost:20128` پر کھلتا ہے اور API بیس URL `http://localhost:20128/v1` ہے۔
+
+> **این پی ایم صارفین:** اگر npm انتباہ کرتا ہے کہ انسٹال اسکرپٹس کو مسدود کردیا گیا تھا (مثال کے طور پر، `omniroute`، `better-sqlite3`)، دیکھیں [ٹربل شوٹنگ — npm install-scripts blocked](./TROUBLESHOOTING.md#npm-install-scripts-blocked-warning-global-install) ۔
+
+### pnpm
+
+```bash
+pnpm add -g omniroute@latest --allow-build=better-sqlite3 --allow-build=@swc/core
+omniroute
+```
+
+> **pnpm صارفین:** `--allow-build` پرچم کو `better-sqlite3` اور `@swc/core` کے لیے مقامی تعمیراتی اسکرپٹ کو فعال کرنے کی ضرورت ہے۔ `pnpm approve-builds -g` کمانڈ pnpm v11 پر عالمی انسٹال کے لیے تعاون یافتہ نہیں ہے۔
+
+### محراب Linux (AUR)
+
+```bash
+yay -S omniroute-bin
+systemctl --user enable --now omniroute.service
+```
+
+[AUR پیکیج](https://aur.archlinux.org/packages/omniroute-bin) OmniRoute کو انسٹال کرتا ہے اور سسٹمڈ صارف کی خدمت فراہم کرتا ہے۔
+
+### ماخذ سے
+
+```bash
+npm install
+PORT=20128 DASHBOARD_PORT=20129 NEXT_PUBLIC_BASE_URL=http://localhost:20129 npm run dev
+```
+
+> **Windows نوٹ:** پہلے سے طے شدہ طور پر، OmniRoute `%APPDATA%\omniroute` استعمال کرتا ہے جب لیگیسی `%USERPROFILE%\.omniroute` ڈائرکٹری موجود نہیں ہے۔ ایک مختلف ڈیٹا ڈائرکٹری مقام کا انتخاب کرنے کے لیے `DATA_DIR` سیٹ کریں۔
+
+> **نوٹ:** `npm install` پہلی بار `.env.example` سے `.env` خود بخود تیار کرتا ہے۔ بعد کے انسٹالز موجودہ `.env` اوور رائٹ نہیں کریں گے، اس لیے تخصیصات محفوظ ہیں۔ دوبارہ بیج لگانے کے لیے، دوبارہ چلانے سے پہلے `.env` حذف کریں۔
+
+### Docker
+
+کمپوز پروفائلز اور Caddy HTTPS سمیت مکمل Docker سیٹ اپ کے لیے [Docker گائیڈ](./DOCKER_GUIDE.md) دیکھیں۔
+
+### ڈیسک ٹاپ ایپ (Electron)
+
+OmniRoute ایک ڈیسک ٹاپ ریپر بھیجتا ہے جو Electron 41 + الیکٹران بلڈر 26.10 پر بنایا گیا ہے۔ دستیاب اسکرپٹس (ورک اسپیس روٹ):
+
+```bash
+npm run electron:dev          # Run desktop with hot-reload
+npm run electron:build        # Build for current OS (auto-detected)
+npm run electron:build:win    # Windows installer (NSIS + portable)
+npm run electron:build:mac    # macOS (dmg + zip, arm64+x64)
+npm run electron:build:linux  # Linux (AppImage + deb + rpm)
+npm run electron:smoke:packaged  # Smoke-test packaged build
+```
+
+ڈیسک ٹاپ انسٹالرز کی ریلیز GitHub ریلیز کے ساتھ منسلک ہیں۔ مکمل Electron deep-dive (signing, IPC bridge, distros) کے لیے [`ELECTRON_GUIDE.md`](./ELECTRON_GUIDE.md) _(criado em fase posterior)_ دیکھیں۔
+
+### بغیر سر سرور (CI/automation)
+
+غیر حاضر سیٹ اپ کے لیے (Docker, Kubernetes , CI)، استعمال کریں:
+
+```bash
+omniroute setup --non-interactive
+omniroute providers test-batch
+```
+
+env vars (`INITIAL_PASSWORD`، `OMNIROUTE_WS_BRIDGE_SECRET`، وغیرہ) کے ساتھ مل کر، یہ آپ کو ایک OmniRoute مثال کو مکمل طور پر اسکرپٹ کرنے دیتا ہے۔
+
+### CLI اختیارات
+
+| حکم                     | تفصیل                                                                                   |
+| ----------------------- | --------------------------------------------------------------------------------------- |
+| `omniroute`             | سرور شروع کریں ( ایک ہی پورٹ پر `PORT=20128`، API اور ڈیش بورڈ)                         |
+| `omniroute setup`       | پاس ورڈ اور پہلے فراہم کنندہ کے لیے گائیڈڈ CLI آن بورڈنگ                                |
+| `omniroute doctor`      | سرور شروع کیے بغیر مقامی صحت کی جانچ کریں۔                                              |
+| `omniroute providers`   | CLI سے فراہم کنندگان کو دریافت کریں، فہرست بنائیں، تصدیق کریں اور جانچ کریں۔            |
+| `omniroute config`      | CLI ٹول کنفیگریشن — فہرست، حاصل کریں، سیٹ کریں، کنفیگرز کی توثیق کریں۔                  |
+| `omniroute status`      | آف لائن اسٹیٹس ڈیش بورڈ — ورژن، DB، ٹولز، تشکیل                                         |
+| `omniroute logs`        | API سے سٹریم استعمال لاگز ( `--follow` کی حمایت کرتا ہے)                                |
+| `omniroute update`      | OmniRoute اپ ڈیٹس کو چیک کریں یا لاگو کریں۔                                             |
+| `omniroute provider`    | فراہم کنندہ کنکشنز کا نظم کریں — شامل کریں، فہرست کریں، ہٹائیں، ٹیسٹ کریں، ڈیفالٹ کریں۔ |
+| `omniroute --port 3000` | canonical/API پورٹ کو 3000 پر سیٹ کریں۔                                                 |
+| `omniroute --mcp`       | MCP سرور شروع کریں (stdio ٹرانسپورٹ)                                                    |
+| `omniroute --no-open`   | براؤزر کو خود بخود نہ کھولیں۔                                                           |
+| `omniroute --help`      | مدد دکھائیں۔                                                                            |
+
+ہیڈ لیس سیٹ اپ کو جھنڈوں یا ماحولیاتی متغیرات کے ساتھ اسکرپٹ کیا جا سکتا ہے:
+
+```bash
+omniroute setup --non-interactive --password "$OMNIROUTE_PASSWORD"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY" --test-provider
+```
+
+ڈیش بورڈ کھولے بغیر مقامی تشخیص چلائیں:
+
+```bash
+omniroute doctor
+omniroute doctor --json
+omniroute doctor --no-liveness
+```
+
+ڈیش بورڈ کھولے بغیر SSH یا اسکرپٹس سے فراہم کنندگان کا نظم کریں:
+
+```bash
+omniroute providers available
+omniroute providers available --search openai
+omniroute providers available --category api-key
+omniroute providers list
+omniroute providers test <id-or-name>
+omniroute providers test-all
+omniroute providers validate
+```
+
+---
+
+## CLI ٹول کی کنفیگریشن
+
+### 1) فراہم کنندگان کو منسلک کریں اور API کلید بنائیں
+
+1. Dashboard کھولیں → `Providers` پر جائیں اور کم از کم ایک فراہم کنندہ (OAuth یا API کلید) منسلک کریں۔
+2. Dashboard کھولیں → `Endpoints` پر جائیں اور ایک API کلید بنائیں۔
+3. (اختیاری) Dashboard کھولیں → `Combos` پر جائیں اور اپنی فال بیک چین مرتب کریں۔
+
+### 2) اپنے کوڈنگ ٹول کو مربوط کریں
+
+```txt
+بنیادی URL: http://localhost:20128/v1
+API کلید:  [Endpoint صفحے سے کاپی کریں]
+ماڈل:    if/qwen3.8-max-preview (یا کوئی بھی provider/model سابقہ)
+```
+
+اگر آپ کا ایڈیٹر `Authorization: Bearer ...` نہیں بھیج سکتا، تو اس کے بجائے ٹوکن پر مبنی مطابقتی بنیادی URL استعمال کریں:
+
+```txt
+بنیادی URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/
+ماڈلز کا URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/models
+چیٹ URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/chat/completions
+Ollama ٹیگز URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/api/tags
+```
+
+Claude Code، Codex CLI، Cursor، Cline، OpenClaw، OpenCode، اور OpenAI سے مطابقت رکھنے والی SDKs کے ساتھ کام کرتا ہے۔
+
+#### `setup-*` کے ساتھ خودکار کنفیگریشن
+
+بنیادی URL اور کلید کو دستی طور پر پیسٹ کرنے کے بجائے، OmniRoute کو لائیو ماڈل کیٹلاگ سے ہر ٹول کی
+اپنی کنفیگ لکھنے دیں۔ ہر ٹول کے لیے ایک کمانڈ:
+
+```bash
+omniroute setup-codex        # ~/.codex/<name>.config.toml پروفائلز
+omniroute setup-claude       # ~/.claude/profiles/<name>/settings.json
+omniroute setup-opencode     # ~/.config/opencode/opencode.json (OpenAI سے مطابقت رکھنے والا)
+omniroute setup-cline        # Cline CLI + VS Code ایکسٹینشن کی ترتیبات
+omniroute setup-kilo         # Kilo Code
+omniroute setup-continue     # ~/.continue/config.yaml (Continue / cn)
+omniroute setup-cursor       # Cursor کے اندر موجود مراحل پرنٹ کرتا ہے
+omniroute setup-roo          # Roo Code درآمد + autoImport پوائنٹر
+omniroute setup-crush        # ~/.config/crush/crush.json
+omniroute setup-zed          # ~/.config/zed/settings.json (openai_compatible)
+omniroute setup-goose        # ~/.config/goose/config.yaml
+omniroute setup-aider        # ~/.aider.conf.yml
+omniroute setup-qwen         # ~/.qwen/settings.json + ~/.qwen/.env
+```
+
+ہر کمانڈ ایک مقامی ٹول کو **ریموٹ** OmniRoute کے مطابق کنفیگر کرنے کے لیے `--remote <url> --api-key <key>`،
+اور پیش منظر دیکھنے کے لیے `--dry-run` قبول کرتی ہے۔ درست env شامل کرکے اور کوئی کنفیگ لکھے بغیر CLI
+چلانے کے لیے عمومی لانچر `omniroute run <target>` (claude، codex، aider، goose، opencode، qwen، gemini)
+استعمال کریں؛ پرانے، ہر ٹول کے لیے مخصوص لانچرز `omniroute launch` (Claude Code) اور
+`omniroute launch-codex` (Codex) بدستور دستیاب ہیں۔
+
+مکمل جدول کے لیے (ہر کمانڈ کیا لکھتی ہے، تمام فلیگز، مقامی بمقابلہ ریموٹ، بنیادی URL
+`/v1` کے اصول)، **[CLI انٹیگریشنز](./CLI-INTEGRATIONS.md)** دیکھیں۔
+
+ہر ٹول کی تفصیلی کنفیگریشن (Claude Code، Codex CLI، Cursor، Cline، OpenClaw، Kilo Code، Copilot، اور مزید) کے لیے مخصوص **[CLI ٹولز گائیڈ](../reference/CLI-TOOLS.md)** دیکھیں۔
+
+---
+
+## پروٹوکول سیٹ اپ (MCP + A2A)
+
+### MCP سیٹ اپ (ماڈل سیاق و سباق پروٹوکول)
+
+stdio موڈ میں MCP ٹرانسپورٹ شروع کریں:
+
+```bash
+omniroute --mcp
+```
+
+تجویز کردہ توثیق کا بہاؤ:
+
+```bash
+# 1. Start MCP server
+omniroute --mcp
+
+# 2. From your MCP client, call:
+omniroute_get_health        # Should return system health
+omniroute_list_combos       # Should return active combos
+
+# 3. Or run the full E2E suite:
+npm run test:protocols:e2e
+```
+
+#### MCP کلائنٹ کنفیگریشن
+
+**Claude کوڈ:**
+
+Claude کوڈ HTTP سے جڑتا ہے، جو `omniroute --mcp` (stdio) شروع نہیں ہوتا ہے۔ HTTP ٹرانسپورٹ بذریعہ ڈیفالٹ آف ہے: پہلے اسے چلانے والے سرور پر فعال کریں۔ جب ڈیش بورڈ لاگ ان کو فعال کیا جاتا ہے تو، بغیر کسی سند کے درخواست کو `401` مل جاتا ہے، لہذا ایک API کلید پاس کریں جس میں `mcp:connect` (یا `manage`) ہو؛ `manage`/`admin` کے بغیر ایک کلید کو بھی ہر ٹول کے دائرہ کار کی ضرورت ہوتی ہے (دیکھیں [MCP Server → MCP ٹول اسکوپس](../frameworks/MCP-SERVER.md#mcp-tool-scopes) )۔
+
+```bash
+omniroute mcp enable --transport streamable-http
+claude mcp add --transport http omniroute http://localhost:20128/api/mcp/stream \
+  --header "Authorization: Bearer your-key"
+```
+
+**Cursor / Cline:**
+
+اپنی MCP سیٹنگز میں شامل کریں (stdio، کلید کے ساتھ تاکہ کال کرنے والے کے پاس پرنسپل ہو):
+
+```json
+{
+  "mcpServers": {
+    "omniroute": {
+      "command": "omniroute",
+      "args": ["--mcp"],
+      "env": {
+        "OMNIROUTE_API_KEY": "your-key",
+        "OMNIROUTE_BASE_URL": "http://localhost:20128"
+      }
+    }
+  }
+}
+```
+
+یا، جب `mcpTransport` `streamable-http` ہو (اسے `/dashboard/mcp` پر سیٹ کریں یا `omniroute mcp enable --transport streamable-http` کے ساتھ)، کلائنٹ کے ریموٹ MCP سرور کے اندراج کو `http://localhost:20128/api/mcp/stream` پر اشارہ کریں۔
+
+کلید `Authorization: Bearer <api-key>` کے طور پر سفر کرتی ہے (دیکھیں [MCP سرور → دور دراز کے میزبانوں کے لیے ریموٹ رسائی](../frameworks/MCP-SERVER.md#remote-access-manage-scope-bypass) ؛ ایک ریموٹ کلید کو `mcp:connect` کے علاوہ اس کے read/write اسکوپس کی ضرورت ہوتی ہے)۔
+
+**مکمل MCP دستاویزات:** [MCP سرور README](../../open-sse/mcp-server/README.md) — 110 ٹولز، IDE کنفیگرز، Python/TS/Go کلائنٹس۔ کمپریشن CCR/dedup ٹولز کے لیے آپریٹر کا حوالہ (مارکر، ضروری شرائط، فی ٹول اسکوپس، بازیافت صفحہ بندی، تشخیص): [کمپریشن انجنز → شرطیں / آپریٹر گائیڈ](../compression/COMPRESSION_ENGINES.md#prerequisites--operator-guide-ccr--session-dedup) ۔
+
+### A2A سیٹ اپ (ایجنٹ سے ایجنٹ پروٹوکول)
+
+ایجنٹ کارڈ کی تصدیق کریں:
+
+```bash
+curl http://localhost:20128/.well-known/agent.json
+```
+
+ایک کام بھیجیں:
+
+```bash
+curl -X POST http://localhost:20128/a2a \
+  -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":"quickstart","method":"message/send","params":{"skill":"quota-management","messages":[{"role":"user","content":"Give me a short quota summary."}]}}'
+```
+
+**مکمل A2A دستاویزات:** [A2A سرور README](../../src/lib/a2a/README.md) — JSON-RPC 2.0، مہارت، سلسلہ بندی، ٹاسک لائف سائیکل۔
+
+---
+
+## ٹائم آؤٹ کی تشکیل
+
+### بنیادی ٹائم آؤٹس
+
+زیادہ تر تعیناتیوں کے لیے، آپ کو صرف ان دو متغیرات کی ضرورت ہوتی ہے:
+
+| متغیر                    | طے شدہ قدر                    | مقصد                                                                                                                                                  |
+| ------------------------ | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `REQUEST_TIMEOUT_MS`     | `600000`                      | اپ اسٹریم جواب شروع ہونے کے ٹائم آؤٹ، پوشیدہ Undici ٹائم آؤٹس، TLS فنگر پرنٹ درخواستوں، اور API برج درخواست/پراکسی ٹائم آؤٹس کے لیے مشترکہ بنیادی قدر |
+| `STREAM_IDLE_TIMEOUT_MS` | `REQUEST_TIMEOUT_MS` سے ماخوذ | اسٹریمنگ چنکس کے درمیان زیادہ سے زیادہ وقفہ، جس کے بعد OmniRoute، SSE اسٹریم کو منقطع کر دیتا ہے                                                      |
+
+پچھلے ورژنز کے ساتھ مطابقت برقرار رکھی گئی ہے: موجودہ `FETCH_TIMEOUT_MS`، `API_BRIDGE_PROXY_TIMEOUT_MS`، اور دیگر فی-لیئر ٹائم آؤٹ متغیرات بدستور کام کرتے ہیں اور مشترکہ بنیادی قدر پر فوقیت رکھتے ہیں۔
+
+### فراہم کنندہ سے متعلق مخصوص نکات
+
+Claude Code سے مطابقت رکھنے والے اپ اسٹریمز (`anthropic-compatible-cc-*`) کے لیے، OmniRoute حل شدہ فیچ ٹائم آؤٹ سے آؤٹ باؤنڈ `X-Stainless-Timeout` ہیڈر اخذ کرتا ہے، تاکہ فراہم کنندہ کی جانب کے ریڈ ٹائم آؤٹس آپ کی env تشکیل کے مطابق رہیں۔
+
+فریق ثالث کے Claude Code سے مطابقت رکھنے والے ریورس پراکسیز کے لیے، OmniRoute طے شدہ `anthropic-beta` سیٹ کو محتاط رکھتا ہے اور جب `Client Cache Control` کو `Auto` پر چھوڑا جائے تو صرف کلائنٹ کی فراہم کردہ `cache_control` علامات کو آگے بھیجتا ہے۔ فی کنکشن "Enable redact-thinking beta" ٹوگل صرف اس وقت فعال کریں جب اپ اسٹریم کو خاص طور پر حذف شدہ Claude تھنکنگ اسٹریمز درکار ہوں۔
+
+### جدید ٹائم آؤٹ اوور رائیڈز
+
+| متغیر                                    | طے شدہ قدر                                 | مقصد                                                                         |
+| ---------------------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------- |
+| `FETCH_TIMEOUT_MS`                       | `REQUEST_TIMEOUT_MS` سے ماخوذ              | اپ اسٹریم جواب شروع ہونے کا ٹائم آؤٹ، جو جوابی ہیڈرز آنے تک استعمال ہوتا ہے  |
+| `FETCH_HEADERS_TIMEOUT_MS`               | `FETCH_TIMEOUT_MS` سے ماخوذ                | اپ اسٹریم جوابی ہیڈرز وصول کرنے کے لیے Undici کی وقت کی حد                   |
+| `FETCH_BODY_TIMEOUT_MS`                  | `FETCH_TIMEOUT_MS` سے ماخوذ                | اپ اسٹریم باڈی چنکس کے درمیان Undici کی وقت کی حد (`0` اسے غیر فعال کرتا ہے) |
+| `FETCH_CONNECT_TIMEOUT_MS`               | `30000`                                    | Undici TCP کنکشن ٹائم آؤٹ                                                    |
+| `FETCH_KEEPALIVE_TIMEOUT_MS`             | `4000`                                     | Undici کے غیر فعال keep-alive ساکٹ کا ٹائم آؤٹ                               |
+| `TLS_CLIENT_TIMEOUT_MS`                  | `FETCH_TIMEOUT_MS` سے ماخوذ                | `wreq-js` کے ذریعے کی جانے والی TLS فنگر پرنٹ درخواستوں کا ٹائم آؤٹ          |
+| `API_BRIDGE_PROXY_TIMEOUT_MS`            | `REQUEST_TIMEOUT_MS` سے ماخوذ یا `600000`  | API پورٹ سے ڈیش بورڈ پورٹ تک `/v1` پراکسی فارورڈنگ کا ٹائم آؤٹ               |
+| `API_BRIDGE_SERVER_REQUEST_TIMEOUT_MS`   | `max(API_BRIDGE_PROXY_TIMEOUT_MS, 300000)` | API برج سرور پر آنے والی درخواست کا ٹائم آؤٹ                                 |
+| `API_BRIDGE_SERVER_HEADERS_TIMEOUT_MS`   | `60000`                                    | API برج سرور پر آنے والے ہیڈرز کا ٹائم آؤٹ                                   |
+| `API_BRIDGE_SERVER_KEEPALIVE_TIMEOUT_MS` | `5000`                                     | API برج سرور پر keep-alive ٹائم آؤٹ                                          |
+| `API_BRIDGE_SERVER_SOCKET_TIMEOUT_MS`    | `0`                                        | API برج سرور پر ساکٹ کی غیرفعالیت کا ٹائم آؤٹ (`0` اسے غیر فعال کرتا ہے)     |
+
+> **نوٹ:** اسٹریمنگ درخواستوں کے لیے، `FETCH_TIMEOUT_MS` صرف کنکشن قائم کرنے / پہلے اپ اسٹریم جواب کا انتظار کرنے کا احاطہ کرتا ہے۔ اسٹریم فعال ہو جانے کے بعد، OmniRoute صرف حقیقی تعطل (`STREAM_IDLE_TIMEOUT_MS`) یا Undici باڈی کی غیرفعالیت (`FETCH_BODY_TIMEOUT_MS`) کی صورت میں اسے منقطع کرے گا۔
+
+### ریورس پراکسی مطابقت
+
+اگر آپ OmniRoute کو Nginx، Caddy، Cloudflare، یا کسی اور ریورس پراکسی کے پیچھے چلاتے ہیں تو یقینی بنائیں کہ پراکسی ٹائم آؤٹس بھی آپ کے OmniRoute اسٹریم/فیچ ٹائم آؤٹس سے زیادہ ہوں۔
+
+---
+
+## اسپلٹ پورٹ موڈ
+
+جدید منظرناموں (ریورس پراکسی، کنٹینر نیٹ ورکنگ) کے لیے API اور Dashboard کو علیحدہ پورٹس پر چلائیں:
+
+```bash
+PORT=20128 DASHBOARD_PORT=20129 omniroute
+# API:       http://localhost:20128/v1
+# Dashboard: http://localhost:20129
+```
+
+---
+
+## باطل Linux (xbps-src) ٹیمپلیٹ
+
+Void Linux صارفین کے لیے، آپ `xbps-src` کا استعمال کرتے ہوئے ایک مقامی پیکیج بنا سکتے ہیں۔ اس بلاک کو بطور `srcpkgs/omniroute/template` محفوظ کریں:
+
+```bash
+# Template file for 'omniroute'
+pkgname=omniroute
+version=3.8.0
+revision=1
+hostmakedepends="nodejs python3 make"
+depends="openssl"
+short_desc="Universal AI gateway with smart routing for multiple LLM providers"
+maintainer="zenobit <zenobit@disroot.org>"
+license="MIT"
+homepage="https://github.com/diegosouzapw/OmniRoute"
+distfiles="https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz"
+# Regenerate the checksum for each release with:
+#   curl -L -o /tmp/omniroute.tar.gz "https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz" && sha256sum /tmp/omniroute.tar.gz
+checksum=PLACEHOLDER_REGENERATE_PER_RELEASE
+system_accounts="_omniroute"
+omniroute_homedir="/var/lib/omniroute"
+export NODE_ENV=production
+export npm_config_engine_strict=false
+export npm_config_loglevel=error
+export npm_config_fund=false
+export npm_config_audit=false
+
+do_build() {
+	local _gyp_arch
+	case "$XBPS_TARGET_MACHINE" in
+		aarch64*) _gyp_arch=arm64 ;;
+		armv7*|armv6*) _gyp_arch=arm ;;
+		i686*) _gyp_arch=ia32 ;;
+		*) _gyp_arch=x64 ;;
+	esac
+
+	NODE_ENV=development npm ci --ignore-scripts
+	npm run build
+	cp -r .next/static .next/standalone/.next/static
+	[ -d public ] && cp -r public .next/standalone/public || true
+
+	local _node_gyp=/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+	(cd node_modules/better-sqlite3 && node "$_node_gyp" rebuild --arch="$_gyp_arch")
+
+	local _bs3_release=.next/standalone/node_modules/better-sqlite3/build/Release
+	mkdir -p "$_bs3_release"
+	cp node_modules/better-sqlite3/build/Release/better_sqlite3.node "$_bs3_release/"
+
+	rm -rf .next/standalone/node_modules/@img
+
+	for _mod in pino-abstract-transport split2 process-warning; do
+		cp -r "node_modules/$_mod" .next/standalone/node_modules/
+	done
+}
+
+do_check() {
+	npm run test:unit
+}
+
+do_install() {
+	vmkdir usr/lib/omniroute/.next
+	vcopy .next/standalone/. usr/lib/omniroute/.next/standalone
+
+	for _d in \
+		.next/standalone/.next/server/app/dashboard \
+		.next/standalone/.next/server/app/dashboard/settings \
+		.next/standalone/.next/server/app/dashboard/providers; do
+		touch "${DESTDIR}/usr/lib/omniroute/${_d}/.keep"
+	done
+
+	cat > "${WRKDIR}/omniroute" <<'EOF'
+#!/bin/sh
+export PORT="${PORT:-20128}"
+export DATA_DIR="${DATA_DIR:-${XDG_DATA_HOME:-${HOME}/.local/share}/omniroute}"
+export APP_LOG_TO_FILE="${APP_LOG_TO_FILE:-false}"
+mkdir -p "${DATA_DIR}"
+exec node /usr/lib/omniroute/.next/standalone/server.js "$@"
+EOF
+	vbin "${WRKDIR}/omniroute"
+}
+
+post_install() {
+	vlicense LICENSE
+}
+```
+
+---
+
+## ان انسٹال کرنا
+
+| کمانڈ                    | کارروائی                                                                                         |
+| ------------------------ | ------------------------------------------------------------------------------------------------ |
+| `npm run uninstall`      | سسٹم ایپ کو ہٹاتا ہے، لیکن `~/.omniroute` میں موجود **آپ کا DB اور کنفیگریشنز برقرار رکھتا ہے**۔ |
+| `npm run uninstall:full` | ایپ کو ہٹاتا ہے اور **تمام کنفیگریشنز، کلیدیں، اور ڈیٹابیسز مستقل طور پر مٹا دیتا ہے**۔          |
+
+> تمام طریقوں کے لیے ان انسٹال کرنے کی تفصیلی ہدایات کی خاطر، [UNINSTALL.md](./UNINSTALL.md) دیکھیں۔

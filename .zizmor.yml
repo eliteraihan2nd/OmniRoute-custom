@@ -1,0 +1,91 @@
+# .zizmor.yml — zizmor security audit configuration
+# https://github.com/woodruffw/zizmor
+#
+# zizmor audits GitHub Actions workflows for security anti-patterns:
+#   • Unpinned third-party actions (supply-chain risk)
+#   • Script injection via ${{ github.* }} in run: steps
+#   • pull_request_target misuse (allows untrusted code to reach secrets)
+#   • Excessive permissions / overly broad GITHUB_TOKEN scopes
+#   • Cache poisoning via actions/cache with unguarded keys
+#   • … 20+ additional audits
+#
+# MOTIVATION (2026-03 incident): the trivy-action/LiteLLM supply-chain attack
+# exploited exactly the kind of pull_request_target misconfiguration that zizmor
+# detects statically. OmniRoute's npm/Docker/Electron publish workflows are high-
+# value targets that warrant proactive audit.
+#
+# BASELINE STRATEGY: this file starts with an EMPTY ignores list. As zizmor is
+# first run against the existing workflows, findings will be reviewed:
+#   • True positives → fix the workflow (preferred)
+#   • Accepted risk  → add an entry below with a justification comment
+# This enforces the same stale-enforcement discipline as other allowlists in
+# this project: every ignore requires human sign-off and is subject to review
+# at each release cycle.
+#
+# RATCHET: zizmorFindings metric in quality-baseline.json (direction: down)
+# starts advisory; current baseline is frozen at first green run; new findings
+# must be remediated or explicitly ignored here.
+
+# ── Global settings ──────────────────────────────────────────────────────────
+# Uncomment to pin to a specific minimum severity level.
+# min-severity: low       # low | medium | high | critical (default: low = all)
+
+# ── Per-rule ignores ─────────────────────────────────────────────────────────
+# zizmor ≥1.0 replaced the old top-level `ignores:` list with a `rules:` map
+# keyed by audit id. Per-rule config lives under `rules.<audit-id>.ignore`,
+# where each entry is `filename` or `filename:line` (line optional, column
+# further-optional). See: https://docs.zizmor.sh/configuration/
+#
+# Format:
+#   rules:
+#     <zizmor-audit-id>:          # e.g. "unpinned-uses", "template-injection"
+#       ignore:
+#         - <workflow-filename>            # ignore this audit across the file
+#         - <workflow-filename>:<line>     # or scope to a specific line
+#
+# Example (do not uncomment without real justification):
+#
+#   rules:
+#     unpinned-uses:
+#       # actions/checkout@v6 is pinned at the major-version tag intentionally:
+#       # GitHub-managed first-party action; SHA pinning buys little against a
+#       # GitHub-side compromise and adds significant maintenance burden.
+#       ignore:
+#         - ci.yml
+
+# Every entry below is an explicit, justified ignore (same stale-review
+# discipline as the other allowlists in this project). New ignores require a
+# per-rule entry with a justification comment.
+rules:
+  dangerous-triggers:
+    # workflow_run only starts the deploy after a successful push/release/dispatch
+    # in this repository on main, release/v*, or version refs (deploy-vps.yml `if:`).
+    # The privileged job neither checks out that run's code nor downloads its
+    # artifacts. workflow_dispatch and DEPLOY_ENABLED remain operator controls.
+    # Keep this one event-specific exception under release review.
+    #
+    # omni-queue.yml (the omni-queue merge queue) uses `pull_request_target`
+    # (labeled/unlabeled/synchronize/closed) and `workflow_run` (CI / Quality Gates
+    # completed on omni-queue/**) only to bind label approvals and to wake its tick.
+    # Not exploitable:
+    #   • No checkout of PR code, ever: both jobs check out the DEFAULT branch
+    #     (sparse: scripts/merge-queue + config/merge-queue, persist-credentials:
+    #     false) and run zero-dependency Node scripts (no npm ci). PR content is
+    #     handled only as git objects and through the REST API.
+    #   • No expression is expanded inside a `run:` body; event data and dispatch
+    #     inputs reach the scripts through `env:` only.
+    #   • Writes use a GitHub App installation token minted per job with minimum
+    #     permissions (approval: statuses/issues write; tick: contents, workflows,
+    #     pull-requests, issues, statuses write + checks/actions read — workflows
+    #     write only because GitHub refuses an App push of a commit that touches
+    #     .github/workflows/**, which a batched PR's merge commit may carry;
+    #     statuses write for the omni-queue/land status release rulesets require).
+    #   • The App key and the owner's OMNI_QUEUE_LAND_TOKEN live in the
+    #     `omni-queue` environment (default branch only, by its exact name); both
+    #     jobs run in it and only for pull requests into release/v*; the land
+    #     token reaches the tick step only.
+    #   • Kill switch: every job requires vars.OMNI_QUEUE_ENABLED == 'true'.
+    # Accepted risk, re-review at the next release cycle (added 2026-11-13).
+    ignore:
+      - deploy-vps.yml
+      - omni-queue.yml

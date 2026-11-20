@@ -1,0 +1,434 @@
+# 📖 Setup Guide — OmniRoute (Hausa)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../guides/SETUP_GUIDE.md) · 🇪🇹 [am](../../../am/docs/guides/SETUP_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/guides/SETUP_GUIDE.md) · 🇦🇿 [az](../../../az/docs/guides/SETUP_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/guides/SETUP_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/guides/SETUP_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/guides/SETUP_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/guides/SETUP_GUIDE.md) · 🇩🇰 [da](../../../da/docs/guides/SETUP_GUIDE.md) · 🇩🇪 [de](../../../de/docs/guides/SETUP_GUIDE.md) · 🇬🇷 [el](../../../el/docs/guides/SETUP_GUIDE.md) · 🇪🇸 [es](../../../es/docs/guides/SETUP_GUIDE.md) · 🇪🇪 [et](../../../et/docs/guides/SETUP_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/guides/SETUP_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/guides/SETUP_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/guides/SETUP_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/guides/SETUP_GUIDE.md) · 🇮🇱 [he](../../../he/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/guides/SETUP_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/guides/SETUP_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/guides/SETUP_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/guides/SETUP_GUIDE.md) · 🇮🇩 [id](../../../id/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/guides/SETUP_GUIDE.md) · 🇮🇹 [it](../../../it/docs/guides/SETUP_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/guides/SETUP_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/guides/SETUP_GUIDE.md) · 🇰🇭 [km](../../../km/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/guides/SETUP_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/guides/SETUP_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/guides/SETUP_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/guides/SETUP_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/guides/SETUP_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/guides/SETUP_GUIDE.md) · 🇲🇲 [my](../../../my/docs/guides/SETUP_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/guides/SETUP_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/guides/SETUP_GUIDE.md) · 🇳🇴 [no](../../../no/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [or](../../../or/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/guides/SETUP_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/guides/SETUP_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/guides/SETUP_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/guides/SETUP_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/guides/SETUP_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/guides/SETUP_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/guides/SETUP_GUIDE.md) · 🇱🇰 [si](../../../si/docs/guides/SETUP_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/guides/SETUP_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/guides/SETUP_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/guides/SETUP_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/guides/SETUP_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [te](../../../te/docs/guides/SETUP_GUIDE.md) · 🇹🇭 [th](../../../th/docs/guides/SETUP_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/guides/SETUP_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/guides/SETUP_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/guides/SETUP_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/guides/SETUP_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/guides/SETUP_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/guides/SETUP_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/guides/SETUP_GUIDE.md)
+
+---
+
+> Cikakken bayani na saitin OmniRoute. Don taƙaitacciyar siga, duba [Farawa Cikin Sauri a README](../README.md#-quick-start).
+
+## Jadawalin Abubuwan Ciki
+
+- [Hanyoyin Shigarwa](#install-methods)
+- [Tsarin Kayan Aikin CLI](#cli-tool-configuration)
+- [Saitin Protokol (MCP + A2A)](#protocol-setup-mcp--a2a)
+- [Saitin Lokacin Jira](#timeout-configuration)
+- [Yanayin Rarraba Tashar Port](#split-port-mode)
+- [Void Linux (xbps-src)](#void-linux-xbps-src-template)
+- [Cirewa](#uninstalling)
+
+---
+
+## Shigar Hanyoyin
+
+### npm (an bada shawarar)
+
+```bash
+npm install -g omniroute
+omniroute
+```
+
+Dashboard yana buɗewa a `http://localhost:20128` kuma API tushe URL shine `http://localhost:20128/v1`.
+
+> **npm masu amfani:** Idan npm yayi kashedin cewa an katange rubutun shigarwa (misali, `omniroute`, `better-sqlite3`), duba [Shirya matsala — npm an katange rubutun shigarwa](./TROUBLESHOOTING.md#npm-install-scripts-blocked-warning-global-install).
+
+### pnpm
+
+```bash
+pnpm add -g omniroute@latest --allow-build=better-sqlite3 --allow-build=@swc/core
+omniroute
+```
+
+> **masu amfani pnpm:** ana buƙatar tutar `--allow-build` don ba da damar rubutun ginin asali na `better-sqlite3` da `@swc/core`. Ba a tallafawa umarnin `pnpm approve-builds -g` don shigarwa na duniya akan pnpm v11.
+
+### Arch Linux (AUR)
+
+```bash
+yay -S omniroute-bin
+systemctl --user enable --now omniroute.service
+```
+
+[Kunshin AUR](https://aur.archlinux.org/packages/omniroute-bin) yana shigar da OmniRoute kuma yana ba da sabis na mai amfani da tsarin.
+
+### Daga Source
+
+```bash
+npm install
+PORT=20128 DASHBOARD_PORT=20129 NEXT_PUBLIC_BASE_URL=http://localhost:20129 npm run dev
+```
+
+> **Windows note:** Ta hanyar tsoho, OmniRoute yana amfani da `%APPDATA%\omniroute` lokacin da tarihin `%USERPROFILE%\.omniroute` na gado ba ya nan. Saita `DATA_DIR` don zaɓar wurin daban-daban na bayanai.
+
+> **Lura:** `npm install` auto-generates `.env` daga `.env.example` a farkon gudu. Abubuwan shigarwa na gaba ba za su sake rubuta wani `.env` na yanzu ba, don haka ana kiyaye abubuwan da aka keɓancewa. Don sake yin iri, share `.env` kafin sake kunnawa.
+
+### Docker
+
+Duba [Jagorar Docker](./DOCKER_GUIDE.md) don cikakken saitin Docker gami da Rubuta bayanan martaba da Caddy HTTPS.
+
+### Desktop App (Electron)
+
+OmniRoute tana jigilar kayan aikin tebur da aka gina akan Electron 41 + mai ginin lantarki 26.10. Akwai rubutun (tushen sararin aiki):
+
+```bash
+npm run electron:dev          # Run desktop with hot-reload
+npm run electron:build        # Build for current OS (auto-detected)
+npm run electron:build:win    # Windows installer (NSIS + portable)
+npm run electron:build:mac    # macOS (dmg + zip, arm64+x64)
+npm run electron:build:linux  # Linux (AppImage + deb + rpm)
+npm run electron:smoke:packaged  # Smoke-test packaged build
+```
+
+Ana haɗe fitar da masu shigar da tebur zuwa Sakin GitHub. Don cikakken nutsewar Electron (sa hannu, gadar IPC, distros), duba [`ELECTRON_GUIDE.md`](./ELECTRON_GUIDE.md) _(criado em fase na baya)_.
+
+### Sabar mara kai (CI/automation)
+
+Don saitin da ba a kula ba (Docker, Kubernetes, CI), yi amfani da:
+
+```bash
+omniroute setup --non-interactive
+omniroute providers test-batch
+```
+
+Haɗe tare da env vars (`INITIAL_PASSWORD`, `OMNIROUTE_WS_BRIDGE_SECRET`, da sauransu), wannan yana ba ku damar ƙaddamar da misalin OmniRoute mai cikakken rubutu.
+
+### CLI Zabuka
+
+| Umurni                  | Bayani                                                                          |
+| ----------------------- | ------------------------------------------------------------------------------- |
+| `omniroute`             | Fara uwar garken (`PORT=20128`, API da dashboard akan tashar jiragen ruwa guda) |
+| `omniroute setup`       | Jagorar CLI kan hawan jirgi don kalmar sirri da mai bayarwa na farko            |
+| `omniroute doctor`      | Gudanar da duba lafiyar gida ba tare da fara uwar garken ba                     |
+| `omniroute providers`   | Nemo, jera, ingantawa, da masu samar da gwaji daga CLI                          |
+| `omniroute config`      | CLI kayan aiki sanyi jerin —, samu, saita, inganta saiti                        |
+| `omniroute status`      | Sigar dashboard matsayi na wajen —, DB, kayan aiki, daidaitawa                  |
+| `omniroute logs`        | Raba rajistan ayyukan amfani daga API (yana goyan bayan `--follow`)             |
+| `omniroute update`      | Bincika ko amfani da sabuntawar OmniRoute                                       |
+| `omniroute provider`    | Sarrafa haɗin mai badawa —, jeri, cirewa, gwadawa, tsoho                        |
+| `omniroute --port 3000` | Saita tashar tashar canonical/API zuwa 3000                                     |
+| `omniroute --mcp`       | Fara uwar garken MCP (shirin sitidiyo)                                          |
+| `omniroute --no-open`   | Kar a buɗe mashigar ta atomatik                                                 |
+| `omniroute --help`      | Nuna taimako                                                                    |
+
+Ana iya rubuta saitin mara kai tare da tutoci ko masu canjin yanayi:
+
+```bash
+omniroute setup --non-interactive --password "$OMNIROUTE_PASSWORD"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY" --test-provider
+```
+
+Gudanar da bincike na gida ba tare da buɗe dashboard ba:
+
+```bash
+omniroute doctor
+omniroute doctor --json
+omniroute doctor --no-liveness
+```
+
+Sarrafa masu samarwa daga SSH ko rubutun ba tare da buɗe dashboard ba:
+
+```bash
+omniroute providers available
+omniroute providers available --search openai
+omniroute providers available --category api-key
+omniroute providers list
+omniroute providers test <id-or-name>
+omniroute providers test-all
+omniroute providers validate
+```
+
+---
+
+## Daidaita Kayan Aikin CLI
+
+### 1) Haɗa Masu Bayarwa kuma Ƙirƙiri Maɓallin API
+
+1. Buɗe Dashboard → `Providers` sannan ka haɗa aƙalla mai bayarwa ɗaya (OAuth ko maɓallin API).
+2. Buɗe Dashboard → `Endpoints` sannan ka ƙirƙiri maɓallin API.
+3. (Na zaɓi) Buɗe Dashboard → `Combos` sannan ka saita jerin madadinka.
+
+### 2) Nuna wa Kayan Aikin Rubuta Lambarka Hanya
+
+```txt
+Tushen URL: http://localhost:20128/v1
+Maɓallin API:  [kwafa daga shafin Endpoint]
+Samfuri:    if/qwen3.8-max-preview (ko kowane prefix na mai bayarwa/samfuri)
+```
+
+Idan editanka ba zai iya aika `Authorization: Bearer ...` ba, yi amfani da tushen da aka saka token don dacewa a maimakonsa:
+
+```txt
+Tushen URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/
+URL na Samfura: http://localhost:20128/api/v1/vscode/YOUR_KEY/models
+URL na Tattaunawa: http://localhost:20128/api/v1/vscode/YOUR_KEY/chat/completions
+URL na Alamomin Ollama: http://localhost:20128/api/v1/vscode/YOUR_KEY/api/tags
+```
+
+Yana aiki da Claude Code, Codex CLI, Cursor, Cline, OpenClaw, OpenCode, da SDKs masu dacewa da OpenAI.
+
+#### Yi daidaitawa ta atomatik da `setup-*`
+
+Maimakon manna tushen URL da maɓallin da hannu, bari OmniRoute ya rubuta saitunan kowane kayan aiki
+daga kundin samfuran da ke aiki. Umurni ɗaya ga kowane kayan aiki:
+
+```bash
+omniroute setup-codex        # bayanan martaba na ~/.codex/<name>.config.toml
+omniroute setup-claude       # ~/.claude/profiles/<name>/settings.json
+omniroute setup-opencode     # ~/.config/opencode/opencode.json (mai dacewa da openai)
+omniroute setup-cline        # Saitunan Cline CLI + tsawaitawar VS Code
+omniroute setup-kilo         # Kilo Code
+omniroute setup-continue     # ~/.continue/config.yaml (Continue / cn)
+omniroute setup-cursor       # yana buga matakan cikin manhajar Cursor
+omniroute setup-roo          # shigar da Roo Code + manunin autoImport
+omniroute setup-crush        # ~/.config/crush/crush.json
+omniroute setup-zed          # ~/.config/zed/settings.json (openai_compatible)
+omniroute setup-goose        # ~/.config/goose/config.yaml
+omniroute setup-aider        # ~/.aider.conf.yml
+omniroute setup-qwen         # ~/.qwen/settings.json + ~/.qwen/.env
+```
+
+Kowannensu yana karɓar `--remote <url> --api-key <key>` don daidaita kayan aikin gida da
+OmniRoute na **nesa**, tare da `--dry-run` don samfoti. Don ƙaddamar da CLI tare da
+env ɗin da ya dace da aka saka ba tare da rubuta wani saitin ba, yi amfani da mai ƙaddamarwa na gama-gari
+`omniroute run <target>` (claude, codex, aider, goose, opencode, qwen, gemini);
+tsofaffin masu ƙaddamarwa na kowane kayan aiki `omniroute launch` (Claude Code) da
+`omniroute launch-codex` (Codex) suna nan har yanzu.
+
+Don cikakken jadawalin (abin da kowane umurni ke rubutawa, dukkan tutoci, na gida da na nesa, ƙa'idodin tushen URL
+na `/v1`), duba **[Haɗaɗɗun CLI](./CLI-INTEGRATIONS.md)**.
+
+Don cikakken bayani kan daidaita kowane kayan aiki (Claude Code, Codex CLI, Cursor, Cline, OpenClaw, Kilo Code, Copilot, da sauransu), duba keɓaɓɓen **[Jagoran Kayan Aikin CLI](../reference/CLI-TOOLS.md)**.
+
+---
+
+## Saitin Protocol (MCP + A2A)
+
+### Saita MCP (Tsarin Tsarin Magana)
+
+Fara safarar MCP a yanayin sitiyo:
+
+```bash
+omniroute --mcp
+```
+
+Shawarar ingantaccen kwarara:
+
+```bash
+# 1. Start MCP server
+omniroute --mcp
+
+# 2. From your MCP client, call:
+omniroute_get_health        # Should return system health
+omniroute_list_combos       # Should return active combos
+
+# 3. Or run the full E2E suite:
+npm run test:protocols:e2e
+```
+
+#### MCP Kanfigareshan Abokin Ciniki
+
+**Claude Code:**
+
+Lambar Claude tana haɗi akan HTTP, wanda `omniroute --mcp` (stdio) ba ya farawa. An kashe jigilar HTTP ta tsohuwa: kunna shi a kan uwar garken da ke aiki tukuna. Lokacin da aka kunna shigar dashboard, buƙatu ba tare da takaddun shaida yana samun `401`, don haka wuce maɓallin API mai riƙe `mcp:connect` (ko `manage`); maɓalli ba tare da `manage`/`admin` kuma yana buƙatar iyakar kowane kayan aiki (duba [MCP Server → MCP scopes Tools](../frameworks/MCP-SERVER.md#mcp-tool-scopes) ).
+
+```bash
+omniroute mcp enable --transport streamable-http
+claude mcp add --transport http omniroute http://localhost:20128/api/mcp/stream \
+  --header "Authorization: Bearer your-key"
+```
+
+**Cursor / Cline:**
+
+Ƙara zuwa saitunan MCP ɗinku (stdio, tare da maɓallin don haka mai kira ya sami babba):
+
+```json
+{
+  "mcpServers": {
+    "omniroute": {
+      "command": "omniroute",
+      "args": ["--mcp"],
+      "env": {
+        "OMNIROUTE_API_KEY": "your-key",
+        "OMNIROUTE_BASE_URL": "http://localhost:20128"
+      }
+    }
+  }
+}
+```
+
+Ko, lokacin da `mcpTransport` ke `streamable-http` (saita shi akan `/dashboard/mcp` ko tare da `omniroute mcp enable --transport streamable-http`), nuna shigarwar uwar garken MCP mai nisa a `http://localhost:20128/api/mcp/stream`.
+
+Maɓallin yana tafiya azaman `Authorization: Bearer <api-key>` (duba [MCP Server → Samun nisa](../frameworks/MCP-SERVER.md#remote-access-manage-scope-bypass) don runduna mai nisa; maɓalli mai nisa yana buƙatar `mcp:connect` da read/write ɗin sa).
+
+**Cikakken takardun MCP :** [MCP Server README](../../open-sse/mcp-server/README.md) — 110 kayan aikin, IDE configs, Python/TS/Go abokan ciniki. Maganar mai aiki don matsawa kayan aikin CCR/dedup (alamomi, abubuwan da ake buƙata, ƙayyadaddun kayan aiki, fakitin dawo da, bincike): [Injin matsawa → Abubuwan buƙatu / jagorar mai aiki](../compression/COMPRESSION_ENGINES.md#prerequisites--operator-guide-ccr--session-dedup).
+
+### Saita A2A (Agent-to-Agent Protocol)
+
+Tabbatar da Katin Agent:
+
+```bash
+curl http://localhost:20128/.well-known/agent.json
+```
+
+Aika aiki:
+
+```bash
+curl -X POST http://localhost:20128/a2a \
+  -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":"quickstart","method":"message/send","params":{"skill":"quota-management","messages":[{"role":"user","content":"Give me a short quota summary."}]}}'
+```
+
+**Cikakken takardun A2A :** [A2A Server README](../../src/lib/a2a/README.md) — JSON-RPC 2.0, basira, yawo, aikin rayuwa.
+
+---
+
+## Saitin Lokacin Jira
+
+### Lokutan Jira na Asali
+
+Ga yawancin turawa, waɗannan canje-canje guda biyu kaɗai kake buƙata:
+
+| Canji                    | Tsoho                               | Manufa                                                                                                                                                                  |
+| ------------------------ | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `REQUEST_TIMEOUT_MS`     | `600000`                            | Ma'aunin tushe na bai ɗaya don lokacin jiran fara amsar uwar-garke, ɓoyayyun lokutan jiran Undici, buƙatun sawun yatsan TLS, da lokutan jiran buƙata/proxy na gadar API |
+| `STREAM_IDLE_TIMEOUT_MS` | yana gado daga `REQUEST_TIMEOUT_MS` | Matsakaicin tazarar lokaci tsakanin gutsattsarin bayanan da ake watsawa kafin OmniRoute ya dakatar da rafin SSE                                                         |
+
+An kiyaye dacewa da tsoffin nau'ikan: `FETCH_TIMEOUT_MS`, `API_BRIDGE_PROXY_TIMEOUT_MS`, da sauran canje-canjen lokacin jira na kowane mataki da ake da su har yanzu suna aiki kuma suna maye gurbin ma'aunin tushe na bai ɗaya.
+
+### Bayanan Musamman na Mai Bayarwa
+
+Ga uwar-garken da suka dace da Claude Code (`anthropic-compatible-cc-*`), OmniRoute yana samar da kanun `X-Stainless-Timeout` mai fita daga lokacin jiran fetch da aka ƙayyade, domin lokutan jiran karantawa a ɓangaren mai bayarwa su ci gaba da daidaituwa da saitunan env ɗinka.
+
+Ga reverse proxies na wasu kamfanoni masu dacewa da Claude Code, OmniRoute yana kiyaye tsoffin saitunan `anthropic-beta` cikin taka-tsantsan kuma, idan an bar `Client Cache Control` a kan `Auto`, yana tura alamomin `cache_control` da abokin ciniki ya bayar kawai. Kunna maɓallin "Enable redact-thinking beta" na kowace haɗi ne kawai idan uwar-garken yana buƙatar rafukan tunanin Claude da aka ɓoye musamman.
+
+### Sauye-sauyen Lokacin Jira na Ci-gaba
+
+| Canji                                    | Tsoho                                           | Manufa                                                                                  |
+| ---------------------------------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `FETCH_TIMEOUT_MS`                       | yana gado daga `REQUEST_TIMEOUT_MS`             | Lokacin jiran fara amsar uwar-garke da ake amfani da shi har sai kanun amsa sun iso     |
+| `FETCH_HEADERS_TIMEOUT_MS`               | yana gado daga `FETCH_TIMEOUT_MS`               | Iyakar lokacin Undici don karɓar kanun amsar uwar-garke                                 |
+| `FETCH_BODY_TIMEOUT_MS`                  | yana gado daga `FETCH_TIMEOUT_MS`               | Iyakar lokacin Undici tsakanin gutsattsarin jikin amsar uwar-garke (`0` yana kashe shi) |
+| `FETCH_CONNECT_TIMEOUT_MS`               | `30000`                                         | Lokacin jiran haɗin TCP na Undici                                                       |
+| `FETCH_KEEPALIVE_TIMEOUT_MS`             | `4000`                                          | Lokacin jiran soket ɗin keep-alive marar aiki na Undici                                 |
+| `TLS_CLIENT_TIMEOUT_MS`                  | yana gado daga `FETCH_TIMEOUT_MS`               | Lokacin jiran buƙatun sawun yatsan TLS da aka yi ta hanyar `wreq-js`                    |
+| `API_BRIDGE_PROXY_TIMEOUT_MS`            | yana gado daga `REQUEST_TIMEOUT_MS` ko `600000` | Lokacin jiran tura proxy na `/v1` daga tashar API zuwa tashar dashboard                 |
+| `API_BRIDGE_SERVER_REQUEST_TIMEOUT_MS`   | `max(API_BRIDGE_PROXY_TIMEOUT_MS, 300000)`      | Lokacin jiran buƙata mai shigowa a sabar gadar API                                      |
+| `API_BRIDGE_SERVER_HEADERS_TIMEOUT_MS`   | `60000`                                         | Lokacin jiran kanun mai shigowa a sabar gadar API                                       |
+| `API_BRIDGE_SERVER_KEEPALIVE_TIMEOUT_MS` | `5000`                                          | Lokacin jiran keep-alive a sabar gadar API                                              |
+| `API_BRIDGE_SERVER_SOCKET_TIMEOUT_MS`    | `0`                                             | Lokacin jiran rashin aiki na soket a sabar gadar API (`0` yana kashe shi)               |
+
+> **Lura:** Ga buƙatun watsawa, `FETCH_TIMEOUT_MS` yana rufe kafa haɗi / jiran amsar farko daga uwar-garke kawai. Da zarar rafin ya fara aiki, OmniRoute zai dakatar da shi ne kawai idan an samu tsayawar gaske (`STREAM_IDLE_TIMEOUT_MS`) ko rashin aikin jikin Undici (`FETCH_BODY_TIMEOUT_MS`).
+
+### Dacewa da Reverse Proxy
+
+Idan kana gudanar da OmniRoute a bayan Nginx, Caddy, Cloudflare, ko wani reverse proxy, ka tabbatar cewa lokutan jiran proxy ɗin ma sun fi lokutan jiran stream/fetch na OmniRoute tsawo.
+
+---
+
+## Yanayin Raba Tashoshi
+
+Gudanar da API da Dashboard a tashoshi daban-daban don yanayi na ci-gaba (reverse proxy, sadarwar container):
+
+```bash
+PORT=20128 DASHBOARD_PORT=20129 omniroute
+# API:       http://localhost:20128/v1
+# Dashboard: http://localhost:20129
+```
+
+---
+
+## Wurin Linux (xbps-src) Samfura
+
+Ga masu amfani da Void Linux, zaku iya gina fakitin asali ta amfani da `xbps-src`. Ajiye wannan toshe a matsayin `srcpkgs/omniroute/template`:
+
+```bash
+# Template file for 'omniroute'
+pkgname=omniroute
+version=3.8.0
+revision=1
+hostmakedepends="nodejs python3 make"
+depends="openssl"
+short_desc="Universal AI gateway with smart routing for multiple LLM providers"
+maintainer="zenobit <zenobit@disroot.org>"
+license="MIT"
+homepage="https://github.com/diegosouzapw/OmniRoute"
+distfiles="https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz"
+# Regenerate the checksum for each release with:
+#   curl -L -o /tmp/omniroute.tar.gz "https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz" && sha256sum /tmp/omniroute.tar.gz
+checksum=PLACEHOLDER_REGENERATE_PER_RELEASE
+system_accounts="_omniroute"
+omniroute_homedir="/var/lib/omniroute"
+export NODE_ENV=production
+export npm_config_engine_strict=false
+export npm_config_loglevel=error
+export npm_config_fund=false
+export npm_config_audit=false
+
+do_build() {
+	local _gyp_arch
+	case "$XBPS_TARGET_MACHINE" in
+		aarch64*) _gyp_arch=arm64 ;;
+		armv7*|armv6*) _gyp_arch=arm ;;
+		i686*) _gyp_arch=ia32 ;;
+		*) _gyp_arch=x64 ;;
+	esac
+
+	NODE_ENV=development npm ci --ignore-scripts
+	npm run build
+	cp -r .next/static .next/standalone/.next/static
+	[ -d public ] && cp -r public .next/standalone/public || true
+
+	local _node_gyp=/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+	(cd node_modules/better-sqlite3 && node "$_node_gyp" rebuild --arch="$_gyp_arch")
+
+	local _bs3_release=.next/standalone/node_modules/better-sqlite3/build/Release
+	mkdir -p "$_bs3_release"
+	cp node_modules/better-sqlite3/build/Release/better_sqlite3.node "$_bs3_release/"
+
+	rm -rf .next/standalone/node_modules/@img
+
+	for _mod in pino-abstract-transport split2 process-warning; do
+		cp -r "node_modules/$_mod" .next/standalone/node_modules/
+	done
+}
+
+do_check() {
+	npm run test:unit
+}
+
+do_install() {
+	vmkdir usr/lib/omniroute/.next
+	vcopy .next/standalone/. usr/lib/omniroute/.next/standalone
+
+	for _d in \
+		.next/standalone/.next/server/app/dashboard \
+		.next/standalone/.next/server/app/dashboard/settings \
+		.next/standalone/.next/server/app/dashboard/providers; do
+		touch "${DESTDIR}/usr/lib/omniroute/${_d}/.keep"
+	done
+
+	cat > "${WRKDIR}/omniroute" <<'EOF'
+#!/bin/sh
+export PORT="${PORT:-20128}"
+export DATA_DIR="${DATA_DIR:-${XDG_DATA_HOME:-${HOME}/.local/share}/omniroute}"
+export APP_LOG_TO_FILE="${APP_LOG_TO_FILE:-false}"
+mkdir -p "${DATA_DIR}"
+exec node /usr/lib/omniroute/.next/standalone/server.js "$@"
+EOF
+	vbin "${WRKDIR}/omniroute"
+}
+
+post_install() {
+	vlicense LICENSE
+}
+```
+
+---
+
+## Cirewa
+
+| Umurni                   | Aiki                                                                                        |
+| ------------------------ | ------------------------------------------------------------------------------------------- |
+| `npm run uninstall`      | Yana cire manhajar tsarin amma **yana barin DB da saitunanku** a cikin `~/.omniroute`.      |
+| `npm run uninstall:full` | Yana cire manhajar KUMA yana **goge duk saituna, maɓallai, da rumbunan bayanai** har abada. |
+
+> Don cikakkun umarnin cirewa ta dukkan hanyoyi, duba [UNINSTALL.md](./UNINSTALL.md).

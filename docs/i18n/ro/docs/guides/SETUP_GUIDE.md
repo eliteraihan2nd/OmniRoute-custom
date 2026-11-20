@@ -1,0 +1,434 @@
+# 📖 Setup Guide — OmniRoute (Română)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../guides/SETUP_GUIDE.md) · 🇪🇹 [am](../../../am/docs/guides/SETUP_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/guides/SETUP_GUIDE.md) · 🇦🇿 [az](../../../az/docs/guides/SETUP_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/guides/SETUP_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/guides/SETUP_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/guides/SETUP_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/guides/SETUP_GUIDE.md) · 🇩🇰 [da](../../../da/docs/guides/SETUP_GUIDE.md) · 🇩🇪 [de](../../../de/docs/guides/SETUP_GUIDE.md) · 🇬🇷 [el](../../../el/docs/guides/SETUP_GUIDE.md) · 🇪🇸 [es](../../../es/docs/guides/SETUP_GUIDE.md) · 🇪🇪 [et](../../../et/docs/guides/SETUP_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/guides/SETUP_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/guides/SETUP_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/guides/SETUP_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/guides/SETUP_GUIDE.md) · 🇮🇱 [he](../../../he/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/guides/SETUP_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/guides/SETUP_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/guides/SETUP_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/guides/SETUP_GUIDE.md) · 🇮🇩 [id](../../../id/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/guides/SETUP_GUIDE.md) · 🇮🇹 [it](../../../it/docs/guides/SETUP_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/guides/SETUP_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/guides/SETUP_GUIDE.md) · 🇰🇭 [km](../../../km/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/guides/SETUP_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/guides/SETUP_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/guides/SETUP_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/guides/SETUP_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/guides/SETUP_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/guides/SETUP_GUIDE.md) · 🇲🇲 [my](../../../my/docs/guides/SETUP_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/guides/SETUP_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/guides/SETUP_GUIDE.md) · 🇳🇴 [no](../../../no/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [or](../../../or/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/guides/SETUP_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/guides/SETUP_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/guides/SETUP_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/guides/SETUP_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/guides/SETUP_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/guides/SETUP_GUIDE.md) · 🇱🇰 [si](../../../si/docs/guides/SETUP_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/guides/SETUP_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/guides/SETUP_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/guides/SETUP_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/guides/SETUP_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [te](../../../te/docs/guides/SETUP_GUIDE.md) · 🇹🇭 [th](../../../th/docs/guides/SETUP_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/guides/SETUP_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/guides/SETUP_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/guides/SETUP_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/guides/SETUP_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/guides/SETUP_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/guides/SETUP_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/guides/SETUP_GUIDE.md)
+
+---
+
+> Referință completă pentru configurarea OmniRoute. Pentru versiunea rapidă, consultați [Ghidul de pornire rapidă din README](../README.md#-quick-start).
+
+## Cuprins
+
+- [Metode de instalare](#install-methods)
+- [Configurarea instrumentelor CLI](#cli-tool-configuration)
+- [Configurarea protocoalelor (MCP + A2A)](#protocol-setup-mcp--a2a)
+- [Configurarea timpilor de expirare](#timeout-configuration)
+- [Modul cu porturi separate](#split-port-mode)
+- [Void Linux (xbps-src)](#void-linux-xbps-src-template)
+- [Dezinstalare](#uninstalling)
+
+---
+
+## Metode de instalare
+
+### npm (recomandat)
+
+```bash
+npm install -g omniroute
+omniroute
+```
+
+Tabloul de bord se deschide la `http://localhost:20128` și API de bază URL este `http://localhost:20128/v1`.
+
+> **utilizatori npm:** Dacă npm avertizează că scripturile de instalare au fost blocate (de exemplu, `omniroute`, `better-sqlite3`), consultați [Depanarea — npm install-scripts blocked](./TROUBLESHOOTING.md#npm-install-scripts-blocked-warning-global-install).
+
+### pnpm
+
+```bash
+pnpm add -g omniroute@latest --allow-build=better-sqlite3 --allow-build=@swc/core
+omniroute
+```
+
+> **utilizatorii pnpm:** indicatorul `--allow-build` este necesar pentru a activa scripturile native de compilare pentru `better-sqlite3` și `@swc/core`. Comanda `pnpm approve-builds -g` nu este acceptată pentru instalări globale pe pnpm v11.
+
+### Arc Linux (AUR)
+
+```bash
+yay -S omniroute-bin
+systemctl --user enable --now omniroute.service
+```
+
+[Pachetul AUR](https://aur.archlinux.org/packages/omniroute-bin) instalează OmniRoute și oferă un serviciu de utilizator systemd.
+
+### De la Sursă
+
+```bash
+npm install
+PORT=20128 DASHBOARD_PORT=20129 NEXT_PUBLIC_BASE_URL=http://localhost:20129 npm run dev
+```
+
+> **Windows notă:** În mod implicit, OmniRoute folosește `%APPDATA%\omniroute` atunci când directorul `%USERPROFILE%\.omniroute` moștenit nu este prezent. Setați `DATA_DIR` să aleagă o locație diferită a directorului de date.
+
+> **Nota:** `npm install` generează automat `.env` din `.env.example` la prima rulare. Instalările ulterioare nu vor suprascrie un `.env` existent, astfel încât personalizările sunt păstrate. Pentru a reînsămânța, ștergeți `.env` înainte de a relua.
+
+### Docker
+
+Consultați [Ghidul Docker](./DOCKER_GUIDE.md) pentru configurarea completă Docker, inclusiv profilurile Compose și Caddy HTTPS.
+
+### Aplicație desktop (Electron)
+
+OmniRoute livrează un înveliș pentru desktop construit pe Electron 41 + electron-builder 26.10. Scripturi disponibile (rădăcină spațiu de lucru):
+
+```bash
+npm run electron:dev          # Run desktop with hot-reload
+npm run electron:build        # Build for current OS (auto-detected)
+npm run electron:build:win    # Windows installer (NSIS + portable)
+npm run electron:build:mac    # macOS (dmg + zip, arm64+x64)
+npm run electron:build:linux  # Linux (AppImage + deb + rpm)
+npm run electron:smoke:packaged  # Smoke-test packaged build
+```
+
+Versiunile programelor de instalare desktop sunt atașate versiunilor GitHub. Pentru deep-dive complet Electron (semnare, IPC bridge, distros), vezi [`ELECTRON_GUIDE.md`](./ELECTRON_GUIDE.md) _(criado em fase posterior)_.
+
+### Server fără cap (CI/automation)
+
+Pentru setările nesupravegheate (Docker, Kubernetes, CI), utilizați:
+
+```bash
+omniroute setup --non-interactive
+omniroute providers test-batch
+```
+
+Combinat cu env vars (`INITIAL_PASSWORD`, `OMNIROUTE_WS_BRIDGE_SECRET`, etc.), acest lucru vă permite să creați o instanță OmniRoute complet scriptabilă.
+
+### CLI Opțiuni
+
+| Comanda                 | Descriere                                                               |
+| ----------------------- | ----------------------------------------------------------------------- |
+| `omniroute`             | Porniți serverul (`PORT=20128`, API și tabloul de bord pe același port) |
+| `omniroute setup`       | Înregistrare CLI ghidată pentru parolă și primul furnizor               |
+| `omniroute doctor`      | Rulați verificări locale de sănătate fără a porni serverul              |
+| `omniroute providers`   | Descoperiți, enumerați, validați și testați furnizorii de la CLI        |
+| `omniroute config`      | CLI tool configuration — list, get, set, validate configs               |
+| `omniroute status`      | Tabloul de bord stare offline versiunea —, DB, instrumente, config      |
+| `omniroute logs`        | Transmiteți jurnalele de utilizare din API (suportă `--follow`)         |
+| `omniroute update`      | Verificați sau aplicați actualizările OmniRoute                         |
+| `omniroute provider`    | Gestionați conexiunile furnizorului — add, list, remove, test, default  |
+| `omniroute --port 3000` | Setați portul canonical/API la 3000                                     |
+| `omniroute --mcp`       | Porniți serverul MCP (transport stdio)                                  |
+| `omniroute --no-open`   | Nu deschideți automat browserul                                         |
+| `omniroute --help`      | Arată ajutor                                                            |
+
+Configurarea fără cap poate fi scriptată cu steaguri sau variabile de mediu:
+
+```bash
+omniroute setup --non-interactive --password "$OMNIROUTE_PASSWORD"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY" --test-provider
+```
+
+Rulați diagnosticarea locală fără a deschide tabloul de bord:
+
+```bash
+omniroute doctor
+omniroute doctor --json
+omniroute doctor --no-liveness
+```
+
+Gestionați furnizorii din SSH sau scripturi fără a deschide tabloul de bord:
+
+```bash
+omniroute providers available
+omniroute providers available --search openai
+omniroute providers available --category api-key
+omniroute providers list
+omniroute providers test <id-or-name>
+omniroute providers test-all
+omniroute providers validate
+```
+
+---
+
+## Configurarea instrumentelor CLI
+
+### 1) Conectați furnizorii și creați o cheie API
+
+1. Deschideți Dashboard → `Providers` și conectați cel puțin un furnizor (OAuth sau cheie API).
+2. Deschideți Dashboard → `Endpoints` și creați o cheie API.
+3. (Opțional) Deschideți Dashboard → `Combos` și configurați lanțul de rezervă.
+
+### 2) Configurați instrumentul de programare
+
+```txt
+URL de bază: http://localhost:20128/v1
+Cheie API:    [copiați de pe pagina Endpoint]
+Model:        if/qwen3.8-max-preview (sau orice prefix furnizor/model)
+```
+
+Dacă editorul dvs. nu poate trimite `Authorization: Bearer ...`, utilizați în schimb adresa de bază de compatibilitate care include tokenul:
+
+```txt
+URL de bază:       http://localhost:20128/api/v1/vscode/YOUR_KEY/
+URL pentru modele: http://localhost:20128/api/v1/vscode/YOUR_KEY/models
+URL pentru chat:   http://localhost:20128/api/v1/vscode/YOUR_KEY/chat/completions
+URL pentru etichetele Ollama: http://localhost:20128/api/v1/vscode/YOUR_KEY/api/tags
+```
+
+Funcționează cu Claude Code, Codex CLI, Cursor, Cline, OpenClaw, OpenCode și SDK-uri compatibile cu OpenAI.
+
+#### Configurare automată cu `setup-*`
+
+În loc să introduceți manual URL-ul de bază și cheia, permiteți OmniRoute să scrie configurația
+proprie a fiecărui instrument pe baza catalogului activ de modele. Câte o comandă pentru fiecare instrument:
+
+```bash
+omniroute setup-codex        # profiluri ~/.codex/<name>.config.toml
+omniroute setup-claude       # ~/.claude/profiles/<name>/settings.json
+omniroute setup-opencode     # ~/.config/opencode/opencode.json (compatibil cu OpenAI)
+omniroute setup-cline        # setările pentru Cline CLI + extensia VS Code
+omniroute setup-kilo         # Kilo Code
+omniroute setup-continue     # ~/.continue/config.yaml (Continue / cn)
+omniroute setup-cursor       # afișează pașii de urmat în aplicația Cursor
+omniroute setup-roo          # import Roo Code + indicator autoImport
+omniroute setup-crush        # ~/.config/crush/crush.json
+omniroute setup-zed          # ~/.config/zed/settings.json (openai_compatible)
+omniroute setup-goose        # ~/.config/goose/config.yaml
+omniroute setup-aider        # ~/.aider.conf.yml
+omniroute setup-qwen         # ~/.qwen/settings.json + ~/.qwen/.env
+```
+
+Fiecare acceptă `--remote <url> --api-key <key>` pentru configurarea unui instrument local cu o instanță
+OmniRoute **la distanță**, precum și `--dry-run` pentru previzualizare. Pentru a lansa un CLI cu variabilele de
+mediu corecte injectate, fără a scrie nicio configurație, utilizați lansatorul generic
+`omniroute run <target>` (claude, codex, aider, goose, opencode, qwen, gemini);
+lansatoarele vechi specifice fiecărui instrument, `omniroute launch` (Claude Code) și
+`omniroute launch-codex` (Codex), rămân disponibile.
+
+Pentru tabelul complet (ce scrie fiecare comandă, toate opțiunile, local față de la distanță, convențiile URL-ului
+de bază `/v1`), consultați **[Integrări CLI](./CLI-INTEGRATIONS.md)**.
+
+Pentru configurarea detaliată a fiecărui instrument (Claude Code, Codex CLI, Cursor, Cline, OpenClaw, Kilo Code, Copilot și altele), consultați ghidul dedicat **[Instrumentelor CLI](../reference/CLI-TOOLS.md)**.
+
+---
+
+## Configurare protocol (MCP + A2A)
+
+### Configurare MCP (Protocol de context model)
+
+Porniți transportul MCP în modul stdio:
+
+```bash
+omniroute --mcp
+```
+
+Flux de validare recomandat:
+
+```bash
+# 1. Start MCP server
+omniroute --mcp
+
+# 2. From your MCP client, call:
+omniroute_get_health        # Should return system health
+omniroute_list_combos       # Should return active combos
+
+# 3. Or run the full E2E suite:
+npm run test:protocols:e2e
+```
+
+#### MCP Client Configuration
+
+**Cod Claude :**
+
+Codul Claude se conectează prin HTTP, care `omniroute --mcp` (stdio) nu pornește. Transportul HTTP este dezactivat în mod implicit: activați-l mai întâi pe serverul care rulează. Când autentificarea la tabloul de bord este activată, o solicitare fără acreditări primește `401`, deci transmiteți o cheie API care conține `mcp:connect` (sau `manage`); o cheie fără `manage`/`admin` are nevoie, de asemenea, de domeniul de aplicare al fiecărui instrument (consultați [MCP Server → MCP tool scopes](../frameworks/MCP-SERVER.md#mcp-tool-scopes) ).
+
+```bash
+omniroute mcp enable --transport streamable-http
+claude mcp add --transport http omniroute http://localhost:20128/api/mcp/stream \
+  --header "Authorization: Bearer your-key"
+```
+
+**Cursor / Cline:**
+
+Adăugați la setările dvs. MCP (stdio, cu cheia, astfel încât apelantul să aibă un principal):
+
+```json
+{
+  "mcpServers": {
+    "omniroute": {
+      "command": "omniroute",
+      "args": ["--mcp"],
+      "env": {
+        "OMNIROUTE_API_KEY": "your-key",
+        "OMNIROUTE_BASE_URL": "http://localhost:20128"
+      }
+    }
+  }
+}
+```
+
+Sau, când `mcpTransport` este `streamable-http` (setați-l pe `/dashboard/mcp` sau cu `omniroute mcp enable --transport streamable-http`), indicați intrarea serverului MCP de la distanță a clientului la `http://localhost:20128/api/mcp/stream`.
+
+Cheia se deplasează ca `Authorization: Bearer <api-key>` (vezi [MCP Server → Acces de la distanță](../frameworks/MCP-SERVER.md#remote-access-manage-scope-bypass) pentru gazde la distanță; o cheie de la distanță are nevoie `mcp:connect` plus domeniile sale read/write ).
+
+**Documentația completă MCP :** [MCP Server README](../../open-sse/mcp-server/README.md) — 110 tools, IDE configs, Python/TS/Go clients. Referință operator pentru instrumentele de compresie CCR/dedup (marcatori, cerințe preliminare, domenii per instrument, paginare de recuperare, diagnosticare): [Motoare de compresie → Cerințe preliminare / ghid operator](../compression/COMPRESSION_ENGINES.md#prerequisites--operator-guide-ccr--session-dedup).
+
+### A2A Setup (protocol de la agent la agent)
+
+Verificați cardul de agent:
+
+```bash
+curl http://localhost:20128/.well-known/agent.json
+```
+
+Trimiteți o sarcină:
+
+```bash
+curl -X POST http://localhost:20128/a2a \
+  -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":"quickstart","method":"message/send","params":{"skill":"quota-management","messages":[{"role":"user","content":"Give me a short quota summary."}]}}'
+```
+
+**Documentația completă A2A :** [A2A Server README](../../src/lib/a2a/README.md) — JSON-RPC 2.0, abilități, streaming, ciclu de viață al sarcinilor.
+
+---
+
+## Configurarea timeouturilor
+
+### Timeouturi de bază
+
+Pentru majoritatea implementărilor, aveți nevoie doar de aceste două variabile:
+
+| Variabilă                | Valoare implicită               | Scop                                                                                                                                                                                      |
+| ------------------------ | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `REQUEST_TIMEOUT_MS`     | `600000`                        | Valoare de bază comună pentru timeoutul de începere a răspunsului upstream, timeouturile Undici ascunse, solicitările de amprentă TLS și timeouturile solicitărilor/proxy-ului punții API |
+| `STREAM_IDLE_TIMEOUT_MS` | moștenește `REQUEST_TIMEOUT_MS` | Intervalul maxim dintre fragmentele fluxului înainte ca OmniRoute să întrerupă fluxul SSE                                                                                                 |
+
+Compatibilitatea cu versiunile anterioare este păstrată: variabilele existente `FETCH_TIMEOUT_MS`, `API_BRIDGE_PROXY_TIMEOUT_MS` și alte variabile de timeout specifice fiecărui nivel continuă să funcționeze și suprascriu valoarea de bază comună.
+
+### Note specifice furnizorilor
+
+Pentru serviciile upstream compatibile cu Claude Code (`anthropic-compatible-cc-*`), OmniRoute derivă antetul outbound `X-Stainless-Timeout` din timeoutul de preluare determinat, astfel încât timeouturile de citire de la nivelul furnizorului să rămână aliniate cu configurația variabilelor de mediu.
+
+Pentru proxy-urile inverse terțe compatibile cu Claude Code, OmniRoute păstrează setul implicit `anthropic-beta` la un nivel conservator și, când `Client Cache Control` este lăsat pe `Auto`, transmite doar marcajele `cache_control` furnizate de client. Activați comutatorul per conexiune „Enable redact-thinking beta” numai atunci când serviciul upstream necesită în mod explicit fluxuri de raționament Claude redactate.
+
+### Suprascrieri avansate ale timeouturilor
+
+| Variabilă                                | Valoare implicită                            | Scop                                                                                                  |
+| ---------------------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `FETCH_TIMEOUT_MS`                       | moștenește `REQUEST_TIMEOUT_MS`              | Timeoutul de începere a răspunsului upstream utilizat până la sosirea anteturilor răspunsului         |
+| `FETCH_HEADERS_TIMEOUT_MS`               | moștenește `FETCH_TIMEOUT_MS`                | Limita de timp Undici pentru primirea anteturilor răspunsului upstream                                |
+| `FETCH_BODY_TIMEOUT_MS`                  | moștenește `FETCH_TIMEOUT_MS`                | Limita de timp Undici dintre fragmentele corpului upstream (`0` o dezactivează)                       |
+| `FETCH_CONNECT_TIMEOUT_MS`               | `30000`                                      | Timeoutul Undici pentru conexiunea TCP                                                                |
+| `FETCH_KEEPALIVE_TIMEOUT_MS`             | `4000`                                       | Timeoutul Undici pentru un socket keep-alive inactiv                                                  |
+| `TLS_CLIENT_TIMEOUT_MS`                  | moștenește `FETCH_TIMEOUT_MS`                | Timeoutul solicitărilor de amprentă TLS efectuate prin `wreq-js`                                      |
+| `API_BRIDGE_PROXY_TIMEOUT_MS`            | moștenește `REQUEST_TIMEOUT_MS` sau `600000` | Timeoutul pentru redirecționarea prin proxy a căii `/v1` de la portul API la portul tabloului de bord |
+| `API_BRIDGE_SERVER_REQUEST_TIMEOUT_MS`   | `max(API_BRIDGE_PROXY_TIMEOUT_MS, 300000)`   | Timeoutul solicitărilor primite pe serverul punții API                                                |
+| `API_BRIDGE_SERVER_HEADERS_TIMEOUT_MS`   | `60000`                                      | Timeoutul anteturilor primite pe serverul punții API                                                  |
+| `API_BRIDGE_SERVER_KEEPALIVE_TIMEOUT_MS` | `5000`                                       | Timeoutul keep-alive pe serverul punții API                                                           |
+| `API_BRIDGE_SERVER_SOCKET_TIMEOUT_MS`    | `0`                                          | Timeoutul de inactivitate al socketului pe serverul punții API (`0` îl dezactivează)                  |
+
+> **Notă:** Pentru solicitările de streaming, `FETCH_TIMEOUT_MS` acoperă doar configurarea conexiunii / așteptarea primului răspuns upstream. După ce fluxul devine activ, OmniRoute îl va întrerupe numai în cazul unui blocaj efectiv (`STREAM_IDLE_TIMEOUT_MS`) sau al inactivității corpului Undici (`FETCH_BODY_TIMEOUT_MS`).
+
+### Compatibilitatea cu proxy-urile inverse
+
+Dacă rulați OmniRoute în spatele Nginx, Caddy, Cloudflare sau al altui proxy invers, asigurați-vă că timeouturile proxy-ului sunt, de asemenea, mai mari decât timeouturile de flux/preluare OmniRoute.
+
+---
+
+## Modul cu porturi separate
+
+Rulați API-ul și Panoul de control pe porturi separate pentru scenarii avansate (proxy invers, rețelistică pentru containere):
+
+```bash
+PORT=20128 DASHBOARD_PORT=20129 omniroute
+# API:              http://localhost:20128/v1
+# Panou de control: http://localhost:20129
+```
+
+---
+
+## Void Linux (xbps-src) Șablon
+
+Pentru utilizatorii Void Linux, puteți crea un pachet nativ folosind `xbps-src`. Salvați acest bloc ca `srcpkgs/omniroute/template`:
+
+```bash
+# Template file for 'omniroute'
+pkgname=omniroute
+version=3.8.0
+revision=1
+hostmakedepends="nodejs python3 make"
+depends="openssl"
+short_desc="Universal AI gateway with smart routing for multiple LLM providers"
+maintainer="zenobit <zenobit@disroot.org>"
+license="MIT"
+homepage="https://github.com/diegosouzapw/OmniRoute"
+distfiles="https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz"
+# Regenerate the checksum for each release with:
+#   curl -L -o /tmp/omniroute.tar.gz "https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz" && sha256sum /tmp/omniroute.tar.gz
+checksum=PLACEHOLDER_REGENERATE_PER_RELEASE
+system_accounts="_omniroute"
+omniroute_homedir="/var/lib/omniroute"
+export NODE_ENV=production
+export npm_config_engine_strict=false
+export npm_config_loglevel=error
+export npm_config_fund=false
+export npm_config_audit=false
+
+do_build() {
+	local _gyp_arch
+	case "$XBPS_TARGET_MACHINE" in
+		aarch64*) _gyp_arch=arm64 ;;
+		armv7*|armv6*) _gyp_arch=arm ;;
+		i686*) _gyp_arch=ia32 ;;
+		*) _gyp_arch=x64 ;;
+	esac
+
+	NODE_ENV=development npm ci --ignore-scripts
+	npm run build
+	cp -r .next/static .next/standalone/.next/static
+	[ -d public ] && cp -r public .next/standalone/public || true
+
+	local _node_gyp=/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+	(cd node_modules/better-sqlite3 && node "$_node_gyp" rebuild --arch="$_gyp_arch")
+
+	local _bs3_release=.next/standalone/node_modules/better-sqlite3/build/Release
+	mkdir -p "$_bs3_release"
+	cp node_modules/better-sqlite3/build/Release/better_sqlite3.node "$_bs3_release/"
+
+	rm -rf .next/standalone/node_modules/@img
+
+	for _mod in pino-abstract-transport split2 process-warning; do
+		cp -r "node_modules/$_mod" .next/standalone/node_modules/
+	done
+}
+
+do_check() {
+	npm run test:unit
+}
+
+do_install() {
+	vmkdir usr/lib/omniroute/.next
+	vcopy .next/standalone/. usr/lib/omniroute/.next/standalone
+
+	for _d in \
+		.next/standalone/.next/server/app/dashboard \
+		.next/standalone/.next/server/app/dashboard/settings \
+		.next/standalone/.next/server/app/dashboard/providers; do
+		touch "${DESTDIR}/usr/lib/omniroute/${_d}/.keep"
+	done
+
+	cat > "${WRKDIR}/omniroute" <<'EOF'
+#!/bin/sh
+export PORT="${PORT:-20128}"
+export DATA_DIR="${DATA_DIR:-${XDG_DATA_HOME:-${HOME}/.local/share}/omniroute}"
+export APP_LOG_TO_FILE="${APP_LOG_TO_FILE:-false}"
+mkdir -p "${DATA_DIR}"
+exec node /usr/lib/omniroute/.next/standalone/server.js "$@"
+EOF
+	vbin "${WRKDIR}/omniroute"
+}
+
+post_install() {
+	vlicense LICENSE
+}
+```
+
+---
+
+## Dezinstalare
+
+| Comandă                  | Acțiune                                                                                           |
+| ------------------------ | ------------------------------------------------------------------------------------------------- |
+| `npm run uninstall`      | Elimină aplicația din sistem, dar **păstrează baza de date și configurațiile** în `~/.omniroute`. |
+| `npm run uninstall:full` | Elimină aplicația ȘI **șterge definitiv toate configurațiile, cheile și bazele de date**.         |
+
+> Pentru instrucțiuni detaliate de dezinstalare pentru toate metodele, consultați [UNINSTALL.md](./UNINSTALL.md).

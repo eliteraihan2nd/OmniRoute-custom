@@ -1,0 +1,433 @@
+# 📖 Setup Guide — OmniRoute (မြန်မာ)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../guides/SETUP_GUIDE.md) · 🇪🇹 [am](../../../am/docs/guides/SETUP_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/guides/SETUP_GUIDE.md) · 🇦🇿 [az](../../../az/docs/guides/SETUP_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/guides/SETUP_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/guides/SETUP_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/guides/SETUP_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/guides/SETUP_GUIDE.md) · 🇩🇰 [da](../../../da/docs/guides/SETUP_GUIDE.md) · 🇩🇪 [de](../../../de/docs/guides/SETUP_GUIDE.md) · 🇬🇷 [el](../../../el/docs/guides/SETUP_GUIDE.md) · 🇪🇸 [es](../../../es/docs/guides/SETUP_GUIDE.md) · 🇪🇪 [et](../../../et/docs/guides/SETUP_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/guides/SETUP_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/guides/SETUP_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/guides/SETUP_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/guides/SETUP_GUIDE.md) · 🇮🇱 [he](../../../he/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/guides/SETUP_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/guides/SETUP_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/guides/SETUP_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/guides/SETUP_GUIDE.md) · 🇮🇩 [id](../../../id/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/guides/SETUP_GUIDE.md) · 🇮🇹 [it](../../../it/docs/guides/SETUP_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/guides/SETUP_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/guides/SETUP_GUIDE.md) · 🇰🇭 [km](../../../km/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/guides/SETUP_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/guides/SETUP_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/guides/SETUP_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/guides/SETUP_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/guides/SETUP_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/guides/SETUP_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/guides/SETUP_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/guides/SETUP_GUIDE.md) · 🇳🇴 [no](../../../no/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [or](../../../or/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/guides/SETUP_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/guides/SETUP_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/guides/SETUP_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/guides/SETUP_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/guides/SETUP_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/guides/SETUP_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/guides/SETUP_GUIDE.md) · 🇱🇰 [si](../../../si/docs/guides/SETUP_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/guides/SETUP_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/guides/SETUP_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/guides/SETUP_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/guides/SETUP_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [te](../../../te/docs/guides/SETUP_GUIDE.md) · 🇹🇭 [th](../../../th/docs/guides/SETUP_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/guides/SETUP_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/guides/SETUP_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/guides/SETUP_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/guides/SETUP_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/guides/SETUP_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/guides/SETUP_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/guides/SETUP_GUIDE.md)
+
+---
+
+> OmniRoute အတွက် အပြည့်အစုံ စနစ်ထည့်သွင်းမှု ကိုးကားချက်။ အမြန်နည်းလမ်းအတွက် [README ရှိ အမြန်စတင်ခြင်း](../README.md#-quick-start) ကို ကြည့်ပါ။
+
+## မာတိကာ
+
+- [ထည့်သွင်းနည်းများ](#install-methods)
+- [CLI ကိရိယာ စီစဉ်သတ်မှတ်ခြင်း](#cli-tool-configuration)
+- [ပရိုတိုကော စနစ်ထည့်သွင်းခြင်း (MCP + A2A)](#protocol-setup-mcp--a2a)
+- [အချိန်ကုန်ဆုံးမှု စီစဉ်သတ်မှတ်ခြင်း](#timeout-configuration)
+- [Port ခွဲထားသည့် မုဒ်](#split-port-mode)
+- [Void Linux (xbps-src)](#void-linux-xbps-src-template)
+- [ဖယ်ရှားခြင်း](#uninstalling)
+
+---
+
+## နည်းလမ်းများ ထည့်သွင်းပါ။
+
+### npm (အကြံပြုထားသည်)
+
+```bash
+npm install -g omniroute
+omniroute
+```
+
+ဒက်ရှ်ဘုတ်သည် `http://localhost:20128` တွင်ဖွင့်ပြီး API အခြေခံ URL သည် `http://localhost:20128/v1` ဖြစ်သည်။
+
+> **npm အသုံးပြုသူများ** ထည့်သွင်းစခရစ်များကို ပိတ်ဆို့ထားကြောင်း npm က သတိပေးပါက (ဥပမာ `omniroute`၊ `better-sqlite3`) ၊ [ပြဿနာဖြေရှင်းခြင်း — npm install-scripts ပိတ်ဆို့ခြင်းကို](./TROUBLESHOOTING.md#npm-install-scripts-blocked-warning-global-install) ကြည့်ပါ။
+
+### pnpm
+
+```bash
+pnpm add -g omniroute@latest --allow-build=better-sqlite3 --allow-build=@swc/core
+omniroute
+```
+
+> **pnpm အသုံးပြုသူများ** `better-sqlite3` နှင့် `@swc/core` အတွက် native build scripts များကို ဖွင့်ရန် `--allow-build` အလံ လိုအပ်သည်။ pnpm v11 တွင် ကမ္ဘာလုံးဆိုင်ရာ ထည့်သွင်းမှုများအတွက် `pnpm approve-builds -g` အမိန့်ကို ပံ့ပိုးမထားပါ။
+
+### Arch Linux (AUR)
+
+```bash
+yay -S omniroute-bin
+systemctl --user enable --now omniroute.service
+```
+
+[AUR ပက်ကေ့ဂျ်သည်](https://aur.archlinux.org/packages/omniroute-bin) OmniRoute ထည့်သွင်းပြီး စနစ်ကျသော သုံးစွဲသူဝန်ဆောင်မှုကို ပေးသည်။
+
+### အရင်းအမြစ်မှ
+
+```bash
+npm install
+PORT=20128 DASHBOARD_PORT=20129 NEXT_PUBLIC_BASE_URL=http://localhost:20129 npm run dev
+```
+
+> **Windows မှတ်စု-** မူရင်းအားဖြင့် OmniRoute အမွေအနှစ် `%USERPROFILE%\.omniroute` လမ်းညွှန်တွင် မရှိသည့်အခါ `%APPDATA%\omniroute` အသုံးပြုသည်။ မတူညီသောဒေတာလမ်းညွှန်တည်နေရာကို ရွေးချယ်ရန် `DATA_DIR` သတ်မှတ်ပါ။
+
+> **မှတ်ချက် -** `npm install` ပထမအပြေးတွင် `.env.example` မှ `.env` အလိုအလျောက်ထုတ်ပေးသည်။ နောက်ဆက်တွဲ ထည့်သွင်းမှုများသည် ရှိပြီးသား `.env` ကို ထပ်ရေးမည်မဟုတ်ပါ၊ ထို့ကြောင့် စိတ်ကြိုက်ပြင်ဆင်မှုများကို ထိန်းသိမ်းထားသည်။ ပြန်လည်မျိုးစေ့ချရန်၊ ပြန်မလည်ပတ်မီ `.env` ဖျက်ပါ။
+
+### Docker
+
+စာစီခြင်းပရိုဖိုင်များနှင့် Caddy HTTPS အပါအဝင် Docker စနစ်ထည့်သွင်းမှုအတွက် [Docker လမ်းညွှန်ကို](./DOCKER_GUIDE.md) ကြည့်ပါ။
+
+### ဒက်စ်တော့အက်ပ် (Electron)
+
+OmniRoute Electron 41 + အီလက်ထရွန်တည်ဆောက်သူ 26.10 ပေါ်တွင်တည်ဆောက်ထားသော desktop wrapper ကိုပေးပို့သည်။ ရနိုင်သော scripts (workspace root):
+
+```bash
+npm run electron:dev          # Run desktop with hot-reload
+npm run electron:build        # Build for current OS (auto-detected)
+npm run electron:build:win    # Windows installer (NSIS + portable)
+npm run electron:build:mac    # macOS (dmg + zip, arm64+x64)
+npm run electron:build:linux  # Linux (AppImage + deb + rpm)
+npm run electron:smoke:packaged  # Smoke-test packaged build
+```
+
+ဒက်စ်တော့ တပ်ဆင်သူများ၏ ထုတ်ဝေမှုများကို GitHub ဖြန့်ချိမှုများနှင့် တွဲထားသည်။ Electron နက်ရှိုင်းသောငုပ်လျှိုးမှု အပြည့်အစုံ (လက်မှတ်ထိုးခြင်း၊ IPC တံတား၊ distros) အတွက် [`ELECTRON_GUIDE.md`](./ELECTRON_GUIDE.md) _(criado em fase posterior)_ ကိုကြည့်ပါ။
+
+### ဦးခေါင်းမဲ့ဆာဗာ (CI/automation)
+
+ပိုင်ရှင်မဲ့ တပ်ဆင်မှုများ (Docker၊ Kubernetes ၊ CI) ကို အသုံးပြုပါ ။
+
+```bash
+omniroute setup --non-interactive
+omniroute providers test-batch
+```
+
+env vars (`INITIAL_PASSWORD`၊ `OMNIROUTE_WS_BRIDGE_SECRET`၊ စသည်ဖြင့် ) နှင့် ပေါင်းစပ်ထားသောကြောင့် OmniRoute instance ကို အပြည့်အ၀ scriptable လုပ်နိုင်သည်။
+
+### CLI ရွေးချယ်မှုများ
+
+| အမိန့်ပေးသည်။           | ဖော်ပြချက်                                                                                                 |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `omniroute`             | ဆာဗာစတင်ပါ (`PORT=20128`၊ API နှင့် ဒက်ရှ်ဘုတ် တူညီသောဆိပ်ကမ်း)                                            |
+| `omniroute setup`       | စကားဝှက်နှင့် ပထမဆုံးဝန်ဆောင်မှုပေးသူအတွက် CLI စတင်အသုံးပြုခြင်းကို လမ်းညွှန်ထားသည်။                       |
+| `omniroute doctor`      | ဆာဗာကို မစတင်ဘဲ ဒေသတွင်း ကျန်းမာရေးစစ်ဆေးမှုများကို လုပ်ဆောင်ပါ။                                           |
+| `omniroute providers`   | CLI မှရှာဖွေပါ၊ စာရင်းသွင်းပါ၊ အတည်ပြုပါ၊ နှင့်စမ်းသပ်ပေးသူများ                                            |
+| `omniroute config`      | CLI tool configuration — list၊ get၊ set၊ validate configuration                                            |
+| `omniroute status`      | အော့ဖ်လိုင်းအခြေအနေ ဒက်ရှ်ဘုတ် — ဗားရှင်း၊ DB၊ tools၊ config                                               |
+| `omniroute logs`        | API မှ တိုက်ရိုက်အသုံးပြုမှုမှတ်တမ်းများ ( `--follow` ကို ပံ့ပိုးသည်)                                      |
+| `omniroute update`      | OmniRoute အပ်ဒိတ်များကို စစ်ဆေးပါ သို့မဟုတ် အသုံးပြုပါ။                                                    |
+| `omniroute provider`    | ပံ့ပိုးသူချိတ်ဆက်မှုများကို စီမံပါ — ပေါင်းထည့်ခြင်း၊ စာရင်းသွင်းခြင်း၊ ဖယ်ရှားခြင်း၊ စမ်းသပ်ခြင်း၊ မူရင်း |
+| `omniroute --port 3000` | canonical/API port ကို 3000 သို့သတ်မှတ်ပါ။                                                                 |
+| `omniroute --mcp`       | MCP ဆာဗာ (stdio သယ်ယူပို့ဆောင်ရေး) စတင်ပါ                                                                  |
+| `omniroute --no-open`   | ဘရောက်ဆာကို အလိုအလျောက်ဖွင့်ခြင်း မပြုပါနှင့်                                                              |
+| `omniroute --help`      | အကူအညီပြပါ။                                                                                                |
+
+ဦးခေါင်းမပါသော စနစ်ထည့်သွင်းမှုကို အလံများ သို့မဟုတ် ပတ်၀န်းကျင်ဆိုင်ရာ ကိန်းရှင်များဖြင့် ဇာတ်ညွှန်းရေးသားနိုင်သည်-
+
+```bash
+omniroute setup --non-interactive --password "$OMNIROUTE_PASSWORD"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY" --test-provider
+```
+
+ဒက်ရှ်ဘုတ်ကို မဖွင့်ဘဲ စက်တွင်းရောဂါရှာဖွေမှုများကို လုပ်ဆောင်ပါ-
+
+```bash
+omniroute doctor
+omniroute doctor --json
+omniroute doctor --no-liveness
+```
+
+ဒက်ရှ်ဘုတ်ကို မဖွင့်ဘဲ SSH သို့မဟုတ် scripts များမှ ဝန်ဆောင်မှုပေးသူများကို စီမံခန့်ခွဲပါ-
+
+```bash
+omniroute providers available
+omniroute providers available --search openai
+omniroute providers available --category api-key
+omniroute providers list
+omniroute providers test <id-or-name>
+omniroute providers test-all
+omniroute providers validate
+```
+
+---
+
+## CLI Tool ဖွဲ့စည်းသတ်မှတ်ခြင်း
+
+### 1) Provider များကို ချိတ်ဆက်ပြီး API Key ဖန်တီးခြင်း
+
+1. Dashboard → `Providers` ကိုဖွင့်ပြီး အနည်းဆုံး provider တစ်ခုကို ချိတ်ဆက်ပါ (OAuth သို့မဟုတ် API key)။
+2. Dashboard → `Endpoints` ကိုဖွင့်ပြီး API key တစ်ခု ဖန်တီးပါ။
+3. (ရွေးချယ်နိုင်သည်) Dashboard → `Combos` ကိုဖွင့်ပြီး သင်၏ fallback chain ကို သတ်မှတ်ပါ။
+
+### 2) သင်၏ Coding Tool ကို ချိတ်ဆက်ခြင်း
+
+```txt
+အခြေခံ URL: http://localhost:20128/v1
+API Key:    [Endpoint စာမျက်နှာမှ ကူးယူပါ]
+Model:      if/qwen3.8-max-preview (သို့မဟုတ် မည်သည့် provider/model prefix မဆို)
+```
+
+သင်၏ editor သည် `Authorization: Bearer ...` ကို မပို့နိုင်ပါက token ထည့်သွင်းထားသော compatibility base ကို အစားထိုးအသုံးပြုပါ-
+
+```txt
+အခြေခံ URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/
+Models URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/models
+Chat URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/chat/completions
+Ollama Tags URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/api/tags
+```
+
+Claude Code၊ Codex CLI၊ Cursor၊ Cline၊ OpenClaw၊ OpenCode နှင့် OpenAI-compatible SDK များဖြင့် အသုံးပြုနိုင်သည်။
+
+#### `setup-*` ဖြင့် အလိုအလျောက် ဖွဲ့စည်းသတ်မှတ်ခြင်း
+
+Base URL နှင့် key ကို ကိုယ်တိုင်ကူးထည့်မည့်အစား OmniRoute က live model catalog မှတစ်ဆင့် tool တစ်ခုချင်းစီ၏
+ကိုယ်ပိုင် config ကို ရေးသားပေးပါစေ။ Tool တစ်ခုလျှင် command တစ်ခုစီ အသုံးပြုပါ-
+
+```bash
+omniroute setup-codex        # ~/.codex/<name>.config.toml ပရိုဖိုင်များ
+omniroute setup-claude       # ~/.claude/profiles/<name>/settings.json
+omniroute setup-opencode     # ~/.config/opencode/opencode.json (openai-compatible)
+omniroute setup-cline        # Cline CLI + VS Code extension ဆက်တင်များ
+omniroute setup-kilo         # Kilo Code
+omniroute setup-continue     # ~/.continue/config.yaml (Continue / cn)
+omniroute setup-cursor       # Cursor ၏ app အတွင်း လုပ်ဆောင်ရမည့် အဆင့်များကို ပြသသည်
+omniroute setup-roo          # Roo Code import + autoImport ညွှန်ပြချက်
+omniroute setup-crush        # ~/.config/crush/crush.json
+omniroute setup-zed          # ~/.config/zed/settings.json (openai_compatible)
+omniroute setup-goose        # ~/.config/goose/config.yaml
+omniroute setup-aider        # ~/.aider.conf.yml
+omniroute setup-qwen         # ~/.qwen/settings.json + ~/.qwen/.env
+```
+
+တစ်ခုချင်းစီတွင် local tool တစ်ခုကို **remote** OmniRoute နှင့် အသုံးပြုနိုင်ရန် ဖွဲ့စည်းသတ်မှတ်ဖို့ `--remote <url> --api-key <key>` ကို လက်ခံပြီး အကြိုကြည့်ရှုရန် `--dry-run` ကိုလည်း လက်ခံသည်။ မှန်ကန်သော
+env ကို ထည့်သွင်းပေးထားပြီး မည်သည့် config ကိုမျှ ရေးသားခြင်းမရှိဘဲ CLI တစ်ခုကို စတင်ရန် generic launcher
+`omniroute run <target>` (claude, codex, aider, goose, opencode, qwen, gemini) ကို အသုံးပြုပါ။
+ယခင် tool အလိုက် launcher များဖြစ်သော `omniroute launch` (Claude Code) နှင့်
+`omniroute launch-codex` (Codex) တို့ကိုလည်း ဆက်လက်အသုံးပြုနိုင်သည်။
+
+ဇယားအပြည့်အစုံ (command တစ်ခုချင်းစီက ရေးသားသည့်အရာ၊ flag အားလုံး၊ local နှင့် remote ကွာခြားချက်၊ base-URL
+`/v1` သတ်မှတ်ပုံများ) ကို သိရှိရန် **[CLI ပေါင်းစည်းအသုံးပြုမှုများ](./CLI-INTEGRATIONS.md)** ကို ကြည့်ပါ။
+
+Tool တစ်ခုချင်းစီအတွက် အသေးစိတ်ဖွဲ့စည်းသတ်မှတ်ပုံ (Claude Code၊ Codex CLI၊ Cursor၊ Cline၊ OpenClaw၊ Kilo Code၊ Copilot နှင့် အခြားအရာများ) ကို သိရှိရန် သီးသန့် **[CLI Tools လမ်းညွှန်](../reference/CLI-TOOLS.md)** ကို ကြည့်ပါ။
+
+---
+
+## ပရိုတိုကော စနစ်ထည့်သွင်းခြင်း (MCP + A2A)
+
+### MCP စနစ်ထည့်သွင်းခြင်း (မော်ဒယ်ဆက်စပ်ပရိုတိုကော)
+
+stdio မုဒ်တွင် MCP သယ်ယူပို့ဆောင်ရေးကို စတင်ပါ-
+
+```bash
+omniroute --mcp
+```
+
+အကြံပြုထားသော အတည်ပြုခြင်းစီးဆင်းမှု-
+
+```bash
+# 1. Start MCP server
+omniroute --mcp
+
+# 2. From your MCP client, call:
+omniroute_get_health        # Should return system health
+omniroute_list_combos       # Should return active combos
+
+# 3. Or run the full E2E suite:
+npm run test:protocols:e2e
+```
+
+#### MCP Client Configuration
+
+**Claude ကုဒ်-**
+
+Claude Code သည် HTTP နှင့် ချိတ်ဆက်သည်၊ ၎င်းသည် `omniroute --mcp` (stdio) မစတင်ပါ။ HTTP သယ်ယူပို့ဆောင်ရေးသည် ပုံမှန်အားဖြင့် ပိတ်နေသည်- ၎င်းကို လည်ပတ်နေသော ဆာဗာတွင် ဦးစွာဖွင့်ပါ။ ဒက်ရှ်ဘုတ် လော့ဂ်အင်ကို ဖွင့်သောအခါ၊ အထောက်အထားမပါဘဲ တောင်းဆိုချက်သည် `401` ရရှိသည်၊ ထို့ကြောင့် API သော့ကို ကိုင်ဆောင်ကာ `mcp:connect` (သို့မဟုတ် `manage`); `manage`/`admin` မပါသောသော့သည်လည်း တူးလ်တစ်ခုစီ၏ နယ်ပယ် ( [MCP Server → MCP tool scopes ကို](../frameworks/MCP-SERVER.md#mcp-tool-scopes) ကြည့်ပါ)။
+
+```bash
+omniroute mcp enable --transport streamable-http
+claude mcp add --transport http omniroute http://localhost:20128/api/mcp/stream \
+  --header "Authorization: Bearer your-key"
+```
+
+**Cursor / Cline:**
+
+သင်၏ MCP ဆက်တင်များသို့ ပေါင်းထည့်ပါ (stdio၊ သော့ဖြင့် ခေါ်ဆိုသူတွင် ကျောင်းအုပ်တစ်ခုရှိသည်)။
+
+```json
+{
+  "mcpServers": {
+    "omniroute": {
+      "command": "omniroute",
+      "args": ["--mcp"],
+      "env": {
+        "OMNIROUTE_API_KEY": "your-key",
+        "OMNIROUTE_BASE_URL": "http://localhost:20128"
+      }
+    }
+  }
+}
+```
+
+သို့မဟုတ်၊ `mcpTransport` သည် `streamable-http` ဖြစ်သောအခါ (၎င်းကို `/dashboard/mcp` သို့မဟုတ် `omniroute mcp enable --transport streamable-http` ဖြင့် သတ်မှတ်ပါ)၊ သုံးစွဲသူ၏ အဝေးထိန်း MCP ဆာဗာ entry ကို `http://localhost:20128/api/mcp/stream` တွင် ညွှန်ပါ။
+
+သော့သည် `Authorization: Bearer <api-key>` အဖြစ် လည်ပတ်သွားသည် (ဝေးလံခေါင်သီသော host များအတွက် [MCP ဆာဗာ → အဝေးထိန်းအသုံးပြုမှုကို](../frameworks/MCP-SERVER.md#remote-access-manage-scope-bypass) ကြည့်ပါ၊ အဝေးထိန်းသော့သည် `mcp:connect` နှင့် ၎င်း၏ read/write နယ်ပယ်များ လိုအပ်သည်)။
+
+**MCP စာရွက်စာတမ်းအပြည့်အစုံ-** [MCP ဆာဗာ README](../../open-sse/mcp-server/README.md) — 110 တူးလ်များ၊ IDE configs၊ Python/TS/Go ဖောက်သည်များ။ compression CCR/dedup ကိရိယာများအတွက် အော်ပရေတာ ရည်ညွှန်းချက် (အမှတ်အသားများ၊ ကြိုတင်လိုအပ်ချက်များ၊ ကိရိယာတစ်ခုစီ၏ နယ်ပယ်များ၊ ထုတ်ယူမှု အပိုင်းအစများ၊ ရောဂါရှာဖွေမှုများ)- [Compression Engines → ကြိုတင်လိုအပ်ချက်များ / အော်ပရေတာလမ်းညွှန်](../compression/COMPRESSION_ENGINES.md#prerequisites--operator-guide-ccr--session-dedup) ။
+
+### A2A စနစ်ထည့်သွင်းခြင်း (Agent-to-Agent Protocol)
+
+ကိုယ်စားလှယ်ကတ်ကို အတည်ပြုပါ-
+
+```bash
+curl http://localhost:20128/.well-known/agent.json
+```
+
+လုပ်ဆောင်စရာတစ်ခု ပေးပို့ပါ-
+
+```bash
+curl -X POST http://localhost:20128/a2a \
+  -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":"quickstart","method":"message/send","params":{"skill":"quota-management","messages":[{"role":"user","content":"Give me a short quota summary."}]}}'
+```
+
+**A2A စာရွက်စာတမ်းအပြည့်အစုံ-** [A2A ဆာဗာ README](../../src/lib/a2a/README.md) — JSON-RPC 2.0၊ ကျွမ်းကျင်မှု၊ တိုက်ရိုက်ထုတ်လွှင့်မှု၊ အလုပ်သက်တမ်းစက်ဝန်း။
+
+---
+
+## အချိန်ကုန်ဆုံးမှု သတ်မှတ်ခြင်း
+
+### အခြေခံ အချိန်ကုန်ဆုံးမှုများ
+
+Deployment အများစုအတွက် အောက်ပါ variable နှစ်ခုသာ လိုအပ်သည်-
+
+| Variable                 | မူလတန်ဖိုး                        | ရည်ရွယ်ချက်                                                                                                                                                                                            |
+| ------------------------ | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `REQUEST_TIMEOUT_MS`     | `600000`                          | Upstream တုံ့ပြန်မှုစတင်ချိန်ကုန်ဆုံးမှု၊ မမြင်ရသော Undici အချိန်ကုန်ဆုံးမှုများ၊ TLS fingerprint request များနှင့် API bridge request/proxy အချိန်ကုန်ဆုံးမှုများအတွက် မျှဝေသုံးစွဲသည့် အခြေခံတန်ဖိုး |
+| `STREAM_IDLE_TIMEOUT_MS` | `REQUEST_TIMEOUT_MS` ကို ဆက်ခံသည် | OmniRoute က SSE stream ကို မရပ်တန့်မီ streaming chunk များကြား ခွင့်ပြုထားသည့် အများဆုံးကြာချိန်                                                                                                       |
+
+နောက်ပြန်လိုက်ဖက်ညီမှုကို ဆက်လက်ထိန်းသိမ်းထားသည်- ရှိပြီးသား `FETCH_TIMEOUT_MS`၊ `API_BRIDGE_PROXY_TIMEOUT_MS` နှင့် layer တစ်ခုချင်းစီအလိုက် အခြား timeout variable များသည် ဆက်လက်အလုပ်လုပ်ပြီး မျှဝေသုံးစွဲသည့် အခြေခံတန်ဖိုးကို အစားထိုးသတ်မှတ်နိုင်သည်။
+
+### Provider အလိုက် မှတ်ချက်များ
+
+Claude Code နှင့် လိုက်ဖက်ညီသော upstream များ (`anthropic-compatible-cc-*`) အတွက် provider ဘက်ရှိ read timeout များကို သင်၏ env configuration နှင့် ကိုက်ညီနေစေရန် OmniRoute သည် outbound `X-Stainless-Timeout` header ကို ဖြေရှင်းသတ်မှတ်ပြီးသော fetch timeout မှ တွက်ချက်ရယူသည်။
+
+Third-party Claude Code နှင့် လိုက်ဖက်ညီသော reverse proxy များအတွက် OmniRoute သည် မူလ `anthropic-beta` အစုကို ကန့်သတ်ထိန်းသိမ်းထားပြီး `Client Cache Control` ကို `Auto` အဖြစ်ထားသည့်အခါ client က ပေးပို့ထားသော `cache_control` marker များကိုသာ ဆက်လက်ပေးပို့သည်။ Upstream က ဖျောက်ထားသော Claude thinking stream များကို သီးသန့်လိုအပ်မှသာ connection တစ်ခုချင်းစီအလိုက် "ဖျောက်ထားသော thinking beta ကို ဖွင့်ရန်" toggle ကို ဖွင့်ပါ။
+
+### အဆင့်မြင့် အချိန်ကုန်ဆုံးမှု အစားထိုးသတ်မှတ်ချက်များ
+
+| Variable                                 | မူလတန်ဖိုး                                           | ရည်ရွယ်ချက်                                                                                  |
+| ---------------------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `FETCH_TIMEOUT_MS`                       | `REQUEST_TIMEOUT_MS` ကို ဆက်ခံသည်                    | တုံ့ပြန်မှု header များ မရောက်ရှိမီအထိ အသုံးပြုသည့် upstream တုံ့ပြန်မှုစတင်ချိန်ကုန်ဆုံးမှု |
+| `FETCH_HEADERS_TIMEOUT_MS`               | `FETCH_TIMEOUT_MS` ကို ဆက်ခံသည်                      | Upstream တုံ့ပြန်မှု header များကို လက်ခံရရှိရန် Undici ၏ အချိန်ကန့်သတ်ချက်                  |
+| `FETCH_BODY_TIMEOUT_MS`                  | `FETCH_TIMEOUT_MS` ကို ဆက်ခံသည်                      | Upstream body chunk များကြား Undici ၏ အချိန်ကန့်သတ်ချက် (`0` က ၎င်းကို ပိတ်သည်)              |
+| `FETCH_CONNECT_TIMEOUT_MS`               | `30000`                                              | Undici TCP connection အချိန်ကုန်ဆုံးမှု                                                      |
+| `FETCH_KEEPALIVE_TIMEOUT_MS`             | `4000`                                               | Undici ၏ အသုံးမပြုဘဲ ရှိနေသော keep-alive socket အချိန်ကုန်ဆုံးမှု                            |
+| `TLS_CLIENT_TIMEOUT_MS`                  | `FETCH_TIMEOUT_MS` ကို ဆက်ခံသည်                      | `wreq-js` မှတစ်ဆင့် ပြုလုပ်သော TLS fingerprint request များအတွက် အချိန်ကုန်ဆုံးမှု           |
+| `API_BRIDGE_PROXY_TIMEOUT_MS`            | `REQUEST_TIMEOUT_MS` သို့မဟုတ် `600000` ကို ဆက်ခံသည် | API port မှ dashboard port သို့ `/v1` proxy forwarding အတွက် အချိန်ကုန်ဆုံးမှု               |
+| `API_BRIDGE_SERVER_REQUEST_TIMEOUT_MS`   | `max(API_BRIDGE_PROXY_TIMEOUT_MS, 300000)`           | API bridge server ရှိ ဝင်လာသော request များအတွက် အချိန်ကုန်ဆုံးမှု                           |
+| `API_BRIDGE_SERVER_HEADERS_TIMEOUT_MS`   | `60000`                                              | API bridge server ရှိ ဝင်လာသော header များအတွက် အချိန်ကုန်ဆုံးမှု                            |
+| `API_BRIDGE_SERVER_KEEPALIVE_TIMEOUT_MS` | `5000`                                               | API bridge server ရှိ keep-alive အချိန်ကုန်ဆုံးမှု                                           |
+| `API_BRIDGE_SERVER_SOCKET_TIMEOUT_MS`    | `0`                                                  | API bridge server ရှိ socket လှုပ်ရှားမှုမရှိခြင်း အချိန်ကုန်ဆုံးမှု (`0` က ၎င်းကို ပိတ်သည်) |
+
+> **မှတ်ချက်:** Streaming request များအတွက် `FETCH_TIMEOUT_MS` သည် connection စတင်တည်ဆောက်ခြင်း / ပထမဆုံး upstream တုံ့ပြန်မှုကို စောင့်ဆိုင်းခြင်းကိုသာ အကျုံးဝင်သည်။ Stream အလုပ်လုပ်နေပြီဆိုသည်နှင့် OmniRoute သည် အမှန်တကယ် ရပ်တန့်နေခြင်း (`STREAM_IDLE_TIMEOUT_MS`) သို့မဟုတ် Undici body လှုပ်ရှားမှုမရှိခြင်း (`FETCH_BODY_TIMEOUT_MS`) ဖြစ်သည့်အခါမှသာ ရပ်တန့်မည်။
+
+### Reverse Proxy လိုက်ဖက်ညီမှု
+
+OmniRoute ကို Nginx၊ Caddy၊ Cloudflare သို့မဟုတ် အခြား reverse proxy တစ်ခု၏ နောက်ကွယ်တွင် အသုံးပြုပါက proxy timeout များသည် သင်၏ OmniRoute stream/fetch timeout များထက်လည်း ပိုမြင့်ကြောင်း သေချာစေပါ။
+
+---
+
+## သီးခြား Port မုဒ်
+
+အဆင့်မြင့်အသုံးပြုမှုအခြေအနေများ (reverse proxy၊ container networking) အတွက် API နှင့် Dashboard ကို သီးခြား port များတွင် လုပ်ဆောင်ပါ-
+
+```bash
+PORT=20128 DASHBOARD_PORT=20129 omniroute
+# API:       http://localhost:20128/v1
+# Dashboard: http://localhost:20129
+```
+
+---
+
+## Linux (xbps-src) Template ကို ပျက်ပြယ်စေပါသည်။
+
+Void Linux အသုံးပြုသူများအတွက်၊ သင်သည် `xbps-src` အသုံးပြု၍ မူလပက်ကေ့ခ်ျတစ်ခုကို တည်ဆောက်နိုင်သည်။ ဤဘလောက်ကို `srcpkgs/omniroute/template` အဖြစ်သိမ်းဆည်းပါ။
+
+```bash
+# Template file for 'omniroute'
+pkgname=omniroute
+version=3.8.0
+revision=1
+hostmakedepends="nodejs python3 make"
+depends="openssl"
+short_desc="Universal AI gateway with smart routing for multiple LLM providers"
+maintainer="zenobit <zenobit@disroot.org>"
+license="MIT"
+homepage="https://github.com/diegosouzapw/OmniRoute"
+distfiles="https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz"
+# Regenerate the checksum for each release with:
+#   curl -L -o /tmp/omniroute.tar.gz "https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz" && sha256sum /tmp/omniroute.tar.gz
+checksum=PLACEHOLDER_REGENERATE_PER_RELEASE
+system_accounts="_omniroute"
+omniroute_homedir="/var/lib/omniroute"
+export NODE_ENV=production
+export npm_config_engine_strict=false
+export npm_config_loglevel=error
+export npm_config_fund=false
+export npm_config_audit=false
+
+do_build() {
+	local _gyp_arch
+	case "$XBPS_TARGET_MACHINE" in
+		aarch64*) _gyp_arch=arm64 ;;
+		armv7*|armv6*) _gyp_arch=arm ;;
+		i686*) _gyp_arch=ia32 ;;
+		*) _gyp_arch=x64 ;;
+	esac
+
+	NODE_ENV=development npm ci --ignore-scripts
+	npm run build
+	cp -r .next/static .next/standalone/.next/static
+	[ -d public ] && cp -r public .next/standalone/public || true
+
+	local _node_gyp=/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+	(cd node_modules/better-sqlite3 && node "$_node_gyp" rebuild --arch="$_gyp_arch")
+
+	local _bs3_release=.next/standalone/node_modules/better-sqlite3/build/Release
+	mkdir -p "$_bs3_release"
+	cp node_modules/better-sqlite3/build/Release/better_sqlite3.node "$_bs3_release/"
+
+	rm -rf .next/standalone/node_modules/@img
+
+	for _mod in pino-abstract-transport split2 process-warning; do
+		cp -r "node_modules/$_mod" .next/standalone/node_modules/
+	done
+}
+
+do_check() {
+	npm run test:unit
+}
+
+do_install() {
+	vmkdir usr/lib/omniroute/.next
+	vcopy .next/standalone/. usr/lib/omniroute/.next/standalone
+
+	for _d in \
+		.next/standalone/.next/server/app/dashboard \
+		.next/standalone/.next/server/app/dashboard/settings \
+		.next/standalone/.next/server/app/dashboard/providers; do
+		touch "${DESTDIR}/usr/lib/omniroute/${_d}/.keep"
+	done
+
+	cat > "${WRKDIR}/omniroute" <<'EOF'
+#!/bin/sh
+export PORT="${PORT:-20128}"
+export DATA_DIR="${DATA_DIR:-${XDG_DATA_HOME:-${HOME}/.local/share}/omniroute}"
+export APP_LOG_TO_FILE="${APP_LOG_TO_FILE:-false}"
+mkdir -p "${DATA_DIR}"
+exec node /usr/lib/omniroute/.next/standalone/server.js "$@"
+EOF
+	vbin "${WRKDIR}/omniroute"
+}
+
+post_install() {
+	vlicense LICENSE
+}
+```
+
+---
+
+## ဖြုတ်ချခြင်း
+
+| Command                  | လုပ်ဆောင်ချက်                                                                                              |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `npm run uninstall`      | စနစ် app ကို ဖယ်ရှားသော်လည်း `~/.omniroute` ရှိ **သင့် DB နှင့် configuration များကို ဆက်လက်သိမ်းထားသည်**။ |
+| `npm run uninstall:full` | app ကို ဖယ်ရှားပြီး **configuration၊ key နှင့် database အားလုံးကို အပြီးတိုင် ဖျက်ပစ်သည်**။                |
+
+> နည်းလမ်းအားလုံးအတွက် အသေးစိတ်ဖြုတ်ချနည်းလမ်းညွှန်များကို [UNINSTALL.md](./UNINSTALL.md) တွင် ကြည့်ပါ။

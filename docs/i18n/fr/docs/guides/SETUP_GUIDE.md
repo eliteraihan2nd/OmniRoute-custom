@@ -1,0 +1,434 @@
+# 📖 Setup Guide — OmniRoute (Français)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../guides/SETUP_GUIDE.md) · 🇪🇹 [am](../../../am/docs/guides/SETUP_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/guides/SETUP_GUIDE.md) · 🇦🇿 [az](../../../az/docs/guides/SETUP_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/guides/SETUP_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/guides/SETUP_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/guides/SETUP_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/guides/SETUP_GUIDE.md) · 🇩🇰 [da](../../../da/docs/guides/SETUP_GUIDE.md) · 🇩🇪 [de](../../../de/docs/guides/SETUP_GUIDE.md) · 🇬🇷 [el](../../../el/docs/guides/SETUP_GUIDE.md) · 🇪🇸 [es](../../../es/docs/guides/SETUP_GUIDE.md) · 🇪🇪 [et](../../../et/docs/guides/SETUP_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/guides/SETUP_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/guides/SETUP_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/guides/SETUP_GUIDE.md) · 🇮🇱 [he](../../../he/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/guides/SETUP_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/guides/SETUP_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/guides/SETUP_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/guides/SETUP_GUIDE.md) · 🇮🇩 [id](../../../id/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/guides/SETUP_GUIDE.md) · 🇮🇹 [it](../../../it/docs/guides/SETUP_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/guides/SETUP_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/guides/SETUP_GUIDE.md) · 🇰🇭 [km](../../../km/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/guides/SETUP_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/guides/SETUP_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/guides/SETUP_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/guides/SETUP_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/guides/SETUP_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/guides/SETUP_GUIDE.md) · 🇲🇲 [my](../../../my/docs/guides/SETUP_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/guides/SETUP_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/guides/SETUP_GUIDE.md) · 🇳🇴 [no](../../../no/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [or](../../../or/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/guides/SETUP_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/guides/SETUP_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/guides/SETUP_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/guides/SETUP_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/guides/SETUP_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/guides/SETUP_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/guides/SETUP_GUIDE.md) · 🇱🇰 [si](../../../si/docs/guides/SETUP_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/guides/SETUP_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/guides/SETUP_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/guides/SETUP_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/guides/SETUP_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [te](../../../te/docs/guides/SETUP_GUIDE.md) · 🇹🇭 [th](../../../th/docs/guides/SETUP_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/guides/SETUP_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/guides/SETUP_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/guides/SETUP_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/guides/SETUP_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/guides/SETUP_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/guides/SETUP_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/guides/SETUP_GUIDE.md)
+
+---
+
+> Référence complète pour la configuration d’OmniRoute. Pour la version rapide, consultez le [Démarrage rapide dans le README](../README.md#-quick-start).
+
+## Table des matières
+
+- [Méthodes d’installation](#install-methods)
+- [Configuration de l’outil CLI](#cli-tool-configuration)
+- [Configuration des protocoles (MCP + A2A)](#protocol-setup-mcp--a2a)
+- [Configuration des délais d’expiration](#timeout-configuration)
+- [Mode avec ports séparés](#split-port-mode)
+- [Void Linux (xbps-src)](#void-linux-xbps-src-template)
+- [Désinstallation](#uninstalling)
+
+---
+
+## Méthodes d'installation
+
+### npm (recommandé)
+
+```bash
+npm install -g omniroute
+omniroute
+```
+
+Dashboard opens at `http://localhost:20128` and API base URL is `http://localhost:20128/v1`.
+
+> **Utilisateurs npm :** Si npm avertit que les scripts d'installation ont été bloqués (par exemple, `omniroute`, `better-sqlite3`), voir [Dépannage des scripts d'installation — npm bloqués](./TROUBLESHOOTING.md#npm-install-scripts-blocked-warning-global-install).
+
+### pnpm
+
+```bash
+pnpm add -g omniroute@latest --allow-build=better-sqlite3 --allow-build=@swc/core
+omniroute
+```
+
+> **Utilisateurs NPPM :** l'indicateur `--allow-build` est requis pour activer les scripts de construction natifs pour `better-sqlite3` et `@swc/core`. La commande `pnpm approve-builds -g` n'est pas prise en charge pour les installations globales sur pnpm v11.
+
+### Arche Linux (AUR)
+
+```bash
+yay -S omniroute-bin
+systemctl --user enable --now omniroute.service
+```
+
+Le [package AUR](https://aur.archlinux.org/packages/omniroute-bin) installe OmniRoute et fournit un service utilisateur systemd.
+
+### De la source
+
+```bash
+npm install
+PORT=20128 DASHBOARD_PORT=20129 NEXT_PUBLIC_BASE_URL=http://localhost:20129 npm run dev
+```
+
+> **Windows :** Par défaut, OmniRoute utilise `%APPDATA%\omniroute` lorsque l'ancien répertoire `%USERPROFILE%\.omniroute` n'est pas présent. Définissez `DATA_DIR` pour choisir un emplacement de répertoire de données différent.
+
+> **Note:** `npm install` auto-generates `.env` from `.env.example` on first run. Les installations ultérieures n'écraseront pas un `.env` existant, les personnalisations sont donc préservées. To re-seed, delete `.env` before re-running.
+
+### Docker
+
+Consultez le [guide Docker](./DOCKER_GUIDE.md) pour la configuration complète Docker, y compris les profils Compose et Caddy HTTPS.
+
+### Application de bureau (Electron)
+
+OmniRoute livre un wrapper de bureau construit sur Electron 41 + electronic-builder 26.10. Available scripts (workspace root):
+
+```bash
+npm run electron:dev          # Run desktop with hot-reload
+npm run electron:build        # Build for current OS (auto-detected)
+npm run electron:build:win    # Windows installer (NSIS + portable)
+npm run electron:build:mac    # macOS (dmg + zip, arm64+x64)
+npm run electron:build:linux  # Linux (AppImage + deb + rpm)
+npm run electron:smoke:packaged  # Smoke-test packaged build
+```
+
+Les versions des programmes d'installation de bureau sont jointes aux versions GitHub. Pour une analyse approfondie Electron (signature, pont IPC, distributions), voir [`ELECTRON_GUIDE.md`](./ELECTRON_GUIDE.md) _(créé dans la phase postérieure)_.
+
+### Serveur sans tête (CI/automation)
+
+Pour les configurations sans assistance (Docker, Kubernetes, CI), utilisez :
+
+```bash
+omniroute setup --non-interactive
+omniroute providers test-batch
+```
+
+Combiné avec des variables d'environnement (`INITIAL_PASSWORD`, `OMNIROUTE_WS_BRIDGE_SECRET`, etc.), cela vous permet de créer une instance OmniRoute entièrement scriptable.
+
+### Options CLI
+
+| Commande                | Description                                                                            |
+| ----------------------- | -------------------------------------------------------------------------------------- |
+| `omniroute`             | Démarrer le serveur (`PORT=20128`, API et tableau de bord sur le même port)            |
+| `omniroute setup`       | Intégration guidée CLI pour le mot de passe et le premier fournisseur                  |
+| `omniroute doctor`      | Exécutez des vérifications de l'état locales sans démarrer le serveur                  |
+| `omniroute providers`   | Découvrez, répertoriez, validez et testez les fournisseurs de CLI                      |
+| `omniroute config`      | Configuration de l'outil CLI Liste —, obtenir, définir, valider les configurations     |
+| `omniroute status`      | Tableau de bord d'état hors ligne version —, DB, outils, configuration                 |
+| `omniroute logs`        | Stream usage logs from the API (supports `--follow`)                                   |
+| `omniroute update`      | Check for or apply OmniRoute updates                                                   |
+| `omniroute provider`    | Gérer les connexions des fournisseurs — ajouter, lister, supprimer, tester, par défaut |
+| `omniroute --port 3000` | Définir le port canonical/API sur 3000                                                 |
+| `omniroute --mcp`       | Start MCP server (stdio transport)                                                     |
+| `omniroute --no-open`   | Ne pas ouvrir automatiquement le navigateur                                            |
+| `omniroute --help`      | Afficher l'aide                                                                        |
+
+La configuration sans tête peut être scriptée avec des indicateurs ou des variables d'environnement :
+
+```bash
+omniroute setup --non-interactive --password "$OMNIROUTE_PASSWORD"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY" --test-provider
+```
+
+Exécutez des diagnostics locaux sans ouvrir le tableau de bord :
+
+```bash
+omniroute doctor
+omniroute doctor --json
+omniroute doctor --no-liveness
+```
+
+Gérez les fournisseurs à partir de SSH ou de scripts sans ouvrir le tableau de bord :
+
+```bash
+omniroute providers available
+omniroute providers available --search openai
+omniroute providers available --category api-key
+omniroute providers list
+omniroute providers test <id-or-name>
+omniroute providers test-all
+omniroute providers validate
+```
+
+---
+
+## Configuration des outils CLI
+
+### 1) Connecter des fournisseurs et créer une clé API
+
+1. Ouvrez Dashboard → `Providers` et connectez au moins un fournisseur (OAuth ou clé API).
+2. Ouvrez Dashboard → `Endpoints` et créez une clé API.
+3. (Facultatif) Ouvrez Dashboard → `Combos` et définissez votre chaîne de repli.
+
+### 2) Configurer votre outil de programmation
+
+```txt
+URL de base : http://localhost:20128/v1
+Clé API :     [copier depuis la page Endpoint]
+Modèle :      if/qwen3.8-max-preview (ou tout préfixe fournisseur/modèle)
+```
+
+Si votre éditeur ne peut pas envoyer `Authorization: Bearer ...`, utilisez plutôt l’URL de base de compatibilité intégrant le jeton :
+
+```txt
+URL de base :     http://localhost:20128/api/v1/vscode/YOUR_KEY/
+URL des modèles : http://localhost:20128/api/v1/vscode/YOUR_KEY/models
+URL du chat :     http://localhost:20128/api/v1/vscode/YOUR_KEY/chat/completions
+URL des tags Ollama : http://localhost:20128/api/v1/vscode/YOUR_KEY/api/tags
+```
+
+Fonctionne avec Claude Code, Codex CLI, Cursor, Cline, OpenClaw, OpenCode et les SDK compatibles avec OpenAI.
+
+#### Configuration automatique avec `setup-*`
+
+Au lieu de coller manuellement l’URL de base et la clé, laissez OmniRoute écrire la
+configuration propre à chaque outil à partir du catalogue de modèles actif. Une commande par outil :
+
+```bash
+omniroute setup-codex        # profils ~/.codex/<name>.config.toml
+omniroute setup-claude       # ~/.claude/profiles/<name>/settings.json
+omniroute setup-opencode     # ~/.config/opencode/opencode.json (compatible avec OpenAI)
+omniroute setup-cline        # paramètres de Cline CLI et de l’extension VS Code
+omniroute setup-kilo         # Kilo Code
+omniroute setup-continue     # ~/.continue/config.yaml (Continue / cn)
+omniroute setup-cursor       # affiche les étapes à suivre dans Cursor
+omniroute setup-roo          # importation Roo Code et pointeur autoImport
+omniroute setup-crush        # ~/.config/crush/crush.json
+omniroute setup-zed          # ~/.config/zed/settings.json (openai_compatible)
+omniroute setup-goose        # ~/.config/goose/config.yaml
+omniroute setup-aider        # ~/.aider.conf.yml
+omniroute setup-qwen         # ~/.qwen/settings.json + ~/.qwen/.env
+```
+
+Chacune accepte `--remote <url> --api-key <key>` pour configurer un outil local afin qu’il utilise une
+instance OmniRoute **distante**, ainsi que `--dry-run` pour obtenir un aperçu. Pour lancer une CLI avec les bonnes
+variables d’environnement injectées sans écrire aucune configuration, utilisez le lanceur générique
+`omniroute run <target>` (claude, codex, aider, goose, opencode, qwen, gemini) ;
+les anciens lanceurs propres à chaque outil, `omniroute launch` (Claude Code) et
+`omniroute launch-codex` (Codex), restent disponibles.
+
+Pour consulter le tableau complet (fichiers écrits par chaque commande, tous les indicateurs, mode local ou distant, conventions
+`/v1` des URL de base), reportez-vous à **[Intégrations CLI](./CLI-INTEGRATIONS.md)**.
+
+Pour obtenir des instructions de configuration détaillées pour chaque outil (Claude Code, Codex CLI, Cursor, Cline, OpenClaw, Kilo Code, Copilot et bien d’autres), consultez le **[Guide des outils CLI](../reference/CLI-TOOLS.md)** dédié.
+
+---
+
+## Configuration du protocole (MCP + A2A)
+
+### Configuration MCP (protocole de contexte de modèle)
+
+Démarrez MCP transport en mode stdio :
+
+```bash
+omniroute --mcp
+```
+
+Flux de validation recommandé :
+
+```bash
+# 1. Start MCP server
+omniroute --mcp
+
+# 2. From your MCP client, call:
+omniroute_get_health        # Should return system health
+omniroute_list_combos       # Should return active combos
+
+# 3. Or run the full E2E suite:
+npm run test:protocols:e2e
+```
+
+#### Configuration du client MCP
+
+**Code Claude :**
+
+Claude Code se connecte via HTTP, que `omniroute --mcp` (stdio) ne démarre pas. Le transport HTTP est désactivé par défaut : activez-le d'abord sur le serveur en cours d'exécution. Lorsque la connexion au tableau de bord est activée, une demande sans informations d'identification obtient `401`, transmettez donc une clé API contenant `mcp:connect` (ou `manage`); une clé sans `manage`/`admin` nécessite également la portée de chaque outil (voir [Portées de l'outil MCP Server → MCP](../frameworks/MCP-SERVER.md#mcp-tool-scopes) ).
+
+```bash
+omniroute mcp enable --transport streamable-http
+claude mcp add --transport http omniroute http://localhost:20128/api/mcp/stream \
+  --header "Authorization: Bearer your-key"
+```
+
+**Cursor / Cline:**
+
+Ajoutez à vos paramètres MCP (stdio, avec la clé pour que l'appelant ait un principal) :
+
+```json
+{
+  "mcpServers": {
+    "omniroute": {
+      "command": "omniroute",
+      "args": ["--mcp"],
+      "env": {
+        "OMNIROUTE_API_KEY": "your-key",
+        "OMNIROUTE_BASE_URL": "http://localhost:20128"
+      }
+    }
+  }
+}
+```
+
+Ou, lorsque `mcpTransport` est `streamable-http` (définissez-le sur `/dashboard/mcp` ou avec `omniroute mcp enable --transport streamable-http`), pointez l'entrée du serveur MCP distant du client sur `http://localhost:20128/api/mcp/stream`.
+
+La clé se déplace en tant que `Authorization: Bearer <api-key>` (voir [MCP Server → Accès à distance](../frameworks/MCP-SERVER.md#remote-access-manage-scope-bypass) pour les hôtes distants ; une clé distante a besoin `mcp:connect` plus ses étendues read/write ).
+
+**Documentation complète MCP :** Outils [MCP Server README](../../open-sse/mcp-server/README.md) — 110, configurations IDE, clients Python/TS/Go. Référence de l'opérateur pour les outils de compression CCR/dedup (marqueurs, prérequis, étendues par outil, pagination de récupération, diagnostics) : [Moteurs de compression → Prérequis / guide de l'opérateur](../compression/COMPRESSION_ENGINES.md#prerequisites--operator-guide-ccr--session-dedup).
+
+### Configuration A2A (protocole agent à agent)
+
+Vérifiez la carte d'agent :
+
+```bash
+curl http://localhost:20128/.well-known/agent.json
+```
+
+Envoyer une tâche :
+
+```bash
+curl -X POST http://localhost:20128/a2a \
+  -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":"quickstart","method":"message/send","params":{"skill":"quota-management","messages":[{"role":"user","content":"Give me a short quota summary."}]}}'
+```
+
+**Documentation complète A2A :** [A2A Server README](../../src/lib/a2a/README.md) — JSON-RPC 2.0, compétences, streaming, cycle de vie des tâches.
+
+---
+
+## Configuration des délais d’expiration
+
+### Délais d’expiration de base
+
+Pour la plupart des déploiements, seules ces deux variables sont nécessaires :
+
+| Variable                 | Valeur par défaut              | Objectif                                                                                                                                                                        |
+| ------------------------ | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `REQUEST_TIMEOUT_MS`     | `600000`                       | Référence commune pour le délai d’attente du début de la réponse en amont, les délais Undici masqués, les requêtes d’empreinte TLS et les délais de requête/proxy du pont d’API |
+| `STREAM_IDLE_TIMEOUT_MS` | hérite de `REQUEST_TIMEOUT_MS` | Intervalle maximal entre les fragments de streaming avant qu’OmniRoute n’interrompe le flux SSE                                                                                 |
+
+La rétrocompatibilité est préservée : les variables existantes `FETCH_TIMEOUT_MS`, `API_BRIDGE_PROXY_TIMEOUT_MS` et les autres variables de délai d’expiration propres à chaque couche continuent de fonctionner et remplacent la référence commune.
+
+### Remarques spécifiques aux fournisseurs
+
+Pour les services en amont compatibles avec Claude Code (`anthropic-compatible-cc-*`), OmniRoute calcule l’en-tête sortant `X-Stainless-Timeout` à partir du délai d’expiration de récupération résolu, afin que les délais de lecture côté fournisseur restent alignés sur votre configuration d’environnement.
+
+Pour les proxys inverses tiers compatibles avec Claude Code, OmniRoute conserve un ensemble `anthropic-beta` par défaut prudent et, lorsque `Client Cache Control` reste défini sur `Auto`, transmet uniquement les marqueurs `cache_control` fournis par le client. Activez l’option « Enable redact-thinking beta » pour chaque connexion uniquement lorsque le service en amont exige spécifiquement des flux de raisonnement Claude expurgés.
+
+### Remplacements avancés des délais d’expiration
+
+| Variable                                 | Valeur par défaut                          | Objectif                                                                                              |
+| ---------------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| `FETCH_TIMEOUT_MS`                       | hérite de `REQUEST_TIMEOUT_MS`             | Délai d’attente du début de la réponse en amont, utilisé jusqu’à la réception des en-têtes de réponse |
+| `FETCH_HEADERS_TIMEOUT_MS`               | hérite de `FETCH_TIMEOUT_MS`               | Durée limite Undici pour la réception des en-têtes de réponse en amont                                |
+| `FETCH_BODY_TIMEOUT_MS`                  | hérite de `FETCH_TIMEOUT_MS`               | Durée limite Undici entre les fragments du corps en amont (`0` la désactive)                          |
+| `FETCH_CONNECT_TIMEOUT_MS`               | `30000`                                    | Délai d’expiration Undici pour la connexion TCP                                                       |
+| `FETCH_KEEPALIVE_TIMEOUT_MS`             | `4000`                                     | Délai d’expiration Undici pour les sockets persistants inactifs                                       |
+| `TLS_CLIENT_TIMEOUT_MS`                  | hérite de `FETCH_TIMEOUT_MS`               | Délai d’expiration des requêtes d’empreinte TLS effectuées via `wreq-js`                              |
+| `API_BRIDGE_PROXY_TIMEOUT_MS`            | hérite de `REQUEST_TIMEOUT_MS` ou `600000` | Délai d’expiration du transfert proxy de `/v1` depuis le port de l’API vers celui du tableau de bord  |
+| `API_BRIDGE_SERVER_REQUEST_TIMEOUT_MS`   | `max(API_BRIDGE_PROXY_TIMEOUT_MS, 300000)` | Délai d’expiration des requêtes entrantes sur le serveur du pont d’API                                |
+| `API_BRIDGE_SERVER_HEADERS_TIMEOUT_MS`   | `60000`                                    | Délai d’expiration des en-têtes entrants sur le serveur du pont d’API                                 |
+| `API_BRIDGE_SERVER_KEEPALIVE_TIMEOUT_MS` | `5000`                                     | Délai d’expiration des connexions persistantes sur le serveur du pont d’API                           |
+| `API_BRIDGE_SERVER_SOCKET_TIMEOUT_MS`    | `0`                                        | Délai d’expiration en cas d’inactivité du socket sur le serveur du pont d’API (`0` le désactive)      |
+
+> **Remarque :** Pour les requêtes en streaming, `FETCH_TIMEOUT_MS` couvre uniquement l’établissement de la connexion et l’attente de la première réponse en amont. Une fois le flux actif, OmniRoute ne l’interrompt qu’en cas de blocage effectif (`STREAM_IDLE_TIMEOUT_MS`) ou d’inactivité du corps Undici (`FETCH_BODY_TIMEOUT_MS`).
+
+### Compatibilité avec les proxys inverses
+
+Si vous exécutez OmniRoute derrière Nginx, Caddy, Cloudflare ou un autre proxy inverse, assurez-vous que les délais d’expiration du proxy sont également supérieurs aux délais de streaming/récupération d’OmniRoute.
+
+---
+
+## Mode à ports séparés
+
+Exécutez l’API et le tableau de bord sur des ports distincts pour les scénarios avancés (proxy inverse, mise en réseau de conteneurs) :
+
+```bash
+PORT=20128 DASHBOARD_PORT=20129 omniroute
+# API :              http://localhost:20128/v1
+# Tableau de bord :  http://localhost:20129
+```
+
+---
+
+## Modèle Linux nul (xbps-src)
+
+Pour les utilisateurs de Void Linux, vous pouvez créer un package natif en utilisant `xbps-src`. Enregistrez ce bloc sous `srcpkgs/omniroute/template`:
+
+```bash
+# Template file for 'omniroute'
+pkgname=omniroute
+version=3.8.0
+revision=1
+hostmakedepends="nodejs python3 make"
+depends="openssl"
+short_desc="Universal AI gateway with smart routing for multiple LLM providers"
+maintainer="zenobit <zenobit@disroot.org>"
+license="MIT"
+homepage="https://github.com/diegosouzapw/OmniRoute"
+distfiles="https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz"
+# Regenerate the checksum for each release with:
+#   curl -L -o /tmp/omniroute.tar.gz "https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz" && sha256sum /tmp/omniroute.tar.gz
+checksum=PLACEHOLDER_REGENERATE_PER_RELEASE
+system_accounts="_omniroute"
+omniroute_homedir="/var/lib/omniroute"
+export NODE_ENV=production
+export npm_config_engine_strict=false
+export npm_config_loglevel=error
+export npm_config_fund=false
+export npm_config_audit=false
+
+do_build() {
+	local _gyp_arch
+	case "$XBPS_TARGET_MACHINE" in
+		aarch64*) _gyp_arch=arm64 ;;
+		armv7*|armv6*) _gyp_arch=arm ;;
+		i686*) _gyp_arch=ia32 ;;
+		*) _gyp_arch=x64 ;;
+	esac
+
+	NODE_ENV=development npm ci --ignore-scripts
+	npm run build
+	cp -r .next/static .next/standalone/.next/static
+	[ -d public ] && cp -r public .next/standalone/public || true
+
+	local _node_gyp=/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+	(cd node_modules/better-sqlite3 && node "$_node_gyp" rebuild --arch="$_gyp_arch")
+
+	local _bs3_release=.next/standalone/node_modules/better-sqlite3/build/Release
+	mkdir -p "$_bs3_release"
+	cp node_modules/better-sqlite3/build/Release/better_sqlite3.node "$_bs3_release/"
+
+	rm -rf .next/standalone/node_modules/@img
+
+	for _mod in pino-abstract-transport split2 process-warning; do
+		cp -r "node_modules/$_mod" .next/standalone/node_modules/
+	done
+}
+
+do_check() {
+	npm run test:unit
+}
+
+do_install() {
+	vmkdir usr/lib/omniroute/.next
+	vcopy .next/standalone/. usr/lib/omniroute/.next/standalone
+
+	for _d in \
+		.next/standalone/.next/server/app/dashboard \
+		.next/standalone/.next/server/app/dashboard/settings \
+		.next/standalone/.next/server/app/dashboard/providers; do
+		touch "${DESTDIR}/usr/lib/omniroute/${_d}/.keep"
+	done
+
+	cat > "${WRKDIR}/omniroute" <<'EOF'
+#!/bin/sh
+export PORT="${PORT:-20128}"
+export DATA_DIR="${DATA_DIR:-${XDG_DATA_HOME:-${HOME}/.local/share}/omniroute}"
+export APP_LOG_TO_FILE="${APP_LOG_TO_FILE:-false}"
+mkdir -p "${DATA_DIR}"
+exec node /usr/lib/omniroute/.next/standalone/server.js "$@"
+EOF
+	vbin "${WRKDIR}/omniroute"
+}
+
+post_install() {
+	vlicense LICENSE
+}
+```
+
+---
+
+## Désinstallation
+
+| Commande                 | Action                                                                                                                |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `npm run uninstall`      | Supprime l’application du système, mais **conserve votre base de données et vos configurations** dans `~/.omniroute`. |
+| `npm run uninstall:full` | Supprime l’application ET **efface définitivement toutes les configurations, clés et bases de données**.              |
+
+> Pour obtenir des instructions de désinstallation détaillées pour toutes les méthodes, consultez [UNINSTALL.md](./UNINSTALL.md).

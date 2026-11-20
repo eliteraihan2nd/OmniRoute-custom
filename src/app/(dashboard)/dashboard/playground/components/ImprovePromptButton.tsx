@@ -1,0 +1,123 @@
+"use client";
+
+// src/app/(dashboard)/dashboard/playground/components/ImprovePromptButton.tsx
+
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+import GuardedAction from "@/shared/components/GuardedAction";
+import Icon from "@/shared/components/Icon";
+import { ConfirmModal } from "@/shared/components/Modal";
+import { useImprovePrompt } from "../hooks/useImprovePrompt";
+import type { ConfigState, ConfigStateSetter } from "./StudioConfigPane";
+
+interface ImprovePromptButtonProps {
+  configState: ConfigState;
+  setConfigState: ConfigStateSetter;
+}
+
+/**
+ * ImprovePromptButton — "Improve prompt" button (sparkle icon) with quota-consumption warning.
+ *
+ * Flow: click → confirmation modal → confirm → calls useImprovePrompt.improve()
+ * → on success, updates configState.systemPrompt and/or configState.params.
+ *
+ * D8: uses the model configured in the Config pane (never overrides with cheap model).
+ */
+export default function ImprovePromptButton({
+  configState,
+  setConfigState,
+}: ImprovePromptButtonProps) {
+  const t = useTranslations("playground");
+  const { loading, error, improve } = useImprovePrompt();
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [improveError, setImproveError] = useState<string | null>(null);
+
+  async function handleConfirm() {
+    setConfirmOpen(false);
+    setImproveError(null);
+
+    const model = configState.model.trim();
+    if (!model) {
+      setImproveError(t("setModelInConfigFirst"));
+      return;
+    }
+
+    const result = await improve({
+      system: configState.systemPrompt || undefined,
+      model,
+    });
+
+    if (result == null) {
+      setImproveError(error ?? t("improvePromptFailed"));
+      return;
+    }
+
+    const improvedSystem = result.improvedSystem;
+    if (improvedSystem != null) {
+      setConfigState((current) => ({ ...current, systemPrompt: improvedSystem }));
+    }
+  }
+
+  const hasModel = configState.model.trim().length > 0;
+
+  return (
+    <>
+      <div className="flex flex-col gap-1">
+        <GuardedAction
+          variant="outline"
+          size="sm"
+          onClick={() => {
+            setImproveError(null);
+            setConfirmOpen(true);
+          }}
+          disabled={loading}
+          reason={hasModel ? undefined : t("setModelFirst")}
+          className="gap-1.5 self-start text-xs text-text-muted"
+          aria-label={t("improvePromptAria")}
+          title={t("improvePromptTitle")}
+        >
+          <Icon name="auto_awesome" size={13} />
+          {loading ? t("improvingPrompt") : t("improvePrompt")}
+        </GuardedAction>
+
+        {improveError && <p className="text-xs text-error">{improveError}</p>}
+      </div>
+
+      {/* Quota confirmation modal (kit Dialog via the ConfirmModal adapter) */}
+      <ConfirmModal
+        isOpen={confirmOpen}
+        onClose={() => setConfirmOpen(false)}
+        onConfirm={() => void handleConfirm()}
+        title={t("improvePrompt")}
+        variant="primary"
+        cancelText={t("cancel")}
+        confirmText={
+          <>
+            <Icon name="auto_awesome" size={12} />
+            {t("improveConfirm")}
+          </>
+        }
+        // Built only while open: the body renders nothing while the dialog is closed.
+        message={
+          confirmOpen && (
+            <span className="flex items-start gap-3">
+              <Icon name="auto_awesome" size={24} className="shrink-0 text-primary" />
+              <span className="flex flex-col">
+                <span className="text-xs text-text-muted">
+                  {t.rich("improvePromptDescription", {
+                    model: () => (
+                      <code className="font-mono text-primary">{configState.model}</code>
+                    ),
+                  })}
+                </span>
+                <span className="text-xs text-text-muted mt-1.5 font-medium">
+                  {t("improveQuotaWarning")}
+                </span>
+              </span>
+            </span>
+          )
+        }
+      />
+    </>
+  );
+}

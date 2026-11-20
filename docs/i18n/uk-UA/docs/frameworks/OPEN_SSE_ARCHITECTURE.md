@@ -1,0 +1,579 @@
+# open-sse Architecture (Українська)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇪🇹 [am](../../../am/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇸🇦 [ar](../../../ar/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇦🇿 [az](../../../az/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇧🇬 [bg](../../../bg/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇧🇩 [bn](../../../bn/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇧🇦 [bs](../../../bs/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇨🇿 [cs](../../../cs/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇩🇰 [da](../../../da/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇩🇪 [de](../../../de/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇬🇷 [el](../../../el/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇪🇸 [es](../../../es/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇪🇪 [et](../../../et/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇷 [fa](../../../fa/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇫🇮 [fi](../../../fi/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇫🇷 [fr](../../../fr/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇪 [ga](../../../ga/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇳 [gu](../../../gu/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇳🇬 [ha](../../../ha/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇱 [he](../../../he/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇳 [hi](../../../hi/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇭🇷 [hr](../../../hr/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇭🇺 [hu](../../../hu/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇦🇲 [hy](../../../hy/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇩 [id](../../../id/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇳🇬 [ig](../../../ig/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇹 [it](../../../it/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇯🇵 [ja](../../../ja/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇬🇪 [ka](../../../ka/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇰🇭 [km](../../../km/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇳 [kn](../../../kn/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇰🇷 [ko](../../../ko/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇱🇹 [lt](../../../lt/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇱🇻 [lv](../../../lv/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇳 [ml](../../../ml/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇳 [mr](../../../mr/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇲🇾 [ms](../../../ms/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇲🇹 [mt](../../../mt/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇲🇲 [my](../../../my/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇳🇵 [ne](../../../ne/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇳🇱 [nl](../../../nl/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇳🇴 [no](../../../no/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇳 [or](../../../or/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇳 [pa](../../../pa/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇵🇭 [phi](../../../phi/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇵🇱 [pl](../../../pl/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇵🇹 [pt](../../../pt/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇷🇴 [ro](../../../ro/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇷🇺 [ru](../../../ru/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇱🇰 [si](../../../si/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇸🇰 [sk](../../../sk/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇸🇮 [sl](../../../sl/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇷🇸 [sr](../../../sr/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇸🇪 [sv](../../../sv/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇰🇪 [sw](../../../sw/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇳 [ta](../../../ta/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇮🇳 [te](../../../te/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇹🇭 [th](../../../th/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇹🇷 [tr](../../../tr/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇵🇰 [ur](../../../ur/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇺🇿 [uz](../../../uz/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇻🇳 [vi](../../../vi/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇳🇬 [yo](../../../yo/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/frameworks/OPEN_SSE_ARCHITECTURE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/frameworks/OPEN_SSE_ARCHITECTURE.md)
+
+---
+
+> **Коротко**: `open-sse/` — це основний рушій потокового передавання, який обробляє кожен запит до LLM в OmniRoute. Він містить близько 1 400 файлів, що реалізують конвеєр запитів, виконавці, сервіси, MCP-сервер і шар перетворення форматів. У цьому посібнику пояснюється, як ці компоненти взаємодіють.
+
+**Джерело:** `open-sse/` (пакет робочого простору, близько 1 440 нетестових файлів `.ts`)
+
+---
+
+## Навіщо окремий пакет робочого простору?
+
+`open-sse/` — це **автономний робочий простір** у монорепозиторії OmniRoute з кількох причин:
+
+1. **Повторне використання** — `open-sse` публікується в npm як `@omniroute/open-sse`, тому інші проєкти можуть використовувати його незалежно
+2. **Чіткі межі** — рушій потокового передавання відокремлений від специфічного для OmniRoute шару UI/БД
+3. **Продуктивність** — рушій не має залежностей від Next.js, що забезпечує швидший холодний запуск у середовищах CLI/serverless
+4. **Керування версіями** — `open-sse` може випускати релізи за власним графіком
+
+```json
+// package.json
+"workspaces": ["open-sse"]
+```
+
+---
+
+## Структура верхнього рівня
+
+```
+open-sse/
+├── index.ts              # Публічна точка входу
+├── types.d.ts            # Експорт публічних типів
+├── package.json          # @omniroute/open-sse
+├── config/               # Конфігурації провайдерів, константи, реєстри
+├── executors/            # HTTP-виконавці для окремих провайдерів (150 модулів + base.ts/index.ts)
+├── handlers/             # Обробники запитів (chatCore, responses тощо)
+├── lib/                  # Внутрішні утиліти
+├── mcp-server/           # Сервер Model Context Protocol
+├── services/             # ~298 сервісних модулів
+├── transformer/          # Перетворювач формату Responses API
+├── translator/           # Трансляція форматів (OpenAI ↔ Claude ↔ Gemini)
+└── utils/                # Спільні утиліти (журналювання, помилки, потоки тощо)
+```
+
+### Кількість модулів
+
+| Каталог | Файли | Призначення |
+| `executors/` | 167 | HTTP-виконавці для окремих провайдерів (уніфіковані за допомогою фабрики DefaultExecutor) |
+| `handlers/` | 157 | Точки входу для запитів (chatCore, responses, embeddings) |
+| `services/` | ~536 | Маршрутизація, кешування, обмеження частоти запитів, оновлення тощо |
+| `translator/` | 56 | Перетворення форматів (OpenAI ↔ Claude ↔ Gemini) |
+| `mcp-server/` | 44 | Інструменти та транспорти MCP |
+| `utils/` | ~108 | Наскрізні утиліти (журналювання, помилки, потоки) |
+| `config/` | ~339 | Конфігурації провайдерів, константи, реєстри |
+
+---
+
+## Конвеєр запитів
+
+Кожен запит до LLM проходить через **5-етапний конвеєр**:
+
+```
+                              ┌──────────────┐
+   HTTP-запит                  │ 1. МАРШРУТ   │   визначення комбінації, вибір моделі
+   (маршрут Next.js)           └──────┬───────┘
+                                     │
+                                     ▼
+                              ┌──────────────┐
+                              │ 2. ПЕРЕКЛАД  │   перетворення формату (OpenAI ↔ Claude ↔ Gemini)
+                              └──────┬───────┘
+                                     │
+                                     ▼
+                              ┌──────────────┐
+                              │ 3. ВИКОНАННЯ │   виконавець провайдера, HTTP, повторні спроби, запобіжник
+                              └──────┬───────┘
+                                     │
+                                     ▼
+                              ┌──────────────┐
+                              │ 4. ПОТІК     │   перетворення SSE, зворотний тиск
+                              └──────┬───────┘
+                                     │
+                                     ▼
+                              ┌──────────────┐
+                              │ 5. ЗАПИС     │   відстеження використання, журнал викликів, класифікація помилок
+                              └──────┬───────┘
+                                     │
+                                     ▼
+                              HTTP-відповідь (SSE або JSON)
+```
+
+### Етап 1: Маршрутизація (services/combo.ts)
+
+**Точка входу**: `handleComboChat()` у `services/combo.ts`
+
+Зіставляє запит із конкретним кортежем `(provider, model, account, credentials)`:
+
+- Знаходить комбінацію за ID (або створює віртуальну комбінацію для моделей `auto/*`)
+- Застосовує стратегію маршрутизації (пріоритетну, зважену, циклічну тощо)
+- Відфільтровує непрацездатних провайдерів (автоматичний запобіжник)
+- Вибирає наступну придатну ціль
+
+Для моделей `auto/*` цей етап також:
+
+- Запускає алгоритм **16-факторного оцінювання** (`services/autoCombo/`)
+- Вибирає пару `provider+model` на основі працездатності, вартості, затримки тощо
+
+### Етап 2: Перетворення формату (translator/)
+
+Якщо вихідний формат (наприклад, OpenAI) відрізняється від цільового (наприклад, Claude), запит **перетворюється**:
+
+- Системний промпт → системне повідомлення
+- Визначення інструментів → специфічний для провайдера формат інструментів
+- Параметри міркування/мислення → специфічні для провайдера еквіваленти
+- Нормалізація ролей повідомлень (`developer` → `system` для форматів, відмінних від OpenAI)
+
+`translator/index.ts` експортує:
+
+```ts
+translateRequest(body, sourceFormat, targetFormat): TranslatedRequest
+needsTranslation(source, target): boolean
+```
+
+### Етап 3: Виконання (executors/)
+
+**Точка входу**: `getExecutor(providerId).execute(request, options)`
+
+Усі провайдери використовують `DefaultExecutor` (`executors/default.ts`) через резервний механізм фабрики `getExecutor()`. Виконавець:
+
+- Створює URL вищого рівня (`buildUrl()`)
+- Додає специфічні для провайдера заголовки (`buildHeaders()`)
+- Перетворює тіло запиту (`transformRequest()`)
+- Надсилає HTTP-запит із повторними спробами та експоненційною затримкою
+- За потреби обробляє оновлення автентифікації (для провайдерів OAuth)
+
+Усі виконавці розширюють `BaseExecutor` (`executors/base.ts`, 1170 рядків коду), який надає:
+
+- Спільну логіку повторних спроб
+- Інтеграцію з проксі
+- Інтеграцію з автоматичним запобіжником
+- Хуки для запису використання
+
+### Етап 4: Потокове передавання (utils/stream.ts)
+
+Для потокових відповідей виконавець повертає **ReadableStream**. Обробник:
+
+- Передає дані через SSE-перетворення (`createSSETransformStreamWithLogger`)
+- Застосовує контрольні сигнали heartbeat для виявлення розірваних з’єднань
+- Коректно обробляє відключення клієнта (`pipeWithDisconnect`)
+- Перетворює SSE → JSON для клієнтів без підтримки потокового передавання
+
+Для непотокових відповідей виконавець повертає розібраний JSON-об’єкт, який передається без змін.
+
+### Етап 5: Запис (services/usage.ts)
+
+Після відповіді (успішної чи невдалої) використання записується:
+
+- `prompt_tokens`, `completion_tokens`, `cached_tokens` із відповіді
+- `cost_usd`, обчислена на основі даних про ціни
+- `latency_ms`, `status`, `error_class` у разі помилки
+- Зберігається в таблиці `usage_history`
+
+Артефакти журналу викликів (якщо ввімкнено) записуються до `${DATA_DIR}/call_logs/`.
+
+---
+
+## Ключові файли Deep Dive
+
+### chatCore.ts (5977 рядків)
+
+The** головний обробник запитів** . Незважаючи на свої розміри, він має чітку структуру:
+
+```ts
+// Pseudo-structure of chatCore.ts
+export async function handleChat(request: NextRequest) {
+  // 1. Auth + CORS
+  await authenticateRequest(request);
+  applyCorsHeaders(response);
+
+  // 2. Body validation
+  const body = await parseRequestBody(request);
+
+  // 3. Format detection + translation
+  const sourceFormat = detectFormat(request);
+  const targetFormat = getTargetFormat(providerId);
+  if (needsTranslation(sourceFormat, targetFormat)) {
+    body = translateRequest(body, sourceFormat, targetFormat);
+  }
+
+  // 4. Combo routing
+  const targets = await resolveComboTargets(comboId, body);
+  for (const target of targets) {
+    try {
+      const result = await executeOnTarget(target, body);
+      await recordUsage(result);
+      return result;
+    } catch (err) {
+      // Continue to next target
+    }
+  }
+
+  // 5. Emergency fallback
+  return await emergencyFallback(body);
+}
+```
+
+Незважаючи на те, що це одна гігантська функція, вона організована в** коментовані розділи** що відображається на 5-ступінчастому трубопроводі.
+
+### combo.ts (4456 LOC)
+
+The** механізм маршрутизації** який вирішує комбо до впорядкованих цілей.
+
+```ts
+// services/combo.ts
+export async function handleComboChat(body, comboId): Promise<ChatResult> {
+  const targets = await resolveComboTargets(comboId, body);
+  for (const target of targets) {
+    try {
+      return await handleSingleModel(target, body);
+    } catch (err) {
+      log.warn("target failed, trying next", { target, err });
+    }
+  }
+  throw new ComboExhaustedError("All targets failed");
+}
+```
+
+Підтримує** 22 стратегії маршрутизації** (див. `src/shared/constants/routingStrategies.ts`):
+
+| Стратегія           | Поведінка                                                                                                |
+| ------------------- | -------------------------------------------------------------------------------------------------------- |
+| `priority`          | Упорядкований список першої цілі                                                                         |
+| `weighted`          | Імовірнісні за вагою цілі                                                                                |
+| `round-robin`       | Переходьте між цілями по порядку                                                                         |
+| `context-relay`     | Передача контексту між цілями                                                                            |
+| `fill-first`        | Заповніть квоту перед переходом до наступного                                                            |
+| `p2c`               | Сила двох варіантів                                                                                      |
+| `random`            | Уніформа випадкова                                                                                       |
+| `least-used`        | Виберіть той, який нещодавно використовувався найменше                                                   |
+| `cost-optimized`    | Спочатку найдешевша здорова мета                                                                         |
+| `reset-aware`       | Знати про вікна скидання провайдера                                                                      |
+| `reset-window`      | Скинути віконну маршрутизацію                                                                            |
+| `expiry-first`      | Витратьте обліковий запис, квота якого закінчиться невикористаним першим                                 |
+| `headroom`          | Спершу більшість залишків квоти                                                                          |
+| `quota-weighted`    | Пропустіть вичерпані облікові записи, а потім використайте залишкову квоту ÷ під час завантаження        |
+| `strict-random`     | Справді однорідний (без оцінки якості)                                                                   |
+| `auto`              | Використовуйте 16-факторну оцінку (`autoCombo/`)                                                         |
+| `lkgp`              | Спочатку останній відомий хороший постачальник                                                           |
+| `context-optimized` | Найкраще для довгоконтекстних запитів                                                                    |
+| `cache-optimized`   | Закріпити кожен багаторазовий префікс підказки до того самого облікового запису (звертання кеш-підказки) |
+| `fusion`            | Паралельно розгорніться на панель, а потім синтезуйте через суддю (`fusion.ts`)                          |
+| `pipeline`          | Ланцюгові кроки — кожен вихід цілі подає наступну                                                        |
+| `jev`               | Увімкнути: TypeSafe Jev визнає, які рейтингові записи запускаються; інакше ваше замовлення               |
+
+### base.ts (1170 LOC)
+
+The** абстрактний виконавець** що кожен клас виконавця розширюється (безпосередньо або через `DefaultExecutor` та інші підкласи). Він містить:
+
+- `buildUrl()` — за замовчуванням URL конструкція (підкласи замінюють для користувача)
+- `buildHeaders()` — типові заголовки (автентифікація, тип вмісту)
+- `transformRequest()` — передача за замовчуванням
+- `execute()` — основний цикл HTTP із retry/backoff/breaker
+
+```ts
+// open-sse/executors/default.ts
+export class DefaultExecutor extends BaseExecutor {
+  // Handles all OpenAI/Anthropic-compatible providers
+  // Providers register configurations (URL, auth, headers) but share executor logic
+}
+```
+
+Специфічна поведінка постачальника (заголовки автентифікації, базовий URL, заголовки версії) налаштовується через реєстр постачальника, а не через окремі класи виконавців.
+
+````
+
+---
+
+## Сервіси (117 модулів)
+
+Послуги є** сфокусовані одноцільові модулі** які створюють обробники. Великі категорії:
+
+### Маршрутизація та комбо
+
+- `combo.ts` — точка входу для комбо-маршрутизації запитів
+- `services/autoCombo/` — 16-факторна оцінка, 8 стратегій автоматичного маршрутизації
+- `wildcardRouter.ts` — відповідає маршрутам підстановки (`gpt-*`)
+- `modelFamilyFallback.ts` — T5 внутрішньосімейний резервний варіант
+
+### Обмеження швидкості та квота
+
+- `rateLimitManager.ts` — токен для кожного постачальника ключів +
+- `usage.ts` — запис використання
+- `quotaCache.ts` — знімки квоти в пам’яті
+
+### Обліковий запис і маркер
+
+- `tokenRefresh.ts` — OAuth оновити на 401
+- `accountFallback.ts` — перейти на інший обліковий запис
+- `sessionManager.ts` — багатооборотний стан сесії
+
+### Інтелект
+
+- `intentClassifier.ts` — класифікувати намір запиту
+- `taskAwareRouter.ts` — маршрут за типом завдання
+- `thinkingBudget.ts` — виділити маркери мислення
+- `contextManager.ts` — ввести контекст маршрутизації
+
+### Стійкість
+
+- `resilience.ts` — retry, backoff, breaker orchestration
+- `emergencyFallback.ts` — резервний варіант останнього засобу
+- `modelDeprecation.ts` — автоматичний маршрут до наступних моделей
+
+### Держава
+
+- `signatureCache.ts` — дедуплювати за підписом запиту
+- `volumeDetector.ts` — зниження навантаження
+- серіалізація сесії `contextHandoff.ts` —
+
+### Компресія
+
+- `compression/` (підкаталог) — повний конвеєр стиснення
+- 39 файлів, що охоплюють двигуни, пакети правил, адаптери
+
+### Навички
+
+- (описано в [SKILLS.md](./SKILLS.md) )
+
+### Пам'ять
+
+- (описано в [MEMORY.md](./MEMORY.md) )
+
+---
+
+## Виконавці (150 модулів)
+
+Переважно один файл на постачальника. Усі класи виконавців розширюють `BaseExecutor` та перевизначають те, що відрізняється; інші модулі є допоміжними для кожного постачальника (схеми інструментів, адаптери fetch/TTS, обробники особливостей).
+
+### Загальні шаблони
+
+Постачальники розпізнаються за допомогою `getExecutor(providerId)`, який повертає налаштований виконавець. Провайдери OpenAI/Anthropic-compatible використовують `DefaultExecutor` (`executors/default.ts`). Специфічна поведінка постачальника (базовий URL, заголовки автентифікації, версія API ) налаштовується в `open-sse/config/providers/`, а перетворення тіла запиту обробляються в `open-sse/translator/`.
+
+**Спеціальний URL** встановлюється через конфігурацію постачальника:
+
+```ts
+// Provider config in open-sse/config/providers/
+export default {
+  id: "together",
+  baseURL: "https://api.together.xyz/v1/chat/completions",
+}
+````
+
+**Спеціальна автентифікація** обробляється через конфігурацію авторизації реєстру провайдера (ключ API, OAuth, профілі заголовків).
+
+**Користувацьке тіло запиту** перетворення (наприклад, Anthropic що відокремлює `system` від `messages`) реєструються для кожного постачальника в `open-sse/translator/`.
+
+````
+
+### The Executor Factory
+
+`executors/index.ts` exports `getExecutor(providerId)`:
+
+```ts
+import { getExecutor } from "@omniroute/open-sse/executors";
+
+const executor = getExecutor("anthropic");
+const result = await executor.execute({
+  model: "claude-sonnet-4-5",
+  messages: [...],
+});
+````
+
+Розв’язання проходить через `ExecutorRegistry` (`executors/registry.ts`): кожен спеціалізований виконавець оголошується у вбудованій таблиці `executors/index.ts` і реєструється через `registerExecutor(alias, instance)` під час завантаження модуля; `getExecutor()` звертається до реєстру та повертається до пам’ятного `DefaultExecutor` для будь-якого постачальника без спеціального запису. Повне зіставлення псевдоніма → виконавця характеризується золотим тестом `tests/unit/executor-map-golden.test.ts`.
+
+---
+
+## Перекладачі
+
+Перетворюють дані між **3 форматами**: OpenAI, Anthropic, Gemini, а також новим Responses API.
+
+### Коли виконується перетворення
+
+```ts
+import { needsTranslation, translateRequest } from "@omniroute/open-sse/translator";
+
+if (needsTranslation(sourceFormat, targetFormat)) {
+  body = translateRequest(body, sourceFormat, targetFormat);
+}
+```
+
+Поширені перетворення:
+
+- `OpenAI → Anthropic`: окреме поле `system`, заголовок `x-api-key`
+- `OpenAI → Gemini`: `contents` замість `messages`, `systemInstruction`
+- `OpenAI → Responses API`: масив `input`, стан `previous_response_id`
+
+### Оброблювані крайові випадки
+
+- Роль `developer` → `system` для форматів, відмінних від OpenAI
+- Роль `system` → об’єднується з першим повідомленням користувача для GLM/ERNIE
+- `json_schema` → `responseMimeType` + `responseSchema` у Gemini
+- `tools` → формат інструментів, специфічний для постачальника
+- Параметри міркування (o1, Claude) → еквіваленти, специфічні для постачальника
+
+---
+
+## Сервер MCP
+
+`open-sse/mcp-server/` реалізує сервер **Model Context Protocol**:
+
+- **110 інструментів** (керування постачальниками, комбінації, пам’ять, кеш, стиснення, проксі, навички, гейміфікація, плагіни, Notion, Obsidian, локальний корпус)
+- **3 транспорти**: stdio, SSE, Streamable HTTP
+- **33 області доступу** для детальної авторизації
+
+### Реєстрація інструментів
+
+Інструменти реєструються як окремі файли в `open-sse/mcp-server/tools/`, кожен із яких експортує назву, схему, обробник і область доступу:
+
+```ts
+// open-sse/mcp-server/tools/getHealth.ts
+import { z } from "zod";
+export default {
+  name: "omniroute_get_health",
+  description: "Get system health snapshot",
+  scope: "read:health",
+  inputSchema: z.object({}),
+  handler: async (_args, ctx) => {
+    return await getSystemHealth();
+  },
+};
+```
+
+### Транспорти
+
+```ts
+// stdio (використання через CLI)
+startMcpStdio(server);
+
+// SSE (потокове передавання на основі HTTP)
+startMcpSse(server, port);
+
+// Streamable HTTP (сучасний MCP)
+startMcpStreamable(server, port);
+```
+
+### Авторизація
+
+Кожен виклик інструмента проходить перевірку областей доступу (`open-sse/mcp-server/auth/`):
+
+```ts
+if (!hasScope(apiKey, "providers:read")) {
+  throw new Error("Insufficient scope");
+}
+```
+
+---
+
+## Трансформери
+
+`open-sse/transformer/` виконує перетворення між форматами **Chat Completions** і **Responses API**.
+
+### Навіщо потрібен окремий трансформер?
+
+Responses API — це новий формат OpenAI з **діалогами зі збереженням стану** (`previous_response_id`). Коли клієнт надсилає запит Responses, OmniRoute:
+
+1. Внутрішньо перетворює Responses → Chat Completions
+2. Надсилає запит постачальнику (будь-якому постачальнику, що підтримує Chat Completions)
+3. Перетворює відповідь назад у формат Responses
+4. Потоково передає перетворену відповідь клієнту
+
+Трансформер (`transformer/responsesTransformer.ts`) надає:
+
+```ts
+createResponsesApiTransformStream(): TransformStream
+```
+
+Він обробляє:
+
+- Події `response.output_item.added`
+- Події `response.output_text.delta`
+- Подію `response.completed`
+- Зіставлення викликів інструментів (`function_call` ↔ `tool_calls`)
+
+---
+
+## Конфігурація
+
+`open-sse/config/` містить рівень конфігурації:
+
+| Файл                          | призначення                                      |
+| ----------------------------- | ------------------------------------------------ |
+| `providerRegistry.ts`         | Реєстр моделі чату в каталозі 394 постачальників |
+| `providerModels.ts`           | Псевдоніми моделей, відображення форматів        |
+| `constants.ts`                | Тайм-аути, ліміти, коди стану                    |
+| `defaultThinkingSignature.ts` | Підпис мислення Claude за замовчуванням          |
+| `modelStrip.ts` (у службах)   | Зачистка полів для кожного постачальника         |
+
+### Схема реєстру провайдера
+
+```ts
+interface ProviderConfig {
+  id: string;
+  name: string;
+  baseUrl: string;
+  authType: "bearer" | "api-key" | "oauth" | "cookie";
+  executorClass: string;
+  defaultModel: string;
+  capabilities: ProviderCapabilities;
+  models: ModelDefinition[];
+}
+```
+
+Перевірка Zod під час завантаження модуля гарантує, що всі конфігурації постачальника дійсні.
+
+---
+
+## Обмеження продуктивності
+
+Механізм маршрутизації має суворі бюджети продуктивності:
+
+| Операція                                                            | Цільове значення | Вимірювання                  |
+| ------------------------------------------------------------------- | ---------------- | ---------------------------- |
+| Визначення комбінації                                               | <10ms            | Для 50 цільових об’єктів     |
+| Перевірка обмеження частоти запитів                                 | <1ms             | Кошик токенів у пам’яті      |
+| Резервний вибір сімейства моделей                                   | <5ms             | Кешовані визначення сімейств |
+| Диспетчеризація маршрутизації запиту                                | <2ms             | Критичний шлях               |
+| **Без блокувального вводу-виводу в критичному шляху маршрутизації** | —                | Усе асинхронно               |
+
+---
+
+## Антипатерни
+
+❌ **Синхронні виклики БД у `combo.ts`** — попередньо обчислюйте та кешуйте
+❌ **Логіка повторних спроб в обробниках** — використовуйте `retry()` із сервісу відмовостійкості
+❌ **Прямий доступ до конфігурації провайдера** — використовуйте гетери `providerRegistry`
+❌ **Жорстко закодовані ланцюжки резервного вибору** — визначайте їх у `modelFamilyFallback.ts`
+❌ **Зміни стану між паралельними запитами** — використовуйте лише контекст у межах запиту
+
+---
+
+## Додавання нового компонента
+
+### Додавання нового сервісу
+
+1. Створіть `open-sse/services/[serviceName].ts` із чітко визначеною відповідальністю
+2. Експортуйте основну функцію-обробник і всі константи
+3. Додайте модульні тести в `tests/unit/services/[serviceName].test.mjs`
+4. Інтегруйте в конвеєр обробки запитів у `handlers/chatCore.ts` (якщо пов’язано з маршрутизацією)
+5. Оновіть логіку маршрутизації в `combo.ts`, якщо сервіс впливає на вибір цільового об’єкта
+6. Задокументуйте в цьому файлі
+
+### Додавання нового виконавця
+
+1. Створіть `open-sse/executors/[provider].ts`, розширивши `BaseExecutor`
+2. Зареєструйте в `config/providerRegistry.ts`
+3. Додайте до фабрики в `executors/index.ts`
+4. Додайте модульні тести для виконавця
+5. Задокументуйте в `docs/architecture/ARCHITECTURE.md`
+
+### Додавання нового інструмента MCP
+
+1. Створіть або оновіть `open-sse/mcp-server/tools/[category]Tools.ts`
+2. Визначте схему Zod для вхідних даних
+3. Зареєструйте інструмент у `mcp-server/index.ts`
+4. Додайте до матриці областей доступу в `mcp-server/auth/`
+5. Додайте модульні тести
+
+---
+
+## Дивіться також
+
+- [ARCHITECTURE.md](../architecture/ARCHITECTURE.md) — високорівнева архітектура
+- [CODEBASE_DOCUMENTATION.md](../architecture/CODEBASE_DOCUMENTATION.md) — інженерний довідник
+- [REPOSITORY_MAP.md](../architecture/REPOSITORY_MAP.md) — опис кожного каталогу
+- [AUTO-COMBO.md](../routing/AUTO-COMBO.md) — оцінювання за 16 факторами
+- [MCP-SERVER.md](./MCP-SERVER.md) — сервер MCP
+- [A2A-SERVER.md](./A2A-SERVER.md) — сервер A2A
+- Джерело: `open-sse/` (понад 400 файлів, ~143K рядків коду)

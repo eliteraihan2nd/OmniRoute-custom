@@ -1,0 +1,434 @@
+# 📖 Setup Guide — OmniRoute (Slovenčina)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../guides/SETUP_GUIDE.md) · 🇪🇹 [am](../../../am/docs/guides/SETUP_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/guides/SETUP_GUIDE.md) · 🇦🇿 [az](../../../az/docs/guides/SETUP_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/guides/SETUP_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/guides/SETUP_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/guides/SETUP_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/guides/SETUP_GUIDE.md) · 🇩🇰 [da](../../../da/docs/guides/SETUP_GUIDE.md) · 🇩🇪 [de](../../../de/docs/guides/SETUP_GUIDE.md) · 🇬🇷 [el](../../../el/docs/guides/SETUP_GUIDE.md) · 🇪🇸 [es](../../../es/docs/guides/SETUP_GUIDE.md) · 🇪🇪 [et](../../../et/docs/guides/SETUP_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/guides/SETUP_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/guides/SETUP_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/guides/SETUP_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/guides/SETUP_GUIDE.md) · 🇮🇱 [he](../../../he/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/guides/SETUP_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/guides/SETUP_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/guides/SETUP_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/guides/SETUP_GUIDE.md) · 🇮🇩 [id](../../../id/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/guides/SETUP_GUIDE.md) · 🇮🇹 [it](../../../it/docs/guides/SETUP_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/guides/SETUP_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/guides/SETUP_GUIDE.md) · 🇰🇭 [km](../../../km/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/guides/SETUP_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/guides/SETUP_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/guides/SETUP_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/guides/SETUP_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/guides/SETUP_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/guides/SETUP_GUIDE.md) · 🇲🇲 [my](../../../my/docs/guides/SETUP_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/guides/SETUP_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/guides/SETUP_GUIDE.md) · 🇳🇴 [no](../../../no/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [or](../../../or/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/guides/SETUP_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/guides/SETUP_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/guides/SETUP_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/guides/SETUP_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/guides/SETUP_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/guides/SETUP_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/guides/SETUP_GUIDE.md) · 🇱🇰 [si](../../../si/docs/guides/SETUP_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/guides/SETUP_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/guides/SETUP_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/guides/SETUP_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [te](../../../te/docs/guides/SETUP_GUIDE.md) · 🇹🇭 [th](../../../th/docs/guides/SETUP_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/guides/SETUP_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/guides/SETUP_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/guides/SETUP_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/guides/SETUP_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/guides/SETUP_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/guides/SETUP_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/guides/SETUP_GUIDE.md)
+
+---
+
+> Kompletná referencia nastavenia OmniRoute. Stručnú verziu nájdete v časti [Rýchly štart v README](../README.md#-quick-start).
+
+## Obsah
+
+- [Spôsoby inštalácie](#install-methods)
+- [Konfigurácia nástroja CLI](#cli-tool-configuration)
+- [Nastavenie protokolov (MCP + A2A)](#protocol-setup-mcp--a2a)
+- [Konfigurácia časových limitov](#timeout-configuration)
+- [Režim oddelených portov](#split-port-mode)
+- [Void Linux (xbps-src)](#void-linux-xbps-src-template)
+- [Odinštalovanie](#uninstalling)
+
+---
+
+## Inštalačné metódy
+
+### npm (odporúčané)
+
+```bash
+npm install -g omniroute
+omniroute
+```
+
+Prístrojová doska sa otvára pri `http://localhost:20128` a základňa API URL je `http://localhost:20128/v1`.
+
+> **Používatelia npm:** Ak npm varuje, že inštalačné skripty boli zablokované (napr. `omniroute`, `better-sqlite3`), pozrite si [tému Riešenie problémov — npm install-scripts blocked](./TROUBLESHOOTING.md#npm-install-scripts-blocked-warning-global-install).
+
+### pnpm
+
+```bash
+pnpm add -g omniroute@latest --allow-build=better-sqlite3 --allow-build=@swc/core
+omniroute
+```
+
+> **Používatelia pnpm:** príznak `--allow-build` je potrebný na povolenie natívnych skriptov zostavovania pre `better-sqlite3` a `@swc/core`. Príkaz `pnpm approve-builds -g` nie je podporovaný pre globálne inštalácie na pnpm v11.
+
+### Arch Linux (AUR)
+
+```bash
+yay -S omniroute-bin
+systemctl --user enable --now omniroute.service
+```
+
+[Balík AUR](https://aur.archlinux.org/packages/omniroute-bin) nainštaluje OmniRoute a poskytuje užívateľskú službu systemd.
+
+### Zo Zdroja
+
+```bash
+npm install
+PORT=20128 DASHBOARD_PORT=20129 NEXT_PUBLIC_BASE_URL=http://localhost:20129 npm run dev
+```
+
+> **Windows poznámka:** OmniRoute štandardne používa `%APPDATA%\omniroute`, keď nie je prítomný starý adresár `%USERPROFILE%\.omniroute`. Nastavte `DATA_DIR`, aby ste vybrali iné umiestnenie dátového adresára.
+
+> **Poznámka:** `npm install` automaticky generuje `.env` zo `.env.example` pri prvom spustení. Následné inštalácie neprepíšu existujúce `.env`, takže prispôsobenia sa zachovajú. Ak chcete znova nasadiť, pred opätovným spustením odstráňte `.env`.
+
+### Docker
+
+Kompletné nastavenie Docker vrátane profilov Compose a Caddy HTTPS nájdete v [príručke Docker Guide](./DOCKER_GUIDE.md).
+
+### Desktopová aplikácia (Electron)
+
+OmniRoute dodáva desktop wrapper postavený na Electron 41 + electron-builder 26.10. Dostupné skripty (koreň pracovného priestoru):
+
+```bash
+npm run electron:dev          # Run desktop with hot-reload
+npm run electron:build        # Build for current OS (auto-detected)
+npm run electron:build:win    # Windows installer (NSIS + portable)
+npm run electron:build:mac    # macOS (dmg + zip, arm64+x64)
+npm run electron:build:linux  # Linux (AppImage + deb + rpm)
+npm run electron:smoke:packaged  # Smoke-test packaged build
+```
+
+Vydania desktopových inštalátorov sú pripojené k vydaniam GitHub. Úplné znenie Electron deep-dive (podpis, most IPC, distribúcie) nájdete [`ELECTRON_GUIDE.md`](./ELECTRON_GUIDE.md) _(criado em fase posterior)_.
+
+### Bezhlavý server (CI/automation)
+
+Pre bezobslužné nastavenia (Docker, Kubernetes, CI) použite:
+
+```bash
+omniroute setup --non-interactive
+omniroute providers test-batch
+```
+
+V kombinácii s env vars (`INITIAL_PASSWORD`, `OMNIROUTE_WS_BRIDGE_SECRET` atď.) vám to umožní vytvoriť inštanciu OmniRoute plne skriptovateľnú.
+
+### Možnosti CLI
+
+| Príkaz                  | Popis                                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------------- |
+| `omniroute`             | Spustiť server (`PORT=20128`, API a dashboard na rovnakom porte)                       |
+| `omniroute setup`       | Riadená registrácia CLI pre heslo a prvého poskytovateľa                               |
+| `omniroute doctor`      | Spustite miestne kontroly stavu bez spustenia servera                                  |
+| `omniroute providers`   | Objavte, uveďte, overte a otestujte poskytovateľov zo CLI                              |
+| `omniroute config`      | konfigurácia nástroja CLI — zoznam, získanie, nastavenie, overenie konfigurácií        |
+| `omniroute status`      | Panel stavu offline — verzia, DB, nástroje, konfigurácia                               |
+| `omniroute logs`        | Streamujte denníky používania zo API (podporuje `--follow`)                            |
+| `omniroute update`      | Skontrolujte alebo použite aktualizácie OmniRoute                                      |
+| `omniroute provider`    | Spravovať pripojenia poskytovateľa — pridať, vypísať, odstrániť, otestovať, predvolené |
+| `omniroute --port 3000` | Nastavte port canonical/API na 3000                                                    |
+| `omniroute --mcp`       | Spustiť MCP server (stdio transport)                                                   |
+| `omniroute --no-open`   | Neotvárajte prehliadač automaticky                                                     |
+| `omniroute --help`      | Ukážte pomoc                                                                           |
+
+Bezhlavé nastavenie je možné naskriptovať pomocou príznakov alebo premenných prostredia:
+
+```bash
+omniroute setup --non-interactive --password "$OMNIROUTE_PASSWORD"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY" --test-provider
+```
+
+Spustite lokálnu diagnostiku bez otvorenia prístrojovej dosky:
+
+```bash
+omniroute doctor
+omniroute doctor --json
+omniroute doctor --no-liveness
+```
+
+Spravujte poskytovateľov zo SSH alebo skriptov bez otvorenia hlavného panela:
+
+```bash
+omniroute providers available
+omniroute providers available --search openai
+omniroute providers available --category api-key
+omniroute providers list
+omniroute providers test <id-or-name>
+omniroute providers test-all
+omniroute providers validate
+```
+
+---
+
+## Konfigurácia nástroja CLI
+
+### 1) Pripojenie poskytovateľov a vytvorenie kľúča API
+
+1. Otvorte Ovládací panel → `Providers` a pripojte aspoň jedného poskytovateľa (pomocou OAuth alebo kľúča API).
+2. Otvorte Ovládací panel → `Endpoints` a vytvorte kľúč API.
+3. (Voliteľné) Otvorte Ovládací panel → `Combos` a nastavte reťazec záložných možností.
+
+### 2) Nastavenie nástroja na programovanie
+
+```txt
+Základná URL: http://localhost:20128/v1
+Kľúč API:     [skopírujte zo stránky Endpoint]
+Model:        if/qwen3.8-max-preview (alebo ľubovoľná predpona poskytovateľ/model)
+```
+
+Ak váš editor nedokáže odoslať `Authorization: Bearer ...`, použite namiesto toho tokenizovanú základnú URL na zaistenie kompatibility:
+
+```txt
+Základná URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/
+URL modelov: http://localhost:20128/api/v1/vscode/YOUR_KEY/models
+URL chatu: http://localhost:20128/api/v1/vscode/YOUR_KEY/chat/completions
+URL značiek Ollama: http://localhost:20128/api/v1/vscode/YOUR_KEY/api/tags
+```
+
+Funguje s nástrojmi Claude Code, Codex CLI, Cursor, Cline, OpenClaw, OpenCode a súpravami SDK kompatibilnými s OpenAI.
+
+#### Automatická konfigurácia pomocou `setup-*`
+
+Namiesto ručného vkladania základnej URL a kľúča nechajte OmniRoute zapísať vlastnú
+konfiguráciu každého nástroja podľa aktuálneho katalógu modelov. Jeden príkaz pre každý nástroj:
+
+```bash
+omniroute setup-codex        # profily ~/.codex/<name>.config.toml
+omniroute setup-claude       # ~/.claude/profiles/<name>/settings.json
+omniroute setup-opencode     # ~/.config/opencode/opencode.json (kompatibilné s OpenAI)
+omniroute setup-cline        # nastavenia Cline CLI a rozšírenia VS Code
+omniroute setup-kilo         # Kilo Code
+omniroute setup-continue     # ~/.continue/config.yaml (Continue / cn)
+omniroute setup-cursor       # vypíše postup v aplikácii Cursor
+omniroute setup-roo          # import do Roo Code a ukazovateľ autoImport
+omniroute setup-crush        # ~/.config/crush/crush.json
+omniroute setup-zed          # ~/.config/zed/settings.json (openai_compatible)
+omniroute setup-goose        # ~/.config/goose/config.yaml
+omniroute setup-aider        # ~/.aider.conf.yml
+omniroute setup-qwen         # ~/.qwen/settings.json + ~/.qwen/.env
+```
+
+Každý z nich podporuje `--remote <url> --api-key <key>` na konfiguráciu lokálneho nástroja voči
+**vzdialenému** OmniRoute a tiež `--dry-run` na zobrazenie náhľadu. Ak chcete spustiť CLI so správne
+vloženými premennými prostredia bez akéhokoľvek zápisu konfigurácie, použite všeobecný spúšťač
+`omniroute run <target>` (claude, codex, aider, goose, opencode, qwen, gemini);
+pôvodné spúšťače pre jednotlivé nástroje `omniroute launch` (Claude Code) a
+`omniroute launch-codex` (Codex) zostávajú k dispozícii.
+
+Úplnú tabuľku (čo jednotlivé príkazy zapisujú, všetky príznaky, lokálne a vzdialené použitie, konvencie
+`/v1` pre základnú URL) nájdete v dokumente **[Integrácie CLI](./CLI-INTEGRATIONS.md)**.
+
+Podrobnú konfiguráciu jednotlivých nástrojov (Claude Code, Codex CLI, Cursor, Cline, OpenClaw, Kilo Code, Copilot a ďalšie) nájdete v samostatnej **[príručke nástrojov CLI](../reference/CLI-TOOLS.md)**.
+
+---
+
+## Nastavenie protokolu (MCP + A2A)
+
+### MCP Setup (Model Context Protocol)
+
+Spustite prepravu MCP v režime stdio:
+
+```bash
+omniroute --mcp
+```
+
+Odporúčaný postup overenia:
+
+```bash
+# 1. Start MCP server
+omniroute --mcp
+
+# 2. From your MCP client, call:
+omniroute_get_health        # Should return system health
+omniroute_list_combos       # Should return active combos
+
+# 3. Or run the full E2E suite:
+npm run test:protocols:e2e
+```
+
+#### Konfigurácia klienta MCP
+
+**Claude kód:**
+
+Claude Kód sa pripája cez HTTP, ktorý `omniroute --mcp` (stdio) nespustí. Transport HTTP je štandardne vypnutý: najskôr ho povoľte na spustenom serveri. Keď je povolené prihlásenie do dashboardu, požiadavka bez poverenia získa `401`, takže odovzdajte kľúč API ktorý obsahuje `mcp:connect` (alebo `manage`); kľúč bez `manage`/`admin` tiež potrebuje rozsah každého nástroja (pozri [rozsahy nástrojov MCP Server → MCP](../frameworks/MCP-SERVER.md#mcp-tool-scopes) ).
+
+```bash
+omniroute mcp enable --transport streamable-http
+claude mcp add --transport http omniroute http://localhost:20128/api/mcp/stream \
+  --header "Authorization: Bearer your-key"
+```
+
+**Cursor / Cline:**
+
+Pridajte do svojich nastavení MCP (stdio, pomocou kľúča, aby mal volajúci príkazcu):
+
+```json
+{
+  "mcpServers": {
+    "omniroute": {
+      "command": "omniroute",
+      "args": ["--mcp"],
+      "env": {
+        "OMNIROUTE_API_KEY": "your-key",
+        "OMNIROUTE_BASE_URL": "http://localhost:20128"
+      }
+    }
+  }
+}
+```
+
+Alebo, keď je `mcpTransport` `streamable-http` (nastavte ho na `/dashboard/mcp` alebo pomocou `omniroute mcp enable --transport streamable-http`), nasmerujte položku vzdialeného servera MCP klienta na `http://localhost:20128/api/mcp/stream`.
+
+Kľúč sa pohybuje ako `Authorization: Bearer <api-key>` (pozri [MCP Server → Vzdialený prístup](../frameworks/MCP-SERVER.md#remote-access-manage-scope-bypass) pre vzdialených hostiteľov; vzdialený kľúč potrebuje `mcp:connect` plus jeho rozsahy read/write ).
+
+**Kompletná dokumentácia MCP :** [MCP Server nástroje README](../../open-sse/mcp-server/README.md) — 110, konfigurácie IDE, klienti Python/TS/Go. Referenčné informácie pre operátora pre nástroje kompresie CCR/dedup (značky, predpoklady, rozsahy jednotlivých nástrojov, stránkovanie vyhľadávania, diagnostika): [Kompresné motory → Požiadavky / príručka operátora](../compression/COMPRESSION_ENGINES.md#prerequisites--operator-guide-ccr--session-dedup).
+
+### Nastavenie A2A (Protokol agent-agent)
+
+Overte kartu agenta:
+
+```bash
+curl http://localhost:20128/.well-known/agent.json
+```
+
+Odoslať úlohu:
+
+```bash
+curl -X POST http://localhost:20128/a2a \
+  -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":"quickstart","method":"message/send","params":{"skill":"quota-management","messages":[{"role":"user","content":"Give me a short quota summary."}]}}'
+```
+
+**Kompletná dokumentácia A2A :** [A2A Server README](../../src/lib/a2a/README.md) — JSON-RPC 2.0, zručnosti, streamovanie, životný cyklus úloh.
+
+---
+
+## Konfigurácia časových limitov
+
+### Základné časové limity
+
+Pre väčšinu nasadení potrebujete iba tieto dve premenné:
+
+| Premenná                 | Predvolená hodnota          | Účel                                                                                                                                                                                    |
+| ------------------------ | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `REQUEST_TIMEOUT_MS`     | `600000`                    | Spoločná základná hodnota časového limitu začiatku odpovede upstreamu, skrytých časových limitov Undici, požiadaviek na TLS fingerprint a časových limitov požiadaviek/proxy API bridge |
+| `STREAM_IDLE_TIMEOUT_MS` | dedí z `REQUEST_TIMEOUT_MS` | Maximálna medzera medzi streamovanými blokmi, po ktorej OmniRoute preruší SSE stream                                                                                                    |
+
+Spätná kompatibilita je zachovaná: existujúce premenné `FETCH_TIMEOUT_MS`, `API_BRIDGE_PROXY_TIMEOUT_MS` a ďalšie premenné časových limitov jednotlivých vrstiev naďalej fungujú a prepíšu spoločnú základnú hodnotu.
+
+### Poznámky špecifické pre poskytovateľov
+
+Pre upstreamy kompatibilné s Claude Code (`anthropic-compatible-cc-*`) OmniRoute odvodzuje odchádzajúcu hlavičku `X-Stainless-Timeout` z výsledného časového limitu fetch, aby časové limity čítania na strane poskytovateľa zostali zosúladené s vašou konfiguráciou prostredia.
+
+Pre reverzné proxy tretích strán kompatibilné s Claude Code ponecháva OmniRoute predvolenú množinu `anthropic-beta` konzervatívnu a v prípade, že je možnosť `Client Cache Control` ponechaná na hodnote `Auto`, preposiela iba značky `cache_control` poskytnuté klientom. Prepínač „Enable redact-thinking beta“ pre jednotlivé pripojenia zapnite iba vtedy, keď upstream výslovne vyžaduje streamy Claude thinking s redigovaným obsahom.
+
+### Pokročilé prepísanie časových limitov
+
+| Premenná                                 | Predvolená hodnota                         | Účel                                                                              |
+| ---------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------- |
+| `FETCH_TIMEOUT_MS`                       | dedí z `REQUEST_TIMEOUT_MS`                | Časový limit začiatku odpovede upstreamu používaný do prijatia hlavičiek odpovede |
+| `FETCH_HEADERS_TIMEOUT_MS`               | dedí z `FETCH_TIMEOUT_MS`                  | Časový limit Undici na prijatie hlavičiek odpovede upstreamu                      |
+| `FETCH_BODY_TIMEOUT_MS`                  | dedí z `FETCH_TIMEOUT_MS`                  | Časový limit Undici medzi blokmi tela odpovede upstreamu (`0` ho vypne)           |
+| `FETCH_CONNECT_TIMEOUT_MS`               | `30000`                                    | Časový limit Undici na nadviazanie TCP pripojenia                                 |
+| `FETCH_KEEPALIVE_TIMEOUT_MS`             | `4000`                                     | Časový limit nečinnosti socketu keep-alive v Undici                               |
+| `TLS_CLIENT_TIMEOUT_MS`                  | dedí z `FETCH_TIMEOUT_MS`                  | Časový limit požiadaviek na TLS fingerprint vykonaných prostredníctvom `wreq-js`  |
+| `API_BRIDGE_PROXY_TIMEOUT_MS`            | dedí z `REQUEST_TIMEOUT_MS` alebo `600000` | Časový limit preposielania proxy `/v1` z portu API na port ovládacieho panela     |
+| `API_BRIDGE_SERVER_REQUEST_TIMEOUT_MS`   | `max(API_BRIDGE_PROXY_TIMEOUT_MS, 300000)` | Časový limit prichádzajúcej požiadavky na serveri API bridge                      |
+| `API_BRIDGE_SERVER_HEADERS_TIMEOUT_MS`   | `60000`                                    | Časový limit prichádzajúcich hlavičiek na serveri API bridge                      |
+| `API_BRIDGE_SERVER_KEEPALIVE_TIMEOUT_MS` | `5000`                                     | Časový limit keep-alive na serveri API bridge                                     |
+| `API_BRIDGE_SERVER_SOCKET_TIMEOUT_MS`    | `0`                                        | Časový limit nečinnosti socketu na serveri API bridge (`0` ho vypne)              |
+
+> **Poznámka:** Pri streamovaných požiadavkách sa `FETCH_TIMEOUT_MS` vzťahuje iba na vytvorenie pripojenia / čakanie na prvú odpoveď upstreamu. Po aktivovaní streamu ho OmniRoute preruší iba pri skutočnom zastavení (`STREAM_IDLE_TIMEOUT_MS`) alebo nečinnosti tela v Undici (`FETCH_BODY_TIMEOUT_MS`).
+
+### Kompatibilita s reverzným proxy
+
+Ak OmniRoute prevádzkujete za Nginx, Caddy, Cloudflare alebo iným reverzným proxy, uistite sa, že časové limity proxy sú tiež vyššie než časové limity streamu/fetch v OmniRoute.
+
+---
+
+## Režim oddelených portov
+
+Spustite API a ovládací panel na samostatných portoch pre pokročilé scenáre (reverzný proxy server, kontajnerové siete):
+
+```bash
+PORT=20128 DASHBOARD_PORT=20129 omniroute
+# API:             http://localhost:20128/v1
+# Ovládací panel:  http://localhost:20129
+```
+
+---
+
+## Void Linux (xbps-src) šablóna
+
+Pre používateľov Void Linux môžete vytvoriť natívny balík pomocou `xbps-src`. Uložte tento blok ako `srcpkgs/omniroute/template`:
+
+```bash
+# Template file for 'omniroute'
+pkgname=omniroute
+version=3.8.0
+revision=1
+hostmakedepends="nodejs python3 make"
+depends="openssl"
+short_desc="Universal AI gateway with smart routing for multiple LLM providers"
+maintainer="zenobit <zenobit@disroot.org>"
+license="MIT"
+homepage="https://github.com/diegosouzapw/OmniRoute"
+distfiles="https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz"
+# Regenerate the checksum for each release with:
+#   curl -L -o /tmp/omniroute.tar.gz "https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz" && sha256sum /tmp/omniroute.tar.gz
+checksum=PLACEHOLDER_REGENERATE_PER_RELEASE
+system_accounts="_omniroute"
+omniroute_homedir="/var/lib/omniroute"
+export NODE_ENV=production
+export npm_config_engine_strict=false
+export npm_config_loglevel=error
+export npm_config_fund=false
+export npm_config_audit=false
+
+do_build() {
+	local _gyp_arch
+	case "$XBPS_TARGET_MACHINE" in
+		aarch64*) _gyp_arch=arm64 ;;
+		armv7*|armv6*) _gyp_arch=arm ;;
+		i686*) _gyp_arch=ia32 ;;
+		*) _gyp_arch=x64 ;;
+	esac
+
+	NODE_ENV=development npm ci --ignore-scripts
+	npm run build
+	cp -r .next/static .next/standalone/.next/static
+	[ -d public ] && cp -r public .next/standalone/public || true
+
+	local _node_gyp=/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+	(cd node_modules/better-sqlite3 && node "$_node_gyp" rebuild --arch="$_gyp_arch")
+
+	local _bs3_release=.next/standalone/node_modules/better-sqlite3/build/Release
+	mkdir -p "$_bs3_release"
+	cp node_modules/better-sqlite3/build/Release/better_sqlite3.node "$_bs3_release/"
+
+	rm -rf .next/standalone/node_modules/@img
+
+	for _mod in pino-abstract-transport split2 process-warning; do
+		cp -r "node_modules/$_mod" .next/standalone/node_modules/
+	done
+}
+
+do_check() {
+	npm run test:unit
+}
+
+do_install() {
+	vmkdir usr/lib/omniroute/.next
+	vcopy .next/standalone/. usr/lib/omniroute/.next/standalone
+
+	for _d in \
+		.next/standalone/.next/server/app/dashboard \
+		.next/standalone/.next/server/app/dashboard/settings \
+		.next/standalone/.next/server/app/dashboard/providers; do
+		touch "${DESTDIR}/usr/lib/omniroute/${_d}/.keep"
+	done
+
+	cat > "${WRKDIR}/omniroute" <<'EOF'
+#!/bin/sh
+export PORT="${PORT:-20128}"
+export DATA_DIR="${DATA_DIR:-${XDG_DATA_HOME:-${HOME}/.local/share}/omniroute}"
+export APP_LOG_TO_FILE="${APP_LOG_TO_FILE:-false}"
+mkdir -p "${DATA_DIR}"
+exec node /usr/lib/omniroute/.next/standalone/server.js "$@"
+EOF
+	vbin "${WRKDIR}/omniroute"
+}
+
+post_install() {
+	vlicense LICENSE
+}
+```
+
+---
+
+## Odinštalovanie
+
+| Príkaz                   | Akcia                                                                                        |
+| ------------------------ | -------------------------------------------------------------------------------------------- |
+| `npm run uninstall`      | Odstráni systémovú aplikáciu, ale **ponechá vašu databázu a konfigurácie** v `~/.omniroute`. |
+| `npm run uninstall:full` | Odstráni aplikáciu A zároveň natrvalo **vymaže všetky konfigurácie, kľúče a databázy**.      |
+
+> Podrobné pokyny na odinštalovanie pre všetky metódy nájdete v súbore [UNINSTALL.md](./UNINSTALL.md).

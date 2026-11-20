@@ -1,0 +1,167 @@
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import {
+  lptAssign,
+  syncE2eTimings,
+  weightItems,
+} from "../../scripts/quality/balance-e2e-shards.mjs";
+import { releaseOnlyUnlessTouched } from "../../scripts/check/lib/derivedArtifactScope.mjs";
+
+// WS4.1 (v3.8.49 quality plan) — the E2E matrix skew was 14× (24m47s vs 1m47s)
+// because Playwright --shard distributes by count, not duration. These tests pin
+// the LPT packing invariants; the hard one is COMPLETENESS (a lost spec would
+// silently hollow the suite — the CLI self-checks it and falls back to --shard).
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+
+test("lptAssign puts the heaviest item alone before doubling up lighter shards", () => {
+  const shards = lptAssign(
+    [
+      { file: "huge.spec.ts", weight: 100 },
+      { file: "a.spec.ts", weight: 30 },
+      { file: "b.spec.ts", weight: 30 },
+      { file: "c.spec.ts", weight: 30 },
+    ],
+    2
+  );
+  assert.deepEqual(shards[0].files, ["huge.spec.ts"]);
+  assert.deepEqual(shards[1].files, ["a.spec.ts", "b.spec.ts", "c.spec.ts"]);
+  assert.equal(shards[0].total, 100);
+  assert.equal(shards[1].total, 90);
+});
+
+test("lptAssign is deterministic on equal weights (filename tiebreak)", () => {
+  const items = [
+    { file: "b.spec.ts", weight: 10 },
+    { file: "a.spec.ts", weight: 10 },
+  ];
+  const s1 = lptAssign(items, 2);
+  const s2 = lptAssign([...items].reverse(), 2);
+  assert.deepEqual(s1, s2);
+});
+
+test("completeness: every file lands in exactly one shard", () => {
+  const items = Array.from({ length: 37 }, (_, i) => ({
+    file: `f${String(i).padStart(2, "0")}.spec.ts`,
+    weight: (i * 7) % 40,
+  }));
+  const shards = lptAssign(items, 9);
+  const union = shards.flatMap((s) => s.files).sort();
+  assert.deepEqual(union, items.map((i) => i.file).sort());
+});
+
+test("weightItems gives unknown/new specs the median weight, not an extreme", () => {
+  const items = weightItems(["new.spec.ts", "big.spec.ts", "small.spec.ts"], {
+    _meta: "x",
+    "big.spec.ts": 600,
+    "small.spec.ts": 20,
+    "other.spec.ts": 100,
+  });
+  const byFile = Object.fromEntries(items.map((i) => [i.file, i.weight]));
+  assert.equal(byFile["big.spec.ts"], 600);
+  assert.equal(byFile["small.spec.ts"], 20);
+  assert.equal(byFile["new.spec.ts"], 100); // median of [20,100,600]
+});
+
+// e2e-timings.json is a derived baseline written by the release refresh (`--sync`), not by
+// feature PRs (plan 2026-11-13): a feature PR that adds a spec is not asked to edit it, the
+// runtime gives the new spec the median weight. Release mode (and a change that edits the file)
+// keeps the completeness check.
+const seedCheck = { skip: releaseOnlyUnlessTouched("config/quality/e2e-timings.json") };
+
+test("the committed timings seed covers every current e2e spec (no drift)", seedCheck, () => {
+  const timings = JSON.parse(
+    fs.readFileSync(path.join(ROOT, "config", "quality", "e2e-timings.json"), "utf8")
+  );
+  const specs = fs
+    .readdirSync(path.join(ROOT, "tests", "e2e"))
+    .filter((f) => f.endsWith(".spec.ts"));
+  const missing = specs.filter((f) => !(f in timings));
+  // Missing entries are tolerated at runtime (median fallback) — this assert keeps
+  // the seed honest so balance quality does not silently rot as specs are added.
+  assert.deepEqual(missing, [], `add to config/quality/e2e-timings.json: ${missing.join(", ")}`);
+});
+
+function syncFixture(timings: Record<string, unknown>, specs: Record<string, string>) {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "e2e-timings-"));
+  fs.mkdirSync(path.join(dir, "config", "quality"), { recursive: true });
+  fs.mkdirSync(path.join(dir, "tests", "e2e"), { recursive: true });
+  const file = path.join(dir, "config", "quality", "e2e-timings.json");
+  fs.writeFileSync(file, `${JSON.stringify(timings, null, 2)}\n`);
+  for (const [name, body] of Object.entries(specs)) {
+    fs.writeFileSync(path.join(dir, "tests", "e2e", name), body);
+  }
+  return { dir, file };
+}
+
+test("syncE2eTimings adds new specs at their LOC, drops deleted ones, keeps the rest", () => {
+  const { dir, file } = syncFixture(
+    { _meta: "note", "b.spec.ts": 50, "gone.spec.ts": 9, "a.spec.ts": 7 },
+    { "a.spec.ts": "x\n", "b.spec.ts": "y\n", "new.spec.ts": "1\n2\n3\n", "helper.ts": "" }
+  );
+  try {
+    const dry = syncE2eTimings({ root: dir, dryRun: true });
+    assert.deepEqual(dry, {
+      changed: true,
+      added: ["new.spec.ts"],
+      pruned: ["gone.spec.ts"],
+      file: path.join("config", "quality", "e2e-timings.json"),
+    });
+    assert.match(fs.readFileSync(file, "utf8"), /gone\.spec\.ts/, "dry run writes nothing");
+
+    syncE2eTimings({ root: dir });
+    const written = fs.readFileSync(file, "utf8");
+    assert.deepEqual(Object.keys(JSON.parse(written)), [
+      "_meta",
+      "b.spec.ts",
+      "a.spec.ts",
+      "new.spec.ts",
+    ]);
+    // The seed is `wc -l` (newline count): "1\n2\n3\n" is 3 lines, not 4.
+    assert.equal(JSON.parse(written)["new.spec.ts"], 3, "LOC = newline count, like the seed");
+    assert.equal(JSON.parse(written)["b.spec.ts"], 50, "existing weights are never rewritten");
+    assert.ok(written.endsWith("}\n"));
+    assert.equal(syncE2eTimings({ root: dir }).changed, false, "idempotent");
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("syncE2eTimings keeps the untouched entries byte for byte (the _meta \\u escapes included)", () => {
+  // The committed file escapes non-ASCII as \uXXXX (the _meta note's em dash): a sync that only
+  // adds one spec must not rewrite any other line.
+  const raw = '{\n  "_meta": "Unitless \\u2014 only ratios matter.",\n  "a.spec.ts": 59\n}\n';
+  const { dir, file } = syncFixture({}, { "a.spec.ts": "x\n", "n.spec.ts": "1\n2\n" });
+  fs.writeFileSync(file, raw);
+  try {
+    assert.equal(syncE2eTimings({ root: dir }).changed, true);
+    assert.equal(
+      fs.readFileSync(file, "utf8"),
+      '{\n  "_meta": "Unitless \\u2014 only ratios matter.",\n  "a.spec.ts": 59,\n  "n.spec.ts": 2\n}\n'
+    );
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("syncE2eTimings: the committed seed is already in its own output format", () => {
+  // Running the sync on a copy of the real file that lists every spec rewrites nothing.
+  const committed = fs.readFileSync(
+    path.join(ROOT, "config", "quality", "e2e-timings.json"),
+    "utf8"
+  );
+  const keys = Object.keys(JSON.parse(committed)).filter((k) => !k.startsWith("_"));
+  const { dir, file } = syncFixture({}, Object.fromEntries(keys.map((k) => [k, "x\n"])));
+  fs.writeFileSync(file, committed);
+  try {
+    const res = syncE2eTimings({ root: dir });
+    assert.equal(res.changed, false);
+    assert.equal(fs.readFileSync(file, "utf8"), committed);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

@@ -1,0 +1,330 @@
+# Stealth Guide (Українська)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../security/STEALTH_GUIDE.md) · 🇪🇹 [am](../../../am/docs/security/STEALTH_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/security/STEALTH_GUIDE.md) · 🇦🇿 [az](../../../az/docs/security/STEALTH_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/security/STEALTH_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/security/STEALTH_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/security/STEALTH_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/security/STEALTH_GUIDE.md) · 🇩🇰 [da](../../../da/docs/security/STEALTH_GUIDE.md) · 🇩🇪 [de](../../../de/docs/security/STEALTH_GUIDE.md) · 🇬🇷 [el](../../../el/docs/security/STEALTH_GUIDE.md) · 🇪🇸 [es](../../../es/docs/security/STEALTH_GUIDE.md) · 🇪🇪 [et](../../../et/docs/security/STEALTH_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/security/STEALTH_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/security/STEALTH_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/security/STEALTH_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/security/STEALTH_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/security/STEALTH_GUIDE.md) · 🇮🇱 [he](../../../he/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/security/STEALTH_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/security/STEALTH_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/security/STEALTH_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/security/STEALTH_GUIDE.md) · 🇮🇩 [id](../../../id/docs/security/STEALTH_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/security/STEALTH_GUIDE.md) · 🇮🇹 [it](../../../it/docs/security/STEALTH_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/security/STEALTH_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/security/STEALTH_GUIDE.md) · 🇰🇭 [km](../../../km/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/security/STEALTH_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/security/STEALTH_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/security/STEALTH_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/security/STEALTH_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/security/STEALTH_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/security/STEALTH_GUIDE.md) · 🇲🇲 [my](../../../my/docs/security/STEALTH_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/security/STEALTH_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/security/STEALTH_GUIDE.md) · 🇳🇴 [no](../../../no/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [or](../../../or/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/security/STEALTH_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/security/STEALTH_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/security/STEALTH_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/security/STEALTH_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/security/STEALTH_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/security/STEALTH_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/security/STEALTH_GUIDE.md) · 🇱🇰 [si](../../../si/docs/security/STEALTH_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/security/STEALTH_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/security/STEALTH_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/security/STEALTH_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/security/STEALTH_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [te](../../../te/docs/security/STEALTH_GUIDE.md) · 🇹🇭 [th](../../../th/docs/security/STEALTH_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/security/STEALTH_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/security/STEALTH_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/security/STEALTH_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/security/STEALTH_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/security/STEALTH_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/security/STEALTH_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/security/STEALTH_GUIDE.md)
+
+---
+
+> **Джерело істини:** `open-sse/utils/tlsClient.ts`, `open-sse/services/{tlsClientBase,claudeTlsClient,perplexityTlsClient,grokTlsClient,notionTlsClient,lmarenaTlsClient,claudeCodeCCH,claudeCodeFingerprint,claudeCodeObfuscation,claudeCodeCompatible}.ts`, `open-sse/config/cliFingerprints.ts`, `src/mitm/`
+> **Останнє оновлення:** 2026-09-02 — v3.8.51
+> **Аудиторія:** Інженери, які супроводжують приховані інтеграції, специфічні для постачальників.
+
+OmniRoute інтегрується з постачальниками, чиї периферійні вузли активно створюють цифрові відбитки неофіційних клієнтів (TLS JA3/JA4, порядок заголовків, структура тіла JSON, токени цілісності). На цій сторінці задокументовано доступні в OmniRoute поверхні приховування та місця їх реалізації.
+
+## Юридичне та етичне застереження
+
+Функції приховування існують для того, щоб OmniRoute міг діяти як шар сумісності між офіційними обліковими записами, що належать користувачам (Claude Code CLI, Codex, Antigravity, Cursor тощо), та уніфікованим API OmniRoute. Вони **не** призначені для обходу засобів виявлення шахрайства, спільного використання облікових даних або порушення Умов надання послуг постачальників. Супроводжувачі очікують, що оператори дотримуватимуться умов використання вищестоящих сервісів, які вони прийняли під час створення облікових записів.
+
+---
+
+## Рівень цифрових відбитків TLS
+
+### `open-sse/utils/tlsClient.ts` — wreq-js (Chrome 124)
+
+Постійні сеанси `wreq-js` створюються відкладено для кожної області облікового запису та визначеного проксі. Загальнопроцесний
+`TlsClient` утримує в пулі щонайбільше 128 сеансів, які імітують **Chrome 124 на macOS** для
+висхідних серверів за Cloudflare. `TlsClient.fetch()` безпечно завершується помилкою, коли нативне середовище виконання
+недоступне; викликач може явно вибрати резервний варіант поза цією обгорткою.
+
+- Профіль сеансу: `browser: "chrome_124", os: "macos"`
+- Визначення проксі (за пріоритетом): `HTTPS_PROXY` → `HTTP_PROXY` → `ALL_PROXY` (також у нижньому регістрі)
+- Тайм-аут: `TLS_CLIENT_TIMEOUT_MS` (успадковується від `FETCH_TIMEOUT_MS`, типове значення 600000)
+- Response від `wreq-js` сумісний із fetch (`headers`, `text()`, `json()`, `clone()`, `body`).
+- Сторожовий таймер першого байта (`open-sse/utils/tlsFirstByteWatchdog.ts`, #12656): `TlsClient.fetch()`
+  завершується, щойно надходять заголовки висхідного сервера, тому сам `TLS_CLIENT_TIMEOUT_MS` не може обмежити
+  очікування тіла, яке ніколи не повертає перший байт. `guardTlsFirstByte()` змагає перший `read()` тіла
+  з `TLS_FIRST_BYTE_WATCHDOG_MS` (типове значення `10000`, `0` вимикає його); справне тіло
+  не зазнає впливу, тоді як зависле тіло скасовує читач wreq і дає змогу наявній
+  логіці резервного TLS-переходу `proxyFetch` перейти до прямого/проксі-диспетчера (запит, який небезпечно повторювати, наприклад
+  POST із тілом, усе одно спричиняє помилку замість неявного повтору).
+
+### Транспорт постачальників веб-cookie — wreq-js 3.2.0
+
+`open-sse/services/tlsClientBase.ts` — це спільний адаптер для п’яти спеціалізованих
+транспортів веб-cookie, наведених нижче. Кожна тонка обгортка постачальника вибирає профіль браузера/ОС. Адаптер
+використовує єдиний завантажувач середовища виконання wreq і пул транспортів у `open-sse/utils/tlsClient.ts`, ключований за
+профілем + ОС + визначеним проксі, тоді як кожен запит використовує `cookieMode: "ephemeral"`. Отже, облікові записи та
+запити спільно використовують з’єднання транспортного рівня, але ніколи не використовують спільний сеанс wreq або сховище cookie.
+
+| Постачальник | Профіль       | Емульована ОС | Політика EOF потоку                      |
+| ------------ | ------------- | ------------- | ---------------------------------------- |
+| Claude       | `chrome_146`  | Linux         | включати `[DONE]`                        |
+| Perplexity   | `firefox_151` | macOS         | включати `event: end_of_stream`          |
+| Grok         | `chrome_146`  | Linux         | виключати `[DONE]`                       |
+| Notion       | `chrome_146`  | Windows       | включати `[DONE]`                        |
+| LMArena      | `chrome_146`  | Windows       | без маркера; закривати при нативному EOF |
+
+- Потокове передавання безпосередньо споживає `ReadableStream` нативної відповіді; тимчасовий файл або допоміжний процес
+  не створюється.
+- Перед наданням потоку перевіряються до 256 початкових байтів. Постачальники SSE буферизують помилки, що не належать до SSE;
+  Grok/LMArena зіставляють перевірки Cloudflare зі статусом `403`, а проміжні HTML-сторінки — зі статусом `502`.
+- Тайм-аут нативного запиту додатково обмежується абсолютним жорстким граничним строком JS. Зависання робить недійсним
+  і закриває лише відповідний транспорт профілю/ОС/проксі, перш ніж наступний запит створить його знову.
+- Пріоритет визначення проксі: заданий для виклику `proxyUrl` → контекст облікового запису/панелі керування в межах запиту →
+  `HTTPS_PROXY`/`HTTP_PROXY`/`ALL_PROXY` (включно з варіантами в нижньому регістрі). Помилки визначення
+  безпечно завершують операцію помилкою замість витоку через пряме з’єднання. LMArena навмисно виконує визначення щодо `arena.ai`.
+- `byteResponse` повертає URL `data:` із зазначеним типом вмісту без пошкодження UTF-8.
+- Помилки: `TlsClientUnavailableError` (пакет/доповнення недоступні), `TlsClientHangError`
+  (перевищено граничний строк) і `WreqTransportCapacityError` (спільний код помилки місткості сеансів),
+  коли всі 128 обмежених слотів профілю/ОС/проксі активні або закриваються.
+
+Наведений вище універсальний сеанс `TlsClient` залишається спеціалізованим для постійного стану cookie,
+підтримуваного браузером. Обидва шляхи повторно використовують один кешований завантажувач модуля wreq і обробник життєвого циклу процесу; їхні пули залишаються
+окремими, оскільки час життя їхніх cookie навмисно відрізняється.
+
+Профілі підтримуються зафіксованим пакетом, але фактичне прийняття WAF може змінюватися незалежно
+від локальних контрактних тестів. Перевіряйте зміни цифрових відбитків на явно авторизованому реальному обліковому записі,
+перш ніж заявляти про відповідність висхідному браузеру.
+
+---
+
+## Пакет маскування Claude Code
+
+Коли `cliCompatMode` увімкнено, OmniRoute переформатовує вихідні запити Claude так, щоб їх неможливо було відрізнити від трафіку `claude-cli`. Разом працюють три модулі:
+
+### `claudeCodeFingerprint.ts`
+
+Обчислює 3-символьний відбиток `cc_version`, вбудований у заголовок білінгу:
+
+```
+SHA256(SALT + msg[4] + msg[7] + msg[20] + version)[:3]
+```
+
+- `FINGERPRINT_SALT = "59cf53e54c78"` (жорстко закодовано; відповідає офіційному клієнту)
+- Вхідні дані: символи з індексами 4, 7 і 20 у тексті першого повідомлення користувача + рядок версії
+- Результат: 3-символьний шістнадцятковий префікс
+
+### `claudeCodeCCH.ts` (хеш вмісту клієнта)
+
+Серверна перевірка цілісності, яку офіційний CLI Claude Code обчислює за допомогою Bun/Zig. OmniRoute повторно реалізує її за допомогою `xxhash-wasm`:
+
+1. Серіалізувати тіло із заповнювачем `cch=00000;`
+2. `xxhash64(bytes, seed) & 0xFFFFF`
+3. 5-символьне шістнадцяткове значення в нижньому регістрі, доповнене нулями
+4. Замінити `cch=00000;` на обчислений токен
+
+Константи:
+
+- Початкове значення: `0x6e52736ac806831e`
+- Шаблон: `/\bcch=([0-9a-f]{5});/`
+
+### `claudeCodeObfuscation.ts`
+
+Вставляє Unicode-символ **з’єднувача нульової ширини** (`U+200D`) після першого символу «чутливих» назв клієнтів, щоб фільтри на стороні постачальника не могли знайти їх за допомогою grep. Стандартний список слів:
+
+```
+opencode, open-code, cline, roo-cline, roo_cline, cursor, windsurf,
+aider, continue.dev, copilot, avante, codecompanion
+```
+
+Застосовується до: блоків `system`, усього вмісту `messages[].content`, а також `tools[].description` / `tools[].function.description`. Оператор може перевизначити список за допомогою `setSensitiveWords()`.
+
+### `claudeCodeCompatible.ts` — постачальники `anthropic-compatible-cc-*`
+
+Для сторонніх ретрансляторів Anthropic, які приймають лише трафік «справжнього Claude Code»:
+
+- `CLAUDE_CODE_COMPATIBLE_USER_AGENT = "claude-cli/2.1.280 (external, sdk-cli)"`
+- `CLAUDE_CODE_COMPATIBLE_STAINLESS_PACKAGE_VERSION = "0.112.1"`
+- `CLAUDE_CODE_COMPATIBLE_STAINLESS_RUNTIME_VERSION = "v26.3.0"`
+- Типове значення `anthropic-beta = "claude-code-20250219,interleaved-thinking-2025-05-14,effort-2025-11-24"`
+- Перемикач «Увімкнути бета-версію редагування міркувань» для кожного з’єднання додає `redact-thinking-2026-02-12`, коли постачальник рівня CC Compatible явно вимагає потоки з відредагованими міркуваннями
+- Перемикач «Увімкнути відображення підсумованих міркувань» для кожного з’єднання зберігає `providerSpecificData.requestDefaults.summarizeThinking` і додає `display: "summarized"` до запитів міркувань CC Compatible, для яких режим відображення ще не встановлено
+- `CONTEXT_1M_BETA_HEADER = "context-1m-2025-08-07"` (сімейство Opus/Sonnet 4.x)
+- Стандартний шлях: `/v1/messages?beta=true`
+
+Споріднені модулі в тому самому пакеті:
+
+- `claudeCodeConstraints.ts` — правила температури та керування кешем
+- `claudeCodeToolRemapper.ts` — перепризначення назв інструментів
+- `claudeCodeExtraRemap.ts` — додаткова нормалізація корисного навантаження
+
+---
+
+## Antigravity Stealth
+
+запити Antigravity зберігають текст абонента байт за байтом. OmniRoute не вставляє символи нульової ширини в підказки або інструменти rename/inject для імітації клієнта IDE.
+
+### `antigravityHeaderScrub.ts`
+
+Знімає нержавіючі маркери SDK (`x-stainless-lang`, `x-stainless-package-version`, `x-stainless-os`, `x-stainless-arch`, `x-stainless-runtime`, `x-stainless-runtime-version`, `x-stainless-timeout`, `x-stainless-retry-count`, `x-stainless-helper-method`) перед пересиланням.
+
+### ⚠️ Ризик: `ANTIGRAVITY_CREDITS=always` (гаряча точка блокування облікового запису)
+
+маршрути `ANTIGRAVITY_CREDITS=always` (споживаються `open-sse/executors/antigravity.ts`).** кожен** запит через Antigravity AI Credit Overages (сплачені кредити Google ) замість того, щоб дозволити квотам безкоштовних рівнів Google перекривати речі. Це задокументовано як функція, але вона є** єдиний найпоширеніший звіт про порушення умов обслуговування, який ми бачимо** — кілька облікових записів Google Ultra було заблоковано за допомогою `403 / "service disabled for ToS violation" / insufficient_quota` після кількох годин роботи з `=always`.
+
+Вихідний контроль увімкнено** сторона Google** , OmniRoute нічого не може запобігти. Назва змінної env та наявна документація звучать як безпечна ручка для повороту; це не так.
+
+**Чому це залучає виявлення зловживань більш агресивно, ніж використання лише безкоштовного рівня:**
+
+- Постійні автоматичні витрати на один обліковий запис Google позначаються інакше, ніж безкоштовні звернення-квоти та зупинки.
+- Надлишок кредиту не має максимальної ставки, тому неправильно налаштований клієнт може спалити кілька сотень USD за хвилини і виглядати як перепродаж ключа API або бот-трафік.
+- Кілька користувачів OmniRoute, які паралельно отримують надлишки кредитів з одного зовнішнього IP посилюють сигнал.
+
+**Рекомендована поза:**
+
+1. Зберігайте `ANTIGRAVITY_CREDITS=off` за замовчуванням, якщо оператор явно не приймає ризик сплати кредиту та примусового стягнення облікового запису. `retry` спочатку надсилає звичайний запит і вводить кредити щонайбільше один раз після відповідної квоти 429; `always` вводить кредити за першим запитом.
+2. **Розподіліть навантаження між постачальниками за допомогою Auto-Combo** (`model: "auto"` або `kr/glm/etc` -combo) замість насичення одного облікового запису Antigravity.
+3. **Встановіть обмеження RPM для кожного з’єднання** на сторінці редагування постачальника Antigravity (Інформаційна панель → постачальників → Antigravity → з’єднання → limit rate). 30–60 RPM — це виправдана верхня межа для тривалого використання.
+4. **Використовуйте стабільну вихідну мережу, керовану оператором** і уникайте спільного використання одного облікового запису для незв’язаних користувачів або робочих навантажень.
+5. **Якщо заборонено** : апеляція через `support.google.com` → «Відновити доступ Workspace/Account » з точним текстом відповіді `quota_exceeded` / `service disabled`, надісланим Google. Відновлення не гарантується.
+
+Довідник середовища документує обліковий запис і витрати кожного режиму кредитів.
+
+#### Не лише `=always`: маршрутизація Antigravity OAuth загалом
+
+Призупинення не обмежується перевищенням кредиту. Звіти за листопад 2026 року (#19223, #19266) описують кілька облікових записів Google призупинених під час маршрутизації через постачальників `antigravity` і `agy` (Antigravity CLI), з:
+
+```
+403: This service has been disabled in this account for violation of Terms of Service.
+Please submit an appeal to continue using this product.
+```
+
+Обидва постачальники автентифікуються за допомогою сеансу OAuth продукту Antigravity, про що попереджає повідомлення про ризики на інформаційній панелі («Цей постачальник використовує ваш офіційний продукт session/OAuth, який не авторизовано для використання proxy/router ») перед додаванням з’єднання. Жодна з наведених вище рекомендацій не дозволяє таке використання; вони лише зменшують обсяг трафіку, який несе один обліковий запис.
+
+**Авторизовані інтерфейси API для моделей Gemini.** Google пропонує програмний доступ до Gemini через його APIs, який OmniRoute підтримує як звичайні постачальники ключів API:
+
+| ID провайдера | Назва приладової панелі   | облікові дані                                                                          |
+| ------------- | ------------------------- | -------------------------------------------------------------------------------------- |
+| `gemini`      | Gemini (Google AI Studio) | ключ Gemini API від Google AI Studio (доступний безкоштовний рівень)                   |
+| `vertex`      | Вершина AI                | Обліковий запис служби JSON, маркер доступу OAuth або ключ API Vertex Express (Gemini) |
+
+Ці постачальники використовують проблеми з обліковими даними Google для доступу до API, на відміну від сеансу продукту Antigravity. Вони не роблять кожне використання сумісним і не усувають ризик примусового виконання: кожен регулюється власними умовами, які оператор повинен перевірити для їхнього розгортання. Наприклад, [додаткові умови використання Gemini API](https://ai.google.dev/gemini-api/terms) дозволяють лише платні послуги, якщо клієнти API стають доступними для користувачів у Європейській економічній зоні, Швейцарії чи Сполученому Королівстві, а вміст, надісланий до безкоштовних служб, може використовуватися для покращення продуктів Google. Натомість Vertex AI підпадає під дію умов Google Cloud ( [спеціальні умови служби](https://cloud.google.com/terms/service-terms) ). Ціни та квоти відповідають цим умовам API, а не передплаті Antigravity.
+
+Оператори, які хочуть уникнути призупинень Antigravity описаних вище, повинні направляти трафік Gemini через одного з цих провайдерів замість `antigravity` / `agy`, перевіривши, чи їх використання відповідає умовам провайдера.
+
+Точки дотику:
+
+- `open-sse/executors/antigravity.ts` — читається `process.env.ANTIGRAVITY_CREDITS`
+- `src/lib/oauth/providers/antigravity.ts` — облікові дані сантехніка
+- Оригінальний звіт про інцидент: Обговорення [#1183](https://github.com/diegosouzapw/OmniRoute/discussions/1183)
+
+---
+
+## Реєстр відбитків CLI — `open-sse/config/cliFingerprints.ts`
+
+Таблиця для кожного провайдера, яка фіксує **точний** порядок заголовків і полів тіла JSON, отриманий із трасувань mitmproxy офіційних CLI. Наразі зареєстровано: `codex`, `claude`, а також профілі, сформовані під час виконання в `providerHeaderProfiles.ts`, для `antigravity` і `github`.
+
+```ts
+interface CliFingerprint {
+  headerOrder: string[]; // з урахуванням регістру
+  bodyFieldOrder: string[]; // ключі JSON верхнього рівня
+  userAgent?: string | (() => string);
+  extraHeaders?: Record<string, string>;
+}
+```
+
+Перемикається окремо для кожного провайдера через змінні середовища (див. нижче). Коли вимкнено, заголовки/ключі тіла з’являються в тому порядку, у якому їх надали Node/JSON, — це полегшує створення відбитка.
+
+---
+
+## MITM-проксі (Antigravity, Linux/macOS/Windows)
+
+Для CLI, виконувані файли яких неможливо перенаправити через `OPENAI_BASE_URL`, OmniRoute запускає локальний проксі із завершенням TLS. Кінцеві точки розташовані в `src/app/api/cli-tools/antigravity-mitm/`.
+
+| Метод  | Кінцева точка                           | Призначення                                         |
+| ------ | --------------------------------------- | --------------------------------------------------- |
+| GET    | `/api/cli-tools/antigravity-mitm`       | Стан — запущено, pid, dnsConfigured, certExists     |
+| POST   | `/api/cli-tools/antigravity-mitm`       | Запустити MITM (потрібні `apiKey` + `sudoPassword`) |
+| DELETE | `/api/cli-tools/antigravity-mitm`       | Зупинити MITM                                       |
+| GET    | `/api/cli-tools/antigravity-mitm/alias` | Перелічити псевдоніми моделей                       |
+| PUT    | `/api/cli-tools/antigravity-mitm/alias` | Зберегти псевдоніми моделей для інструмента         |
+
+Цільовий перехоплюваний хост: **`daily-cloudcode-pa.googleapis.com`** (висхідний сервер Antigravity).
+
+### Послідовність запуску (`src/mitm/manager.ts::startMitm`)
+
+1. Згенерувати самопідписаний сертифікат через `selfsigned` (RSA-2048, SHA-256, 1 рік) — `cert/generate.ts`
+2. Установити сертифікат у системне сховище довіри — `cert/install.ts`
+3. Додати запис hosts `127.0.0.1 daily-cloudcode-pa.googleapis.com` — `dns/dnsConfig.ts`
+4. Запустити `src/mitm/server.cjs` із `ROUTER_API_KEY` + `MITM_LOCAL_PORT` (типово `443`)
+5. Зберегти PID у `<DATA_DIR>/mitm/.mitm.pid`
+
+### Динамічне виявлення сховища довіри Linux — `cert/install.ts`
+
+`getLinuxCertConfig()` проходить список пріоритетів і вибирає перший наявний каталог:
+
+| Сімейство дистрибутивів  | Каталог                                     | Команда оновлення        |
+| ------------------------ | ------------------------------------------- | ------------------------ |
+| Debian / Ubuntu          | `/usr/local/share/ca-certificates`          | `update-ca-certificates` |
+| Arch / CachyOS / Manjaro | `/etc/ca-certificates/trust-source/anchors` | `update-ca-trust`        |
+| Fedora / RHEL / CentOS   | `/etc/pki/ca-trust/source/anchors`          | `update-ca-trust`        |
+| openSUSE                 | `/etc/pki/trust/anchors`                    | `update-ca-certificates` |
+
+Ім’я файлу сертифіката: `omniroute-mitm.crt`. Зіставлення відбитка виконується через `getCertFingerprint()` (SHA-1 від DER).
+
+Крім того, `updateNssDatabases()` установлює сертифікат у користувацькі бази даних NSS, коли доступна команда `certutil`: `~/.pki/nssdb`, `~/snap/chromium/.../nssdb`, усі профілі Firefox (включно зі snap), під псевдонімом **`OmniRoute MITM Root CA`**.
+
+### macOS / Windows
+
+- **macOS:** `security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain`
+- **Windows:** PowerShell із підвищеними привілеями → `certutil -addstore Root`
+
+### Автентифікація
+
+Усі кінцеві точки MITM вимагають автентифікації керування (`requireCliToolsAuth`). Пароль sudo кешується в області видимості модуля (ніколи не в `globalThis`) і очищається під час виклику `stopMitm()`.
+
+---
+
+## User-Agent перевизначає — env vars (`.env.example` розділ 12)
+
+| змінна              | За замовчуванням                              |
+| ------------------- | --------------------------------------------- |
+| `CLAUDE_USER_AGENT` | `claude-cli/2.1.280 (external, cli)`          |
+| `CODEX_USER_AGENT`  | `codex-cli/0.155.0 (Windows 10.0.26200; x64)` |
+| `GITHUB_USER_AGENT` | `GitHubCopilotChat/0.54.0`                    |
+| `KIRO_USER_AGENT`   | `AWS-SDK-JS/3.0.0 kiro-ide/1.0.0`             |
+| `QODER_USER_AGENT`  | `Qoder-Cli`                                   |
+| `CURSOR_USER_AGENT` | `Cursor/3.4`                                  |
+
+Споживається `open-sse/executors/base.ts::buildHeaders()` через динамічний пошук.** Підніміть їх, коли постачальники випускають нові версії CLI** — застарілі рядки UA починають відхилятися як застарілі клієнти.
+
+## Перемикачі режимів сумісності з CLI (`.env.example`, розділ 13)
+
+| Змінна                     | Ефект                         |
+| -------------------------- | ----------------------------- |
+| `CLI_COMPAT_CODEX=1`       | Відбиток Codex                |
+| `CLI_COMPAT_CLAUDE=1`      | Відбиток claude-cli           |
+| `CLI_COMPAT_GITHUB=1`      | Відбиток GitHub Copilot Chat  |
+| `CLI_COMPAT_ANTIGRAVITY=1` | Відбиток Antigravity          |
+| `CLI_COMPAT_KIRO=1`        | Kiro                          |
+| `CLI_COMPAT_CURSOR=1`      | Cursor                        |
+| `CLI_COMPAT_KIMI_CODING=1` | Kimi Coding                   |
+| `CLI_COMPAT_KILOCODE=1`    | KiloCode                      |
+| `CLI_COMPAT_CLINE=1`       | Cline                         |
+| `CLI_COMPAT_ALL=1`         | Увімкнути все перелічене вище |
+
+IP-адреса постачальника **завжди зберігається** — перемикач лише змінює вигляд запиту на рівні мережевого протоколу, а не перемикає вихідну IP-адресу.
+
+---
+
+## Очищення вхідних заголовків
+
+OmniRoute очищує вхідні клієнтські заголовки перед пересиланням, щоб запит, який надходить від Cursor, не передавав `User-Agent: Cursor/X.Y.Z` до вищестоящого сервісу Claude. Список заборонених заголовків міститься в `src/shared/constants/upstreamHeaders.ts` і синхронізується зі схемами Zod та модульними тестами.
+
+---
+
+## Оновлення відбитків після їх ротації постачальником
+
+1. Перехопіть офіційний трафік CLI за допомогою `mitmproxy` (перехоплення TLS + дамп)
+2. Витягніть JA3/JA4 і точний порядок заголовків
+3. Оновіть відповідний запис `CLI_FINGERPRINTS[...]`
+4. Оновіть відповідне значення за замовчуванням `*_USER_AGENT` у `.env.example`
+5. Якщо змінилося саме рукостискання TLS, оновіть відповідну обгортку постачальника або параметр `browser:` у wreq-js
+6. Запустіть TLS-тести для конкретного постачальника та виконайте ручну канаркову перевірку на реальному сервісі постачальника
+7. Випустіть зміни у патч-релізі; задокументуйте їх у `CHANGELOG.md`
+
+---
+
+## Тести
+
+- `open-sse/services/__tests__/claudeTlsClient.test.ts` — поведінка спільної обгортки TLS
+- `tests/unit/anthropic-cache-fingerprint.test.ts` — детермінованість відбитка
+- `tests/unit/chatgpt-web-source-retirement.test.ts` — спільне приховане джерело ChatGPT Web залишається відсутнім, тоді як Codex Web залишається доступним
+
+---
+
+## Див. також
+
+- [RESILIENCE_GUIDE.md](../architecture/RESILIENCE_GUIDE.md) — що відбувається, коли прихований шлях отримує `403`
+- [TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md)
+- [ENVIRONMENT.md](../reference/ENVIRONMENT.md) — повний довідник змінних середовища
+- [CLI-TOOLS.md](../reference/CLI-TOOLS.md) — погляд оператора на робочий процес MITM

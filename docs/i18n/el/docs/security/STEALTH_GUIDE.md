@@ -1,0 +1,330 @@
+# Stealth Guide (Ελληνικά)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../security/STEALTH_GUIDE.md) · 🇪🇹 [am](../../../am/docs/security/STEALTH_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/security/STEALTH_GUIDE.md) · 🇦🇿 [az](../../../az/docs/security/STEALTH_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/security/STEALTH_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/security/STEALTH_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/security/STEALTH_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/security/STEALTH_GUIDE.md) · 🇩🇰 [da](../../../da/docs/security/STEALTH_GUIDE.md) · 🇩🇪 [de](../../../de/docs/security/STEALTH_GUIDE.md) · 🇪🇸 [es](../../../es/docs/security/STEALTH_GUIDE.md) · 🇪🇪 [et](../../../et/docs/security/STEALTH_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/security/STEALTH_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/security/STEALTH_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/security/STEALTH_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/security/STEALTH_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/security/STEALTH_GUIDE.md) · 🇮🇱 [he](../../../he/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/security/STEALTH_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/security/STEALTH_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/security/STEALTH_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/security/STEALTH_GUIDE.md) · 🇮🇩 [id](../../../id/docs/security/STEALTH_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/security/STEALTH_GUIDE.md) · 🇮🇹 [it](../../../it/docs/security/STEALTH_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/security/STEALTH_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/security/STEALTH_GUIDE.md) · 🇰🇭 [km](../../../km/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/security/STEALTH_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/security/STEALTH_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/security/STEALTH_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/security/STEALTH_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/security/STEALTH_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/security/STEALTH_GUIDE.md) · 🇲🇲 [my](../../../my/docs/security/STEALTH_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/security/STEALTH_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/security/STEALTH_GUIDE.md) · 🇳🇴 [no](../../../no/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [or](../../../or/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/security/STEALTH_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/security/STEALTH_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/security/STEALTH_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/security/STEALTH_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/security/STEALTH_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/security/STEALTH_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/security/STEALTH_GUIDE.md) · 🇱🇰 [si](../../../si/docs/security/STEALTH_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/security/STEALTH_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/security/STEALTH_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/security/STEALTH_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/security/STEALTH_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/security/STEALTH_GUIDE.md) · 🇮🇳 [te](../../../te/docs/security/STEALTH_GUIDE.md) · 🇹🇭 [th](../../../th/docs/security/STEALTH_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/security/STEALTH_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/security/STEALTH_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/security/STEALTH_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/security/STEALTH_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/security/STEALTH_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/security/STEALTH_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/security/STEALTH_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/security/STEALTH_GUIDE.md)
+
+---
+
+> **Πηγή αναφοράς:** `open-sse/utils/tlsClient.ts`, `open-sse/services/{tlsClientBase,claudeTlsClient,perplexityTlsClient,grokTlsClient,notionTlsClient,lmarenaTlsClient,claudeCodeCCH,claudeCodeFingerprint,claudeCodeObfuscation,claudeCodeCompatible}.ts`, `open-sse/config/cliFingerprints.ts`, `src/mitm/`
+> **Τελευταία ενημέρωση:** 2026-09-02 — v3.8.51
+> **Απευθύνεται σε:** Μηχανικούς που συντηρούν ειδικές ανά πάροχο ενσωματώσεις απόκρυψης.
+
+Το OmniRoute ενσωματώνεται με παρόχους των οποίων τα περιφερειακά συστήματα ανιχνεύουν ενεργά τα χαρακτηριστικά μη επίσημων πελατών (TLS JA3/JA4, σειρά κεφαλίδων, δομή σώματος JSON, διακριτικά ακεραιότητας). Αυτή η σελίδα τεκμηριώνει τις επιφάνειες απόκρυψης που παρέχει το OmniRoute και το σημείο υλοποίησής τους.
+
+## Νομική και Δεοντολογική Επισήμανση
+
+Οι δυνατότητες απόκρυψης υπάρχουν ώστε το OmniRoute να μπορεί να λειτουργεί ως επίπεδο συμβατότητας μεταξύ επίσημων λογαριασμών που ανήκουν στους χρήστες (Claude Code CLI, Codex, Antigravity, Cursor κ.λπ.) και του ενοποιημένου API του OmniRoute. **Δεν** προορίζονται για την παράκαμψη της ανίχνευσης απάτης, την κοινή χρήση διαπιστευτηρίων ή την παραβίαση των Όρων Παροχής Υπηρεσιών των παρόχων. Οι συντηρητές αναμένουν από τους διαχειριστές να συμμορφώνονται με τους όρους ToS των ανάντη υπηρεσιών, τους οποίους αποδέχτηκαν κατά τη δημιουργία λογαριασμών.
+
+---
+
+## Επίπεδο δακτυλικού αποτυπώματος TLS
+
+### `open-sse/utils/tlsClient.ts` — wreq-js (Chrome 124)
+
+Οι μόνιμες συνεδρίες `wreq-js` δημιουργούνται με οκνηρό τρόπο ανά εύρος λογαριασμού και επιλυμένο διακομιστή μεσολάβησης. Το
+`TlsClient` σε επίπεδο διεργασίας διατηρεί σε κοινόχρηστη δεξαμενή έως 128 συνεδρίες που μιμούνται το **Chrome 124 σε macOS** για
+ανάντη υπηρεσίες πίσω από το Cloudflare. Η `TlsClient.fetch()` αποτυγχάνει με ασφαλή τρόπο όταν το εγγενές περιβάλλον εκτέλεσης
+δεν είναι διαθέσιμο· ένας καλών μπορεί να επιλέξει ρητά μια εναλλακτική λύση εκτός αυτού του περιτυλίγματος.
+
+- Προφίλ συνεδρίας: `browser: "chrome_124", os: "macos"`
+- Επίλυση διακομιστή μεσολάβησης (προτεραιότητα): `HTTPS_PROXY` → `HTTP_PROXY` → `ALL_PROXY` (επίσης με πεζά)
+- Χρονικό όριο: `TLS_CLIENT_TIMEOUT_MS` (κληρονομείται από το `FETCH_TIMEOUT_MS`, προεπιλογή 600000)
+- Το Response του `wreq-js` είναι συμβατό με το fetch (`headers`, `text()`, `json()`, `clone()`, `body`).
+- Επόπτης πρώτου byte (`open-sse/utils/tlsFirstByteWatchdog.ts`, #12656): Η `TlsClient.fetch()`
+  ολοκληρώνεται μόλις φτάσουν οι κεφαλίδες της ανάντη υπηρεσίας, επομένως το `TLS_CLIENT_TIMEOUT_MS` από μόνο του δεν μπορεί να θέσει όριο σε ένα
+  σώμα που δεν παρέχει ποτέ πρώτο byte. Η `guardTlsFirstByte()` θέτει σε ανταγωνισμό την πρώτη `read()` του σώματος
+  με το `TLS_FIRST_BYTE_WATCHDOG_MS` (προεπιλογή `10000`, το `0` το απενεργοποιεί)· ένα υγιές σώμα
+  δεν επηρεάζεται, ενώ ένα σώμα που έχει κολλήσει ακυρώνει τον αναγνώστη wreq και επιτρέπει στην υπάρχουσα
+  λογική εναλλακτικής λύσης TLS του `proxyFetch` να συνεχίσει στον απευθείας/μέσω διακομιστή μεσολάβησης διεκπεραιωτή (ένα αίτημα που δεν είναι ασφαλές για επανάληψη, π.χ.
+  ένα POST με σώμα, εξακολουθεί να προκαλεί εξαίρεση αντί να επαναλαμβάνεται σιωπηρά).
+
+### Μεταφορά παρόχων web-cookie — wreq-js 3.2.0
+
+Το `open-sse/services/tlsClientBase.ts` είναι ο κοινόχρηστος προσαρμογέας για τις πέντε εξειδικευμένες
+μεταφορές web-cookie παρακάτω. Κάθε λεπτό περιτύλιγμα παρόχου επιλέγει ένα προφίλ προγράμματος περιήγησης/λειτουργικού συστήματος. Ο προσαρμογέας
+χρησιμοποιεί τον μοναδικό φορτωτή περιβάλλοντος εκτέλεσης wreq και τη δεξαμενή μεταφορών στο `open-sse/utils/tlsClient.ts`, με κλειδί
+το προφίλ + λειτουργικό σύστημα + επιλυμένο διακομιστή μεσολάβησης, ενώ κάθε αίτημα χρησιμοποιεί `cookieMode: "ephemeral"`. Επομένως, οι λογαριασμοί και
+τα αιτήματα μοιράζονται συνδέσεις σε επίπεδο μεταφοράς, αλλά ποτέ μια συνεδρία wreq ή ένα χώρο αποθήκευσης cookie.
+
+| Πάροχος    | Προφίλ        | Εξομοιούμενο λειτουργικό σύστημα | Πολιτική EOF ροής                         |
+| ---------- | ------------- | -------------------------------- | ----------------------------------------- |
+| Claude     | `chrome_146`  | Linux                            | συμπερίληψη `[DONE]`                      |
+| Perplexity | `firefox_151` | macOS                            | συμπερίληψη `event: end_of_stream`        |
+| Grok       | `chrome_146`  | Linux                            | εξαίρεση `[DONE]`                         |
+| Notion     | `chrome_146`  | Windows                          | συμπερίληψη `[DONE]`                      |
+| LMArena    | `chrome_146`  | Windows                          | χωρίς σηματοδότη· κλείσιμο σε εγγενές EOF |
+
+- Η ροή καταναλώνει απευθείας το `ReadableStream` της εγγενούς απόκρισης· δεν δημιουργείται προσωρινό αρχείο ή βοηθητική
+  διεργασία.
+- Εξετάζονται έως 256 αρχικά byte πριν από την έκθεση μιας ροής. Οι πάροχοι SSE αποθηκεύουν προσωρινά τα σφάλματα που δεν είναι SSE·
+  οι Grok/LMArena αντιστοιχίζουν τις προκλήσεις Cloudflare σε `403` και τις ενδιάμεσες σελίδες HTML σε `502`.
+- Το εγγενές χρονικό όριο αιτήματος εξακολουθεί να περιβάλλεται από μια απόλυτη αυστηρή προθεσμία JS. Μια εμπλοκή ακυρώνει
+  και κλείνει μόνο την επηρεαζόμενη μεταφορά προφίλ/λειτουργικού συστήματος/διακομιστή μεσολάβησης, προτού το επόμενο αίτημα την επαναδημιουργήσει.
+- Η προτεραιότητα επίλυσης διακομιστή μεσολάβησης είναι ανά κλήση `proxyUrl` → περιβάλλον λογαριασμού/πίνακα ελέγχου με εύρος αιτήματος →
+  `HTTPS_PROXY`/`HTTP_PROXY`/`ALL_PROXY` (συμπεριλαμβανομένων των παραλλαγών με πεζά). Τα σφάλματα επίλυσης αποτυγχάνουν
+  με ασφαλή τρόπο αντί να διαρρεύσει μια απευθείας σύνδεση. Το LMArena εκτελεί σκόπιμα την επίλυση με βάση το `arena.ai`.
+- Το `byteResponse` επιστρέφει ένα URL `data:` με τύπο περιεχομένου, χωρίς αλλοίωση UTF-8.
+- Τα σφάλματα είναι `TlsClientUnavailableError` (το πακέτο/πρόσθετο δεν είναι διαθέσιμο), `TlsClientHangError`
+  (υπέρβαση προθεσμίας) και `WreqTransportCapacityError` (ο κοινόχρηστος κωδικός σφάλματος χωρητικότητας συνεδριών)
+  όταν και οι 128 περιορισμένες θέσεις προφίλ/λειτουργικού συστήματος/διακομιστή μεσολάβησης είναι ενεργές ή κλείνουν.
+
+Η γενική συνεδρία `TlsClient` παραπάνω παραμένει εξειδικευμένη για μόνιμη κατάσταση cookie που υποστηρίζεται από πρόγραμμα περιήγησης.
+Και οι δύο διαδρομές επαναχρησιμοποιούν έναν αποθηκευμένο στην κρυφή μνήμη φορτωτή μονάδας wreq και ένα άγκιστρο κύκλου ζωής διεργασίας· οι δεξαμενές τους παραμένουν
+ξεχωριστές, επειδή οι διάρκειες ζωής των cookie τους είναι σκόπιμα διαφορετικές.
+
+Τα προφίλ υποστηρίζονται από το καρφιτσωμένο πακέτο, αλλά η πραγματική αποδοχή από το WAF μπορεί να αλλάξει ανεξάρτητα
+από τις τοπικές δοκιμές συμβολαίου. Επικυρώστε τις αλλαγές δακτυλικού αποτυπώματος σε έναν ρητά εξουσιοδοτημένο ενεργό λογαριασμό
+πριν ισχυριστείτε ισοδυναμία με ένα ανάντη πρόγραμμα περιήγησης.
+
+---
+
+## Πακέτο απόκρυψης Claude Code
+
+Όταν το `cliCompatMode` είναι ενεργοποιημένο, το OmniRoute αναδιαμορφώνει τα εξερχόμενα αιτήματα Claude ώστε να μην μπορούν να διακριθούν από την κίνηση του `claude-cli`. Τρία αρθρώματα συνεργάζονται:
+
+### `claudeCodeFingerprint.ts`
+
+Υπολογίζει το αποτύπωμα 3 χαρακτήρων `cc_version` που ενσωματώνεται στην κεφαλίδα χρέωσης:
+
+```
+SHA256(SALT + msg[4] + msg[7] + msg[20] + version)[:3]
+```
+
+- `FINGERPRINT_SALT = "59cf53e54c78"` (ενσωματωμένο στον κώδικα· αντιστοιχεί στον επίσημο πελάτη)
+- Είσοδοι: οι χαρακτήρες στις θέσεις 4, 7 και 20 του κειμένου του πρώτου μηνύματος χρήστη + συμβολοσειρά έκδοσης
+- Έξοδος: δεκαεξαδικό πρόθεμα 3 χαρακτήρων
+
+### `claudeCodeCCH.ts` (Κατακερματισμός περιεχομένου πελάτη)
+
+Έλεγχος ακεραιότητας στην πλευρά του διακομιστή, τον οποίο το επίσημο Claude Code CLI υπολογίζει μέσω Bun/Zig. Το OmniRoute τον επανυλοποιεί με `xxhash-wasm`:
+
+1. Σειριοποίηση του σώματος με σύμβολο κράτησης θέσης `cch=00000;`
+2. `xxhash64(bytes, seed) & 0xFFFFF`
+3. Δεκαεξαδική τιμή 5 χαρακτήρων με πεζά γράμματα και συμπλήρωση με μηδενικά
+4. Αντικατάσταση του `cch=00000;` με το υπολογισμένο διακριτικό
+
+Σταθερές:
+
+- Τιμή σποράς: `0x6e52736ac806831e`
+- Μοτίβο: `/\bcch=([0-9a-f]{5});/`
+
+### `claudeCodeObfuscation.ts`
+
+Εισάγει έναν Unicode **συνδετήρα μηδενικού πλάτους** (`U+200D`) μετά τον πρώτο χαρακτήρα «ευαίσθητων» ονομάτων πελατών, ώστε τα φίλτρα ανάντη να μην μπορούν να τα εντοπίσουν μέσω grep. Προεπιλεγμένη λίστα λέξεων:
+
+```
+opencode, open-code, cline, roo-cline, roo_cline, cursor, windsurf,
+aider, continue.dev, copilot, avante, codecompanion
+```
+
+Εφαρμόζεται σε: μπλοκ `system`, όλο το `messages[].content` και τα `tools[].description` / `tools[].function.description`. Μπορεί να παρακαμφθεί από τον χειριστή μέσω `setSensitiveWords()`.
+
+### `claudeCodeCompatible.ts` — πάροχοι `anthropic-compatible-cc-*`
+
+Για αναμεταδότες Anthropic τρίτων που δέχονται μόνο «πραγματική κίνηση Claude Code»:
+
+- `CLAUDE_CODE_COMPATIBLE_USER_AGENT = "claude-cli/2.1.280 (external, sdk-cli)"`
+- `CLAUDE_CODE_COMPATIBLE_STAINLESS_PACKAGE_VERSION = "0.112.1"`
+- `CLAUDE_CODE_COMPATIBLE_STAINLESS_RUNTIME_VERSION = "v26.3.0"`
+- `anthropic-beta = "claude-code-20250219,interleaved-thinking-2025-05-14,effort-2025-11-24"` από προεπιλογή
+- Ο διακόπτης ανά σύνδεση «Ενεργοποίηση της beta έκδοσης απόκρυψης συλλογισμού» προσθέτει το `redact-thinking-2026-02-12` όταν ένα ανάντη σύστημα συμβατό με CC απαιτεί συγκεκριμένα ροές με αποκρυμμένο συλλογισμό
+- Ο διακόπτης ανά σύνδεση «Ενεργοποίηση εμφάνισης συνοψισμένου συλλογισμού» αποθηκεύει το `providerSpecificData.requestDefaults.summarizeThinking` και προσθέτει `display: "summarized"` στα αιτήματα συλλογισμού που είναι συμβατά με CC και δεν είχαν ήδη ορίσει λειτουργία εμφάνισης
+- `CONTEXT_1M_BETA_HEADER = "context-1m-2025-08-07"` (οικογένεια Opus/Sonnet 4.x)
+- Προεπιλεγμένη διαδρομή: `/v1/messages?beta=true`
+
+Συγγενικά αρθρώματα στο ίδιο πακέτο:
+
+- `claudeCodeConstraints.ts` — κανόνες θερμοκρασίας + ελέγχου προσωρινής μνήμης
+- `claudeCodeToolRemapper.ts` — επαναχαρτογράφηση ονομάτων εργαλείων
+- `claudeCodeExtraRemap.ts` — πρόσθετη κανονικοποίηση ωφέλιμου φορτίου
+
+---
+
+## Antigravity Stealth
+
+Τα αιτήματα Antigravity διατηρούν το κείμενο του καλούντος byte-for-byte. OmniRoute δεν εισάγει χαρακτήρες μηδενικού πλάτους σε προτροπές ή εργαλεία rename/inject για να μιμηθεί έναν πελάτη IDE.
+
+### `antigravityHeaderScrub.ts`
+
+Λωρίδες ανοξείδωτους δείκτες SDK (`x-stainless-lang`, `x-stainless-package-version`, `x-stainless-os`, `x-stainless-arch`, `x-stainless-runtime`, `x-stainless-runtime-version`, `x-stainless-timeout`, `x-stainless-retry-count`, `x-stainless-helper-method`) πριν από την προώθηση.
+
+### ⚠️ Risk: `ANTIGRAVITY_CREDITS=always` (hot spot απαγόρευσης λογαριασμού)
+
+`ANTIGRAVITY_CREDITS=always` (καταναλώνονται από `open-sse/executors/antigravity.ts`) διαδρομές** κάθε** Ζητήστε μέσω Antigravity AI Credit Overages (πληρωμένες πιστώσεις Google ) αντί να αφήσετε το quota free-tier του Google να καλύψει πράγματα. Αυτό τεκμηριώνεται ως χαρακτηριστικό, αλλά είναι** η πιο κοινή αναφορά παραβίασης ToS που βλέπουμε** — πολλαπλοί λογαριασμοί Google Ultra έχουν αποκλειστεί με `403 / "service disabled for ToS violation" / insufficient_quota` μετά την εκτέλεση για λίγες ώρες με `=always`.
+
+Η ανάντη επιβολή είναι ενεργοποιημένη** την πλευρά του Google** , τίποτα δεν μπορεί να αποτρέψει OmniRoute. Το όνομα env var και τα υπάρχοντα έγγραφα το κάνουν να ακούγεται σαν ένα ασφαλές κουμπί για αναστροφή. δεν είναι.
+
+**Γιατί αυτό προκαλεί τον εντοπισμό κατάχρησης πιο επιθετικά από τη χρήση μόνο σε δωρεάν επίπεδα:**
+
+- Η διαρκής αυτοματοποιημένη δαπάνη σε έναν μεμονωμένο λογαριασμό Google επισημαίνει διαφορετικά από τις επισκέψεις-όριο-και-στοπ ελεύθερης βαθμίδας.
+- Οι υπερβάσεις πίστωσης δεν έχουν ανώτατο όριο επιτοκίου, επομένως ένας πελάτης με εσφαλμένη διαμόρφωση μπορεί να καταγράψει αρκετές εκατοντάδες USD μέσα σε λίγα λεπτά και να μοιάζει με μεταπώληση κλειδιού API ή επισκεψιμότητα bot.
+- Πολλαπλοί χρήστες OmniRoute που κερδίζουν επιπλέον μονάδες παράλληλα από το ίδιο εξωτερικό IP συνδυάζουν το σήμα.
+
+**Προτεινόμενη στάση σώματος:**
+
+1. Διατηρήστε το προεπιλεγμένο `ANTIGRAVITY_CREDITS=off` εκτός εάν ο χειριστής αποδέχεται ρητά τον κίνδυνο πληρωμής πίστωσης και επιβολής λογαριασμού. `retry` στέλνει πρώτα το κανονικό αίτημα και εισφέρει πιστώσεις το πολύ μία φορά μετά από μια επιλέξιμη ποσόστωση 429. `always` χορηγεί πιστώσεις με το πρώτο αίτημα.
+2. **Διαδώστε το φορτίο σε παρόχους μέσω Auto-Combo** (`model: "auto"` ή `kr/glm/etc` -combo) αντί να κορεσθεί ένας μόνο λογαριασμός Antigravity.
+3. **Set per-connection RPM limits** in the Antigravity provider's edit page (Dashboard → Providers → Antigravity → connection → rate limit). 30–60 RPM is a defensible upper bound for sustained use.
+4. **Χρησιμοποιήστε σταθερή, ελεγχόμενη από τον χειριστή upstream δικτύωση** και αποφύγετε την κοινή χρήση ενός λογαριασμού σε μη συνδεδεμένους χρήστες ή φόρτους εργασίας.
+5. **Αν απαγορευτεί** : επανεξέταση μέσω `support.google.com` → "Επαναφορά πρόσβασης Workspace/Account " με το ακριβές σώμα απάντησης `quota_exceeded` / `service disabled` να Google. Η αποκατάσταση δεν είναι εγγυημένη.
+
+Η αναφορά περιβάλλοντος τεκμηριώνει τις συνέπειες του λογαριασμού και των δαπανών για κάθε λειτουργία πιστώσεων.
+
+#### Όχι μόνο `=always`: Antigravity OAuth δρομολόγηση γενικά
+
+Οι αναστολές δεν περιορίζονται στις πιστωτικές υπερβάσεις. Οι αναφορές τον Νοέμβριο του 2026 (#19223, #19266) περιγράφουν αρκετούς λογαριασμούς Google που τέθηκαν σε αναστολή κατά τη δρομολόγηση μέσω των παρόχων `antigravity` και `agy` (Antigravity CLI), με:
+
+```
+403: This service has been disabled in this account for violation of Terms of Service.
+Please submit an appeal to continue using this product.
+```
+
+Και οι δύο πάροχοι ελέγχουν ταυτότητας με την περίοδο λειτουργίας OAuth του προϊόντος Antigravity, κάτι που συμβαίνει στην περίπτωση που η ειδοποίηση κινδύνου του πίνακα εργαλείων ("Αυτός ο πάροχος χρησιμοποιεί το επίσημο προϊόν session/OAuth, το οποίο δεν είναι εξουσιοδοτημένο για χρήση proxy/router ") προειδοποιεί πριν από την προσθήκη μιας σύνδεσης. Καμία από τις παραπάνω συστάσεις δεν επιτρέπει αυτή τη χρήση. μειώνουν μόνο την επισκεψιμότητα που μεταφέρει ένας λογαριασμός.
+
+**Εξουσιοδοτημένες διεπαφές API για μοντέλα Gemini.** Google προσφέρει πρόσβαση μέσω προγραμματισμού στο Gemini μέσω του APIs, το οποίο OmniRoute υποστηρίζει ως συνηθισμένοι πάροχοι κλειδιών API:
+
+| Αναγνωριστικό παρόχου | Όνομα πίνακα ελέγχου      | Πιστοποιητικό                                                                               |
+| --------------------- | ------------------------- | ------------------------------------------------------------------------------------------- |
+| `gemini`              | Gemini (Google AI Studio) | κλειδί Gemini API από Google AI Studio (δωρεάν επίπεδο διαθέσιμο)                           |
+| `vertex`              | Vertex AI                 | Λογαριασμός υπηρεσίας JSON, διακριτικό πρόσβασης OAuth ή κλειδί API Vertex Express (Gemini) |
+
+Αυτοί οι πάροχοι χρησιμοποιούν ζητήματα διαπιστευτηρίων Google για πρόσβαση API, σε αντίθεση με την περίοδο σύνδεσης προϊόντος Antigravity. Δεν συνάδουν με κάθε χρήση ούτε αφαιρούν τον κίνδυνο επιβολής: το καθένα διέπεται από τους δικούς του όρους, τους οποίους πρέπει να ελέγξει ο χειριστής για την ανάπτυξή τους. Για παράδειγμα, οι [Πρόσθετοι Όροι Παροχής Υπηρεσιών Gemini API](https://ai.google.dev/gemini-api/terms) επιτρέπουν μόνο Υπηρεσίες επί πληρωμή όταν οι πελάτες API διατίθενται σε χρήστες στον Ευρωπαϊκό Οικονομικό Χώρο, την Ελβετία ή το Ηνωμένο Βασίλειο και το περιεχόμενο που αποστέλλεται στις Υπηρεσίες χωρίς πληρωμή μπορεί να χρησιμοποιηθεί για τη βελτίωση των προϊόντων της Google. Αντίθετα, το Vertex AI εμπίπτει στους όρους του Google Cloud ( [Ειδικοί όροι υπηρεσίας](https://cloud.google.com/terms/service-terms) ). Οι τιμές και οι ποσοστώσεις ακολουθούν αυτούς τους όρους API και όχι μια συνδρομή Antigravity.
+
+Οι φορείς εκμετάλλευσης που θέλουν να αποφύγουν τις αναστολές Antigravity που περιγράφονται παραπάνω θα πρέπει να δρομολογούν την επισκεψιμότητα Gemini μέσω ενός από αυτούς τους παρόχους αντί του `antigravity` / `agy`, αφού ελέγξουν ότι η χρήση τους ταιριάζει με τους όρους του παρόχου.
+
+Σημεία αφής:
+
+- `open-sse/executors/antigravity.ts` — διαβάζει `process.env.ANTIGRAVITY_CREDITS`
+- υδραυλικά διαπιστευτήρια `src/lib/oauth/providers/antigravity.ts` —
+- Αρχική αναφορά περιστατικού: Συζήτηση [#1183](https://github.com/diegosouzapw/OmniRoute/discussions/1183)
+
+---
+
+## Μητρώο αποτυπωμάτων CLI — `open-sse/config/cliFingerprints.ts`
+
+Πίνακας ανά πάροχο που καθορίζει την **ακριβή** σειρά των headers και των πεδίων του σώματος JSON, όπως καταγράφηκε από ίχνη mitmproxy των επίσημων CLI. Προς το παρόν έχουν καταχωριστεί: `codex`, `claude`, καθώς και προφίλ που παράγονται κατά την εκτέλεση στο `providerHeaderProfiles.ts` για τα `antigravity` και `github`.
+
+```ts
+interface CliFingerprint {
+  headerOrder: string[]; // διάκριση πεζών-κεφαλαίων
+  bodyFieldOrder: string[]; // κλειδιά JSON ανώτατου επιπέδου
+  userAgent?: string | (() => string);
+  extraHeaders?: Record<string, string>;
+}
+```
+
+Ενεργοποιείται ή απενεργοποιείται ανά πάροχο μέσω μεταβλητής περιβάλλοντος (δείτε παρακάτω). Όταν είναι απενεργοποιημένο, τα headers/κλειδιά σώματος εμφανίζονται με οποιαδήποτε σειρά τα παρήγαγε το Node/JSON — γεγονός που διευκολύνει τη δημιουργία αποτυπώματος.
+
+---
+
+## Διακομιστής μεσολάβησης MITM (Antigravity, Linux/macOS/Windows)
+
+Για CLI των οποίων τα εκτελέσιμα αρχεία δεν μπορούν να ανακατευθυνθούν μέσω του `OPENAI_BASE_URL`, το OmniRoute εκτελεί έναν τοπικό διακομιστή μεσολάβησης που τερματίζει το TLS. Τα endpoints βρίσκονται κάτω από το `src/app/api/cli-tools/antigravity-mitm/`.
+
+| Μέθοδος | Endpoint                                | Σκοπός                                                 |
+| ------- | --------------------------------------- | ------------------------------------------------------ |
+| GET     | `/api/cli-tools/antigravity-mitm`       | Κατάσταση — εκτελείται, pid, dnsConfigured, certExists |
+| POST    | `/api/cli-tools/antigravity-mitm`       | Εκκίνηση MITM (απαιτεί `apiKey` + `sudoPassword`)      |
+| DELETE  | `/api/cli-tools/antigravity-mitm`       | Διακοπή MITM                                           |
+| GET     | `/api/cli-tools/antigravity-mitm/alias` | Παράθεση ψευδωνύμων μοντέλων                           |
+| PUT     | `/api/cli-tools/antigravity-mitm/alias` | Αποθήκευση ψευδωνύμων μοντέλων για ένα εργαλείο        |
+
+Κεντρικός υπολογιστής-στόχος υποκλοπής: **`daily-cloudcode-pa.googleapis.com`** (ο upstream διακομιστής του Antigravity).
+
+### Ακολουθία εκκίνησης (`src/mitm/manager.ts::startMitm`)
+
+1. Δημιουργία αυτοϋπογεγραμμένου πιστοποιητικού μέσω `selfsigned` (RSA-2048, SHA-256, 1 έτος) — `cert/generate.ts`
+2. Εγκατάσταση του πιστοποιητικού στον χώρο αποθήκευσης αξιόπιστων πιστοποιητικών του συστήματος — `cert/install.ts`
+3. Προσθήκη καταχώρισης hosts `127.0.0.1 daily-cloudcode-pa.googleapis.com` — `dns/dnsConfig.ts`
+4. Εκκίνηση του `src/mitm/server.cjs` με `ROUTER_API_KEY` + `MITM_LOCAL_PORT` (προεπιλογή `443`)
+5. Αποθήκευση του PID στο `<DATA_DIR>/mitm/.mitm.pid`
+
+### Δυναμικός εντοπισμός χώρου αποθήκευσης αξιόπιστων πιστοποιητικών στο Linux — `cert/install.ts`
+
+Η `getLinuxCertConfig()` διατρέχει μια λίστα προτεραιότητας και επιλέγει τον πρώτο υπάρχοντα κατάλογο:
+
+| Οικογένεια διανομών      | Κατάλογος                                   | Εντολή ενημέρωσης        |
+| ------------------------ | ------------------------------------------- | ------------------------ |
+| Debian / Ubuntu          | `/usr/local/share/ca-certificates`          | `update-ca-certificates` |
+| Arch / CachyOS / Manjaro | `/etc/ca-certificates/trust-source/anchors` | `update-ca-trust`        |
+| Fedora / RHEL / CentOS   | `/etc/pki/ca-trust/source/anchors`          | `update-ca-trust`        |
+| openSUSE                 | `/etc/pki/trust/anchors`                    | `update-ca-certificates` |
+
+Όνομα αρχείου πιστοποιητικού: `omniroute-mitm.crt`. Αντιστοίχιση αποτυπώματος μέσω `getCertFingerprint()` (SHA-1 του DER).
+
+Επιπλέον, η `updateNssDatabases()` πραγματοποιεί εγκατάσταση στις βάσεις δεδομένων NSS ανά χρήστη, όταν είναι διαθέσιμο το `certutil`: `~/.pki/nssdb`, `~/snap/chromium/.../nssdb`, όλα τα προφίλ Firefox (συμπεριλαμβανομένων αυτών μέσω snap), με το ψευδώνυμο **`OmniRoute MITM Root CA`**.
+
+### macOS / Windows
+
+- **macOS:** `security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain`
+- **Windows:** PowerShell με αυξημένα δικαιώματα → `certutil -addstore Root`
+
+### Έλεγχος ταυτότητας
+
+Όλα τα endpoints MITM απαιτούν έλεγχο ταυτότητας διαχείρισης (`requireCliToolsAuth`). Ο κωδικός sudo αποθηκεύεται προσωρινά σε εμβέλεια module (ποτέ στο `globalThis`) και διαγράφεται κατά την κλήση της `stopMitm()`.
+
+---
+
+## Παρακάμπτει τον παράγοντα χρήστη — env vars (ενότητα `.env.example` 12)
+
+| Μεταβλητός          | Αθέτηση                                       |
+| ------------------- | --------------------------------------------- |
+| `CLAUDE_USER_AGENT` | `claude-cli/2.1.280 (external, cli)`          |
+| `CODEX_USER_AGENT`  | `codex-cli/0.155.0 (Windows 10.0.26200; x64)` |
+| `GITHUB_USER_AGENT` | `GitHubCopilotChat/0.54.0`                    |
+| `KIRO_USER_AGENT`   | `AWS-SDK-JS/3.0.0 kiro-ide/1.0.0`             |
+| `QODER_USER_AGENT`  | `Qoder-Cli`                                   |
+| `CURSOR_USER_AGENT` | `Cursor/3.4`                                  |
+
+Καταναλώνεται από `open-sse/executors/base.ts::buildHeaders()` μέσω δυναμικής αναζήτησης.** Ενισχύστε τα όταν οι πάροχοι κυκλοφορούν νέες εκδόσεις CLI** — μπαγιάτικες συμβολοσειρές UA αρχίζουν να απορρίπτονται ως απαρχαιωμένοι πελάτες.
+
+## Διακόπτες λειτουργίας συμβατότητας CLI (`.env.example` ενότητα 13)
+
+| Μεταβλητή                  | Επίδραση                       |
+| -------------------------- | ------------------------------ |
+| `CLI_COMPAT_CODEX=1`       | Αποτύπωμα Codex                |
+| `CLI_COMPAT_CLAUDE=1`      | Αποτύπωμα claude-cli           |
+| `CLI_COMPAT_GITHUB=1`      | Αποτύπωμα GitHub Copilot Chat  |
+| `CLI_COMPAT_ANTIGRAVITY=1` | Αποτύπωμα Antigravity          |
+| `CLI_COMPAT_KIRO=1`        | Kiro                           |
+| `CLI_COMPAT_CURSOR=1`      | Cursor                         |
+| `CLI_COMPAT_KIMI_CODING=1` | Kimi Coding                    |
+| `CLI_COMPAT_KILOCODE=1`    | KiloCode                       |
+| `CLI_COMPAT_CLINE=1`       | Cline                          |
+| `CLI_COMPAT_ALL=1`         | Ενεργοποίηση όλων των παραπάνω |
+
+Η διεύθυνση IP του παρόχου **διατηρείται πάντα** — ο διακόπτης αναδιαμορφώνει μόνο την εικόνα του αιτήματος στο δίκτυο, δεν αλλάζει τη διεύθυνση IP εξόδου.
+
+---
+
+## Εξυγίανση εισερχόμενων κεφαλίδων
+
+Το OmniRoute αφαιρεί τις εισερχόμενες κεφαλίδες πελάτη πριν από την προώθηση, ώστε ένα αίτημα που φτάνει από το Cursor να μη διαρρέει το `User-Agent: Cursor/X.Y.Z` σε έναν ανάντη Claude. Ανατρέξτε στο `src/shared/constants/upstreamHeaders.ts` για τη λίστα αποκλεισμού, η οποία διατηρείται συγχρονισμένη με τα σχήματα Zod και τις δοκιμές μονάδας.
+
+---
+
+## Ενημέρωση αποτυπωμάτων όταν ένας πάροχος τα αλλάζει
+
+1. Καταγράψτε την επίσημη κίνηση CLI με το `mitmproxy` (υποκλοπή TLS + εξαγωγή)
+2. Εξαγάγετε τα JA3/JA4 και την ακριβή σειρά των κεφαλίδων
+3. Ενημερώστε τη σχετική καταχώριση `CLI_FINGERPRINTS[...]`
+4. Αυξήστε την αντίστοιχη προεπιλεγμένη τιμή `*_USER_AGENT` στο `.env.example`
+5. Αν άλλαξε η ίδια η χειραψία TLS, ενημερώστε το σχετικό περίβλημα παρόχου ή την επιλογή `browser:` του wreq-js
+6. Εκτελέστε τις δοκιμές TLS για τον συγκεκριμένο πάροχο και μια μη αυτόματη δοκιμή-δείκτη στον ενεργό πάροχο
+7. Διανείμετε την αλλαγή σε μια έκδοση επιδιόρθωσης· τεκμηριώστε την στο `CHANGELOG.md`
+
+---
+
+## Δοκιμές
+
+- `open-sse/services/__tests__/claudeTlsClient.test.ts` — συμπεριφορά του κοινόχρηστου περιβλήματος TLS
+- `tests/unit/anthropic-cache-fingerprint.test.ts` — ντετερμινισμός αποτυπώματος
+- `tests/unit/chatgpt-web-source-retirement.test.ts` — η κοινή πηγή απόκρυψης ChatGPT Web παραμένει απούσα, ενώ το Codex Web παραμένει παρόν
+
+---
+
+## Δείτε επίσης
+
+- [RESILIENCE_GUIDE.md](../architecture/RESILIENCE_GUIDE.md) — τι συμβαίνει όταν μια διαδρομή stealth λαμβάνει ένα `403`
+- [TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md)
+- [ENVIRONMENT.md](../reference/ENVIRONMENT.md) — πλήρης αναφορά μεταβλητών περιβάλλοντος
+- [CLI-TOOLS.md](../reference/CLI-TOOLS.md) — προβολή της ροής εργασίας MITM για τον χειριστή

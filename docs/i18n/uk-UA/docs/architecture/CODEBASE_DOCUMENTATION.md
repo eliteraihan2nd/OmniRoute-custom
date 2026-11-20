@@ -1,0 +1,760 @@
+# OmniRoute Codebase Documentation (Українська)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇦 [bs](../../../bs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
+
+---
+
+> **Версія:** v3.8.51
+> **Останнє оновлення:** 2026-06-28
+> **Аудиторія:** Інженери, які роблять внесок в OmniRoute або створюють інтеграції на його основі.
+>
+> Високорівневі архітектурні діаграми та обґрунтування кожної підсистеми наведено у
+> [ARCHITECTURE.md](./ARCHITECTURE.md). Докладний опис окремих підсистем
+> (Auto Combo, сервер MCP, сервер A2A, навички, пам’ять, хмарні агенти, відмовостійкість,
+> стиснення тощо) наведено у відповідних файлах у цьому каталозі `docs/`.
+
+У цьому файлі описано **те, що наразі існує в репозиторії**, щоб новий інженер
+міг орієнтуватися в дереві, розуміти рівні середовища виконання та знати, куди додавати код,
+не створюючи нових модулів.
+
+---
+
+## 1. Технологічний стек
+
+| Аспект               | Вибір                                                                                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Вебфреймворк         | **Next.js 16** (App Router, автономний вивід, без глобального проміжного ПЗ)                                                             |
+| Мова                 | **TypeScript 6.0+** — ціль `ES2022`, `module: esnext`, `moduleResolution: bundler`, `strict: false`                                      |
+| Середовище           | **Node.js** `>=22.22.2 <23` або `>=24.0.0 <27` (обмеження забезпечується через `engines` + `SUPPORTED_NODE_RANGE`)                       |
+| База даних           | **SQLite** через `better-sqlite3` (одиночний екземпляр, журналювання WAL)                                                                |
+| Настільний клієнт    | **Electron 41** + `electron-builder` 26.10 (окремий робочий простір у `electron/`)                                                       |
+| Тести                | **Вбудований засіб запуску тестів Node** (модульні/інтеграційні), **Vitest** (MCP, autoCombo, кеш), **Playwright** (e2e + protocols-e2e) |
+| Збирання             | Автономне збирання Next.js через `scripts/build/build-next-isolated.mjs`                                                                 |
+| Лінтинг/форматування | Плоска конфігурація ESLint + Prettier (`lint-staged` через Husky pre-commit)                                                             |
+| Система модулів      | ESM усюди (`"type": "module"`)                                                                                                           |
+| Інтерфейс панелі     | **Tailwind CSS 4** + вбудований у репозиторій **Keak CI UI Kit** (`packages/ui-kit`), піктограми Lucide — див. `DESIGN_SYSTEM.md`        |
+| Робочі простори      | Робочі простори npm — `open-sse`, `packages/browser-pool`, `packages/ui-kit`                                                             |
+
+Псевдоніми шляхів (`tsconfig.json`):
+
+- `@/*` → `src/*`
+- `@omniroute/open-sse` → `open-sse/index.ts`
+- `@omniroute/open-sse/*` → `open-sse/*`
+- `@omniroute/ui-kit` → `packages/ui-kit/src`, `@omniroute/ui-kit/*` → `packages/ui-kit/src/*`
+
+Стандартний HTTP-порт: **`20128`** (API та панель керування працюють в одному процесі). Каталог
+даних задається змінною середовища `DATA_DIR`; стандартне значення — `~/.omniroute/`.
+
+---
+
+## 2. Структура репозиторію
+
+```
+OmniRoute/
+├── src/                  Застосунок Next.js (App Router, бібліотеки, домен, сервер, спільні компоненти)
+├── open-sse/             Робочий простір потокового рушія (@omniroute/open-sse)
+├── packages/             Робочі простори: ui-kit (вбудований Keak CI UI Kit), browser-pool
+├── electron/             Обгортка для настільного застосунку (основний процес Electron 41 + preload)
+├── bin/                  Точки входу CLI (omniroute, reset-password)
+├── tests/                Модульні, інтеграційні, e2e, protocols-e2e, translator, безпекові тести та фікстури
+├── scripts/              Допоміжні скрипти для збирання, синхронізації, перевірки, міграції та виконання
+├── docs/                 Загальнодоступна документація (цей каталог)
+├── public/               Статичні ресурси, маніфест PWA, service worker
+├── config/               Приклади конфігурації середовища виконання
+├── images/               Маркетингові матеріали та знімки екрана
+├── _ideia/, _references/, _mono_repo/, _tasks/   Внутрішні чернетки / планування (не постачаються)
+├── CLAUDE.md             Правила репозиторію для Claude Code
+├── AGENTS.md             Детальніший довідник з архітектури для агентів
+├── package.json          v3.8.51, корінь робочого простору
+└── tsconfig.json         Псевдоніми шляхів + основні параметри компілятора
+```
+
+---
+
+## 3. `src/` — Next.js
+
+```
+src/
+├── app/                  App Router pages + API routes
+├── lib/                  Core libraries (DB, auth, OAuth, skills, memory, …)
+├── domain/               Pure domain layer (policy, fallback, cost, lockout, …)
+├── server/               Server-only modules (authz, cors, auth)
+├── shared/               Types, constants, validation, contracts, utils (cross-boundary safe)
+├── mitm/                 Man-in-the-middle proxy helpers for CLI integration
+├── models/               Local model metadata / aliasing
+├── sse/                  Legacy SSE handlers that still live under src/ (not open-sse/)
+├── store/                Client-side state stores
+├── middleware/           Route-level middleware utilities (not Next.js global middleware)
+├── scripts/              In-tree scripts importable by app code
+├── types/                Ambient and shared TS types
+├── i18n/                 Locale bundles
+├── instrumentation.ts    Next.js instrumentation hook
+├── instrumentation-node.ts
+└── proxy.ts              Top-level proxy bootstrap helper
+```
+
+### 3.1 `src/app/` — App Router
+
+Маршрутизатор програм відкриває як панель інструментів UI, так і public/management HTTP API. Є** відсутність глобального проміжного ПЗ** Перехоплення — виконується для кожного маршруту.
+
+Сегменти верхнього рівня під `src/app/`:
+
+| шлях                                                                          | призначення                                                 |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| `api/`                                                                        | Усі маршрути HTTP API (див. розподіл нижче)                 |
+| `a2a/`                                                                        | A2A Кінцева точка JSON-RPC 2.0 (`POST /a2a`)                |
+| `.well-known/agent.json/`                                                     | Документ виявлення картки агента A2A                        |
+| `(dashboard)/`                                                                | Інформаційна панель UI (група маршрутів, без префікса URL ) |
+| `auth/`, `login/`, `forgot-password/`, `callback/`                            | Потік авторизації                                           |
+| `landing/`                                                                    | сторінка Marketing/landing                                  |
+| `docs/`                                                                       | Вбудований засіб перегляду документів API                   |
+| `status/`, `maintenance/`, `offline/`                                         | Операційні сторінки                                         |
+| `privacy/`, `terms/`                                                          | Юридичні сторінки                                           |
+| `400/`, `401/`, `403/`, `408/`, `429/`, `500/`, `502/`, `503/`                | Сторінки статичної помилки                                  |
+| `error.tsx`, `global-error.tsx`, `not-found.tsx`, `forbidden/`, `loading.tsx` | Рамкові межі error/loading                                  |
+| `layout.tsx`, `page.tsx`, `globals.css`, `manifest.ts`                        | Коренева оболонка                                           |
+
+#### 3.1.1 `src/app/(dashboard)/dashboard/` — UI сторінки
+
+`agents`, `analytics`, `api-manager`, `audit`, `auto-combo`, `batch`, `cache`, `changelog`, `cli-tools`, `cloud-agents`, `combos`, `compression`, `context`, `costs`, `endpoint`, `health`, `limits`, `logs`, `memory`, `onboarding`, `playground`, `providers`, `search-tools`, `settings`, `skills`, `system`, `translator`, `usage`, `webhooks`, плюс корінь `page.tsx`, `HomePageClient.tsx`, `BootstrapBanner.tsx`.
+
+#### 3.1.2 `src/app/api/` — Групи API верхнього рівня
+
+```
+src/app/api/
+├── a2a/{status, tasks}
+├── acp/
+├── admin/
+├── analytics/
+├── assess/
+├── auth/
+├── batches/
+├── cache/
+├── cli-tools/
+├── cloud/{codex-responses-ws}
+├── combos/
+├── compliance/
+├── compression/
+├── context/
+├── db/, db-backups/
+├── evals/
+├── fallback/
+├── files/
+├── health/
+├── init/
+├── internal/{concurrency}
+├── keys/
+├── logs/
+├── mcp/{audit, sse, status, stream, tools}
+├── memory/{health, [id]/, route.ts}
+├── model-combo-mappings/
+├── models/
+├── monitoring/
+├── oauth/
+├── openapi/
+├── policies/
+├── pricing/
+├── provider-metrics/, provider-models/, provider-nodes/
+├── providers/
+├── rate-limit/, rate-limits/
+├── resilience/
+├── restart/, shutdown/
+├── search/
+├── sessions/
+├── settings/
+├── skills/{executions, [id], install, marketplace, route.ts, skillssh}
+├── storage/
+├── sync/, synced-available-models/
+├── system/
+├── tags/
+├── telemetry/
+├── token-health/
+├── translator/
+├── tunnels/
+├── services/   Embedded service management (9router, cliproxy) — LOCAL_ONLY
+├── upstream-proxy/
+├── usage/
+├── v1/         OpenAI-compatible public API
+├── v1beta/     Gemini-style compat
+├── version-manager/
+└── webhooks/
+```
+
+#### 3.1.2a `src/app/api/services/` — Керування вбудованими службами
+
+Маршрути для встановлення, запуску, зупинки та моніторингу 9Router і CLIProxyAPI. Усі шляхи засекречені**LOCAL_ONLY** (тільки loopback, жорстке правило #17), оскільки вони можуть викликати `npm install` і породжувати дочірні процеси.
+
+```
+src/app/api/services/
+├── 9router/
+│   ├── _lib.ts             getOrInitSupervisor() helper
+│   ├── install/route.ts    POST — npm install via execFile
+│   ├── start/route.ts      POST — supervisor.start()
+│   ├── stop/route.ts       POST — supervisor.stop()
+│   ├── restart/route.ts    POST — supervisor.restart()
+│   ├── update/route.ts     POST — npm install newer version
+│   ├── rotate-key/route.ts POST — generate new API key + restart
+│   ├── status/route.ts     GET  — live + DB status + version metadata
+│   └── auto-start/route.ts POST — toggle auto_start flag
+├── cliproxy/
+│   ├── _lib.ts             getOrInitSupervisor() helper
+│   ├── install/route.ts    POST — npm install
+│   ├── start/route.ts      POST — supervisor.start()
+│   ├── stop/route.ts       POST — supervisor.stop()
+│   ├── restart/route.ts    POST — supervisor.restart()
+│   ├── update/route.ts     POST — npm install newer version
+│   ├── status/route.ts     GET  — live + DB status + version metadata
+│   └── auto-start/route.ts POST — toggle auto_start flag
+└── [name]/
+    └── logs/route.ts       GET  — SSE log tail (shared by all services)
+```
+
+Відповідна інформаційна панель UI: `src/app/(dashboard)/dashboard/providers/services/` — сторінка з двома вкладками (CLIProxyAPI + 9Router). Зворотний проксі для вбудованого UI 9Router: `src/app/(dashboard)/dashboard/providers/services/[name]/embed/[[...path]]/route.ts`
+
+Глибоке занурення: `docs/frameworks/EMBEDDED-SERVICES.md`
+
+#### 3.1.3 `src/app/api/v1/` — OpenAI-сумісний публічний API
+
+```
+v1/
+├── accounts/[id]/                       account lookup
+├── agents/tasks/[id]/, agents/tasks/    A2A-flavored task endpoints
+├── api/                                 internal API helpers exposed under v1/api
+├── audio/{speech, transcriptions}/      TTS + STT
+├── batches/[id]/{cancel}, batches/      OpenAI Batches API
+├── chat/completions/                    Chat Completions (the main endpoint)
+├── completions/                         Legacy text completions
+├── embeddings/                          Embeddings
+├── files/[id]/, files/                  Files API
+├── _helpers/                            Shared route helpers (no public URL)
+├── images/{edits, generations}/         Image gen + edit
+├── issues/                              Triage helper endpoints
+├── management/{proxies}/                Management-scoped routes inside v1
+├── messages/{count_tokens}/             Anthropic-style messages compat
+├── models/                              Model listing (`route.ts`, `catalog.ts`)
+├── moderations/                         Moderation
+├── music/                               Music gen
+├── providers/[provider]/                Per-provider operations
+├── quotas/{check}                       Quota probes
+├── registered-keys/                     Registered key admin
+├── rerank/                              Reranking
+├── responses/[...path]/                 OpenAI Responses API (catch-all)
+├── search/                              Web search
+├── videos/                              Video gen
+├── ws/                                  WebSocket bridge
+└── route.ts                             Index handler
+```
+
+Кожен файл маршруту дотримується одного шаблону:
+
+```
+Route → CORS preflight → Zod body validation → optional auth
+      → API key policy enforcement → handler delegation (open-sse)
+```
+
+`v1beta/` — це поверхня суміщення у стилі Gemini (тонка обгортка, яка перетворюється на той самий конвеєр `open-sse/handlers/` ).
+
+### 3.2 `src/lib/` — Основні бібліотеки
+
+Завжди імпортуйте дані, синхронізацію, OAuth, навички, пам’ять тощо через ці модулі. У таблиці групуються фактичні каталоги та важливі файли верхнього рівня.
+
+| Модуль            | призначення                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `a2a/`            | Сервер протоколу A2A : `taskManager.ts`, `streaming.ts`, `taskExecution.ts`, `routingLogger.ts`, `skills/` (6 навичок: аналіз витрат, звіт про стан здоров’я, виявлення провайдера, керування квотами, розумна маршрутизація, можливості списків)                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `acp/`            | Протокол керування агентом: `index.ts`, `manager.ts`, `registry.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `api/`            | Внутрішні помічники API : `requireManagementAuth.ts`, `requireCliToolsAuth.ts`, `errorResponse.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `auth/`           | `managementPassword.ts` (скидання пароля/хешування)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `batches/`        | Сервіс OpenAI пакетів API (`service.ts`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `catalog/`        | синхронізація каталогу OpenRouter (`openrouterCatalog.ts`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `cloudAgent/`     | Реєстр хмарних агентів: `api.ts`, `baseAgent.ts`, `db.ts`, `index.ts`, `registry.ts`, `types.ts`, `agents/{codex, devin, jules}.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `combos/`         | Помічники комбінованого вирішення                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `compliance/`     | Аудит аудиту провайдера + : `index.ts`, `providerAudit.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `config/`         | Клей конфігурації середовища виконання                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `db/`             | модулі домену SQLite (див. §3.2.1)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `display/`        | помічники UI/display, які використовуються відповідями API                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `embeddings/`     | Реєстр послуг вбудовування                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `env/`            | Env завантажує + самоаналіз                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `evals/`          | Час виконання Eval                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `guardrails/`     | `piiMasker.ts`, `promptInjection.ts`, `visionBridge.ts`, `visionBridgeHelpers.ts`, `registry.ts`, `base.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `jobs/`           | Фонові роботи (`autoUpdate.ts`, …)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `memory/`         | Постійна пам'ять: `store.ts`, `cache.ts`, `retrieval.ts`, `summarization.ts`, `extraction.ts`, `injection.ts`, `qdrant.ts`, `settings.ts`, `verify.ts`, `schemas.ts`, `types.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `monitoring/`     | `observability.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `oauth/`          | модулі провайдера OAuth/import (22): `agy`, `antigravity`, `claude`, `cline`, `codebuddy-cn`, `codex`, `cursor`, `devin-desktop`, `ghe-copilot`, `github`, `gitlab-duo`, `grok-cli-oauth`, `grok-cli`, `kilocode`, `kimi-coding`, `kiro`, `openference`, `qoder`, `trae`, `xai-oauth`, `zed-hosted`, `zed`, плюс `services/`, `utils/` і `constants/oauth.ts`                                                                                                                                                                                                                                                                                                                                             |
+| `plugins/`        | Завантажувач плагінів (`index.ts`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `promptCache/`    | `prefixAnalyzer.ts`, `index.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `providerModels/` | Життєвий цикл керованої моделі: `modelDiscovery.ts`, `managedModelImport.ts`, `managedAvailableModels.ts`, `cursorAgent.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `providers/`      | Помічники постачальників: `catalog.ts`, `validation.ts`, `imageValidation.ts`, `claudeExtraUsage.ts`, `codexConnectionDefaults.ts`, `codexFastTier.ts`, `webCookieAuth.ts`, `managedAvailableModels.ts`, `requestDefaults.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `resilience/`     | `settings.ts` — налаштування для автоматичного вимикача, відновлення, блокування                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `runtime/`        | Виявлення функції під час виконання                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `search/`         | `executeWebSearch.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `services/`       | Інфраструктура вбудованих служб: `ServiceSupervisor.ts` (загальний диспетчер дочірніх процесів із блокуванням операцій, кільцевим буфером, перевіркою працездатності), `bootstrap.ts` (реєстрація на рівні процесу та автоматичний запуск), `registry.ts` (інструментальна карта супервізора → ), `apiKey.ts` (сховище ключів AES-256-GCM ), `modelSync.ts` (періодична синхронізація моделі), `ringBuffer.ts` (5 MB циклічний буфер журналу), `healthCheck.ts` (зонд працездатності HTTP ), `types.ts`, `embedWsProxy.ts` (проксі WebSocket ), `installers/{ninerouter,cliproxy}.ts`. Дивіться `docs/frameworks/EMBEDDED-SERVICES.md`                                                                    |
+| `agentSkills/`    | Генератор + каталогу Agent Skills: `catalog.ts` (getCatalog/getSkillById/filterCatalog/computeCoverage), `generator.ts` (generateAgentSkills → записує `skills/{id}/SKILL.md`), `openapiParser.ts` (витягує кінцеві точки REST зі специфікації OpenAPI ), `cliRegistryParser.ts` (витягує підкоманди CLI із bin/cli-registry), `schemas.ts` (Zod: AgentSkillSchema, SkillCoverageSchema, ListQuerySchema, GenerateBodySchema), `types.ts` (AgentSkill, SkillCoverage, SkillMarkdown, GeneratorReport). Споживається маршрутами REST (`/api/agent-skills/*`), інструментами MCP (`omniroute_agent_skills_*`) і навиком A2A `list-capabilities`. Дивіться [AGENT-SKILLS.md](../frameworks/AGENT-SKILLS.md). |
+| `skills/`         | Структура навичок: `registry.ts`, `executor.ts`, `interception.ts`, `injection.ts`, `sandbox.ts`, `custom.ts`, `hybrid.ts`, `builtins.ts`, `a2a.ts`, `providerSettings.ts`, `schemas.ts`, `skillssh.ts`, `types.ts`, плюс `builtin/browser.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `spend/`          | `batchWriter.ts` (буфер із записом)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `sync/`           | `bundle.ts`, `tokens.ts` (хмарна синхронізація)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `system/`         | Помічники системного рівня                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `translator/`     | Клей перекладача верхнього рівня (делегати в `open-sse/translator/`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `usage/`          | Облік використання: `costCalculator.ts`, `tokenAccounting.ts`, `usageHistory.ts`, `aggregateHistory.ts`, `usageStats.ts`, `callLogs.ts`, `callLogArtifacts.ts`, `fetcher.ts`, `providerLimits.ts`, `migrations.ts`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `versionManager/` | Автоматичне оновлення маніфесту версії +                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `ws/`             | WebSocket міст                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `zed-oauth/`      | редактор Zed OAuth flow                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+
+Файли верхнього рівня в `src/lib/`:
+
+- Стару систему `localDb.ts` було видалено. Споживачі — імпортують окремі модулі `src/lib/db/*` безпосередньо.
+- `proxyHealth.ts`, `proxyLogger.ts`, `tokenHealthCheck.ts`, `localHealthCheck.ts`
+- `apiBridgeServer.ts`, `cacheLayer.ts`, `semanticCache.ts`, `settingsCache.ts`
+- `cloudSync.ts`, `initCloudSync.ts`
+- `cloudflaredTunnel.ts`, `ngrokTunnel.ts`, `tailscaleTunnel.ts`
+- `consoleInterceptor.ts`, `container.ts`, `gracefulShutdown.ts`, `idempotencyLayer.ts`
+- `ipUtils.ts`, `logEnv.ts`, `logPayloads.ts`, `logRotation.ts`
+- `modelAliasSeed.ts`, `modelCapabilities.ts`, `modelMetadataRegistry.ts`, `modelsDevSync.ts`
+- `piiSanitizer.ts`, `pricingSync.ts`
+- `apiKeyExposure.ts`, `cacheControlSettings.ts`, `dataPaths.ts`, `toolPolicy.ts`
+- `translatorEvents.ts`, `usageDb.ts`, `usageAnalytics.ts`, `webhookDispatcher.ts`
+
+#### 3.2.1 `src/lib/db/`
+
+Singleton база даних SQLite (`getDbInstance()` у `core.ts`, WAL журналювання).** Ніколи не пишіть необроблений SQL у маршрути чи обробники** — пройти через ці модулі.
+
+![Database schema overview (selected core tables)](../diagrams/exported/db-schema-overview.svg)
+
+> Джерело: [diagrams/db-schema-overview.mmd](../diagrams/db-schema-overview.mmd)
+
+Модулі домену (кожен володіє однією або кількома таблицями): `apiKeys.ts`, `backup.ts`, `batches.ts`, `cleanup.ts`, `cliToolState.ts`, `combos.ts`, `commandCodeAuth.ts`, `compression.ts`, `compressionAnalytics.ts`, `compressionCacheStats.ts`, `compressionCombos.ts`, `compressionScheduler.ts`, `contextHandoffs.ts`, `core.ts`, `creditBalance.ts`, `databaseSettings.ts`, `detailedLogs.ts`, `domainState.ts`, `encryption.ts`, `evals.ts`, `files.ts`, `healthCheck.ts`, `jsonMigration.ts`, `migrationRunner.ts`, `modelComboMappings.ts`, `models.ts`, `oneproxy.ts`, `prompts.ts`, `providers.ts`, `providerLimits.ts`, `proxies.ts`, `quotaSnapshots.ts`, `readCache.ts`, `reasoningCache.ts`, `registeredKeys.ts`, `secrets.ts`, `sessionAccountAffinity.ts`, `settings.ts`, `stateReset.ts`, `stats.ts`, `syncTokens.ts`, `tierConfig.ts`, `upstreamProxy.ts`, `versionManager.ts`, `webhooks.ts`.
+
+`migrations/` містить 168 версійних файлів `.sql` (ідемпотентних, транзакційних) і виконується `migrationRunner.ts` під час завантаження.
+
+Таблиці, створені під час міграцій (усього 123):
+
+`a`, `account_key_limits`, `api_keys`, `batches`, `call_logs`, `combo_adaptation_state`, `combos`, `command_code_auth_sessions`, `compression_analytics`, `compression_cache_stats`, `compression_combo_assignments`, `compression_combos`, `context_handoffs`, `daily_usage_summary`, `db_meta`, `domain_budgets`, `domain_circuit_breakers`, `domain_cost_history`, `domain_fallback_chains`, `domain_lockout_state`, `eval_cases`, `eval_runs`, `eval_suites`, `files`, `hourly_usage_summary`, `key_value`, `mcp_tool_audit`, `memories`, `model_combo_mappings`, `provider_connections`, `provider_key_limits`, `provider_nodes`, `proxy_assignments`, `proxy_logs`, `proxy_registry`, `quota_snapshots`, `reasoning_cache`, `registered_keys`, `request_detail_logs`, `routing_decisions`, `semantic_cache`, `session_account_affinity`, `skill_executions`, `skills`, `sync_tokens`, `tier_assignments`, `tier_config`, `upstream_proxy_config`, `usage_history`, `version_manager`, `webhooks` (plus FTS5 virtual tables for memory search).
+
+### 3.3 `src/domain/` — Рівень домену
+
+Доменні послуги та контракти на оцінку. Деякі модулі викликаються шляхом живого запиту; інші залишаються самостійними контрактами. Не думайте, що весь цей каталог вільний від I/O або що зміна кожного модуля впливає на робочу маршрутизацію.
+
+Поверхнями активної політики є `src/shared/utils/apiKeyPolicy.ts` та `src/sse/handlers/chat/resolvedModelPolicy.ts`. Обробка живого комбо та цільова роздільна здатність використовують `open-sse/services/combo.ts`. Перевірені контракти `policyEngine.ts` і `comboResolver.ts` разом із `src/lib/container.ts` не є проводкою перевіреного шляху запиту чату. Зберігайте їх окремо від цих активних поверхонь, плануючи зміну маршруту.
+
+| Файл                                       | призначення                                  |
+| ------------------------------------------ | -------------------------------------------- |
+| `policyEngine.ts`                          | Зарезервований контракт на оцінку політики   |
+| `fallbackPolicy.ts`                        | Запасне дерево рішень                        |
+| `costRules.ts`                             | Правила розрахунку собівартості              |
+| `lockoutPolicy.ts`                         | Модельні рішення щодо блокування             |
+| `tagRouter.ts`                             | Маршрутизація на основі тегів                |
+| `comboResolver.ts`                         | Зарезервований контракт комбо-вибору         |
+| `connectionModelRules.ts`                  | Фільтри моделі для кожного підключення       |
+| `modelAvailability.ts`                     | Перевірка наявності моделі                   |
+| `degradation.ts`                           | Переходи в режимі деградації                 |
+| `providerExpiration.ts`                    | Термін дії виявлення account/key минув       |
+| `quotaCache.ts`                            | Кешовані рішення щодо квот                   |
+| `responses.ts`, `omnirouteResponseMeta.ts` | Помічники форми відповіді                    |
+| `configAudit.ts`                           | Аудит змін конфігурації                      |
+| `assessment/`                              | Оцінка моделі (за RFC, частково реалізовано) |
+| `types.ts`                                 | Типи спільних доменів                        |
+
+### 3.4 `src/server/` — лише для сервера
+
+Неможливо імпортувати з клієнтських компонентів.
+
+```
+server/
+├── auth/loginGuard.ts
+├── authz/
+│   ├── classify.ts        Classifies routes as public vs management
+│   ├── assertAuth.ts      Assertion helper
+│   ├── context.ts         Per-request authz context
+│   ├── headers.ts
+│   ├── pipeline.ts        Authz pipeline
+│   ├── policies/          Concrete policies
+│   └── types.ts
+└── cors/origins.ts        CORS origin allowlist
+```
+
+### 3.5 `src/shared/` — Безпечний доступ
+
+Розділіть на ці підкаталоги:
+
+- `constants/` — `providers.ts` (каталог постачальників, перевірений Zod), `models.ts`, `modelSpecs.ts`, `modelCompat.ts`, `pricing.ts`, `cliTools.ts`, `cliCompatProviders.ts`, `routingStrategies.ts`, `comboConfigMode.ts`, `headers.ts`, `upstreamHeaders.ts` (список відхилень), `mcpScopes.ts`, `errorCodes.ts`, `publicApiRoutes.ts`, `batch.ts`, `batchEndpoints.ts`, `bodySize.ts`, `colors.ts`, `appConfig.ts`, `config.ts`, `sidebarVisibility.ts`, `visionBridgeDefaults.ts`.
+- `validation/` — `schemas.ts` (~ 80 схем Zod ), `compressionConfigSchemas.ts`, `providerSchema.ts`, `settingsSchemas.ts`, `helpers.ts`.
+- `contracts/` — публічні контракти API надіслані до npm.
+- `types/` — спільні типи TS.
+- `utils/` — `circuitBreaker.ts`, `apiAuth.ts`, `apiKey.ts`, `apiKeyPolicy.ts`, `api.ts`, `classify429.ts`, `cliCompat.ts`, `clipboard.ts`, `cloud.ts`, `cn.ts`, `cors.ts`, `fetchTimeout.ts`, `featureFlags.ts`, `formatting.ts`, `inputSanitizer.ts`, `logger.ts`, `machine.ts`, `machineId.ts`, `maskEmail.ts`, `modelCatalogSearch.ts`, `nodeRuntimeSupport.ts`, `parseApiKeys.ts`, `providerHints.ts`, `providerModelAliases.ts`, `releaseNotes.ts` `rateLimiter.ts` `a11yAudit.ts`, а також інформаційна панель hooks/components під `services/`, `network/`, `middleware/`, `schemas/`, `hooks/`, `components/`.
+- `components/` — компонент інформаційної панелі API (`index.tsx` barrel: `Button`, `Input`, `Select`, `Modal`, `Card`, `DataTable`, …). Примітиви є адаптерами над комплектом постачальника (`packages/ui-kit`, імпортований підшляхом компонента, таким як `@omniroute/ui-kit/button`), тому екрани зберігають свій імпорт, поки розмітка належить набору. Оболонка — це `layouts/DashboardLayout.tsx` → `layouts/DashboardShell.tsx` (набір `SidebarProvider`/`SidebarInset`) із `Sidebar.tsx` і `Header.tsx`; піктограми проходять через `Icon.tsx` і `constants/iconMap.ts`. Дивіться `docs/architecture/DESIGN_SYSTEM.md`.
+
+---
+
+## 4. `open-sse/` — Робоча область механізму потокового передавання
+
+Окрема робоча область npm, опублікована як `@omniroute/open-sse`. Володіє обробкою запитів, виконавцями, перекладачами, сервісами, трансформером і сервером MCP.
+
+```
+open-sse/
+├── index.ts                Public exports
+├── package.json            Workspace manifest
+├── tsconfig.json
+├── types.d.ts
+├── config/                 Provider registries, header profiles, identity, …
+├── handlers/               Request handlers (chat, embeddings, audio, image, …)
+├── executors/              170 provider executor modules (executor classes + per-provider helpers)
+├── translator/             Format conversion (OpenAI ↔ Claude ↔ Gemini ↔ Cursor ↔ Kiro)
+├── transformer/            Responses API ↔ Chat Completions stream transformer
+├── services/               80+ service modules (combos, fallback, quotas, identity, …)
+├── utils/                  Streaming helpers, TLS client, AWS SigV4, proxy fetch, …
+└── mcp-server/             MCP server (3 transports, 33 scopes, 110 tools)
+```
+
+### 4.1 `open-sse/handlers/`
+
+| обробник                | призначення                                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------------ |
+| `chatCore.ts`           | Основний конвеєр чату (кеш, обмеження швидкості, комбо-маршрутизація, диспетчеризація виконавця) |
+| `responsesHandler.ts`   | OpenAI Відповіді API точка входу                                                                 |
+| `embeddings.ts`         | Вбудовування                                                                                     |
+| `imageGeneration.ts`    | Генерація зображення                                                                             |
+| `audioSpeech.ts`        | Синтез мовлення                                                                                  |
+| `audioTranscription.ts` | Перетворення мови в текст                                                                        |
+| `videoGeneration.ts`    | Генерація відео                                                                                  |
+| `musicGeneration.ts`    | Музичне покоління                                                                                |
+| `rerank.ts`             | Реранжування                                                                                     |
+| `moderations.ts`        | Модерація                                                                                        |
+| `search.ts`             | Пошук в Інтернеті                                                                                |
+| `sseParser.ts`          | аналізатор подій SSE                                                                             |
+| `usageExtractor.ts`     | Витягніть підрахунки токенів із висхідних потоків                                                |
+| `responseSanitizer.ts`  | Видалення шуму, характерного для провайдера                                                      |
+| `responseTranslator.ts` | Склейка між відповіддю провайдера та рівнем перекладача                                          |
+
+### 4.2 `open-sse/executors/`
+
+170 модулів виконавців верхнього рівня (`*.ts` мінус `base.ts`, `index.ts` і тести — кількість вимірів `npm run check:docs-counts` ). Кожен клас виконавця розширює `BaseExecutor` (`base.ts`) безпосередньо або через `DefaultExecutor` або інший виконавець; решта модулів є допоміжними для кожного постачальника (схеми інструментів, адаптери fetch/TTS, обробники особливостей). До виконавців належать:
+
+`antigravity`, `azure-openai`, `blackbox-web`, `cliproxyapi`, `chatgpt-web-codex`, `cloudflare-ai`, `codex`, `commandCode`, `cursor`, `default`, `devin-cli`, `muse-spark-web`, `nlpcloud`, `opencode`, `perplexity-web`, `petals`, `pollinations`, `qoder`, `vertex`, `devin-desktop`, а також `claudeIdentity.ts` (помічник спільної ідентифікації) та `index.ts` (реєстр).
+
+> Примітка: постачальники, яких тут немає в списку, обслуговуються `default.ts` за допомогою загального OpenAI-сумісного виконавця. Повний каталог постачальників (394 постачальники) знаходиться в `src/shared/constants/providers.ts`.
+
+### 4.3 `open-sse/translator/`
+
+Hub-and-spoke переклад (OpenAI — центр).
+
+- **9 запитів перекладачів** (`translator/request/`): `antigravity-to-openai`, `claude-to-gemini`, `claude-to-openai`, `gemini-to-openai`, `openai-responses`, `openai-to-claude`, `openai-to-cursor`, `openai-to-gemini`, `openai-to-kiro`.
+- **9 перекладачів відповідей** (`translator/response/`): `claude-to-openai`, `cursor-to-openai`, `gemini-to-claude`, `gemini-to-openai`, `kiro-to-openai`, `openai-responses`, `openai-to-antigravity`, `openai-to-claude`.
+- **9 помічників** (`translator/helpers/`): `claudeHelper`, `geminiHelper`, `geminiToolsSanitizer`, `maxTokensHelper`, `openaiHelper`, `responsesApiHelper`, `schemaCoercion`, `toolCallHelper`, а також допоміжні тести.
+- **Імідж-помічники** (`translator/image/sizeMapper.ts`).
+- Верхній рівень: `bootstrap.ts`, `formats.ts`, `registry.ts`, `index.ts`.
+
+### 4.4 `open-sse/transformer/`
+
+- `responsesTransformer.ts` — `TransformStream` -based Відповіді API ↔ Конвертер завершених чатів (використовується маршрутом `responses/` catch-all).
+
+### 4.5 `open-sse/services/`
+
+Основні моменти (повний список у `open-sse/services/`):
+
+| Занепокоєння              | Файли                                                                                                                                                                                                                                                    |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Комбінована маршрутизація | `combo.ts` (22 стратегії), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                                     |
+| Двигун Auto Combo         | `autoCombo/` — `engine.ts`, `scoring.ts`, `taskFitness.ts`, `virtualFactory.ts`, `modePacks.ts`, `autoPrefix.ts`, `persistence.ts`, `providerDiversity.ts`, `providerRegistryAccessor.ts`, `routerStrategy.ts`, `selfHealing.ts`, `index.ts`             |
+| Стійкість                 | `accountFallback.ts` (перезарядка + блокування), `errorClassifier.ts`, `requestRejectedStreak.ts`, `emergencyFallback.ts`, `rateLimitManager.ts`, `rateLimitSemaphore.ts`, `accountSemaphore.ts`, `accountSelector.ts`                                   |
+| Квоти                     | `quotaMonitor.ts`, `quotaPreflight.ts`, `bailianQuotaFetcher.ts`, `codexQuotaFetcher.ts`, `deepseekQuotaFetcher.ts`, `openrouterQuotaFetcher.ts`, `openrouterFreeWindow.ts`, `llmgatewayQuotaFetcher.ts`, `crofUsageFetcher.ts`, `antigravityCredits.ts` |
+| Кешування                 | `reasoningCache.ts`, `searchCache.ts`, `signatureCache.ts`, `requestDedup.ts`                                                                                                                                                                            |
+| Інтелект маршрутизації    | `intentClassifier.ts`, `taskAwareRouter.ts`, `backgroundTaskDetector.ts`, `volumeDetector.ts`, `wildcardRouter.ts`, `workflowFSM.ts`, `specificityDetector.ts`, `specificityRules.ts`, `specificityTypes.ts`                                             |
+| Обробка моделі            | `modelCapabilities.ts`, `modelDeprecation.ts`, `modelFamilyFallback.ts`, `modelStrip.ts`, `model.ts`, `provider.ts`, `providerRequestDefaults.ts`, `providerCostData.ts`, `payloadRules.ts`                                                              |
+| Компресія                 | `compression/` — електропроводка двигуна повного стиснення                                                                                                                                                                                               |
+| Сеанс токена +            | `tokenRefresh.ts`, `sessionManager.ts`, `apiKeyRotator.ts`, `contextManager.ts`, `contextHandoff.ts`, `systemPrompt.ts`, `roleNormalizer.ts`, `responsesInputSanitizer.ts`, `toolSchemaSanitizer.ts`, `toolLimitDetector.ts`, `thinkingBudget.ts`        |
+| Рівень / маніфест         | `tierResolver.ts`, `tierConfig.ts`, `tierDefaults.json`, `tierTypes.ts`, `manifestAdapter.ts`                                                                                                                                                            |
+| IP / мережа               | `ipFilter.ts`, `webSearchFallback.ts`                                                                                                                                                                                                                    |
+| Партії                    | `batchProcessor.ts`                                                                                                                                                                                                                                      |
+| Використання              | `usage.ts`                                                                                                                                                                                                                                               |
+
+### 4.6 `open-sse/mcp-server/`
+
+- **110 унікальних інструментів** підключено до `server.ts` (45 канонічних пам’яті `schemas/tools.ts` +, навичок, навичок GitHub, пулу, гейміфікації, плагіна, Notion, Obsidian, локального корпусу та модулів стиснення — union, підрахованих `countUniqueMcpTools`).
+- **3 транспорти** : stdio, HTTP Streamable, SSE.
+- **33 приціли** застосований під час виконання базового списку — в `src/shared/constants/mcpScopes.ts`, повний набір є об’єднанням областей, оголошених кожним модулем інструменту.
+- Таблиця аудиту: `mcp_tool_audit` (заповнюється `audit.ts`).
+- Файли: `server.ts`, `index.ts`, `httpTransport.ts`, `audit.ts`, `scopeEnforcement.ts`, `runtimeHeartbeat.ts`, `descriptionCompressor.ts`, `schemas/{tools, a2a, audit, index}.ts`, `tools/{advancedTools, compressionTools, memoryTools, skillTools}.ts`, а також тести під `__tests__/`.
+- Перегляньте повний каталог інструментів [MCP-SERVER.md](../frameworks/MCP-SERVER.md).
+
+### 4.7 `open-sse/config/`
+
+Реєстри постачальників (`providerRegistry.ts`, `providerModels.ts`, `providerHeaderProfiles.ts`), реєстри моделей для кожного формату (`audioRegistry.ts`, `embeddingRegistry.ts`, `imageRegistry.ts`, `moderationRegistry.ts`, `musicRegistry.ts`, `rerankRegistry.ts`, `searchRegistry.ts`, `videoRegistry.ts`), помічники ідентифікації (`codexIdentity.ts`, `codexInstructions.ts`, `anthropicHeaders.ts`, `antigravityUpstream.ts`, `antigravityModelAliases.ts`, `cliFingerprints.ts`, `toolCloaking.ts`, `defaultThinkingSignature.ts`), помічники облікових даних (`credentialLoader.ts`, `codexClient.ts`) і хмарні адаптери (`azureAi.ts`, `bedrock.ts`, `datarobot.ts`, `glmProvider.ts`, `maritalk.ts`, `oci.ts`, `petals.ts`, `runway.ts`, `sap.ts`, `watsonx.ts`, `ollamaModels.ts`, `errorConfig.ts`, `constants.ts`, `registryUtils.ts`).
+
+### 4.8 `open-sse/utils/`
+
+Потокові примітиви та помічники провайдерів: `stream.ts`, `streamHandler.ts`, `streamHelpers.ts`, `streamPayloadCollector.ts`, `streamReadiness.ts`, `sseHeartbeat.ts`, `proxyFetch.ts`, `proxyDispatcher.ts`, `tlsClient.ts`, `networkProxy.ts`, `awsSigV4.ts`, `cacheControlPolicy.ts`, `cursorChecksum.ts`, `cursorAgentProtobuf.ts`, `cursorVersionDetector.ts`, `comfyuiClient.ts`, `kieTask.ts`, `bypassHandler.ts`, `aiSdkCompat.ts`, `thinkTagParser.ts`, `urlSanitize.ts`, `usageTracking.ts`, `requestLogger.ts`, `progressTracker.ts`, `cors.ts`, `error.ts`, `logger.ts`, `sleep.ts`, `ollamaTransform.ts`.
+
+---
+
+## 5. `electron/` — Обгортка для настільних систем
+
+```
+electron/
+├── main.js                  Головний процес Electron
+├── preload.js               Міст попереднього завантаження (contextIsolation увімкнено)
+├── types.d.ts
+├── package.json             Конфігурація electron-builder, версія 3.8.51
+├── README.md
+├── assets/                  Ресурси збірки (піктограми, дозволи, …)
+├── node_modules/            Окремий каталог node_modules (better-sqlite3, electron-updater)
+└── dist-electron/           Результати збірки (не додаються до репозиторію)
+```
+
+П’ять npm-скриптів у корені робочого простору: `electron:dev`, `electron:build`,
+`electron:build:{win,mac,linux}`, `electron:smoke:packaged`. Автоматичне оновлення виконується через
+`electron-updater`, спрямований на стрічку релізів GitHub.
+
+---
+
+## 6. `bin/` — CLI
+
+```
+bin/
+├── omniroute.mjs           Головна точка входу CLI (Node ESM)
+├── reset-password.mjs      Скидання пароля керування через CLI
+├── mcp-server.mjs          Засіб запуску сервера MCP (stdio)
+├── nodeRuntimeSupport.mjs  Перевірка версії Node
+└── cli/
+    ├── program.mjs         Побудова програми Commander
+    ├── runtime.mjs         Допоміжний засіб withRuntime (спочатку сервер, резервно — БД)
+    ├── output.mjs          Засоби форматування виведення (json/jsonl/table/csv)
+    ├── i18n.mjs            Допоміжний засіб t() із локалями
+    ├── api.mjs             Допоміжний засіб отримання даних API
+    ├── data-dir.mjs
+    ├── encryption.mjs
+    ├── sqlite.mjs
+    └── commands/
+        ├── registry.mjs    Реєстрація команд
+        ├── setup.mjs
+        ├── doctor.mjs
+        ├── providers.mjs
+        └── ...             (по одному файлу на команду/групу)
+```
+
+У `package.json` → `bin` представлено два виконувані файли:
+
+- `omniroute` → `bin/omniroute.mjs`
+- `omniroute-reset-password` → `bin/reset-password.mjs`
+
+---
+
+## 7. `tests/`
+
+| Каталог                                              | Тип                                                                                                                  |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `tests/unit/`                                        | Модульні тести через вбудований засіб запуску тестів Node (1821 файл, а також підкаталоги `api/`, `auth/`, `authz/`) |
+| `tests/integration/`                                 | Міжмодульні тести та тести стану БД                                                                                  |
+| `tests/e2e/`                                         | Тести інтерфейсу користувача Playwright                                                                              |
+| `tests/e2e/protocol-clients.test.ts`                 | Наскрізні тести протоколів MCP/A2A                                                                                   |
+| `tests/translator/`                                  | Тести, специфічні для транслятора                                                                                    |
+| `tests/security/`                                    | Регресійні тести безпеки                                                                                             |
+| `tests/load/`                                        | Тести навантаження / стрес-тести                                                                                     |
+| `tests/golden-set/`                                  | Еталонні результати для регресійних тестів транслятора                                                               |
+| `tests/helpers/`, `tests/fixtures/`, `tests/manual/` | Допоміжні матеріали                                                                                                  |
+
+Поширені команди:
+
+| Команда                                                  | Що вона запускає                                                              |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `npm run test:unit`                                      | Усі `tests/unit/*.test.ts` через засіб запуску тестів Node (паралельність 10) |
+| `npm run test:vitest`                                    | Набір тестів Vitest (MCP, autoCombo, кеш)                                     |
+| `npm run test:e2e`                                       | Набір тестів інтерфейсу користувача Playwright                                |
+| `npm run test:protocols:e2e`                             | Наскрізні тести протоколів MCP + A2A                                          |
+| `npm run test:coverage`                                  | Порогова перевірка покриття (≥60% рядків/інструкцій/функцій/гілок)            |
+| `node --import tsx/esm --test tests/unit/<file>.test.ts` | Запуск одного файлу                                                           |
+
+---
+
+## 8. `scripts/`
+
+Організовано в 6 підпапок за призначенням.
+
+- **`scripts/build/`** — `build-next-isolated.mjs`, `prepublish.ts`,
+  `prepare-electron-standalone.mjs`, `pack-artifact-policy.ts`,
+  `validate-pack-artifact.ts`, `postinstall.mjs`, `postinstallSupport.mjs`,
+  `uninstall.mjs`, `bootstrap-env.mjs`, `runtime-env.mjs`,
+  `native-binary-compat.mjs`.
+- **`scripts/dev/`** — `run-next.mjs`, `run-next-playwright.mjs`,
+  `run-standalone.mjs`, `standalone-server-ws.mjs`, `responses-ws-proxy.mjs`,
+  `v1-ws-bridge.mjs`, `smoke-electron-packaged.mjs`,
+  `run-playwright-tests.mjs`, `run-ecosystem-tests.mjs`,
+  `run-protocol-clients-tests.mjs`, `sync-env.mjs`, `healthcheck.mjs`,
+  `system-info.mjs`, а також допоміжні засоби лише для читання для нагляду за PR:
+  `ci-discriminate.sh` (сортує сигнатури невдалих перевірок PR на власні / успадковані /
+  невідомі шляхом порівняння з еталонним PR або задачею щодо помилок у базовій гілці) і `audit-worktree.sh`
+  (змінені файли, захищені компоненти, видалені твердження, кількість придушень, залишкові
+  тимчасові tsconfig-файли, голова PR порівняно з локальним HEAD — перед прийняттям PR виконавця).
+- **`scripts/check/`** — `check-cycles.mjs`, `check-docs-sync.mjs`,
+  `check-docs-counts-sync.mjs`, `check-env-doc-sync.mjs`,
+  `check-deprecated-versions.mjs`, `check-route-validation.mjs`,
+  `check-t11-any-budget.mjs`, `check-pr-test-policy.mjs`,
+  `check-supported-node-runtime.ts`, `test-report-summary.mjs`.
+- **`scripts/docs/`** — `generate-docs-index.mjs`, `gen-provider-reference.ts`.
+- **`scripts/i18n/`** — `generate-multilang.mjs`, `run-visual-qa.mjs`,
+  `generate-qa-checklist.mjs`, `apply-priority-overrides.mjs`,
+  `validate_translation.py`, `check_translations.py`, `i18n_autotranslate.py`,
+  `untranslatable-keys.json`.
+- **`scripts/ad-hoc/`** — `cursor-tap.cjs`, `sync-cursor-models.mjs`,
+  `migrate-env.mjs`, `dbsetup.js`.
+
+---
+
+## 9. Конвеєр запитів (підсумок)
+
+![Request pipeline (/v1/chat/completions)](../diagrams/exported/request-pipeline.svg)
+
+> Джерело: [diagrams/request-pipeline.mmd](../diagrams/request-pipeline.mmd)
+
+```
+Client request
+  → /v1/chat/completions (route.ts)
+     CORS preflight check
+     Zod validation (chatCompletionsSchema in shared/validation/schemas.ts)
+     Auth (extractApiKey + isValidApiKey OR requireManagementAuth)
+     Route authorization (src/server/authz/pipeline.ts)
+     API-key policy (src/shared/utils/apiKeyPolicy.ts; enforced on the selected path)
+     Guardrails (PII masker, prompt injection, vision bridge)
+  → handleChatCore() (open-sse/handlers/chatCore.ts)
+     Cache check (semantic + read cache)
+     Rate limit (rateLimitManager, accountSemaphore)
+     Combo routing (if model resolves to a combo)
+       resolveComboTargets (open-sse/services/combo.ts) → per-target dispatch
+     translateRequest()  (open-sse/translator/request/*)
+     getExecutor(providerId).execute()  (open-sse/executors/*)
+       fetch upstream → retry/backoff via accountFallback
+     translateResponse() (open-sse/translator/response/*)
+     SSE stream OR JSON response
+     If Responses API: TransformStream via open-sse/transformer/responsesTransformer.ts
+  → Compliance audit (src/lib/compliance/)
+  → Response to client
+```
+
+### Стан виконання стійкості (три механізми)
+
+| Механізм                        | Область застосування             | Де                                                                                                           |
+| ------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Автоматичний вимикач провайдера | Цілий провайдер                  | `src/shared/utils/circuitBreaker.ts`, зберігся в `domain_circuit_breakers`                                   |
+| Перезарядка підключення         | Один account/key                 | `markAccountUnavailable()` в `src/sse/services/auth.ts`; споживається `accountFallback.checkFallbackError()` |
+| Блокування моделі               | Провайдер + підключення + модель | `open-sse/services/accountFallback.ts`, зберігся в `domain_lockout_state`                                    |
+
+Перегляньте [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) і спеціальний розділ у [CLAUDE.md](../../CLAUDE.md).
+
+---
+
+## 10. Як зробити внесок
+
+### Додайте нового провайдера
+
+1. Зареєструватися в `src/shared/constants/providers.ts` (перевірено Zod під час завантаження).
+2. Додайте виконавця в `open-sse/executors/` якщо потрібна спеціальна логіка (розширте `BaseExecutor`).
+3. Додайте перекладач у `open-sse/translator/` якщо він не розмовляє форматом OpenAI.
+4. Якщо на основі OAuth, додайте конфігурацію в `src/lib/oauth/providers/` та `src/lib/oauth/services/`.
+5. Зареєструйте моделі в `open-sse/config/providerRegistry.ts` (або в реєстрі для певного формату в `open-sse/config/`).
+6. Пишіть тести під `tests/unit/`.
+
+### Додайте новий маршрут API
+
+1. Створіть `src/app/api/your-route/route.ts`.
+2. Дотримуйтеся шаблону: CORS → Zod перевірка тіла → auth → делегування обробника.
+3. Якщо нова форма запиту: додайте схему Zod в `src/shared/validation/schemas.ts`.
+4. Якщо лише для керування: додайте шлях до `src/shared/constants/publicApiRoutes.ts` (список заборон для публічної поверхні API ).
+5. Додати тести в `tests/unit/`.
+6. Оновіть `docs/reference/API_REFERENCE.md` та `docs/openapi.yaml`.
+
+### Додайте новий модуль DB
+
+1. Створіть `src/lib/db/yourModule.ts` та імпортуйте `getDbInstance()` із `./core.ts`.
+2. Експорт функцій CRUD для вашого домену.
+3. Якщо нові таблиці: додайте міграцію за допомогою `npm run db:new-migration -- <description>` (записує `src/lib/db/migrations/YYYYMMDDHHMMSS_<description>.sql`, UTC; див. `docs/ops/DATABASE_GUIDE.md`), ідемпотентний, транзакційний.
+4. Імпортери використовують прямий імпорт із `@/lib/db/yourModule` (без бареля — старий шар реекспорту `localDb.ts` було видалено).
+5. Додати тести в `tests/unit/`.
+
+### Додайте новий інструмент MCP
+
+1. Додайте визначення інструменту в `open-sse/mcp-server/tools/` (або розширте `open-sse/mcp-server/schemas/tools.ts`).
+2. Призначте відповідні області в `src/shared/constants/mcpScopes.ts`.
+3. Зареєструйте інструмент у `open-sse/mcp-server/server.ts`.
+4. Додати тести в `open-sse/mcp-server/__tests__/`.
+5. Оновіть [MCP-SERVER.md](../frameworks/MCP-SERVER.md).
+
+### Додайте новий навик A2A
+
+Див. [A2A-SERVER.md § Додавання нового навику](../frameworks/A2A-SERVER.md). Навички знаходяться в `src/lib/a2a/skills/` і реєструються через диспетчер завдань A2A.
+
+---
+
+## 11. Угоди
+
+- **Стиль коду**: відступ у 2 пробіли, подвійні лапки, ширина 100 символів, крапки з комою,
+  кінцеві коми `es5` — забезпечується Prettier через `lint-staged`.
+- **Імпорти**: зовнішні → внутрішні (`@/`, `@omniroute/open-sse`) → відносні.
+- **Іменування**: файли — `camelCase` або `kebab-case`, компоненти — `PascalCase`,
+  константи — `UPPER_SNAKE`.
+- **ESLint**: `no-eval`, `no-implied-eval`, `no-new-func` = `error` скрізь;
+  `no-explicit-any` = `warn` у `open-sse/` і `tests/`, в інших місцях — `error`.
+- **TypeScript**: `strict: false` (успадкований підхід). На межах між модулями віддавайте перевагу
+  явним типам замість виведення типів.
+- **База даних**: ніколи не пишіть необроблений SQL у маршрутах або обробниках — завжди використовуйте
+  модулі `src/lib/db/`. Ніколи не імпортуйте через агрегувальний модуль — безпосередньо використовуйте конкретні модулі `src/lib/db/*`.
+- **Типізація сутностей БД (#3512)**: функція, яка записує або читає структуру
+  рядка таблиці БД, повинна приймати/повертати іменований інтерфейс TS, що віддзеркалює
+  стовпці цієї таблиці у співвідношенні 1:1, а не `any` чи вбудований анонімний тип у місці виклику. Розміщуйте
+  інтерфейс поруч із функцією (наприклад, `export interface UsageEntry` у
+  `src/lib/usage/usageHistory.ts` над `saveRequestUsage`), залишайте окремі
+  поля необов’язковими або такими, що допускають `null`, коли різні модулі запису заповнюють рядок
+  поступово, і віддавайте перевагу `unknown` замість `any` для поля, структура якого
+  відрізняється залежно від виклику (задокументуйте це в полі, наприклад, `UsageEntry.tokens`
+  приймає як необроблені дані про використання у форматі провайдера, так і нормалізовану структуру). Коли кількість
+  `any` у файлі завдяки цьому досягне нуля, додайте його до списку дозволених
+  `check:any-budget:t11` (`scripts/check/check-t11-any-budget.mjs`,
+  `maxAny: 0`), щоб запобігти регресії. Це угода для першого етапу — ширше
+  усунення анонімних `any` виконується ітеративно в решті
+  кодової бази.
+- **Помилки**: використовуйте try/catch із конкретними типами помилок, ведіть журнал із контекстом pino. Ніколи
+  не ігноруйте помилки без повідомлення в потоках SSE; використовуйте сигнали переривання для очищення.
+- **Безпека**: ніколи не використовуйте `eval()` / `new Function()` / неявний eval. Перевіряйте
+  всі вхідні дані за допомогою Zod. Шифруйте облікові дані під час зберігання (AES-256-GCM). Підтримуйте
+  список заборон `src/shared/constants/upstreamHeaders.ts` узгодженим із
+  шаром очищення/перевірки.
+- **Коміти**: Conventional Commits — `feat(scope): subject`. Дозволені області:
+  `db`, `sse`, `oauth`, `dashboard`, `api`, `cli`, `docker`, `ci`, `mcp`,
+  `a2a`, `memory`, `skills`.
+- **Гілки**: префікси `feat/`, `fix/`, `refactor/`, `docs/`, `test/`,
+  `chore/`. Ніколи не робіть коміти безпосередньо до `main`.
+- **Husky**: перед комітом запускаються `lint-staged` + `check:docs-sync` +
+  `check:any-budget:t11`; перед надсиланням змін запускаються `check:any-budget:t11` + `check:tracked-artifacts` (швидкі перевірки; без `test:unit`).
+
+---
+
+## 12. Жорсткі правила (з CLAUDE.md)
+
+1. Ніколи не комітьте секрети чи облікові дані.
+2. Ніколи не використовуйте імпорти через barrel-файли — імпортуйте безпосередньо з конкретних модулів `src/lib/db/*`.
+3. Ніколи не використовуйте `eval()` / `new Function()` / неявний eval.
+4. Ніколи не комітьте безпосередньо в `main`.
+5. Ніколи не пишіть необроблений SQL у маршрутах — завжди використовуйте модулі `src/lib/db/`.
+6. Ніколи не ігноруйте помилки без повідомлення в потоках SSE.
+7. Завжди перевіряйте вхідні дані за допомогою схем Zod.
+8. Завжди додавайте тести, змінюючи код для продакшену.
+9. Покриття має залишатися ≥ 60% (інструкції, рядки, функції, гілки).
+
+---
+
+## 13. Дивіться також
+
+- [ARCHITECTURE.md](./ARCHITECTURE.md) — високорівнева архітектура та обов’язки
+  модулів.
+- [API_REFERENCE.md](../reference/API_REFERENCE.md) — довідник публічного API та API керування.
+- [FEATURES.md](../guides/FEATURES.md) — матриця функцій і ключові особливості версій.
+- [RESILIENCE_GUIDE.md](./RESILIENCE_GUIDE.md) — поглиблений огляд автоматичного вимикача, періоду
+  очікування та блокування.
+- [AUTO-COMBO.md](../routing/AUTO-COMBO.md) — оцінювання та стратегії Auto Combo.
+- [MCP-SERVER.md](../frameworks/MCP-SERVER.md) — повний каталог інструментів MCP і транспортів.
+- [A2A-SERVER.md](../frameworks/A2A-SERVER.md) — навички та виявлення протоколу A2A.
+- [COMPRESSION_GUIDE.md](../compression/COMPRESSION_GUIDE.md) — стиснення RTK + Caveman.
+- [CLI-TOOLS.md](../reference/CLI-TOOLS.md) — інтеграції CLI.
+- [ELECTRON_GUIDE.md](../guides/ELECTRON_GUIDE.md) (якщо є), [DOCKER_GUIDE.md](../guides/DOCKER_GUIDE.md), [FLY_IO_DEPLOYMENT_GUIDE.md](../ops/FLY_IO_DEPLOYMENT_GUIDE.md), [VM_DEPLOYMENT_GUIDE.md](../ops/VM_DEPLOYMENT_GUIDE.md), [TERMUX_GUIDE.md](../guides/TERMUX_GUIDE.md), [PWA_GUIDE.md](../guides/PWA_GUIDE.md) — цільові середовища розгортання.
+- [TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md) — поширені операційні проблеми.
+- [CONTRIBUTING.md](../../CONTRIBUTING.md) — робочий процес для учасників проєкту.
+- [CLAUDE.md](../../CLAUDE.md) — правила репозиторію для Claude Code (основне джерело
+  багатьох наведених вище домовленостей).
+- [AGENTS.md](../../AGENTS.md) — докладніший довідник з архітектури, який використовують агенти.

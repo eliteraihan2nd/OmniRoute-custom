@@ -1,0 +1,427 @@
+# 📖 Setup Guide — OmniRoute (Türkçe)
+
+🌐 **Languages:** 🇺🇸 [English](../../../../guides/SETUP_GUIDE.md) · 🇪🇹 [am](../../../am/docs/guides/SETUP_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/guides/SETUP_GUIDE.md) · 🇦🇿 [az](../../../az/docs/guides/SETUP_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/guides/SETUP_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/guides/SETUP_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/guides/SETUP_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/guides/SETUP_GUIDE.md) · 🇩🇰 [da](../../../da/docs/guides/SETUP_GUIDE.md) · 🇩🇪 [de](../../../de/docs/guides/SETUP_GUIDE.md) · 🇬🇷 [el](../../../el/docs/guides/SETUP_GUIDE.md) · 🇪🇸 [es](../../../es/docs/guides/SETUP_GUIDE.md) · 🇪🇪 [et](../../../et/docs/guides/SETUP_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/guides/SETUP_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/guides/SETUP_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/guides/SETUP_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/guides/SETUP_GUIDE.md) · 🇮🇱 [he](../../../he/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/guides/SETUP_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/guides/SETUP_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/guides/SETUP_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/guides/SETUP_GUIDE.md) · 🇮🇩 [id](../../../id/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/guides/SETUP_GUIDE.md) · 🇮🇹 [it](../../../it/docs/guides/SETUP_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/guides/SETUP_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/guides/SETUP_GUIDE.md) · 🇰🇭 [km](../../../km/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/guides/SETUP_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/guides/SETUP_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/guides/SETUP_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/guides/SETUP_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/guides/SETUP_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/guides/SETUP_GUIDE.md) · 🇲🇲 [my](../../../my/docs/guides/SETUP_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/guides/SETUP_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/guides/SETUP_GUIDE.md) · 🇳🇴 [no](../../../no/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [or](../../../or/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/guides/SETUP_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/guides/SETUP_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/guides/SETUP_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/guides/SETUP_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/guides/SETUP_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/guides/SETUP_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/guides/SETUP_GUIDE.md) · 🇱🇰 [si](../../../si/docs/guides/SETUP_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/guides/SETUP_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/guides/SETUP_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/guides/SETUP_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/guides/SETUP_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/guides/SETUP_GUIDE.md) · 🇮🇳 [te](../../../te/docs/guides/SETUP_GUIDE.md) · 🇹🇭 [th](../../../th/docs/guides/SETUP_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/guides/SETUP_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/guides/SETUP_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/guides/SETUP_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/guides/SETUP_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/guides/SETUP_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/guides/SETUP_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/guides/SETUP_GUIDE.md)
+
+---
+
+> OmniRoute için eksiksiz kurulum başvurusu. Hızlı sürüm için [README'deki Hızlı Başlangıç](../README.md#-quick-start) bölümüne bakın.
+
+## İçindekiler
+
+- [Kurulum Yöntemleri](#install-methods)
+- [CLI Aracı Yapılandırması](#cli-tool-configuration)
+- [Protokol Kurulumu (MCP + A2A)](#protocol-setup-mcp--a2a)
+- [Zaman Aşımı Yapılandırması](#timeout-configuration)
+- [Bölünmüş Port Modu](#split-port-mode)
+- [Void Linux (xbps-src)](#void-linux-xbps-src-template)
+- [Kaldırma](#uninstalling)
+
+---
+
+## Yükleme Yöntemleri
+
+### npm (önerilen)
+
+```bash
+npm install -g omniroute
+omniroute
+```
+
+Kontrol paneli `http://localhost:20128` açılır ve API tabanı URL `http://localhost:20128/v1`.
+
+> **npm kullanıcıları:** Npm, yükleme komut dosyalarının engellendiğine dair uyarıda bulunursa (örneğin, `omniroute`, `better-sqlite3`), [bkz. — npm kurulum komut dosyalarının engellendiği sorun](./TROUBLESHOOTING.md#npm-install-scripts-blocked-warning-global-install) giderme.
+
+### ppmpm
+
+```bash
+pnpm add -g omniroute@latest --allow-build=better-sqlite3 --allow-build=@swc/core
+omniroute
+```
+
+> **pnpm kullanıcıları:** `better-sqlite3` ve `@swc/core` için yerel derleme komut dosyalarını etkinleştirmek için `--allow-build` bayrağı gereklidir. pnpm v11'deki genel kurulumlar için `pnpm approve-builds -g` komutu desteklenmez.
+
+### Kemer Linux (AUR)
+
+```bash
+yay -S omniroute-bin
+systemctl --user enable --now omniroute.service
+```
+
+[AUR paketi](https://aur.archlinux.org/packages/omniroute-bin) OmniRoute yükler ve bir systemd kullanıcı hizmeti sağlar.
+
+### Kaynaktan
+
+```bash
+npm install
+PORT=20128 DASHBOARD_PORT=20129 NEXT_PUBLIC_BASE_URL=http://localhost:20129 npm run dev
+```
+
+> **Windows notu:** Varsayılan olarak OmniRoute, eski `%USERPROFILE%\.omniroute` dizini mevcut olmadığında `%APPDATA%\omniroute` kullanır. Farklı bir veri dizini konumu seçmek için `DATA_DIR` ayarlayın.
+
+> **Not:** `npm install` ilk çalıştırmada `.env.example` `.env` otomatik olarak oluşturur. Sonraki kurulumlar mevcut `.env` üzerine yazılmayacak, dolayısıyla özelleştirmeler korunacaktır. Yeniden tohumlamak için yeniden çalıştırmadan önce `.env` silin.
+
+### Docker
+
+Compose profilleri ve Caddy HTTPS dahil Docker kurulumunun tamamı için [Docker Kılavuzuna](./DOCKER_GUIDE.md) bakın.
+
+### Masaüstü Uygulaması (Electron)
+
+OmniRoute Electron 41 + elektron oluşturucu 26.10 üzerine kurulu bir masaüstü paketleyici gönderir. Kullanılabilir komut dosyaları (çalışma alanı kökü):
+
+```bash
+npm run electron:dev          # Run desktop with hot-reload
+npm run electron:build        # Build for current OS (auto-detected)
+npm run electron:build:win    # Windows installer (NSIS + portable)
+npm run electron:build:mac    # macOS (dmg + zip, arm64+x64)
+npm run electron:build:linux  # Linux (AppImage + deb + rpm)
+npm run electron:smoke:packaged  # Smoke-test packaged build
+```
+
+Masaüstü yükleyicilerin sürümleri GitHub Sürümlerine eklenmiştir. Tam Electron ayrıntılı incelemesi için (imzalama, IPC köprüsü, dağıtımlar), bkz. [`ELECTRON_GUIDE.md`](./ELECTRON_GUIDE.md) _(criado em fase posterior)_.
+
+### Başsız sunucu (CI/automation)
+
+Katılımsız kurulumlar için (Docker, Kubernetes, CI) şunu kullanın:
+
+```bash
+omniroute setup --non-interactive
+omniroute providers test-batch
+```
+
+Env vars (`INITIAL_PASSWORD`, `OMNIROUTE_WS_BRIDGE_SECRET` vb.) ile birleştirildiğinde bu, tamamen komut dosyası oluşturulabilir bir OmniRoute örneğini döndürmenize olanak tanır.
+
+### CLI Seçenekleri
+
+| Emretmek                | Tanım                                                                                 |
+| ----------------------- | ------------------------------------------------------------------------------------- |
+| `omniroute`             | Sunucuyu başlatın (`PORT=20128`, API ve gösterge tablosu aynı bağlantı noktasında)    |
+| `omniroute setup`       | Şifre ve ilk sağlayıcı için rehberli CLI katılımı                                     |
+| `omniroute doctor`      | Sunucuyu başlatmadan yerel durum denetimlerini çalıştırın                             |
+| `omniroute providers`   | CLI sağlayıcılarını keşfedin, listeleyin, doğrulayın ve test edin                     |
+| `omniroute config`      | CLI aracı yapılandırması — listesi, yapılandırmaları alma, ayarlama, doğrulama        |
+| `omniroute status`      | Çevrimdışı durum kontrol paneli — sürümü, DB, araçlar, yapılandırma                   |
+| `omniroute logs`        | Kullanım günlüklerini API yayınlayın ( `--follow` destekler)                          |
+| `omniroute update`      | OmniRoute güncellemelerini kontrol edin veya uygulayın                                |
+| `omniroute provider`    | Sağlayıcı bağlantılarını yönetin — ekleme, listeleme, kaldırma, test etme, varsayılan |
+| `omniroute --port 3000` | canonical/API bağlantı noktasını 3000 olarak ayarlayın                                |
+| `omniroute --mcp`       | MCP sunucusunu başlatın (stdio aktarımı)                                              |
+| `omniroute --no-open`   | Tarayıcıyı otomatik olarak açma                                                       |
+| `omniroute --help`      | Yardımı göster                                                                        |
+
+Başsız kurulum, bayraklar veya ortam değişkenleriyle kodlanabilir:
+
+```bash
+omniroute setup --non-interactive --password "$OMNIROUTE_PASSWORD"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY"
+omniroute setup --non-interactive --add-provider --provider openai --api-key "$OPENAI_API_KEY" --test-provider
+```
+
+Kontrol panelini açmadan yerel tanılamayı çalıştırın:
+
+```bash
+omniroute doctor
+omniroute doctor --json
+omniroute doctor --no-liveness
+```
+
+Kontrol panelini açmadan sağlayıcıları SSH veya komut dosyalarından yönetin:
+
+```bash
+omniroute providers available
+omniroute providers available --search openai
+omniroute providers available --category api-key
+omniroute providers list
+omniroute providers test <id-or-name>
+omniroute providers test-all
+omniroute providers validate
+```
+
+---
+
+## CLI Aracı Yapılandırması
+
+### 1) Sağlayıcıları Bağlayın ve API Anahtarı Oluşturun
+
+1. Dashboard → `Providers` bölümünü açın ve en az bir sağlayıcı bağlayın (OAuth veya API anahtarı).
+2. Dashboard → `Endpoints` bölümünü açın ve bir API anahtarı oluşturun.
+3. (İsteğe bağlı) Dashboard → `Combos` bölümünü açın ve yedek zincirinizi ayarlayın.
+
+### 2) Kodlama Aracınızı Yönlendirin
+
+```txt
+Temel URL: http://localhost:20128/v1
+API Anahtarı:  [Endpoint sayfasından kopyalayın]
+Model:    if/qwen3.8-max-preview (veya herhangi bir sağlayıcı/model öneki)
+```
+
+Editörünüz `Authorization: Bearer ...` gönderemiyorsa bunun yerine token içeren uyumluluk temel adresini kullanın:
+
+```txt
+Temel URL: http://localhost:20128/api/v1/vscode/YOUR_KEY/
+Modeller URL'si: http://localhost:20128/api/v1/vscode/YOUR_KEY/models
+Sohbet URL'si: http://localhost:20128/api/v1/vscode/YOUR_KEY/chat/completions
+Ollama Etiketleri URL'si: http://localhost:20128/api/v1/vscode/YOUR_KEY/api/tags
+```
+
+Claude Code, Codex CLI, Cursor, Cline, OpenClaw, OpenCode ve OpenAI uyumlu SDK'larla çalışır.
+
+#### `setup-*` ile otomatik yapılandırma
+
+Temel URL'yi ve anahtarı elle yapıştırmak yerine OmniRoute'un canlı model kataloğundan yararlanarak her aracın kendi yapılandırmasını yazmasına izin verin. Her araç için tek komut:
+
+```bash
+omniroute setup-codex        # ~/.codex/<name>.config.toml profilleri
+omniroute setup-claude       # ~/.claude/profiles/<name>/settings.json
+omniroute setup-opencode     # ~/.config/opencode/opencode.json (openai uyumlu)
+omniroute setup-cline        # Cline CLI + VS Code eklentisi ayarları
+omniroute setup-kilo         # Kilo Code
+omniroute setup-continue     # ~/.continue/config.yaml (Continue / cn)
+omniroute setup-cursor       # Cursor'ın uygulama içi adımlarını yazdırır
+omniroute setup-roo          # Roo Code içe aktarma + autoImport işaretçisi
+omniroute setup-crush        # ~/.config/crush/crush.json
+omniroute setup-zed          # ~/.config/zed/settings.json (openai_compatible)
+omniroute setup-goose        # ~/.config/goose/config.yaml
+omniroute setup-aider        # ~/.aider.conf.yml
+omniroute setup-qwen         # ~/.qwen/settings.json + ~/.qwen/.env
+```
+
+Her biri, yerel bir aracı **uzak** bir OmniRoute'a göre yapılandırmak için `--remote <url> --api-key <key>` seçeneklerini ve önizleme için `--dry-run` seçeneğini kabul eder. Bir CLI'yi doğru ortam değişkenleri eklenmiş ve hiçbir yapılandırma yazılmamış şekilde başlatmak için genel başlatıcı `omniroute run <target>` (claude, codex, aider, goose, opencode, qwen, gemini) komutunu kullanın; araç başına eski başlatıcılar olan `omniroute launch` (Claude Code) ve `omniroute launch-codex` (Codex) kullanılmaya devam edilebilir.
+
+Tam tablo için (her komutun ne yazdığı, tüm seçenekler, yerel ve uzak kullanım, temel URL `/v1` kuralları) **[CLI Entegrasyonları](./CLI-INTEGRATIONS.md)** belgesine bakın.
+
+Araç bazında ayrıntılı yapılandırma (Claude Code, Codex CLI, Cursor, Cline, OpenClaw, Kilo Code, Copilot ve daha fazlası) için özel **[CLI Araçları Kılavuzu](../reference/CLI-TOOLS.md)** belgesine bakın.
+
+---
+
+## Protokol Kurulumu (MCP + A2A)
+
+### MCP Kurulumu (Model Bağlam Protokolü)
+
+MCP aktarımını stdio modunda başlatın:
+
+```bash
+omniroute --mcp
+```
+
+Önerilen doğrulama akışı:
+
+```bash
+# 1. Start MCP server
+omniroute --mcp
+
+# 2. From your MCP client, call:
+omniroute_get_health        # Should return system health
+omniroute_list_combos       # Should return active combos
+
+# 3. Or run the full E2E suite:
+npm run test:protocols:e2e
+```
+
+#### MCP İstemci Yapılandırması
+
+**Claude Kodu:**
+
+Claude Kodu, `omniroute --mcp` (stdio)'nun başlamadığı HTTP üzerinden bağlanır. HTTP aktarımı varsayılan olarak kapalıdır: önce onu çalışan sunucuda etkinleştirin. Kontrol panelinde oturum açma etkinleştirildiğinde, kimlik bilgisi olmayan bir istek `401` alır, bu nedenle `mcp:connect` (veya `manage`) içeren bir API anahtarı iletin; `manage`/`admin` bir anahtar aynı zamanda her aracın kapsamına da ihtiyaç duyar (bkz [MCP Sunucusu → MCP araç kapsamları](../frameworks/MCP-SERVER.md#mcp-tool-scopes) ).
+
+```bash
+omniroute mcp enable --transport streamable-http
+claude mcp add --transport http omniroute http://localhost:20128/api/mcp/stream \
+  --header "Authorization: Bearer your-key"
+```
+
+**Cursor / Cline:**
+
+MCP ayarlarınıza ekleyin (stdio, arayanın bir anaparaya sahip olması için anahtarla birlikte):
+
+```json
+{
+  "mcpServers": {
+    "omniroute": {
+      "command": "omniroute",
+      "args": ["--mcp"],
+      "env": {
+        "OMNIROUTE_API_KEY": "your-key",
+        "OMNIROUTE_BASE_URL": "http://localhost:20128"
+      }
+    }
+  }
+}
+```
+
+Veya `mcpTransport`, `streamable-http` olduğunda ( `/dashboard/mcp` veya `omniroute mcp enable --transport streamable-http` ile ayarlayın), istemcinin uzak MCP sunucusu girişini `http://localhost:20128/api/mcp/stream` yönlendirin.
+
+Anahtar `Authorization: Bearer <api-key>` olarak hareket eder (bkz. [MCP Sunucusu → Uzak ana bilgisayarlar için uzaktan erişim](../frameworks/MCP-SERVER.md#remote-access-manage-scope-bypass) ; uzak anahtarın `mcp:connect` artı read/write kapsamlarına ihtiyacı vardır).
+
+**Tam MCP belgeleri:** [MCP Sunucusu README](../../open-sse/mcp-server/README.md) — 110 araçları, IDE yapılandırmaları, Python/TS/Go istemcileri. Sıkıştırma CCR/dedup araçları için operatör referansı (işaretçiler, önkoşullar, araç başına kapsamlar, erişim sayfalandırması, tanılama): [Sıkıştırma Motorları → Önkoşullar / operatör kılavuzu](../compression/COMPRESSION_ENGINES.md#prerequisites--operator-guide-ccr--session-dedup).
+
+### A2A Kurulumu (Ajan-Ajan Protokolü)
+
+Temsilci Kartını Doğrulayın:
+
+```bash
+curl http://localhost:20128/.well-known/agent.json
+```
+
+Bir görev gönder:
+
+```bash
+curl -X POST http://localhost:20128/a2a \
+  -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":"quickstart","method":"message/send","params":{"skill":"quota-management","messages":[{"role":"user","content":"Give me a short quota summary."}]}}'
+```
+
+**Tam A2A belgeleri:** [A2A Sunucusu README](../../src/lib/a2a/README.md) — JSON-RPC 2.0, beceriler, akış, görev yaşam döngüsü.
+
+---
+
+## Zaman Aşımı Yapılandırması
+
+### Temel Zaman Aşımları
+
+Çoğu dağıtım için yalnızca şu iki değişkene ihtiyacınız vardır:
+
+| Değişken                 | Varsayılan                             | Amaç                                                                                                                                                            |
+| ------------------------ | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `REQUEST_TIMEOUT_MS`     | `600000`                               | Üst kaynak yanıt başlangıcı zaman aşımı, gizli Undici zaman aşımları, TLS parmak izi istekleri ve API köprüsü istek/proxy zaman aşımları için ortak temel değer |
+| `STREAM_IDLE_TIMEOUT_MS` | `REQUEST_TIMEOUT_MS` değerini devralır | OmniRoute'un SSE akışını sonlandırmasından önce akış parçaları arasında izin verilen maksimum süre                                                              |
+
+Geriye dönük uyumluluk korunur: mevcut `FETCH_TIMEOUT_MS`, `API_BRIDGE_PROXY_TIMEOUT_MS` ve katmana özgü diğer zaman aşımı değişkenleri çalışmaya devam eder ve ortak temel değeri geçersiz kılar.
+
+### Sağlayıcıya Özgü Notlar
+
+Claude Code uyumlu üst kaynaklar (`anthropic-compatible-cc-*`) için OmniRoute, sağlayıcı tarafındaki okuma zaman aşımlarının ortam yapılandırmanızla uyumlu kalması amacıyla giden `X-Stainless-Timeout` üst bilgisini çözümlenen getirme zaman aşımından türetir.
+
+Üçüncü taraf Claude Code uyumlu ters proxy'ler için OmniRoute, varsayılan `anthropic-beta` kümesini ölçülü tutar ve `Client Cache Control`, `Auto` olarak bırakıldığında yalnızca istemci tarafından sağlanan `cache_control` işaretleyicilerini iletir. Bağlantı başına "Redact-thinking beta'yı etkinleştir" seçeneğini yalnızca üst kaynak özellikle redakte edilmiş Claude düşünme akışlarını gerektiriyorsa etkinleştirin.
+
+### Gelişmiş Zaman Aşımı Geçersiz Kılmaları
+
+| Değişken                                 | Varsayılan                                           | Amaç                                                                                        |
+| ---------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `FETCH_TIMEOUT_MS`                       | `REQUEST_TIMEOUT_MS` değerini devralır               | Yanıt üst bilgileri gelene kadar kullanılan üst kaynak yanıt başlangıcı zaman aşımı         |
+| `FETCH_HEADERS_TIMEOUT_MS`               | `FETCH_TIMEOUT_MS` değerini devralır                 | Üst kaynak yanıt üst bilgilerini almak için Undici süre sınırı                              |
+| `FETCH_BODY_TIMEOUT_MS`                  | `FETCH_TIMEOUT_MS` değerini devralır                 | Üst kaynak gövde parçaları arasındaki Undici süre sınırı (`0` bu sınırı devre dışı bırakır) |
+| `FETCH_CONNECT_TIMEOUT_MS`               | `30000`                                              | Undici TCP bağlantı zaman aşımı                                                             |
+| `FETCH_KEEPALIVE_TIMEOUT_MS`             | `4000`                                               | Undici boşta tutulan kalıcı bağlantı soketi zaman aşımı                                     |
+| `TLS_CLIENT_TIMEOUT_MS`                  | `FETCH_TIMEOUT_MS` değerini devralır                 | `wreq-js` üzerinden yapılan TLS parmak izi istekleri için zaman aşımı                       |
+| `API_BRIDGE_PROXY_TIMEOUT_MS`            | `REQUEST_TIMEOUT_MS` veya `600000` değerini devralır | API portundan pano portuna `/v1` proxy iletimi için zaman aşımı                             |
+| `API_BRIDGE_SERVER_REQUEST_TIMEOUT_MS`   | `max(API_BRIDGE_PROXY_TIMEOUT_MS, 300000)`           | API köprüsü sunucusundaki gelen istek zaman aşımı                                           |
+| `API_BRIDGE_SERVER_HEADERS_TIMEOUT_MS`   | `60000`                                              | API köprüsü sunucusundaki gelen üst bilgi zaman aşımı                                       |
+| `API_BRIDGE_SERVER_KEEPALIVE_TIMEOUT_MS` | `5000`                                               | API köprüsü sunucusundaki kalıcı bağlantı zaman aşımı                                       |
+| `API_BRIDGE_SERVER_SOCKET_TIMEOUT_MS`    | `0`                                                  | API köprüsü sunucusundaki soket hareketsizliği zaman aşımı (`0` bunu devre dışı bırakır)    |
+
+> **Not:** Akış istekleri için `FETCH_TIMEOUT_MS` yalnızca bağlantı kurulumunu / ilk üst kaynak yanıtını bekleme süresini kapsar. Akış etkin hâle geldiğinde OmniRoute yalnızca gerçek bir duraklama (`STREAM_IDLE_TIMEOUT_MS`) veya Undici gövde hareketsizliği (`FETCH_BODY_TIMEOUT_MS`) durumunda akışı sonlandırır.
+
+### Ters Proxy Uyumluluğu
+
+OmniRoute'u Nginx, Caddy, Cloudflare veya başka bir ters proxy arkasında çalıştırıyorsanız proxy zaman aşımlarının da OmniRoute akış/getirme zaman aşımlarınızdan daha yüksek olduğundan emin olun.
+
+---
+
+## Ayrı Port Modu
+
+Gelişmiş senaryolar (ters proxy, konteyner ağları) için API'yi ve Dashboard'u ayrı portlarda çalıştırın:
+
+```bash
+PORT=20128 DASHBOARD_PORT=20129 omniroute
+# API:       http://localhost:20128/v1
+# Dashboard: http://localhost:20129
+```
+
+---
+
+## Geçersiz Linux (xbps-src) Şablonu
+
+Void Linux kullanıcıları için `xbps-src` kullanarak yerel bir paket oluşturabilirsiniz. Bu bloğu `srcpkgs/omniroute/template` olarak kaydedin:
+
+```bash
+# Template file for 'omniroute'
+pkgname=omniroute
+version=3.8.0
+revision=1
+hostmakedepends="nodejs python3 make"
+depends="openssl"
+short_desc="Universal AI gateway with smart routing for multiple LLM providers"
+maintainer="zenobit <zenobit@disroot.org>"
+license="MIT"
+homepage="https://github.com/diegosouzapw/OmniRoute"
+distfiles="https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz"
+# Regenerate the checksum for each release with:
+#   curl -L -o /tmp/omniroute.tar.gz "https://github.com/diegosouzapw/OmniRoute/archive/refs/tags/v${version}.tar.gz" && sha256sum /tmp/omniroute.tar.gz
+checksum=PLACEHOLDER_REGENERATE_PER_RELEASE
+system_accounts="_omniroute"
+omniroute_homedir="/var/lib/omniroute"
+export NODE_ENV=production
+export npm_config_engine_strict=false
+export npm_config_loglevel=error
+export npm_config_fund=false
+export npm_config_audit=false
+
+do_build() {
+	local _gyp_arch
+	case "$XBPS_TARGET_MACHINE" in
+		aarch64*) _gyp_arch=arm64 ;;
+		armv7*|armv6*) _gyp_arch=arm ;;
+		i686*) _gyp_arch=ia32 ;;
+		*) _gyp_arch=x64 ;;
+	esac
+
+	NODE_ENV=development npm ci --ignore-scripts
+	npm run build
+	cp -r .next/static .next/standalone/.next/static
+	[ -d public ] && cp -r public .next/standalone/public || true
+
+	local _node_gyp=/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+	(cd node_modules/better-sqlite3 && node "$_node_gyp" rebuild --arch="$_gyp_arch")
+
+	local _bs3_release=.next/standalone/node_modules/better-sqlite3/build/Release
+	mkdir -p "$_bs3_release"
+	cp node_modules/better-sqlite3/build/Release/better_sqlite3.node "$_bs3_release/"
+
+	rm -rf .next/standalone/node_modules/@img
+
+	for _mod in pino-abstract-transport split2 process-warning; do
+		cp -r "node_modules/$_mod" .next/standalone/node_modules/
+	done
+}
+
+do_check() {
+	npm run test:unit
+}
+
+do_install() {
+	vmkdir usr/lib/omniroute/.next
+	vcopy .next/standalone/. usr/lib/omniroute/.next/standalone
+
+	for _d in \
+		.next/standalone/.next/server/app/dashboard \
+		.next/standalone/.next/server/app/dashboard/settings \
+		.next/standalone/.next/server/app/dashboard/providers; do
+		touch "${DESTDIR}/usr/lib/omniroute/${_d}/.keep"
+	done
+
+	cat > "${WRKDIR}/omniroute" <<'EOF'
+#!/bin/sh
+export PORT="${PORT:-20128}"
+export DATA_DIR="${DATA_DIR:-${XDG_DATA_HOME:-${HOME}/.local/share}/omniroute}"
+export APP_LOG_TO_FILE="${APP_LOG_TO_FILE:-false}"
+mkdir -p "${DATA_DIR}"
+exec node /usr/lib/omniroute/.next/standalone/server.js "$@"
+EOF
+	vbin "${WRKDIR}/omniroute"
+}
+
+post_install() {
+	vlicense LICENSE
+}
+```
+
+---
+
+## Kaldırma
+
+| Komut                    | İşlem                                                                                                        |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `npm run uninstall`      | Sistem uygulamasını kaldırır ancak `~/.omniroute` içindeki **veritabanınızı ve yapılandırmalarınızı korur**. |
+| `npm run uninstall:full` | Uygulamayı kaldırır VE **tüm yapılandırmaları, anahtarları ve veritabanlarını kalıcı olarak siler**.         |
+
+> Tüm yöntemlere ilişkin ayrıntılı kaldırma talimatları için [UNINSTALL.md](./UNINSTALL.md) dosyasına bakın.
